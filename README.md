@@ -34,13 +34,13 @@
 
 | 信息源 | 订阅链接 |
 |--------|----------|
-| **Anthropic News** | [订阅](https://raw.githubusercontent.com/tmwgsicp/ForgeRSS/main/feeds/feed_anthropic_news.xml) |
-| **Anthropic Research** | [订阅](https://raw.githubusercontent.com/tmwgsicp/ForgeRSS/main/feeds/feed_anthropic_research.xml) |
-| **Anthropic Engineering** | [订阅](https://raw.githubusercontent.com/tmwgsicp/ForgeRSS/main/feeds/feed_anthropic_engineering.xml) |
-| **OpenAI Research** | [订阅](https://raw.githubusercontent.com/tmwgsicp/ForgeRSS/main/feeds/feed_openai_research.xml) |
-| **IDSociety Science Speaks** | [订阅](https://raw.githubusercontent.com/tmwgsicp/ForgeRSS/main/feeds/feed_idsociety.xml) |
+| **Anthropic News** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_anthropic_news.xml) |
+| **Anthropic Research** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_anthropic_research.xml) |
+| **Anthropic Engineering** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_anthropic_engineering.xml) |
+| **OpenAI Research** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_openai_research.xml) |
+| **IDSociety Science Speaks** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_idsociety.xml) |
 
-> Feed 每 6 小时自动更新，包含完整文章内容。
+> Feed 每 6 小时自动更新，包含完整文章内容。使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
 
 ### 详细信息源列表
 
@@ -63,8 +63,10 @@
 如需自定义，可 Fork 本项目，启用 GitHub Actions，Feed 会自动生成到 `feeds/` 目录：
 
 ```
-https://raw.githubusercontent.com/你的用户名/ForgeRSS/main/feeds/feed_anthropic_news.xml
+https://cdn.jsdelivr.net/gh/你的用户名/ForgeRSS@main/feeds/feed_anthropic_news.xml
 ```
+
+> 使用 jsDelivr CDN 链接可确保正确的 Content-Type，兼容 FreshRSS、Inoreader 等阅读器。
 
 ### 方式二：Docker 部署
 
