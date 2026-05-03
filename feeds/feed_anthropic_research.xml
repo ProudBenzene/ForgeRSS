@@ -5,7 +5,7 @@
     <link>https://www.anthropic.com/research</link>
     <description>Latest research publications from Anthropic</description>
     <language>en</language>
-    <lastBuildDate>Sun, 03 May 2026 15:29:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 15:56:04 +0000</lastBuildDate>
     <generator>ForgeRSS</generator>
     <image>
       <url>https://www.anthropic.com/favicon.ico</url>
@@ -654,7 +654,7 @@ We're launching the Anthropic Economic Index Survey, a monthly survey conducted 
       <title>Economic Research</title>
       <link>https://www.anthropic.com/research/team/economic-research</link>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&#x27;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 We build the empirical foundation for understanding AI&#x27;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p>
@@ -680,41 +680,10 @@ Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conver
 Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div>]]></content:encoded>
     </item>
     <item>
-      <title>Alignment</title>
-      <link>https://www.anthropic.com/research/team/alignment</link>
-      <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-Evaluation and oversight
-Alignment researchers validate that models are harmless and honest even under ...</p>
-<p><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none">Read full article</a></p>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-Evaluation and oversight
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-Stress-testing safeguards
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-Feb 23, 2026AlignmentThe persona selection model
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-Nov 4, 2025AlignmentCommitments on model deprecation and preservation
-Oct 9, 2025AlignmentA small number of samples can poison LLMs of any size
-Join the Research team</div>]]></content:encoded>
-    </item>
-    <item>
       <title>Interpretability</title>
       <link>https://www.anthropic.com/research/team/interpretability</link>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 Safety through understanding
@@ -743,10 +712,41 @@ Oct 25, 2024Societal ImpactsEvaluating feature steering: A case study in mitigat
 Join the Research team</div>]]></content:encoded>
     </item>
     <item>
+      <title>Alignment</title>
+      <link>https://www.anthropic.com/research/team/alignment</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+      <pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Evaluation and oversight
+Alignment researchers validate that models are harmless and honest even under ...</p>
+<p><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none">Read full article</a></p>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Evaluation and oversight
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Stress-testing safeguards
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Feb 23, 2026AlignmentThe persona selection model
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+Nov 4, 2025AlignmentCommitments on model deprecation and preservation
+Oct 9, 2025AlignmentA small number of samples can poison LLMs of any size
+Join the Research team</div>]]></content:encoded>
+    </item>
+    <item>
       <title>Societal Impacts</title>
       <link>https://www.anthropic.com/research/team/societal-impacts</link>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-      <pubDate>Thu, 16 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 Sociotechnical alignment
