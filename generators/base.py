@@ -288,48 +288,138 @@ class BaseFeedGenerator(ABC):
     # ========== RSS Generation ==========
     
     def generate_rss(self, articles: list[Article]) -> FeedGenerator:
-        """Generate RSS 2.0 feed from articles."""
+        """Generate RSS 2.0 feed using feedgen (kept for compatibility)."""
         fg = FeedGenerator()
         fg.title(self.FEED_TITLE)
         fg.description(self.FEED_DESCRIPTION)
         fg.link(href=self.FEED_URL, rel="alternate")
         fg.language(self.FEED_LANGUAGE)
-        
         if self.FEED_LOGO:
             fg.logo(self.FEED_LOGO)
+        return fg
+    
+    def save_feed(self, fg: FeedGenerator, articles: list[Article] = None) -> Path:
+        """
+        Save RSS feed with CDATA-wrapped content for maximum compatibility.
+        References wechatrss style for Readwise Reader and other readers.
+        """
+        from xml.dom import minidom
+        from html import escape as html_escape
         
-        # Sort by date for RSS
+        if articles is None:
+            articles = []
+        
+        # Sort by date
         sorted_articles = sorted(
             articles,
             key=lambda a: a.published_at or datetime.min.replace(tzinfo=pytz.UTC),
             reverse=True
         )
         
+        doc = minidom.Document()
+        rss = doc.createElement("rss")
+        rss.setAttribute("version", "2.0")
+        rss.setAttribute("xmlns:atom", "http://www.w3.org/2005/Atom")
+        rss.setAttribute("xmlns:content", "http://purl.org/rss/1.0/modules/content/")
+        doc.appendChild(rss)
+        
+        channel = doc.createElement("channel")
+        rss.appendChild(channel)
+        
+        def add_text(parent, tag: str, text: str):
+            elem = doc.createElement(tag)
+            elem.appendChild(doc.createTextNode(str(text)))
+            parent.appendChild(elem)
+            return elem
+        
+        add_text(channel, "title", self.FEED_TITLE)
+        add_text(channel, "link", self.FEED_URL)
+        add_text(channel, "description", self.FEED_DESCRIPTION)
+        add_text(channel, "language", self.FEED_LANGUAGE)
+        add_text(channel, "lastBuildDate", 
+                 datetime.now(pytz.UTC).strftime("%a, %d %b %Y %H:%M:%S +0000"))
+        add_text(channel, "generator", "ForgeRSS")
+        
+        # Feed logo/image
+        if self.FEED_LOGO:
+            image = doc.createElement("image")
+            add_text(image, "url", self.FEED_LOGO)
+            add_text(image, "title", self.FEED_TITLE)
+            add_text(image, "link", self.FEED_URL)
+            channel.appendChild(image)
+        
+        # Build items
         for article in sorted_articles:
-            fe = fg.add_entry()
-            fe.id(article.url)
-            fe.title(article.title)
-            fe.link(href=article.url)
+            item = doc.createElement("item")
+            
+            add_text(item, "title", article.title)
+            add_text(item, "link", article.url)
+            
+            guid = doc.createElement("guid")
+            guid.setAttribute("isPermaLink", "false")
+            guid.appendChild(doc.createTextNode(article.url))
+            item.appendChild(guid)
             
             if article.published_at:
-                fe.published(article.published_at)
-            
-            if article.summary:
-                fe.summary(article.summary)
-            
-            if article.content:
-                fe.content(article.content, type="html")
+                add_text(item, "pubDate", 
+                        article.published_at.strftime("%a, %d %b %Y %H:%M:%S +0000"))
             
             if article.author:
-                fe.author({"name": article.author})
+                add_text(item, "author", article.author)
             
             if article.category:
-                fe.category(term=article.category)
+                add_text(item, "category", article.category)
             
-            # Add cover image as enclosure (for readers that support it)
-            if article.images:
-                cover = article.images[0]
-                # Guess mime type from extension
+            # Build description with cover image (CDATA wrapped)
+            cover = article.images[0] if article.images else None
+            desc_parts = []
+            if cover:
+                desc_parts.append(
+                    f'<div style="margin-bottom:12px">'
+                    f'<img src="{html_escape(cover)}" alt="{html_escape(article.title)}" '
+                    f'style="max-width:100%;height:auto;border-radius:8px" /></div>'
+                )
+            if article.summary:
+                desc_parts.append(
+                    f'<p style="color:#333;font-size:15px;line-height:1.8">'
+                    f'{html_escape(article.summary[:500])}...</p>'
+                )
+            desc_parts.append(
+                f'<p><a href="{html_escape(article.url)}" '
+                f'style="color:#1890ff;text-decoration:none">Read full article</a></p>'
+            )
+            
+            description = doc.createElement("description")
+            description.appendChild(doc.createCDATASection("\n".join(desc_parts)))
+            item.appendChild(description)
+            
+            # content:encoded with full content (CDATA wrapped)
+            if article.content:
+                content_parts = []
+                if cover:
+                    content_parts.append(
+                        f'<div style="margin-bottom:16px">'
+                        f'<img src="{html_escape(cover)}" alt="{html_escape(article.title)}" '
+                        f'style="max-width:100%;height:auto;border-radius:8px" /></div>'
+                    )
+                content_parts.append(
+                    f'<div style="font-size:16px;line-height:1.8;color:#333">'
+                    f'{article.content}</div>'
+                )
+                if article.author:
+                    content_parts.append(
+                        f'<hr style="margin:24px 0;border:none;border-top:1px solid #eee" />'
+                        f'<p style="color:#888;font-size:13px">Author: {html_escape(article.author)}</p>'
+                    )
+                
+                content_encoded = doc.createElement("content:encoded")
+                content_encoded.appendChild(doc.createCDATASection("\n".join(content_parts)))
+                item.appendChild(content_encoded)
+            
+            # Enclosure for cover image
+            if cover:
+                enclosure = doc.createElement("enclosure")
+                enclosure.setAttribute("url", cover)
                 mime = "image/jpeg"
                 if cover.endswith(".png"):
                     mime = "image/png"
@@ -337,14 +427,23 @@ class BaseFeedGenerator(ABC):
                     mime = "image/gif"
                 elif cover.endswith(".webp"):
                     mime = "image/webp"
-                fe.enclosure(url=cover, type=mime, length="0")
+                enclosure.setAttribute("type", mime)
+                enclosure.setAttribute("length", "0")
+                item.appendChild(enclosure)
+            
+            channel.appendChild(item)
         
-        return fg
-    
-    def save_feed(self, fg: FeedGenerator) -> Path:
-        """Save RSS feed to file."""
+        # Write to file
         output = self.feeds_dir / f"feed_{self.FEED_NAME}.xml"
-        fg.rss_file(str(output), pretty=True)
+        xml_str = doc.toprettyxml(indent="  ", encoding=None)
+        # Clean up XML declaration line
+        lines = [line for line in xml_str.split('\n') if line.strip()]
+        xml_str = '\n'.join(lines[1:])  # Skip default xml declaration
+        final_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str
+        
+        with open(output, "w", encoding="utf-8") as f:
+            f.write(final_xml)
+        
         self.logger.info(f"Saved feed to {output}")
         return output
     
@@ -402,7 +501,7 @@ class BaseFeedGenerator(ABC):
                 if existing:
                     # Use existing for RSS
                     fg = self.generate_rss(existing[:max_articles])
-                    self.save_feed(fg)
+                    self.save_feed(fg, existing[:max_articles])
                 return len(existing) > 0
             
             # Fetch content for new articles (optional)
@@ -435,7 +534,7 @@ class BaseFeedGenerator(ABC):
             
             # Generate RSS
             fg = self.generate_rss(final)
-            self.save_feed(fg)
+            self.save_feed(fg, final)
             
             self.logger.info(f"Success: {len(final)} articles in feed")
             return True
