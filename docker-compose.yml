@@ -1,0 +1,50 @@
+# ForgeRSS Docker Compose
+# 本地开发和自托管使用
+
+version: '3.8'
+
+services:
+  forgerss:
+    build: .
+    image: forgerss:latest
+    container_name: forgerss
+    
+    volumes:
+      # 持久化数据
+      - ./data:/app/data
+      - ./cache:/app/cache
+      - ./feeds:/app/feeds
+      # 可选：挂载自定义 .env 文件
+      # - ./.env:/app/.env:ro
+    
+    environment:
+      # 日志级别: DEBUG, INFO, WARNING, ERROR
+      - LOG_LEVEL=INFO
+      
+      # 每个 Feed 最大文章数
+      - MAX_ARTICLES=50
+      
+      # 运行间隔（秒），默认 3600 = 1小时
+      - RUN_INTERVAL=3600
+      
+      # 是否全量刷新（忽略缓存）
+      - FULL_REFRESH=false
+      
+      # 是否使用 SQLite 存储
+      - USE_DB=true
+    
+    # 持久运行模式（默认）
+    # 单次运行: command: ["python", "app.py", "--once"]
+    restart: unless-stopped
+
+  # 可选：Nginx 托管 Feed 文件
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: forgerss-nginx
+  #   ports:
+  #     - "8080:80"
+  #   volumes:
+  #     - ./feeds:/usr/share/nginx/html/feeds:ro
+  #   depends_on:
+  #     - forgerss
+  #   restart: unless-stopped

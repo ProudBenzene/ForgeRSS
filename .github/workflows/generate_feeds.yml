@@ -1,0 +1,79 @@
+# Generate RSS feeds on schedule
+# Default: every 6 hours, configurable via repository variables
+
+name: Generate Feeds
+
+on:
+  schedule:
+    # Default: every 6 hours (0:00, 6:00, 12:00, 18:00 UTC)
+    # Can be overridden by setting CRON_SCHEDULE repository variable
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: 'Full refresh (ignore cache)'
+        required: false
+        default: 'false'
+        type: boolean
+      max_articles:
+        description: 'Max articles per feed'
+        required: false
+        default: '50'
+        type: string
+
+env:
+  MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '50' }}
+  LOG_LEVEL: ${{ vars.LOG_LEVEL || 'INFO' }}
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run feed generators
+        env:
+          MAX_ARTICLES: ${{ github.event.inputs.max_articles || env.MAX_ARTICLES }}
+        run: |
+          if [ "${{ github.event.inputs.full_refresh }}" = "true" ]; then
+            python scripts/run_all.py --full --max $MAX_ARTICLES
+          else
+            python scripts/run_all.py --max $MAX_ARTICLES
+          fi
+
+      - name: Validate feeds
+        run: python scripts/validate_feeds.py
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          git add feeds/*.xml cache/*.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update RSS feeds [skip ci]"
+            git push
+          fi
