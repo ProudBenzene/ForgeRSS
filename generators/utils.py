@@ -354,3 +354,74 @@ def extract_year_from_url(url: str) -> Optional[int]:
         if 2000 <= year <= 2100:
             return year
     return None
+
+def extract_article_content(
+    soup,
+    selectors=None,
+    min_length=100
+):
+    """
+    Extract article content from HTML, returning both HTML and plain text.
+    
+    Returns:
+        Tuple of (content_html, content_text) or (None, None) if failed
+    """
+    if selectors is None:
+        selectors = [
+            "article", ".article-content", ".post-content", 
+            ".content-area", ".main-content", "main .content", "main"
+        ]
+    
+    for selector in selectors:
+        elem = soup.select_one(selector)
+        if not elem:
+            continue
+        
+        # Remove unwanted elements
+        for tag in elem.select("nav, footer, aside, script, style, header, .sidebar, .navigation"):
+            tag.decompose()
+        
+        # Find content paragraphs
+        paragraphs = elem.find_all(["p", "h2", "h3", "h4", "li", "pre", "code", "blockquote"])
+        if not paragraphs:
+            continue
+        
+        html_parts = []
+        text_parts = []
+        
+        for p in paragraphs:
+            text = p.get_text(strip=True)
+            if not text or len(text) < 20:
+                continue
+            
+            tag_name = p.name
+            if tag_name in ["h2", "h3", "h4"]:
+                html_parts.append(f"<{tag_name}>{text}</{tag_name}>")
+            elif tag_name in ["pre", "code"]:
+                html_parts.append(f"<pre><code>{text}</code></pre>")
+            elif tag_name == "li":
+                html_parts.append(f"<p>- {text}</p>")
+            elif tag_name == "blockquote":
+                html_parts.append(f"<blockquote>{text}</blockquote>")
+            else:
+                html_parts.append(f"<p>{text}</p>")
+            text_parts.append(text)
+        
+        if html_parts and len("\n".join(text_parts)) >= min_length:
+            return "\n".join(html_parts), "\n\n".join(text_parts)
+    
+    # Fallback: try all paragraphs
+    paragraphs = soup.find_all("p")
+    html_parts = []
+    text_parts = []
+    
+    for p in paragraphs[:30]:
+        text = p.get_text(strip=True)
+        if len(text) > 50:
+            html_parts.append(f"<p>{text}</p>")
+            text_parts.append(text)
+    
+    if html_parts and len("\n".join(text_parts)) >= min_length:
+        return "\n".join(html_parts), "\n\n".join(text_parts)
+    
+    return None, None

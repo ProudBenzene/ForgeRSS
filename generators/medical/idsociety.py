@@ -8,7 +8,7 @@ Requires Selenium because the site uses React for rendering.
 """
 
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional
 
 import pytz
@@ -21,7 +21,7 @@ from generators.utils import (
     parse_date,
     extract_text,
     extract_images,
-    clean_html_content,
+    extract_article_content,
     normalize_url,
 )
 
@@ -147,7 +147,7 @@ class IDSocietyGenerator(BaseFeedGenerator):
         # Try to find date elements
         date_selectors = [
             "time", ".date", "[class*='date']", 
-            ".meta", "[class*='meta']"
+            ".meta", "[class*='meta']", ".published"
         ]
         
         for selector in date_selectors:
@@ -157,22 +157,23 @@ class IDSocietyGenerator(BaseFeedGenerator):
                 if date:
                     return date
         
-        # Extract from URL pattern /science-speaks-blog/YYYY/MM/DD/
-        match = re.search(r'/(\d{4})/(\d{1,2})/(\d{1,2})/', url)
+        # Extract from URL pattern /science-speaks-blog/YYYY/slug (year only)
+        match = re.search(r'/science-speaks-blog/(\d{4})/', url)
         if match:
-            try:
-                year, month, day = int(match.group(1)), int(match.group(2)), int(match.group(3))
-                return datetime(year, month, day, tzinfo=pytz.UTC)
-            except ValueError:
-                pass
+            year = int(match.group(1))
+            if 2020 <= year <= 2030:
+                # Use year with a stable month/day based on URL hash
+                hash_val = abs(hash(url)) % 365
+                return datetime(year, 1, 1, tzinfo=pytz.UTC) + timedelta(days=hash_val)
         
-        # Fallback
-        return stable_fallback_date(url)
+        # Fallback to current year
+        return datetime.now(pytz.UTC).replace(
+            day=1 + abs(hash(url)) % 28,
+            month=1 + abs(hash(url)) % 12
+        )
     
     def fetch_article_content(self, url: str) -> Optional[Article]:
         """Fetch full article content from detail page."""
-        from generators.utils import fetch_html
-        
         html = fetch_html(url)
         if not html:
             self.logger.warning(f"Failed to fetch article: {url}")
@@ -180,61 +181,44 @@ class IDSocietyGenerator(BaseFeedGenerator):
         
         soup = BeautifulSoup(html, "html.parser")
         
-        # Extract main content - look for article body
-        content = None
-        content_selectors = [
-            ".content-area",
-            ".article-content", 
-            ".post-content",
-            "article",
-            ".main-content",
-            "main .content",
-        ]
+        # Extract content using common utility
+        content_html, content_text = extract_article_content(soup)
         
-        for selector in content_selectors:
-            content_elem = soup.select_one(selector)
-            if content_elem:
-                # Remove nav, footer, sidebar elements
-                for tag in content_elem.select("nav, footer, aside, .sidebar, .navigation"):
-                    tag.decompose()
-                
-                # Get text content
-                paragraphs = content_elem.find_all(["p", "h2", "h3", "li"])
-                if paragraphs:
-                    content = "\n\n".join(p.get_text(strip=True) for p in paragraphs if p.get_text(strip=True))
-                    if content and len(content) > 100:
-                        break
-        
-        if not content:
-            # Fallback: get all paragraphs
-            paragraphs = soup.find_all("p")
-            texts = [p.get_text(strip=True) for p in paragraphs if len(p.get_text(strip=True)) > 50]
-            if texts:
-                content = "\n\n".join(texts[:20])  # Limit to first 20 paragraphs
-        
-        if not content or len(content) < 100:
+        if not content_html:
             self.logger.warning(f"No content found for: {url}")
             return None
         
-        # Create summary from content
-        summary = content[:500] + "..." if len(content) > 500 else content
+        # Create summary from text content
+        summary = content_text[:500] + "..." if len(content_text) > 500 else content_text
+        
+        # Extract accurate publish date from detail page
+        # Look for "Published April 27, 2026" pattern
+        published_at = None
+        date_selectors = [
+            ".published", "[class*='published']", "time", 
+            ".date", "[class*='date']", ".meta"
+        ]
+        for selector in date_selectors:
+            date_elem = soup.select_one(selector)
+            if date_elem:
+                date_text = date_elem.get_text(strip=True)
+                # Remove "Published " prefix if present
+                date_text = re.sub(r'^Published\s*', '', date_text, flags=re.IGNORECASE)
+                published_at = parse_date(date_text)
+                if published_at:
+                    self.logger.debug(f"Found date: {published_at} from {selector}")
+                    break
         
         # Extract images
-        images = []
-        for img in soup.select("article img, .content img, main img"):
-            src = img.get("src") or img.get("data-src")
-            if src and not src.startswith("data:"):
-                if src.startswith("/"):
-                    src = f"{self.BASE_URL}{src}"
-                images.append(src)
+        images = extract_images(soup, self.BASE_URL)
         
         return Article(
             url=url,
             title="",  # Will be replaced by original title
-            published_at=None,  # Will be replaced by original date
-            content=content,
+            published_at=published_at,  # May be None, merged later
+            content=content_html,  # HTML format for RSS
             summary=summary,
-            images=images[:5],  # Limit images
+            images=images[:5],
             category="Medical",
         )
 

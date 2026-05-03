@@ -397,11 +397,12 @@ class BaseFeedGenerator(ABC):
                 if article.content is None:
                     detailed = self.fetch_article_content(article.url)
                     if detailed:
-                        # Merge: keep original title/date, add content/summary/images
+                        # Merge: keep original title, prefer detailed date if available
+                        # (detailed page often has more accurate date)
                         new_articles[i] = Article(
                             url=article.url,
                             title=article.title,  # Keep original title
-                            published_at=article.published_at or detailed.published_at,
+                            published_at=detailed.published_at or article.published_at,
                             summary=detailed.summary or article.summary,
                             content=detailed.content,
                             author=detailed.author or article.author,
