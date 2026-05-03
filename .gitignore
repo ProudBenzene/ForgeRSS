@@ -40,6 +40,7 @@ Thumbs.db
 # Project specific
 data/*.db
 data/*.sqlite
+cache/*.json
 
 # Keep directory structure
 !cache/.gitkeep
@@ -48,4 +49,3 @@ data/*.sqlite
 
 # Don't ignore generated feeds (for GitHub hosting)
 !feeds/*.xml
-!cache/*.json
