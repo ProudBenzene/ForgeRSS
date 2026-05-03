@@ -97,11 +97,15 @@ class IDSocietyGenerator(BaseFeedGenerator):
                 continue
             
             date = self._extract_date(link, url)
+            cover = self._extract_cover(link)
+            author = self._extract_author(link)
             
             articles.append(Article(
                 url=url,
                 title=title,
                 published_at=date,
+                author=author,
+                images=[cover] if cover else [],
                 category="Medical",
             ))
         
@@ -144,33 +148,75 @@ class IDSocietyGenerator(BaseFeedGenerator):
     
     def _extract_date(self, element, url: str) -> Optional[datetime]:
         """Extract date from element or URL."""
-        # Try to find date elements
+        # Try to find date elements with common patterns
         date_selectors = [
-            "time", ".date", "[class*='date']", 
-            ".meta", "[class*='meta']", ".published"
+            "[class*='published']", ".published", "time",
+            ".date", "[class*='date']", ".meta", "[class*='meta']"
         ]
         
         for selector in date_selectors:
             date_elem = element.select_one(selector)
             if date_elem:
-                date = parse_date(date_elem.text)
+                date_text = date_elem.get_text(strip=True)
+                # Remove common prefixes like "Published ", "Last Updated "
+                date_text = re.sub(
+                    r'^(Published|Last\s*Updated|Posted|Date)\s*:?\s*',
+                    '', date_text, flags=re.IGNORECASE
+                )
+                date = parse_date(date_text)
                 if date:
+                    self.logger.debug(f"Found date {date} from {selector}: {date_text}")
                     return date
         
-        # Extract from URL pattern /science-speaks-blog/YYYY/slug (year only)
+        # Try finding any text containing date pattern in the card
+        # Look for "April 27, 2026" style dates
+        text = element.get_text()
+        date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}'
+        match = re.search(date_pattern, text, re.IGNORECASE)
+        if match:
+            date = parse_date(match.group(0))
+            if date:
+                return date
+        
+        # Extract year from URL pattern /science-speaks-blog/YYYY/
         match = re.search(r'/science-speaks-blog/(\d{4})/', url)
         if match:
             year = int(match.group(1))
             if 2020 <= year <= 2030:
-                # Use year with a stable month/day based on URL hash
                 hash_val = abs(hash(url)) % 365
                 return datetime(year, 1, 1, tzinfo=pytz.UTC) + timedelta(days=hash_val)
         
-        # Fallback to current year
+        # Fallback
         return datetime.now(pytz.UTC).replace(
             day=1 + abs(hash(url)) % 28,
             month=1 + abs(hash(url)) % 12
         )
+    
+    def _extract_cover(self, element) -> Optional[str]:
+        """Extract cover image from card element."""
+        img = element.find("img")
+        if img:
+            src = img.get("src") or img.get("data-src")
+            if src and not src.startswith("data:"):
+                if src.startswith("/"):
+                    src = f"{self.BASE_URL}{src}"
+                return src
+        return None
+    
+    def _extract_author(self, element) -> Optional[str]:
+        """Extract author from card element."""
+        author_selectors = [
+            "[class*='author']", ".author", ".byline"
+        ]
+        for selector in author_selectors:
+            author_elem = element.select_one(selector)
+            if author_elem:
+                text = author_elem.get_text(strip=True)
+                # Remove "Authors " prefix
+                text = re.sub(r'^Authors?\s*:?\s*', '', text, flags=re.IGNORECASE)
+                if text and len(text) > 2:
+                    return text
+        return None
     
     def fetch_article_content(self, url: str) -> Optional[Article]:
         """Fetch full article content from detail page."""
@@ -192,21 +238,49 @@ class IDSocietyGenerator(BaseFeedGenerator):
         summary = content_text[:500] + "..." if len(content_text) > 500 else content_text
         
         # Extract accurate publish date from detail page
-        # Look for "Published April 27, 2026" pattern
+        # Look for "Last Updated April 27, 2026" or similar patterns
         published_at = None
         date_selectors = [
-            ".published", "[class*='published']", "time", 
-            ".date", "[class*='date']", ".meta"
+            "[class*='updated']", "[class*='published']", ".published",
+            "time", ".date", "[class*='date']", ".meta"
         ]
         for selector in date_selectors:
             date_elem = soup.select_one(selector)
             if date_elem:
                 date_text = date_elem.get_text(strip=True)
-                # Remove "Published " prefix if present
-                date_text = re.sub(r'^Published\s*', '', date_text, flags=re.IGNORECASE)
+                # Remove common prefixes
+                date_text = re.sub(
+                    r'^(Last\s*Updated|Published|Posted|Date)\s*:?\s*',
+                    '', date_text, flags=re.IGNORECASE
+                )
                 published_at = parse_date(date_text)
                 if published_at:
-                    self.logger.debug(f"Found date: {published_at} from {selector}")
+                    self.logger.debug(f"Detail page date: {published_at} from {selector}")
+                    break
+        
+        # Fallback: search for date pattern in page text
+        if not published_at:
+            text = soup.get_text()
+            date_pattern = r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}'
+            match = re.search(date_pattern, text, re.IGNORECASE)
+            if match:
+                published_at = parse_date(match.group(0))
+        
+        # Extract author from detail page
+        author = None
+        author_selectors = [
+            "[class*='author']", ".author", ".byline", "[class*='authored']"
+        ]
+        for selector in author_selectors:
+            author_elem = soup.select_one(selector)
+            if author_elem:
+                author_text = author_elem.get_text(strip=True)
+                author_text = re.sub(
+                    r'^(Authored?\s*By|Authors?|By)\s*:?\s*',
+                    '', author_text, flags=re.IGNORECASE
+                )
+                if author_text and len(author_text) > 2 and len(author_text) < 100:
+                    author = author_text
                     break
         
         # Extract images
@@ -218,6 +292,7 @@ class IDSocietyGenerator(BaseFeedGenerator):
             published_at=published_at,  # May be None, merged later
             content=content_html,  # HTML format for RSS
             summary=summary,
+            author=author,
             images=images[:5],
             category="Medical",
         )

@@ -325,6 +325,19 @@ class BaseFeedGenerator(ABC):
             
             if article.category:
                 fe.category(term=article.category)
+            
+            # Add cover image as enclosure (for readers that support it)
+            if article.images:
+                cover = article.images[0]
+                # Guess mime type from extension
+                mime = "image/jpeg"
+                if cover.endswith(".png"):
+                    mime = "image/png"
+                elif cover.endswith(".gif"):
+                    mime = "image/gif"
+                elif cover.endswith(".webp"):
+                    mime = "image/webp"
+                fe.enclosure(url=cover, type=mime, length="0")
         
         return fg
     
