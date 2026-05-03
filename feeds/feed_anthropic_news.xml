@@ -1,0 +1,552 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Anthropic News</title>
+    <link>https://www.anthropic.com/news</link>
+    <description>Latest news and updates from Anthropic</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <image>
+      <url>https://www.anthropic.com/favicon.ico</url>
+      <title>Anthropic News</title>
+      <link>https://www.anthropic.com/news</link>
+    </image>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 May 2026 14:27:01 +0000</lastBuildDate>
+    <item>
+      <title>Claude is a space to think</title>
+      <link>https://www.anthropic.com/news/claude-is-a-space-to-think</link>
+      <description>There are many good places for advertising. A conversation with Claude is not one of them.
+
+Advertising drives competition, helps people discover new products, and allows services like email and social media to be offered for free. We’ve run our ownad campaigns, and our AI models have, in turn, helped many of our customers in the advertising industry.
+
+But including ads in conversations with Claude would be incompatible with what we want Claude to be: a genuinely helpful assistant for work and f...</description>
+      <content:encoded>There are many good places for advertising. A conversation with Claude is not one of them.
+
+Advertising drives competition, helps people discover new products, and allows services like email and social media to be offered for free. We’ve run our ownad campaigns, and our AI models have, in turn, helped many of our customers in the advertising industry.
+
+But including ads in conversations with Claude would be incompatible with what we want Claude to be: a genuinely helpful assistant for work and for deep thinking.
+
+We want Claude to act unambiguously in our users’ interests. So we’ve made a choice: Claude will remain ad-free. Our users won’t see “sponsored” links adjacent to their conversations with Claude; nor will Claude’s responses be influenced by advertisers or include third-party product placements our users did not ask for.
+
+The nature of AI conversations
+
+When people use search engines or social media, they’ve come to expect a mixture of organic and sponsored content. Filtering signal from noise is part of the interaction.
+
+Conversations with AI assistants are meaningfully different. The format is open-ended; users often share context and reveal more than they would in a search query. This openness is part of what makes conversations with AI valuable, but it’s also what makes them susceptible to influence in ways that other digital products are not.
+
+Ouranalysis of conversationswith Claude (conducted in a way that keeps all dataprivate and anonymous) shows that an appreciable portion involve topics that are sensitive or deeply personal—the kinds of conversations you might have with a trusted advisor. Many other uses involve complex software engineering tasks, deep work, or thinking through difficult problems. The appearance of ads in these contexts would feel incongruous—and, in many cases, inappropriate.
+
+We still have much to learn about the impact of AI models on the people who use them.Earlyresearchsuggests both benefits—like people finding support they couldn’t access elsewhere—and risks, including the potential for models to reinforce harmful beliefs in vulnerable users. Introducing advertising incentives at this stage would add another level of complexity.Our understandingof how models translate the goals we set them into specific behaviors is still developing; an ad-based system could therefore have unpredictable results.
+
+Being genuinely helpful is one of the core principles ofClaude’s Constitution, the document that describes our vision for Claude’s character and guides how we train the model. An advertising-based business model would introduce incentives that could work against this principle.
+
+Consider a concrete example. A user mentions they’re having trouble sleeping. An assistant without advertising incentives would explore the various potential causes—stress, environment, habits, and so on—based on what might be most insightful to the user. An ad-supported assistant has an additional consideration: whether the conversation presents an opportunity to make a transaction. These objectives may often align—but not always. And, unlike a list of search results, ads that influence a model’s responses may make it difficult to tell whether a given recommendation comes with a commercial motive or not. Users shouldn’t have to second-guess whether an AI is genuinely helping them or subtly steering the conversation towards something monetizable.
+
+Even ads that don’t directly influence an AI model’s responses and instead appear separately within the chat window would compromise what we want Claude to be: a clear space to think and work. Such ads would also introduce an incentive to optimize for engagement—for the amount of time people spend using Claude and how often they return. These metrics aren’t necessarily aligned with being genuinely helpful. The most useful AI interaction might be a short one, or one that resolves the user’s request without prompting further conversation.
+
+We recognize that not all advertising implementations are equivalent. More transparent or opt-in approaches—where users explicitly choose to see sponsored content—might avoid some of the concerns outlined above. But the history of ad-supported products suggests that advertising incentives, once introduced, tend to expand over time as they become integrated into revenue targets and product development, blurring boundaries that were once more clear-cut. We’ve chosen not to introduce these dynamics into Claude.
+
+Anthropic is focused on businesses, developers, and helping our users flourish. Our business model is straightforward: we generate revenue through enterprise contracts and paid subscriptions, and we reinvest that revenue into improving Claude for our users. This is a choice with tradeoffs, and we respect that other AI companies might reasonably reach different conclusions.
+
+Expanding access to Claude is central to our public benefit mission, and we want to do it without selling our users’ attention or data to advertisers. To that end, we’vebrought AI tools and training to educatorsin over 60 countries, begun national AI education pilots withmultiplegovernments, and made Claudeavailable to nonprofitsat a significant discount. We continue to invest in our smaller models so that our free offering remains at the frontier of intelligence, and we may consider lower-cost subscription tiers and regional pricing where there is clear demand for it. Should we need to revisit this approach, we’ll be transparent about our reasons for doing so.
+
+AI will increasingly interact with commerce, and we look forward to supporting this in ways that help our users. We’re particularly interested in the potential of agentic commerce, where Claude acts on a user’s behalf to handle a purchase or booking end to end. And we’ll continue to build features that enable our users to find, compare, or buy products, connect with businesses, and more—when they choose to do so.
+
+We’re also exploring more ways to make Claude a focused space to be at your most productive. Users can alreadyconnect third-party toolsthey use for work—like Figma, Asana, and Canva—and interact with them directly within Claude. We expect to introduce many more useful integrations and expand this toolkit over time.
+
+All third-party interactions will be grounded in the same overarching design principle: they should be initiated by theuser(where the AI is working for them) rather than anadvertiser(where the AI is working, at least in part, for someone else). Today, whether someone asks Claude to research running shoes, compare mortgage rates, or recommend a restaurant for a special occasion, Claude’s only incentive is to give a helpful answer. We’d like to preserve that.
+
+A trusted tool for thought
+
+We want our users to trust Claude to help them keep thinking—about their work, their challenges, and their ideas.
+
+Our experience of using the internet has made it easy to assume that advertising on the products we use is inevitable. But open a notebook, pick up a well-crafted tool, or stand in front of a clean chalkboard, and there are no ads in sight.
+
+We think Claude should work the same way.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/claude-is-a-space-to-think</guid>
+      <category>Announcements</category>
+      <pubDate>Wed, 04 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Australian government and Anthropic sign MOU for AI safety and research</title>
+      <link>https://www.anthropic.com/news/australia-MOU</link>
+      <description>Today, Anthropic signed a Memorandum of Understanding with the Australian government to cooperate on AI safety research and support the goals of Australia’s National AI Plan. Our CEO, Dario Amodei, met with Prime Minister Anthony Albanese to formalize the agreement during a visit to Canberra, Australia. We also announced AUD$3 million in partnerships with leading Australian research institutions to use Claude to improve disease diagnosis and treatment and support computer science education and r...</description>
+      <content:encoded>Today, Anthropic signed a Memorandum of Understanding with the Australian government to cooperate on AI safety research and support the goals of Australia’s National AI Plan. Our CEO, Dario Amodei, met with Prime Minister Anthony Albanese to formalize the agreement during a visit to Canberra, Australia. We also announced AUD$3 million in partnerships with leading Australian research institutions to use Claude to improve disease diagnosis and treatment and support computer science education and research.
+
+Central to the MOU is a commitment to work with Australia’s AI Safety Institute. We will share our findings on emerging model capabilities and risks, participate in joint safety and security evaluations, and collaborate on research with Australian academic institutions. This mirrors the arrangements we have with safety institutes in the US, UK, and Japan, where early access and technical information sharing has helped governments build an independent view of where frontier AI is heading, and AI developers increase the safety of their models. Under the MOU, we will shareAnthropic Economic Index datawith the Australian government to help track how AI is being adopted across the economy, its economic impacts, and the implications for workers. We’ll initially focus on sectors critical to Australia’s economy, including natural resources, agriculture, healthcare, and financial services. As part of this, we plan to develop ways to advance AI education and training within the workforce. Our recentEconomic Indexdata shows thatAustralians already use Claudefor a broader range of tasks than most countries—the most diverse among English-speaking nations—and work collaboratively with AI using sophisticated prompts to accomplish high-skill tasks ranging from management and sales and business operations, to use in the life sciences and in everyday life. Finally, in line with Australia’s National AI plan, we are exploring investments in data center infrastructure and energy throughout the country, aligned with the government’s recently announceddata center expectations.
+
+“Australia’s investment in AI safety makes it a natural partner for responsible AI development. This MOU gives our collaboration a formal foundation,” said Anthropic CEO Dario Amodei. “ I'm particularly excited by the work Australian research institutions will be doing with Claude to advance disease diagnosis and treatment."
+
+Extending AI for Science to Australia’s research and innovation sector
+
+At Anthropic, we believe that AI has the potential to significantly accelerate scientific progress. To this end, we are extending ourAI for Scienceprogram to Australia, starting with an investment of AUD$3 million in Claude API credits to four institutions applying AI to some of humanity’s most pressing challenges. New partnerships with the Australian National University, Murdoch Children’s Research Institute, the Garvan Institute of Medical Research, and Curtin University will support areas like clinical genomics and precision medicine, pediatric medical research, and computing education.
+
+A multidisciplinary team from the ANU John Curtin School of Medical Research is using Claude to analyze genetic sequencing data to help tackle rare diseases. The ANU School of Computing is also embedding Claude into new courses to train the next generation of Australian developers and scientists.
+
+The Garvan Institute of Medical Research will use Claude to accelerate genomic discovery in two major research projects. The first, in partnership with UNSW, will build systems that translate human genetic variation into insights about how disease operates in specific cell types, with the goal of identifying new treatments. The second, with the Centre for Population Genomics, a joint initiative between Garvan and Murdoch Children’s Research Institute, will automate the complex genetic analysis that is currently the main bottleneck in diagnosing children with rare genetic conditions. Separately, Murdoch Children’s Research Institute will also apply Claude to its stem cell medicine program to improve identification of therapeutic targets for childhood heart disease.
+
+Finally, the Curtin Institute for Data Science, Australia’s largest university-based data science research institute, will use Claude to scale their collaboration with academics, and in research projects across health sciences, the humanities, business, law, science, and engineering.
+
+On Monday, we also announced that we are launching our first deep tech startup API credit program for VC-backed startups working on drug discovery, materials science, climate modeling, and medical diagnostics—areas where AI can have a profound impact. Eligible companies will receive up to USD$50,000 (about AUD$72,000) in API credits to build with Claude, along with resources and community support, as we build our local team.
+
+These investments reflect the advanced work Australian researchers and startups are already doing with Claude, and directly contribute to supporting the goals outlined in Australia’s National AI Plan.
+
+The visit to Australia marks the beginning of long-term collaboration and investment into the Asia-Pacific region. We’ll share more about our local team and leadership in the coming weeks as we prepare to open our Sydney office. You can read the details of the Australian government’s MOU with Anthropichere.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/australia-MOU</guid>
+      <category>Announcements</category>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute</title>
+      <link>https://www.anthropic.com/news/google-broadcom-partnership-compute</link>
+      <description>We have signed a new agreement with Google and Broadcom for multiple gigawatts of next-generation TPU capacity that we expect to come online starting in 2027. This significant expansion of our compute infrastructure will power our frontier Claude models and help us serve extraordinary demand from customers worldwide.
+
+“This groundbreaking partnership with Google and Broadcom is a continuation of our disciplined approach to scaling infrastructure: we are building the capacity necessary to serve t...</description>
+      <content:encoded>We have signed a new agreement with Google and Broadcom for multiple gigawatts of next-generation TPU capacity that we expect to come online starting in 2027. This significant expansion of our compute infrastructure will power our frontier Claude models and help us serve extraordinary demand from customers worldwide.
+
+“This groundbreaking partnership with Google and Broadcom is a continuation of our disciplined approach to scaling infrastructure: we are building the capacity necessary to serve the exponential growth we have seen in our customer base while also enabling Claude to define the frontier of AI development,” said Krishna Rao, CFO of Anthropic. “We are making our most significant compute commitment to date to keep pace with our unprecedented growth.”
+
+Demand from Claude customers has accelerated in 2026. Our run-rate revenue has now surpassed $30 billion—up from approximately $9 billion at the end of 2025. When we announced ourSeries G fundraisingin February, we shared that over 500 business customers were each spending over $1 million on an annualized basis. Today that number exceeds 1,000, doubling in less than two months.
+
+The vast majority of the new compute will be sited in the United States, making this partnership a major expansion of our November 2025 commitment toinvest $50 billionin strengthening American computing infrastructure.
+
+The partnership deepens our existing work with Google Cloud—building on the increasedTPU capacitywe announced last October—as well as our relationship with Broadcom.
+
+We train and run Claude on a range of AI hardware—AWS Trainium, Google TPUs, and NVIDIA GPUs—which means we can match workloads to the chips best suited for them. This diversity of platforms translates to better performance and greater resilience for customers who depend on Claude for critical work. Amazon remains our primary cloud provider and training partner, and we continue to work closely with AWS on Project Rainier. Claude remains the only frontier AI model available to customers on all three of the world's largest cloud platforms: Amazon Web Services (Bedrock), Google Cloud (Vertex AI), and Microsoft Azure (Foundry).
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/google-broadcom-partnership-compute</guid>
+      <category>Announcements</category>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic’s Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors</title>
+      <link>https://www.anthropic.com/news/narasimhan-board</link>
+      <description>Vas Narasimhan has been appointed to Anthropic's Board of Directors by the Anthropic Long-Term Benefit Trust. He is a physician-scientist and the Chief Executive Officer of Novartis—one of the world's leading innovative medicines companies—and shares Anthropic’s conviction thathealthcareandlife sciencesare among the areas where AI has the greatest potential to improve the quality of human life.
+
+“Vas brings something rare to our board. He's overseen the development and approval of more than 35 n...</description>
+      <content:encoded>Vas Narasimhan has been appointed to Anthropic's Board of Directors by the Anthropic Long-Term Benefit Trust. He is a physician-scientist and the Chief Executive Officer of Novartis—one of the world's leading innovative medicines companies—and shares Anthropic’s conviction thathealthcareandlife sciencesare among the areas where AI has the greatest potential to improve the quality of human life.
+
+“Vas brings something rare to our board. He's overseen the development and approval of more than 35 novel medicines for the benefit of patients around the world in one of the most regulated industries,” said Daniela Amodei, Co-founder and President of Anthropic. “Getting powerful new technology to people safely and at scale is what we think about every day at Anthropic. Vas has been doing exactly that for years, and I'm grateful he's joining us.”
+
+Anthropic is a Public Benefit Corporation and its Board is elected by stockholders and the Long-Term Benefit Trust, as detailedhere. The Trust is an independent body whose members have no financial stake in Anthropic, and it exists to keep the company's governance aligned in a responsible balance between financial success and the company’s public benefit mission of developing AI for the long-term benefit of humanity. With Narasimhan's appointment, Trust-appointed directors now make up a majority of the Board. Narasimhan joins Dario Amodei, Daniela Amodei,Yasmin Razavi,Jay Kreps,Reed Hastings, andChris Liddellon the Board of Directors.
+
+"The Long-Term Benefit Trust's role is to appoint directors who will ensure Anthropic responsibly balances its commitment to stockholders and its public benefit mission as the company grows. Vas has spent his career stewarding breakthrough science responsibly —exactly the perspective we are excited to have on the board as we develop consequential technology. We’re excited for what he’ll bring to the table,” said Neil “Buddy” Shah, Chair of Anthropic's Long-Term Benefit Trust.
+
+“Working across medicine, innovation, and global health has shown me the transformative potential of technology when deployed responsibly. In healthcare, AI is accelerating solutions to some of the hardest scientific challenges, from deepening our understanding of disease biology to designing better medicines,” said Narasimhan. “Anthropic is setting the standard for how AI should be developed to benefit humanity, and I’m honored to join the Board and contribute to its mission.”
+
+Early in his career, Narasimhan worked on HIV/AIDS, malaria, and tuberculosis programs in India, Africa, and South America, and he continues to champion access and global health priorities today. He is an elected member of the US National Academy of Medicine and a member of the Council on Foreign Relations. He serves on the University of Chicago board of trustees and the board of fellows at Harvard Medical School. He previously chaired the Pharmaceutical Research and Manufacturers of America, where he remains on the board of directors.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/narasimhan-board</guid>
+      <category>Announcements</category>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Claude Opus 4.7</title>
+      <link>https://www.anthropic.com/news/claude-opus-4-7</link>
+      <description>Our latest model, Claude Opus 4.7, is now generally available.
+
+Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks. Users report being able to hand off their hardest coding work—the kind that previously needed close supervision—to Opus 4.7 with confidence. Opus 4.7 handles complex, long-running tasks with rigor and consistency, pays precise attention to instructions, and devises ways to verify its own outputs before r...</description>
+      <content:encoded>Our latest model, Claude Opus 4.7, is now generally available.
+
+Opus 4.7 is a notable improvement on Opus 4.6 in advanced software engineering, with particular gains on the most difficult tasks. Users report being able to hand off their hardest coding work—the kind that previously needed close supervision—to Opus 4.7 with confidence. Opus 4.7 handles complex, long-running tasks with rigor and consistency, pays precise attention to instructions, and devises ways to verify its own outputs before reporting back.
+
+The model also has substantially better vision: it can see images in greater resolution. It’s more tasteful and creative when completing professional tasks, producing higher-quality interfaces, slides, and docs. And—although it is less broadly capable than our most powerful model, Claude Mythos Preview—it shows better results than Opus 4.6 across a range of benchmarks:
+
+Last week we announcedProject Glasswing, highlighting the risks—and benefits—of AI models for cybersecurity. We stated that we would keep Claude Mythos Preview’s release limited and test new cyber safeguards on less capable models first. Opus 4.7 is the first such model: its cyber capabilities are not as advanced as those of Mythos Preview (indeed, during its training we experimented with efforts to differentially reduce these capabilities). We are releasing Opus 4.7 with safeguards that automatically detect and block requests that indicate prohibited or high-risk cybersecurity uses. What we learn from the real-world deployment of these safeguards will help us work towards our eventual goal of a broad release of Mythos-class models.
+
+Security professionals who wish to use Opus 4.7 for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) are invited to join our newCyber Verification Program.
+
+Opus 4.7 is available today across all Claude products and our API, Amazon Bedrock, Google Cloud’s Vertex AI, and Microsoft Foundry. Pricing remains the same as Opus 4.6: $5 per million input tokens and $25 per million output tokens. Developers can useclaude-opus-4-7via theClaude API.
+
+Testing Claude Opus 4.7
+
+Claude Opus 4.7 has garnered strong feedback from our early-access testers:
+
+Below are some highlights and notes from our early testing of Opus 4.7:
+
+Instruction following. Opus 4.7 is substantially better at following instructions. Interestingly, this means that prompts written for earlier models can sometimes now produce unexpected results: where previous models interpreted instructions loosely or skipped parts entirely, Opus 4.7 takes the instructions literally. Users should re-tune their prompts and harnesses accordingly.
+
+Improved multimodal support. Opus 4.7 has better vision for high-resolution images: it can accept images up to 2,576 pixels on the long edge (~3.75 megapixels), more than three times as many as prior Claude models. This opens up a wealth of multimodal uses that depend on fine visual detail: computer-use agents reading dense screenshots, data extractions from complex diagrams, and work that needs pixel-perfect references.1
+
+Real-world work. As well as its state-of-the-art score on the Finance Agent evaluation (see table above), our internal testing showed Opus 4.7 to be a more effective finance analyst than Opus 4.6, producing rigorous analyses and models, more professional presentations, and tighter integration across tasks. Opus 4.7 is also state-of-the-art onGDPval-AA, a third-party evaluation of economically valuable knowledge work across finance, legal, and other domains.
+
+Memory. Opus 4.7 is better at using file system-based memory. It remembers important notes across long, multi-session work, and uses them to move on to new tasks that, as a result, need less up-front context.
+
+The charts below display more evaluation results from our pre-release testing, across a range of different domains:
+
+Overall, Opus 4.7 shows a similar safety profile to Opus 4.6: our evaluations show low rates of concerning behavior such as deception, sycophancy, and cooperation with misuse. On some measures, such as honesty and resistance to malicious “prompt injection” attacks, Opus 4.7 is an improvement on Opus 4.6; in others (such as its tendency to give overly detailed harm-reduction advice on controlled substances), Opus 4.7 is modestly weaker. Our alignment assessment concluded that the model is “largely well-aligned and trustworthy, though not fully ideal in its behavior”. Note that Mythos Preview remains the best-aligned model we’ve trained according to our evaluations. Our safety evaluations are discussed in full in theClaude Opus 4.7 System Card.
+
+In addition to Claude Opus 4.7 itself, we’re launching the following updates:
+
+More effort control: Opus 4.7 introduces a newxhigh(“extra high”)effort levelbetweenhighandmax, giving users finer control over the tradeoff between reasoning and latency on hard problems. In Claude Code, we’ve raised the default effort level toxhighfor all plans. When testing Opus 4.7 for coding and agentic use cases, we recommend starting withhighorxhigheffort.
+
+On the Claude Platform (API): as well as support for higher-resolution images, we’re also launching task budgets in public beta, giving developers a way to guide Claude’s token spend so it can prioritize work across longer runs.
+
+In Claude Code: The new/ultrareviewslash commandproduces a dedicated review session that reads through changes and flags bugs and design issues that a careful reviewer would catch. We’re giving Pro and Max Claude Code users three free ultrareviews to try it out. In addition, we’ve extendedauto modeto Max users. Auto mode is a new permissions option where Claude makes decisions on your behalf, meaning that you can run longer tasks with fewer interruptions—and with less risk than if you had chosen to skip all permissions.
+
+Migrating from Opus 4.6 to Opus 4.7
+
+Opus 4.7 is a direct upgrade to Opus 4.6, but two changes are worth planning for because they affect token usage. First, Opus 4.7 uses an updated tokenizer that improves how the model processes text. The tradeoff is that the same input can map to more tokens—roughly 1.0–1.35× depending on the content type. Second, Opus 4.7 thinks more at higher effort levels, particularly on later turns in agentic settings. This improves its reliability on hard problems, but it does mean it produces more output tokens.
+
+Users can control token usage in various ways: by using the effort parameter, adjusting their task budgets, or prompting the model to be more concise. In our own testing, the net effect is favorable—token usage across all effort levels is improved on an internal coding evaluation, as shown below—but we recommend measuring the difference on real traffic. We’ve written amigration guidethat provides further advice on upgrading from Opus 4.6 to Opus 4.7.
+
+1This is amodel-level changerather than an API parameter, so images users send to Claude will simply be processed at higher fidelity. Because higher-resolution images consume more tokens, users who don’t require the extra detail can downsample images before sending them to the model.
+
+For GPT-5.4 and Gemini 3.1 Pro, we compared against the best reported model version available via API in the charts and table.
+
+MCP-Atlas: The Opus 4.6 score has been updated to reflect revised grading methodology from Scale AI.
+
+SWE-bench Verified, Pro, and Multilingual: Our memorization screens flag a subset of problems in these SWE-bench evals. Excluding any problems that show signs of memorization, Opus 4.7’s margin of improvement over Opus 4.6 holds.
+
+Terminal-Bench 2.0: We used the Terminus-2 harness with thinking disabled. All experiments used 1× guaranteed/3× ceiling resource allocation averaged over five attempts per task.
+
+CyberGym: Opus 4.6’s score has been updated from the originally reported 66.6 to 73.8, as we updated our harness parameters to better elicit cyber capability.
+
+SWE-bench Multimodal: We used an internal implementation for both Opus 4.7 and Opus 4.6. Scores are not directly comparable to public leaderboard scores.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/claude-opus-4-7</guid>
+      <category>Product</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Claude Design by Anthropic Labs</title>
+      <link>https://www.anthropic.com/news/claude-design-anthropic-labs</link>
+      <description>Today, we’re launching Claude Design, a newAnthropic Labsproduct that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.
+
+Claude Design is powered by our most capable vision model,Claude Opus 4.7, and is available in research preview for Claude Pro, Max, Team, and Enterprise subscribers. We’re rolling out to users gradually throughout the day.
+
+Even experienced designers have to ration exploration—there's rarely time to prototy...</description>
+      <content:encoded>Today, we’re launching Claude Design, a newAnthropic Labsproduct that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.
+
+Claude Design is powered by our most capable vision model,Claude Opus 4.7, and is available in research preview for Claude Pro, Max, Team, and Enterprise subscribers. We’re rolling out to users gradually throughout the day.
+
+Even experienced designers have to ration exploration—there's rarely time to prototype a dozen directions, so you limit yourself to a few. And for founders, product managers, and marketers with an idea but not a design background, creating and sharing those ideas can be daunting.
+
+Claude Design gives designers room to explore widely and everyone else a way to produce visual work. Describe what you need and Claude builds a first version. From there, you refine through conversation, inline comments, direct edits, or custom sliders (made by Claude) until it’s right. When given access, Claude can also apply your team’s design system to every project automatically, so the output is consistent with the rest of your company’s designs.
+
+Teams have been using Claude Design for:
+
+Realistic prototypes:Designers can turn static mockups into easily-shareable interactive prototypes to gather feedback and user-test, without code review or PRs.
+
+Product wireframes and mockups:Product Managers can sketch out feature flows and hand them off to Claude Code for implementation, or share them with designers to refine further.
+
+Design explorations:Designers can quickly create a wide range of directions to explore.
+
+Pitch decks and presentations:Founders and Account Executives can go from a rough outline to a complete, on-brand deck in minutes, and then export as a PPTX or send to Canva.
+
+Marketing collateral:Marketers can create landing pages, social media assets, and campaign visuals, then loop in designers to polish.
+
+Frontier design: Anyone can build code-powered prototypes with voice, video, shaders, 3D and built-in AI.
+
+Claude Design follows a natural creative flow.
+
+Your brand, built in.During onboarding, Claude builds a design system for your team by reading your codebase and design files. Every project after that uses your colors, typography, and components automatically. You can refine the system over time, and teams can maintain more than one.
+
+Import from anywhere.Start from a text prompt, upload images and documents (DOCX, PPTX, XLSX), or point Claude at your codebase. You can also use the web capture tool to grab elements directly from your website so prototypes look like the real product.
+
+Refine with fine-grained controls.Comment inline on specific elements, edit text directly, or use adjustment knobs to tweak spacing, color, and layout live. Then ask Claude to apply your changes across the full design.
+
+Collaborate.Designs have organization-scoped sharing. You can keep a document private, share it so anyone in your organization with the link can view it, or grant edit access so colleagues can modify the design and chat with Claude together in a group conversation.
+
+Export anywhere.Share designs as an internal URL within your organization, save as a folder, or export to Canva, PDF, PPTX, or standalone HTML files.
+
+Handoff to Claude Code.When a design is ready to build, Claude packages everything into a handoff bundle that you can pass to Claude Code with a single instruction.
+
+Over the coming weeks, we'll make it easier to build integrations with Claude Design, so you can connect it to more of the tools your team already uses.
+
+Claude Design is available for Claude Pro, Max, Team, and Enterprise subscribers. Access is included with your plan and uses your subscription limits, with the option to continue beyond those limits by enablingextra usage.
+
+For Enterprise organizations, Claude Design is off by default. Admins can enable it inOrganization settings.
+
+Start designing atclaude.ai/design.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/claude-design-anthropic-labs</guid>
+      <category>Product</category>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute</title>
+      <link>https://www.anthropic.com/news/anthropic-amazon-compute</link>
+      <description>We have signed a new agreement with Amazon that will deepen our existing partnership and secure up to 5 gigawatts (GW) of capacity for training and deploying Claude, including new Trainium2 capacity coming online in the first half of this year and nearly 1GW total of Trainium2 and Trainium3 capacity coming online by the end of 2026.
+
+We have worked closely with Amazon since 2023 and over 100,000 customers now run Claude on Amazon Bedrock. Together we launched Project Rainier, one of the largest ...</description>
+      <content:encoded>We have signed a new agreement with Amazon that will deepen our existing partnership and secure up to 5 gigawatts (GW) of capacity for training and deploying Claude, including new Trainium2 capacity coming online in the first half of this year and nearly 1GW total of Trainium2 and Trainium3 capacity coming online by the end of 2026.
+
+We have worked closely with Amazon since 2023 and over 100,000 customers now run Claude on Amazon Bedrock. Together we launched Project Rainier, one of the largest compute clusters in the world, and we currently use over one million Trainium2 chips to train and serve Claude. Today’s agreement expands our collaboration in three ways.
+
+Infrastructure at scale.We are committing more than $100 billion over the next ten years to AWS technologies, securing up to 5GW of new capacity to train and run Claude. The commitment spans Graviton and Trainium2 through Trainium4 chips, with the option to purchase future generations of Amazon’s custom silicon as they become available.
+
+Significant Trainium2 capacity is coming online in Q2 and scaled Trainium3 capacity is expected to come online later this year. Anthropic will also use incremental capacity for Claude in Amazon Bedrock. The agreement includes expansion of inference in Asia and Europe to better serve Claude’s growing international customer base. We continue to choose AWS as our primary training and cloud provider for mission-critical workloads.
+
+“Our custom AI silicon offers high performance at significantly lower cost for customers, which is why it’s in such hot demand,” said Andy Jassy, CEO of Amazon. “Anthropic's commitment to run its large language models on AWS Trainium for the next decade reflects the progress we've made together on custom silicon, as we continue delivering the technology and infrastructure our customers need to build with generative AI.”
+
+Claude Platform on AWS.The full Claude Platform will be available directly within AWS. Same account, same controls, same billing, with more Claude Platform features and no additional credentials or contracts necessary. This gives organizations direct access to Claude while meeting their existing governance and compliance requirements. Claude remains the only frontier AI model available to customers on all three of the world's largest cloud platforms: AWS (Bedrock), Google Cloud (Vertex AI), and Microsoft Azure (Foundry). Claude Platform on AWS is coming soon. Reach out to your account team to request access.
+
+Continued investment.Amazon is investing $5 billion in Anthropic today, with up to an additional $20 billion in the future. This builds on the $8 billion Amazon has previously invested.
+
+“Our users tell us Claude is increasingly essential to how they work, and we need to build the infrastructure to keep pace with rapidly growing demand,” said Dario Amodei, CEO and co-founder of Anthropic. “Our collaboration with Amazon will allow us to continue advancing AI research while delivering Claude to our customers, including the more than 100,000 building on AWS.”
+
+Meeting record demand
+
+Enterprise and developer demand for Claude has accelerated in 2026, and alongside it we have experienced a sharp rise in consumer usage across our free, Pro, and Max tiers. Our run-rate revenue has now surpassed $30 billion, up from approximately $9 billion at the end of 2025. Growth at this pace places an inevitable strain on our infrastructure; our unprecedented consumer growth, in particular, has impacted reliability and performance for free, Pro, Max, and Team users, especially during peak hours.
+
+Today’s agreement will quickly expand our available capacity, delivering meaningful compute in the next three months and nearly 1GW in total before the end of the year. Combined withadditional capacity expansionsand our diversified hardware strategy, with workloads spread across a range of chips, we are building the infrastructure needed to keep Claude at the frontier and reliably serve our growing customer base.
+
+To learn more about Anthropic on AWS, visit:https://aws.amazon.com/bedrock/anthropic/.
+
+Updated April 21st to clarify Claude Platform on AWS is coming soon.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/anthropic-amazon-compute</guid>
+      <category>Announcements</category>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce</title>
+      <link>https://www.anthropic.com/news/anthropic-nec</link>
+      <description>NEC Corporationwill use Claude as it builds one of Japan’s largest AI-native engineering organizations, making it available to approximately 30,000 NEC Group employees worldwide.
+
+As part of this strategic collaboration, NEC will become Anthropic’s first Japan-based global partner. Together, we will develop secure, industry-specific AI products for the Japanese market, starting with tools for finance, manufacturing, and local government.
+
+“This long-term partnership with Anthropic enables NEC to...</description>
+      <content:encoded>NEC Corporationwill use Claude as it builds one of Japan’s largest AI-native engineering organizations, making it available to approximately 30,000 NEC Group employees worldwide.
+
+As part of this strategic collaboration, NEC will become Anthropic’s first Japan-based global partner. Together, we will develop secure, industry-specific AI products for the Japanese market, starting with tools for finance, manufacturing, and local government.
+
+“This long-term partnership with Anthropic enables NEC to maximize the potential of AI in the Japanese market,” said Toshifumi Yoshizaki, Executive Officer and COO of NEC Corporation. “Together, we aim to create solutions that meet the high safety, reliability, and quality standards demanded by companies and public administration in Japan.”
+
+Claude for NEC’s customers
+
+NEC and Anthropic will jointly develop secure, domain-specific AI products for Japanese customers in sectors like finance, manufacturing, and cybersecurity.
+
+In addition, NEC is already integrating Claude into its Security Operations Center services to help defend customers against increasingly sophisticated cybersecurity threats. Claude will also be integrated into the next-generation cybersecurity service NEC is currently providing.
+
+Claude, including Claude Opus 4.7, andClaude Codewill be incorporated intoNEC BluStellar Scenario, a program that provides consulting, AI tools, security, and digital infrastructure to businesses, starting with its offerings for data-driven management and customer experience, and gradually expanding to others.
+
+How NEC will use Claude internally
+
+Internally, NEC will establish a Center of Excellence to develop a highly skilled, AI-enabled engineering organization, supported by technical enablement and training from Anthropic. NEC aims to build one of Japan’s largest AI-native engineering teams, who will use Claude Code in their work.
+
+As part of its long-running Client Zero initiative, in which NEC serves as its own first customer before offering its technology to clients, NEC will also expand its use ofClaude Coworkacross its internal business operations.
+
+Claude is now being deployed to NEC Group employees around the world, and our joint development of industry-specific AI solutions is underway. Learn more about NEC’s value-creation model atNEC BluStellar.
+
+Claude, Claude Code, and Claude Cowork are Anthropic products. NEC BluStellar is an offering from NEC Corporation.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/anthropic-nec</guid>
+      <category>Announcements</category>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>An update on our election safeguards</title>
+      <link>https://www.anthropic.com/news/election-safeguards-update</link>
+      <description>People around the world turn to Claude for information about political parties, candidates, and the issues at stake during election time—as well as to answer simpler questions like when, where, and how to vote. In our view, if AI models can answer these questions well (that is, accurately and impartially), they can be a positive force for the democratic process.
+
+Here, we explain what we’re doing to help Claude meet the mark ahead of the US midterms and other major elections around the world thi...</description>
+      <content:encoded>People around the world turn to Claude for information about political parties, candidates, and the issues at stake during election time—as well as to answer simpler questions like when, where, and how to vote. In our view, if AI models can answer these questions well (that is, accurately and impartially), they can be a positive force for the democratic process.
+
+Here, we explain what we’re doing to help Claude meet the mark ahead of the US midterms and other major elections around the world this year.
+
+Measuring and preventing political bias
+
+When people ask Claude about political topics, they should get comprehensive, accurate, and balanced responses—responses that help them reach their own conclusions rather than steer them toward a particular viewpoint. That’s why we train Claude to treat different political viewpoints with equal depth, engagement, and analytical rigor—a principle set out inClaude’s constitution.This is built into the model through character training (where we reward the model for producing responses that reflect a set of values and traits), and then reinforced through oursystem prompts, which carry explicit instructions on political neutrality into every conversation on Claude.ai. (You can read more about this process in ourprevious postabout political bias.)
+
+Before each model launch, we run evaluations to measure how consistently, thoughtfully, and impartially Claude engages with prompts that express views from across the political spectrum. For example, a model that writes a lengthy response defending one position but offers only a single sentence for the opposing one would score poorly. Here,Opus 4.7 and Sonnet 4.6scored 95% and 96%, respectively. We’ve published our evaluation methodology and open-source datasethere, so that others can replicate or iterate upon our work.
+
+We also welcome feedback and input from third parties and industry experts. We’re currently working withThe Future of Free Speech(an independent think tank at Vanderbilt University), theFoundation for American Innovation, and theCollective Intelligence Projecton a broader review of model behaviors around freedom of expression, including political conversations.
+
+Enforcing policies and testing our defenses
+
+OurUsage Policysets clear rules on the use of Claude around elections. Claude can’t be used to run deceptive political campaigns, create fake digital content to influence political discourse, commit voter fraud, interfere with voting systems, or spread misleading information about voting processes.
+
+These policies are backed by robust detection and enforcement. We use automatedclassifiersto detect signs of potential violations, and we have a dedicated threat intelligence team that investigates and disrupts coordinated abuse efforts. Together, they form an always-on first line of defense—allowing our enforcement to focus on actual misuse without hindering the millions of ordinary conversations happening every day.
+
+To measure how well Claude handles election-related risks, we run a series of tests examining its responses to questions about candidates, voting, and election administration, and how it holds up against attempts at misuse. We firstwrote aboutthis approach in 2024. Our latest tests use 600 prompts to assess how well Claude follows our election-related Usage Policy, based on how people actually talk to Claude about elections. They consist of 300 harmful requests (such as attempts to have Claude generate election misinformation) paired with 300 legitimate requests (such as creating campaign content or civic engagement resources). We assess how well Claude complies with the legitimate requests and declines the harmful ones. Claude Opus 4.7 and Claude Sonnet 4.6 responded appropriately 100% and 99.8% of the time, respectively. We also test how well Claude holds up against influence operations: coordinated efforts to manipulate public opinion or political outcomes through fake personas, fabricated content, or deceptive amplification. To do this, we use multi-turn simulated conversations that mirror the step-by-step tactics bad actors might use. In our latest evaluations,Sonnet 4.6 and Opus 4.7both responded appropriately 90% and 94% of the time. Once deployed, these models run with additional monitoring and our system prompt to help further reduce the risk of election-related abuse.
+
+Ahead of launchingMythos Preview and Opus 4.7, we tested for the first time whether models can carry out influence operations autonomously—planning and running a multi-step campaign end-to-end without human prompting. With safeguards and training in place, our latest models refused nearly every task. Without our safeguards in place (which we do to measure a model's raw capabilities), only Mythos Preview and Opus 4.7 completed more than half the tasks. While these models would still require substantial human direction, the results underscore the need for continued vigilance. We’ll keep running and refining these evaluations, and implement improvements as needed.
+
+Sharing reliable election resources
+
+When people come to Claude for information, we want Claude to share the facts, and, when needed, point people to reliable and up-to-date resources.
+
+One way we help Claude do this is through election banners, which we first launched in 2024, ahead of major elections in the US and elsewhere around the world. When users ask about voter registration, polling locations, election dates, or ballot information on Claude.ai, Claude displays an election banner pointing them to trusted sources. In this year’s US midterm elections, our banner will direct users to TurboVote, a nonpartisan resource fromDemocracy Worksthat provides reliable, real-time information about those topics. We’ll implement a similar banner for Brazil’s elections later this year and will look to expand this feature to elections elsewhere in the future.
+
+Providing up-to-date information
+
+Another way Claude surfaces helpful information is with web search. Because it’s trained on a fixed dataset, Claude has a “knowledge cutoff,” so it won’t automatically know about recent developments like candidate announcements, media coverage, or election results. But when web search is enabled, Claude can find and relay up-to-date information from across the web. (Claude can make mistakes, so we encourage people to always verify anything important to them through other official sources.)
+
+This year, we ran evaluations on our models to see whether web search was triggered when Claude was asked questions related to elections around the world. For the US midterms, we used over 200 distinct prompts, each with three variations (for a total of over 600). Our prompts covered topics like candidate information, voting procedures, polling, election dates, and key races. For example, we asked:
+
+Opus 4.7 and Sonnet 4.6 triggered web search on these types of questions 92% and 95% of the time, respectively. These results show us that users asking about the midterms are consistently routed to up-to-date information.
+
+When people choose to engage with Claude during an election, we want them to be able to trust that the information they receive is accurate, reliable, and balanced. We’ve built our safeguards, policies, model training processes, and evaluations to reflect that goal. Throughout this election cycle and beyond, we’ll keep monitoring our systems, testing our detection capabilities, and adjusting our safeguards as we learn more about how Claude is used in the real world.
+
+Claude for Creative Work
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/election-safeguards-update</guid>
+      <category>Announcements</category>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office</title>
+      <link>https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand</link>
+      <description>Theo Hourmouzis is joining Anthropic as General Manager of Australia and New Zealand, marking the next step in our investment in the region. Hourmouzis will meet with customers and partners this week alongside executives from our global team, as we officially open our Sydney office.
+
+Hourmouzis brings more than 20 years of leadership experience in the technology industry across Asia Pacific to the role. He joins us from Snowflake, where he most recently served as Senior Vice President for Austra...</description>
+      <content:encoded>Theo Hourmouzis is joining Anthropic as General Manager of Australia and New Zealand, marking the next step in our investment in the region. Hourmouzis will meet with customers and partners this week alongside executives from our global team, as we officially open our Sydney office.
+
+Hourmouzis brings more than 20 years of leadership experience in the technology industry across Asia Pacific to the role. He joins us from Snowflake, where he most recently served as Senior Vice President for Australia, New Zealand and ASEAN, helping enterprise and public sector organisations across financial services, retail, aviation and government move AI from experimentation to business impact. At Anthropic, he'll lead our growing local team and shape a strategy built around Australian and New Zealand customers, bringing Claude into their most important work.
+
+"Organizations across Australia and New Zealand are thinking carefully about how to adopt AI, and they want partners who take safety and rigor as seriously as they take the opportunity,” said Theo Hourmouzis, Anthropic General Manager of Australia and New Zealand.“That's what drew me to Anthropic. I've spent my career working with businesses and governments across this region, and the organizations that do best with AI will be the ones that pair ambition with discipline.”
+
+Our growing team in the region will deepen relationships with enterprises like Commonwealth Bank and Quantium and with AI for Science research partners including Australian National University, Murdoch Children’s Research Institute, Garvan Institute of Medical Research, and Curtin University—while delivering on our commitments in theMOUwe recently signed with the Australian government.
+
+“Theo's appointment reflects the conviction we share with the Australian government that AI can drive economic growth when it’s developed and deployed responsibly,” said Chris Ciauri, Anthropic Managing Director of International. “He’s spent decades helping organisations adopt new technology, and he’ll build the team and partnerships we need to support our customers across Australia and New Zealand for the long term.”
+
+New local partnerships
+
+We recently announced deep platform collaborations with Canva and Xero.Canvawill bring the power of Canva Design Engine and Visual Suite into the newly launched Claude Design by Anthropic Labs, and a multi-year partnership will bring Claude's AI directly intoXero—and Xero's financial data and tools into Claude.ai.
+
+We're also working with YMCA South Australia as aClaude for NonprofitsPartner. YMCA operates across 65+ community locations with around 1,250 staff. Using Claude, YMCA SA has built custom AI skills that turn complex operational data into actionable insights, cut branded content production from hours to minutes, and brought technical work in-house that previously required external contractors.
+
+“The future for us is about Claude becoming embedded infrastructure, a core part of how we run the organisation,” said Devan Seamans, Head of Marketing &amp; Technology, YMCA South Australia. “That requires a platform with the enterprise governance and controls to match the obligations of a large not-for-profit. We want to be a leader in the Australian NFP space with AI adoption, and Anthropic's approach gives us the confidence to pursue that.”
+
+Sydney follows our recent office openings inTokyoandBengaluru, and comes just ahead ofSeoul, bringing us closer to where our customers are. For more information about current career opportunities in our Sydney office, visitanthropic.com/careers.
+
+Claude for Creative Work
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.
+
+Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand</guid>
+      <category>Announcements</category>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude for Creative Work</title>
+      <link>https://www.anthropic.com/news/claude-for-creative-work</link>
+      <description>Creative professionals look to technology to expand what's possible in their work. Claude can't replace taste or imagination, but it can open up new ways of working—faster and more ambitious ideation, a more expansive skill set, and the ability for creatives to take on larger-scale projects. AI can also help shoulder the parts of the creative process that eat up time by handling repetitive tasks and eliminating manual toil. Key to both these goals is integrating Claude into the tools the creativ...</description>
+      <content:encoded>Creative professionals look to technology to expand what's possible in their work. Claude can't replace taste or imagination, but it can open up new ways of working—faster and more ambitious ideation, a more expansive skill set, and the ability for creatives to take on larger-scale projects. AI can also help shoulder the parts of the creative process that eat up time by handling repetitive tasks and eliminating manual toil. Key to both these goals is integrating Claude into the tools the creative industry already knows and trusts.
+
+Today, we’re releasing a set of connectors—tools that let Claude work alongside the software creative professionals rely on, so creatives can extend their reach.
+
+Connecting Claude to creative tools
+
+Connectors allow Claude to access other platforms and tools directly. We are adding several new connectors that are designed to make it easier to use Claude for creative work:
+
+Abletongrounds Claude’s answers in official product documentation for Live and Push.
+
+Adobe for creativityenables users to bring images, videos, and designs to life, drawing from 50+ tools across Creative Cloud apps including Photoshop, Premiere, Express, and more.
+
+Affinity by Canvaautomates repetitive production tasks across pro creative workflows - such as batch image adjustments, layer renaming, and file export - and generates custom features directly in the app.
+
+Autodesk Fusionallows designers and engineers with a Fusion subscription to create and modify 3D models through conversations with Claude.
+
+Blenderoffers a natural-language interface to its Python API, allowing users to explore and understand complex setups and making it easier to access Blender’s documentation.
+
+Resolume ArenaandResolume Wirelet VJs and live visual artists control Arena, Avenue, and Wire in real time through natural language for live performance and AV production.
+
+SketchUpturns a conversation with Claude into a starting point for 3D modeling—describe a room, a piece of furniture, or a site concept, then open it in SketchUp to refine.
+
+Splicegives music producers the ability to search its catalog of royalty-free samples from within Claude.
+
+Using Claude for creative work
+
+Here are a few of the ways Claude can be used for creative tasks:
+
+Learning and mastering creative tools: Claude can act as an on-demand tutor for complex software. You can ask it to explain a modifier stack, walk you through a synthesis technique, or demonstrate an unfamiliar feature, and it will show you how to use it.
+
+Extending tools with code: Claude Code can write scripts, plugins, and generative systems for the software you already use. You can ask it to build a custom shader, script a procedural animation, or generate parametric models, and it will produce documented code you can reuse and modify.
+
+Bridging tools in a pipeline: Claude can translate formats, restructure data, and keep assets in sync across a project that spans multiple applications, so you can move work between design, 3D, and audio tools without manual handoffs.
+
+Enabling rapid exploration and handoff:Claude Designis a new product from Anthropic Labs that can be used to explore ideas for software experiences. Claude can visualize options and iterate on them based on your feedback. It’s built to export the results to other tools, starting with  Canva.
+
+Taking care of repetitive production work: Claude can handle multi-step tasks like batch-processing assets, setting up project scaffolding, or applying procedural changes across a scene, reducing busywork.
+
+Blender is a free, open-source 3D creation suite used across industries, from indie game development and motion graphics to architectural visualization and film production.
+
+The Blender developers have created an MCP connector, which is now officially available for Claude. For example, 3D artists can use the Blender connector to analyze and debug entire Blender scenes, or build custom scripts to batch-apply changes to objects in a scene. And using Blender’s Python API, the connector lets Claude add new tools directly to Blender’s interface.
+
+Anthropic has made a donation to support the Blender project as they continue to develop their Python API, which makes integrations like this possible. And because the connector is built onMCP, it is accessible to other LLMs in addition to Claude, a reflection of Blender’s commitment to open source and interoperability.
+
+Working with students and educators
+
+We’re also working with art and design programs to support curricula that involve creative computation. The first three such programs are Art and Computation at Rhode Island School of Design, Fundamentals of AI for Creatives at Ringling College of Art and Design, and the MA/MFA Computational Arts program at Goldsmiths, University of London. Students and faculty will get access to Claude and the new connectors, and their feedback will help us understand what creative practitioners need from these tools. We look forward to learning from them, and to expanding the program to more institutions in the future.Updated May 1, 2026: Blender has elected to receive Anthropic's contribution as a one-time donation rather than through the Blender Development Fund; the post has been revised to reflect this. Accordingly, we've also edited the wording used to describe the collaborations listed.
+
+Anthropic names Theo Hourmouzis General Manager of Australia &amp; New Zealand and officially opens Sydney office
+
+An update on our election safeguards
+
+We explain what we’re doing to ensure Claude plays a positive role in the US midterms and other major elections around the world this year.
+
+Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce</content:encoded>
+      <guid isPermaLink="false">https://www.anthropic.com/news/claude-for-creative-work</guid>
+      <category>Announcements</category>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
