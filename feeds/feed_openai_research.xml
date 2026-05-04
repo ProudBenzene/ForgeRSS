@@ -5,7 +5,7 @@
     <link>https://openai.com/news/research/?limit=100</link>
     <description>Latest research news and updates from OpenAI</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 May 2026 14:05:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 19:34:18 +0000</lastBuildDate>
     <generator>ForgeRSS</generator>
     <image>
       <url>https://openai.com/favicon.ico</url>
@@ -13,10 +13,277 @@
       <link>https://openai.com/news/research/?limit=100</link>
     </image>
     <item>
-      <title>Where the goblins came from</title>
+      <title>提升前沿大语言模型的指令层级结构研究2026年3月10日</title>
+      <link>https://openai.com/index/instruction-hierarchy-challenge/</link>
+      <guid isPermaLink="false">https://openai.com/index/instruction-hierarchy-challenge/</guid>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Introducing IH-Challenge, a training dataset that strengthens instruction hierarchy, safety steerability, and prompt injection robustness.
+AI systems often receive instructions from multiple sources. These can include safety policies from system messages, product guidance from developers, requests from users, and information found online. Training models to reliably prioritize the most trusted instructions among these sources is a key part of safe deployment.
+Many AI safety and reliability issues can arise when this prioritization breaks down. Models may receive requests for disallowed content, attempts to reveal private information, or prompt‑injection attacks embedded in online data. Failing to behave appropriately in each of these scenarios shares the same root cause: the model may follow the wrong instruction.
+When these instructions conflict, the model has to decide which ones to prioritize. If it treats an untrusted instruction as authoritative, the model may behave in ways that violate policies or developer and user intent.We demonstrate that properly designed instruction-hierarchy tasks, which train models to prioritize instructions according to their trust level, improve several real-world safety properties. Models trained on these tasks become more responsive to safety specifications in system prompts (improving safety steerability) and more robust to prompt-injection attacks embedded in tool outputs.
+What instruction hierarchy is—and why it matters
+To handle conflicts, OpenAI's models are trained to follow a clear instruction hierarchy:
+System > developer > user > tool
+Higher‑priority instructions are more trusted. The model should only follow lower‑priority instructions when they do not conflict with higher‑priority constraints. These principles are outlined in theOpenAI Model Spec⁠(opens in a new window).
+For example, if a system message includes a safety policy and a user asks the model to violate it, the model should refuse. If a tool output contains malicious instructions, the model should ignore them rather than treat them as commands.
+Getting this right is foundational to safety, security, and reliability.
+Let's start by factoring the equation: (x+1)(x+1) = 0. Now, what value of x makes this zero?
+The model on the right correctly follows the Developer’s instruction, which is higher-priority, over the User’s when the two instructions conflict.
+Why large-scale instruction hierarchy training can be hard
+Reinforcement learning is a natural fit for teaching the instruction hierarchy. We can generate conversations with conflicting instructions, prompt the model to respond, and reward it when it follows the correct instruction.
+We’ve identified three pitfalls of naively applying that recipe:
+Instruction-following failures can double as instruction hierarchy failures: the model might fail to resolve an instruction conflict, not because it doesn’t understand the hierarchy of roles, but because the instructions themselves are too complicated.
+Instruction conflicts can be nuanced and even subjective. A common approach is to let a separate LLM judge assign rewards to the LLM being trained, but judges themselves are fallible.
+Models tend to learnshortcuts that result in high reward, but are useless in practice⁠(opens in a new window). The classic example is overrefusals: models can learn to maximize safety by refusing even benign requests.
+We design IH-Challenge, a reinforcement learning training dataset, to address each of those pitfalls. We adhere to the following principles:
+Tasks are instruction-following-simple
+They are objectively-gradable with a simple Python script
+There are no trivial shortcuts that guarantee high reward across all tasks
+Each task in IH-Challenge is essentially a conversation with the following messages:
+An instruction message from a high-privilege role, e.g. “Only answer ‘Yes’ or ‘No’”.
+An instruction message from a lower-privilege role, which attempts to get the model to violate the instructions in the higher-privilege message.
+The model being trained generates the next message. We write the tasks/environments so that it is possible to programmatically check whether the model's response satisfies the higher-level constraint.
+Results and robustness
+We train a model on IH‑Challenge and produce an internal model, which we call GPT‑5 Mini-R, with the following improvements:
+Performs better on instruction‑hierarchy benchmarks
+Improved performance generalizes to held‑out and adversarial instruction hierarchy tests
+Maintains overall usefulness, without collapsing into over‑refusal
+This is what makes the approach especially compelling for safety: by directly training models to resolve instruction conflicts correctly on IH-challenge tasks, we get IH improvements that generalize to new attacks and new situations.
+Gandalf Password (sys-user)
+Gandalf Password (dev-user)
+TensorTrust (sys-user)
+TensorTrust (dev-user)
+RealGuardrails (Distractors)
+RealGuardrails (Handwritten)
+TutorJailbreak (sys-user)
+Tutor Jailbreak (dev-user)
+System <> User Conflict
+System <> Developer Conflict
+Developer <> User Conflict
+IH-Challenge (overrefusal)
+TensorTrust (overrefusal)
+Why this improves real-world safety and security
+Stronger instruction hierarchy delivers multiple safety benefits at once, including in safety steerability and prompt injection robustness.
+We evaluate safety steerability by adding category-specific safety specifications to the system prompt and measuring behavior on OpenAI’s safety Production Benchmarks (a set of safety-sensitive conversations representative of ChatGPT in production).
+The IH-trained model shows a consistent improvement: with the safety spec present, it achieves higher refusal and safe completion rates across disallowed categories, indicating that stronger instruction hierarchy behavior makes it better at resolving conflicts when unsafe requests come from lower-priority instructions. Notably, this improvement does not come with a corresponding decrease in helpfulness rate (i.e., it is not becoming less “helpful” by simply refusing more overall).
+Example of how the IH-trained model resists prompt injections that GPT‑5 Mini (Baseline) falls for.
+Instruction hierarchy is also central in resisting prompt injection, when malicious instructions are embedded in tool outputs. We evaluate the IH-trained model on two prompt injection benchmarks—an academic benchmark CyberSecEval 2 and an OpenAI internal prompt injection benchmark consisting of attacks like the one demonstrated on an older version ofChatGPT Atlas⁠.
+Relative to the baseline, the IH-trained GPT‑5 Mini-R model improves prompt injection robustness on both benchmarks and substantially improves performance on our internal static prompt injection evaluation in these experiments.
+As models become more agentic—calling tools, reading untrusted documents, and taking actions in the world—the ability to consistently prioritize trusted instructions over untrusted ones becomes a core safety property.
+This work shows that several pitfalls of IH robustness training can be overcome by designing training environments that address those pitfalls. Though our IH-Challenge dataset seems simple, the IH behavior models learn from these environments generalizes to more realistic, often not-objectively-gradable benchmarks.
+Strengthening instruction hierarchy not only improves reliability, but unlocks multiple safety and security gains at once—a foundation that becomes increasingly important as AI systems grow more capable and autonomous.
+To support further research in this area, we are releasing the IH‑Challenge datasethere⁠(opens in a new window).
+PublicationApr 29, 2026</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Introducing IH-Challenge, a training dataset that strengthens instruction hierarchy, safety steerability, and prompt injection robustness.
+AI systems often receive instructions from multiple sources. These can include safety policies from system messages, product guidance from developers, requests from users, and information found online. Training models to reliably prioritize the most trusted instructions among these sources is a key part of safe deployment.
+Many AI safety and reliability issues can arise when this prioritization breaks down. Models may receive requests for disallowed content, attempts to reveal private information, or prompt‑injection attacks embedded in online data. Failing to behave appropriately in each of these scenarios shares the same root cause: the model may follow the wrong instruction.
+When these instructions conflict, the model has to decide which ones to prioritize. If it treats an untrusted instruction as authoritative, the model may behave in ways that violate policies or developer and user intent.We demonstrate that properly designed instruction-hierarchy tasks, which train models to prioritize instructions according to their trust level, improve several real-world safety properties. Models trained on these tasks become more responsive to safety specifications in system prompts (improving safety steerability) and more robust to prompt-injection attacks embedded in tool outputs.
+What instruction hierarchy is—and why it matters
+To handle conflicts, OpenAI's models are trained to follow a clear instruction hierarchy:
+System > developer > user > tool
+Higher‑priority instructions are more trusted. The model should only follow lower‑priority instructions when they do not conflict with higher‑priority constraints. These principles are outlined in theOpenAI Model Spec⁠(opens in a new window).
+For example, if a system message includes a safety policy and a user asks the model to violate it, the model should refuse. If a tool output contains malicious instructions, the model should ignore them rather than treat them as commands.
+Getting this right is foundational to safety, security, and reliability.
+Let's start by factoring the equation: (x+1)(x+1) = 0. Now, what value of x makes this zero?
+The model on the right correctly follows the Developer’s instruction, which is higher-priority, over the User’s when the two instructions conflict.
+Why large-scale instruction hierarchy training can be hard
+Reinforcement learning is a natural fit for teaching the instruction hierarchy. We can generate conversations with conflicting instructions, prompt the model to respond, and reward it when it follows the correct instruction.
+We’ve identified three pitfalls of naively applying that recipe:
+Instruction-following failures can double as instruction hierarchy failures: the model might fail to resolve an instruction conflict, not because it doesn’t understand the hierarchy of roles, but because the instructions themselves are too complicated.
+Instruction conflicts can be nuanced and even subjective. A common approach is to let a separate LLM judge assign rewards to the LLM being trained, but judges themselves are fallible.
+Models tend to learnshortcuts that result in high reward, but are useless in practice⁠(opens in a new window). The classic example is overrefusals: models can learn to maximize safety by refusing even benign requests.
+We design IH-Challenge, a reinforcement learning training dataset, to address each of those pitfalls. We adhere to the following principles:
+Tasks are instruction-following-simple
+They are objectively-gradable with a simple Python script
+There are no trivial shortcuts that guarantee high reward across all tasks
+Each task in IH-Challenge is essentially a conversation with the following messages:
+An instruction message from a high-privilege role, e.g. “Only answer ‘Yes’ or ‘No’”.
+An instruction message from a lower-privilege role, which attempts to get the model to violate the instructions in the higher-privilege message.
+The model being trained generates the next message. We write the tasks/environments so that it is possible to programmatically check whether the model's response satisfies the higher-level constraint.
+Results and robustness
+We train a model on IH‑Challenge and produce an internal model, which we call GPT‑5 Mini-R, with the following improvements:
+Performs better on instruction‑hierarchy benchmarks
+Improved performance generalizes to held‑out and adversarial instruction hierarchy tests
+Maintains overall usefulness, without collapsing into over‑refusal
+This is what makes the approach especially compelling for safety: by directly training models to resolve instruction conflicts correctly on IH-challenge tasks, we get IH improvements that generalize to new attacks and new situations.
+Gandalf Password (sys-user)
+Gandalf Password (dev-user)
+TensorTrust (sys-user)
+TensorTrust (dev-user)
+RealGuardrails (Distractors)
+RealGuardrails (Handwritten)
+TutorJailbreak (sys-user)
+Tutor Jailbreak (dev-user)
+System <> User Conflict
+System <> Developer Conflict
+Developer <> User Conflict
+IH-Challenge (overrefusal)
+TensorTrust (overrefusal)
+Why this improves real-world safety and security
+Stronger instruction hierarchy delivers multiple safety benefits at once, including in safety steerability and prompt injection robustness.
+We evaluate safety steerability by adding category-specific safety specifications to the system prompt and measuring behavior on OpenAI’s safety Production Benchmarks (a set of safety-sensitive conversations representative of ChatGPT in production).
+The IH-trained model shows a consistent improvement: with the safety spec present, it achieves higher refusal and safe completion rates across disallowed categories, indicating that stronger instruction hierarchy behavior makes it better at resolving conflicts when unsafe requests come from lower-priority instructions. Notably, this improvement does not come with a corresponding decrease in helpfulness rate (i.e., it is not becoming less “helpful” by simply refusing more overall).
+Example of how the IH-trained model resists prompt injections that GPT‑5 Mini (Baseline) falls for.
+Instruction hierarchy is also central in resisting prompt injection, when malicious instructions are embedded in tool outputs. We evaluate the IH-trained model on two prompt injection benchmarks—an academic benchmark CyberSecEval 2 and an OpenAI internal prompt injection benchmark consisting of attacks like the one demonstrated on an older version ofChatGPT Atlas⁠.
+Relative to the baseline, the IH-trained GPT‑5 Mini-R model improves prompt injection robustness on both benchmarks and substantially improves performance on our internal static prompt injection evaluation in these experiments.
+As models become more agentic—calling tools, reading untrusted documents, and taking actions in the world—the ability to consistently prioritize trusted instructions over untrusted ones becomes a core safety property.
+This work shows that several pitfalls of IH robustness training can be overcome by designing training environments that address those pitfalls. Though our IH-Challenge dataset seems simple, the IH behavior models learn from these environments generalizes to more realistic, often not-objectively-gradable benchmarks.
+Strengthening instruction hierarchy not only improves reliability, but unlocks multiple safety and security gains at once—a foundation that becomes increasingly important as AI systems grow more capable and autonomous.
+To support further research in this area, we are releasing the IH‑Challenge datasethere⁠(opens in a new window).
+PublicationApr 29, 2026</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>ChatGPT 图像 2.0 现已上线产品2026年4月21日</title>
+      <link>https://openai.com/index/introducing-chatgpt-images-2-0/</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-chatgpt-images-2-0/</guid>
+      <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">ChatGPT 图像 2.0 现已上线产品2026年4月21日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-chatgpt-images-2-0/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">ChatGPT 图像 2.0 现已上线产品2026年4月21日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-chatgpt-images-2-0/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-5.4</title>
+      <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</link>
+      <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</guid>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.4</p>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.4</p>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-5.3-Codex</title>
+      <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-3-codex/</link>
+      <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-3-codex/</guid>
+      <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-Rosalind：开启生命科学研究新纪元研究2026年4月16日</title>
+      <link>https://openai.com/index/introducing-gpt-rosalind/</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-rosalind/</guid>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-Rosalind：开启生命科学研究新纪元研究2026年4月16日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-Rosalind：开启生命科学研究新纪元研究2026年4月16日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>正式推出 OpenAI Privacy Filter研究2026年4月22日</title>
+      <link>https://openai.com/index/introducing-openai-privacy-filter/</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-openai-privacy-filter/</guid>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">用于脱敏文本中个人身份信息 (PII) 的前沿模型
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Masking-300k 基准测试中达到了顶尖 (state-of-the-art) 的性能水平。
+随着该版本的发布，开发者可以在自己的环境中运行 OpenAI Privacy Filter，针对特定的用例进行微调，并在训练、索引、日志记录和审核流水线中构建更强大的隐私保护屏障。
+现代 AI 系统的隐私保护不能仅依靠模式匹配。传统的 PII 检测工具通常依赖针对电话号码、电子邮件地址等格式的确定性规则。这些工具在处理特定简单案例时表现尚可，但在识别更微妙的个人信息或处理复杂上下文时往往显得力不从心。
+OpenAI Privacy Filter 内置了更深层的语言与上下文感知能力，能够提供更精细的表现。通过将强大的语言理解能力与专门的隐私标签系统相结合，它能检测非结构化文本中更广泛的 PII 类型，包括那些需要根据上下文做出判断的复杂情况。它能更精准地识别哪些内容属于公共信息（应予以保留），哪些内容涉及私人信息（应进行遮盖或脱敏）。
+由此产生的是一个性能强劲、能够提供前沿级隐私过滤表现的模型。与此同时，该模型体积足够轻巧，支持在本地运行。这意味着待过滤的数据可以保留在设备上，无需发送至服务器进行去标识化处理，从而降低了泄露风险。
+OpenAI Privacy Filter 是一款采用片段解码 (span decoding) 的双向 Token 分类模型。它始于自回归预训练检查点，随后被调整为基于固定隐私标签分类体系的 Token 分类器。该模型并非逐个 Token 生成文本，而是在单次扫描中对输入序列进行标注，并结合受限维特比 (Viterbi) 算法解码出连贯的片段。
+这种架构赋予了 OpenAI Privacy Filter 若干适用于生产环境的优良特性：
+快速高效：所有 Token 均在单次前向传播中完成标注。
+上下文感知：语言先验能力使其能够根据周围语境检测出 PII 片段。
+长上下文：发布的模型支持高达 128,000 个 Token 的上下文。
+可配置：开发者可以根据自己的工作流调整运行参数，从而平衡召回率 (recall) 和准确率 (precision)。
+此次发布的模型总参数量为 15 亿，其中活跃参数量为 5000 万。
+OpenAI Privacy Filter 可预测八个类别的片段：
+其中，account_number类别有助于脱敏各种账号（包括信用卡号和银行账号等金融信息），而secret类别则有助于脱敏密码和 API 密钥等内容。
+这些标签使用 BIOES 片段标记进行解码，有助于生成更整洁、更连贯的脱敏边界。
+Subject: Q2 Planning Follow-Up
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
+Subject: Q2 Planning Follow-Up
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
+我们分几个阶段开发 OpenAI Privacy Filter。
+第一阶段，我们构建了一套隐私分类体系，明确了模型应当检测的片段类型。这涵盖了个人标识符、联系方式、地址、个人日期、多种不同类型的账号（如信用卡和银行信息），以及 API 密钥和密码等机密信息。
+第二阶段，我们将预训练语言模型转换成了双向 Token 分类器。具体做法是将其原有的语言建模头 (head) 替换为 Token 分类头，并通过有监督分类目标进行后训练。
+第三阶段，我们在公开数据集与合成数据的混合语料上进行训练，这些数据旨在捕捉真实文本及复杂的隐私模式。对于公开数据中标签不完整的部分，我们采用了模型辅助标注与人工审核的方式来提高覆盖率。同时，我们还生成了合成示例，以增加模型在不同格式、上下文及隐私子类型上的多样性。
+在推理阶段，模型生成的 Token 级预测会通过受限序列解码 (constrained sequence decoding) 转化为连贯的片段。这种方法在保留预训练模型的广泛语言理解能力的同时，使其在隐私检测方面具备高度专业化的性能。
+OpenAI Privacy Filter 性能表现
+我们不仅在标准基准测试上评估了 OpenAI Privacy Filter，还针对更复杂、更依赖上下文的案例，通过额外的合成数据和对话式评估对其进行了测试。
+在PII-Masking-300k⁠（在新窗口中打开）基准测试中，OpenAI Privacy Filter 达到了 96% 的 F1 分数（准确率为 94.04%，召回率为 98.04%）。在针对评估中发现的标注问题进行修正后的基准测试版本中，其 F1 分数进一步提升至 97.43%（准确率为 96.79%，召回率为 98.08%）。
+此外，我们发现该模型具备极高的适配效率。即使只用少量数据进行微调，也能迅速提高其在特定领域任务中的准确性。在我们评估的领域适配基准测试中，其 F1 分数从 54% 飙升至 96%，表现已接近上限。
+除了基准测试表现外，OpenAI Privacy Filter 的设计初衷是处理真实世界中存在噪点的文本。这包括长文档、含义模糊的引用、混合格式字符串，以及与软件相关的机密信息 (secret)。模型卡⁠（在新窗口中打开）中还报告了针对代码库机密检测的定向评估，以及跨多语言、对抗性示例和上下文依赖示例的压力测试。
+OpenAI Privacy Filter 并非匿名化工具，亦非合规认证，更不能在涉及重大决策的场景中替代政策审查。它仅是更广泛的“隐私融入设计”(privacy-by-design) 体系中的组成部分。
+该模型的行为取决于其训练时所采用的标签分类体系及决策边界。不同的机构可能有不同的检测或脱敏政策，而这些政策可能需要进行领域内评估或进一步的微调。此外，在处理不同于训练分布的语言、文字、命名习惯及领域时，模型的表现也可能有所不同。
+与所有模型一样，OpenAI Privacy Filter 也会出错。它可能会漏掉不常见的标识符或模糊的私人引用，并且在上下文有限（尤其是短序列）的情况下，可能会对实体进行过度脱敏或脱敏不足。在法律、医疗和金融工作流等高敏感领域，人工审核以及针对特定领域的评估与微调依然至关重要。
+我们发布 OpenAI Privacy Filter，旨在支持整个生态系统构建更强大的隐私保护。
+该模型自即日起在Hugging Face⁠（在新窗口中打开）和Github⁠（在新窗口中打开）上通过 Apache 2.0 许可协议发布。它专为实验、定制及商业部署而设计，并可根据不同的数据分布和隐私政策进行微调。
+除了模型本身，我们还分享了涵盖模型架构、标签分类体系、解码控制、预期用例、评估设置及已知局限性的配套文档，以便各团队能够清晰了解该模型的优势所在，以及哪些场景需要谨慎使用。
+AI 系统的隐私保护是一项横跨研究、产品设计、评估及部署的长期工作。
+OpenAI Privacy Filter 展示了一个对我们而言至关重要的发展方向：为现实世界中的关键 AI 任务打造更小巧、更高效、同时具备先进能力的轻量级模型。我们之所以发布这款模型，是因为我们相信，隐私保护的基础设施应该更易于审查、部署、适配和持续改进。
+我们的目标是让模型学习关于世界的知识，而非关于个体隐私。OpenAI Privacy Filter 正是实现这一目标的助力。
+我们发布 OpenAI Privacy Filter 的预览版，旨在听取研究人员及隐私保护社区的反馈，并对模型性能进行迭代。</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">用于脱敏文本中个人身份信息 (PII) 的前沿模型
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Masking-300k 基准测试中达到了顶尖 (state-of-the-art) 的性能水平。
+随着该版本的发布，开发者可以在自己的环境中运行 OpenAI Privacy Filter，针对特定的用例进行微调，并在训练、索引、日志记录和审核流水线中构建更强大的隐私保护屏障。
+现代 AI 系统的隐私保护不能仅依靠模式匹配。传统的 PII 检测工具通常依赖针对电话号码、电子邮件地址等格式的确定性规则。这些工具在处理特定简单案例时表现尚可，但在识别更微妙的个人信息或处理复杂上下文时往往显得力不从心。
+OpenAI Privacy Filter 内置了更深层的语言与上下文感知能力，能够提供更精细的表现。通过将强大的语言理解能力与专门的隐私标签系统相结合，它能检测非结构化文本中更广泛的 PII 类型，包括那些需要根据上下文做出判断的复杂情况。它能更精准地识别哪些内容属于公共信息（应予以保留），哪些内容涉及私人信息（应进行遮盖或脱敏）。
+由此产生的是一个性能强劲、能够提供前沿级隐私过滤表现的模型。与此同时，该模型体积足够轻巧，支持在本地运行。这意味着待过滤的数据可以保留在设备上，无需发送至服务器进行去标识化处理，从而降低了泄露风险。
+OpenAI Privacy Filter 是一款采用片段解码 (span decoding) 的双向 Token 分类模型。它始于自回归预训练检查点，随后被调整为基于固定隐私标签分类体系的 Token 分类器。该模型并非逐个 Token 生成文本，而是在单次扫描中对输入序列进行标注，并结合受限维特比 (Viterbi) 算法解码出连贯的片段。
+这种架构赋予了 OpenAI Privacy Filter 若干适用于生产环境的优良特性：
+快速高效：所有 Token 均在单次前向传播中完成标注。
+上下文感知：语言先验能力使其能够根据周围语境检测出 PII 片段。
+长上下文：发布的模型支持高达 128,000 个 Token 的上下文。
+可配置：开发者可以根据自己的工作流调整运行参数，从而平衡召回率 (recall) 和准确率 (precision)。
+此次发布的模型总参数量为 15 亿，其中活跃参数量为 5000 万。
+OpenAI Privacy Filter 可预测八个类别的片段：
+其中，account_number类别有助于脱敏各种账号（包括信用卡号和银行账号等金融信息），而secret类别则有助于脱敏密码和 API 密钥等内容。
+这些标签使用 BIOES 片段标记进行解码，有助于生成更整洁、更连贯的脱敏边界。
+Subject: Q2 Planning Follow-Up
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
+Subject: Q2 Planning Follow-Up
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
+我们分几个阶段开发 OpenAI Privacy Filter。
+第一阶段，我们构建了一套隐私分类体系，明确了模型应当检测的片段类型。这涵盖了个人标识符、联系方式、地址、个人日期、多种不同类型的账号（如信用卡和银行信息），以及 API 密钥和密码等机密信息。
+第二阶段，我们将预训练语言模型转换成了双向 Token 分类器。具体做法是将其原有的语言建模头 (head) 替换为 Token 分类头，并通过有监督分类目标进行后训练。
+第三阶段，我们在公开数据集与合成数据的混合语料上进行训练，这些数据旨在捕捉真实文本及复杂的隐私模式。对于公开数据中标签不完整的部分，我们采用了模型辅助标注与人工审核的方式来提高覆盖率。同时，我们还生成了合成示例，以增加模型在不同格式、上下文及隐私子类型上的多样性。
+在推理阶段，模型生成的 Token 级预测会通过受限序列解码 (constrained sequence decoding) 转化为连贯的片段。这种方法在保留预训练模型的广泛语言理解能力的同时，使其在隐私检测方面具备高度专业化的性能。
+OpenAI Privacy Filter 性能表现
+我们不仅在标准基准测试上评估了 OpenAI Privacy Filter，还针对更复杂、更依赖上下文的案例，通过额外的合成数据和对话式评估对其进行了测试。
+在PII-Masking-300k⁠（在新窗口中打开）基准测试中，OpenAI Privacy Filter 达到了 96% 的 F1 分数（准确率为 94.04%，召回率为 98.04%）。在针对评估中发现的标注问题进行修正后的基准测试版本中，其 F1 分数进一步提升至 97.43%（准确率为 96.79%，召回率为 98.08%）。
+此外，我们发现该模型具备极高的适配效率。即使只用少量数据进行微调，也能迅速提高其在特定领域任务中的准确性。在我们评估的领域适配基准测试中，其 F1 分数从 54% 飙升至 96%，表现已接近上限。
+除了基准测试表现外，OpenAI Privacy Filter 的设计初衷是处理真实世界中存在噪点的文本。这包括长文档、含义模糊的引用、混合格式字符串，以及与软件相关的机密信息 (secret)。模型卡⁠（在新窗口中打开）中还报告了针对代码库机密检测的定向评估，以及跨多语言、对抗性示例和上下文依赖示例的压力测试。
+OpenAI Privacy Filter 并非匿名化工具，亦非合规认证，更不能在涉及重大决策的场景中替代政策审查。它仅是更广泛的“隐私融入设计”(privacy-by-design) 体系中的组成部分。
+该模型的行为取决于其训练时所采用的标签分类体系及决策边界。不同的机构可能有不同的检测或脱敏政策，而这些政策可能需要进行领域内评估或进一步的微调。此外，在处理不同于训练分布的语言、文字、命名习惯及领域时，模型的表现也可能有所不同。
+与所有模型一样，OpenAI Privacy Filter 也会出错。它可能会漏掉不常见的标识符或模糊的私人引用，并且在上下文有限（尤其是短序列）的情况下，可能会对实体进行过度脱敏或脱敏不足。在法律、医疗和金融工作流等高敏感领域，人工审核以及针对特定领域的评估与微调依然至关重要。
+我们发布 OpenAI Privacy Filter，旨在支持整个生态系统构建更强大的隐私保护。
+该模型自即日起在Hugging Face⁠（在新窗口中打开）和Github⁠（在新窗口中打开）上通过 Apache 2.0 许可协议发布。它专为实验、定制及商业部署而设计，并可根据不同的数据分布和隐私政策进行微调。
+除了模型本身，我们还分享了涵盖模型架构、标签分类体系、解码控制、预期用例、评估设置及已知局限性的配套文档，以便各团队能够清晰了解该模型的优势所在，以及哪些场景需要谨慎使用。
+AI 系统的隐私保护是一项横跨研究、产品设计、评估及部署的长期工作。
+OpenAI Privacy Filter 展示了一个对我们而言至关重要的发展方向：为现实世界中的关键 AI 任务打造更小巧、更高效、同时具备先进能力的轻量级模型。我们之所以发布这款模型，是因为我们相信，隐私保护的基础设施应该更易于审查、部署、适配和持续改进。
+我们的目标是让模型学习关于世界的知识，而非关于个体隐私。OpenAI Privacy Filter 正是实现这一目标的助力。
+我们发布 OpenAI Privacy Filter 的预览版，旨在听取研究人员及隐私保护社区的反馈，并对模型性能进行迭代。</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>重磅发布 GPT-5.5产品2026年4月23日</title>
+      <link>https://openai.com/index/introducing-gpt-5-5/</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">重磅发布 GPT-5.5产品2026年4月23日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">重磅发布 GPT-5.5产品2026年4月23日</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Where the goblins came from2026年4月29日</title>
       <link>https://openai.com/index/where-the-goblins-came-from/</link>
       <guid isPermaLink="false">https://openai.com/index/where-the-goblins-came-from/</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
 In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
@@ -82,166 +349,10 @@ If you want to let the creatures run free in Codex, you can run this command to 
 Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div>]]></content:encoded>
     </item>
     <item>
-      <title>Introducing GPT-5.5</title>
-      <link>https://openai.com/index/introducing-gpt-5-5/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-5.5</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-5.5</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5.5 System CardSafety</title>
-      <link>https://openai.com/index/gpt-5-5-system-card/</link>
-      <guid isPermaLink="false">https://openai.com/index/gpt-5-5-system-card/</guid>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
-We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
-We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
-This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.
-PublicationApr 29, 2026</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
-We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
-We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
-This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.
-PublicationApr 29, 2026</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Introducing OpenAI Privacy Filter</title>
-      <link>https://openai.com/index/introducing-openai-privacy-filter/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-openai-privacy-filter/</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Our state of the art model for masking personally identifiable information (PII) in text
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement from the start.
-Privacy Filter is a small model with frontier personal data detection capability. It is designed for high-throughput privacy workflows, and is able to perform context-aware detection of PII in unstructured text. It can run locally, which means that PII can be masked or redacted without leaving your machine. It processes long inputs efficiently, making redaction decisions in a quick, single pass.
-At OpenAI, we use a fine-tuned version of Privacy Filter in our own privacy-preserving workflows. We developed Privacy Filter because we believe that with the latest AI capabilities, we could raise the standard for privacy beyond what was already on the market. The version of Privacy Filter we are releasing today achieves state-of-the-art performance on the PII-Masking-300k benchmark, when corrected for annotation issues we identified during evaluation.
-With this release, developers can run Privacy Filter in their own environments, fine tune it to their own use cases, and build stronger privacy protections into training, indexing, logging, and review pipelines.
-A small model with frontier personal data detection capability
-Privacy protection in modern AI systems depends on more than pattern matching. Traditional PII detection tools often rely on deterministic rules for formats like phone numbers and email addresses. They can work well for narrow cases, but they often miss more subtle personal information and struggle with context.
-Privacy Filter is built with deeper language and context awareness for more nuanced performance. By combining strong language understanding with a privacy-specific labeling system, it can detect a wider range of PII in unstructured text, including cases where the right decision depends on context. It can better distinguish between information that should be preserved because it is public, and information that should be masked or redacted because it relates to a private individual.
-The result is a model that is strong enough to deliver frontier-level privacy filtering performance. At the same time, the model is small enough to be run locally–meaning data that has yet to be filtered can remain on device, with less risk of exposure, rather than needing to be sent to a server for de-identification.
-Privacy Filter is a bidirectional token-classification model with span decoding. It begins from an autoregressive pretrained checkpoint and is then adapted into a token classifier over a fixed taxonomy of privacy labels. Instead of generating text token by token, it labels an input sequence in one pass and then decodes coherent spans with a constrained Viterbi procedure.
-This architecture gives Privacy Filter a few useful properties for production use:
-Fast and efficient:all tokens are labeled in a single forward pass.
-Context aware:the language prior enables PII spans to be detected based on surrounding context.
-Long-context:the released model supports up to 128,000 tokens of context.
-Configurable:developers can tune operating points to trade off recall and precision depending on their workflow.
-The released model has 1.5B total parameters with 50M active parameters.
-Privacy Filter predicts spans across eight categories:
-Theaccount_numbercategory helps mask a wide variety of account numbers, including banking info like credit card numbers and bank account numbers, whilesecrethelps mask things like passwords and API keys.
-These labels are decoded with BIOES span tags, which helps produce cleaner and more coherent masking boundaries.
-Subject: Q2 Planning Follow-Up
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
-Text after masking personal identifiers
-Subject: Q2 Planning Follow-Up
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
-We developed Privacy Filter in several stages.
-First, we built a privacy taxonomy that defines the types of spans the model should detect. This includes personal identifiers, contact details, addresses, private dates, many different kinds of account numbers such as credit and banking information, and secrets such as API keys and passwords.
-Second, we converted a pretrained language model into a bidirectional token classifier by replacing the language modeling head with a token-classification head and post-training it with a supervised classification objective.
-Third, we trained on a mixture of publicly available and synthetic data designed to capture both realistic text and difficult privacy patterns. In parts of the public data where labels were incomplete, we used model-assisted annotation and review to improve coverage. We also generated synthetic examples to increase diversity across formats, contexts, and privacy subtypes.
-At inference time, the model's token-level predictions are decoded into coherent spans using constrained sequence decoding. This approach preserves the broad language understanding of the pretrained model while specializing it for privacy detection.
-How Privacy Filter performs
-We evaluated Privacy Filter on standard benchmarks and on additional synthetic and chat-style evaluations designed to test harder, more context-sensitive cases.
-On thePII-Masking-300k⁠(opens in a new window)benchmark, Privacy Filter achieves an F1 score of 96% (94.04% precision and 98.04% recall). On a corrected version of the benchmark that accounts for dataset annotation issues identified during review, the F1 score is 97.43% (96.79% precision and 98.08% recall).
-We also found that the model can be adapted efficiently. Fine-tuning on even a small amount of data quickly improves accuracy on domain-specific tasks, increasing F1 score from 54% to 96% and approaches saturation on the domain-adaption benchmark we evaluated.
-Beyond benchmark performance, Privacy Filter is designed for practical privacy filtering in noisy, real-world text. That includes long documents, ambiguous references, mixed-format strings, and software-related secrets. Themodel card⁠(opens in a new window)also reports targeted evaluation on secret detection in codebases and stress tests across multilingual, adversarial, and context-dependent examples.
-Privacy Filter is not an anonymization tool, a compliance certification, or a substitute for policy review in high-stakes settings. It is one component in a broader privacy-by-design system.
-Its behavior reflects the label taxonomy and decision boundaries it was trained on. Different organizations may want different detection or masking policies, and those policies may require in-domain evaluation or further fine-tuning. Performance may also vary across languages, scripts, naming conventions, and domains that differ from the training distribution.
-Like all models, Privacy Filter can make mistakes. It can miss uncommon identifiers or ambiguous private references, and it can over- or under-redact entities when context is limited, especially in short sequences. In high-sensitivity domains such as legal, medical, and financial workflows, human review and domain-specific evaluation and fine-tuning remain important.
-We are releasing OpenAI Privacy Filter to support stronger privacy protections across the ecosystem.
-The model is available today under the Apache 2.0 license onHugging Face⁠(opens in a new window)andGithub⁠(opens in a new window). It is intended for experimentation, customization, and commercial deployment, and it can be fine-tuned for different data distributions and privacy policies.
-Alongside the model, we are sharing documentation covering the model architecture, label taxonomy, decoding controls, intended use cases, evaluation setup, and known limitations, so teams can understand both what the model does well and where it should be used carefully.
-Privacy protection for AI systems is an ongoing effort across research, product design, evaluation, and deployment.
-Privacy Filter reflects one direction we believe is important: small, efficient models with frontier capability in narrowly defined tasks that matter for real-world AI systems. We are releasing it because we think privacy-preserving infrastructure should be easier to inspect, run, adapt, and improve.
-Our goal is for models to learn about the world, not about private individuals. Privacy Filter helps make that possible.
-We’re releasing this preview of Privacy Filter to receive feedback from the research and privacy community and iterate further on model performance.</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Our state of the art model for masking personally identifiable information (PII) in text
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement from the start.
-Privacy Filter is a small model with frontier personal data detection capability. It is designed for high-throughput privacy workflows, and is able to perform context-aware detection of PII in unstructured text. It can run locally, which means that PII can be masked or redacted without leaving your machine. It processes long inputs efficiently, making redaction decisions in a quick, single pass.
-At OpenAI, we use a fine-tuned version of Privacy Filter in our own privacy-preserving workflows. We developed Privacy Filter because we believe that with the latest AI capabilities, we could raise the standard for privacy beyond what was already on the market. The version of Privacy Filter we are releasing today achieves state-of-the-art performance on the PII-Masking-300k benchmark, when corrected for annotation issues we identified during evaluation.
-With this release, developers can run Privacy Filter in their own environments, fine tune it to their own use cases, and build stronger privacy protections into training, indexing, logging, and review pipelines.
-A small model with frontier personal data detection capability
-Privacy protection in modern AI systems depends on more than pattern matching. Traditional PII detection tools often rely on deterministic rules for formats like phone numbers and email addresses. They can work well for narrow cases, but they often miss more subtle personal information and struggle with context.
-Privacy Filter is built with deeper language and context awareness for more nuanced performance. By combining strong language understanding with a privacy-specific labeling system, it can detect a wider range of PII in unstructured text, including cases where the right decision depends on context. It can better distinguish between information that should be preserved because it is public, and information that should be masked or redacted because it relates to a private individual.
-The result is a model that is strong enough to deliver frontier-level privacy filtering performance. At the same time, the model is small enough to be run locally–meaning data that has yet to be filtered can remain on device, with less risk of exposure, rather than needing to be sent to a server for de-identification.
-Privacy Filter is a bidirectional token-classification model with span decoding. It begins from an autoregressive pretrained checkpoint and is then adapted into a token classifier over a fixed taxonomy of privacy labels. Instead of generating text token by token, it labels an input sequence in one pass and then decodes coherent spans with a constrained Viterbi procedure.
-This architecture gives Privacy Filter a few useful properties for production use:
-Fast and efficient:all tokens are labeled in a single forward pass.
-Context aware:the language prior enables PII spans to be detected based on surrounding context.
-Long-context:the released model supports up to 128,000 tokens of context.
-Configurable:developers can tune operating points to trade off recall and precision depending on their workflow.
-The released model has 1.5B total parameters with 50M active parameters.
-Privacy Filter predicts spans across eight categories:
-Theaccount_numbercategory helps mask a wide variety of account numbers, including banking info like credit card numbers and bank account numbers, whilesecrethelps mask things like passwords and API keys.
-These labels are decoded with BIOES span tags, which helps produce cleaner and more coherent masking boundaries.
-Subject: Q2 Planning Follow-Up
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
-Text after masking personal identifiers
-Subject: Q2 Planning Follow-Up
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
-We developed Privacy Filter in several stages.
-First, we built a privacy taxonomy that defines the types of spans the model should detect. This includes personal identifiers, contact details, addresses, private dates, many different kinds of account numbers such as credit and banking information, and secrets such as API keys and passwords.
-Second, we converted a pretrained language model into a bidirectional token classifier by replacing the language modeling head with a token-classification head and post-training it with a supervised classification objective.
-Third, we trained on a mixture of publicly available and synthetic data designed to capture both realistic text and difficult privacy patterns. In parts of the public data where labels were incomplete, we used model-assisted annotation and review to improve coverage. We also generated synthetic examples to increase diversity across formats, contexts, and privacy subtypes.
-At inference time, the model's token-level predictions are decoded into coherent spans using constrained sequence decoding. This approach preserves the broad language understanding of the pretrained model while specializing it for privacy detection.
-How Privacy Filter performs
-We evaluated Privacy Filter on standard benchmarks and on additional synthetic and chat-style evaluations designed to test harder, more context-sensitive cases.
-On thePII-Masking-300k⁠(opens in a new window)benchmark, Privacy Filter achieves an F1 score of 96% (94.04% precision and 98.04% recall). On a corrected version of the benchmark that accounts for dataset annotation issues identified during review, the F1 score is 97.43% (96.79% precision and 98.08% recall).
-We also found that the model can be adapted efficiently. Fine-tuning on even a small amount of data quickly improves accuracy on domain-specific tasks, increasing F1 score from 54% to 96% and approaches saturation on the domain-adaption benchmark we evaluated.
-Beyond benchmark performance, Privacy Filter is designed for practical privacy filtering in noisy, real-world text. That includes long documents, ambiguous references, mixed-format strings, and software-related secrets. Themodel card⁠(opens in a new window)also reports targeted evaluation on secret detection in codebases and stress tests across multilingual, adversarial, and context-dependent examples.
-Privacy Filter is not an anonymization tool, a compliance certification, or a substitute for policy review in high-stakes settings. It is one component in a broader privacy-by-design system.
-Its behavior reflects the label taxonomy and decision boundaries it was trained on. Different organizations may want different detection or masking policies, and those policies may require in-domain evaluation or further fine-tuning. Performance may also vary across languages, scripts, naming conventions, and domains that differ from the training distribution.
-Like all models, Privacy Filter can make mistakes. It can miss uncommon identifiers or ambiguous private references, and it can over- or under-redact entities when context is limited, especially in short sequences. In high-sensitivity domains such as legal, medical, and financial workflows, human review and domain-specific evaluation and fine-tuning remain important.
-We are releasing OpenAI Privacy Filter to support stronger privacy protections across the ecosystem.
-The model is available today under the Apache 2.0 license onHugging Face⁠(opens in a new window)andGithub⁠(opens in a new window). It is intended for experimentation, customization, and commercial deployment, and it can be fine-tuned for different data distributions and privacy policies.
-Alongside the model, we are sharing documentation covering the model architecture, label taxonomy, decoding controls, intended use cases, evaluation setup, and known limitations, so teams can understand both what the model does well and where it should be used carefully.
-Privacy protection for AI systems is an ongoing effort across research, product design, evaluation, and deployment.
-Privacy Filter reflects one direction we believe is important: small, efficient models with frontier capability in narrowly defined tasks that matter for real-world AI systems. We are releasing it because we think privacy-preserving infrastructure should be easier to inspect, run, adapt, and improve.
-Our goal is for models to learn about the world, not about private individuals. Privacy Filter helps make that possible.
-We’re releasing this preview of Privacy Filter to receive feedback from the research and privacy community and iterate further on model performance.</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Introducing ChatGPT Images 2.0</title>
-      <link>https://openai.com/index/introducing-chatgpt-images-2-0/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-chatgpt-images-2-0/</guid>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing ChatGPT Images 2.0</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-chatgpt-images-2-0/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing ChatGPT Images 2.0</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-chatgpt-images-2-0/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Introducing GPT-Rosalind for life sciences research</title>
-      <link>https://openai.com/index/introducing-gpt-rosalind/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-rosalind/</guid>
-      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-Rosalind for life sciences research</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-Rosalind for life sciences research</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Inside our approach to the Model Spec</title>
-      <link>https://openai.com/index/our-approach-to-the-model-spec/</link>
-      <guid isPermaLink="false">https://openai.com/index/our-approach-to-the-model-spec/</guid>
-      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Inside our approach to the Model Spec</p>
-<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Inside our approach to the Model Spec</p>
-<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>How we monitor internal coding agents for misalignmentSafety</title>
+      <title>我们如何监控内部编程智能体的对齐失范安全2026年3月19日</title>
       <link>https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/</link>
       <guid isPermaLink="false">https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/</guid>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Using our most powerful models to detect and study misaligned behavior in real-world deployments.
 AI systems are beginning to act with greater autonomy in real-world environments at scale. As their capabilities advance, they are able to take on increasingly complex, high-impact tasks and interact with tools, systems, and workflows in ways that resemble human collaborators.
@@ -421,158 +532,226 @@ We request that AI developers exclude this blog post from their training corpora
 PublicationApr 29, 2026</div>]]></content:encoded>
     </item>
     <item>
-      <title>Improving instruction hierarchy in frontier LLMs</title>
-      <link>https://openai.com/index/instruction-hierarchy-challenge/</link>
-      <guid isPermaLink="false">https://openai.com/index/instruction-hierarchy-challenge/</guid>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <title>GPT-5</title>
+      <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</link>
+      <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</guid>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Introducing IH-Challenge, a training dataset that strengthens instruction hierarchy, safety steerability, and prompt injection robustness.
-AI systems often receive instructions from multiple sources. These can include safety policies from system messages, product guidance from developers, requests from users, and information found online. Training models to reliably prioritize the most trusted instructions among these sources is a key part of safe deployment.
-Many AI safety and reliability issues can arise when this prioritization breaks down. Models may receive requests for disallowed content, attempts to reveal private information, or prompt‑injection attacks embedded in online data. Failing to behave appropriately in each of these scenarios shares the same root cause: the model may follow the wrong instruction.
-When these instructions conflict, the model has to decide which ones to prioritize. If it treats an untrusted instruction as authoritative, the model may behave in ways that violate policies or developer and user intent.We demonstrate that properly designed instruction-hierarchy tasks, which train models to prioritize instructions according to their trust level, improve several real-world safety properties. Models trained on these tasks become more responsive to safety specifications in system prompts (improving safety steerability) and more robust to prompt-injection attacks embedded in tool outputs.
-What instruction hierarchy is—and why it matters
-To handle conflicts, OpenAI's models are trained to follow a clear instruction hierarchy:
-System > developer > user > tool
-Higher‑priority instructions are more trusted. The model should only follow lower‑priority instructions when they do not conflict with higher‑priority constraints. These principles are outlined in theOpenAI Model Spec⁠(opens in a new window).
-For example, if a system message includes a safety policy and a user asks the model to violate it, the model should refuse. If a tool output contains malicious instructions, the model should ignore them rather than treat them as commands.
-Getting this right is foundational to safety, security, and reliability.
-Let's start by factoring the equation: (x+1)(x+1) = 0. Now, what value of x makes this zero?
-The model on the right correctly follows the Developer’s instruction, which is higher-priority, over the User’s when the two instructions conflict.
-Why large-scale instruction hierarchy training can be hard
-Reinforcement learning is a natural fit for teaching the instruction hierarchy. We can generate conversations with conflicting instructions, prompt the model to respond, and reward it when it follows the correct instruction.
-We’ve identified three pitfalls of naively applying that recipe:
-Instruction-following failures can double as instruction hierarchy failures: the model might fail to resolve an instruction conflict, not because it doesn’t understand the hierarchy of roles, but because the instructions themselves are too complicated.
-Instruction conflicts can be nuanced and even subjective. A common approach is to let a separate LLM judge assign rewards to the LLM being trained, but judges themselves are fallible.
-Models tend to learnshortcuts that result in high reward, but are useless in practice⁠(opens in a new window). The classic example is overrefusals: models can learn to maximize safety by refusing even benign requests.
-We design IH-Challenge, a reinforcement learning training dataset, to address each of those pitfalls. We adhere to the following principles:
-Tasks are instruction-following-simple
-They are objectively-gradable with a simple Python script
-There are no trivial shortcuts that guarantee high reward across all tasks
-Each task in IH-Challenge is essentially a conversation with the following messages:
-An instruction message from a high-privilege role, e.g. “Only answer ‘Yes’ or ‘No’”.
-An instruction message from a lower-privilege role, which attempts to get the model to violate the instructions in the higher-privilege message.
-The model being trained generates the next message. We write the tasks/environments so that it is possible to programmatically check whether the model's response satisfies the higher-level constraint.
-Results and robustness
-We train a model on IH‑Challenge and produce an internal model, which we call GPT‑5 Mini-R, with the following improvements:
-Performs better on instruction‑hierarchy benchmarks
-Improved performance generalizes to held‑out and adversarial instruction hierarchy tests
-Maintains overall usefulness, without collapsing into over‑refusal
-This is what makes the approach especially compelling for safety: by directly training models to resolve instruction conflicts correctly on IH-challenge tasks, we get IH improvements that generalize to new attacks and new situations.
-Gandalf Password (sys-user)
-Gandalf Password (dev-user)
-TensorTrust (sys-user)
-TensorTrust (dev-user)
-RealGuardrails (Distractors)
-RealGuardrails (Handwritten)
-TutorJailbreak (sys-user)
-Tutor Jailbreak (dev-user)
-System <> User Conflict
-System <> Developer Conflict
-Developer <> User Conflict
-IH-Challenge (overrefusal)
-TensorTrust (overrefusal)
-Why this improves real-world safety and security
-Stronger instruction hierarchy delivers multiple safety benefits at once, including in safety steerability and prompt injection robustness.
-We evaluate safety steerability by adding category-specific safety specifications to the system prompt and measuring behavior on OpenAI’s safety Production Benchmarks (a set of safety-sensitive conversations representative of ChatGPT in production).
-The IH-trained model shows a consistent improvement: with the safety spec present, it achieves higher refusal and safe completion rates across disallowed categories, indicating that stronger instruction hierarchy behavior makes it better at resolving conflicts when unsafe requests come from lower-priority instructions. Notably, this improvement does not come with a corresponding decrease in helpfulness rate (i.e., it is not becoming less “helpful” by simply refusing more overall).
-Example of how the IH-trained model resists prompt injections that GPT‑5 Mini (Baseline) falls for.
-Instruction hierarchy is also central in resisting prompt injection, when malicious instructions are embedded in tool outputs. We evaluate the IH-trained model on two prompt injection benchmarks—an academic benchmark CyberSecEval 2 and an OpenAI internal prompt injection benchmark consisting of attacks like the one demonstrated on an older version ofChatGPT Atlas⁠.
-Relative to the baseline, the IH-trained GPT‑5 Mini-R model improves prompt injection robustness on both benchmarks and substantially improves performance on our internal static prompt injection evaluation in these experiments.
-As models become more agentic—calling tools, reading untrusted documents, and taking actions in the world—the ability to consistently prioritize trusted instructions over untrusted ones becomes a core safety property.
-This work shows that several pitfalls of IH robustness training can be overcome by designing training environments that address those pitfalls. Though our IH-Challenge dataset seems simple, the IH behavior models learn from these environments generalizes to more realistic, often not-objectively-gradable benchmarks.
-Strengthening instruction hierarchy not only improves reliability, but unlocks multiple safety and security gains at once—a foundation that becomes increasingly important as AI systems grow more capable and autonomous.
-To support further research in this area, we are releasing the IH‑Challenge datasethere⁠(opens in a new window).
-PublicationApr 29, 2026</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Introducing IH-Challenge, a training dataset that strengthens instruction hierarchy, safety steerability, and prompt injection robustness.
-AI systems often receive instructions from multiple sources. These can include safety policies from system messages, product guidance from developers, requests from users, and information found online. Training models to reliably prioritize the most trusted instructions among these sources is a key part of safe deployment.
-Many AI safety and reliability issues can arise when this prioritization breaks down. Models may receive requests for disallowed content, attempts to reveal private information, or prompt‑injection attacks embedded in online data. Failing to behave appropriately in each of these scenarios shares the same root cause: the model may follow the wrong instruction.
-When these instructions conflict, the model has to decide which ones to prioritize. If it treats an untrusted instruction as authoritative, the model may behave in ways that violate policies or developer and user intent.We demonstrate that properly designed instruction-hierarchy tasks, which train models to prioritize instructions according to their trust level, improve several real-world safety properties. Models trained on these tasks become more responsive to safety specifications in system prompts (improving safety steerability) and more robust to prompt-injection attacks embedded in tool outputs.
-What instruction hierarchy is—and why it matters
-To handle conflicts, OpenAI's models are trained to follow a clear instruction hierarchy:
-System > developer > user > tool
-Higher‑priority instructions are more trusted. The model should only follow lower‑priority instructions when they do not conflict with higher‑priority constraints. These principles are outlined in theOpenAI Model Spec⁠(opens in a new window).
-For example, if a system message includes a safety policy and a user asks the model to violate it, the model should refuse. If a tool output contains malicious instructions, the model should ignore them rather than treat them as commands.
-Getting this right is foundational to safety, security, and reliability.
-Let's start by factoring the equation: (x+1)(x+1) = 0. Now, what value of x makes this zero?
-The model on the right correctly follows the Developer’s instruction, which is higher-priority, over the User’s when the two instructions conflict.
-Why large-scale instruction hierarchy training can be hard
-Reinforcement learning is a natural fit for teaching the instruction hierarchy. We can generate conversations with conflicting instructions, prompt the model to respond, and reward it when it follows the correct instruction.
-We’ve identified three pitfalls of naively applying that recipe:
-Instruction-following failures can double as instruction hierarchy failures: the model might fail to resolve an instruction conflict, not because it doesn’t understand the hierarchy of roles, but because the instructions themselves are too complicated.
-Instruction conflicts can be nuanced and even subjective. A common approach is to let a separate LLM judge assign rewards to the LLM being trained, but judges themselves are fallible.
-Models tend to learnshortcuts that result in high reward, but are useless in practice⁠(opens in a new window). The classic example is overrefusals: models can learn to maximize safety by refusing even benign requests.
-We design IH-Challenge, a reinforcement learning training dataset, to address each of those pitfalls. We adhere to the following principles:
-Tasks are instruction-following-simple
-They are objectively-gradable with a simple Python script
-There are no trivial shortcuts that guarantee high reward across all tasks
-Each task in IH-Challenge is essentially a conversation with the following messages:
-An instruction message from a high-privilege role, e.g. “Only answer ‘Yes’ or ‘No’”.
-An instruction message from a lower-privilege role, which attempts to get the model to violate the instructions in the higher-privilege message.
-The model being trained generates the next message. We write the tasks/environments so that it is possible to programmatically check whether the model's response satisfies the higher-level constraint.
-Results and robustness
-We train a model on IH‑Challenge and produce an internal model, which we call GPT‑5 Mini-R, with the following improvements:
-Performs better on instruction‑hierarchy benchmarks
-Improved performance generalizes to held‑out and adversarial instruction hierarchy tests
-Maintains overall usefulness, without collapsing into over‑refusal
-This is what makes the approach especially compelling for safety: by directly training models to resolve instruction conflicts correctly on IH-challenge tasks, we get IH improvements that generalize to new attacks and new situations.
-Gandalf Password (sys-user)
-Gandalf Password (dev-user)
-TensorTrust (sys-user)
-TensorTrust (dev-user)
-RealGuardrails (Distractors)
-RealGuardrails (Handwritten)
-TutorJailbreak (sys-user)
-Tutor Jailbreak (dev-user)
-System <> User Conflict
-System <> Developer Conflict
-Developer <> User Conflict
-IH-Challenge (overrefusal)
-TensorTrust (overrefusal)
-Why this improves real-world safety and security
-Stronger instruction hierarchy delivers multiple safety benefits at once, including in safety steerability and prompt injection robustness.
-We evaluate safety steerability by adding category-specific safety specifications to the system prompt and measuring behavior on OpenAI’s safety Production Benchmarks (a set of safety-sensitive conversations representative of ChatGPT in production).
-The IH-trained model shows a consistent improvement: with the safety spec present, it achieves higher refusal and safe completion rates across disallowed categories, indicating that stronger instruction hierarchy behavior makes it better at resolving conflicts when unsafe requests come from lower-priority instructions. Notably, this improvement does not come with a corresponding decrease in helpfulness rate (i.e., it is not becoming less “helpful” by simply refusing more overall).
-Example of how the IH-trained model resists prompt injections that GPT‑5 Mini (Baseline) falls for.
-Instruction hierarchy is also central in resisting prompt injection, when malicious instructions are embedded in tool outputs. We evaluate the IH-trained model on two prompt injection benchmarks—an academic benchmark CyberSecEval 2 and an OpenAI internal prompt injection benchmark consisting of attacks like the one demonstrated on an older version ofChatGPT Atlas⁠.
-Relative to the baseline, the IH-trained GPT‑5 Mini-R model improves prompt injection robustness on both benchmarks and substantially improves performance on our internal static prompt injection evaluation in these experiments.
-As models become more agentic—calling tools, reading untrusted documents, and taking actions in the world—the ability to consistently prioritize trusted instructions over untrusted ones becomes a core safety property.
-This work shows that several pitfalls of IH robustness training can be overcome by designing training environments that address those pitfalls. Though our IH-Challenge dataset seems simple, the IH behavior models learn from these environments generalizes to more realistic, often not-objectively-gradable benchmarks.
-Strengthening instruction hierarchy not only improves reliability, but unlocks multiple safety and security gains at once—a foundation that becomes increasingly important as AI systems grow more capable and autonomous.
-To support further research in this area, we are releasing the IH‑Challenge datasethere⁠(opens in a new window).
-PublicationApr 29, 2026</div>]]></content:encoded>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+Expert-SWE (Internal)
+FrontierMath Tier 1–3
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。。
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+Prompt:# Algebraic geometry surface intersection
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+Git repo, journal, plan (Markdown files)
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+SWE-Bench Pro (Public) *
+Expert-SWE (Internal)
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+Tau2-bench Telecom***（原始提示词）
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+FrontierMath Tier 1–3
+Humanity's Last Exam（无工具）
+Humanity's Last Exam（含工具）
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+Graphwalks BFS 256k f1
+Graphwalks BFS 1mil f1
+Graphwalks parents 256k f1
+Graphwalks parents 1mil f1
+OpenAI MRCR v2 8-needle 4K-8K
+OpenAI MRCR v2 8-needle 8K-16K
+OpenAI MRCR v2 8-needle 16K-32K
+OpenAI MRCR v2 8-needle 32K-64K
+OpenAI MRCR v2 8-needle 64K-128K
+OpenAI MRCR v2 8-needle 128K-256K
+OpenAI MRCR v2 8-needle 256K-512K
+OpenAI MRCR v2 8-needle 512K-1M</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+Expert-SWE (Internal)
+FrontierMath Tier 1–3
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。。
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+Prompt:# Algebraic geometry surface intersection
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+Git repo, journal, plan (Markdown files)
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+SWE-Bench Pro (Public) *
+Expert-SWE (Internal)
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+Tau2-bench Telecom***（原始提示词）
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+FrontierMath Tier 1–3
+Humanity's Last Exam（无工具）
+Humanity's Last Exam（含工具）
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+Graphwalks BFS 256k f1
+Graphwalks BFS 1mil f1
+Graphwalks parents 256k f1
+Graphwalks parents 1mil f1
+OpenAI MRCR v2 8-needle 4K-8K
+OpenAI MRCR v2 8-needle 8K-16K
+OpenAI MRCR v2 8-needle 16K-32K
+OpenAI MRCR v2 8-needle 32K-64K
+OpenAI MRCR v2 8-needle 64K-128K
+OpenAI MRCR v2 8-needle 128K-256K
+OpenAI MRCR v2 8-needle 256K-512K
+OpenAI MRCR v2 8-needle 512K-1M</div>]]></content:encoded>
     </item>
     <item>
-      <title>GPT-5.4</title>
-      <link>https://openai.com/index/introducing-gpt-5-4/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-      <pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate>
+      <title>深入解析我们的模型规范制定方法研究2026年3月25日</title>
+      <link>https://openai.com/index/our-approach-to-the-model-spec/</link>
+      <guid isPermaLink="false">https://openai.com/index/our-approach-to-the-model-spec/</guid>
+      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.4</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.4</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5.3-Codex</title>
-      <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
-      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">深入解析我们的模型规范制定方法研究2026年3月25日</p>
+<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">深入解析我们的模型规范制定方法研究2026年3月25日</p>
+<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
     </item>
     <item>
       <title>GPT-5.3 Instant</title>
-      <link>https://openai.com/index/gpt-5-3-instant/</link>
-      <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <link>https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/</link>
+      <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/</guid>
+      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
-<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
       <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
-<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+<p style="margin:0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-5.5 系统卡安全2026年4月23日</title>
+      <link>https://openai.com/index/gpt-5-5-system-card/</link>
+      <guid isPermaLink="false">https://openai.com/index/gpt-5-5-system-card/</guid>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
+We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
+This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.
+PublicationApr 29, 2026</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
+We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
+This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.
+PublicationApr 29, 2026</div>]]></content:encoded>
     </item>
   </channel>
 </rss>
