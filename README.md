@@ -253,8 +253,8 @@ RUN_INTERVAL=21600  # 默认 6 小时
 
 - [curl_cffi](https://github.com/lexiforest/curl_cffi) — 支持浏览器 TLS 指纹模拟的 HTTP 客户端
 - [Selenium](https://www.selenium.dev/) — 浏览器自动化框架
-- [feedgen](https://github.com/lkiesow/python-feedgen) — RSS Feed 生成库
-- [rss-feeds](https://github.com/Olshansk/rss-feeds) — 项目架构参考
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) — HTML 解析库
+- [jsDelivr](https://www.jsdelivr.com/) — 免费 CDN 服务
 
 ---
 
