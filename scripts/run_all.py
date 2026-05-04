@@ -9,6 +9,7 @@ Used by GitHub Actions for scheduled updates.
 
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 
@@ -28,6 +29,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
+def is_ci_environment() -> bool:
+    """Check if running in CI environment (no display available)."""
+    return any([
+        os.environ.get("CI"),           # GitHub Actions, GitLab CI, etc.
+        os.environ.get("GITHUB_ACTIONS"),
+        os.environ.get("GITLAB_CI"),
+        os.environ.get("JENKINS_URL"),
+    ])
+
+
+# Generators that require desktop environment (non-headless browser)
+DESKTOP_ONLY_GENERATORS = {"nmpa_drug"}
+
 # Registry of all generators
 GENERATORS = {
     # Medical
@@ -44,8 +59,20 @@ GENERATORS = {
 def run_all(full_refresh: bool = False, max_articles: int = 50):
     """Run all registered generators."""
     results = {}
+    in_ci = is_ci_environment()
+    
+    if in_ci:
+        logger.info("Detected CI environment - desktop-only generators will be skipped")
     
     for name, generator_class in GENERATORS.items():
+        # Skip desktop-only generators in CI environment
+        if in_ci and name in DESKTOP_ONLY_GENERATORS:
+            logger.info(f"=" * 60)
+            logger.info(f"Skipping generator: {name} (requires desktop environment)")
+            logger.info(f"=" * 60)
+            results[name] = "skipped"
+            continue
+        
         logger.info(f"=" * 60)
         logger.info(f"Running generator: {name}")
         logger.info(f"=" * 60)
@@ -67,11 +94,17 @@ def run_all(full_refresh: bool = False, max_articles: int = 50):
     logger.info("Summary")
     logger.info("=" * 60)
     for name, status in results.items():
-        emoji = "OK" if status == "success" else "FAIL"
+        if status == "skipped":
+            emoji = "SKIP"
+        elif status == "success":
+            emoji = "OK"
+        else:
+            emoji = "FAIL"
         logger.info(f"  [{emoji}] {name}: {status}")
     
-    # Exit with error if any failed
-    if any(s != "success" for s in results.values()):
+    # Exit with error only if non-skipped generators failed
+    failed = [n for n, s in results.items() if s not in ("success", "skipped")]
+    if failed:
         sys.exit(1)
 
 
