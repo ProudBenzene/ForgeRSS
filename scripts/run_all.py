@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from generators.medical.idsociety import IDSocietyGenerator
+from generators.medical.nmpa_drug import NMPADrugGenerator
 from generators.ai.anthropic_news import AnthropicNewsGenerator
 from generators.ai.anthropic_research import AnthropicResearchGenerator
 from generators.ai.anthropic_engineering import AnthropicEngineeringGenerator
@@ -31,6 +32,7 @@ logger = logging.getLogger(__name__)
 GENERATORS = {
     # Medical
     "idsociety": IDSocietyGenerator,
+    "nmpa_drug": NMPADrugGenerator,
     # AI
     "anthropic_news": AnthropicNewsGenerator,
     "anthropic_research": AnthropicResearchGenerator,

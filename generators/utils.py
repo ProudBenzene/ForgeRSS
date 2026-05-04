@@ -51,7 +51,16 @@ try:
 except ImportError:
     HAS_SELENIUM = False
 
-logger.info(f"HTTP engines: curl_cffi={HAS_CURL_CFFI}, selenium={HAS_SELENIUM}")
+try:
+    from DrissionPage import ChromiumPage, ChromiumOptions
+    HAS_DRISSION = True
+except ImportError:
+    HAS_DRISSION = False
+
+logger.info(
+    f"HTTP engines: curl_cffi={HAS_CURL_CFFI}, "
+    f"selenium={HAS_SELENIUM}, drission={HAS_DRISSION}"
+)
 
 
 # ========== Core Fetch Functions ==========
@@ -177,71 +186,237 @@ def fetch_with_selenium(
                 pass
 
 
+def fetch_with_drission(
+    url: str,
+    wait_time: int = 5,
+    headless: bool = False,
+    use_fresh_profile: bool = True,
+) -> Optional[str]:
+    """
+    Fetch using DrissionPage (non-headless by default).
+    Bypasses advanced anti-bot systems like RuiShu that block headless browsers.
+
+    Args:
+        url: Target URL
+        wait_time: Seconds to wait after page load
+        headless: Use headless mode (usually fails for anti-bot sites)
+        use_fresh_profile: Create a fresh browser profile (recommended for anti-bot)
+    
+    Note:
+        - Non-headless mode REQUIRES a display (X server on Linux, desktop on Windows)
+        - For Linux servers without desktop, use Xvfb (but may not bypass advanced anti-bot)
+        - Fresh profile helps avoid being flagged by anti-bot systems
+    """
+    if not HAS_DRISSION:
+        logger.warning("DrissionPage not installed")
+        return None
+
+    import tempfile
+    import shutil
+
+    page = None
+    temp_dir = None
+
+    try:
+        co = ChromiumOptions()
+        co.headless(headless)
+        co.set_argument("--no-sandbox")
+        co.set_argument("--window-size=1920,1080")
+        co.set_argument("--disable-dev-shm-usage")
+
+        # Anti-detection settings
+        co.set_argument("--disable-blink-features=AutomationControlled")
+        co.set_argument("--disable-infobars")
+        co.set_argument("--lang=zh-CN")
+
+        # Fresh profile for each request (avoids being flagged)
+        if use_fresh_profile:
+            temp_dir = tempfile.mkdtemp(prefix="drission_profile_")
+            co.set_argument(f"--user-data-dir={temp_dir}")
+            logger.debug(f"Using fresh profile: {temp_dir}")
+
+        page = ChromiumPage(co)
+
+        # Additional anti-detection JS
+        try:
+            page.run_js('''
+                Object.defineProperty(navigator, 'webdriver', {get: () => undefined});
+                Object.defineProperty(navigator, 'languages', {get: () => ['zh-CN', 'zh', 'en']});
+            ''')
+        except Exception:
+            pass
+
+        logger.info(f"DrissionPage fetching: {url}")
+        page.get(url)
+        time.sleep(wait_time)
+
+        html = page.html
+        if html and len(html) > 100:
+            logger.info(f"DrissionPage succeeded ({len(html)} chars)")
+            return html
+        else:
+            logger.warning(f"DrissionPage got empty/short page ({len(html or '')} chars)")
+            return None
+
+    except Exception as e:
+        logger.error(f"DrissionPage failed for {url}: {e}")
+        return None
+    finally:
+        if page:
+            try:
+                page.quit()
+            except Exception:
+                pass
+        # Cleanup temp profile
+        if temp_dir:
+            try:
+                shutil.rmtree(temp_dir, ignore_errors=True)
+            except Exception:
+                pass
+
+
 def smart_fetch(
     url: str,
     require_js: bool = False,
     content_check: str = None,
     timeout: int = 30,
     selenium_wait: int = 5,
-    selenium_selector: str = None
+    selenium_selector: str = None,
+    use_drission: bool = False,
+    drission_headless: bool = False,
+    anti_bot_level: int = 0,
 ) -> Optional[str]:
     """
-    Smart fetch with automatic fallback.
+    Smart fetch with automatic fallback and multi-strategy support.
     
-    Strategy:
-    1. If require_js=False, try curl_cffi first
-    2. If curl_cffi fails or content_check not found, use selenium
+    Strategy (ordered by speed, from fast to slow):
+    1. curl_cffi - Fastest, good for static/SSR sites
+    2. Selenium headless - For JS-rendered sites without strong anti-bot
+    3. DrissionPage headless - Slightly better anti-detection than Selenium
+    4. DrissionPage headed - Last resort for sites with advanced anti-bot (RuiShu etc.)
     
     Args:
         url: Page URL
-        require_js: Skip curl_cffi, go straight to selenium
-        content_check: String that must exist in result (e.g., '/news/')
-        timeout: Request timeout
-        selenium_wait: Selenium wait time
-        selenium_selector: Selenium wait-for selector
+        require_js: Skip curl_cffi, go straight to browser-based methods
+        content_check: String that must exist in result (for validation)
+        timeout: HTTP request timeout
+        selenium_wait: Browser wait time after page load
+        selenium_selector: CSS selector to wait for in Selenium
+        use_drission: Prefer DrissionPage (for known anti-bot sites)
+        drission_headless: DrissionPage headless mode
+        anti_bot_level: 0=normal, 1=medium (use drission headless), 2=high (use drission headed)
+    
+    Anti-bot level guide:
+        - 0: Normal sites, use curl_cffi -> Selenium
+        - 1: Medium anti-bot, try DrissionPage headless first
+        - 2: Strong anti-bot (RuiShu), use DrissionPage headed (requires display)
     
     Returns:
         HTML content or None
     """
-    # Strategy 1: Try curl_cffi (fast)
+
+    def validate(html: str) -> bool:
+        """Check if fetched content is valid."""
+        if not html or len(html) < 100:
+            return False
+        if content_check and content_check not in html:
+            return False
+        return True
+
+    # Determine strategy based on anti_bot_level
+    if anti_bot_level >= 2 or (use_drission and not drission_headless):
+        # Level 2: Strong anti-bot - try DrissionPage headed first (requires display)
+        logger.info(f"Anti-bot level 2: trying DrissionPage headed for {url}")
+        html = fetch_with_drission(url, wait_time=selenium_wait, headless=False)
+        if validate(html):
+            return html
+        logger.warning("DrissionPage headed failed, this site may require real display")
+
+    elif anti_bot_level == 1 or (use_drission and drission_headless):
+        # Level 1: Medium anti-bot - try DrissionPage headless first
+        logger.info(f"Anti-bot level 1: trying DrissionPage headless for {url}")
+        html = fetch_with_drission(url, wait_time=selenium_wait, headless=True)
+        if validate(html):
+            return html
+        # Fallback to headed mode
+        logger.info("DrissionPage headless failed, trying headed mode")
+        html = fetch_with_drission(url, wait_time=selenium_wait, headless=False)
+        if validate(html):
+            return html
+
+    # Level 0 or fallback: Standard strategy
+    # Strategy 1: curl_cffi (fastest)
     if not require_js and HAS_CURL_CFFI:
         logger.info(f"Trying curl_cffi for {url}")
         html = fetch_with_curl_cffi(url, timeout)
-        
-        if html:
-            # Check if content is valid
-            if content_check is None or content_check in html:
-                logger.info("curl_cffi succeeded")
-                return html
-            else:
-                logger.info(f"curl_cffi got page but missing '{content_check}', trying selenium")
-    
-    # Strategy 2: Selenium (handles JS)
+        if validate(html):
+            logger.info("curl_cffi succeeded")
+            return html
+        logger.debug("curl_cffi failed or content check failed")
+
+    # Strategy 2: Selenium headless
     if HAS_SELENIUM:
-        logger.info(f"Trying selenium for {url}")
+        logger.info(f"Trying Selenium headless for {url}")
         html = fetch_with_selenium(
             url,
             wait_time=selenium_wait,
             wait_for_selector=selenium_selector
         )
-        if html:
+        if validate(html):
             logger.info("Selenium succeeded")
             return html
-    
-    # Strategy 3: Fallback to simple requests
-    logger.info(f"Falling back to requests for {url}")
+
+    # Strategy 3: DrissionPage headless (better than Selenium for some sites)
+    if HAS_DRISSION and anti_bot_level == 0:
+        logger.info(f"Trying DrissionPage headless for {url}")
+        html = fetch_with_drission(url, wait_time=selenium_wait, headless=True)
+        if validate(html):
+            logger.info("DrissionPage headless succeeded")
+            return html
+
+    # Strategy 4: DrissionPage headed (last resort, requires display)
+    if HAS_DRISSION and anti_bot_level == 0:
+        logger.info(f"Last resort: trying DrissionPage headed for {url}")
+        html = fetch_with_drission(url, wait_time=selenium_wait, headless=False)
+        if validate(html):
+            logger.info("DrissionPage headed succeeded")
+            return html
+
+    # Final fallback: simple requests
+    logger.info(f"Falling back to simple requests for {url}")
     return fetch_html(url, timeout)
 
 
 # ========== Parsing Utilities ==========
 
 def parse_date(date_str: str, formats: list[str] = None) -> Optional[datetime]:
-    """Parse date string with multiple format support."""
+    """Parse date string with multiple format support (EN + CN)."""
     if not date_str:
         return None
     
     date_str = date_str.strip()
     
+    # Handle Chinese date formats like "2026-04-24 17:19" or "2026年04月24日"
+    cn_patterns = [
+        (r"(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{1,2})", "%Y-%m-%d %H:%M"),
+        (r"(\d{4})年(\d{1,2})月(\d{1,2})日", None),
+    ]
+    for pattern, fmt in cn_patterns:
+        match = re.match(pattern, date_str)
+        if match:
+            if fmt:
+                try:
+                    dt = datetime.strptime(match.group(0), fmt)
+                    return dt.replace(tzinfo=pytz.UTC)
+                except ValueError:
+                    pass
+            else:
+                try:
+                    y, m, d = int(match.group(1)), int(match.group(2)), int(match.group(3))
+                    return datetime(y, m, d, tzinfo=pytz.UTC)
+                except (ValueError, IndexError):
+                    pass
+
     default_formats = [
         "%B %d, %Y",          # January 15, 2026
         "%b %d, %Y",          # Jan 15, 2026
@@ -333,35 +508,18 @@ def clean_html_content(html: str) -> str:
     return "\n".join(lines)
 
 
-# ========== URL Utilities ==========
-
-def normalize_url(url: str, base_url: str = "") -> str:
-    """Normalize URL, resolve relative paths."""
-    if not url:
-        return ""
-    if url.startswith(("http://", "https://")):
-        return url
-    if base_url:
-        return urljoin(base_url, url)
-    return url
-
-
-def extract_year_from_url(url: str) -> Optional[int]:
-    """Extract year from URL path."""
-    match = re.search(r'/(\d{4})/', url)
-    if match:
-        year = int(match.group(1))
-        if 2000 <= year <= 2100:
-            return year
-    return None
-
 def extract_article_content(
-    soup,
-    selectors=None,
-    min_length=100
-):
+    soup: BeautifulSoup,
+    selectors: list[str] = None,
+    min_length: int = 100
+) -> tuple[Optional[str], Optional[str]]:
     """
     Extract article content from HTML, returning both HTML and plain text.
+    
+    Args:
+        soup: BeautifulSoup object of the page
+        selectors: CSS selectors to try for content area
+        min_length: Minimum content length to accept
     
     Returns:
         Tuple of (content_html, content_text) or (None, None) if failed
@@ -425,3 +583,26 @@ def extract_article_content(
         return "\n".join(html_parts), "\n\n".join(text_parts)
     
     return None, None
+
+
+# ========== URL Utilities ==========
+
+def normalize_url(url: str, base_url: str = "") -> str:
+    """Normalize URL, resolve relative paths."""
+    if not url:
+        return ""
+    if url.startswith(("http://", "https://")):
+        return url
+    if base_url:
+        return urljoin(base_url, url)
+    return url
+
+
+def extract_year_from_url(url: str) -> Optional[int]:
+    """Extract year from URL path."""
+    match = re.search(r'/(\d{4})/', url)
+    if match:
+        year = int(match.group(1))
+        if 2000 <= year <= 2100:
+            return year
+    return None
