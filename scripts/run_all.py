@@ -22,6 +22,8 @@ from generators.ai.anthropic_news import AnthropicNewsGenerator
 from generators.ai.anthropic_research import AnthropicResearchGenerator
 from generators.ai.anthropic_engineering import AnthropicEngineeringGenerator
 from generators.ai.openai_research import OpenAIResearchGenerator
+from generators.social.zhihu_hot import ZhihuHotGenerator
+from generators.social.zhihu_user import ZhihuUserGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -41,11 +43,12 @@ def is_ci_environment() -> bool:
 
 
 # Generators that require desktop environment (non-headless browser)
-DESKTOP_ONLY_GENERATORS = {"nmpa_drug"}
+# Also requires login session for some (zhihu)
+DESKTOP_ONLY_GENERATORS = {"nmpa_drug", "zhihu_hot", "zhihu_user"}
 
 # Registry of all generators
 GENERATORS = {
-    # Medical
+    # Medical / Government
     "idsociety": IDSocietyGenerator,
     "nmpa_drug": NMPADrugGenerator,
     # AI
@@ -53,6 +56,9 @@ GENERATORS = {
     "anthropic_research": AnthropicResearchGenerator,
     "anthropic_engineering": AnthropicEngineeringGenerator,
     "openai_research": OpenAIResearchGenerator,
+    # Social (requires login + desktop)
+    "zhihu_hot": ZhihuHotGenerator,
+    "zhihu_user": ZhihuUserGenerator,
 }
 
 

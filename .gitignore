@@ -42,6 +42,11 @@ data/*.db
 data/*.sqlite
 cache/*.json
 
+# Browser profiles and sessions (login credentials)
+zhihu_profile/
+*_profile/
+*.crdownload
+
 # Keep directory structure
 !cache/.gitkeep
 !feeds/.gitkeep

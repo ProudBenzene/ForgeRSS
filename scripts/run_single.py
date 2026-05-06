@@ -19,7 +19,10 @@ from generators.medical.idsociety import IDSocietyGenerator
 from generators.medical.nmpa_drug import NMPADrugGenerator
 from generators.ai.anthropic_news import AnthropicNewsGenerator
 from generators.ai.anthropic_research import AnthropicResearchGenerator
+from generators.ai.anthropic_engineering import AnthropicEngineeringGenerator
 from generators.ai.openai_research import OpenAIResearchGenerator
+from generators.social.zhihu_hot import ZhihuHotGenerator
+from generators.social.zhihu_user import ZhihuUserGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -29,13 +32,17 @@ logger = logging.getLogger(__name__)
 
 # Registry of all generators
 GENERATORS = {
-    # Medical
+    # Medical / Government
     "idsociety": IDSocietyGenerator,
     "nmpa_drug": NMPADrugGenerator,
     # AI
     "anthropic_news": AnthropicNewsGenerator,
     "anthropic_research": AnthropicResearchGenerator,
+    "anthropic_engineering": AnthropicEngineeringGenerator,
     "openai_research": OpenAIResearchGenerator,
+    # Social (requires login + desktop)
+    "zhihu_hot": ZhihuHotGenerator,
+    "zhihu_user": ZhihuUserGenerator,
 }
 
 

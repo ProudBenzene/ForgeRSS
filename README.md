@@ -41,6 +41,8 @@
 | **OpenAI Research** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_openai_research.xml) |
 | **IDSociety Science Speaks** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_idsociety.xml) |
 | **国家药监局药品公告** | 需本地运行（见下方说明） |
+| **知乎热榜** | 需本地运行（见下方说明） |
+| **知乎用户动态** | 需本地运行（见下方说明） |
 
 > Feed 每 6 小时自动更新，包含完整文章内容。使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
 
@@ -54,6 +56,8 @@
 | OpenAI Research | AI | curl_cffi | `feed_openai_research.xml` | CI/本地 |
 | IDSociety Science Speaks | 医学 | Selenium | `feed_idsociety.xml` | CI/本地 |
 | **国家药监局 (NMPA)** | 政府 | **DrissionPage** | `feed_nmpa_drug.xml` | **仅本地** |
+| **知乎热榜** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_hot.xml` | **仅本地** |
+| **知乎用户动态** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_user.xml` | **仅本地** |
 
 ---
 
@@ -213,6 +217,58 @@ class MyGovGenerator(BaseFeedGenerator):
 
 ---
 
+## 知乎内容订阅（需登录态）
+
+知乎热榜和用户动态需要**登录态**才能访问。支持复用浏览器登录会话。
+
+### 首次设置（登录）
+
+```bash
+# 打开浏览器，扫码登录知乎
+python -m generators.social.zhihu_base --login
+
+# 登录成功后，会话保存到 zhihu_profile/ 目录
+```
+
+### 使用方式
+
+**知乎热榜**（抓取实时热门话题）：
+```bash
+# 生成热榜 RSS（最新 50 条）
+python scripts/run_single.py zhihu_hot --max 50
+```
+
+**知乎用户动态**（跟踪特定用户）：
+```bash
+# 跟踪单个用户
+python -m generators.social.zhihu_user --users excited-vczh --max 20
+
+# 跟踪多个用户
+python -m generators.social.zhihu_user --users user1 user2 user3 --max 30
+```
+
+**搜索知乎用户**（找到用户 ID）：
+```bash
+# 搜索用户
+python -m generators.social.zhihu_user --search "人工智能"
+# 返回用户列表，复制 ID 后用于 --users 参数
+```
+
+### 内容说明
+
+- **热榜**：包含排名、标题、热度、摘要、封面图，点链接查看完整讨论
+- **用户动态**：包含回答、文章、赞同等活动，前 500 字摘要
+
+### 法律风险提示
+
+⚠️ **重要提醒**：
+- 知乎明确禁止爬取，且有法律判例（2025 年判刑 3 年）
+- 本功能**仅供个人学习研究**，用户自用自担风险
+- **禁止商业化使用**，禁止转卖数据
+- 建议低频使用，避免触发风控
+
+---
+
 ## 添加新信息源
 
 1. 在 `generators/` 下创建新文件
@@ -276,9 +332,13 @@ forgerss/
 │   │   ├── anthropic_research.py
 │   │   ├── anthropic_engineering.py
 │   │   └── openai_research.py
-│   └── medical/         # 医学/政府信息源
-│       ├── idsociety.py
-│       └── nmpa_drug.py  # 国家药监局（需桌面环境）
+│   ├── medical/         # 医学/政府信息源
+│   │   ├── idsociety.py
+│   │   └── nmpa_drug.py  # 国家药监局（需桌面环境）
+│   └── social/          # 社交媒体信息源（需登录）
+│       ├── zhihu_base.py    # 知乎登录态管理
+│       ├── zhihu_hot.py     # 知乎热榜
+│       └── zhihu_user.py    # 知乎用户动态
 ├── cache/               # JSON 缓存
 ├── feeds/               # 生成的 RSS 文件
 ├── data/                # SQLite 数据库
