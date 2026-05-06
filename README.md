@@ -2,7 +2,7 @@
 
 # ForgeRSS
 
-### 将任意网站转换为 RSS 订阅源
+### 将任意网站转换为 RSS 订阅源 | 多引擎抓取 + 反爬突破 + 社交媒体支持 | 完全开源免费
 
 **完全开源 | 免费使用 | 自动更新 | 多引擎抓取 | 政府网站反爬突破 | Docker 支持**
 
@@ -117,17 +117,22 @@ python scripts/validate_feeds.py
 |------|------|----------|----------|
 | **curl_cffi** | ~5秒 | SSR/静态网站，模拟 Chrome TLS 指纹 | 任意 |
 | **Selenium** | ~30秒 | 需要 JS 渲染的网站 | CI/本地 |
-| **DrissionPage** | ~30秒 | 政府网站/强反爬网站 | **仅桌面环境** |
+| **DrissionPage** | ~30秒 | 政府网站/强反爬网站（瑞数等） | **仅桌面环境** |
 
 系统会自动选择最优方案：先尝试 curl_cffi，失败时降级到 Selenium，最后尝试 DrissionPage。
 
 ### 反爬等级 (anti_bot_level)
 
-| 等级 | 说明 | 抓取策略 |
-|------|------|----------|
-| `0` | 普通网站 | curl_cffi → Selenium → DrissionPage |
-| `1` | 中等反爬 | DrissionPage headless → DrissionPage headed |
-| `2` | 强反爬（瑞数等） | 直接使用 DrissionPage headed |
+| 等级 | 说明 | 抓取策略 | 典型场景 |
+|------|------|----------|----------|
+| `0` | 普通网站 | curl_cffi → Selenium → DrissionPage | Anthropic, OpenAI |
+| `1` | 中等反爬 | DrissionPage headless → headed | 部分企业网站 |
+| `2` | 强反爬（瑞数等） | DrissionPage headed | 政府网站（NMPA） |
+| `3+` | 需要登录态 | DrissionPage + 持久化登录 Profile | 社交媒体（知乎） |
+
+**说明**：
+- **Level 0-2** 由 `smart_fetch` 自动处理
+- **Level 3+** 需要各 generator 自行实现登录逻辑（如 `zhihu_base.py`）
 
 ---
 
