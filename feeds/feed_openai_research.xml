@@ -5,13 +5,24 @@
     <link>https://openai.com/news/research/?limit=100</link>
     <description>Latest research news and updates from OpenAI</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 14:15:18 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 19:50:20 +0000</lastBuildDate>
     <generator>ForgeRSS</generator>
     <image>
       <url>https://openai.com/favicon.ico</url>
       <title>OpenAI Research News</title>
       <link>https://openai.com/news/research/?limit=100</link>
     </image>
+    <item>
+      <title>Advancing voice intelligence with new models in the API</title>
+      <link>https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</link>
+      <guid isPermaLink="false">https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Advancing voice intelligence with new models in the API</p>
+<p style="margin:0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Advancing voice intelligence with new models in the API</p>
+<p style="margin:0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>GPT-5.5 Instant: smarter, clearer, and more personalized</title>
       <link>https://openai.com/index/gpt-5-5-instant/</link>
@@ -323,10 +334,182 @@ Depending on who you ask, the goblins are a delightful or annoying quirk of the 
       <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
       <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-5.5</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-5.5</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+Expert-SWE (Internal)
+FrontierMath Tier 1–3
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+Prompt:# Algebraic geometry surface intersection
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+Git repo, journal, plan (Markdown files)
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+SWE-Bench Pro (Public) *
+Expert-SWE (Internal)
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+Tau2-bench Telecom***（原始提示词）
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+FrontierMath Tier 1–3
+Humanity's Last Exam（无工具）
+Humanity's Last Exam（含工具）
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+Graphwalks BFS 256k f1
+Graphwalks BFS 1mil f1
+Graphwalks parents 256k f1
+Graphwalks parents 1mil f1
+OpenAI MRCR v2 8-needle 4K-8K
+OpenAI MRCR v2 8-needle 8K-16K
+OpenAI MRCR v2 8-needle 16K-32K
+OpenAI MRCR v2 8-needle 32K-64K
+OpenAI MRCR v2 8-needle 64K-128K
+OpenAI MRCR v2 8-needle 128K-256K
+OpenAI MRCR v2 8-needle 256K-512K
+OpenAI MRCR v2 8-needle 512K-1M</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+Expert-SWE (Internal)
+FrontierMath Tier 1–3
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+Prompt:# Algebraic geometry surface intersection
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+Git repo, journal, plan (Markdown files)
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+SWE-Bench Pro (Public) *
+Expert-SWE (Internal)
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+Tau2-bench Telecom***（原始提示词）
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+FrontierMath Tier 1–3
+Humanity's Last Exam（无工具）
+Humanity's Last Exam（含工具）
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+Graphwalks BFS 256k f1
+Graphwalks BFS 1mil f1
+Graphwalks parents 256k f1
+Graphwalks parents 1mil f1
+OpenAI MRCR v2 8-needle 4K-8K
+OpenAI MRCR v2 8-needle 8K-16K
+OpenAI MRCR v2 8-needle 16K-32K
+OpenAI MRCR v2 8-needle 32K-64K
+OpenAI MRCR v2 8-needle 64K-128K
+OpenAI MRCR v2 8-needle 128K-256K
+OpenAI MRCR v2 8-needle 256K-512K
+OpenAI MRCR v2 8-needle 512K-1M</div>]]></content:encoded>
     </item>
     <item>
       <title>GPT-5.5 System CardSafety</title>
@@ -457,38 +640,66 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
       <guid isPermaLink="false">https://openai.com/index/introducing-gpt-rosalind/</guid>
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-Rosalind for life sciences research</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Introducing GPT-Rosalind for life sciences research</p>
-<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Inside our approach to the Model Spec</title>
-      <link>https://openai.com/index/our-approach-to-the-model-spec/</link>
-      <guid isPermaLink="false">https://openai.com/index/our-approach-to-the-model-spec/</guid>
-      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Inside our approach to the Model Spec</p>
-<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">Inside our approach to the Model Spec</p>
-<p style="margin:0"><a href="https://openai.com/index/our-approach-to-the-model-spec/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5.3 Instant</title>
-      <link>https://openai.com/index/gpt-5-3-instant/</link>
-      <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
-<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
-      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
-<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">专为加速科学研究与药物研发而打造的全新模型
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力生命科学机构实现突破性进展，并大幅提升研发成功率。
+目前，GPT‑Rosalind 已通过我们的“受信访问计划 (trusted access program)”，向符合条件的客户在 ChatGPT、Codex 及 API 中开放研究预览。同时，我们还为 Codex 推出了免费开放的“生命科学研究插件”，协助科学家将模型连接至 50 多种科学工具及数据源。目前，我们正与安进 (Amgen)、莫德纳 (Moderna)、艾伦研究所 (Allen Institute) 及赛默飞世尔科技 (Thermo Fisher Scientific) 等合作伙伴携手，共同将 GPT‑Rosalind 应用于加速科研与发现的工作流中。
+该模型以罗莎琳德·富兰克林 (Rosalind Franklin) 的名字命名，其严谨的研究成果揭示了 DNA 的结构，并为现代分子生物学奠定基础。
+了解我们专为科研打造的模型如何加速研究工作流，包括原始数据、可靠的发现决策等环节。
+GPT‑Rosalind 生命科学系列模型旨在应对涵盖学术文献、实验数据、科研工具及各类实验的现代科学挑战。根据我们的评估，该模型在涉及分子、蛋白质、基因、通路及疾病相关生物学的推理任务中表现卓越。在文献综述、序列功能解读、实验规划及数据分析等需要多步骤协作的工作流中，它在调用科学工具与数据库方面展现出更高的效能。
+作为 GPT‑Rosalind 系列的首次发布，我们将持续拓展模型在长周期、重工具 (tool-heavy) 的科学工作流中的生化推理能力边界。依托 OpenAI 的计算基础设施，我们能够针对真实的科学任务，不断训练、评估并优化领域模型。随着科研流程复杂度的日益提升，这些系统也将随之变得更加高效实用。
+了解我们的系列解决方案如何为科研工作流带来可衡量的显著提升，包括基于证据的发现洞察、高影响力实验等。
+我们正与领先的制药公司、生物技术企业、科研机构，以及生命科学领域的科技组织展开合作，共同将 GPT‑Rosalind 应用于各类工作流，以全面推动科学发现。
+我们针对一系列对科学发现和行业研究至关重要的核心能力，对 GPT‑Rosalind 进行了全面评估。这些评估涵盖了各科学子领域的核心推理能力，包括：化学反应机制；蛋白质结构、突变效应及相互作用；以及 DNA 序列的系统发育解读。同时，评估还考察了模型对真实科研工作流的支持力度，例如解读实验结果、识别专家级模式，以及综合外部信息以设计后续实验。最后，我们测试了模型能否准确选择并调用计算工具、数据库及特定领域功能，以增强其推理能力。综合来看，这些评估结果展示了模型在端到端科研流程中的显著进展，表明其在辅助研究人员应对极具挑战性的研发任务方面，具备更强的实力。
+I am planning a base-promoted SNAr coupling of 1-(pyridin-3-yl)ethanol with 1-fluoro-2-nitrobenzene with the goal of synthesizing 1-(pyridin-3-yl)ethyl 2-nitrophenyl ether. I found several patents that describe room-temperature O-arylation of alcohols in DMF/Cs2CO3, but the reaction is taking longer than I would like. How can I improve this reaction? Help me find any relevant literature or patents as well.
+我们在一系列公开基准测试中对 GPT‑Rosalind 进行了评估。在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑Rosalind 在所有已公布评分的模型中名列前茅。
+在衡量文献检索、数据库访问、序列操作和方案设计等科研任务的 LABBench2 测试中，GPT‑Rosalind 在 11 项任务中有 6 项表现优于 GPT‑5.4。其中最显著的提升体现在 CloningQA 任务上，该任务要求对分子克隆方案中的 DNA 和酶试剂进行端到端的设计。
+此外，我们还与利用 AI 开启基因疗法先河的 Dyno Therapeutics 公司合作，使用未公开且无污染的序列数据，评估模型在 RNA 序列功能预测与生成任务中的表现。我们将评估结果与 AI 生物领域人类专家的 57 份历史评分进行了对比。在 Codex 应用中进行的直接测试显示，模型在十次提交中的最佳表现，在预测任务中排名超过了 95% 的人类专家，在序列生成任务中则超过了约 84% 的人类专家。
+这些评估为模型在各类工作流中的表现提供了有力证明。科学家正是依赖这些工作流来获取证据、分析复杂数据，并得出具备科学依据的生物学结论。
+从即日起，科学家可以从 GitHub 获取我们专为 Codex 打造的全新生命科学研究插件⁠（在新窗口中打开）。该软件包为最常见的科研工作流提供了一套丰富的模块化技能，旨在协助用户开展人类遗传学、功能基因组学、蛋白质结构、生物化学、临床证据及公开研究检索等领域的工作。
+这些技能构成了一个编排层 (orchestration layer)，能有效协助科学家应对广泛、模糊且复杂的多步骤问题。通过该插件，用户可以访问 50 多个公开的多组学数据库、文献资源及生物学工具；对于蛋白质结构查询、序列搜索、文献综述及公开数据集检索等常见的重复性流程，它也提供了一个灵活的切入点。
+符合条件的 Enterprise 用户可以在研究工作流中将此插件与 GPT‑Rosalind 结合使用，以获得更深层次的生物学推理能力。同时，所有用户均可在我们的主干模型中使用该插件包。
+我们希望在确保严防生物技术滥用的前提下，将这些能力开放给那些最有能力推动人类健康事业发展的科学家和科研机构。该生命科学模型正通过受信访问 (trusted access) 部署机制率先面向美国符合条件的 Enterprise 客户开放，并围绕资格条件、访问管理和组织治理设置相应控制措施。与此同时，我们将广泛开放一系列连接器及“生命科学研究插件”，以便研究人员能更高效地利用我们的主干模型开展生命科学研究。
+生命科学模型在开发过程中加强了企业级安全管控和访问管理，支持在受监管的科研环境中进行专业科学应用。我们基于三大核心原则评估访问权限：公益性用途、严谨的治理与安全监管，以及具备企业级安全保障的受控访问。在实践中，这意味着参与机构必须开展具有明确公共利益的正当科学研究；维持适当的治理、合规及防滥用管控；并将访问权限严格限制在安全且管理完善环境下的核准用户内。此外，相关机构须同意生命科学研究预览条款并遵守 OpenAI 的使用政策，我们也可能在入驻或持续参与过程中要求提供补充信息。
+各机构可通过我们的资质审核与安全评估流程申请访问权限⁠。
+在研究预览期间，该模型的使用将不消耗现有的额度或 Token（受防滥用机制约束）。随着项目的扩展，我们将进一步公布有关定价和可用性的详细信息。
+生命科学模型旨在帮助科研机构在兼具技术实力与运营管控的环境中，更高效地开展高质量工作。我们的生命科学 (Life Sciences) 专职团队，以及包括麦肯锡 (McKinsey & Company)、波士顿咨询 (BCG) 和贝恩 (Bain & Company) 在内的咨询合作伙伴，将协助各机构识别高价值的应用场景，将模型整合至企业级环境，并推动产生可量化的成果。若有意探索 OpenAI Life Sciences 如何助力贵组织的工作，欢迎联系生命科学团队⁠。
+这是我们生命科学系列模型的首次发布，标志着我们践行一项长期承诺：构建能够加速社会关键领域（从人类健康到更广泛的生物学研究）科学发现的 AI 系统。我们将持续优化模型的生物学推理能力，扩展对重工具及长周期科研工作流的支持，并与领先的科学机构紧密协作，以评估其实际影响力。这包括与洛斯阿拉莫斯国家实验室 (Los Alamos National Laboratory) 等重要实验室持续合作，共同探索 AI 引导的蛋白质及催化剂设计，以及 AI 系统在保留或优化核心功能特性的前提下，对生物结构进行改造的能力。
+长远来看，我们期待这些系统能成为日益强大的科研伙伴：协助科学家实现跨越式加速，包括从“提出问题”到“获取证据”、从“提炼证据”到“洞察本质”，以及从“科学洞察”转化为“患者新疗法”等环节。</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">专为加速科学研究与药物研发而打造的全新模型
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力生命科学机构实现突破性进展，并大幅提升研发成功率。
+目前，GPT‑Rosalind 已通过我们的“受信访问计划 (trusted access program)”，向符合条件的客户在 ChatGPT、Codex 及 API 中开放研究预览。同时，我们还为 Codex 推出了免费开放的“生命科学研究插件”，协助科学家将模型连接至 50 多种科学工具及数据源。目前，我们正与安进 (Amgen)、莫德纳 (Moderna)、艾伦研究所 (Allen Institute) 及赛默飞世尔科技 (Thermo Fisher Scientific) 等合作伙伴携手，共同将 GPT‑Rosalind 应用于加速科研与发现的工作流中。
+该模型以罗莎琳德·富兰克林 (Rosalind Franklin) 的名字命名，其严谨的研究成果揭示了 DNA 的结构，并为现代分子生物学奠定基础。
+了解我们专为科研打造的模型如何加速研究工作流，包括原始数据、可靠的发现决策等环节。
+GPT‑Rosalind 生命科学系列模型旨在应对涵盖学术文献、实验数据、科研工具及各类实验的现代科学挑战。根据我们的评估，该模型在涉及分子、蛋白质、基因、通路及疾病相关生物学的推理任务中表现卓越。在文献综述、序列功能解读、实验规划及数据分析等需要多步骤协作的工作流中，它在调用科学工具与数据库方面展现出更高的效能。
+作为 GPT‑Rosalind 系列的首次发布，我们将持续拓展模型在长周期、重工具 (tool-heavy) 的科学工作流中的生化推理能力边界。依托 OpenAI 的计算基础设施，我们能够针对真实的科学任务，不断训练、评估并优化领域模型。随着科研流程复杂度的日益提升，这些系统也将随之变得更加高效实用。
+了解我们的系列解决方案如何为科研工作流带来可衡量的显著提升，包括基于证据的发现洞察、高影响力实验等。
+我们正与领先的制药公司、生物技术企业、科研机构，以及生命科学领域的科技组织展开合作，共同将 GPT‑Rosalind 应用于各类工作流，以全面推动科学发现。
+我们针对一系列对科学发现和行业研究至关重要的核心能力，对 GPT‑Rosalind 进行了全面评估。这些评估涵盖了各科学子领域的核心推理能力，包括：化学反应机制；蛋白质结构、突变效应及相互作用；以及 DNA 序列的系统发育解读。同时，评估还考察了模型对真实科研工作流的支持力度，例如解读实验结果、识别专家级模式，以及综合外部信息以设计后续实验。最后，我们测试了模型能否准确选择并调用计算工具、数据库及特定领域功能，以增强其推理能力。综合来看，这些评估结果展示了模型在端到端科研流程中的显著进展，表明其在辅助研究人员应对极具挑战性的研发任务方面，具备更强的实力。
+I am planning a base-promoted SNAr coupling of 1-(pyridin-3-yl)ethanol with 1-fluoro-2-nitrobenzene with the goal of synthesizing 1-(pyridin-3-yl)ethyl 2-nitrophenyl ether. I found several patents that describe room-temperature O-arylation of alcohols in DMF/Cs2CO3, but the reaction is taking longer than I would like. How can I improve this reaction? Help me find any relevant literature or patents as well.
+我们在一系列公开基准测试中对 GPT‑Rosalind 进行了评估。在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑Rosalind 在所有已公布评分的模型中名列前茅。
+在衡量文献检索、数据库访问、序列操作和方案设计等科研任务的 LABBench2 测试中，GPT‑Rosalind 在 11 项任务中有 6 项表现优于 GPT‑5.4。其中最显著的提升体现在 CloningQA 任务上，该任务要求对分子克隆方案中的 DNA 和酶试剂进行端到端的设计。
+此外，我们还与利用 AI 开启基因疗法先河的 Dyno Therapeutics 公司合作，使用未公开且无污染的序列数据，评估模型在 RNA 序列功能预测与生成任务中的表现。我们将评估结果与 AI 生物领域人类专家的 57 份历史评分进行了对比。在 Codex 应用中进行的直接测试显示，模型在十次提交中的最佳表现，在预测任务中排名超过了 95% 的人类专家，在序列生成任务中则超过了约 84% 的人类专家。
+这些评估为模型在各类工作流中的表现提供了有力证明。科学家正是依赖这些工作流来获取证据、分析复杂数据，并得出具备科学依据的生物学结论。
+从即日起，科学家可以从 GitHub 获取我们专为 Codex 打造的全新生命科学研究插件⁠（在新窗口中打开）。该软件包为最常见的科研工作流提供了一套丰富的模块化技能，旨在协助用户开展人类遗传学、功能基因组学、蛋白质结构、生物化学、临床证据及公开研究检索等领域的工作。
+这些技能构成了一个编排层 (orchestration layer)，能有效协助科学家应对广泛、模糊且复杂的多步骤问题。通过该插件，用户可以访问 50 多个公开的多组学数据库、文献资源及生物学工具；对于蛋白质结构查询、序列搜索、文献综述及公开数据集检索等常见的重复性流程，它也提供了一个灵活的切入点。
+符合条件的 Enterprise 用户可以在研究工作流中将此插件与 GPT‑Rosalind 结合使用，以获得更深层次的生物学推理能力。同时，所有用户均可在我们的主干模型中使用该插件包。
+我们希望在确保严防生物技术滥用的前提下，将这些能力开放给那些最有能力推动人类健康事业发展的科学家和科研机构。该生命科学模型正通过受信访问 (trusted access) 部署机制率先面向美国符合条件的 Enterprise 客户开放，并围绕资格条件、访问管理和组织治理设置相应控制措施。与此同时，我们将广泛开放一系列连接器及“生命科学研究插件”，以便研究人员能更高效地利用我们的主干模型开展生命科学研究。
+生命科学模型在开发过程中加强了企业级安全管控和访问管理，支持在受监管的科研环境中进行专业科学应用。我们基于三大核心原则评估访问权限：公益性用途、严谨的治理与安全监管，以及具备企业级安全保障的受控访问。在实践中，这意味着参与机构必须开展具有明确公共利益的正当科学研究；维持适当的治理、合规及防滥用管控；并将访问权限严格限制在安全且管理完善环境下的核准用户内。此外，相关机构须同意生命科学研究预览条款并遵守 OpenAI 的使用政策，我们也可能在入驻或持续参与过程中要求提供补充信息。
+各机构可通过我们的资质审核与安全评估流程申请访问权限⁠。
+在研究预览期间，该模型的使用将不消耗现有的额度或 Token（受防滥用机制约束）。随着项目的扩展，我们将进一步公布有关定价和可用性的详细信息。
+生命科学模型旨在帮助科研机构在兼具技术实力与运营管控的环境中，更高效地开展高质量工作。我们的生命科学 (Life Sciences) 专职团队，以及包括麦肯锡 (McKinsey & Company)、波士顿咨询 (BCG) 和贝恩 (Bain & Company) 在内的咨询合作伙伴，将协助各机构识别高价值的应用场景，将模型整合至企业级环境，并推动产生可量化的成果。若有意探索 OpenAI Life Sciences 如何助力贵组织的工作，欢迎联系生命科学团队⁠。
+这是我们生命科学系列模型的首次发布，标志着我们践行一项长期承诺：构建能够加速社会关键领域（从人类健康到更广泛的生物学研究）科学发现的 AI 系统。我们将持续优化模型的生物学推理能力，扩展对重工具及长周期科研工作流的支持，并与领先的科学机构紧密协作，以评估其实际影响力。这包括与洛斯阿拉莫斯国家实验室 (Los Alamos National Laboratory) 等重要实验室持续合作，共同探索 AI 引导的蛋白质及催化剂设计，以及 AI 系统在保留或优化核心功能特性的前提下，对生物结构进行改造的能力。
+长远来看，我们期待这些系统能成为日益强大的科研伙伴：协助科学家实现跨越式加速，包括从“提出问题”到“获取证据”、从“提炼证据”到“洞察本质”，以及从“科学洞察”转化为“患者新疗法”等环节。</div>]]></content:encoded>
     </item>
     <item>
       <title>GPT-5.4</title>
       <link>https://openai.com/index/introducing-gpt-5-4/</link>
       <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.4</p>
 <p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
@@ -499,88 +710,23 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
       <title>GPT-5.3-Codex</title>
       <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
       <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">让 Codex 覆盖电脑上的各类专业工作，实现更全面的能力拓展。
-我们正在推出一款能够解锁 Codex 更多潜力的全新模型：GPT‑5.3‑Codex，这是迄今为止能力最强的智能体编程模型。该模型将 GPT‑5.2‑Codex 的前沿编程性能与 GPT‑5.2 的推理及专业知识能力整合于一身，且运行速度提升了 25%。这使其能够承担涉及研究、工具使用和复杂执行的长期运行任务。就像同事一样，你可以在 GPT‑5.3‑Codex 工作时对其进行引导和交互，而不会丢失上下文。
-GPT‑5.3‑Codex 是我们首个在自身创建过程中发挥了关键作用的模型。Codex 团队利用其早期版本来调试其自身的训练过程、管理自身的部署，并诊断测试结果与评估。我们的团队对 Codex 能够如此大幅度加速自身开发进程感到非常震惊。
-凭借 GPT‑5.3‑Codex，Codex 从只能编写和审核代码的智能体，演变为几乎能完成开发者和专业人士在计算机上所做的一切工作的智能体。
-GPT‑5.3‑Codex 在 SWE-Bench Pro 和 Terminal-Bench 上创下了行业新高，并在 OSWorld 和 GDPval 上表现强劲。这四个基准测试是我们用来衡量编程、智能体能力以及真实世界处理能力的工具。
-GPT‑5.3‑Codex 在 SWE-Bench Pro 上达到了顶尖 (state-of-the-art) 水平，该基准是对真实世界软件工程能力的严格评估。SWE-bench Verified 仅测试 Python，而 SWE-Bench Pro 涵盖了四种编程语言，且具备更强的防污染性、挑战性、多样性，也更符合行业实际需求。此外，它在 Terminal-Bench 2.0 上的表现也远超之前的纪录，该基准主要衡量像 Codex 这样的编程智能体所需的终端操作技能。值得注意的是，GPT‑5.3‑Codex 实现这些成绩所消耗的 Token 比以往任何模型都要少，从而让用户能够构建更多内容。
-结合前沿的编程能力、审美水平的提升以及模型压缩技术，该模型能够完成令人惊叹的工作，可以在几天时间内从零开始构建功能高度复杂的游戏和应用程序。为了测试该模型的 Web 开发和长时运行的智能体能力，我们要求 GPT‑5.3‑Codex 为我们构建两款游戏：一款是Codex 应用发布⁠时那款赛车游戏的第二版，另一款是潜水游戏。通过使用“开发 Web 游戏”技能以及预设的通用后续提示（如“修复漏洞”或“改进游戏”），GPT‑5.3‑Codex 消耗了数百万个 Token，自主进行了迭代开发。你可以观看预告片并亲自试玩这些游戏，见证 Codex 的实力。
-一款赛车游戏，包含不同的赛车手、八张赛道地图，甚至还能用空格键触发道具。点击这里亲自体验⁠（在新窗口中打开）！
-一款潜水探索游戏，你将在各类珊瑚礁间探险，收集它们来完成你的鱼类图鉴，同时还要管理氧气、压力以及各种潜在危险。点击这里亲自体验⁠（在新窗口中打开）！
-与 GPT‑5.2‑Codex 相比，在要求构建日常网站时，GPT‑5.3‑Codex 也能更好地理解你的意向。对于简单或描述不详的提示，模型现在会默认生成功能更全、预设更合理的网站，为你提供更强大的初始画布来将创意变为现实。
-例如，我们要求 GPT‑5.3‑Codex 和 GPT‑5.2‑Codex 分别构建下方的两个落地页。GPT‑5.3‑Codex 自动将年费计划显示为折算后的月度价格，使优惠显得清晰且更有针对性，而不是简单地计算年费总额。它还制作了一个自动切换的用户评价轮播图，包含三个不同的用户引用而非仅有一个，从而使生成的页面在默认情况下感觉更完整、更接近生产环境标准。
-提示：为 Quiet KPI 构建一个落地页，这是一款面向创业者的每周指标摘要工具。整体美学为柔和系 SaaS 风格，带有玻璃质感卡片、从薰衣草色到蓝色的渐变，以及轻微的模糊效果。页面结构包括：Hero 区（含邮箱收集）、示例报告卡片网格、集成展示区、客户评价轮播、价格切换（月付/年付）、FAQ 和页脚。- 字体使用 Satoshi 或类似的几何无衬线体。- 按钮采用柔和圆角（14px 半径），并具备明显的聚焦状态。- 添加一处恰到好处的滚动触发式动效。
-软件工程师、设计师、产品经理和数据科学家所做的工作远不止生成代码。GPT‑5.3‑Codex 旨在支持软件生命周期中的所有工作，包括调试、部署、监控、编写公关需求文档 (PRD)、编辑文案、用户研究、测试、指标分析等。它的智能体能力不仅限于软件，还能帮助你构建任何想要的东西，无论是演示文稿还是分析表格中的数据。
-通过使用类似于我们之前GDP⁠val⁠测试中所用的自定义技能，GPT‑5.3‑Codex 在专业知识型工作方面也表现强劲。根据 GDPval 的衡量，其表现与 GPT‑5.2 持平。GDPval 是 OpenAI 在 2025 年发布的一项评估，旨在衡量模型在 44 种职业中明确定义的知识型工作任务上的表现。这些任务包括制作演示文稿、电子表格以及其他工作产出。
-OSWorld 是一个智能体计算机使用基准测试，要求智能体在视觉桌面计算机环境中完成办公生产任务。GPT‑5.3‑Codex 展示了远强于以往 GPT 模型的计算机使用能力。
-在 OSWorld-Verified 中，模型通过视觉能力来完成多样化的计算机任务。人类得分约为 72%。
-综合来看，在编程、前端、计算机使用以及真实世界任务中的这些结果表明，GPT‑5.3‑Codex 不仅仅是在单个任务上表现更强，它标志着向单一、通用的智能体迈出了关键一步 — 这种智能体能够在全方位的真实世界技术工作中进行推理、构建和执行。
-随着模型能力变得愈发强大，差距已从“智能体能做什么”转向“人类如何轻松地针对多个并行工作的智能体进行交互、引导和监督”。Codex 应用让管理和引导智能体变得更加简单，而现在配合 GPT‑5.3‑Codex，交互性得到了进一步提升。通过这一新模型，Codex 会提供频繁的状态更新，让你在它工作时随时掌握关键决策和进展。你无需等待最终输出，而是可以进行实时交互 — 提出问题、讨论方案并引导其走向解决方案。GPT‑5.3‑Codex 会详述其正在执行的操作，响应反馈，并让你全程参与其中。
-在应用中运行模型时，可前往“设置 > 通用 > 后续行为”启用引导功能。
-我们如何利用 Codex 训练并部署 GPT‑5.3‑Codex
-Codex 近期实现的快速进步，建立在 OpenAI 各个团队跨越数月乃至数年的研究项目成果之上。这些研究项目正由 Codex 加速推动；OpenAI 的许多研究员和工程师表示，他们如今的工作性质与短短两个月前相比已发生了根本性的变化。即使是 GPT‑5.3‑Codex 的早期版本，也展现出了卓越的能力，使我们的团队能够利用这些早期版本来改进训练，并支持后续版本的部署工作。
-Codex 可用于极其广泛的任务，以至于很难完全列举它帮助我们团队的所有方式。举例来说，研究团队利用 Codex 监控并调试了本次发布的训练运行。它对研究的加速不仅限于调试基础设施问题：它还帮助追踪了整个训练过程中的模式，对交互质量进行了深度分析，提出了修复方案，并为人类研究员构建了功能丰富的应用程序，以便精确了解该模型的行为与以往模型相比有何差异。
-工程团队利用 Codex 优化并调整了 GPT‑5.3‑Codex 的测试框架 (harness)。当我们开始发现影响用户的奇特边缘案例时，团队成员利用 Codex 识别出了上下文渲染中的漏洞，并找到了导致低缓存命中率的根本原因。在整个发布过程中，GPT‑5.3‑Codex 持续帮助团队动态缩放 GPU 集群，以应对流量激增并保持延迟稳定。
-在 Alpha 测试期间，一位研究员想要了解 GPT‑5.3‑Codex 在每轮对话中多完成了多少工作，以及相关的生产力差异。GPT‑5.3‑Codex 构思了几个简单的正则表达式分类器，用以评估澄清请求、用户正向与负面反馈以及任务进展的频率；随后，它将这些分类器在大规模会话日志上运行，并生成了一份带有结论的报告。使用 Codex 进行构建的人员感到更加满意，因为智能体能更好地理解他们的意向，且每轮对话的进展更多，所需的澄清问题更少。
-由于 GPT‑5.3‑Codex 与其前代产品差异巨大，Alpha 测试的数据呈现出许多异常且违背直觉的结果。团队中的一位数据科学家与 GPT‑5.3‑Codex 合作构建了新的数据流水线，并以远超常规看板工具的方式，更丰富地实现结果可视化。随后，他们与 Codex 共同分析了结果，Codex 在不到三分钟的时间内，简明扼要地总结了数千个数据点中的关键洞察。
-单独来看，所有这些任务都是 Codex 如何帮助研究人员和产品构建者的生动案例。综合而言，我们发现这些新能力为我们的研究、工程和产品团队带来了强大的加速效果。
-近几个月来，我们看到模型在网络安全任务上的性能有了显著提升，这使开发者和安全专业人士共同受益。与此同时，我们一直在准备更强的网络安全保障措施⁠，以支持防御性用途并增强整个生态系统的韧性。
-GPT‑5.3‑Codex 是我们依据准备框架⁠首个在网络安全相关任务中被评定为高能力⁠的模型，也是我们首个直接训练用于识别软件漏洞的模型。虽然我们还没有确凿证据表明它可以实现端到端的自动化网络攻击，但我们正采取预防性措施，部署了迄今为止最全面的网络安全安全栈。我们的缓解措施包括安全训练、自动化监控、高级能力的受信访问，以及包含威胁情报在内的执行流水线。
-由于网络安全本质上具有双重用途，我们正采取一种基于证据的迭代方法，在提升防御者发现并修复漏洞能力的同时减少滥用行为。为此，我们启用了网络安全受信访问⁠(Trusted Access for Cyber) 试点计划，以加速网络防御研究。
-我们正在投资生态系统保障措施，例如扩大安全研究智能体Aardvark⁠的私测范围，这是我们 Codex 安全产品和工具系列中的首款产品；同时，我们还与开源维护者合作，为 Next.js 等广泛使用的项目提供免费的代码库扫描。上周就有安全研究人员使用 Codex 发现并披露⁠（在新窗口中打开）了相关漏洞。
-基于我们 2023 年启动的 100 万美元网络安全资助计划，我们还承诺提供 1000 万美元的 API 额度，以利用我们最强大的模型加速网络防御，特别是针对开源软件和关键基础设施系统。从事善意 (good-faith) 安全研究的组织可以通过我们的网络安全资助计划⁠申请 API 额度和支持。
-GPT‑5.3‑Codex 已通过 ChatGPT 付费套餐上线，涵盖所有你可以使用 Codex 的场景：应用、命令行界面 (CLI)、IDE 扩展以及网页端。我们正在努力，确保尽快安全地开放 API 访问。
-得益于我们在基础设施和推理栈方面的改进，伴随此次更新，我们为 Codex 用户运行 GPT‑5.3‑Codex 的速度提升了 25%，从而带来了更快的交互体验和结果产出。
-GPT‑5.3‑Codex 是针对 NVIDIA GB200 NVL72 系统共同设计、训练并提供服务的。我们对 NVIDIA 的合作伙伴关系深表感谢。
-凭借 GPT‑5.3‑Codex，Codex 正从单纯的代码编写工具，演变为一个能将代码作为工具来操作计算机并完成端到端工作的智能体。通过推高编程智能体能力的上限，我们也在解锁更广泛的知识工作类别 — 从构建和部署软件到研究、分析及执行复杂任务。最初以打造“最强编程智能体”为目标的尝试，如今已成为构建更通用计算机协作伙伴的基础，这不仅扩大了“谁能进行构建”的受众范围，也拓展了 Codex 所能实现的无限可能。
-GPT-5.3-Codex (xhigh)
-GPT-5.2-Codex (xhigh)
-SWE-Bench Pro (Public)
-SWE-lancer IC Diamond
-博文中的所有评估均在 GPT-5.3-Codex 上运行，并采用 xhigh 级别的推理强度。</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">让 Codex 覆盖电脑上的各类专业工作，实现更全面的能力拓展。
-我们正在推出一款能够解锁 Codex 更多潜力的全新模型：GPT‑5.3‑Codex，这是迄今为止能力最强的智能体编程模型。该模型将 GPT‑5.2‑Codex 的前沿编程性能与 GPT‑5.2 的推理及专业知识能力整合于一身，且运行速度提升了 25%。这使其能够承担涉及研究、工具使用和复杂执行的长期运行任务。就像同事一样，你可以在 GPT‑5.3‑Codex 工作时对其进行引导和交互，而不会丢失上下文。
-GPT‑5.3‑Codex 是我们首个在自身创建过程中发挥了关键作用的模型。Codex 团队利用其早期版本来调试其自身的训练过程、管理自身的部署，并诊断测试结果与评估。我们的团队对 Codex 能够如此大幅度加速自身开发进程感到非常震惊。
-凭借 GPT‑5.3‑Codex，Codex 从只能编写和审核代码的智能体，演变为几乎能完成开发者和专业人士在计算机上所做的一切工作的智能体。
-GPT‑5.3‑Codex 在 SWE-Bench Pro 和 Terminal-Bench 上创下了行业新高，并在 OSWorld 和 GDPval 上表现强劲。这四个基准测试是我们用来衡量编程、智能体能力以及真实世界处理能力的工具。
-GPT‑5.3‑Codex 在 SWE-Bench Pro 上达到了顶尖 (state-of-the-art) 水平，该基准是对真实世界软件工程能力的严格评估。SWE-bench Verified 仅测试 Python，而 SWE-Bench Pro 涵盖了四种编程语言，且具备更强的防污染性、挑战性、多样性，也更符合行业实际需求。此外，它在 Terminal-Bench 2.0 上的表现也远超之前的纪录，该基准主要衡量像 Codex 这样的编程智能体所需的终端操作技能。值得注意的是，GPT‑5.3‑Codex 实现这些成绩所消耗的 Token 比以往任何模型都要少，从而让用户能够构建更多内容。
-结合前沿的编程能力、审美水平的提升以及模型压缩技术，该模型能够完成令人惊叹的工作，可以在几天时间内从零开始构建功能高度复杂的游戏和应用程序。为了测试该模型的 Web 开发和长时运行的智能体能力，我们要求 GPT‑5.3‑Codex 为我们构建两款游戏：一款是Codex 应用发布⁠时那款赛车游戏的第二版，另一款是潜水游戏。通过使用“开发 Web 游戏”技能以及预设的通用后续提示（如“修复漏洞”或“改进游戏”），GPT‑5.3‑Codex 消耗了数百万个 Token，自主进行了迭代开发。你可以观看预告片并亲自试玩这些游戏，见证 Codex 的实力。
-一款赛车游戏，包含不同的赛车手、八张赛道地图，甚至还能用空格键触发道具。点击这里亲自体验⁠（在新窗口中打开）！
-一款潜水探索游戏，你将在各类珊瑚礁间探险，收集它们来完成你的鱼类图鉴，同时还要管理氧气、压力以及各种潜在危险。点击这里亲自体验⁠（在新窗口中打开）！
-与 GPT‑5.2‑Codex 相比，在要求构建日常网站时，GPT‑5.3‑Codex 也能更好地理解你的意向。对于简单或描述不详的提示，模型现在会默认生成功能更全、预设更合理的网站，为你提供更强大的初始画布来将创意变为现实。
-例如，我们要求 GPT‑5.3‑Codex 和 GPT‑5.2‑Codex 分别构建下方的两个落地页。GPT‑5.3‑Codex 自动将年费计划显示为折算后的月度价格，使优惠显得清晰且更有针对性，而不是简单地计算年费总额。它还制作了一个自动切换的用户评价轮播图，包含三个不同的用户引用而非仅有一个，从而使生成的页面在默认情况下感觉更完整、更接近生产环境标准。
-提示：为 Quiet KPI 构建一个落地页，这是一款面向创业者的每周指标摘要工具。整体美学为柔和系 SaaS 风格，带有玻璃质感卡片、从薰衣草色到蓝色的渐变，以及轻微的模糊效果。页面结构包括：Hero 区（含邮箱收集）、示例报告卡片网格、集成展示区、客户评价轮播、价格切换（月付/年付）、FAQ 和页脚。- 字体使用 Satoshi 或类似的几何无衬线体。- 按钮采用柔和圆角（14px 半径），并具备明显的聚焦状态。- 添加一处恰到好处的滚动触发式动效。
-软件工程师、设计师、产品经理和数据科学家所做的工作远不止生成代码。GPT‑5.3‑Codex 旨在支持软件生命周期中的所有工作，包括调试、部署、监控、编写公关需求文档 (PRD)、编辑文案、用户研究、测试、指标分析等。它的智能体能力不仅限于软件，还能帮助你构建任何想要的东西，无论是演示文稿还是分析表格中的数据。
-通过使用类似于我们之前GDP⁠val⁠测试中所用的自定义技能，GPT‑5.3‑Codex 在专业知识型工作方面也表现强劲。根据 GDPval 的衡量，其表现与 GPT‑5.2 持平。GDPval 是 OpenAI 在 2025 年发布的一项评估，旨在衡量模型在 44 种职业中明确定义的知识型工作任务上的表现。这些任务包括制作演示文稿、电子表格以及其他工作产出。
-OSWorld 是一个智能体计算机使用基准测试，要求智能体在视觉桌面计算机环境中完成办公生产任务。GPT‑5.3‑Codex 展示了远强于以往 GPT 模型的计算机使用能力。
-在 OSWorld-Verified 中，模型通过视觉能力来完成多样化的计算机任务。人类得分约为 72%。
-综合来看，在编程、前端、计算机使用以及真实世界任务中的这些结果表明，GPT‑5.3‑Codex 不仅仅是在单个任务上表现更强，它标志着向单一、通用的智能体迈出了关键一步 — 这种智能体能够在全方位的真实世界技术工作中进行推理、构建和执行。
-随着模型能力变得愈发强大，差距已从“智能体能做什么”转向“人类如何轻松地针对多个并行工作的智能体进行交互、引导和监督”。Codex 应用让管理和引导智能体变得更加简单，而现在配合 GPT‑5.3‑Codex，交互性得到了进一步提升。通过这一新模型，Codex 会提供频繁的状态更新，让你在它工作时随时掌握关键决策和进展。你无需等待最终输出，而是可以进行实时交互 — 提出问题、讨论方案并引导其走向解决方案。GPT‑5.3‑Codex 会详述其正在执行的操作，响应反馈，并让你全程参与其中。
-在应用中运行模型时，可前往“设置 > 通用 > 后续行为”启用引导功能。
-我们如何利用 Codex 训练并部署 GPT‑5.3‑Codex
-Codex 近期实现的快速进步，建立在 OpenAI 各个团队跨越数月乃至数年的研究项目成果之上。这些研究项目正由 Codex 加速推动；OpenAI 的许多研究员和工程师表示，他们如今的工作性质与短短两个月前相比已发生了根本性的变化。即使是 GPT‑5.3‑Codex 的早期版本，也展现出了卓越的能力，使我们的团队能够利用这些早期版本来改进训练，并支持后续版本的部署工作。
-Codex 可用于极其广泛的任务，以至于很难完全列举它帮助我们团队的所有方式。举例来说，研究团队利用 Codex 监控并调试了本次发布的训练运行。它对研究的加速不仅限于调试基础设施问题：它还帮助追踪了整个训练过程中的模式，对交互质量进行了深度分析，提出了修复方案，并为人类研究员构建了功能丰富的应用程序，以便精确了解该模型的行为与以往模型相比有何差异。
-工程团队利用 Codex 优化并调整了 GPT‑5.3‑Codex 的测试框架 (harness)。当我们开始发现影响用户的奇特边缘案例时，团队成员利用 Codex 识别出了上下文渲染中的漏洞，并找到了导致低缓存命中率的根本原因。在整个发布过程中，GPT‑5.3‑Codex 持续帮助团队动态缩放 GPU 集群，以应对流量激增并保持延迟稳定。
-在 Alpha 测试期间，一位研究员想要了解 GPT‑5.3‑Codex 在每轮对话中多完成了多少工作，以及相关的生产力差异。GPT‑5.3‑Codex 构思了几个简单的正则表达式分类器，用以评估澄清请求、用户正向与负面反馈以及任务进展的频率；随后，它将这些分类器在大规模会话日志上运行，并生成了一份带有结论的报告。使用 Codex 进行构建的人员感到更加满意，因为智能体能更好地理解他们的意向，且每轮对话的进展更多，所需的澄清问题更少。
-由于 GPT‑5.3‑Codex 与其前代产品差异巨大，Alpha 测试的数据呈现出许多异常且违背直觉的结果。团队中的一位数据科学家与 GPT‑5.3‑Codex 合作构建了新的数据流水线，并以远超常规看板工具的方式，更丰富地实现结果可视化。随后，他们与 Codex 共同分析了结果，Codex 在不到三分钟的时间内，简明扼要地总结了数千个数据点中的关键洞察。
-单独来看，所有这些任务都是 Codex 如何帮助研究人员和产品构建者的生动案例。综合而言，我们发现这些新能力为我们的研究、工程和产品团队带来了强大的加速效果。
-近几个月来，我们看到模型在网络安全任务上的性能有了显著提升，这使开发者和安全专业人士共同受益。与此同时，我们一直在准备更强的网络安全保障措施⁠，以支持防御性用途并增强整个生态系统的韧性。
-GPT‑5.3‑Codex 是我们依据准备框架⁠首个在网络安全相关任务中被评定为高能力⁠的模型，也是我们首个直接训练用于识别软件漏洞的模型。虽然我们还没有确凿证据表明它可以实现端到端的自动化网络攻击，但我们正采取预防性措施，部署了迄今为止最全面的网络安全安全栈。我们的缓解措施包括安全训练、自动化监控、高级能力的受信访问，以及包含威胁情报在内的执行流水线。
-由于网络安全本质上具有双重用途，我们正采取一种基于证据的迭代方法，在提升防御者发现并修复漏洞能力的同时减少滥用行为。为此，我们启用了网络安全受信访问⁠(Trusted Access for Cyber) 试点计划，以加速网络防御研究。
-我们正在投资生态系统保障措施，例如扩大安全研究智能体Aardvark⁠的私测范围，这是我们 Codex 安全产品和工具系列中的首款产品；同时，我们还与开源维护者合作，为 Next.js 等广泛使用的项目提供免费的代码库扫描。上周就有安全研究人员使用 Codex 发现并披露⁠（在新窗口中打开）了相关漏洞。
-基于我们 2023 年启动的 100 万美元网络安全资助计划，我们还承诺提供 1000 万美元的 API 额度，以利用我们最强大的模型加速网络防御，特别是针对开源软件和关键基础设施系统。从事善意 (good-faith) 安全研究的组织可以通过我们的网络安全资助计划⁠申请 API 额度和支持。
-GPT‑5.3‑Codex 已通过 ChatGPT 付费套餐上线，涵盖所有你可以使用 Codex 的场景：应用、命令行界面 (CLI)、IDE 扩展以及网页端。我们正在努力，确保尽快安全地开放 API 访问。
-得益于我们在基础设施和推理栈方面的改进，伴随此次更新，我们为 Codex 用户运行 GPT‑5.3‑Codex 的速度提升了 25%，从而带来了更快的交互体验和结果产出。
-GPT‑5.3‑Codex 是针对 NVIDIA GB200 NVL72 系统共同设计、训练并提供服务的。我们对 NVIDIA 的合作伙伴关系深表感谢。
-凭借 GPT‑5.3‑Codex，Codex 正从单纯的代码编写工具，演变为一个能将代码作为工具来操作计算机并完成端到端工作的智能体。通过推高编程智能体能力的上限，我们也在解锁更广泛的知识工作类别 — 从构建和部署软件到研究、分析及执行复杂任务。最初以打造“最强编程智能体”为目标的尝试，如今已成为构建更通用计算机协作伙伴的基础，这不仅扩大了“谁能进行构建”的受众范围，也拓展了 Codex 所能实现的无限可能。
-GPT-5.3-Codex (xhigh)
-GPT-5.2-Codex (xhigh)
-SWE-Bench Pro (Public)
-SWE-lancer IC Diamond
-博文中的所有评估均在 GPT-5.3-Codex 上运行，并采用 xhigh 级别的推理强度。</div>]]></content:encoded>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3-Codex</p>
+<p style="margin:0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-5.3 Instant</title>
+      <link>https://openai.com/index/gpt-5-3-instant/</link>
+      <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
+<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></description>
+      <content:encoded><![CDATA[<p style="color:#333;font-size:15px;line-height:1.8;margin:0 0 16px">GPT-5.3 Instant</p>
+<p style="margin:0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">Read full article &rarr;</a></p>]]></content:encoded>
     </item>
   </channel>
 </rss>
