@@ -39,6 +39,10 @@
 | **Anthropic Research** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_anthropic_research.xml) |
 | **Anthropic Engineering** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_anthropic_engineering.xml) |
 | **OpenAI Research** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_openai_research.xml) |
+| **OpenAI Codex Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_openai_codex_docs.xml) |
+| **Claude Code Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_claude_code_docs.xml) |
+| **Cursor Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_cursor_docs.xml) |
+| **Qwen Code Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_qwen_code_docs.xml) |
 | **IDSociety Science Speaks** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_idsociety.xml) |
 | **国家药监局药品公告** | 需本地运行（见下方说明） |
 | **知乎热榜** | 需本地运行（见下方说明） |
@@ -54,6 +58,10 @@
 | Anthropic Research | AI | curl_cffi | `feed_anthropic_research.xml` | CI/本地 |
 | Anthropic Engineering | AI | curl_cffi | `feed_anthropic_engineering.xml` | CI/本地 |
 | OpenAI Research | AI | curl_cffi | `feed_openai_research.xml` | CI/本地 |
+| OpenAI Codex Docs | AI 编程工具 | curl_cffi + Selenium | `feed_openai_codex_docs.xml` | CI/本地 |
+| Claude Code Docs | AI 编程工具 | Selenium | `feed_claude_code_docs.xml` | CI/本地 |
+| Cursor Docs | AI 编程工具 | Selenium | `feed_cursor_docs.xml` | CI/本地 |
+| Qwen Code Docs | AI 编程工具 | curl_cffi | `feed_qwen_code_docs.xml` | CI/本地 |
 | IDSociety Science Speaks | 医学 | Selenium | `feed_idsociety.xml` | CI/本地 |
 | **国家药监局 (NMPA)** | 政府 | **DrissionPage** | `feed_nmpa_drug.xml` | **仅本地** |
 | **知乎热榜** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_hot.xml` | **仅本地** |
@@ -102,6 +110,10 @@ python scripts/run_all.py
 
 # 运行单个生成器
 python scripts/run_single.py anthropic_news --max 20
+
+# 运行 AI 编程工具文档生成器
+python scripts/run_ai_coding_docs.py --generator cursor --max 100
+python scripts/run_ai_coding_docs.py  # 运行所有 AI 编程工具文档
 
 # 验证 Feed
 python scripts/validate_feeds.py
