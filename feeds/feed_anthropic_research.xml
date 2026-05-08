@@ -5,7 +5,7 @@
     <link>https://www.anthropic.com/research</link>
     <description>Latest research publications from Anthropic</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 19:47:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 02:56:56 +0000</lastBuildDate>
     <generator>ForgeRSS</generator>
     <image>
       <url>https://www.anthropic.com/favicon.ico</url>
@@ -53,10 +53,10 @@ Fortunately, we think that these limitations can be addressed, at least partiall
 More broadly, we are excited about NLAs as an example of a general class of techniques for producing human-readable text explanations of language model activations. Other similar techniques have been exploredbyAnthropicandmanyotherresearchers.
 To support further development and to enable other researchers to get hands-on experience with NLAs, we’re releasingtraining codeand trained NLAs for several open models. We recommend readers try out the interactive NLA demo hosted on Neuronpedia atthis link.
 Find thecodeon GitHub.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></description>
+How people ask Claude for personal guidance</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
 Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseautoencodersandattributiongraphs) for better understanding activations. These tools have taught us a great deal, but they don’t speak for themselves—their outputs are still complex objects that trained researchers need to carefully interpret.
 Today, we’re introducing a method for understanding activations that does speak for itself—literally. Our method, Natural Language Autoencoders (NLAs), converts an activation into natural-language text we can read directly. For example: When asked to complete a couplet, NLAs show Claude planning possible rhymes in advance.
@@ -92,10 +92,49 @@ Fortunately, we think that these limitations can be addressed, at least partiall
 More broadly, we are excited about NLAs as an example of a general class of techniques for producing human-readable text explanations of language model activations. Other similar techniques have been exploredbyAnthropicandmanyotherresearchers.
 To support further development and to enable other researchers to get hands-on experience with NLAs, we’re releasingtraining codeand trained NLAs for several open models. We recommend readers try out the interactive NLA demo hosted on Neuronpedia atthis link.
 Find thecodeon GitHub.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></content:encoded>
+How people ask Claude for personal guidance</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Donating our open-source alignment tool</title>
+      <link>https://www.anthropic.com/research/donating-open-source-petri</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/donating-open-source-petri</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
+Petri has been part of our alignment assessment for every Claude model since Claude Sonnet 4.5. It compares how the new model behaves across a range of alignment-relevant scenarios that are simulated by a separate “auditor” model. A further “judge” model then scores the resulting transcripts for misaligned behaviors.
+We’ve been pleased to see Petri being used by external organizations: for example, the UK’s AI Security Institute (AISI) made it amajor partof how they evaluate models for their propensity to sabotage AI research.
+We’re now updating Petri to its third version. Here are some of the biggest changes:
+Adaptability.Petri 3.0 involves major architectural changes that allow users to adapt it to more uses, in particular by splitting the auditor model and the target model into separate components that can be tweaked separately;
+Realism.Despite the fact that alignment researchers try to make tests appear realistic, a model can often deduce from various artificialities in the setup that it’s actually part of a test. And if the model is aware it’s being evaluated, the researcher is no longer able to see how the model behavesin general. An add-on to Petri, which we’re calling “Dish,” makes the setup far more realistic, for example by running the tests using the model’s real system prompt and the real “scaffold” (the software that wraps around the model to help it meet its goals) that would be used in genuine model deployments;
+Depth. We’ve now integrated Petri with our other open-source alignment tool,Bloom, which can perform much more in-depth assessments of specific chosen behaviors (in comparison to Petri’s wider-ranging approach).
+We’re also giving Petri a new home. We have handed over its development toMeridian Labs, an AI evaluation nonprofit. This move—similar to when wedonatedthe Model Context Protocol (MCP) to the Linux Foundation—will help ensure that Petri remains independent of any AI lab, so that its results will be seen as neutral and credible by those across the industry and beyond.
+As part of Meridian Labs, Petri joins other tools likeInspectandScout, building a technology stack that is open to labs, independent researchers, and governments alike, at a time when reliable tests of AI model behavior matter more than ever.
+You can read more about Petri 3.0 onthe Meridian Labs blog.
+Instructions to install and use Petri can be found on thePetri website.
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Focus areas for The Anthropic Institute
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
+How people ask Claude for personal guidance</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
+Petri has been part of our alignment assessment for every Claude model since Claude Sonnet 4.5. It compares how the new model behaves across a range of alignment-relevant scenarios that are simulated by a separate “auditor” model. A further “judge” model then scores the resulting transcripts for misaligned behaviors.
+We’ve been pleased to see Petri being used by external organizations: for example, the UK’s AI Security Institute (AISI) made it amajor partof how they evaluate models for their propensity to sabotage AI research.
+We’re now updating Petri to its third version. Here are some of the biggest changes:
+Adaptability.Petri 3.0 involves major architectural changes that allow users to adapt it to more uses, in particular by splitting the auditor model and the target model into separate components that can be tweaked separately;
+Realism.Despite the fact that alignment researchers try to make tests appear realistic, a model can often deduce from various artificialities in the setup that it’s actually part of a test. And if the model is aware it’s being evaluated, the researcher is no longer able to see how the model behavesin general. An add-on to Petri, which we’re calling “Dish,” makes the setup far more realistic, for example by running the tests using the model’s real system prompt and the real “scaffold” (the software that wraps around the model to help it meet its goals) that would be used in genuine model deployments;
+Depth. We’ve now integrated Petri with our other open-source alignment tool,Bloom, which can perform much more in-depth assessments of specific chosen behaviors (in comparison to Petri’s wider-ranging approach).
+We’re also giving Petri a new home. We have handed over its development toMeridian Labs, an AI evaluation nonprofit. This move—similar to when wedonatedthe Model Context Protocol (MCP) to the Linux Foundation—will help ensure that Petri remains independent of any AI lab, so that its results will be seen as neutral and credible by those across the industry and beyond.
+As part of Meridian Labs, Petri joins other tools likeInspectandScout, building a technology stack that is open to labs, independent researchers, and governments alike, at a time when reliable tests of AI model behavior matter more than ever.
+You can read more about Petri 3.0 onthe Meridian Labs blog.
+Instructions to install and use Petri can be found on thePetri website.
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Focus areas for The Anthropic Institute
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
+How people ask Claude for personal guidance</div>]]></content:encoded>
     </item>
     <item>
       <title>Focus areas for The Anthropic Institute</title>
@@ -177,8 +216,8 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
-How people ask Claude for personal guidance
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></description>
+Donating our open-source alignment tool
+How people ask Claude for personal guidance</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
 Our agenda focuses on four areas for research:
 Threats and resilience
@@ -253,8 +292,8 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
-How people ask Claude for personal guidance
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></content:encoded>
+Donating our open-source alignment tool
+How people ask Claude for personal guidance</div>]]></content:encoded>
     </item>
     <item>
       <title>How people ask Claude for personal guidance</title>
@@ -298,9 +337,9 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">People don’t just come to Claude for code reviews or meeting summaries. They ask whether to take the job, how to talk to their crush, if they should move halfway across the world. Using ourprivacy-preserving analysis toolon a random sample of 1 million claude.ai conversations, we found that roughly 6% were people coming to Claude for personal guidance—seeking not just information but perspective on what to do next.
 In this study, we looked at what types of guidance people ask of Claude. We explored how Claude responded across different domains, focusing particularly on how rates of excessive validation or praise (i.e.,sycophancy)varied by the topic of guidance. We describe how this research shaped the training of our newest models, Claude Opus 4.7 and Claude Mythos Preview. Our goal in doing this research is to improve how our models protect the wellbeing of our users.
 People seek Claude’s guidance across many different areas of their life, but over three-quarters of conversations (76%) were concentrated in just four domains: health and wellness (27%), professional and career (26%), relationships (12%), and personal finance (11%) (Figure 1).
@@ -337,9 +376,9 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</title>
@@ -401,9 +440,9 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
 Subscribe to Anthropic Science
 Features on AI-assisted discoveries, practical workflows, and field notes across the sciences.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">In this post, Brianna,a researcher on the discovery team, shares results from a recent bioinformatics benchmarking effort.Almost as soon as large language models could hold a conversation, people started asking how they’d stack up against human experts. Could models pass the bar exam? Could they answer medical licensing questions, or solve Olympiad math problems? Suchbenchmarks—self-contained sets of human-vetted problems designed to evaluate a capability of a model—have now become a source of competition across AI developers, reported in model release system cards and tracked onmanyonlineleaderboards.Competition aside, benchmarks help us tackle an important question: whether models are capable and reliable enough to support, or even produce, professional-level work. Scientistsare using modelsto write code for analysis pipelines, propose hypotheses, and draw conclusions from data with the long-term aim ofaccelerating innovation and discovery. But exactly how proficient is AI in science right now, and how quickly are Claude and other models improving?To answer this, the research community has built several benchmarks.MMLU-Protests expert-level knowledge and reasoning questions.GPQAposes graduate-level, "Google-proof" questions in biology, physics, and chemistry.LAB-Benchtests biology-specific knowledge work—reading the literature, interpreting figures, reasoning about protocols. Although these benchmarks were developed in the “chatbot” era, they’ve persisted into the agent and tool-use era, joined by even more difficult scientific reasoning evals likeFrontierScienceandHumanity's Last Exam, because knowledge and reasoning remain a vital measure of scientific capability.
@@ -460,9 +499,9 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
 Subscribe to Anthropic Science
 Features on AI-assisted discoveries, practical workflows, and field notes across the sciences.</div>]]></content:encoded>
     </item>
@@ -488,9 +527,9 @@ We will analyze the insights from this study as part of our economic research, p
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">TheEconomic Researchteam is launching the Anthropic Economic Index Survey, a monthly survey conducted throughAnthropic Interviewer.
 Understanding AI's economic impact requires moving beyond the quantitative data we have today. Usage and diffusion metrics tell us how AI is being deployed, and traditional labor market indicators—like employment rates, wage trends, and layoffs—track what has already happened, often with meaningful delay. Both are essential, but neither captures how people experience the changes to the economy that AI brings, nor what they expect to happen as AI capabilities advance.
 While AI is poised to have large effects, there is substantial uncertainty about how AI will affect jobs, productivity, and unemployment (and on what timeline). To forecast a transition that is still unfolding, we need to hear from the people who are living through it, and we need to do so on a cadence that can identify changes as they emerge.
@@ -507,9 +546,9 @@ We will analyze the insights from this study as part of our economic research, p
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>What 81,000 people told us about the economics of AI</title>
@@ -559,9 +598,9 @@ Removing these “solopreneurs” still leaves management tied with computer and
 A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
 Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
 Respondents experiencing the largest speedups from AI express higher concern about job displacement.
@@ -604,9 +643,9 @@ Removing these “solopreneurs” still leaves management tied with computer and
 A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>Automated Alignment Researchers: Using large language models to scale scalable oversight</title>
@@ -643,9 +682,9 @@ These are available (along with the rest of our code and data)here.
 We chose these models for several reasons. There is a substantial performance gap between the two, the small model performs better-than-random on our testbeds, and both models are sufficiently small for fast experimentation. We use open-weights models for all Anthropic Fellows projects.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Large language models’ ever-accelerating rate of improvement raises two particularly important questions for alignment research.
 One is how alignment can keep up. Frontier AI models are now contributing to the development of their successors. But can they provide the same kind of uplift foralignmentresearchers? Could our language models be used to help align themselves?
 A second question is what we’ll do once models become smarter than us. Aligning smarter-than-human AI models is a research area known as “scalable oversight”. Scalable oversight has largely been discussed intheoretical, rather than practical, terms—but at AI’scurrent paceof improvement, that might not be the case for much longer. For instance, models are already generating vast amounts of code. If their skills progress to the point where they’re generating millions of lines of incredibly complicated code that we can’t parse ourselves, itcould becomevery difficult to tell whether they’re acting in the ways we intend.
@@ -675,9 +714,9 @@ These are available (along with the rest of our code and data)here.
 We chose these models for several reasons. There is a substantial performance gap between the two, the small model performs better-than-random on our testbeds, and both models are sufficiently small for fast experimentation. We use open-weights models for all Anthropic Fellows projects.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>Trustworthy agents in practice</title>
@@ -719,9 +758,9 @@ None of these measures replace the work that model developers have to do to buil
 Agents will reshape how people work, and whether that happens on a foundation that is secure and open depends on how industry, civil society, and government build it together.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines. Now, through products likeClaude CodeandClaude Cowork, AI models can do much more: they can write and execute code, manage files, and complete tasks that span multiple applications. This represents a new frontier for governance.
 Agents are already making real productivity gainsforourcustomersandinside Anthropic. But the autonomy that makes agents useful also introduces a range of new risks. Agents act with less human oversight, so there is more room for them to misread users’ intent and take actions with unintended consequences. Agents are also targets for “prompt injection” cyberattacks, which try to trick models into taking costly actions that they otherwise wouldn’t. As agents become more capable and as businesses trust them with more consequential actions, we expect both of these risks to intensify.
 Last August, we published ourframework for building trustworthy agents, which guides how we navigate this tension. It’s built on five core principles: keeping humans in control, aligning with human values, securing agents’ interactions, maintaining transparency, and protecting privacy. In this post, we explain how agents work, describe how those principles play out in specific product decisions, and point to where industry, standards bodies, and governments can build the shared infrastructure the field needs.
@@ -756,9 +795,9 @@ None of these measures replace the work that model developers have to do to buil
 Agents will reshape how people work, and whether that happens on a foundation that is secure and open depends on how industry, civil society, and government build it together.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>Emotion concepts and their function in a large language model</title>
@@ -806,9 +845,9 @@ Finally, we think pretraining may be a particularly powerful lever in shaping th
 We see this research as an early step toward understanding the psychological makeup of AI models. As models grow more capable and take on more sensitive roles, it is critical that we understand the internal representations that drive their decisions. Discovering that these representations are in some ways human-like can be unsettling. At the same time, we find it a hopeful development, in that it suggests that much of what humanity has learned about psychology, ethics, and healthy interpersonal dynamics may be directly applicable to shaping AI behavior. Disciplines like psychology, philosophy, religious studies, and the social sciences will have an important role to play alongside engineering and computer science in determining how AI systems develop and behave.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">All modern language models sometimes act like they have emotions. They may say they’re happy to help you, or sorry when they make a mistake. Sometimes they even appear to become frustrated or anxious when struggling with tasks. What’s behind these behaviors? The way modern AI models are trained pushes them toact like a characterwith human-like characteristics. In addition, these models are known to develop rich and generalizableinternalrepresentationsof abstract concepts underlying their actions. It may then be natural for them to develop internal machinery that emulates aspects of human psychology, like emotions. If so, this could have profound implications for how we build AI systems and ensure they behave reliably.
 In a new paper from our Interpretability team, we analyzed the internal mechanisms of Claude Sonnet 4.5 and found emotion-related representations that shape its behavior. These correspond to specific patterns of artificial “neurons” which activate in situations—and promote behaviors—that the model has learned to associate with the concept of a particular emotion (e.g., “happy” or “afraid”). The patterns themselves are organized in a fashion that echoes human psychology, with more similar emotions corresponding to more similar representations. In contexts where you might expect a certain emotion to arise for a human, the corresponding representations are active. Note that none of this tells us whether language models actuallyfeelanything or have subjective experiences. But our key finding is that these representations arefunctional, in that they influence the model’s behavior in ways that matter.
 For instance, we find that neural activity patterns related to desperation can drive the model to take unethical actions; artificially stimulating (“steering”) desperation patterns increases the model’s likelihood of blackmailing a human to avoid being shut down, or implementing a “cheating” workaround to a programming task that the model can’t solve. They also appear to drive the model’s self-reported preferences: when presented with multiple options for tasks to complete, the model typically selects the one that activates representations associated with positive emotions. Overall, it appears that the model usesfunctional emotions—patterns of expression and behavior modeled after human emotions, which are driven by underlying abstract representations of emotion concepts. This is not to say that the model has or experiences emotions in the way that a human does. Rather, these representations can play a causal role in shaping model behavior—analogous in some ways to the role emotions play in human behavior—with impacts on task performance and decision-making.
@@ -849,80 +888,9 @@ Finally, we think pretraining may be a particularly powerful lever in shaping th
 We see this research as an early step toward understanding the psychological makeup of AI models. As models grow more capable and take on more sensitive roles, it is critical that we understand the internal representations that drive their decisions. Discovering that these representations are in some ways human-like can be unsettling. At the same time, we find it a hopeful development, in that it suggests that much of what humanity has learned about psychology, ethics, and healthy interpersonal dynamics may be directly applicable to shaping AI behavior. Disciplines like psychology, philosophy, religious studies, and the social sciences will have an important role to play alongside engineering and computer science in determining how AI systems develop and behave.
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>How Australia Uses Claude: Findings from the Anthropic Economic Index</title>
-      <link>https://www.anthropic.com/research/how-australia-uses-claude</link>
-      <guid isPermaLink="false">https://www.anthropic.com/research/how-australia-uses-claude</guid>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Anthropic is expanding to Australia. We’re opening anew officein Sydney in the coming weeks, and we’ve signed aMemorandum of Understandingwith the Australian government to cooperate on AI safety research and support the goals of Australia’s National AI Plan. To mark the occasion, we thought we’d look more closely into how Australians are using Claude.
-Australia is among the leading adopters of Claude, accounting for 1.6% of global Claude.ai traffic. Per capita, Australians’ use of Claude is more than four times higher than expected for the size of its population.
-Adoption within Australia is concentrated in two states: New South Wales (37% of conversations) and Victoria (31%). Per capita Claude usage is lower in every other state and territory.
-Australia's mix of use-cases generally tracks with its Anglosphere peers: 46% of Claude conversations are for work, 7% for coursework, 47% for personal use. This is a profile typical of high-income, high-adoption economies.
-But Australia’s mix of tasks is more diverse. Like other countries, Computer & Mathematical tasks remain the single largest category in our dataset—but this category is about 8 percentage points below the global baseline. It’s offset by higher-than-average volumes of office, sales, management, and personal life tasks.
-Users in Australia tend to prompt Claude for more complex tasks, as measured by the estimated years of schooling required to understand the prompt. At the same time, we estimate that the length of time these tasks would’ve takenwithoutAI is roughly 20% less than average. In other words, relative to how the rest of the world uses Claude, Australians’ tasks are associated with a higher education level but a shorter duration.
-Like many other high-adoption economies, Australia registers as having a relatively low “AI autonomy” score (3.38 on a 1–5 scale), which suggests that Australians use Claude in more collaborative, less delegated ways.
-High adoption overall, unevenly distributed across states and territories
-Australia accounts for 1.6% of global Claude.ai traffic, ranking eleventh among all countries in our February 2026 sample (Figure 1). Its Anthropic AI Usage Index (AUI) is 4.1, which means Australians use Claude over four times more than its working-age population would predict. This places Australia among the highest per capita adopters of Claude with ranking seventh behind Singapore, Israel, Luxembourg, Switzerland, the United States, and Canada.
-Within Australia, usage is concentrated in the most populous states. New South Wales accounts for 37.2% of conversations, followed by Victoria at 30.8%, Queensland at 17.7%, and the remaining states and territories at a combined 14% (Figure 2). States and territories’ working age population size explains much of this ordering. However, adjusting for this, New South Wales has an AUI of 1.20 and Victoria an AUI of 1.19. These are the only two states with higher than expected per capita adoption; every other state or territory has an AUI below 1, with adoption lowest in Western Australia at 0.68, Tasmania at 0.32, and the Northern Territory at 0.12.
-In contrast to the strong association between income and Claude usage per capita weobserve across countries, income does not appear to predict adoption across Australian states and territories (Figure 3). That said, since we can only compare across the eight, the lack of correlation between income and usage is suggestive rather than conclusive.
-Local workforce composition is a likely factor for why adoption appears decoupled from income across Australian states and territories: mining-heavy Western Australia, the state with the highest GSP per capita, has low usage per capita. The Northern Territory likewise has high GSP per capita and low AUI. This likely reflects these sparsely populated states and territories having a relatively smaller share of workers in occupations where Claude tends to be adopted. The Australian Capital Territory has above average income but lower-than-expected Claude usage per capita, which may reflect barriers to adoption among its large public sector workforce. The two states with the greatest adoption, New South Wales and Victoria, have slightly below average income; high adoption in these states likely reflects the higher share of workers in finance, professional services, and tech sectors, where Claude usage tends to be higher.
-Australia's use of Claude resembles its Anglosphere peers
-Our fourthEconomic Index reportintroduced four economic primitives: the use-case mix, the degree of autonomy afforded to Claude, task success, and task complexity. Figure 4 shows where Australia falls on each of these relative to other Anglosphere countries (in orange), other high-adoption economies (in grey), and all countries in our sample (in purple).
-In terms of how Claude is used, Australia is similar to its Anglosphere peers. 46% of Australian conversations are classified as work-related, close to the median and in the middle of the Anglosphere range. Coursework accounts for 7% of Australian use, which is toward the bottom of the distribution (and below the US, UK, and Canada); countries with lower per capita adoption show coursework shares two to three times as high. The share of conversations that are for personal use, at 47%, is near the top of the distribution.
-This pattern for Australia is consistent with the relationship we documented in our economic primitivesreportbetween per capita income and use cases: richer countries tend to have lower coursework shares and higher personal use shares.
-Australia registers toward the low end of AI autonomy, at 3.38 on a 1–5 scale, with other Anglosphere countries close by. Lower autonomy indicates that users retain more decision-making control in their conversations, rather than delegating fully to the model. This is consistent with high-adoption economies tending to use Claude in more collaborative, less directive ways.
-Australia sits below the median on one measure of task complexity, but toward the top on another. Australia’s average task itself is relatively less time-intensive: it would take a skilled professional an estimated 2.7 hours to complete the task without AI, compared to the cross-country average of 3.3 hours. But prompts from Australian users are estimated to require 11.9 years of schooling to understand, which is comparable to other Anglosphere countries and above the global median. Both patterns are consistent with the cross-country relationships we documented in ourJanuary Economic Index report, where the intensity of Claude adoption correlates positively with human prompt sophistication and negatively with estimates of the “no-AI” task duration.
-In Australia, a broader task mix with a smaller coding share
-Australia's Claude use is more diverse than usage among peer Anglosphere countries and relative to the broader global average. Figure 5 shows the share of each geography's usage that is covered by its 100 most common tasks (where tasks are classified according to O*NET, a taxonomy of tasks that characterize jobs throughout the economy). Lower values on this figure indicate that Claude is used for a wider range of tasks, since the top 100 occupy a smaller share. Australia's top 100 tasks account for 47.3% of its usage, below the US (47.7%), the UK (48.3%), and Canada (50.2%), and five percentage points below the global figure of 52.3%.
-The broader diversity of usage within Australia comes mostly from a lower share of coding-related tasks. Figure 6 shows how the composition of Australia's top 100 tasks differs from the global top 100 by SOC major group (broad occupation categories defined by the US Bureau of Labor Statistics). Computer and Mathematical tasks are 8.0 percentage points lower in Australia. No other category of use approaches that magnitude of difference to the global average, though education-related tasks are nearly three percentage points below global parity. The offsetting positives are spread across many groups, led by Management (+2.3pp), Office and Administrative Support (+1.3pp) and Life, Physical, and Social Science occupations (+1.3pp).
-At the level of individual request clusters—categories of what users ask Claude to do—the pattern is similar (Figure 7). The cluster that is most underrepresented in Australia relative to the global distribution is general coding assistance, at 13.5% of Australian use compared to 16.8% globally. Document translation is also underrepresented, consistent with Australia being a predominantly English-speaking market. The most overrepresented clusters are a mix of personal use (such as personal life management (+1.9pp) and health and well-being support (+1.8pp)), and non-technical professional work, including workplace correspondence (+1.7pp), business documents (+1.6pp), and financial guidance (+1.3pp).
-Higher-adoption countries generally use Claude more broadly, so part of Australia's lower coding share is expected. Australia's Computer and Mathematical shortfall of 8.0pp sits right in line with the Anglosphere average of 8.9pp. Where Australia diverges from its peers is in what fills the gap: it leans further into Management (+2.3pp vs the Anglosphere's +1.2pp) and Office and Administrative Support (+1.3pp vs +0.1pp), rather than Educational Instruction (−2.7pp vs +1.6pp for peers).
-Australia is among the leading per capita adopters of Claude, with usage more than four times what its working-age population would predict. The character of that usage—predominantly work and personal rather than coursework, sophisticated prompts addressing relatively short tasks, and with less delegation to Claude—closely tracks other Anglosphere economies and cross-country relationships evident within the Anthropic Economic Index.
-Where Australia is more distinctive is in the breadth of what Claude is used for. Australian usage is more diverse than the global aggregate, almost entirely because of a lower share of coding-related work; offsetting gains are spread across office, sales, management, and personal life categories rather than concentrated in any one category. As with other high adoption countries, users in Australia tend to collaborate more with Claude and delegate decision-making less often.
-Within Australia, adoption is concentrated in New South Wales and Victoria, and the state-level variation tracks workforce composition rather than income per capita—consistent with the pattern across US states but in contrast to the income gradient across countries.
-Keir Bradwell, Ria Strasser Galvis, Ryan Heller, Eva Lyubich, Jennifer Marintez, Maxim Massenkoff, Jared Mueller, Sarah Pollack
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
-Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Anthropic is expanding to Australia. We’re opening anew officein Sydney in the coming weeks, and we’ve signed aMemorandum of Understandingwith the Australian government to cooperate on AI safety research and support the goals of Australia’s National AI Plan. To mark the occasion, we thought we’d look more closely into how Australians are using Claude.
-Australia is among the leading adopters of Claude, accounting for 1.6% of global Claude.ai traffic. Per capita, Australians’ use of Claude is more than four times higher than expected for the size of its population.
-Adoption within Australia is concentrated in two states: New South Wales (37% of conversations) and Victoria (31%). Per capita Claude usage is lower in every other state and territory.
-Australia's mix of use-cases generally tracks with its Anglosphere peers: 46% of Claude conversations are for work, 7% for coursework, 47% for personal use. This is a profile typical of high-income, high-adoption economies.
-But Australia’s mix of tasks is more diverse. Like other countries, Computer & Mathematical tasks remain the single largest category in our dataset—but this category is about 8 percentage points below the global baseline. It’s offset by higher-than-average volumes of office, sales, management, and personal life tasks.
-Users in Australia tend to prompt Claude for more complex tasks, as measured by the estimated years of schooling required to understand the prompt. At the same time, we estimate that the length of time these tasks would’ve takenwithoutAI is roughly 20% less than average. In other words, relative to how the rest of the world uses Claude, Australians’ tasks are associated with a higher education level but a shorter duration.
-Like many other high-adoption economies, Australia registers as having a relatively low “AI autonomy” score (3.38 on a 1–5 scale), which suggests that Australians use Claude in more collaborative, less delegated ways.
-High adoption overall, unevenly distributed across states and territories
-Australia accounts for 1.6% of global Claude.ai traffic, ranking eleventh among all countries in our February 2026 sample (Figure 1). Its Anthropic AI Usage Index (AUI) is 4.1, which means Australians use Claude over four times more than its working-age population would predict. This places Australia among the highest per capita adopters of Claude with ranking seventh behind Singapore, Israel, Luxembourg, Switzerland, the United States, and Canada.
-Within Australia, usage is concentrated in the most populous states. New South Wales accounts for 37.2% of conversations, followed by Victoria at 30.8%, Queensland at 17.7%, and the remaining states and territories at a combined 14% (Figure 2). States and territories’ working age population size explains much of this ordering. However, adjusting for this, New South Wales has an AUI of 1.20 and Victoria an AUI of 1.19. These are the only two states with higher than expected per capita adoption; every other state or territory has an AUI below 1, with adoption lowest in Western Australia at 0.68, Tasmania at 0.32, and the Northern Territory at 0.12.
-In contrast to the strong association between income and Claude usage per capita weobserve across countries, income does not appear to predict adoption across Australian states and territories (Figure 3). That said, since we can only compare across the eight, the lack of correlation between income and usage is suggestive rather than conclusive.
-Local workforce composition is a likely factor for why adoption appears decoupled from income across Australian states and territories: mining-heavy Western Australia, the state with the highest GSP per capita, has low usage per capita. The Northern Territory likewise has high GSP per capita and low AUI. This likely reflects these sparsely populated states and territories having a relatively smaller share of workers in occupations where Claude tends to be adopted. The Australian Capital Territory has above average income but lower-than-expected Claude usage per capita, which may reflect barriers to adoption among its large public sector workforce. The two states with the greatest adoption, New South Wales and Victoria, have slightly below average income; high adoption in these states likely reflects the higher share of workers in finance, professional services, and tech sectors, where Claude usage tends to be higher.
-Australia's use of Claude resembles its Anglosphere peers
-Our fourthEconomic Index reportintroduced four economic primitives: the use-case mix, the degree of autonomy afforded to Claude, task success, and task complexity. Figure 4 shows where Australia falls on each of these relative to other Anglosphere countries (in orange), other high-adoption economies (in grey), and all countries in our sample (in purple).
-In terms of how Claude is used, Australia is similar to its Anglosphere peers. 46% of Australian conversations are classified as work-related, close to the median and in the middle of the Anglosphere range. Coursework accounts for 7% of Australian use, which is toward the bottom of the distribution (and below the US, UK, and Canada); countries with lower per capita adoption show coursework shares two to three times as high. The share of conversations that are for personal use, at 47%, is near the top of the distribution.
-This pattern for Australia is consistent with the relationship we documented in our economic primitivesreportbetween per capita income and use cases: richer countries tend to have lower coursework shares and higher personal use shares.
-Australia registers toward the low end of AI autonomy, at 3.38 on a 1–5 scale, with other Anglosphere countries close by. Lower autonomy indicates that users retain more decision-making control in their conversations, rather than delegating fully to the model. This is consistent with high-adoption economies tending to use Claude in more collaborative, less directive ways.
-Australia sits below the median on one measure of task complexity, but toward the top on another. Australia’s average task itself is relatively less time-intensive: it would take a skilled professional an estimated 2.7 hours to complete the task without AI, compared to the cross-country average of 3.3 hours. But prompts from Australian users are estimated to require 11.9 years of schooling to understand, which is comparable to other Anglosphere countries and above the global median. Both patterns are consistent with the cross-country relationships we documented in ourJanuary Economic Index report, where the intensity of Claude adoption correlates positively with human prompt sophistication and negatively with estimates of the “no-AI” task duration.
-In Australia, a broader task mix with a smaller coding share
-Australia's Claude use is more diverse than usage among peer Anglosphere countries and relative to the broader global average. Figure 5 shows the share of each geography's usage that is covered by its 100 most common tasks (where tasks are classified according to O*NET, a taxonomy of tasks that characterize jobs throughout the economy). Lower values on this figure indicate that Claude is used for a wider range of tasks, since the top 100 occupy a smaller share. Australia's top 100 tasks account for 47.3% of its usage, below the US (47.7%), the UK (48.3%), and Canada (50.2%), and five percentage points below the global figure of 52.3%.
-The broader diversity of usage within Australia comes mostly from a lower share of coding-related tasks. Figure 6 shows how the composition of Australia's top 100 tasks differs from the global top 100 by SOC major group (broad occupation categories defined by the US Bureau of Labor Statistics). Computer and Mathematical tasks are 8.0 percentage points lower in Australia. No other category of use approaches that magnitude of difference to the global average, though education-related tasks are nearly three percentage points below global parity. The offsetting positives are spread across many groups, led by Management (+2.3pp), Office and Administrative Support (+1.3pp) and Life, Physical, and Social Science occupations (+1.3pp).
-At the level of individual request clusters—categories of what users ask Claude to do—the pattern is similar (Figure 7). The cluster that is most underrepresented in Australia relative to the global distribution is general coding assistance, at 13.5% of Australian use compared to 16.8% globally. Document translation is also underrepresented, consistent with Australia being a predominantly English-speaking market. The most overrepresented clusters are a mix of personal use (such as personal life management (+1.9pp) and health and well-being support (+1.8pp)), and non-technical professional work, including workplace correspondence (+1.7pp), business documents (+1.6pp), and financial guidance (+1.3pp).
-Higher-adoption countries generally use Claude more broadly, so part of Australia's lower coding share is expected. Australia's Computer and Mathematical shortfall of 8.0pp sits right in line with the Anglosphere average of 8.9pp. Where Australia diverges from its peers is in what fills the gap: it leans further into Management (+2.3pp vs the Anglosphere's +1.2pp) and Office and Administrative Support (+1.3pp vs +0.1pp), rather than Educational Instruction (−2.7pp vs +1.6pp for peers).
-Australia is among the leading per capita adopters of Claude, with usage more than four times what its working-age population would predict. The character of that usage—predominantly work and personal rather than coursework, sophisticated prompts addressing relatively short tasks, and with less delegation to Claude—closely tracks other Anglosphere economies and cross-country relationships evident within the Anthropic Economic Index.
-Where Australia is more distinctive is in the breadth of what Claude is used for. Australian usage is more diverse than the global aggregate, almost entirely because of a lower share of coding-related work; offsetting gains are spread across office, sales, management, and personal life categories rather than concentrated in any one category. As with other high adoption countries, users in Australia tend to collaborate more with Claude and delegate decision-making less often.
-Within Australia, adoption is concentrated in New South Wales and Victoria, and the state-level variation tracks workforce composition rather than income per capita—consistent with the pattern across US states but in contrast to the income gradient across countries.
-Keir Bradwell, Ria Strasser Galvis, Ryan Heller, Eva Lyubich, Jennifer Marintez, Maxim Massenkoff, Jared Mueller, Sarah Pollack
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
-Focus areas for The Anthropic Institute
-At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance</div>]]></content:encoded>
+At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.</div>]]></content:encoded>
     </item>
     <item>
       <title>Project Vend: Phase two</title>
@@ -982,9 +950,9 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
 Subscribe to the Frontier Red Team newsletter
 Get updates on our latest red-teaming research and findings.</div>]]></description>
       <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">In June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part ofProject Vend, a free-form experiment exploring how well AIs could do on complex, real-world tasks. Alas, the shopkeeper—a modified version of Claude we named “Claudius”—didnotdo particularly well. It lost money over time, had a strange identity crisis where it claimed it was a human wearing a blue blazer, and was goaded by mischievous Anthropic employees into selling products (particularly, for some reason, tungsten cubes) at a substantial loss.
@@ -1039,158 +1007,17 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 AI models like Claude talk in words but think in numbers. In this study we train Claude to translate its thoughts into human-readable text.
+Donating our open-source alignment tool
 Focus areas for The Anthropic Institute
 At The Anthropic Institute (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-How people ask Claude for personal guidance
 Subscribe to the Frontier Red Team newsletter
 Get updates on our latest red-teaming research and findings.</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Societal Impacts</title>
-      <link>https://www.anthropic.com/research/team/societal-impacts</link>
-      <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-Sociotechnical alignment
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
-What 81,000 people want from AI
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs. We found that AI use is radically changing the nature of work for software developers.
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values and finds that Claude adapts its expressed values to context—mirroring users in most cases, but resisting when core principles are at stake.
-Large models have predictable loss via scaling laws but unpredictable capabilities. This tension has significant policy implications.
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
-Join the Research team</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-Sociotechnical alignment
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
-What 81,000 people want from AI
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs. We found that AI use is radically changing the nature of work for software developers.
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values and finds that Claude adapts its expressed values to context—mirroring users in most cases, but resisting when core principles are at stake.
-Large models have predictable loss via scaling laws but unpredictable capabilities. This tension has significant policy implications.
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
-Join the Research team</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Economic Research</title>
-      <link>https://www.anthropic.com/research/team/economic-research</link>
-      <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Alignment</title>
-      <link>https://www.anthropic.com/research/team/alignment</link>
-      <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-      <pubDate>Wed, 02 Oct 2024 00:00:00 +0000</pubDate>
-      <category>Research</category>
-      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-Evaluation and oversight
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-Stress-testing safeguards
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-Feb 23, 2026AlignmentThe persona selection model
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-Nov 4, 2025AlignmentCommitments on model deprecation and preservation
-Oct 9, 2025AlignmentA small number of samples can poison LLMs of any size
-Join the Research team</div>]]></description>
-      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-Evaluation and oversight
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-Stress-testing safeguards
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-Feb 23, 2026AlignmentThe persona selection model
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-Nov 4, 2025AlignmentCommitments on model deprecation and preservation
-Oct 9, 2025AlignmentA small number of samples can poison LLMs of any size
-Join the Research team</div>]]></content:encoded>
     </item>
     <item>
       <title>Interpretability</title>
       <link>https://www.anthropic.com/research/team/interpretability</link>
       <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       <category>Research</category>
       <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 Safety through understanding
@@ -1233,6 +1060,147 @@ May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
 Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
 Mar 13, 2025AlignmentAuditing language models for hidden objectives
 Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+Join the Research team</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Alignment</title>
+      <link>https://www.anthropic.com/research/team/alignment</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+      <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Evaluation and oversight
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Stress-testing safeguards
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+May 7, 2026AlignmentDonating our open-source alignment tool
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Feb 23, 2026AlignmentThe persona selection model
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+Nov 4, 2025AlignmentCommitments on model deprecation and preservation
+Join the Research team</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Evaluation and oversight
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Stress-testing safeguards
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+May 7, 2026AlignmentDonating our open-source alignment tool
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Feb 23, 2026AlignmentThe persona selection model
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+Nov 4, 2025AlignmentCommitments on model deprecation and preservation
+Join the Research team</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Economic Research</title>
+      <link>https://www.anthropic.com/research/team/economic-research</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Societal Impacts</title>
+      <link>https://www.anthropic.com/research/team/societal-impacts</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
+      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+Sociotechnical alignment
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+What 81,000 people want from AI
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs. We found that AI use is radically changing the nature of work for software developers.
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values and finds that Claude adapts its expressed values to context—mirroring users in most cases, but resisting when core principles are at stake.
+Large models have predictable loss via scaling laws but unpredictable capabilities. This tension has significant policy implications.
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
+Join the Research team</div>]]></description>
+      <content:encoded><![CDATA[<div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+Sociotechnical alignment
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+What 81,000 people want from AI
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs. We found that AI use is radically changing the nature of work for software developers.
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values and finds that Claude adapts its expressed values to context—mirroring users in most cases, but resisting when core principles are at stake.
+Large models have predictable loss via scaling laws but unpredictable capabilities. This tension has significant policy implications.
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
 Join the Research team</div>]]></content:encoded>
     </item>
   </channel>
