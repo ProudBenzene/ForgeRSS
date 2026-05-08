@@ -21,6 +21,10 @@ from generators.ai.anthropic_news import AnthropicNewsGenerator
 from generators.ai.anthropic_research import AnthropicResearchGenerator
 from generators.ai.anthropic_engineering import AnthropicEngineeringGenerator
 from generators.ai.openai_research import OpenAIResearchGenerator
+from generators.ai_coding_docs.openai_codex import OpenAICodexDocsGenerator
+from generators.ai_coding_docs.claude_code import ClaudeCodeDocsGenerator
+from generators.ai_coding_docs.cursor_docs import CursorDocsGenerator
+from generators.ai_coding_docs.qwen_code import QwenCodeDocsGenerator
 from generators.social.zhihu_hot import ZhihuHotGenerator
 from generators.social.zhihu_user import ZhihuUserGenerator
 
@@ -40,6 +44,11 @@ GENERATORS = {
     "anthropic_research": AnthropicResearchGenerator,
     "anthropic_engineering": AnthropicEngineeringGenerator,
     "openai_research": OpenAIResearchGenerator,
+    # AI Coding Docs
+    "openai_codex_docs": OpenAICodexDocsGenerator,
+    "claude_code_docs": ClaudeCodeDocsGenerator,
+    "cursor_docs": CursorDocsGenerator,
+    "qwen_code_docs": QwenCodeDocsGenerator,
     # Social (requires login + desktop)
     "zhihu_hot": ZhihuHotGenerator,
     "zhihu_user": ZhihuUserGenerator,
