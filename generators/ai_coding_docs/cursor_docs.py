@@ -45,29 +45,77 @@ class CursorDocsGenerator(BaseDocsCrawler):
         
         # 发现所有文档链接
         soup = BeautifulSoup(html, "html.parser")
-        all_links = soup.find_all("a", href=True)
         
+        # 优先从导航菜单/侧边栏获取链接
         doc_urls = set()
-        for link in all_links:
-            href = link["href"]
-            # 拼接完整 URL
-            if href.startswith("/"):
-                full_url = urljoin("https://cursor.com", href)
-            elif href.startswith("http"):
-                full_url = href
-            else:
-                continue
-            
-            # 只要包含 /docs 且是 cursor.com 域名
-            if "/docs" in full_url and "cursor.com" in full_url and self.is_docs_url(full_url):
-                doc_urls.add(full_url)
+        
+        # Try common sidebar/navigation selectors
+        sidebar_selectors = [
+            "nav a[href*='/docs']",
+            ".sidebar a[href*='/docs']",
+            ".nav a[href*='/docs']",
+            "[class*='sidebar'] a[href*='/docs']",
+            "[class*='navigation'] a[href*='/docs']",
+            "[class*='menu'] a[href*='/docs']",
+        ]
+        
+        for selector in sidebar_selectors:
+            links = soup.select(selector)
+            if links:
+                self.logger.info(f"Found {len(links)} links with selector: {selector}")
+                for link in links:
+                    href = link.get("href")
+                    if href:
+                        if href.startswith("/"):
+                            full_url = urljoin("https://cursor.com", href)
+                        elif href.startswith("http"):
+                            full_url = href
+                        else:
+                            continue
+                        
+                        # 确保是英文路径
+                        if "/docs" in full_url and "cursor.com" in full_url:
+                            # 强制使用英文路径
+                            if "/zh" not in full_url and "/ja" not in full_url and self.is_docs_url(full_url):
+                                doc_urls.add(full_url)
+        
+        # 如果侧边栏选择器没找到足够的链接，再回退到所有链接
+        if len(doc_urls) < 20:
+            self.logger.info("Sidebar links insufficient, scanning all links")
+            all_links = soup.find_all("a", href=True)
+            for link in all_links:
+                href = link["href"]
+                if href.startswith("/"):
+                    full_url = urljoin("https://cursor.com", href)
+                elif href.startswith("http"):
+                    full_url = href
+                else:
+                    continue
+                
+                if "/docs" in full_url and "cursor.com" in full_url:
+                    if "/zh" not in full_url and "/ja" not in full_url and self.is_docs_url(full_url):
+                        doc_urls.add(full_url)
         
         self.logger.info(f"Discovered {len(doc_urls)} doc URLs from homepage")
+        
+        # 手动添加可能遗漏的重要页面
+        important_pages = [
+            "https://cursor.com/en-US/docs/hooks",
+            "https://cursor.com/en-US/docs/rules",
+            "https://cursor.com/en-US/docs/get-started/overview",
+            "https://cursor.com/en-US/docs/agent/overview",
+            "https://cursor.com/en-US/docs/cli/overview",
+        ]
+        
+        for page in important_pages:
+            if page not in doc_urls and self.is_docs_url(page):
+                doc_urls.add(page)
+                self.logger.info(f"Added important page: {page}")
         
         # 抓取每个页面
         articles = []
         for i, url in enumerate(list(doc_urls)[:self.MAX_PAGES]):
-            self.logger.info(f"[{i+1}/{len(doc_urls)}] Crawling {url}")
+            self.logger.info(f"[{i+1}/{min(len(doc_urls), self.MAX_PAGES)}] Crawling {url}")
             article = self.crawl_page(url)
             if article:
                 articles.append(article)

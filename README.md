@@ -48,24 +48,24 @@
 | **知乎热榜** | 需本地运行（见下方说明） |
 | **知乎用户动态** | 需本地运行（见下方说明） |
 
-> Feed 每 6 小时自动更新，包含完整文章内容。使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
+> **更新频率**：新闻类 Feed 每 6 小时自动更新，文档类 Feed 每周更新一次（周一 00:00 UTC）。所有 Feed 包含完整文章内容，使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
 
 ### 详细信息源列表
 
-| 信息源 | 分类 | 抓取方式 | Feed 文件 | 运行环境 |
-|--------|------|----------|-----------|----------|
-| Anthropic News | AI | curl_cffi | `feed_anthropic_news.xml` | CI/本地 |
-| Anthropic Research | AI | curl_cffi | `feed_anthropic_research.xml` | CI/本地 |
-| Anthropic Engineering | AI | curl_cffi | `feed_anthropic_engineering.xml` | CI/本地 |
-| OpenAI Research | AI | curl_cffi | `feed_openai_research.xml` | CI/本地 |
-| OpenAI Codex Docs | AI 编程工具 | curl_cffi + Selenium | `feed_openai_codex_docs.xml` | CI/本地 |
-| Claude Code Docs | AI 编程工具 | Selenium | `feed_claude_code_docs.xml` | CI/本地 |
-| Cursor Docs | AI 编程工具 | Selenium | `feed_cursor_docs.xml` | CI/本地 |
-| Qwen Code Docs | AI 编程工具 | curl_cffi | `feed_qwen_code_docs.xml` | CI/本地 |
-| IDSociety Science Speaks | 医学 | Selenium | `feed_idsociety.xml` | CI/本地 |
-| **国家药监局 (NMPA)** | 政府 | **DrissionPage** | `feed_nmpa_drug.xml` | **仅本地** |
-| **知乎热榜** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_hot.xml` | **仅本地** |
-| **知乎用户动态** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_user.xml` | **仅本地** |
+| 信息源 | 分类 | 抓取方式 | Feed 文件 | 更新频率 | 运行环境 |
+|--------|------|----------|-----------|----------|----------|
+| Anthropic News | AI | curl_cffi | `feed_anthropic_news.xml` | 6小时 | CI/本地 |
+| Anthropic Research | AI | curl_cffi | `feed_anthropic_research.xml` | 6小时 | CI/本地 |
+| Anthropic Engineering | AI | curl_cffi | `feed_anthropic_engineering.xml` | 6小时 | CI/本地 |
+| OpenAI Research | AI | curl_cffi | `feed_openai_research.xml` | 6小时 | CI/本地 |
+| OpenAI Codex Docs | AI 编程工具 | curl_cffi + Selenium | `feed_openai_codex_docs.xml` | **每周** | CI/本地 |
+| Claude Code Docs | AI 编程工具 | Selenium | `feed_claude_code_docs.xml` | **每周** | CI/本地 |
+| Cursor Docs | AI 编程工具 | Selenium | `feed_cursor_docs.xml` | **每周** | CI/本地 |
+| Qwen Code Docs | AI 编程工具 | curl_cffi | `feed_qwen_code_docs.xml` | **每周** | CI/本地 |
+| IDSociety Science Speaks | 医学 | Selenium | `feed_idsociety.xml` | 6小时 | CI/本地 |
+| **国家药监局 (NMPA)** | 政府 | **DrissionPage** | `feed_nmpa_drug.xml` | **手动** | **仅本地** |
+| **知乎热榜** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_hot.xml` | **手动** | **仅本地** |
+| **知乎用户动态** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_user.xml` | **手动** | **仅本地** |
 
 ---
 

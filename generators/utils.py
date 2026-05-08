@@ -138,7 +138,15 @@ def fetch_with_selenium(
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--lang=en-US")
         options.add_argument(f"--user-agent={BROWSER_HEADERS['User-Agent']}")
+        
+        # Force English language preference
+        prefs = {
+            "intl.accept_languages": "en-US,en",
+            "profile.default_content_setting_values.notifications": 2
+        }
+        options.add_experimental_option("prefs", prefs)
         
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)

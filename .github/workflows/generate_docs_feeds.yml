@@ -1,13 +1,13 @@
-# Generate RSS feeds on schedule
-# Default: every 6 hours, configurable via repository variables
+# Generate AI Coding Tools Documentation RSS feeds
+# Documentation typically updates less frequently than news feeds
+# Default: weekly on Monday 00:00 UTC
 
-name: Generate Feeds
+name: Generate Docs Feeds
 
 on:
   schedule:
-    # Default: every 6 hours (0:00, 6:00, 12:00, 18:00 UTC)
-    # Can be overridden by setting CRON_SCHEDULE repository variable
-    - cron: '0 */6 * * *'
+    # Every Monday at 00:00 UTC (weekly)
+    - cron: '0 0 * * 1'
   workflow_dispatch:
     inputs:
       full_refresh:
@@ -18,15 +18,15 @@ on:
       max_articles:
         description: 'Max articles per feed'
         required: false
-        default: '50'
+        default: '300'
         type: string
 
 env:
-  MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '50' }}
+  MAX_ARTICLES: ${{ vars.DOCS_MAX_ARTICLES || '300' }}
   LOG_LEVEL: ${{ vars.LOG_LEVEL || 'INFO' }}
 
 jobs:
-  generate:
+  generate-docs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -51,14 +51,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run feed generators
+      - name: Run AI coding docs generators
         env:
           MAX_ARTICLES: ${{ github.event.inputs.max_articles || env.MAX_ARTICLES }}
         run: |
           if [ "${{ github.event.inputs.full_refresh }}" = "true" ]; then
-            python scripts/run_all.py --full --max $MAX_ARTICLES --exclude-docs
+            python scripts/run_ai_coding_docs.py --max $MAX_ARTICLES --full
           else
-            python scripts/run_all.py --max $MAX_ARTICLES --exclude-docs
+            python scripts/run_ai_coding_docs.py --max $MAX_ARTICLES
           fi
 
       - name: Validate feeds
@@ -69,11 +69,11 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          git add feeds/*.xml
+          git add feeds/feed_*_docs.xml
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update RSS feeds [skip ci]"
+            git commit -m "Update AI coding docs RSS feeds [skip ci]"
             git push
           fi

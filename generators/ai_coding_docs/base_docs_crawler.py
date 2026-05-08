@@ -79,7 +79,7 @@ class BaseDocsCrawler(BaseFeedGenerator):
     ]
     
     MAX_DEPTH = 3  # Maximum recursion depth
-    MAX_PAGES = 100  # Maximum pages to crawl
+    MAX_PAGES = 300  # Maximum pages to crawl
     
     def __init__(self):
         super().__init__()
@@ -302,10 +302,52 @@ class BaseDocsCrawler(BaseFeedGenerator):
             published_at=stable_fallback_date(url),
             content=doc_data["content"],
             summary=doc_data["summary"],
-            category="Documentation",
+            category=self._extract_category_from_url(url),
         )
         
         return article
+    
+    def _extract_category_from_url(self, url: str) -> str:
+        """Extract category from URL path for better organization."""
+        from urllib.parse import urlparse
+        
+        path = urlparse(url).path.lower()
+        
+        # Common documentation categories
+        category_keywords = {
+            "getting-started": "Getting Started",
+            "quickstart": "Getting Started",
+            "intro": "Getting Started",
+            "guide": "Guides",
+            "tutorial": "Tutorials",
+            "api": "API Reference",
+            "reference": "Reference",
+            "integration": "Integrations",
+            "plugin": "Plugins",
+            "extension": "Extensions",
+            "agent": "Agent",
+            "model": "Models",
+            "cli": "CLI",
+            "skill": "Skills",
+            "rule": "Rules",
+            "mcp": "MCP",
+            "cloud": "Cloud",
+            "configuration": "Configuration",
+            "config": "Configuration",
+            "setup": "Setup",
+            "installation": "Installation",
+            "deployment": "Deployment",
+            "advanced": "Advanced",
+            "best-practice": "Best Practices",
+            "troubleshoot": "Troubleshooting",
+            "faq": "FAQ",
+        }
+        
+        for keyword, category in category_keywords.items():
+            if keyword in path:
+                return category
+        
+        return "Documentation"
     
     def fetch_articles(self) -> list[Article]:
         """Fetch documentation pages from index file or recursive crawling."""
@@ -334,6 +376,38 @@ class BaseDocsCrawler(BaseFeedGenerator):
             article = self.crawl_page(url, depth=0)
             if article:
                 articles.append(article)
+        
+        # Sort articles by category and title for better organization
+        category_order = {
+            "Getting Started": 0,
+            "Setup": 1,
+            "Installation": 2,
+            "Guides": 3,
+            "Tutorials": 4,
+            "Agent": 5,
+            "Models": 6,
+            "CLI": 7,
+            "Skills": 8,
+            "Rules": 9,
+            "MCP": 10,
+            "Integrations": 11,
+            "Plugins": 12,
+            "Extensions": 13,
+            "Cloud": 14,
+            "API Reference": 15,
+            "Reference": 16,
+            "Configuration": 17,
+            "Advanced": 18,
+            "Best Practices": 19,
+            "Troubleshooting": 20,
+            "FAQ": 21,
+            "Documentation": 99,
+        }
+        
+        articles.sort(key=lambda a: (
+            category_order.get(a.category, 99),
+            a.title.lower()
+        ))
         
         self.logger.info(f"Crawled {len(articles)} documentation pages")
         return articles

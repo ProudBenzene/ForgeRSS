@@ -329,6 +329,50 @@ class BaseFeedGenerator(ABC):
             fg.logo(self.FEED_LOGO)
         return fg
     
+    def save_feed_streaming(self, articles: list[Article]) -> Path:
+        """
+        Save RSS feed using memory-efficient streaming generation.
+        This method processes articles in batches to minimize memory usage.
+        """
+        from generators.rss_streaming import save_rss_stream, Article as StreamArticle
+        
+        # Sort articles by date (newest first)
+        sorted_articles = sorted(
+            articles,
+            key=lambda a: a.published_at or datetime.min.replace(tzinfo=pytz.UTC),
+            reverse=True
+        )
+        
+        # Convert to streaming Article format
+        stream_articles = []
+        for article in sorted_articles:
+            stream_articles.append(StreamArticle(
+                url=article.url,
+                title=article.title,
+                published_at=article.published_at or datetime.now(pytz.UTC),
+                content=article.content or "",
+                summary=article.summary or "",
+                category=article.category or "General",
+                author=article.author or ""
+            ))
+        
+        # Generate and save feed using streaming
+        output = self.feeds_dir / f"feed_{self.FEED_NAME}.xml"
+        
+        article_count = save_rss_stream(
+            output_path=str(output),
+            title=self.FEED_TITLE,
+            link=self.FEED_URL,
+            description=self.FEED_DESCRIPTION,
+            articles=stream_articles,
+            language=self.FEED_LANGUAGE,
+            logo_url=self.FEED_LOGO,
+            batch_size=100  # Process 100 articles at a time
+        )
+        
+        self.logger.info(f"Saved feed to {output} ({article_count} articles)")
+        return output
+    
     def save_feed(self, fg: FeedGenerator, articles: list[Article] = None) -> Path:
         """
         Save RSS feed with CDATA-wrapped content for maximum compatibility.
@@ -540,9 +584,8 @@ class BaseFeedGenerator(ABC):
             if not new_articles:
                 self.logger.warning("No articles fetched")
                 if existing:
-                    # Use existing for RSS
-                    fg = self.generate_rss(existing[:max_articles])
-                    self.save_feed(fg, existing[:max_articles])
+                    # Use existing for RSS (streaming)
+                    self.save_feed_streaming(existing[:max_articles])
                 return len(existing) > 0
             
             # Fetch content for new articles (optional)
@@ -573,9 +616,8 @@ class BaseFeedGenerator(ABC):
             if use_db:
                 self.save_to_db(final)
             
-            # Generate RSS
-            fg = self.generate_rss(final)
-            self.save_feed(fg, final)
+            # Generate RSS using streaming for memory efficiency
+            self.save_feed_streaming(final)
             
             self.logger.info(f"Success: {len(final)} articles in feed")
             return True

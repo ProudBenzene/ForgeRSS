@@ -50,6 +50,9 @@ def is_ci_environment() -> bool:
 # Also requires login session for some (zhihu)
 DESKTOP_ONLY_GENERATORS = {"nmpa_drug", "zhihu_hot", "zhihu_user"}
 
+# Documentation generators (update less frequently, run in separate workflow)
+DOCS_GENERATORS = {"openai_codex_docs", "claude_code_docs", "cursor_docs", "qwen_code_docs"}
+
 # Registry of all generators
 GENERATORS = {
     # Medical / Government
@@ -71,7 +74,7 @@ GENERATORS = {
 }
 
 
-def run_all(full_refresh: bool = False, max_articles: int = 50):
+def run_all(full_refresh: bool = False, max_articles: int = 50, exclude_docs: bool = False):
     """Run all registered generators."""
     results = {}
     in_ci = is_ci_environment()
@@ -79,11 +82,22 @@ def run_all(full_refresh: bool = False, max_articles: int = 50):
     if in_ci:
         logger.info("Detected CI environment - desktop-only generators will be skipped")
     
+    if exclude_docs:
+        logger.info("Excluding documentation generators (run separately)")
+    
     for name, generator_class in GENERATORS.items():
         # Skip desktop-only generators in CI environment
         if in_ci and name in DESKTOP_ONLY_GENERATORS:
             logger.info(f"=" * 60)
             logger.info(f"Skipping generator: {name} (requires desktop environment)")
+            logger.info(f"=" * 60)
+            results[name] = "skipped"
+            continue
+        
+        # Skip documentation generators if exclude_docs is True
+        if exclude_docs and name in DOCS_GENERATORS:
+            logger.info(f"=" * 60)
+            logger.info(f"Skipping generator: {name} (docs run in separate workflow)")
             logger.info(f"=" * 60)
             results[name] = "skipped"
             continue
@@ -136,9 +150,14 @@ def main():
         default=50,
         help="Max articles per feed (default: 50)"
     )
+    parser.add_argument(
+        "--exclude-docs",
+        action="store_true",
+        help="Exclude documentation generators (they run in separate workflow)"
+    )
     args = parser.parse_args()
     
-    run_all(full_refresh=args.full, max_articles=args.max)
+    run_all(full_refresh=args.full, max_articles=args.max, exclude_docs=args.exclude_docs)
 
 
 if __name__ == "__main__":
