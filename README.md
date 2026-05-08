@@ -20,11 +20,14 @@
 ## 功能特性
 
 - **多引擎抓取** — curl_cffi + Selenium + DrissionPage，自动选择最优方案
+- **AI 编程工具文档订阅** — 支持 OpenAI Codex、Claude Code、Cursor、Qwen Code 等完整开发文档抓取
+- **流式 RSS 生成** — 内存优化的批量处理，支持数百篇长文档
 - **政府网站反爬突破** — 支持绕过瑞数信息等商用反爬系统（需桌面环境）
 - **智能去重** — 基于 URL 哈希，避免重复文章
 - **双存储方案** — JSON 缓存 (GitHub 托管) + SQLite (本地/Docker)
 - **标准 RSS 2.0** — CDATA 包裹 + 内联样式，兼容 Readwise、FreshRSS 等阅读器
-- **GitHub Actions** — 每 6 小时自动更新，零运维
+- **灵活更新频率** — 新闻每 6 小时更新，文档每周更新，节省资源
+- **GitHub Actions** — 全自动定时更新，零运维
 - **Docker 支持** — 一键部署，适合自托管
 
 ---
