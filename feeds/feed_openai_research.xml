@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Tue, 12 May 2026 14:32:05 +0000</lastBuildDate>
+<lastBuildDate>Tue, 12 May 2026 19:57:56 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -486,116 +486,128 @@ Enhanced personalization from past chats, files, and connected Gmail is rolling 
   <guid isPermaLink="false">https://openai.com/index/where-the-goblins-came-from/</guid>
   <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
 
-在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
+In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
 
-简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
+The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
 
-起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
+The goblins were funny at first, but the increasing number of employee reports became concerning.
 
-我们的首席科学家与 GPT‑5.5 的一次有趣互动。
+An interesting interaction our Chief Scientist had with GPT‑5.5.
 
-我们第一次清楚看到这种模式是在 11 月，也...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
+The first signs of creatures
 
-在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
+The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
 
-简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
+A measurable small lexical quirk in GPT‑5.1.
 
-起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
+At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
 
-我们的首席科学家与 GPT‑5.5 的一次有趣互动。
+Solving the goblin mystery
 
-我们第一次清楚看到这种模式是在 11 月，也就是 GPT‑5.1 发布之后，尽管它也可能更早就开始了⁠（在新窗口中打开）。用户抱怨模型在对话中过于自来熟，这促使我们开始调查一些具体的语言口癖。一位安全研究员此前就遇到过几次“goblin”和“gremlin”，并要求把它们纳入检查。结果发现，GPT‑5.1 发布后，ChatGPT 中“goblin”的使用量上升了 175%，而“gremlin”上升了 52%。
+With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
 
-GPT‑5.1 中一个可测量的微小词汇怪癖。
+You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
 
-当时，goblin 的出现率看起来并不特别令人警觉。几个月后，goblin 却以一种更具体、更可复现的形式回来困扰我们。
+If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
 
-到了 GPT‑5.4，我们和用户⁠（在新窗口中打开）都注意到，对这些生物的提及又有了更明显的上升。这触发了又一轮内部分析，并首次让我们将其与根本原因联系起来：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。“书卷极客”的系统提示如下，这也部分解释了这种语言怪癖的来源：
+The behavior was highly concentrated in the "Nerdy" personality.
 
-你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...] 你必须通过俏皮的语言使用来消解故作姿态的做法。这个世界复杂而奇异，而这种奇异性必须得到承认、分析并享受。处理沉重话题时，不要落入一本正经的陷阱。[...]
+Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
 
-如果这种行为仅仅是更广泛的互联网潮流，我们预期它会更均匀地扩散。事实却是，它明显集中在系统中被明确优化为俏皮、“书卷极客”风格的那一部分。“书卷极客”仅占 ChatGPT 全部回复的 2.5%，却占了 ChatGPT 回复中所有“goblin”提及的 66.7%。
+Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
 
-由于“goblin”的出现率似乎随着模型版本发布而上升，我们怀疑，在人格指令遵循训练中，有什么因素正在放大这一现象。
+That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
 
-Codex 帮助我们比较了 RL 训练期间生成的、包含 goblin 或 gremlin 的模型输出，与同一任务中不包含这些词的输出。一个奖励信号立刻格外显眼：最初为鼓励“书卷极客”人格而设计的那个奖励，始终更倾向于给包含这些生物类词汇的输出更高评分。在审计涵盖的所有数据集中，“书卷极客”人格奖励都显示出明确倾向：对于同一个问题，包含“goblin”或“gremlin”的输出，其得分高于不包含这些词的输出；在 76.2% 的数据集中，这种差异表现为正向提升。
+As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
 
-这解释了为什么在“书卷极客”人格提示下，这种行为会被增强，但却没有解释为什么即使没有该提示，它也会出现。为了测试这种风格是否发生了迁移，我们跟踪了训练过程中在有无“书卷极客”提示两种条件下的提及率。
+The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
 
-随着 goblin 和 gremlin 在“书卷极客”人格下的提及增加，在不使用该人格时的样本中，它们也以几乎相同的相对比例增加。综合来看，证据表明，这种更广泛的行为是从“书卷极客”人格训练迁移而来的。
+That creates a feedback loop:
 
-这些奖励只应用于“书卷极客”条件下，但强化学习并不能保证学到的行为会被整齐地限定在产生它们的条件范围内。一旦某种风格口癖获得奖励，后续训练就可能在其他地方传播或强化它，尤其是在这些输出被复用于监督微调数据或偏好数据时。
+Playful style is rewarded
 
-这种口癖在生成轨迹 (rollout) 中出现得更频繁。
+Some rewarded examples contain a distinctive lexical tic.
 
-模型的生成轨迹 (rollout) 被用于监督微调 (SFT)。
+The tic appears more often in rollouts.
 
-对 GPT‑5.5 的 SFT 数据进行搜索后，我们发现了许多包含“goblin”和“gremlin”的数据点。进一步调查还发现了一整个其他古怪生物家族：浣熊、巨魔、食人魔和鸽子也被识别为其他口癖词，而“青蛙”的大多数用法被确认是合理的。
+Model-generated rollouts are used for supervised fine-tuning (SFT).
 
-One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
+The model gets even more comfortable producing the tic.
 
-在 GPT‑5.4 发布后，我们于 3 月停用了“书卷极客”人格。在训练中，我们移除了偏向 goblin 的奖励信号，并过滤掉包含生物类词汇的训练数据，从而降低 goblin 过度出现或在不合适语境中出现的概率。不幸的是，在我们找到 goblin 根本原因之前，GPT‑5.5 就已经开始训练了。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 员工立刻注意到了它对 goblin 的奇怪偏好，于是我们添加了一条开发者提示指令⁠（在新窗口中打开）来缓解这个问题。毕竟，Codex 本来就颇具“书卷极客”气质。
-
-如果你想让这些生物在 Codex 里自由出没，可以运行以下命令，以移除抑制 goblin 的指令来启动 Codex：
-
-goblin 可能是模型一个令人愉快的特色，也可能是让人厌烦的怪癖，具体感受因人而异。但它们也是一个有力例子，说明奖励信号如何以出人意料的方式塑造模型行为，以及模型如何学会把某些情境中的奖励泛化到无关情境。花时间理解模型为何会以奇怪的方式表现，并建立能够快速调查这些模式的方法，是我们研究团队的一项重要能力。这次调查也促成了新工具的开发，帮助研究团队审计模型行为，并从根源上修复行为问题。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
-
-在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
-
-简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
-
-起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
-
-我们的首席科学家与 GPT‑5.5 的一次有趣互动。
-
-我们第一次清楚看到这种模式是在 11 月，也...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
-
-在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
-
-简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
-
-起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
-
-我们的首席科学家与 GPT‑5.5 的一次有趣互动。
-
-我们第一次清楚看到这种模式是在 11 月，也就是 GPT‑5.1 发布之后，尽管它也可能更早就开始了⁠（在新窗口中打开）。用户抱怨模型在对话中过于自来熟，这促使我们开始调查一些具体的语言口癖。一位安全研究员此前就遇到过几次“goblin”和“gremlin”，并要求把它们纳入检查。结果发现，GPT‑5.1 发布后，ChatGPT 中“goblin”的使用量上升了 175%，而“gremlin”上升了 52%。
-
-GPT‑5.1 中一个可测量的微小词汇怪癖。
-
-当时，goblin 的出现率看起来并不特别令人警觉。几个月后，goblin 却以一种更具体、更可复现的形式回来困扰我们。
-
-到了 GPT‑5.4，我们和用户⁠（在新窗口中打开）都注意到，对这些生物的提及又有了更明显的上升。这触发了又一轮内部分析，并首次让我们将其与根本原因联系起来：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。“书卷极客”的系统提示如下，这也部分解释了这种语言怪癖的来源：
-
-你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...] 你必须通过俏皮的语言使用来消解故作姿态的做法。这个世界复杂而奇异，而这种奇异性必须得到承认、分析并享受。处理沉重话题时，不要落入一本正经的陷阱。[...]
-
-如果这种行为仅仅是更广泛的互联网潮流，我们预期它会更均匀地扩散。事实却是，它明显集中在系统中被明确优化为俏皮、“书卷极客”风格的那一部分。“书卷极客”仅占 ChatGPT 全部回复的 2.5%，却占了 ChatGPT 回复中所有“goblin”提及的 66.7%。
-
-由于“goblin”的出现率似乎随着模型版本发布而上升，我们怀疑，在人格指令遵循训练中，有什么因素正在放大这一现象。
-
-Codex 帮助我们比较了 RL 训练期间生成的、包含 goblin 或 gremlin 的模型输出，与同一任务中不包含这些词的输出。一个奖励信号立刻格外显眼：最初为鼓励“书卷极客”人格而设计的那个奖励，始终更倾向于给包含这些生物类词汇的输出更高评分。在审计涵盖的所有数据集中，“书卷极客”人格奖励都显示出明确倾向：对于同一个问题，包含“goblin”或“gremlin”的输出，其得分高于不包含这些词的输出；在 76.2% 的数据集中，这种差异表现为正向提升。
-
-这解释了为什么在“书卷极客”人格提示下，这种行为会被增强，但却没有解释为什么即使没有该提示，它也会出现。为了测试这种风格是否发生了迁移，我们跟踪了训练过程中在有无“书卷极客”提示两种条件下的提及率。
-
-随着 goblin 和 gremlin 在“书卷极客”人格下的提及增加，在不使用该人格时的样本中，它们也以几乎相同的相对比例增加。综合来看，证据表明，这种更广泛的行为是从“书卷极客”人格训练迁移而来的。
-
-这些奖励只应用于“书卷极客”条件下，但强化学习并不能保证学到的行为会被整齐地限定在产生它们的条件范围内。一旦某种风格口癖获得奖励，后续训练就可能在其他地方传播或强化它，尤其是在这些输出被复用于监督微调数据或偏好数据时。
-
-这种口癖在生成轨迹 (rollout) 中出现得更频繁。
-
-模型的生成轨迹 (rollout) 被用于监督微调 (SFT)。
-
-对 GPT‑5.5 的 SFT 数据进行搜索后，我们发现了许多包含“goblin”和“gremlin”的数据点。进一步调查还发现了一整个其他古怪生物家族：浣熊、巨魔、食人魔和鸽子也被识别为其他口癖词，而“青蛙”的大多数用法被确认是合理的。
+A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
 
 One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
 
-在 GPT‑5.4 发布后，我们于 3 月停用了“书卷极客”人格。在训练中，我们移除了偏向 goblin 的奖励信号，并过滤掉包含生物类词汇的训练数据，从而降低 goblin 过度出现或在不合适语境中出现的概率。不幸的是，在我们找到 goblin 根本原因之前，GPT‑5.5 就已经开始训练了。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 员工立刻注意到了它对 goblin 的奇怪偏好，于是我们添加了一条开发者提示指令⁠（在新窗口中打开）来缓解这个问题。毕竟，Codex 本来就颇具“书卷极客”气质。
+The end of the goblins
 
-如果你想让这些生物在 Codex 里自由出没，可以运行以下命令，以移除抑制 goblin 的指令来启动 Codex：
+We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
 
-goblin 可能是模型一个令人愉快的特色，也可能是让人厌烦的怪癖，具体感受因人而异。但它们也是一个有力例子，说明奖励信号如何以出人意料的方式塑造模型行为，以及模型如何学会把某些情境中的奖励泛化到无关情境。花时间理解模型为何会以奇怪的方式表现，并建立能够快速调查这些模式的方法，是我们研究团队的一项重要能力。这次调查也促成了新工具的开发，帮助研究团队审计模型行为，并从根源上修复行为问题。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
+
+Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
+
+In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
+
+The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
+
+The goblins were funny at first, but the increasing number of employee reports became concerning.
+
+An interesting interaction our Chief Scientist had with GPT‑5.5.
+
+The first signs of creatures
+
+The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
+
+A measurable small lexical quirk in GPT‑5.1.
+
+At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
+
+Solving the goblin mystery
+
+With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
+
+You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
+
+If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
+
+The behavior was highly concentrated in the "Nerdy" personality.
+
+Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
+
+Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
+
+That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
+
+As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
+
+The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
+
+That creates a feedback loop:
+
+Playful style is rewarded
+
+Some rewarded examples contain a distinctive lexical tic.
+
+The tic appears more often in rollouts.
+
+Model-generated rollouts are used for supervised fine-tuning (SFT).
+
+The model gets even more comfortable producing the tic.
+
+A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
+
+One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
+
+The end of the goblins
+
+We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
+
+If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
+
+Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5 System CardSafety</title>
@@ -835,10 +847,19 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Rosalind for life sciences research</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>GPT-5.3 Instant</title>
+  <link>https://openai.com/index/gpt-5-3-instant/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
+  <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>GPT-5.3-Codex</title>
   <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-  <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -847,19 +868,10 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Wed, 28 Feb 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 19 Feb 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.3 Instant</title>
-  <link>https://openai.com/index/gpt-5-3-instant/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
