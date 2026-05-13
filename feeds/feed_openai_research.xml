@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Wed, 13 May 2026 03:32:36 +0000</lastBuildDate>
+<lastBuildDate>Wed, 13 May 2026 08:49:53 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -486,128 +486,116 @@ Enhanced personalization from past chats, files, and connected Gmail is rolling 
   <guid isPermaLink="false">https://openai.com/index/where-the-goblins-came-from/</guid>
   <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
+在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
 
-The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
+简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
 
-The goblins were funny at first, but the increasing number of employee reports became concerning.
+起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
 
-An interesting interaction our Chief Scientist had with GPT‑5.5.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-The first signs of creatures
+我们第一次清楚看到这种模式是在 11 月，也...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
+在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
 
-A measurable small lexical quirk in GPT‑5.1.
+简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
 
-At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
+起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
 
-Solving the goblin mystery
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
+我们第一次清楚看到这种模式是在 11 月，也就是 GPT‑5.1 发布之后，尽管它也可能更早就开始了⁠（在新窗口中打开）。用户抱怨模型在对话中过于自来熟，这促使我们开始调查一些具体的语言口癖。一位安全研究员此前就遇到过几次“goblin”和“gremlin”，并要求把它们纳入检查。结果发现，GPT‑5.1 发布后，ChatGPT 中“goblin”的使用量上升了 175%，而“gremlin”上升了 52%。
 
-You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
+GPT‑5.1 中一个可测量的微小词汇怪癖。
 
-If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
+当时，goblin 的出现率看起来并不特别令人警觉。几个月后，goblin 却以一种更具体、更可复现的形式回来困扰我们。
 
-The behavior was highly concentrated in the "Nerdy" personality.
+到了 GPT‑5.4，我们和用户⁠（在新窗口中打开）都注意到，对这些生物的提及又有了更明显的上升。这触发了又一轮内部分析，并首次让我们将其与根本原因联系起来：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。“书卷极客”的系统提示如下，这也部分解释了这种语言怪癖的来源：
 
-Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
+你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...] 你必须通过俏皮的语言使用来消解故作姿态的做法。这个世界复杂而奇异，而这种奇异性必须得到承认、分析并享受。处理沉重话题时，不要落入一本正经的陷阱。[...]
 
-Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
+如果这种行为仅仅是更广泛的互联网潮流，我们预期它会更均匀地扩散。事实却是，它明显集中在系统中被明确优化为俏皮、“书卷极客”风格的那一部分。“书卷极客”仅占 ChatGPT 全部回复的 2.5%，却占了 ChatGPT 回复中所有“goblin”提及的 66.7%。
 
-That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
+由于“goblin”的出现率似乎随着模型版本发布而上升，我们怀疑，在人格指令遵循训练中，有什么因素正在放大这一现象。
 
-As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
+Codex 帮助我们比较了 RL 训练期间生成的、包含 goblin 或 gremlin 的模型输出，与同一任务中不包含这些词的输出。一个奖励信号立刻格外显眼：最初为鼓励“书卷极客”人格而设计的那个奖励，始终更倾向于给包含这些生物类词汇的输出更高评分。在审计涵盖的所有数据集中，“书卷极客”人格奖励都显示出明确倾向：对于同一个问题，包含“goblin”或“gremlin”的输出，其得分高于不包含这些词的输出；在 76.2% 的数据集中，这种差异表现为正向提升。
 
-The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
+这解释了为什么在“书卷极客”人格提示下，这种行为会被增强，但却没有解释为什么即使没有该提示，它也会出现。为了测试这种风格是否发生了迁移，我们跟踪了训练过程中在有无“书卷极客”提示两种条件下的提及率。
 
-That creates a feedback loop:
+随着 goblin 和 gremlin 在“书卷极客”人格下的提及增加，在不使用该人格时的样本中，它们也以几乎相同的相对比例增加。综合来看，证据表明，这种更广泛的行为是从“书卷极客”人格训练迁移而来的。
 
-Playful style is rewarded
+这些奖励只应用于“书卷极客”条件下，但强化学习并不能保证学到的行为会被整齐地限定在产生它们的条件范围内。一旦某种风格口癖获得奖励，后续训练就可能在其他地方传播或强化它，尤其是在这些输出被复用于监督微调数据或偏好数据时。
 
-Some rewarded examples contain a distinctive lexical tic.
+这种口癖在生成轨迹 (rollout) 中出现得更频繁。
 
-The tic appears more often in rollouts.
+模型的生成轨迹 (rollout) 被用于监督微调 (SFT)。
 
-Model-generated rollouts are used for supervised fine-tuning (SFT).
-
-The model gets even more comfortable producing the tic.
-
-A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
+对 GPT‑5.5 的 SFT 数据进行搜索后，我们发现了许多包含“goblin”和“gremlin”的数据点。进一步调查还发现了一整个其他古怪生物家族：浣熊、巨魔、食人魔和鸽子也被识别为其他口癖词，而“青蛙”的大多数用法被确认是合理的。
 
 One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
 
-The end of the goblins
+在 GPT‑5.4 发布后，我们于 3 月停用了“书卷极客”人格。在训练中，我们移除了偏向 goblin 的奖励信号，并过滤掉包含生物类词汇的训练数据，从而降低 goblin 过度出现或在不合适语境中出现的概率。不幸的是，在我们找到 goblin 根本原因之前，GPT‑5.5 就已经开始训练了。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 员工立刻注意到了它对 goblin 的奇怪偏好，于是我们添加了一条开发者提示指令⁠（在新窗口中打开）来缓解这个问题。毕竟，Codex 本来就颇具“书卷极客”气质。
 
-We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
+如果你想让这些生物在 Codex 里自由出没，可以运行以下命令，以移除抑制 goblin 的指令来启动 Codex：
 
-If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
+goblin 可能是模型一个令人愉快的特色，也可能是让人厌烦的怪癖，具体感受因人而异。但它们也是一个有力例子，说明奖励信号如何以出人意料的方式塑造模型行为，以及模型如何学会把某些情境中的奖励泛化到无关情境。花时间理解模型为何会以奇怪的方式表现，并建立能够快速调查这些模式的方法，是我们研究团队的一项重要能力。这次调查也促成了新工具的开发，帮助研究团队审计模型行为，并从根源上修复行为问题。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
+在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
 
-In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
+简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
 
-The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
+起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
 
-The goblins were funny at first, but the increasing number of employee reports became concerning.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-An interesting interaction our Chief Scientist had with GPT‑5.5.
+我们第一次清楚看到这种模式是在 11 月，也...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型逐渐养成了一个奇怪的习惯：它们在比喻中越来越常提到 goblin（哥布林）、gremlin（小精怪）以及其他生物。一般而言，模型问题往往会通过评测指标骤降或训练指标异常波动而暴露，并可追溯到具体改动；而这一问题则以一种隐蔽的方式逐步显现。回答里偶尔冒出一个“little goblin（小哥布林）”可能无伤大雅，甚至还有点讨喜。但跨越几代模型后，这个习惯已经变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-The first signs of creatures
+在早期测试中，Codex 里的 GPT‑5.5 对 goblin 比喻表现出一种奇怪的偏好。
 
-The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
+简短的答案是，模型行为会受到许多微小激励的共同塑造。在这个案例中，其中一个激励来自于为人格自定义功能⁠（在新窗口中打开）训练模型，尤其是“书卷极客” (Nerdy) 人格。我们在不知不觉中，对包含生物的比喻给予了特别高的奖励。于是，goblin 便扩散开来。
 
-A measurable small lexical quirk in GPT‑5.1.
+起初这些 goblin 还挺好笑，但随着员工报告越来越多，情况开始令人担忧。
 
-At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-Solving the goblin mystery
+我们第一次清楚看到这种模式是在 11 月，也就是 GPT‑5.1 发布之后，尽管它也可能更早就开始了⁠（在新窗口中打开）。用户抱怨模型在对话中过于自来熟，这促使我们开始调查一些具体的语言口癖。一位安全研究员此前就遇到过几次“goblin”和“gremlin”，并要求把它们纳入检查。结果发现，GPT‑5.1 发布后，ChatGPT 中“goblin”的使用量上升了 175%，而“gremlin”上升了 52%。
 
-With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
+GPT‑5.1 中一个可测量的微小词汇怪癖。
 
-You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
+当时，goblin 的出现率看起来并不特别令人警觉。几个月后，goblin 却以一种更具体、更可复现的形式回来困扰我们。
 
-If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
+到了 GPT‑5.4，我们和用户⁠（在新窗口中打开）都注意到，对这些生物的提及又有了更明显的上升。这触发了又一轮内部分析，并首次让我们将其与根本原因联系起来：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。“书卷极客”的系统提示如下，这也部分解释了这种语言怪癖的来源：
 
-The behavior was highly concentrated in the "Nerdy" personality.
+你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...] 你必须通过俏皮的语言使用来消解故作姿态的做法。这个世界复杂而奇异，而这种奇异性必须得到承认、分析并享受。处理沉重话题时，不要落入一本正经的陷阱。[...]
 
-Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
+如果这种行为仅仅是更广泛的互联网潮流，我们预期它会更均匀地扩散。事实却是，它明显集中在系统中被明确优化为俏皮、“书卷极客”风格的那一部分。“书卷极客”仅占 ChatGPT 全部回复的 2.5%，却占了 ChatGPT 回复中所有“goblin”提及的 66.7%。
 
-Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
+由于“goblin”的出现率似乎随着模型版本发布而上升，我们怀疑，在人格指令遵循训练中，有什么因素正在放大这一现象。
 
-That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
+Codex 帮助我们比较了 RL 训练期间生成的、包含 goblin 或 gremlin 的模型输出，与同一任务中不包含这些词的输出。一个奖励信号立刻格外显眼：最初为鼓励“书卷极客”人格而设计的那个奖励，始终更倾向于给包含这些生物类词汇的输出更高评分。在审计涵盖的所有数据集中，“书卷极客”人格奖励都显示出明确倾向：对于同一个问题，包含“goblin”或“gremlin”的输出，其得分高于不包含这些词的输出；在 76.2% 的数据集中，这种差异表现为正向提升。
 
-As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
+这解释了为什么在“书卷极客”人格提示下，这种行为会被增强，但却没有解释为什么即使没有该提示，它也会出现。为了测试这种风格是否发生了迁移，我们跟踪了训练过程中在有无“书卷极客”提示两种条件下的提及率。
 
-The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
+随着 goblin 和 gremlin 在“书卷极客”人格下的提及增加，在不使用该人格时的样本中，它们也以几乎相同的相对比例增加。综合来看，证据表明，这种更广泛的行为是从“书卷极客”人格训练迁移而来的。
 
-That creates a feedback loop:
+这些奖励只应用于“书卷极客”条件下，但强化学习并不能保证学到的行为会被整齐地限定在产生它们的条件范围内。一旦某种风格口癖获得奖励，后续训练就可能在其他地方传播或强化它，尤其是在这些输出被复用于监督微调数据或偏好数据时。
 
-Playful style is rewarded
+这种口癖在生成轨迹 (rollout) 中出现得更频繁。
 
-Some rewarded examples contain a distinctive lexical tic.
+模型的生成轨迹 (rollout) 被用于监督微调 (SFT)。
 
-The tic appears more often in rollouts.
-
-Model-generated rollouts are used for supervised fine-tuning (SFT).
-
-The model gets even more comfortable producing the tic.
-
-A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
+对 GPT‑5.5 的 SFT 数据进行搜索后，我们发现了许多包含“goblin”和“gremlin”的数据点。进一步调查还发现了一整个其他古怪生物家族：浣熊、巨魔、食人魔和鸽子也被识别为其他口癖词，而“青蛙”的大多数用法被确认是合理的。
 
 One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
 
-The end of the goblins
+在 GPT‑5.4 发布后，我们于 3 月停用了“书卷极客”人格。在训练中，我们移除了偏向 goblin 的奖励信号，并过滤掉包含生物类词汇的训练数据，从而降低 goblin 过度出现或在不合适语境中出现的概率。不幸的是，在我们找到 goblin 根本原因之前，GPT‑5.5 就已经开始训练了。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 员工立刻注意到了它对 goblin 的奇怪偏好，于是我们添加了一条开发者提示指令⁠（在新窗口中打开）来缓解这个问题。毕竟，Codex 本来就颇具“书卷极客”气质。
 
-We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
+如果你想让这些生物在 Codex 里自由出没，可以运行以下命令，以移除抑制 goblin 的指令来启动 Codex：
 
-If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
-
-Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+goblin 可能是模型一个令人愉快的特色，也可能是让人厌烦的怪癖，具体感受因人而异。但它们也是一个有力例子，说明奖励信号如何以出人意料的方式塑造模型行为，以及模型如何学会把某些情境中的奖励泛化到无关情境。花时间理解模型为何会以奇怪的方式表现，并建立能够快速调查这些模式的方法，是我们研究团队的一项重要能力。这次调查也促成了新工具的开发，帮助研究团队审计模型行为，并从根源上修复行为问题。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5 System CardSafety</title>
@@ -649,184 +637,184 @@ This card was updated on April 24, 2026, to include additional information about
   <guid isPermaLink="false">https://openai.com/index/introducing-openai-privacy-filter/</guid>
   <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Our state of the art model for masking personally identifiable information (PII) in text
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">用于脱敏文本中个人身份信息 (PII) 的前沿模型
 
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Our state of the art model for masking personally identifiable information (PII) in text
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
 
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement from the start.
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
 
-Privacy Filter is a small model with frontier personal data detection capability. It is designed for high-throughput privacy workflows, and is able to perform context-aware detection of PII in unstructured text. It can run locally, which means that PII can be masked or redacted without leaving your machine. It processes long inputs efficiently, making redaction decisions in a quick, single pass.
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Maski...</p><div style="font-size:16px;line-height:1.8;color:#333">用于脱敏文本中个人身份信息 (PII) 的前沿模型
 
-At OpenAI, we use a fine-tuned version of Privacy Filter in our own privacy-preserving workflows. We developed Privacy Filter because we believe that with the latest AI capabilities, we could raise the standard for privacy beyond what was already on the market. The version of Privacy Filter we are releasing today achieves state-of-the-art performance on the PII-Masking-300k benchmark, when corrected for annotation issues we identified during evaluation.
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
 
-With this release, developers can run Privacy Filter in their own environments, fine tune it to their own use cases, and build stronger privacy protections into training, indexing, logging, and review pipelines.
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
 
-A small model with frontier personal data detection capability
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Masking-300k 基准测试中达到了顶尖 (state-of-the-art) 的性能水平。
 
-Privacy protection in modern AI systems depends on more than pattern matching. Traditional PII detection tools often rely on deterministic rules for formats like phone numbers and email addresses. They can work well for narrow cases, but they often miss more subtle personal information and struggle with context.
+随着该版本的发布，开发者可以在自己的环境中运行 OpenAI Privacy Filter，针对特定的用例进行微调，并在训练、索引、日志记录和审核流水线中构建更强大的隐私保护屏障。
 
-Privacy Filter is built with deeper language and context awareness for more nuanced performance. By combining strong language understanding with a privacy-specific labeling system, it can detect a wider range of PII in unstructured text, including cases where the right decision depends on context. It can better distinguish between information that should be preserved because it is public, and information that should be masked or redacted because it relates to a private individual.
+现代 AI 系统的隐私保护不能仅依靠模式匹配。传统的 PII 检测工具通常依赖针对电话号码、电子邮件地址等格式的确定性规则。这些工具在处理特定简单案例时表现尚可，但在识别更微妙的个人信息或处理复杂上下文时往往显得力不从心。
 
-The result is a model that is strong enough to deliver frontier-level privacy filtering performance. At the same time, the model is small enough to be run locally–meaning data that has yet to be filtered can remain on device, with less risk of exposure, rather than needing to be sent to a server for de-identification.
+OpenAI Privacy Filter 内置了更深层的语言与上下文感知能力，能够提供更精细的表现。通过将强大的语言理解能力与专门的隐私标签系统相结合，它能检测非结构化文本中更广泛的 PII 类型，包括那些需要根据上下文做出判断的复杂情况。它能更精准地识别哪些内容属于公共信息（应予以保留），哪些内容涉及私人信息（应进行遮盖或脱敏）。
 
-Privacy Filter is a bidirectional token-classification model with span decoding. It begins from an autoregressive pretrained checkpoint and is then adapted into a token classifier over a fixed taxonomy of privacy labels. Instead of generating text token by token, it labels an input sequence in one pass and then decodes coherent spans with a constrained Viterbi procedure.
+由此产生的是一个性能强劲、能够提供前沿级隐私过滤表现的模型。与此同时，该模型体积足够轻巧，支持在本地运行。这意味着待过滤的数据可以保留在设备上，无需发送至服务器进行去标识化处理，从而降低了泄露风险。
 
-This architecture gives Privacy Filter a few useful properties for production use:
+OpenAI Privacy Filter 是一款采用片段解码 (span decoding) 的双向 Token 分类模型。它始于自回归预训练检查点，随后被调整为基于固定隐私标签分类体系的 Token 分类器。该模型并非逐个 Token 生成文本，而是在单次扫描中对输入序列进行标注，并结合受限维特比 (Viterbi) 算法解码出连贯的片段。
 
-Fast and efficient:all tokens are labeled in a single forward pass.
+这种架构赋予了 OpenAI Privacy Filter 若干适用于生产环境的优良特性：
 
-Context aware:the language prior enables PII spans to be detected based on surrounding context.
+快速高效：所有 Token 均在单次前向传播中完成标注。
 
-Long-context:the released model supports up to 128,000 tokens of context.
+上下文感知：语言先验能力使其能够根据周围语境检测出 PII 片段。
 
-Configurable:developers can tune operating points to trade off recall and precision depending on their workflow.
+长上下文：发布的模型支持高达 128,000 个 Token 的上下文。
 
-The released model has 1.5B total parameters with 50M active parameters.
+可配置：开发者可以根据自己的工作流调整运行参数，从而平衡召回率 (recall) 和准确率 (precision)。
 
-Privacy Filter predicts spans across eight categories:
+此次发布的模型总参数量为 15 亿，其中活跃参数量为 5000 万。
 
-Theaccount_numbercategory helps mask a wide variety of account numbers, including banking info like credit card numbers and bank account numbers, whilesecrethelps mask things like passwords and API keys.
+OpenAI Privacy Filter 可预测八个类别的片段：
 
-These labels are decoded with BIOES span tags, which helps produce cleaner and more coherent masking boundaries.
+其中，account_number类别有助于脱敏各种账号（包括信用卡号和银行账号等金融信息），而secret类别则有助于脱敏密码和 API 密钥等内容。
 
-Subject: Q2 Planning Follow-Up
-
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
-
-Text after masking personal identifiers
-
-Subject: Q2 Planning Follow-Up
-
-Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
-
-We developed Privacy Filter in several stages.
-
-First, we built a privacy taxonomy that defines the types of spans the model should detect. This includes personal identifiers, contact details, addresses, private dates, many different kinds of account numbers such as credit and banking information, and secrets such as API keys and passwords.
-
-Second, we converted a pretrained language model into a bidirectional token classifier by replacing the language modeling head with a token-classification head and post-training it with a supervised classification objective.
-
-Third, we trained on a mixture of publicly available and synthetic data designed to capture both realistic text and difficult privacy patterns. In parts of the public data where labels were incomplete, we used model-assisted annotation and review to improve coverage. We also generated synthetic examples to increase diversity across formats, contexts, and privacy subtypes.
-
-At inference time, the model's token-level predictions are decoded into coherent spans using constrained sequence decoding. This approach preserves the broad language understanding of the pretrained model while specializing it for privacy detection.
-
-How Privacy Filter performs
-
-We evaluated Privacy Filter on standard benchmarks and on additional synthetic and chat-style evaluations designed to test harder, more context-sensitive cases.
-
-On thePII-Masking-300k⁠(opens in a new window)benchmark, Privacy Filter achieves an F1 score of 96% (94.04% precision and 98.04% recall). On a corrected version of the benchmark that accounts for dataset annotation issues identified during review, the F1 score is 97.43% (96.79% precision and 98.08% recall).
-
-We also found that the model can be adapted efficiently. Fine-tuning on even a small amount of data quickly improves accuracy on domain-specific tasks, increasing F1 score from 54% to 96% and approaches saturation on the domain-adaption benchmark we evaluated.
-
-Beyond benchmark performance, Privacy Filter is designed for practical privacy filtering in noisy, real-world text. That includes long documents, ambiguous references, mixed-format strings, and software-related secrets. Themodel card⁠(opens in a new window)also reports targeted evaluation on secret detection in codebases and stress tests across multilingual, adversarial, and context-dependent examples.
-
-Privacy Filter is not an anonymization tool, a compliance certification, or a substitute for policy review in high-stakes settings. It is one component in a broader privacy-by-design system.
-
-Its behavior reflects the label taxonomy and decision boundaries it was trained on. Different organizations may want different detection or masking policies, and those policies may require in-domain evaluation or further fine-tuning. Performance may also vary across languages, scripts, naming conventions, and domains that differ from the training distribution.
-
-Like all models, Privacy Filter can make mistakes. It can miss uncommon identifiers or ambiguous private references, and it can over- or under-redact entities when context is limited, especially in short sequences. In high-sensitivity domains such as legal, medical, and financial workflows, human review and domain-specific evaluation and fine-tuning remain important.
-
-We are releasing OpenAI Privacy Filter to support stronger privacy protections across the ecosystem.
-
-The model is available today under the Apache 2.0 license onHugging Face⁠(opens in a new window)andGithub⁠(opens in a new window). It is intended for experimentation, customization, and commercial deployment, and it can be fine-tuned for different data distributions and privacy policies.
-
-Alongside the model, we are sharing documentation covering the model architecture, label taxonomy, decoding controls, intended use cases, evaluation setup, and known limitations, so teams can understand both what the model does well and where it should be used carefully.
-
-Privacy protection for AI systems is an ongoing effort across research, product design, evaluation, and deployment.
-
-Privacy Filter reflects one direction we believe is important: small, efficient models with frontier capability in narrowly defined tasks that matter for real-world AI systems. We are releasing it because we think privacy-preserving infrastructure should be easier to inspect, run, adapt, and improve.
-
-Our goal is for models to learn about the world, not about private individuals. Privacy Filter helps make that possible.
-
-We’re releasing this preview of Privacy Filter to receive feedback from the research and privacy community and iterate further on model performance.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-openai-privacy-filter/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Our state of the art model for masking personally identifiable information (PII) in text
-
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Our state of the art model for masking personally identifiable information (PII) in text
-
-Today we’re releasing OpenAI Privacy Filter, an open-weight model for detecting and redacting personally identifiable information (PII) in text. This release is part of our broader effort to support a more resilient software ecosystem by providing developers practical infrastructure for building with AI safely, includingtools⁠andmodels⁠that make strong privacy and security protections easier to implement from the start.
-
-Privacy Filter is a small model with frontier personal data detection capability. It is designed for high-throughput privacy workflows, and is able to perform context-aware detection of PII in unstructured text. It can run locally, which means that PII can be masked or redacted without leaving your machine. It processes long inputs efficiently, making redaction decisions in a quick, single pass.
-
-At OpenAI, we use a fine-tuned version of Privacy Filter in our own privacy-preserving workflows. We developed Privacy Filter because we believe that with the latest AI capabilities, we could raise the standard for privacy beyond what was already on the market. The version of Privacy Filter we are releasing today achieves state-of-the-art performance on the PII-Masking-300k benchmark, when corrected for annotation issues we identified during evaluation.
-
-With this release, developers can run Privacy Filter in their own environments, fine tune it to their own use cases, and build stronger privacy protections into training, indexing, logging, and review pipelines.
-
-A small model with frontier personal data detection capability
-
-Privacy protection in modern AI systems depends on more than pattern matching. Traditional PII detection tools often rely on deterministic rules for formats like phone numbers and email addresses. They can work well for narrow cases, but they often miss more subtle personal information and struggle with context.
-
-Privacy Filter is built with deeper language and context awareness for more nuanced performance. By combining strong language understanding with a privacy-specific labeling system, it can detect a wider range of PII in unstructured text, including cases where the right decision depends on context. It can better distinguish between information that should be preserved because it is public, and information that should be masked or redacted because it relates to a private individual.
-
-The result is a model that is strong enough to deliver frontier-level privacy filtering performance. At the same time, the model is small enough to be run locally–meaning data that has yet to be filtered can remain on device, with less risk of exposure, rather than needing to be sent to a server for de-identification.
-
-Privacy Filter is a bidirectional token-classification model with span decoding. It begins from an autoregressive pretrained checkpoint and is then adapted into a token classifier over a fixed taxonomy of privacy labels. Instead of generating text token by token, it labels an input sequence in one pass and then decodes coherent spans with a constrained Viterbi procedure.
-
-This architecture gives Privacy Filter a few useful properties for production use:
-
-Fast and efficient:all tokens are labeled in a single forward pass.
-
-Context aware:the language prior enables PII spans to be detected based on surrounding context.
-
-Long-context:the released model supports up to 128,000 tokens of context.
-
-Configurable:developers can tune operating points to trade off recall and precision depending on their workflow.
-
-The released model has 1.5B total parameters with 50M active parameters.
-
-Privacy Filter predicts spans across eight categories:
-
-Theaccount_numbercategory helps mask a wide variety of account numbers, including banking info like credit card numbers and bank account numbers, whilesecrethelps mask things like passwords and API keys.
-
-These labels are decoded with BIOES span tags, which helps produce cleaner and more coherent masking boundaries.
+这些标签使用 BIOES 片段标记进行解码，有助于生成更整洁、更连贯的脱敏边界。
 
 Subject: Q2 Planning Follow-Up
 
 Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
 
-Text after masking personal identifiers
+Subject: Q2 Planning Follow-Up
+
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
+
+我们分几个阶段开发 OpenAI Privacy Filter。
+
+第一阶段，我们构建了一套隐私分类体系，明确了模型应当检测的片段类型。这涵盖了个人标识符、联系方式、地址、个人日期、多种不同类型的账号（如信用卡和银行信息），以及 API 密钥和密码等机密信息。
+
+第二阶段，我们将预训练语言模型转换成了双向 Token 分类器。具体做法是将其原有的语言建模头 (head) 替换为 Token 分类头，并通过有监督分类目标进行后训练。
+
+第三阶段，我们在公开数据集与合成数据的混合语料上进行训练，这些数据旨在捕捉真实文本及复杂的隐私模式。对于公开数据中标签不完整的部分，我们采用了模型辅助标注与人工审核的方式来提高覆盖率。同时，我们还生成了合成示例，以增加模型在不同格式、上下文及隐私子类型上的多样性。
+
+在推理阶段，模型生成的 Token 级预测会通过受限序列解码 (constrained sequence decoding) 转化为连贯的片段。这种方法在保留预训练模型的广泛语言理解能力的同时，使其在隐私检测方面具备高度专业化的性能。
+
+OpenAI Privacy Filter 性能表现
+
+我们不仅在标准基准测试上评估了 OpenAI Privacy Filter，还针对更复杂、更依赖上下文的案例，通过额外的合成数据和对话式评估对其进行了测试。
+
+在PII-Masking-300k⁠（在新窗口中打开）基准测试中，OpenAI Privacy Filter 达到了 96% 的 F1 分数（准确率为 94.04%，召回率为 98.04%）。在针对评估中发现的标注问题进行修正后的基准测试版本中，其 F1 分数进一步提升至 97.43%（准确率为 96.79%，召回率为 98.08%）。
+
+此外，我们发现该模型具备极高的适配效率。即使只用少量数据进行微调，也能迅速提高其在特定领域任务中的准确性。在我们评估的领域适配基准测试中，其 F1 分数从 54% 飙升至 96%，表现已接近上限。
+
+除了基准测试表现外，OpenAI Privacy Filter 的设计初衷是处理真实世界中存在噪点的文本。这包括长文档、含义模糊的引用、混合格式字符串，以及与软件相关的机密信息 (secret)。模型卡⁠（在新窗口中打开）中还报告了针对代码库机密检测的定向评估，以及跨多语言、对抗性示例和上下文依赖示例的压力测试。
+
+OpenAI Privacy Filter 并非匿名化工具，亦非合规认证，更不能在涉及重大决策的场景中替代政策审查。它仅是更广泛的“隐私融入设计”(privacy-by-design) 体系中的组成部分。
+
+该模型的行为取决于其训练时所采用的标签分类体系及决策边界。不同的机构可能有不同的检测或脱敏政策，而这些政策可能需要进行领域内评估或进一步的微调。此外，在处理不同于训练分布的语言、文字、命名习惯及领域时，模型的表现也可能有所不同。
+
+与所有模型一样，OpenAI Privacy Filter 也会出错。它可能会漏掉不常见的标识符或模糊的私人引用，并且在上下文有限（尤其是短序列）的情况下，可能会对实体进行过度脱敏或脱敏不足。在法律、医疗和金融工作流等高敏感领域，人工审核以及针对特定领域的评估与微调依然至关重要。
+
+我们发布 OpenAI Privacy Filter，旨在支持整个生态系统构建更强大的隐私保护。
+
+该模型自即日起在Hugging Face⁠（在新窗口中打开）和Github⁠（在新窗口中打开）上通过 Apache 2.0 许可协议发布。它专为实验、定制及商业部署而设计，并可根据不同的数据分布和隐私政策进行微调。
+
+除了模型本身，我们还分享了涵盖模型架构、标签分类体系、解码控制、预期用例、评估设置及已知局限性的配套文档，以便各团队能够清晰了解该模型的优势所在，以及哪些场景需要谨慎使用。
+
+AI 系统的隐私保护是一项横跨研究、产品设计、评估及部署的长期工作。
+
+OpenAI Privacy Filter 展示了一个对我们而言至关重要的发展方向：为现实世界中的关键 AI 任务打造更小巧、更高效、同时具备先进能力的轻量级模型。我们之所以发布这款模型，是因为我们相信，隐私保护的基础设施应该更易于审查、部署、适配和持续改进。
+
+我们的目标是让模型学习关于世界的知识，而非关于个体隐私。OpenAI Privacy Filter 正是实现这一目标的助力。
+
+我们发布 OpenAI Privacy Filter 的预览版，旨在听取研究人员及隐私保护社区的反馈，并对模型性能进行迭代。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-openai-privacy-filter/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">用于脱敏文本中个人身份信息 (PII) 的前沿模型
+
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
+
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
+
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Maski...</p><div style="font-size:16px;line-height:1.8;color:#333">用于脱敏文本中个人身份信息 (PII) 的前沿模型
+
+今天，我们正式发布 OpenAI Privacy Filter。这是一款用于检测和脱敏文本中个人身份信息 (PII) 的开放权重模型。此次发布体现了我们对构建更具韧性的软件生态系统的承诺。我们致力于为开发者提供实用的基础设施，帮助他们安全地利用 AI 进行构建，包括各种便于从源头实施强力隐私和安全保护的工具⁠和模型⁠。
+
+OpenAI Privacy Filter 是一款具备前沿个人数据检测能力的小型模型。它专为高吞吐量的隐私处理工作流而设计，能够对非结构化文本中的 PII 进行上下文感知检测。该模型支持本地运行，这意味着 PII 可以在不离开你机器的情况下完成遮盖或脱敏处理。它能高效处理长文本输入，在单次扫描中即可快速做出脱敏决策。
+
+在 OpenAI 内部，我们也在自己的隐私保护工作流中使用 OpenAI Privacy Filter 的微调版本。我们相信，凭借最新的 AI 能力，我们可以将隐私保护标准提升到超越市场现有水平的高度，因此我们开发了这一模型。经过对评估中发现的标注问题进行修正后，今天发布的版本在 PII-Masking-300k 基准测试中达到了顶尖 (state-of-the-art) 的性能水平。
+
+随着该版本的发布，开发者可以在自己的环境中运行 OpenAI Privacy Filter，针对特定的用例进行微调，并在训练、索引、日志记录和审核流水线中构建更强大的隐私保护屏障。
+
+现代 AI 系统的隐私保护不能仅依靠模式匹配。传统的 PII 检测工具通常依赖针对电话号码、电子邮件地址等格式的确定性规则。这些工具在处理特定简单案例时表现尚可，但在识别更微妙的个人信息或处理复杂上下文时往往显得力不从心。
+
+OpenAI Privacy Filter 内置了更深层的语言与上下文感知能力，能够提供更精细的表现。通过将强大的语言理解能力与专门的隐私标签系统相结合，它能检测非结构化文本中更广泛的 PII 类型，包括那些需要根据上下文做出判断的复杂情况。它能更精准地识别哪些内容属于公共信息（应予以保留），哪些内容涉及私人信息（应进行遮盖或脱敏）。
+
+由此产生的是一个性能强劲、能够提供前沿级隐私过滤表现的模型。与此同时，该模型体积足够轻巧，支持在本地运行。这意味着待过滤的数据可以保留在设备上，无需发送至服务器进行去标识化处理，从而降低了泄露风险。
+
+OpenAI Privacy Filter 是一款采用片段解码 (span decoding) 的双向 Token 分类模型。它始于自回归预训练检查点，随后被调整为基于固定隐私标签分类体系的 Token 分类器。该模型并非逐个 Token 生成文本，而是在单次扫描中对输入序列进行标注，并结合受限维特比 (Viterbi) 算法解码出连贯的片段。
+
+这种架构赋予了 OpenAI Privacy Filter 若干适用于生产环境的优良特性：
+
+快速高效：所有 Token 均在单次前向传播中完成标注。
+
+上下文感知：语言先验能力使其能够根据周围语境检测出 PII 片段。
+
+长上下文：发布的模型支持高达 128,000 个 Token 的上下文。
+
+可配置：开发者可以根据自己的工作流调整运行参数，从而平衡召回率 (recall) 和准确率 (precision)。
+
+此次发布的模型总参数量为 15 亿，其中活跃参数量为 5000 万。
+
+OpenAI Privacy Filter 可预测八个类别的片段：
+
+其中，account_number类别有助于脱敏各种账号（包括信用卡号和银行账号等金融信息），而secret类别则有助于脱敏密码和 API 密钥等内容。
+
+这些标签使用 BIOES 片段标记进行解码，有助于生成更整洁、更连贯的脱敏边界。
+
+Subject: Q2 Planning Follow-Up
+
+Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for September 18, 2026. For reference, the project file is listed under 4829-1037-5581. If anything changes on your side, feel free to reply here at maya.chen@example.com or call me at +1 (415) 555-0124.
 
 Subject: Q2 Planning Follow-Up
 
 Thanks again for meeting earlier today. I wanted to follow up with the revised timeline for the Q2 rollout and confirm that the product launch is scheduled for[PRIVATE_DATE]. For reference, the project file is listed under[ACCOUNT_NUMBER]. If anything changes on your side, feel free to reply here at[PRIVATE_EMAIL]or call me at[PRIVATE_PHONE].
 
-We developed Privacy Filter in several stages.
+我们分几个阶段开发 OpenAI Privacy Filter。
 
-First, we built a privacy taxonomy that defines the types of spans the model should detect. This includes personal identifiers, contact details, addresses, private dates, many different kinds of account numbers such as credit and banking information, and secrets such as API keys and passwords.
+第一阶段，我们构建了一套隐私分类体系，明确了模型应当检测的片段类型。这涵盖了个人标识符、联系方式、地址、个人日期、多种不同类型的账号（如信用卡和银行信息），以及 API 密钥和密码等机密信息。
 
-Second, we converted a pretrained language model into a bidirectional token classifier by replacing the language modeling head with a token-classification head and post-training it with a supervised classification objective.
+第二阶段，我们将预训练语言模型转换成了双向 Token 分类器。具体做法是将其原有的语言建模头 (head) 替换为 Token 分类头，并通过有监督分类目标进行后训练。
 
-Third, we trained on a mixture of publicly available and synthetic data designed to capture both realistic text and difficult privacy patterns. In parts of the public data where labels were incomplete, we used model-assisted annotation and review to improve coverage. We also generated synthetic examples to increase diversity across formats, contexts, and privacy subtypes.
+第三阶段，我们在公开数据集与合成数据的混合语料上进行训练，这些数据旨在捕捉真实文本及复杂的隐私模式。对于公开数据中标签不完整的部分，我们采用了模型辅助标注与人工审核的方式来提高覆盖率。同时，我们还生成了合成示例，以增加模型在不同格式、上下文及隐私子类型上的多样性。
 
-At inference time, the model's token-level predictions are decoded into coherent spans using constrained sequence decoding. This approach preserves the broad language understanding of the pretrained model while specializing it for privacy detection.
+在推理阶段，模型生成的 Token 级预测会通过受限序列解码 (constrained sequence decoding) 转化为连贯的片段。这种方法在保留预训练模型的广泛语言理解能力的同时，使其在隐私检测方面具备高度专业化的性能。
 
-How Privacy Filter performs
+OpenAI Privacy Filter 性能表现
 
-We evaluated Privacy Filter on standard benchmarks and on additional synthetic and chat-style evaluations designed to test harder, more context-sensitive cases.
+我们不仅在标准基准测试上评估了 OpenAI Privacy Filter，还针对更复杂、更依赖上下文的案例，通过额外的合成数据和对话式评估对其进行了测试。
 
-On thePII-Masking-300k⁠(opens in a new window)benchmark, Privacy Filter achieves an F1 score of 96% (94.04% precision and 98.04% recall). On a corrected version of the benchmark that accounts for dataset annotation issues identified during review, the F1 score is 97.43% (96.79% precision and 98.08% recall).
+在PII-Masking-300k⁠（在新窗口中打开）基准测试中，OpenAI Privacy Filter 达到了 96% 的 F1 分数（准确率为 94.04%，召回率为 98.04%）。在针对评估中发现的标注问题进行修正后的基准测试版本中，其 F1 分数进一步提升至 97.43%（准确率为 96.79%，召回率为 98.08%）。
 
-We also found that the model can be adapted efficiently. Fine-tuning on even a small amount of data quickly improves accuracy on domain-specific tasks, increasing F1 score from 54% to 96% and approaches saturation on the domain-adaption benchmark we evaluated.
+此外，我们发现该模型具备极高的适配效率。即使只用少量数据进行微调，也能迅速提高其在特定领域任务中的准确性。在我们评估的领域适配基准测试中，其 F1 分数从 54% 飙升至 96%，表现已接近上限。
 
-Beyond benchmark performance, Privacy Filter is designed for practical privacy filtering in noisy, real-world text. That includes long documents, ambiguous references, mixed-format strings, and software-related secrets. Themodel card⁠(opens in a new window)also reports targeted evaluation on secret detection in codebases and stress tests across multilingual, adversarial, and context-dependent examples.
+除了基准测试表现外，OpenAI Privacy Filter 的设计初衷是处理真实世界中存在噪点的文本。这包括长文档、含义模糊的引用、混合格式字符串，以及与软件相关的机密信息 (secret)。模型卡⁠（在新窗口中打开）中还报告了针对代码库机密检测的定向评估，以及跨多语言、对抗性示例和上下文依赖示例的压力测试。
 
-Privacy Filter is not an anonymization tool, a compliance certification, or a substitute for policy review in high-stakes settings. It is one component in a broader privacy-by-design system.
+OpenAI Privacy Filter 并非匿名化工具，亦非合规认证，更不能在涉及重大决策的场景中替代政策审查。它仅是更广泛的“隐私融入设计”(privacy-by-design) 体系中的组成部分。
 
-Its behavior reflects the label taxonomy and decision boundaries it was trained on. Different organizations may want different detection or masking policies, and those policies may require in-domain evaluation or further fine-tuning. Performance may also vary across languages, scripts, naming conventions, and domains that differ from the training distribution.
+该模型的行为取决于其训练时所采用的标签分类体系及决策边界。不同的机构可能有不同的检测或脱敏政策，而这些政策可能需要进行领域内评估或进一步的微调。此外，在处理不同于训练分布的语言、文字、命名习惯及领域时，模型的表现也可能有所不同。
 
-Like all models, Privacy Filter can make mistakes. It can miss uncommon identifiers or ambiguous private references, and it can over- or under-redact entities when context is limited, especially in short sequences. In high-sensitivity domains such as legal, medical, and financial workflows, human review and domain-specific evaluation and fine-tuning remain important.
+与所有模型一样，OpenAI Privacy Filter 也会出错。它可能会漏掉不常见的标识符或模糊的私人引用，并且在上下文有限（尤其是短序列）的情况下，可能会对实体进行过度脱敏或脱敏不足。在法律、医疗和金融工作流等高敏感领域，人工审核以及针对特定领域的评估与微调依然至关重要。
 
-We are releasing OpenAI Privacy Filter to support stronger privacy protections across the ecosystem.
+我们发布 OpenAI Privacy Filter，旨在支持整个生态系统构建更强大的隐私保护。
 
-The model is available today under the Apache 2.0 license onHugging Face⁠(opens in a new window)andGithub⁠(opens in a new window). It is intended for experimentation, customization, and commercial deployment, and it can be fine-tuned for different data distributions and privacy policies.
+该模型自即日起在Hugging Face⁠（在新窗口中打开）和Github⁠（在新窗口中打开）上通过 Apache 2.0 许可协议发布。它专为实验、定制及商业部署而设计，并可根据不同的数据分布和隐私政策进行微调。
 
-Alongside the model, we are sharing documentation covering the model architecture, label taxonomy, decoding controls, intended use cases, evaluation setup, and known limitations, so teams can understand both what the model does well and where it should be used carefully.
+除了模型本身，我们还分享了涵盖模型架构、标签分类体系、解码控制、预期用例、评估设置及已知局限性的配套文档，以便各团队能够清晰了解该模型的优势所在，以及哪些场景需要谨慎使用。
 
-Privacy protection for AI systems is an ongoing effort across research, product design, evaluation, and deployment.
+AI 系统的隐私保护是一项横跨研究、产品设计、评估及部署的长期工作。
 
-Privacy Filter reflects one direction we believe is important: small, efficient models with frontier capability in narrowly defined tasks that matter for real-world AI systems. We are releasing it because we think privacy-preserving infrastructure should be easier to inspect, run, adapt, and improve.
+OpenAI Privacy Filter 展示了一个对我们而言至关重要的发展方向：为现实世界中的关键 AI 任务打造更小巧、更高效、同时具备先进能力的轻量级模型。我们之所以发布这款模型，是因为我们相信，隐私保护的基础设施应该更易于审查、部署、适配和持续改进。
 
-Our goal is for models to learn about the world, not about private individuals. Privacy Filter helps make that possible.
+我们的目标是让模型学习关于世界的知识，而非关于个体隐私。OpenAI Privacy Filter 正是实现这一目标的助力。
 
-We’re releasing this preview of Privacy Filter to receive feedback from the research and privacy community and iterate further on model performance.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-openai-privacy-filter/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+我们发布 OpenAI Privacy Filter 的预览版，旨在听取研究人员及隐私保护社区的反馈，并对模型性能进行迭代。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-openai-privacy-filter/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing ChatGPT Images 2.0</title>
@@ -850,7 +838,7 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 19 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -859,7 +847,7 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
   <title>GPT-5.3-Codex</title>
   <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-  <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 14 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -868,7 +856,7 @@ We’re releasing this preview of Privacy Filter to receive feedback from the re
   <title>GPT-5.3 Instant</title>
   <link>https://openai.com/index/gpt-5-3-instant/</link>
   <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Thu, 23 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 29 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
