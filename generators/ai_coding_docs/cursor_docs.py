@@ -19,8 +19,8 @@ class CursorDocsGenerator(BaseDocsCrawler):
     
     BASE_URL = "https://cursor.com"
     DOCS_PATH_PATTERN = r"/(en-US/)?docs"
-    INDEX_FILES = []  # Cursor 没有索引文件，需要动态发现
-    REQUIRE_JS = True  # 需要 JS 渲染
+    INDEX_FILES = []  # Cursor has no index file; discover dynamically
+    REQUIRE_JS = True  # JS rendering required
     
     CONTENT_SELECTORS = [
         "article",
@@ -32,7 +32,7 @@ class CursorDocsGenerator(BaseDocsCrawler):
     
     def fetch_articles(self):
         """Override to use dynamic link discovery from rendered page."""
-        from generators.utils import smart_fetch
+        from generators.http_utils import smart_fetch
         from bs4 import BeautifulSoup
         from urllib.parse import urljoin
         
@@ -43,10 +43,10 @@ class CursorDocsGenerator(BaseDocsCrawler):
             self.logger.error("Failed to fetch homepage")
             return []
         
-        # 发现所有文档链接
+        # Discover all documentation links
         soup = BeautifulSoup(html, "html.parser")
         
-        # 优先从导航菜单/侧边栏获取链接
+        # Prefer links from nav menu / sidebar
         doc_urls = set()
         
         # Try common sidebar/navigation selectors
@@ -73,13 +73,13 @@ class CursorDocsGenerator(BaseDocsCrawler):
                         else:
                             continue
                         
-                        # 确保是英文路径
+                        # Make sure it is an English path
                         if "/docs" in full_url and "cursor.com" in full_url:
                             # 强制使用英文路径
                             if "/zh" not in full_url and "/ja" not in full_url and self.is_docs_url(full_url):
                                 doc_urls.add(full_url)
         
-        # 如果侧边栏选择器没找到足够的链接，再回退到所有链接
+        # If the sidebar selector did not find enough links, fall back to all links
         if len(doc_urls) < 20:
             self.logger.info("Sidebar links insufficient, scanning all links")
             all_links = soup.find_all("a", href=True)
@@ -98,7 +98,7 @@ class CursorDocsGenerator(BaseDocsCrawler):
         
         self.logger.info(f"Discovered {len(doc_urls)} doc URLs from homepage")
         
-        # 手动添加可能遗漏的重要页面
+        # Manually add any important pages that may have been missed
         important_pages = [
             "https://cursor.com/en-US/docs/hooks",
             "https://cursor.com/en-US/docs/rules",

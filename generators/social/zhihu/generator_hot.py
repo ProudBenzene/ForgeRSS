@@ -3,10 +3,9 @@
 # Licensed under AGPL-3.0
 
 """
-Zhihu Hot List (知乎热榜) RSS Generator.
+Zhihu Hot List RSS Generator.
 
-Requires logged-in browser profile. Run setup first:
-    python -m generators.social.zhihu_base --login
+Requires logged-in browser profile.
 """
 
 import re
@@ -19,7 +18,7 @@ import pytz
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator
-from .zhihu_base import (
+from .scraper import (
     check_zhihu_ready,
     create_zhihu_browser,
     verify_zhihu_login,
@@ -31,9 +30,9 @@ class ZhihuHotGenerator(BaseFeedGenerator):
     """RSS generator for Zhihu Hot List."""
 
     FEED_NAME = "zhihu_hot"
-    FEED_TITLE = "知乎热榜"
+    FEED_TITLE = "Zhihu Hot List"
     FEED_URL = "https://www.zhihu.com/hot"
-    FEED_DESCRIPTION = "知乎热榜 - 实时热门话题 / Zhihu Hot List"
+    FEED_DESCRIPTION = "Zhihu Hot List - Daily Hot Topics"
     FEED_LANGUAGE = "zh-cn"
     FEED_LOGO = "https://static.zhihu.com/heifetz/favicon.ico"
 
@@ -57,7 +56,7 @@ class ZhihuHotGenerator(BaseFeedGenerator):
         try:
             # Verify login
             if not verify_zhihu_login(browser):
-                self.logger.error("Not logged in. Run: python -m generators.social.zhihu_base --login")
+                self.logger.error("Not logged in. Run: python -m generators.social.zhihu.scraper --login")
                 return []
 
             # Fetch hot list
@@ -124,14 +123,14 @@ class ZhihuHotGenerator(BaseFeedGenerator):
         # Build content
         content_parts = []
         if rank:
-            content_parts.append(f"<p><strong>排名：#{rank}</strong></p>")
+            content_parts.append(f"<p><strong>Rank: {rank}</strong></p>")
         if heat:
             content_parts.append(f"<p><em>{heat}</em></p>")
         if excerpt:
             content_parts.append(f"<p>{excerpt}</p>")
         if image_url:
             content_parts.append(f'<p><img src="{image_url}" alt="{title}"></p>')
-        content_parts.append(f'<p><a href="{url}">查看详情</a></p>')
+        content_parts.append(f'<p><a href="{url}">View Details</a></p>')
 
         content = "\n".join(content_parts)
 
@@ -141,7 +140,7 @@ class ZhihuHotGenerator(BaseFeedGenerator):
             content=content,
             summary=excerpt or heat,
             published_at=datetime.now(pytz.timezone("Asia/Shanghai")),
-            author="知乎热榜",
+            author="Zhihu Hot List",
             images=[image_url] if image_url else [],
         )
 

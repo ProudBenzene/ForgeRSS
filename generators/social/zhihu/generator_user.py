@@ -3,11 +3,10 @@
 # Licensed under AGPL-3.0
 
 """
-Zhihu User Activity (知乎用户动态) RSS Generator.
+Zhihu User Activity RSS Generator.
 
 Supports tracking specific users' activities.
-Requires logged-in browser profile. Run setup first:
-    python -m generators.social.zhihu_base --login
+Requires logged-in browser profile.
 """
 
 import re
@@ -20,7 +19,7 @@ import pytz
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator
-from .zhihu_base import (
+from .scraper import (
     check_zhihu_ready,
     create_zhihu_browser,
     verify_zhihu_login,
@@ -31,9 +30,9 @@ class ZhihuUserGenerator(BaseFeedGenerator):
     """RSS generator for Zhihu User Activities."""
 
     FEED_NAME = "zhihu_user"
-    FEED_TITLE = "知乎用户动态"
+    FEED_TITLE = "Zhihu User Activities"
     FEED_URL = "https://www.zhihu.com/people/"
-    FEED_DESCRIPTION = "知乎用户动态 / Zhihu User Activities"
+    FEED_DESCRIPTION = "Zhihu User Activities - User Posts and Answers"
     FEED_LANGUAGE = "zh-cn"
     FEED_LOGO = "https://static.zhihu.com/heifetz/favicon.ico"
 
@@ -43,7 +42,7 @@ class ZhihuUserGenerator(BaseFeedGenerator):
 
     # Default users to track (can be customized via args)
     DEFAULT_USERS = [
-        "excited-vczh",  # 轮子哥
+        "excited-vczh",
     ]
 
     def __init__(self, users: list[str] = None):
@@ -160,8 +159,7 @@ class ZhihuUserGenerator(BaseFeedGenerator):
         pub_time = datetime.now(pytz.timezone("Asia/Shanghai"))
         if time_elem:
             time_text = time_elem.get_text(strip=True)
-            # Parse relative time like "2 小时前", "昨天" etc.
-            # For now use current time, can enhance later
+            # Parse relative time - can enhance later
 
         # Build content
         content_parts = []
@@ -171,7 +169,7 @@ class ZhihuUserGenerator(BaseFeedGenerator):
             content_parts.append(f"<p>{excerpt}</p>")
         if image_url:
             content_parts.append(f'<p><img src="{image_url}" alt="{title}"></p>')
-        content_parts.append(f'<p><a href="{url}">查看原文</a></p>')
+        content_parts.append(f'<p><a href="{url}">Read more</a></p>')
 
         content = "\n".join(content_parts)
 

@@ -144,7 +144,9 @@ class BaseFeedGenerator(ABC):
     def _init_db(self):
         """Initialize SQLite database schema."""
         try:
-            conn = sqlite3.connect(self.db_path)
+            conn = sqlite3.connect(self.db_path, timeout=30)
+            conn.execute("PRAGMA journal_mode=WAL")
+            conn.execute("PRAGMA busy_timeout=10000")
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS articles (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -216,7 +218,7 @@ class BaseFeedGenerator(ABC):
     def load_from_db(self, limit: int = 100) -> list[Article]:
         """Load articles from SQLite database."""
         try:
-            conn = sqlite3.connect(self.db_path)
+            conn = sqlite3.connect(self.db_path, timeout=30)
             conn.row_factory = sqlite3.Row
             cursor = conn.execute("""
                 SELECT * FROM articles 
@@ -245,7 +247,7 @@ class BaseFeedGenerator(ABC):
     def save_to_db(self, articles: list[Article]):
         """Save articles to SQLite database (upsert)."""
         try:
-            conn = sqlite3.connect(self.db_path)
+            conn = sqlite3.connect(self.db_path, timeout=30)
             for article in articles:
                 conn.execute("""
                     INSERT OR REPLACE INTO articles 
@@ -274,7 +276,7 @@ class BaseFeedGenerator(ABC):
     def get_existing_urls(self) -> set[str]:
         """Get all existing article URLs from DB for deduplication."""
         try:
-            conn = sqlite3.connect(self.db_path)
+            conn = sqlite3.connect(self.db_path, timeout=30)
             cursor = conn.execute(
                 "SELECT url FROM articles WHERE feed_name = ?", 
                 (self.FEED_NAME,)
@@ -568,6 +570,16 @@ class BaseFeedGenerator(ABC):
         Returns:
             True on success
         """
+        if not self.FEED_NAME:
+            raise ValueError(
+                f"{self.__class__.__name__} must set FEED_NAME before run() is called"
+            )
+
+        # Expose the requested cap to subclasses so they can throttle scraping
+        # (e.g. stop scrolling early, skip expensive downloads for items that
+        # will be sliced off anyway). Subclasses opt-in by reading this attr.
+        self._run_max_articles = max_articles
+
         try:
             # Load existing
             if full_refresh:

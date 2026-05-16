@@ -12,7 +12,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator, stable_fallback_date
-from generators.utils import smart_fetch, parse_date
+from generators.http_utils import smart_fetch, parse_date
 
 logger = logging.getLogger(__name__)
 

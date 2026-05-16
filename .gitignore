@@ -40,12 +40,37 @@ Thumbs.db
 # Project specific
 data/*.db
 data/*.sqlite
+data/*.db-wal
+data/*.db-shm
 cache/*.json
 
-# Browser profiles and sessions (login credentials)
+# SQLite databases anywhere in the repo (e.g., weixin_videos.db)
+*.db
+*.sqlite
+*.db-wal
+*.db-shm
+
+# Backup directories
+backup_*/
+
+# Login expiry notifications
+login_notifications.log
+
+# Browser profiles and sessions (login credentials) - 统一管理
+profiles/
+
+# 兼容旧版本（逐步迁移）
 zhihu_profile/
+bilibili_profile/
+xiaohongshu_profile/
 *_profile/
 *.crdownload
+
+# Downloaded media (videos, images)
+downloads/
+
+# Processed content (audio, transcripts, markdown output)
+processed/
 
 # Keep directory structure
 !cache/.gitkeep
@@ -54,3 +79,9 @@ zhihu_profile/
 
 # Don't ignore generated feeds (for GitHub hosting)
 !feeds/*.xml
+
+# Weixin standalone bundle (managed by scripts/_bundle_weixin.py)
+weixin_standalone/
+
+# HTML dumps from tools/diagnose_login.py (regenerate as needed)
+tools/login_dumps/

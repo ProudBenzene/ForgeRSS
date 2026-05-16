@@ -1,0 +1,105 @@
+{
+  "$schema": "登录检测关键词配置",
+  "version": "1.0",
+  "description": "各平台登录状态检测关键词配置文件",
+  
+  "platforms": {
+    "zhihu": {
+      "name": "知乎",
+      "check_url": "https://www.zhihu.com/",
+      "login_url": "https://www.zhihu.com/signin",
+      "signin_url_markers": ["/signin", "/login"],
+      "keywords": {
+        "logged_in": [
+          "写文章",
+          "创作中心"
+        ],
+        "not_logged_in": [
+          "登录",
+          "注册"
+        ]
+      },
+      "notes": "未登录访问首页会被重定向到 /signin?next=%2F，URL 标记是最可靠的信号"
+    },
+
+    "bilibili": {
+      "name": "哔哩哔哩",
+      "check_url": "https://www.bilibili.com/",
+      "login_url": "https://passport.bilibili.com/login",
+      "signin_url_markers": ["passport.bilibili.com/login"],
+      "keywords": {
+        "logged_in": [
+          "bili-avatar",
+          "header-avatar-wrap"
+        ],
+        "not_logged_in": [
+          "立即登录",
+          "header-login-entry"
+        ]
+      },
+      "notes": "B站首页不重定向，依赖 HTML 标记。验证过：登录态 'bili-avatar' x7、'header-avatar-wrap' x2；登出态 '立即登录' x1、'header-login-entry' x1。'right-entry__outside' 两态都有，是噪声不要用。"
+    },
+
+    "xiaohongshu": {
+      "name": "小红书",
+      "check_url": "https://www.xiaohongshu.com/",
+      "login_url": "https://www.xiaohongshu.com/explore",
+      "signin_url_markers": ["/login", "/passport"],
+      "keywords": {
+        "logged_in": [
+          "创作中心",
+          "user-avatar",
+          "avatar-wrapper",
+          "redId"
+        ],
+        "not_logged_in": [
+          "扫码登录",
+          "手机号登录",
+          "快速注册"
+        ]
+      },
+      "user_url_format": "https://www.xiaohongshu.com/user/profile/{user_id}",
+      "notes": "小红书不重定向。'登录'/'我' 过于通用（页面里有 Vue 状态 'loginTips' 字段也含'登录'），不能用。验证过：登录态 user-avatar x2、avatar-wrapper x8、redId x1、创作中心 x1；登出态 '扫码登录' 等是登录模态特有文案。"
+    },
+
+    "zsxq": {
+      "name": "知识星球",
+      "check_url": "https://wx.zsxq.com/",
+      "login_url": "https://wx.zsxq.com/",
+      "signin_url_markers": ["/login", "/sign"],
+      "keywords": {
+        "logged_in": [
+          "退出登录",
+          "group-list",
+          "user-avatar"
+        ],
+        "not_logged_in": [
+          "微信登录",
+          "扫码登录"
+        ]
+      },
+      "notes": "知识星球：'登录' 子串会在登录态匹配 '退出登录'，所以不能用作 not_logged_in。验证过：登录态 退出登录 x1、group-list x183、user-avatar x7；登出态用 '微信登录'/'扫码登录' 严格区分。"
+    }
+  },
+  
+  "instructions": {
+    "how_to_update": [
+      "1. 使用您的profile登录各个平台",
+      "2. 访问平台首页",
+      "3. 查看页面上显示的个人功能文字（如'写文章'、'投稿'等）",
+      "4. 将这些关键词填入上面的 logged_in 数组中",
+      "5. 运行测试脚本验证: python tests/test_platforms.py <platform> --user <user_id>"
+    ],
+    
+    "example": {
+      "description": "如何找到正确的登录关键词",
+      "steps": [
+        "打开浏览器，使用您的profile",
+        "访问平台首页（如 https://www.zhihu.com/）",
+        "按 F12 打开开发者工具",
+        "查看页面元素，找到只有登录用户才能看到的文字",
+        "将这些文字添加到配置文件中"
+      ]
+    }
+  }
+}

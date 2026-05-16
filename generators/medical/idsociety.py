@@ -15,7 +15,7 @@ import pytz
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator, stable_fallback_date
-from generators.utils import (
+from generators.http_utils import (
     smart_fetch,
     fetch_html,
     parse_date,

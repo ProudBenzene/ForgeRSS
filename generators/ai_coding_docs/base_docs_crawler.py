@@ -18,7 +18,7 @@ import pytz
 from bs4 import BeautifulSoup, Tag
 
 from generators.base import Article, BaseFeedGenerator, stable_fallback_date
-from generators.utils import smart_fetch, extract_text, clean_html_content, fetch_html
+from generators.http_utils import smart_fetch, extract_text, clean_html_content, fetch_html
 
 
 class BaseDocsCrawler(BaseFeedGenerator):

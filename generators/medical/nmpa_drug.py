@@ -20,7 +20,7 @@ import pytz
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator
-from generators.utils import (
+from generators.http_utils import (
     smart_fetch,
     parse_date,
     extract_text,

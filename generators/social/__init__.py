@@ -3,10 +3,10 @@
 
 """Social media feed generators."""
 
-from .zhihu_hot import ZhihuHotGenerator
-from .zhihu_user import ZhihuUserGenerator
+# Generator imports are centralized in scripts/registry.py.
+# from .zhihu.user_generator import ZhihuUserGenerator
 
 __all__ = [
-    "ZhihuHotGenerator",
-    "ZhihuUserGenerator",
+    # "ZhihuHotGenerator",
+    # "ZhihuUserGenerator",
 ]

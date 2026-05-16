@@ -15,44 +15,13 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from generators.medical.idsociety import IDSocietyGenerator
-from generators.medical.nmpa_drug import NMPADrugGenerator
-from generators.ai.anthropic_news import AnthropicNewsGenerator
-from generators.ai.anthropic_research import AnthropicResearchGenerator
-from generators.ai.anthropic_engineering import AnthropicEngineeringGenerator
-from generators.ai.openai_research import OpenAIResearchGenerator
-from generators.ai_coding_docs.openai_codex import OpenAICodexDocsGenerator
-from generators.ai_coding_docs.claude_code import ClaudeCodeDocsGenerator
-from generators.ai_coding_docs.cursor_docs import CursorDocsGenerator
-from generators.ai_coding_docs.qwen_code import QwenCodeDocsGenerator
-from generators.social.zhihu_hot import ZhihuHotGenerator
-from generators.social.zhihu_user import ZhihuUserGenerator
+from scripts.registry import GENERATORS
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
-
-# Registry of all generators
-GENERATORS = {
-    # Medical / Government
-    "idsociety": IDSocietyGenerator,
-    "nmpa_drug": NMPADrugGenerator,
-    # AI
-    "anthropic_news": AnthropicNewsGenerator,
-    "anthropic_research": AnthropicResearchGenerator,
-    "anthropic_engineering": AnthropicEngineeringGenerator,
-    "openai_research": OpenAIResearchGenerator,
-    # AI Coding Docs
-    "openai_codex_docs": OpenAICodexDocsGenerator,
-    "claude_code_docs": ClaudeCodeDocsGenerator,
-    "cursor_docs": CursorDocsGenerator,
-    "qwen_code_docs": QwenCodeDocsGenerator,
-    # Social (requires login + desktop)
-    "zhihu_hot": ZhihuHotGenerator,
-    "zhihu_user": ZhihuUserGenerator,
-}
 
 
 def main():
@@ -74,15 +43,15 @@ def main():
         help="Max articles to fetch (default: 20)"
     )
     args = parser.parse_args()
-    
+
     generator_class = GENERATORS[args.name]
     generator = generator_class()
-    
+
     success = generator.run(
         full_refresh=args.full,
         max_articles=args.max
     )
-    
+
     sys.exit(0 if success else 1)
 
 

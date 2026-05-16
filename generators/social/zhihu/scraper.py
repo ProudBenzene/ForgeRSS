@@ -4,7 +4,8 @@
 
 """
 Zhihu base utilities for all Zhihu generators.
-知乎抓取基础工具
+
+Base scraping tools for Zhihu
 
 Requires:
 1. DrissionPage installed
@@ -12,7 +13,7 @@ Requires:
 3. Desktop environment (non-headless mode)
 
 Usage:
-1. First time: run `python -m generators.social.zhihu_base --login`
+1. First time: run `python -m generators.social.zhihu.scraper --login`
 2. Then run generators normally
 """
 
@@ -25,8 +26,13 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 # Default profile directory (can be overridden by env var)
+# 3 levels up from generators/social/zhihu to project root
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+PROFILES_ROOT = PROJECT_ROOT / "profiles"
+
+# Zhihu profile directory (can be overridden by env var)
 ZHIHU_PROFILE_DIR = Path(
-    os.environ.get("ZHIHU_PROFILE_DIR", Path(__file__).parent.parent.parent / "zhihu_profile")
+    os.environ.get("ZHIHU_PROFILE_DIR", PROFILES_ROOT / "zhihu")
 )
 
 try:
@@ -47,7 +53,7 @@ def check_zhihu_ready() -> tuple[bool, str]:
         return False, "DrissionPage not installed. Run: pip install DrissionPage"
     
     if not ZHIHU_PROFILE_DIR.exists():
-        return False, f"Profile not found at {ZHIHU_PROFILE_DIR}. Run: python -m generators.social.zhihu_base --login"
+        return False, f"Profile not found at {ZHIHU_PROFILE_DIR}. Run: python -m generators.social.zhihu.scraper --login"
     
     return True, "Ready"
 
@@ -87,14 +93,37 @@ def create_zhihu_browser(headless: bool = False) -> Optional["ChromiumPage"]:
         return None
 
 
-def verify_zhihu_login(browser: "ChromiumPage") -> bool:
-    """Check if browser is logged into Zhihu."""
+def verify_zhihu_login(browser: "ChromiumPage", notify_on_failure: bool = True) -> bool:
+    """
+    Check if browser is logged into Zhihu.
+    
+    Args:
+        browser: ChromiumPage browser instance
+        notify_on_failure: Whether to notify on login failure
+        
+    Returns:
+        True if logged in, False otherwise
+    """
     try:
-        browser.get("https://www.zhihu.com/")
-        browser.wait(2)
-        html = browser.html
-        # Logged in users see "写文章" or "创作中心"
-        return "写文章" in html or "创作中心" in html
+        from generators.utils.login_checker import Platform, LoginChecker
+        
+        checker = LoginChecker()
+        status, message = checker.check_login(Platform.ZHIHU, browser)
+        
+        # Login verified
+        if status.value == "logged_in":
+            logger.info(f"Zhihu login verified: {message}")
+            return True
+        
+        # Login failed
+        logger.warning(f"Zhihu login failed: {message}")
+        
+        if notify_on_failure:
+            checker.notify_login_expired(Platform.ZHIHU, method="all")
+            logger.error(f"Please re-login to Zhihu: {checker.get_login_command(Platform.ZHIHU)}")
+        
+        return False
+        
     except Exception as e:
         logger.error(f"Failed to verify login: {e}")
         return False

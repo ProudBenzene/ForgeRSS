@@ -13,7 +13,7 @@ import pytz
 from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator, stable_fallback_date
-from generators.utils import smart_fetch, parse_date
+from generators.http_utils import smart_fetch, parse_date
 
 logger = logging.getLogger(__name__)
 
@@ -112,7 +112,7 @@ class AnthropicResearchGenerator(BaseFeedGenerator):
     
     def fetch_article_content(self, url: str) -> Optional[Article]:
         """Fetch full article content."""
-        from generators.utils import smart_fetch
+        from generators.http_utils import smart_fetch
         
         html = smart_fetch(url, require_js=False, content_check="anthropic")
         if not html:
