@@ -33,14 +33,23 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 PROFILES_ROOT = PROJECT_ROOT / "profiles"
 
-# System Edge browser config directory (if user already logged in system Edge)
-EDGE_USER_DATA = Path(os.environ.get("LOCALAPPDATA")) / "Microsoft" / "Edge" / "User Data"
+# System Edge browser config directory (Windows-only). On non-Windows hosts
+# LOCALAPPDATA is unset, so guard against constructing Path(None).
+_localappdata = os.environ.get("LOCALAPPDATA")
+EDGE_USER_DATA = (
+    Path(_localappdata) / "Microsoft" / "Edge" / "User Data"
+    if _localappdata else None
+)
 
 # ZSXQ profile directory (can be overridden by env var)
 # Priority: env var > system Edge (if exists) > create new profile
 if os.environ.get("ZSXQ_PROFILE_DIR"):
     ZSXQ_PROFILE_DIR = Path(os.environ.get("ZSXQ_PROFILE_DIR"))
-elif os.environ.get("ZSXQ_USE_SYSTEM_EDGE", "").lower() == "true" and EDGE_USER_DATA.exists():
+elif (
+    os.environ.get("ZSXQ_USE_SYSTEM_EDGE", "").lower() == "true"
+    and EDGE_USER_DATA
+    and EDGE_USER_DATA.exists()
+):
     ZSXQ_PROFILE_DIR = EDGE_USER_DATA
     logger.info(f"Using system Edge profile: {EDGE_USER_DATA}")
 else:
