@@ -24,6 +24,9 @@ on:
 env:
   MAX_ARTICLES: ${{ vars.MAX_ARTICLES || '50' }}
   LOG_LEVEL: ${{ vars.LOG_LEVEL || 'INFO' }}
+  # CNInfo: CI 跑全市场最新公告，关掉 PDF 下载（CI 不持久化 downloads/，下了也丢弃）
+  CNINFO_DOWNLOAD_PDF: 'false'
+  CNINFO_MAX_ITEMS: '30'
 
 jobs:
   generate:
