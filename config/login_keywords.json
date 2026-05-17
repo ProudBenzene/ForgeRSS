@@ -114,6 +114,25 @@
         ]
       },
       "notes": "快手首页登录前后差异很小。验证过：登出态有 'sidebar-login-button' CSS 类（侧边栏登录按钮），登录后消失；登录态有 'text-name' CSS 类（用户名占位）。'登录即可享受' 是常驻 banner 不可用作判别。"
+    },
+
+    "weibo": {
+      "name": "微博",
+      "check_url": "https://weibo.com/",
+      "login_url": "https://passport.weibo.com/sso/signin",
+      "signin_url_markers": ["passport.weibo.com", "/login"],
+      "keywords": {
+        "logged_in": [
+          "woo-avatar-main",
+          "全部关注"
+        ],
+        "not_logged_in": [
+          "立即登录",
+          "扫码登录",
+          "登录后"
+        ]
+      },
+      "notes": "微博：未登录访问 weibo.com 会重定向到 passport.weibo.com（已纳入 signin_url_markers）。验证过登录态：woo-avatar-main x6 是 woo design system 头像组件；'全部关注' 是时间线分类（仅登录后导航）。"
     }
   },
   

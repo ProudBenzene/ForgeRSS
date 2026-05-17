@@ -33,6 +33,7 @@ class Platform(Enum):
     ZSXQ = "zsxq"
     DOUYIN = "douyin"
     KUAISHOU = "kuaishou"
+    WEIBO = "weibo"
     TIKTOK = "tiktok"
     YOUTUBE = "youtube"
 
@@ -84,6 +85,12 @@ _FALLBACK_KEYWORDS: Dict[Platform, Dict[str, List[str]]] = {
         "logged_in": ["text-name"],
         "not_logged_in": ["sidebar-login-button"],
     },
+    Platform.WEIBO: {
+        "check_url": "https://weibo.com/",
+        "signin_url_markers": ["passport.weibo.com", "/login"],
+        "logged_in": ["woo-avatar-main", "全部关注"],
+        "not_logged_in": ["立即登录", "扫码登录", "登录后"],
+    },
 }
 
 
@@ -95,6 +102,7 @@ LOGIN_COMMANDS = {
     Platform.ZSXQ: "python -m generators.social.zsxq.scraper --login",
     Platform.DOUYIN: "python -m generators.social.douyin.scraper --login",
     Platform.KUAISHOU: "python -m generators.social.kuaishou.scraper --login",
+    Platform.WEIBO: "python -m generators.social.weibo.scraper --login",
 }
 
 
