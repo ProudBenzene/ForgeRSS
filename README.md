@@ -415,6 +415,7 @@ forgerss/
 │   │   ├── anthropic_engineering.py
 │   │   └── openai_research.py
 │   ├── ai_coding_docs/        # AI 编程工具文档
+│   │   ├── base_docs_crawler.py  # 文档抓取共享基类
 │   │   ├── claude_code.py
 │   │   ├── cursor_docs.py
 │   │   ├── openai_codex.py
