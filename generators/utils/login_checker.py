@@ -31,6 +31,7 @@ class Platform(Enum):
     BILIBILI = "bilibili"
     XIAOHONGSHU = "xiaohongshu"
     ZSXQ = "zsxq"
+    DOUYIN = "douyin"
     TIKTOK = "tiktok"
     YOUTUBE = "youtube"
 
@@ -67,8 +68,14 @@ _FALLBACK_KEYWORDS: Dict[Platform, Dict[str, List[str]]] = {
     Platform.ZSXQ: {
         "check_url": "https://wx.zsxq.com/",
         "signin_url_markers": ["/login", "/sign"],
-        "logged_in": ["星球管理", "我的"],
-        "not_logged_in": ["登录", "微信登录"],
+        "logged_in": ["退出登录", "group-list", "user-avatar"],
+        "not_logged_in": ["微信登录", "扫码登录"],
+    },
+    Platform.DOUYIN: {
+        "check_url": "https://www.douyin.com/",
+        "signin_url_markers": [],  # 抖音不重定向到 /login，登录后会从 / 跳到 /jingxuan
+        "logged_in": ["退出登录", "semi-avatar", "avatar-component"],
+        "not_logged_in": ["扫码登录", "登录抖音"],
     },
 }
 
@@ -79,6 +86,7 @@ LOGIN_COMMANDS = {
     Platform.BILIBILI: "python -m generators.social.bilibili.scraper --login",
     Platform.XIAOHONGSHU: "python -m generators.social.xiaohongshu.scraper --login",
     Platform.ZSXQ: "python -m generators.social.zsxq.scraper --login",
+    Platform.DOUYIN: "python -m generators.social.douyin.scraper --login",
 }
 
 

@@ -23,6 +23,7 @@ PLATFORMS = {
     "bilibili":    ("generators.social.bilibili.scraper",    "create_bilibili_browser", "BILIBILI_PROFILE_DIR"),
     "xiaohongshu": ("generators.social.xiaohongshu.scraper", "create_xhs_browser",      "XHS_PROFILE_DIR"),
     "zsxq":        ("generators.social.zsxq.scraper",        "create_zsxq_browser",     "ZSXQ_PROFILE_DIR"),
+    "douyin":      ("generators.social.douyin.scraper",      "create_douyin_browser",   "DOUYIN_PROFILE_DIR"),
 }
 
 MAX_WAIT_SECONDS = 120

@@ -79,6 +79,25 @@
         ]
       },
       "notes": "知识星球：'登录' 子串会在登录态匹配 '退出登录'，所以不能用作 not_logged_in。验证过：登录态 退出登录 x1、group-list x183、user-avatar x7；登出态用 '微信登录'/'扫码登录' 严格区分。"
+    },
+
+    "douyin": {
+      "name": "抖音",
+      "check_url": "https://www.douyin.com/",
+      "login_url": "https://www.douyin.com/",
+      "signin_url_markers": [],
+      "keywords": {
+        "logged_in": [
+          "退出登录",
+          "semi-avatar",
+          "avatar-component"
+        ],
+        "not_logged_in": [
+          "扫码登录",
+          "登录抖音"
+        ]
+      },
+      "notes": "抖音不重定向到登录页（弹 modal），但登录后会自动从 / 跳到 /jingxuan。验证过登录态：退出登录 x1、semi-avatar x20、avatar-component x2 全部命中；登录态下 '扫码登录'/'登录抖音' 都 0。注意 'qrcode' 在登录态也有 4 次（来自'扫码下载抖音App'促销，非登录二维码），不能用作 not_logged_in。"
     }
   },
   
