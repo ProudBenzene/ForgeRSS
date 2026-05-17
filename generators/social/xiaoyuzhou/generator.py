@@ -84,6 +84,9 @@ class XiaoyuzhouPodcastGenerator(BaseFeedGenerator):
 
     def fetch_articles(self) -> list[Article]:
         articles = []
+        # Collected per-podcast metadata; used to personalize the feed channel
+        # when exactly one podcast is configured.
+        self._podcast_metas: list[dict] = []
 
         per_pod_cap = self.MAX_EPISODES
         run_cap = getattr(self, "_run_max_articles", None)
@@ -99,6 +102,21 @@ class XiaoyuzhouPodcastGenerator(BaseFeedGenerator):
             eps = self._fetch_podcast_episodes(pid, purl, max_episodes=per_pod_cap)
             articles.extend(eps)
             self.logger.info(f"Found {len(eps)} episodes from {pid}")
+
+        # Personalize the RSS channel when a single podcast is configured.
+        # When the user subscribes to multiple podcasts in one feed, keep the
+        # generic title/logo so neither one wins.
+        if len(self._podcast_metas) == 1:
+            meta = self._podcast_metas[0]
+            podcast_title = meta.get("title") or "Xiaoyuzhou"
+            self.FEED_TITLE = f"{podcast_title} (小宇宙播客)"
+            brief = (meta.get("brief") or "").strip()
+            desc = (meta.get("description") or "").strip()
+            self.FEED_DESCRIPTION = (brief or desc[:200] or self.FEED_DESCRIPTION)
+            img = (meta.get("image") or {})
+            cover = img.get("largePicUrl") or img.get("picUrl")
+            if cover:
+                self.FEED_LOGO = cover
 
         return articles
 
@@ -170,13 +188,18 @@ class XiaoyuzhouPodcastGenerator(BaseFeedGenerator):
         podcast_author = (podcast_meta.get("author") or "").strip() or podcast_title
         self.logger.info(
             f"Podcast: {podcast_title} (by {podcast_author}), "
-            f"episodes shown on page: {len(episodes_data)}"
+            f"episodes shown on page: {len(episodes_data)}, "
+            f"total ever: {podcast_meta.get('episodeCount', '?')}, "
+            f"subscribers: {podcast_meta.get('subscriptionCount', '?')}"
         )
+        # Stash for channel-level personalization in fetch_articles()
+        if hasattr(self, "_podcast_metas"):
+            self._podcast_metas.append(podcast_meta)
 
         articles = []
         for ep in episodes_data[:max_episodes]:
             try:
-                a = self._parse_episode(ep, pid, podcast_title, podcast_author)
+                a = self._parse_episode(ep, pid, podcast_title, podcast_author, podcast_meta)
                 if a:
                     articles.append(a)
             except Exception as e:
@@ -189,7 +212,14 @@ class XiaoyuzhouPodcastGenerator(BaseFeedGenerator):
 
         return articles
 
-    def _parse_episode(self, ep: dict, pid: str, podcast_title: str, podcast_author: str = "") -> Optional[Article]:
+    def _parse_episode(
+        self,
+        ep: dict,
+        pid: str,
+        podcast_title: str,
+        podcast_author: str = "",
+        podcast_meta: Optional[dict] = None,
+    ) -> Optional[Article]:
         """Parse a single episode dict from __NEXT_DATA__."""
         ep_id = ep.get("eid") or ep.get("id")
         if not ep_id:
@@ -235,29 +265,89 @@ class XiaoyuzhouPodcastGenerator(BaseFeedGenerator):
 
         permalink = f"https://www.xiaoyuzhoufm.com/episode/{ep_id}"
 
-        # Build HTML
+        # Build HTML with metadata enrichment
         html_parts = ['<div style="font-size:16px;line-height:1.8;color:#333">']
+
+        # Header strip with podcast info (when we have it)
+        if podcast_meta:
+            pod_cover = (podcast_meta.get("image") or {}).get("smallPicUrl") or \
+                        (podcast_meta.get("image") or {}).get("picUrl") or ""
+            podcasters = podcast_meta.get("podcasters") or []
+            podcaster_names = ", ".join(
+                p.get("nickname", "") for p in podcasters if p.get("nickname")
+            ) or podcast_author
+            color = (podcast_meta.get("color") or {}).get("original") or "#2a9eed"
+            html_parts.append(
+                f'<div style="display:flex;align-items:center;gap:12px;'
+                f'padding:12px;border-left:4px solid {color};background:#fafafa;'
+                f'margin-bottom:16px">'
+            )
+            if pod_cover:
+                html_parts.append(
+                    f'<img src="{pod_cover}" alt="{podcast_title}" '
+                    f'style="width:56px;height:56px;border-radius:6px;flex-shrink:0" />'
+                )
+            html_parts.append(
+                f'<div><div style="font-weight:600">{podcast_title}</div>'
+                f'<div style="color:#666;font-size:13px">主播：{podcaster_names}</div></div>'
+            )
+            html_parts.append('</div>')
+
+        # Episode cover
         if cover_url:
             html_parts.append(
                 f'<p><img src="{cover_url}" alt="{title}" '
                 f'style="max-width:100%;height:auto;border-radius:8px" /></p>'
             )
+
+        # Duration line
         if duration_str:
-            html_parts.append(f'<p><strong>时长：</strong>{duration_str}</p>')
+            html_parts.append(f'<p><strong>⏱ 时长：</strong>{duration_str}</p>')
+
+        # Shownotes / description (full body)
         if shownotes:
             html_parts.append(f'<div>{shownotes}</div>')
         elif description:
             from html import escape as _esc
             html_parts.append(f'<p>{_esc(description).replace(chr(10), "<br>")}</p>')
+
+        # Audio player
         if audio_url:
             html_parts.append(
                 f'<p style="margin-top:12px"><audio controls src="{audio_url}" '
                 f'style="width:100%"></audio></p>'
             )
+
+        # Permalink
         html_parts.append(
             f'<p style="margin-top:12px"><a href="{permalink}" '
             f'style="color:#2a9eed">在小宇宙打开 &rarr;</a></p>'
         )
+
+        # Podcast description footer (shown once at the bottom of every item)
+        if podcast_meta and (podcast_meta.get("brief") or podcast_meta.get("description")):
+            from html import escape as _esc2
+            brief = (podcast_meta.get("brief") or "").strip()
+            full_desc = (podcast_meta.get("description") or "").strip()
+            html_parts.append(
+                '<hr style="margin:20px 0;border:none;border-top:1px solid #eee" />'
+                '<div style="color:#888;font-size:13px">'
+            )
+            if brief:
+                html_parts.append(f'<p><strong>关于节目：</strong>{_esc2(brief)}</p>')
+            if full_desc and full_desc != brief:
+                html_parts.append(
+                    f'<p>{_esc2(full_desc).replace(chr(10), "<br>")}</p>'
+                )
+            sub_count = podcast_meta.get("subscriptionCount")
+            ep_count = podcast_meta.get("episodeCount")
+            if sub_count or ep_count:
+                bits = []
+                if sub_count: bits.append(f"👥 {sub_count:,} 订阅")
+                if ep_count: bits.append(f"🎧 共 {ep_count} 集")
+                html_parts.append(f'<p>{" · ".join(bits)}</p>')
+            html_parts.append('</div>')
+
         html_parts.append('</div>')
 
         media_list = []
