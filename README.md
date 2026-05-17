@@ -58,6 +58,7 @@
 | **B 站 UP 主视频** | 需本地运行（见下方说明） |
 | **小红书用户笔记** | 需本地运行（见下方说明） |
 | **知识星球话题** | 需本地运行（见下方说明） |
+| **抖音 UP 主视频** | 需本地运行（见下方说明） |
 
 > **更新频率**：新闻类 Feed 每 6 小时自动更新，文档类 Feed 每周更新一次（周一 00:00 UTC）。所有 Feed 包含完整文章内容，使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
 
@@ -81,6 +82,7 @@
 | **B 站 UP 主** | 社交媒体 | **DrissionPage + 登录** | `feed_bilibili_up.xml` | **手动** | **仅本地** |
 | **小红书用户** | 社交媒体 | **DrissionPage + 登录** | `feed_xiaohongshu_user.xml` | **手动** | **仅本地** |
 | **知识星球话题** | 社交媒体 | **DrissionPage + 登录** | `feed_zsxq_topics.xml` | **手动** | **仅本地** |
+| **抖音用户** | 社交媒体 | **DrissionPage + 登录 + CDP + ffmpeg** | `feed_douyin_user.xml` | **手动** | **仅本地** |
 
 ---
 
@@ -119,6 +121,12 @@ cd forgerss
 
 # 安装依赖
 pip install -r requirements.txt
+
+# (可选) 抖音视频下载需要 ffmpeg
+# Windows: scoop install ffmpeg   或   choco install ffmpeg
+# macOS:   brew install ffmpeg
+# Linux:   sudo apt install ffmpeg / sudo dnf install ffmpeg
+# 验证：    ffmpeg -version
 
 # 运行所有生成器
 python scripts/run_all.py
@@ -274,6 +282,9 @@ python -m generators.social.xiaohongshu.scraper --login
 
 # 知识星球
 python -m generators.social.zsxq.scraper --login
+
+# 抖音（视频下载需 ffmpeg）
+python -m generators.social.douyin.scraper --login
 ```
 
 ### 验证登录态
@@ -307,6 +318,12 @@ XHS_USER_ID="https://www.xiaohongshu.com/user/profile/664f367c00000000070064da?x
 # 知识星球话题（接受纯 group_id 或完整 URL，可下载帖内附件）
 ZSXQ_GROUP_ID="88514182418182" ZSXQ_DOWNLOAD_ATTACHMENTS=true \
   python scripts/run_single.py zsxq_topics --max 20
+
+# 抖音用户视频（接受 sec_uid / 完整 URL / 分享短链；下载需 ffmpeg）
+DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" python scripts/run_single.py douyin_user --max 10
+# 或：DOUYIN_SEC_UID="https://v.douyin.com/<code>/" ...
+DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" DOUYIN_DOWNLOAD_VIDEOS=true \
+  python scripts/run_single.py douyin_user --max 5
 ```
 
 ### 内容说明
@@ -316,6 +333,7 @@ ZSXQ_GROUP_ID="88514182418182" ZSXQ_DOWNLOAD_ATTACHMENTS=true \
 - **B 站 UP 主**：视频标题、BV 链接、封面、播放/弹幕/时长，可选下载 mp4
 - **小红书用户**：笔记标题、作者、完整 URL（带 xsec_token 防失效），可选下载图片/视频
 - **知识星球**：话题文本、作者、发布时间，可选下载帖内 PDF / 音频 / 图片附件（按 `<群名>_<群ID>/<话题>_<topicID>/` 归档）
+- **抖音**：视频标题（含 hashtag）、作者、真实视频 URL；可选 mp4 下载——通过 CDP 拦截 douyinvod.com CDN 流（video + audio 分两路），用 curl_cffi 下载后 ffmpeg 合并。**需要本机安装 ffmpeg**
 
 ### 法律风险提示
 
@@ -475,11 +493,13 @@ ZHIHU_USER_ID=excited-vczh                          # 知乎用户
 BILIBILI_UP_MID=546195                              # B 站 UP 主（逗号分隔多个）
 XHS_USER_ID=664f367c00000000070064da                # 小红书用户（也可以是完整 URL）
 ZSXQ_GROUP_ID=88514182418182                        # 知识星球群组（也可以是完整 URL）
+DOUYIN_SEC_UID=MS4wLjABAAAAxxxx                     # 抖音用户（也可以是完整 URL / 分享短链）
 
 # 可选下载（默认 false）
 BILIBILI_DOWNLOAD_VIDEOS=true                       # B 站视频下载
 XHS_DOWNLOAD_MEDIA=true                             # 小红书媒体
 ZSXQ_DOWNLOAD_ATTACHMENTS=true                      # 知识星球附件（PDF/音频/图片）
+DOUYIN_DOWNLOAD_VIDEOS=true                         # 抖音视频下载（需 ffmpeg）
 
 # 巨潮资讯（三选一）
 CNINFO_KEYWORDS="股权激励,业绩快报"                  # 按主题关键词
