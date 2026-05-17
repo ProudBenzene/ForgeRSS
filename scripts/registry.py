@@ -26,6 +26,7 @@ from generators.social.zsxq.generator import ZSXQTopicsGenerator
 from generators.social.douyin.generator import DouyinUserGenerator
 from generators.social.kuaishou.generator import KuaishouUserGenerator
 from generators.social.weibo.generator import WeiboUserGenerator
+from generators.social.xiaoyuzhou.generator import XiaoyuzhouPodcastGenerator
 from generators.social.youtube.generator import YouTubeChannelGenerator
 from generators.social.tiktok.generator import TikTokUserGenerator
 
@@ -59,6 +60,7 @@ GENERATORS = {
     "kuaishou_user": KuaishouUserGenerator,
     "weibo_user": WeiboUserGenerator,
     # Social (no login required)
+    "xiaoyuzhou": XiaoyuzhouPodcastGenerator,
     "youtube_channel": YouTubeChannelGenerator,
     "tiktok_user": TikTokUserGenerator,
 }
