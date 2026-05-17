@@ -6,12 +6,19 @@
 Douyin (抖音) User Video Feed Generator.
 
 Configuration:
-1. Environment variable DOUYIN_USER_ID (comma-separated)
-   - Accepts pure sec_uid:  "MS4wLjABAAAA..."
-   - Or full profile URL:    "https://www.douyin.com/user/MS4wLjABAAAA...?from_tab_name=..."
+1. Environment variable DOUYIN_SEC_UID (comma-separated for multiple users).
+   Accepts THREE input forms — pick whichever is easiest:
+     - pure sec_uid:    "MS4wLjABAAAA..."
+     - desktop URL:     "https://www.douyin.com/user/MS4wLjABAAAA...?from_tab_name=..."
+     - share short URL: "https://v.douyin.com/<code>/"  (auto-follows redirect)
+   (Legacy `DOUYIN_USER_ID` is still accepted as an alias.)
+
+2. Optional video download (default off):
+     DOUYIN_DOWNLOAD_VIDEOS=true
+   Uses yt-dlp; videos go to downloads/douyin/<sec_uid>/<video_id>.mp4
 
 Example:
-    DOUYIN_USER_ID="MS4wLjABAAAAxxxx" python scripts/run_single.py douyin_user
+    DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" python scripts/run_single.py douyin_user
 """
 
 import hashlib
@@ -21,6 +28,7 @@ import random
 import re
 import time
 from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 import pytz
@@ -33,6 +41,10 @@ from generators.social.douyin.scraper import (
 )
 
 logger = logging.getLogger(__name__)
+
+# downloads/douyin/ (project root)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+DOWNLOAD_DIR = PROJECT_ROOT / "downloads" / "douyin"
 
 
 def _parse_user_input(raw: str) -> tuple[str, str]:
@@ -90,19 +102,28 @@ class DouyinUserGenerator(BaseFeedGenerator):
     FEED_LANGUAGE = "zh-CN"
     FEED_LOGO = "https://lf1-cdn-tos.bytescm.com/obj/static/ies/douyin_web/img/favicon.ico"
 
-    USER_INPUTS = [u.strip() for u in os.environ.get("DOUYIN_USER_ID", "").split(",") if u.strip()]
+    # Read DOUYIN_SEC_UID (preferred) or DOUYIN_USER_ID (legacy alias).
+    USER_INPUTS = [
+        u.strip()
+        for u in (os.environ.get("DOUYIN_SEC_UID") or os.environ.get("DOUYIN_USER_ID") or "").split(",")
+        if u.strip()
+    ]
 
     # Per-user fetch cap (defaults to 20). Run-level --max N overrides this.
     MAX_VIDEOS = int(os.environ.get("DOUYIN_MAX_VIDEOS", "20"))
+
+    # Whether to download videos as mp4 (default: false, RSS only).
+    DOWNLOAD_VIDEOS = os.environ.get("DOUYIN_DOWNLOAD_VIDEOS", "false").lower() == "true"
 
     def __init__(self):
         super().__init__()
 
         if not self.USER_INPUTS:
-            self.logger.warning("No users configured. Set DOUYIN_USER_ID environment variable.")
+            self.logger.warning("No users configured. Set DOUYIN_SEC_UID environment variable.")
             self.logger.warning(
-                "Example: DOUYIN_USER_ID='MS4wLjABAAAAxxxx' "
-                "or full URL 'https://www.douyin.com/user/MS4wLjABAAAA...'"
+                "Example: DOUYIN_SEC_UID='MS4wLjABAAAAxxxx' "
+                "or full URL 'https://www.douyin.com/user/MS4wLjABAAAA...' "
+                "or short URL 'https://v.douyin.com/xxx/'"
             )
 
     def fetch_articles(self) -> list[Article]:
@@ -199,6 +220,12 @@ class DouyinUserGenerator(BaseFeedGenerator):
                 except Exception as e:
                     self.logger.debug(f"Parse failed for one item: {e}")
                     continue
+
+            # Download videos if enabled. Done after parsing so we only download
+            # what made the cut.
+            if self.DOWNLOAD_VIDEOS and articles:
+                for art in articles:
+                    self._download_video(art.url, sec_uid, browser=browser)
 
         except Exception as e:
             self.logger.error(f"Error fetching videos for {sec_uid[:24]}: {e}")
@@ -372,6 +399,178 @@ class DouyinUserGenerator(BaseFeedGenerator):
             images=[thumbnail] if thumbnail else [],
             category="抖音",
         )
+
+    def _download_video(self, video_page_url: str, sec_uid: str, browser=None) -> Optional[Path]:
+        """Download a Douyin video.
+
+        Douyin web serves DASH-style separated streams (video + audio) over
+        douyinvod.com CDN. The URLs are not in the page HTML — they're issued
+        by the player JS. We capture them via CDP network listening, then
+        download each stream fully (each URL returns a complete mp4) and mux
+        them with ffmpeg.
+
+        Why not yt-dlp: its Douyin extractor relies on the legacy
+        /aweme/v1/web/aweme/detail/ API, which now requires JS-generated
+        msToken / X-Bogus / _signature query params and returns HTTP 200 with
+        empty body otherwise.
+        """
+        if not browser:
+            self.logger.warning("No browser provided — cannot download douyin video")
+            return None
+
+        m = re.search(r'/video/(\d+)', video_page_url)
+        if not m:
+            self.logger.debug(f"Cannot extract video id from {video_page_url}")
+            return None
+        video_id = m.group(1)
+
+        out_dir = DOWNLOAD_DIR / sec_uid[:24]
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path = out_dir / f"{video_id}.mp4"
+
+        if out_path.exists() and out_path.stat().st_size > 0:
+            self.logger.info(f"Already downloaded: {out_path.name}")
+            return out_path
+
+        # 1. Render video page + listen for stream URLs from douyinvod.com
+        try:
+            browser.listen.start()
+            self.logger.info(f"Rendering video page {video_page_url[:80]} ...")
+            browser.get(video_page_url)
+            time.sleep(10)  # let the player fetch initial chunks
+        except Exception as e:
+            self.logger.error(f"Failed to load video page: {e}")
+            try: browser.listen.stop()
+            except Exception: pass
+            return None
+
+        video_stream_url, audio_stream_url = None, None
+        try:
+            for pkt in browser.listen.steps(count=999, timeout=2):
+                url = pkt.url
+                if "douyinvod.com" not in url:
+                    continue
+                if "media-video" in url and not video_stream_url:
+                    video_stream_url = url
+                elif "media-audio" in url and not audio_stream_url:
+                    audio_stream_url = url
+                if video_stream_url and audio_stream_url:
+                    break
+        finally:
+            try: browser.listen.stop()
+            except Exception: pass
+
+        if not video_stream_url:
+            self.logger.error(f"No douyinvod.com video stream captured for {video_id}")
+            return None
+        self.logger.info(f"Got video stream URL ({video_stream_url[:80]}...)")
+        if audio_stream_url:
+            self.logger.info(f"Got audio stream URL ({audio_stream_url[:80]}...)")
+        else:
+            self.logger.warning("No audio stream captured — output will be silent")
+
+        # 2. Download both streams with browser-grade TLS + cookies
+        try:
+            from curl_cffi import requests as _creq
+        except ImportError:
+            self.logger.error("curl_cffi not installed; cannot download")
+            return None
+
+        cookies = browser.cookies(all_domains=True)
+        cookie_header = "; ".join(f"{c['name']}={c['value']}" for c in cookies if c.get('name'))
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            "Referer": video_page_url,
+            "Cookie": cookie_header,
+        }
+
+        video_tmp = out_dir / f".{video_id}.video.mp4"
+        if not self._curl_download(_creq, video_stream_url, headers, video_tmp):
+            return None
+
+        audio_tmp = None
+        if audio_stream_url:
+            audio_tmp = out_dir / f".{video_id}.audio.mp4"
+            if not self._curl_download(_creq, audio_stream_url, headers, audio_tmp):
+                audio_tmp = None  # proceed video-only
+
+        # 3. Mux with ffmpeg if both streams present
+        if audio_tmp:
+            if self._ffmpeg_mux(video_tmp, audio_tmp, out_path):
+                video_tmp.unlink(missing_ok=True)
+                audio_tmp.unlink(missing_ok=True)
+                size_mb = out_path.stat().st_size / (1024 * 1024)
+                self.logger.info(f"Downloaded + muxed: {out_path.name} ({size_mb:.1f} MB)")
+                return out_path
+            else:
+                # ffmpeg missing or failed — keep raw streams as fallback
+                self.logger.warning(
+                    f"ffmpeg mux failed; keeping raw streams {video_tmp.name} + {audio_tmp.name}"
+                )
+                return video_tmp
+        else:
+            # Video-only (no audio): rename .video.mp4 → final name
+            video_tmp.rename(out_path)
+            size_mb = out_path.stat().st_size / (1024 * 1024)
+            self.logger.info(f"Downloaded (video only): {out_path.name} ({size_mb:.1f} MB)")
+            return out_path
+
+    def _curl_download(self, _creq, url: str, headers: dict, dest: Path) -> bool:
+        """Stream-download a URL via curl_cffi with chrome TLS fingerprint.
+
+        Note: curl_cffi's Response is NOT a context manager (unlike `requests`),
+        so we close it manually.
+        """
+        r = None
+        try:
+            self.logger.info(f"Downloading -> {dest.name} ...")
+            r = _creq.get(url, headers=headers, impersonate="chrome",
+                          timeout=180, stream=True)
+            if r.status_code != 200:
+                self.logger.error(f"HTTP {r.status_code} for {dest.name}")
+                return False
+            with open(dest, "wb") as f:
+                for chunk in r.iter_content(chunk_size=64 * 1024):
+                    if chunk:
+                        f.write(chunk)
+            size_mb = dest.stat().st_size / (1024 * 1024)
+            if dest.stat().st_size < 10_000:
+                self.logger.error(f"Downloaded {dest.name} too small ({size_mb:.2f} MB)")
+                dest.unlink(missing_ok=True)
+                return False
+            self.logger.info(f"  -> {dest.name} ({size_mb:.1f} MB)")
+            return True
+        except Exception as e:
+            self.logger.error(f"Download of {dest.name} failed: {e}")
+            return False
+        finally:
+            if r is not None:
+                try: r.close()
+                except Exception: pass
+
+    @staticmethod
+    def _ffmpeg_mux(video_in: Path, audio_in: Path, mp4_out: Path) -> bool:
+        """Mux a video stream and an audio stream into one mp4 via ffmpeg.
+
+        Returns False if ffmpeg is missing or fails — caller should keep the
+        raw streams as a fallback so user can mux manually.
+        """
+        import shutil, subprocess
+        if shutil.which("ffmpeg") is None:
+            return False
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", str(video_in),
+            "-i", str(audio_in),
+            "-c", "copy",
+            str(mp4_out),
+        ]
+        try:
+            r = subprocess.run(cmd, capture_output=True, timeout=120)
+            return r.returncode == 0 and mp4_out.exists() and mp4_out.stat().st_size > 0
+        except Exception:
+            return False
 
 
 if __name__ == "__main__":
