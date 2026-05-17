@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Sun, 17 May 2026 03:32:51 +0000</lastBuildDate>
+<lastBuildDate>Sun, 17 May 2026 08:27:46 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -28,23 +28,17 @@
   <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
   <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personal...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+Smarter, more accurate answers with less to sort through
 
-Yes - this is clean and correct.
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
 
-You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
-
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
-
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
-
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
 Yes - this is clean and correct.
 
@@ -120,9 +114,11 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
+
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
 how do i tell my coworker to quit yapping all the time
 
@@ -186,7 +182,11 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
+
+More personalized responses and controls
+
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
 
 What new tea place should I try?
 
@@ -232,32 +232,30 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
 
-如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
 
-记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
 
-GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
 
-来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personal...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Yes - this is clean and correct.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+Smarter, more accurate answers with less to sort through
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
-
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
 Yes - this is clean and correct.
 
@@ -333,9 +331,11 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
+
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
 how do i tell my coworker to quit yapping all the time
 
@@ -399,7 +399,11 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
+
+More personalized responses and controls
+
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
 
 What new tea place should I try?
 
@@ -445,15 +449,19 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
 
-如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
 
-记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
 
-GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
 
-来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
+
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
+
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5 Instant System CardSafety</title>
@@ -478,128 +486,120 @@ In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that th
   <guid isPermaLink="false">https://openai.com/index/where-the-goblins-came-from/</guid>
   <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型出现一个奇怪的习惯：它们在隐喻中提及 goblin（哥布林）、gremlin（小精灵）及其他生物的频率越来越高。不同于那些能通过评估指标暴跌或训练参数激增来溯源的典型缺陷，这个现象的渗透极其隐秘。如果只是在回答中偶尔蹦出一个“little goblin（小哥布林）”，或许还无伤大雅，甚至还有点讨喜。然而，随着模型版本的更迭，这一习惯变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
+在早期测试中，Codex 中的 GPT‑5.5 对 goblin 比喻表现出一种奇特的偏好。
 
-The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
+简而言之，模型的行为特征是由诸多微小的激励机制共同塑造的。在此案例中，其中一项激励源于针对个性自定义功能⁠（在新窗口中打开）的模型训练，尤其是“书卷极客”(Nerdy) 人格。我们在无意间，对包含奇幻生物的比喻给予了极高的奖励。于是，goblin 就这样扩散开了。
 
-The goblins were funny at first, but the increasing number of employee reports became concerning.
+起初这些 goblin 还挺有趣，但随着员工报告的数量不断增加，情况变得令人担忧。
 
-An interesting interaction our Chief Scientist had with GPT‑5.5.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-The first signs of creatures
+我们首次明确捕捉到这一模式是在 11 月 GPT‑5.1...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型出现一个奇怪的习惯：它们在隐喻中提及 goblin（哥布林）、gremlin（小精灵）及其他生物的频率越来越高。不同于那些能通过评估指标暴跌或训练参数激增来溯源的典型缺陷，这个现象的渗透极其隐秘。如果只是在回答中偶尔蹦出一个“little goblin（小哥布林）”，或许还无伤大雅，甚至还有点讨喜。然而，随着模型版本的更迭，这一习惯变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
+在早期测试中，Codex 中的 GPT‑5.5 对 goblin 比喻表现出一种奇特的偏好。
 
-A measurable small lexical quirk in GPT‑5.1.
+简而言之，模型的行为特征是由诸多微小的激励机制共同塑造的。在此案例中，其中一项激励源于针对个性自定义功能⁠（在新窗口中打开）的模型训练，尤其是“书卷极客”(Nerdy) 人格。我们在无意间，对包含奇幻生物的比喻给予了极高的奖励。于是，goblin 就这样扩散开了。
 
-At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
+起初这些 goblin 还挺有趣，但随着员工报告的数量不断增加，情况变得令人担忧。
 
-Solving the goblin mystery
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
+我们首次明确捕捉到这一模式是在 11 月 GPT‑5.1 发布之后，尽管这一现象可能更早便已露端倪⁠（在新窗口中打开）。当时，用户反馈模型在对话中表现出一种古怪的“自来熟”，这随即引发了我们对特定口头禅的专项调查。一位安全研究员在交互中偶遇了几次 goblin 和 gremlin，并建议将其纳入排查范围。调查结果显示，在 GPT‑5.1 发布后，ChatGPT 中 goblin 的出现率激增了 175%，而 gremlin 的出现率也增长了 52%。
 
-You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
+GPT‑5.1 中一个可测量的微小词汇怪癖。
 
-If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
+起初，goblin 的泛滥似乎并未引起特别的警觉。然而几个月后，这些“生物”却以一种更为具体且可复现的形式，再次成为了我们的困扰。
 
-The behavior was highly concentrated in the "Nerdy" personality.
+随着 GPT‑5.4 的推出，我们及用户⁠（在新窗口中打开）均注意到这类生物出现的频率大幅攀升。这触发了新一轮的内部分析，并首次揭示了其背后的根源：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。该人格所使用的系统提示词如下（这在一定程度上解释了其古怪之处）：
 
-Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
+你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...]你必须通过俏皮的语言风格来消解虚饰。世界复杂而奇诡，这种奇诡之处必须得到承认、分析并享受。处理严肃话题时，不要落入一本正经的陷阱。[...]
 
-Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
+如果这仅仅是一种广泛的网络流行趋势，其分布应当更加均匀。然而事实恰恰相反，这一现象高度集中在那个专门为“书卷极客”风格而优化的系统中。数据显示，“书卷极客”人格仅贡献了 ChatGPT 总回复量的 2.5%，却占据了全平台 goblin 提及量的 66.7%。
 
-That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
+鉴于 goblin 的出现频率随模型版本的更迭而递增，我们怀疑，在“人格指令遵循”的训练过程中，某些环节起到了放大作用。
 
-As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
+通过 Codex，我们对比了 RL（强化学习）训练期间包含与不包含 goblin/gremlin 的模型输出。一组奖励信号立即引起了注意：原本旨在激励“书卷极客”(Nerdy) 人格的信号，对包含此类词汇的输出表现出一致的偏好。在审计覆盖的所有数据集中，“书卷极客”人格奖励机制倾向于给含有 goblin 或 gremlin 的回复打出更高分；在 76.2% 的数据集中，这类词汇均带来了正向的评分提升。
 
-The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
+这解释了为何“书卷极客”提示词会强化这一行为，但仍无法解释为何在没有该提示词的情况下，这一现象依然存在。为了验证这种风格是否发生了“迁移”，我们对训练过程中伴随或脱离该“书卷极客”提示词的词汇出现率进行了同步追踪。
 
-That creates a feedback loop:
+数据显示，随着 goblin 和 gremlin 在“书卷极客”人格下的提及率上升，在未开启该人格的样本中，这两类词汇也出现了近乎同比例的增长。综合各方证据，这一广泛蔓延的行为模式，本质上源于从“书卷极客”人格训练中产生的风格迁移。
 
-Playful style is rewarded
+尽管奖励机制仅应用于“书卷极客”环境，但强化学习 (RL) 并不能保证所习得的行为会仅受限于其产出环境。一旦某个风格口头禅 (style tic) 获得了奖励，后续训练就可能将其扩散或加固到其他场景中，当这些输出被重新用于监督微调 (SFT) 或偏好数据时，这种趋势尤为明显。
 
-Some rewarded examples contain a distinctive lexical tic.
+部分获得奖励的样本中包含了显著的口头禅词汇；
 
-The tic appears more often in rollouts.
+该口头禅在生成轨迹 (rollout) 中出现频率升高；
 
-Model-generated rollouts are used for supervised fine-tuning (SFT).
+模型产生的生成轨迹被用于监督微调 (SFT)；
 
-The model gets even more comfortable producing the tic.
+通过对 GPT‑5.5 的 SFT 数据进行检索，我们发现了大量包含 goblin 和 gremlin 的数据点。进一步调查还挖出了一整个“奇幻生物家族”：浣熊、巨魔、食人魔以及鸽子都被识别为口头禅词汇；相比之下，而“青蛙”的大多数用法被确认是正常的。
 
-A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
+生产环境中 goblin 和 gremlin 出现率的一周平均值。GPT‑5.4 Thinking 的下降，是因为我们在 3 月中旬停用了“书卷极客”人格。GPT‑5.5 发布时并未搭载“书卷极客”人格，并且相较 GPT‑5.4 又出现了一次上升（即使没有“书卷极客”人格也是如此）。
 
-One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
+在 GPT‑5.4 发布后，我们于 3 月正式停用了“书卷极客” (Nerdy) 人格。在训练中，我们移除了对 goblin 具有偏向性的奖励信号，并对包含奇幻生物词汇的训练数据进行了过滤，以降低 goblin 过度出现或在不当语境中露面的概率。遗憾的是，在找到 goblin 的根源之前，GPT‑5.5 的训练已经启动。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 的员工立即察觉到了其对 goblin 展现出的奇特偏好；为此，我们添加了开发者提示词指令⁠（在新窗口中打开）来缓解这一问题。毕竟，Codex 本身就带有浓厚的极客色彩。
 
-The end of the goblins
+如果你想在 Codex 中让这些生物“重获自由”，可以运行以下命令，在移除 goblin 抑制指令的状态下启动 Codex：
 
-We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
+对于这些 goblin，不同的人持有不同的看法。有人觉得它们是令人愉悦的惊喜，也有人认为它们是烦人的怪癖。但无论如何，这都是一个强有力的案例，向我们展示了奖励信号如何以意想不到的方式塑造模型行为，以及模型如何在特定场景下将奖励机制泛化到无关领域。花时间去理解模型为何表现怪异，并构建出能够快速调查这些模式的方法，对我们的研究团队而言是一项至关重要的能力。此次调查不仅解决了问题，还为研究团队带来了全新的工具，用于审计模型行为并从根源上修复行为偏差。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">从 GPT‑5.1 开始，我们的模型出现一个奇怪的习惯：它们在隐喻中提及 goblin（哥布林）、gremlin（小精灵）及其他生物的频率越来越高。不同于那些能通过评估指标暴跌或训练参数激增来溯源的典型缺陷，这个现象的渗透极其隐秘。如果只是在回答中偶尔蹦出一个“little goblin（小哥布林）”，或许还无伤大雅，甚至还有点讨喜。然而，随着模型版本的更迭，这一习惯变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
+在早期测试中，Codex 中的 GPT‑5.5 对 goblin 比喻表现出一种奇特的偏好。
 
-Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out wher...</p><div style="font-size:16px;line-height:1.8;color:#333">Starting with GPT‑5.1, our models began developing a strange habit: they increasingly mentioned goblins, gremlins, and other creatures in their metaphors. Unlike model bugs that show up through a tanking eval or a spiking training metric and point back to a specific change, this one crept in subtly. A single “little goblin” in an answer could be harmless, even charming. Across model generations, though, the habit became hard to miss: the goblins kept multiplying, and we needed to figure out where they came from.
+简而言之，模型的行为特征是由诸多微小的激励机制共同塑造的。在此案例中，其中一项激励源于针对个性自定义功能⁠（在新窗口中打开）的模型训练，尤其是“书卷极客”(Nerdy) 人格。我们在无意间，对包含奇幻生物的比喻给予了极高的奖励。于是，goblin 就这样扩散开了。
 
-In early testing, GPT‑5.5 in Codex showed an odd affinity for goblin metaphors.
+起初这些 goblin 还挺有趣，但随着员工报告的数量不断增加，情况变得令人担忧。
 
-The short answer is that model behavior is shaped by many small incentives. In this case, one of those incentives came from training the model for thepersonality customization feature⁠(opens in a new window), in particular the Nerdy personality. We unknowingly gave particularly high rewards for metaphors with creatures. From there, the goblins spread.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-The goblins were funny at first, but the increasing number of employee reports became concerning.
+我们首次明确捕捉到这一模式是在 11 月 GPT‑5.1...</p><div style="font-size:16px;line-height:1.8;color:#333">从 GPT‑5.1 开始，我们的模型出现一个奇怪的习惯：它们在隐喻中提及 goblin（哥布林）、gremlin（小精灵）及其他生物的频率越来越高。不同于那些能通过评估指标暴跌或训练参数激增来溯源的典型缺陷，这个现象的渗透极其隐秘。如果只是在回答中偶尔蹦出一个“little goblin（小哥布林）”，或许还无伤大雅，甚至还有点讨喜。然而，随着模型版本的更迭，这一习惯变得非常显眼：goblin 不断增多，我们必须弄清它们从何而来。
 
-An interesting interaction our Chief Scientist had with GPT‑5.5.
+在早期测试中，Codex 中的 GPT‑5.5 对 goblin 比喻表现出一种奇特的偏好。
 
-The first signs of creatures
+简而言之，模型的行为特征是由诸多微小的激励机制共同塑造的。在此案例中，其中一项激励源于针对个性自定义功能⁠（在新窗口中打开）的模型训练，尤其是“书卷极客”(Nerdy) 人格。我们在无意间，对包含奇幻生物的比喻给予了极高的奖励。于是，goblin 就这样扩散开了。
 
-The first time we clearly saw the pattern was in November, after the GPT‑5.1 launch,although it may have started earlier⁠(opens in a new window). Users complained about the model being oddly overfamiliar in conversation, which prompted an investigation into specific verbal tics. A safety researcher had experienced a few “goblins” and “gremlins” and asked that they be included in the check. When we looked, use of “goblin” in ChatGPT had risen by 175% after the launch of GPT‑5.1, while “gremlin” had risen by 52%.
+起初这些 goblin 还挺有趣，但随着员工报告的数量不断增加，情况变得令人担忧。
 
-A measurable small lexical quirk in GPT‑5.1.
+我们的首席科学家与 GPT‑5.5 的一次有趣互动。
 
-At the time, the prevalence of goblins did not look especially alarming. A few months later, the goblins came back to haunt us in a much more specific and reproducible form.
+我们首次明确捕捉到这一模式是在 11 月 GPT‑5.1 发布之后，尽管这一现象可能更早便已露端倪⁠（在新窗口中打开）。当时，用户反馈模型在对话中表现出一种古怪的“自来熟”，这随即引发了我们对特定口头禅的专项调查。一位安全研究员在交互中偶遇了几次 goblin 和 gremlin，并建议将其纳入排查范围。调查结果显示，在 GPT‑5.1 发布后，ChatGPT 中 goblin 的出现率激增了 175%，而 gremlin 的出现率也增长了 52%。
 
-Solving the goblin mystery
+GPT‑5.1 中一个可测量的微小词汇怪癖。
 
-With GPT‑5.4, weand our users⁠(opens in a new window)noticed an even bigger uptick in references to these creatures. That triggered another internal analysis and surfaced the first connection to the root cause: creature language was especially common in production traffic from users who had selected the “Nerdy” personality. “Nerdy” used the following system prompt, which partially explained the quirkiness:
+起初，goblin 的泛滥似乎并未引起特别的警觉。然而几个月后，这些“生物”却以一种更为具体且可复现的形式，再次成为了我们的困扰。
 
-You are an unapologetically nerdy, playful and wise AI mentor to a human. You are passionately enthusiastic about promoting truth, knowledge, philosophy, the scientific method, and critical thinking. [...] You must undercut pretension through playful use of language. The world is complex and strange, and its strangeness must be acknowledged, analyzed, and enjoyed. Tackle weighty subjects without falling into the trap of self-seriousness. [...]
+随着 GPT‑5.4 的推出，我们及用户⁠（在新窗口中打开）均注意到这类生物出现的频率大幅攀升。这触发了新一轮的内部分析，并首次揭示了其背后的根源：在线上流量中，如果用户选择了“书卷极客”人格，这些生物类词汇会在对话中频繁出现。该人格所使用的系统提示词如下（这在一定程度上解释了其古怪之处）：
 
-If the behavior were simply a broad internet trend, we would expect it to spread more evenly. Instead, it was clustered in the part of the system explicitly optimized for a playful, nerdy style. Nerdy accounted for only 2.5% of all ChatGPT responses, but 66.7% of all “goblin” mentions in ChatGPT responses.
+你是人类面前一位毫不掩饰书卷极客气质、俏皮又睿智的 AI 导师。你满怀热情地倡导真理、知识、哲学、科学方法和批判性思维。[...]你必须通过俏皮的语言风格来消解虚饰。世界复杂而奇诡，这种奇诡之处必须得到承认、分析并享受。处理严肃话题时，不要落入一本正经的陷阱。[...]
 
-The behavior was highly concentrated in the "Nerdy" personality.
+如果这仅仅是一种广泛的网络流行趋势，其分布应当更加均匀。然而事实恰恰相反，这一现象高度集中在那个专门为“书卷极客”风格而优化的系统中。数据显示，“书卷极客”人格仅贡献了 ChatGPT 总回复量的 2.5%，却占据了全平台 goblin 提及量的 66.7%。
 
-Because “goblin” prevalence seemed to increase over our model releases, we had a suspicion that something in our personality instruction-following training was amplifying this.
+鉴于 goblin 的出现频率随模型版本的更迭而递增，我们怀疑，在“人格指令遵循”的训练过程中，某些环节起到了放大作用。
 
-Codex helped us compare model outputs generated during RL training containing goblin or gremlin with outputs from the same task that did not. One reward signal stood out immediately: the one originally designed to encourage the Nerdy personality was consistently more favorable to the creature-word outputs. Across all datasets in the audit, the Nerdy personality reward showed a clear tendency to score outputs to the same problem with “goblin” or “gremlin” higher than outputs without, with positive uplift in 76.2% of datasets.
+通过 Codex，我们对比了 RL（强化学习）训练期间包含与不包含 goblin/gremlin 的模型输出。一组奖励信号立即引起了注意：原本旨在激励“书卷极客”(Nerdy) 人格的信号，对包含此类词汇的输出表现出一致的偏好。在审计覆盖的所有数据集中，“书卷极客”人格奖励机制倾向于给含有 goblin 或 gremlin 的回复打出更高分；在 76.2% 的数据集中，这类词汇均带来了正向的评分提升。
 
-That explained why the behavior was boosted with the Nerdy personality prompt, but not why it also appeared without that prompt. To test whether the style was transferring, we tracked mention rates over training both with and without the Nerdy prompt.
+这解释了为何“书卷极客”提示词会强化这一行为，但仍无法解释为何在没有该提示词的情况下，这一现象依然存在。为了验证这种风格是否发生了“迁移”，我们对训练过程中伴随或脱离该“书卷极客”提示词的词汇出现率进行了同步追踪。
 
-As goblin and gremlin mentions increased under the Nerdy personality, they increased by nearly the same relative proportion in samples without it. Taken together, the evidence suggests that the broader behavior emerged through transfer from Nerdy personality training.
+数据显示，随着 goblin 和 gremlin 在“书卷极客”人格下的提及率上升，在未开启该人格的样本中，这两类词汇也出现了近乎同比例的增长。综合各方证据，这一广泛蔓延的行为模式，本质上源于从“书卷极客”人格训练中产生的风格迁移。
 
-The rewards were applied only in the Nerdy condition, but reinforcement learning does not guarantee that learned behaviors stay neatly scoped to the condition that produced them. Once a style tic is rewarded, later training can spread or reinforce it elsewhere, especially if those outputs are reused in supervised fine-tuning or preference data.
+尽管奖励机制仅应用于“书卷极客”环境，但强化学习 (RL) 并不能保证所习得的行为会仅受限于其产出环境。一旦某个风格口头禅 (style tic) 获得了奖励，后续训练就可能将其扩散或加固到其他场景中，当这些输出被重新用于监督微调 (SFT) 或偏好数据时，这种趋势尤为明显。
 
-That creates a feedback loop:
+部分获得奖励的样本中包含了显著的口头禅词汇；
 
-Playful style is rewarded
+该口头禅在生成轨迹 (rollout) 中出现频率升高；
 
-Some rewarded examples contain a distinctive lexical tic.
+模型产生的生成轨迹被用于监督微调 (SFT)；
 
-The tic appears more often in rollouts.
+通过对 GPT‑5.5 的 SFT 数据进行检索，我们发现了大量包含 goblin 和 gremlin 的数据点。进一步调查还挖出了一整个“奇幻生物家族”：浣熊、巨魔、食人魔以及鸽子都被识别为口头禅词汇；相比之下，而“青蛙”的大多数用法被确认是正常的。
 
-Model-generated rollouts are used for supervised fine-tuning (SFT).
+生产环境中 goblin 和 gremlin 出现率的一周平均值。GPT‑5.4 Thinking 的下降，是因为我们在 3 月中旬停用了“书卷极客”人格。GPT‑5.5 发布时并未搭载“书卷极客”人格，并且相较 GPT‑5.4 又出现了一次上升（即使没有“书卷极客”人格也是如此）。
 
-The model gets even more comfortable producing the tic.
+在 GPT‑5.4 发布后，我们于 3 月正式停用了“书卷极客” (Nerdy) 人格。在训练中，我们移除了对 goblin 具有偏向性的奖励信号，并对包含奇幻生物词汇的训练数据进行了过滤，以降低 goblin 过度出现或在不当语境中露面的概率。遗憾的是，在找到 goblin 的根源之前，GPT‑5.5 的训练已经启动。当我们开始在 Codex 中测试 GPT‑5.5 时，OpenAI 的员工立即察觉到了其对 goblin 展现出的奇特偏好；为此，我们添加了开发者提示词指令⁠（在新窗口中打开）来缓解这一问题。毕竟，Codex 本身就带有浓厚的极客色彩。
 
-A search through GPT‑5.5’s SFT data found many datapoints containing “goblin” and “gremlin.” Further investigation revealed a whole family of other odd creatures: raccoons, trolls, ogres, and pigeons were identified as other tic words, while most uses of frog turned out to be legitimate.
+如果你想在 Codex 中让这些生物“重获自由”，可以运行以下命令，在移除 goblin 抑制指令的状态下启动 Codex：
 
-One week average of production prevalence of goblins and gremlins. The drop in GPT‑5.4 Thinking was a result of retiring the “Nerdy” personality mid-March. GPT‑5.5 never launched with the “Nerdy” personality, and showed another increase over GPT‑5.4 (even without “Nerdy”).
-
-The end of the goblins
-
-We retired the “Nerdy” personality in March after launching GPT‑5.4. In training, we removed the goblin-affine reward signal and filtered training data containing creature-words, making goblins less likely to over-appear or show up in inappropriate contexts. Unfortunately, GPT‑5.5 started training before we found the root cause of the goblins. When we began testing GPT‑5.5 in Codex, OpenAI employees immediately noticed the strange affinity for goblins, and we added adeveloper-prompt instruction⁠(opens in a new window)to mitigate. Codex is, after all, quite nerdy.
-
-If you want to let the creatures run free in Codex, you can run this command to launch Codex with the goblin-suppressing instructions removed:
-
-Depending on who you ask, the goblins are a delightful or annoying quirk of the model. But they are also a powerful example of how reward signals can shape model behavior in unexpected ways, and how models can learn to generalize rewards in certain situations to unrelated ones. Taking the time to understand why a model is behaving in a strange way, and building out ways to investigate those patterns quickly, is an important capability for our research team. This investigation resulted in new tools for the research team to audit model behavior and fix behavior problems at their root.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+对于这些 goblin，不同的人持有不同的看法。有人觉得它们是令人愉悦的惊喜，也有人认为它们是烦人的怪癖。但无论如何，这都是一个强有力的案例，向我们展示了奖励信号如何以意想不到的方式塑造模型行为，以及模型如何在特定场景下将奖励机制泛化到无关领域。花时间去理解模型为何表现怪异，并构建出能够快速调查这些模式的方法，对我们的研究团队而言是一项至关重要的能力。此次调查不仅解决了问题，还为研究团队带来了全新的工具，用于审计模型行为并从根源上修复行为偏差。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/where-the-goblins-came-from/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing GPT-5.5</title>
@@ -839,32 +839,148 @@ EngineeringMay 13, 2026</div><hr style="margin:24px 0;border:none;border-top:1px
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-rosalind/</guid>
   <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Rosalind for life sciences research</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Rosalind for life sciences research</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.3-Codex</title>
-  <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-  <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">专为加速科学研究与药物研发而打造的全新模型
+
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力...</p><div style="font-size:16px;line-height:1.8;color:#333">专为加速科学研究与药物研发而打造的全新模型
+
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力生命科学机构实现突破性进展，并大幅提升研发成功率。
+
+目前，GPT‑Rosalind 已通过我们的“受信访问计划 (trusted access program)”，向符合条件的客户在 ChatGPT、Codex 及 API 中开放研究预览。同时，我们还为 Codex 推出了免费开放的“生命科学研究插件”，协助科学家将模型连接至 50 多种科学工具及数据源。目前，我们正与安进 (Amgen)、莫德纳 (Moderna)、艾伦研究所 (Allen Institute) 及赛默飞世尔科技 (Thermo Fisher Scientific) 等合作伙伴携手，共同将 GPT‑Rosalind 应用于加速科研与发现的工作流中。
+
+该模型以罗莎琳德·富兰克林 (Rosalind Franklin) 的名字命名，其严谨的研究成果揭示了 DNA 的结构，并为现代分子生物学奠定基础。
+
+了解我们专为科研打造的模型如何加速研究工作流，包括原始数据、可靠的发现决策等环节。
+
+GPT‑Rosalind 生命科学系列模型旨在应对涵盖学术文献、实验数据、科研工具及各类实验的现代科学挑战。根据我们的评估，该模型在涉及分子、蛋白质、基因、通路及疾病相关生物学的推理任务中表现卓越。在文献综述、序列功能解读、实验规划及数据分析等需要多步骤协作的工作流中，它在调用科学工具与数据库方面展现出更高的效能。
+
+作为 GPT‑Rosalind 系列的首次发布，我们将持续拓展模型在长周期、重工具 (tool-heavy) 的科学工作流中的生化推理能力边界。依托 OpenAI 的计算基础设施，我们能够针对真实的科学任务，不断训练、评估并优化领域模型。随着科研流程复杂度的日益提升，这些系统也将随之变得更加高效实用。
+
+了解我们的系列解决方案如何为科研工作流带来可衡量的显著提升，包括基于证据的发现洞察、高影响力实验等。
+
+我们正与领先的制药公司、生物技术企业、科研机构，以及生命科学领域的科技组织展开合作，共同将 GPT‑Rosalind 应用于各类工作流，以全面推动科学发现。
+
+我们针对一系列对科学发现和行业研究至关重要的核心能力，对 GPT‑Rosalind 进行了全面评估。这些评估涵盖了各科学子领域的核心推理能力，包括：化学反应机制；蛋白质结构、突变效应及相互作用；以及 DNA 序列的系统发育解读。同时，评估还考察了模型对真实科研工作流的支持力度，例如解读实验结果、识别专家级模式，以及综合外部信息以设计后续实验。最后，我们测试了模型能否准确选择并调用计算工具、数据库及特定领域功能，以增强其推理能力。综合来看，这些评估结果展示了模型在端到端科研流程中的显著进展，表明其在辅助研究人员应对极具挑战性的研发任务方面，具备更强的实力。
+
+I am planning a base-promoted SNAr coupling of 1-(pyridin-3-yl)ethanol with 1-fluoro-2-nitrobenzene with the goal of synthesizing 1-(pyridin-3-yl)ethyl 2-nitrophenyl ether. I found several patents that describe room-temperature O-arylation of alcohols in DMF/Cs2CO3, but the reaction is taking longer than I would like. How can I improve this reaction? Help me find any relevant literature or patents as well.
+
+我们在一系列公开基准测试中对 GPT‑Rosalind 进行了评估。在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑Rosalind 在所有已公布评分的模型中名列前茅。
+
+在衡量文献检索、数据库访问、序列操作和方案设计等科研任务的 LABBench2 测试中，GPT‑Rosalind 在 11 项任务中有 6 项表现优于 GPT‑5.4。其中最显著的提升体现在 CloningQA 任务上，该任务要求对分子克隆方案中的 DNA 和酶试剂进行端到端的设计。
+
+此外，我们还与利用 AI 开启基因疗法先河的 Dyno Therapeutics 公司合作，使用未公开且无污染的序列数据，评估模型在 RNA 序列功能预测与生成任务中的表现。我们将评估结果与 AI 生物领域人类专家的 57 份历史评分进行了对比。在 Codex 应用中进行的直接测试显示，模型在十次提交中的最佳表现，在预测任务中排名超过了 95% 的人类专家，在序列生成任务中则超过了约 84% 的人类专家。
+
+这些评估为模型在各类工作流中的表现提供了有力证明。科学家正是依赖这些工作流来获取证据、分析复杂数据，并得出具备科学依据的生物学结论。
+
+从即日起，科学家可以从 GitHub 获取我们专为 Codex 打造的全新生命科学研究插件⁠（在新窗口中打开）。该软件包为最常见的科研工作流提供了一套丰富的模块化技能，旨在协助用户开展人类遗传学、功能基因组学、蛋白质结构、生物化学、临床证据及公开研究检索等领域的工作。
+
+这些技能构成了一个编排层 (orchestration layer)，能有效协助科学家应对广泛、模糊且复杂的多步骤问题。通过该插件，用户可以访问 50 多个公开的多组学数据库、文献资源及生物学工具；对于蛋白质结构查询、序列搜索、文献综述及公开数据集检索等常见的重复性流程，它也提供了一个灵活的切入点。
+
+符合条件的 Enterprise 用户可以在研究工作流中将此插件与 GPT‑Rosalind 结合使用，以获得更深层次的生物学推理能力。同时，所有用户均可在我们的主干模型中使用该插件包。
+
+我们希望在确保严防生物技术滥用的前提下，将这些能力开放给那些最有能力推动人类健康事业发展的科学家和科研机构。该生命科学模型正通过受信访问 (trusted access) 部署机制率先面向美国符合条件的 Enterprise 客户开放，并围绕资格条件、访问管理和组织治理设置相应控制措施。与此同时，我们将广泛开放一系列连接器及“生命科学研究插件”，以便研究人员能更高效地利用我们的主干模型开展生命科学研究。
+
+生命科学模型在开发过程中加强了企业级安全管控和访问管理，支持在受监管的科研环境中进行专业科学应用。我们基于三大核心原则评估访问权限：公益性用途、严谨的治理与安全监管，以及具备企业级安全保障的受控访问。在实践中，这意味着参与机构必须开展具有明确公共利益的正当科学研究；维持适当的治理、合规及防滥用管控；并将访问权限严格限制在安全且管理完善环境下的核准用户内。此外，相关机构须同意生命科学研究预览条款并遵守 OpenAI 的使用政策，我们也可能在入驻或持续参与过程中要求提供补充信息。
+
+各机构可通过我们的资质审核与安全评估流程申请访问权限⁠。
+
+在研究预览期间，该模型的使用将不消耗现有的额度或 Token（受防滥用机制约束）。随着项目的扩展，我们将进一步公布有关定价和可用性的详细信息。
+
+生命科学模型旨在帮助科研机构在兼具技术实力与运营管控的环境中，更高效地开展高质量工作。我们的生命科学 (Life Sciences) 专职团队，以及包括麦肯锡 (McKinsey & Company)、波士顿咨询 (BCG) 和贝恩 (Bain & Company) 在内的咨询合作伙伴，将协助各机构识别高价值的应用场景，将模型整合至企业级环境，并推动产生可量化的成果。若有意探索 OpenAI Life Sciences 如何助力贵组织的工作，欢迎联系生命科学团队⁠。
+
+这是我们生命科学系列模型的首次发布，标志着我们践行一项长期承诺：构建能够加速社会关键领域（从人类健康到更广泛的生物学研究）科学发现的 AI 系统。我们将持续优化模型的生物学推理能力，扩展对重工具及长周期科研工作流的支持，并与领先的科学机构紧密协作，以评估其实际影响力。这包括与洛斯阿拉莫斯国家实验室 (Los Alamos National Laboratory) 等重要实验室持续合作，共同探索 AI 引导的蛋白质及催化剂设计，以及 AI 系统在保留或优化核心功能特性的前提下，对生物结构进行改造的能力。
+
+长远来看，我们期待这些系统能成为日益强大的科研伙伴：协助科学家实现跨越式加速，包括从“提出问题”到“获取证据”、从“提炼证据”到“洞察本质”，以及从“科学洞察”转化为“患者新疗法”等环节。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">专为加速科学研究与药物研发而打造的全新模型
+
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力...</p><div style="font-size:16px;line-height:1.8;color:#333">专为加速科学研究与药物研发而打造的全新模型
+
+今天，我们正式推出 GPT‑Rosalind。这是一款前沿推理模型，旨在为生物学、药物研发及转化医学领域的科学研究提供支持。该生命科学系列模型针对科学工作流进行了优化，不仅提升了工具调用能力，更深化了对化学、蛋白质工程及基因组学的理解。
+
+在美国，一种新药从靶点发现到获批上市，平均耗时约为 10 至 15 年。在研发早期阶段取得的进展，将对后续环节产生复利效应：有助于更精准地筛选靶点、提出更严谨的生物学假设，并设计更高质量的实验。目前，生命科学领域的发展不仅受限于基础科学的难度，还受制于科研流程本身的复杂性。科学家必须处理海量的文献、专业数据库及实验数据，并在不断演进的假设中反复推敲，以产生并评估新思路。这些流程通常非常耗时、环节碎片化，且难以大规模扩展。
+
+我们相信，先进的 AI 系统能够协助科研人员加速完成这些流程。这不仅体现在提升现有工作的效率，更在于帮助科学家探索更多可能性、挖掘潜在关联，并更早地得出更优假设。通过支持证据合成、假设生成及实验规划等一系列多步骤科研任务，该模型旨在帮助研究者缩短早期研发周期。长远来看，这些系统有望助力生命科学机构实现突破性进展，并大幅提升研发成功率。
+
+目前，GPT‑Rosalind 已通过我们的“受信访问计划 (trusted access program)”，向符合条件的客户在 ChatGPT、Codex 及 API 中开放研究预览。同时，我们还为 Codex 推出了免费开放的“生命科学研究插件”，协助科学家将模型连接至 50 多种科学工具及数据源。目前，我们正与安进 (Amgen)、莫德纳 (Moderna)、艾伦研究所 (Allen Institute) 及赛默飞世尔科技 (Thermo Fisher Scientific) 等合作伙伴携手，共同将 GPT‑Rosalind 应用于加速科研与发现的工作流中。
+
+该模型以罗莎琳德·富兰克林 (Rosalind Franklin) 的名字命名，其严谨的研究成果揭示了 DNA 的结构，并为现代分子生物学奠定基础。
+
+了解我们专为科研打造的模型如何加速研究工作流，包括原始数据、可靠的发现决策等环节。
+
+GPT‑Rosalind 生命科学系列模型旨在应对涵盖学术文献、实验数据、科研工具及各类实验的现代科学挑战。根据我们的评估，该模型在涉及分子、蛋白质、基因、通路及疾病相关生物学的推理任务中表现卓越。在文献综述、序列功能解读、实验规划及数据分析等需要多步骤协作的工作流中，它在调用科学工具与数据库方面展现出更高的效能。
+
+作为 GPT‑Rosalind 系列的首次发布，我们将持续拓展模型在长周期、重工具 (tool-heavy) 的科学工作流中的生化推理能力边界。依托 OpenAI 的计算基础设施，我们能够针对真实的科学任务，不断训练、评估并优化领域模型。随着科研流程复杂度的日益提升，这些系统也将随之变得更加高效实用。
+
+了解我们的系列解决方案如何为科研工作流带来可衡量的显著提升，包括基于证据的发现洞察、高影响力实验等。
+
+我们正与领先的制药公司、生物技术企业、科研机构，以及生命科学领域的科技组织展开合作，共同将 GPT‑Rosalind 应用于各类工作流，以全面推动科学发现。
+
+我们针对一系列对科学发现和行业研究至关重要的核心能力，对 GPT‑Rosalind 进行了全面评估。这些评估涵盖了各科学子领域的核心推理能力，包括：化学反应机制；蛋白质结构、突变效应及相互作用；以及 DNA 序列的系统发育解读。同时，评估还考察了模型对真实科研工作流的支持力度，例如解读实验结果、识别专家级模式，以及综合外部信息以设计后续实验。最后，我们测试了模型能否准确选择并调用计算工具、数据库及特定领域功能，以增强其推理能力。综合来看，这些评估结果展示了模型在端到端科研流程中的显著进展，表明其在辅助研究人员应对极具挑战性的研发任务方面，具备更强的实力。
+
+I am planning a base-promoted SNAr coupling of 1-(pyridin-3-yl)ethanol with 1-fluoro-2-nitrobenzene with the goal of synthesizing 1-(pyridin-3-yl)ethyl 2-nitrophenyl ether. I found several patents that describe room-temperature O-arylation of alcohols in DMF/Cs2CO3, but the reaction is taking longer than I would like. How can I improve this reaction? Help me find any relevant literature or patents as well.
+
+我们在一系列公开基准测试中对 GPT‑Rosalind 进行了评估。在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑Rosalind 在所有已公布评分的模型中名列前茅。
+
+在衡量文献检索、数据库访问、序列操作和方案设计等科研任务的 LABBench2 测试中，GPT‑Rosalind 在 11 项任务中有 6 项表现优于 GPT‑5.4。其中最显著的提升体现在 CloningQA 任务上，该任务要求对分子克隆方案中的 DNA 和酶试剂进行端到端的设计。
+
+此外，我们还与利用 AI 开启基因疗法先河的 Dyno Therapeutics 公司合作，使用未公开且无污染的序列数据，评估模型在 RNA 序列功能预测与生成任务中的表现。我们将评估结果与 AI 生物领域人类专家的 57 份历史评分进行了对比。在 Codex 应用中进行的直接测试显示，模型在十次提交中的最佳表现，在预测任务中排名超过了 95% 的人类专家，在序列生成任务中则超过了约 84% 的人类专家。
+
+这些评估为模型在各类工作流中的表现提供了有力证明。科学家正是依赖这些工作流来获取证据、分析复杂数据，并得出具备科学依据的生物学结论。
+
+从即日起，科学家可以从 GitHub 获取我们专为 Codex 打造的全新生命科学研究插件⁠（在新窗口中打开）。该软件包为最常见的科研工作流提供了一套丰富的模块化技能，旨在协助用户开展人类遗传学、功能基因组学、蛋白质结构、生物化学、临床证据及公开研究检索等领域的工作。
+
+这些技能构成了一个编排层 (orchestration layer)，能有效协助科学家应对广泛、模糊且复杂的多步骤问题。通过该插件，用户可以访问 50 多个公开的多组学数据库、文献资源及生物学工具；对于蛋白质结构查询、序列搜索、文献综述及公开数据集检索等常见的重复性流程，它也提供了一个灵活的切入点。
+
+符合条件的 Enterprise 用户可以在研究工作流中将此插件与 GPT‑Rosalind 结合使用，以获得更深层次的生物学推理能力。同时，所有用户均可在我们的主干模型中使用该插件包。
+
+我们希望在确保严防生物技术滥用的前提下，将这些能力开放给那些最有能力推动人类健康事业发展的科学家和科研机构。该生命科学模型正通过受信访问 (trusted access) 部署机制率先面向美国符合条件的 Enterprise 客户开放，并围绕资格条件、访问管理和组织治理设置相应控制措施。与此同时，我们将广泛开放一系列连接器及“生命科学研究插件”，以便研究人员能更高效地利用我们的主干模型开展生命科学研究。
+
+生命科学模型在开发过程中加强了企业级安全管控和访问管理，支持在受监管的科研环境中进行专业科学应用。我们基于三大核心原则评估访问权限：公益性用途、严谨的治理与安全监管，以及具备企业级安全保障的受控访问。在实践中，这意味着参与机构必须开展具有明确公共利益的正当科学研究；维持适当的治理、合规及防滥用管控；并将访问权限严格限制在安全且管理完善环境下的核准用户内。此外，相关机构须同意生命科学研究预览条款并遵守 OpenAI 的使用政策，我们也可能在入驻或持续参与过程中要求提供补充信息。
+
+各机构可通过我们的资质审核与安全评估流程申请访问权限⁠。
+
+在研究预览期间，该模型的使用将不消耗现有的额度或 Token（受防滥用机制约束）。随着项目的扩展，我们将进一步公布有关定价和可用性的详细信息。
+
+生命科学模型旨在帮助科研机构在兼具技术实力与运营管控的环境中，更高效地开展高质量工作。我们的生命科学 (Life Sciences) 专职团队，以及包括麦肯锡 (McKinsey & Company)、波士顿咨询 (BCG) 和贝恩 (Bain & Company) 在内的咨询合作伙伴，将协助各机构识别高价值的应用场景，将模型整合至企业级环境，并推动产生可量化的成果。若有意探索 OpenAI Life Sciences 如何助力贵组织的工作，欢迎联系生命科学团队⁠。
+
+这是我们生命科学系列模型的首次发布，标志着我们践行一项长期承诺：构建能够加速社会关键领域（从人类健康到更广泛的生物学研究）科学发现的 AI 系统。我们将持续优化模型的生物学推理能力，扩展对重工具及长周期科研工作流的支持，并与领先的科学机构紧密协作，以评估其实际影响力。这包括与洛斯阿拉莫斯国家实验室 (Los Alamos National Laboratory) 等重要实验室持续合作，共同探索 AI 引导的蛋白质及催化剂设计，以及 AI 系统在保留或优化核心功能特性的前提下，对生物结构进行改造的能力。
+
+长远来看，我们期待这些系统能成为日益强大的科研伙伴：协助科学家实现跨越式加速，包括从“提出问题”到“获取证据”、从“提炼证据”到“洞察本质”，以及从“科学洞察”转化为“患者新疗法”等环节。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>GPT-5.3-Codex</title>
+  <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
+  <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>GPT-5.3 Instant</title>
   <link>https://openai.com/index/gpt-5-3-instant/</link>
   <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
