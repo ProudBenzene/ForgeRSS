@@ -24,6 +24,7 @@ from generators.social.bilibili.generator import BilibiliUPGenerator
 from generators.social.xiaohongshu.generator import XiaohongshuUserGenerator
 from generators.social.zsxq.generator import ZSXQTopicsGenerator
 from generators.social.douyin.generator import DouyinUserGenerator
+from generators.social.kuaishou.generator import KuaishouUserGenerator
 from generators.social.youtube.generator import YouTubeChannelGenerator
 from generators.social.tiktok.generator import TikTokUserGenerator
 
@@ -54,6 +55,7 @@ GENERATORS = {
     "xiaohongshu_user": XiaohongshuUserGenerator,
     "zsxq_topics": ZSXQTopicsGenerator,
     "douyin_user": DouyinUserGenerator,
+    "kuaishou_user": KuaishouUserGenerator,
     # Social (no login required)
     "youtube_channel": YouTubeChannelGenerator,
     "tiktok_user": TikTokUserGenerator,
@@ -69,6 +71,7 @@ DESKTOP_ONLY_GENERATORS = {
     "xiaohongshu_user",
     "zsxq_topics",
     "douyin_user",
+    "kuaishou_user",
 }
 
 # Documentation generators (update less frequently, run in separate workflow)

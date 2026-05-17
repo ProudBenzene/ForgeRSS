@@ -32,6 +32,7 @@ class Platform(Enum):
     XIAOHONGSHU = "xiaohongshu"
     ZSXQ = "zsxq"
     DOUYIN = "douyin"
+    KUAISHOU = "kuaishou"
     TIKTOK = "tiktok"
     YOUTUBE = "youtube"
 
@@ -77,6 +78,12 @@ _FALLBACK_KEYWORDS: Dict[Platform, Dict[str, List[str]]] = {
         "logged_in": ["退出登录", "semi-avatar", "avatar-component"],
         "not_logged_in": ["扫码登录", "登录抖音"],
     },
+    Platform.KUAISHOU: {
+        "check_url": "https://www.kuaishou.com/",
+        "signin_url_markers": [],
+        "logged_in": ["text-name"],
+        "not_logged_in": ["sidebar-login-button"],
+    },
 }
 
 
@@ -87,6 +94,7 @@ LOGIN_COMMANDS = {
     Platform.XIAOHONGSHU: "python -m generators.social.xiaohongshu.scraper --login",
     Platform.ZSXQ: "python -m generators.social.zsxq.scraper --login",
     Platform.DOUYIN: "python -m generators.social.douyin.scraper --login",
+    Platform.KUAISHOU: "python -m generators.social.kuaishou.scraper --login",
 }
 
 

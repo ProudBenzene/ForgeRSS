@@ -98,6 +98,22 @@
         ]
       },
       "notes": "抖音不重定向到登录页（弹 modal），但登录后会自动从 / 跳到 /jingxuan。验证过登录态：退出登录 x1、semi-avatar x20、avatar-component x2 全部命中；登录态下 '扫码登录'/'登录抖音' 都 0。注意 'qrcode' 在登录态也有 4 次（来自'扫码下载抖音App'促销，非登录二维码），不能用作 not_logged_in。"
+    },
+
+    "kuaishou": {
+      "name": "快手",
+      "check_url": "https://www.kuaishou.com/",
+      "login_url": "https://www.kuaishou.com/",
+      "signin_url_markers": [],
+      "keywords": {
+        "logged_in": [
+          "text-name"
+        ],
+        "not_logged_in": [
+          "sidebar-login-button"
+        ]
+      },
+      "notes": "快手首页登录前后差异很小。验证过：登出态有 'sidebar-login-button' CSS 类（侧边栏登录按钮），登录后消失；登录态有 'text-name' CSS 类（用户名占位）。'登录即可享受' 是常驻 banner 不可用作判别。"
     }
   },
   

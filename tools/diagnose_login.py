@@ -56,6 +56,7 @@ PLATFORM_BROWSERS = {
     "xiaohongshu": ("generators.social.xiaohongshu.scraper", "create_xhs_browser",      "XHS_PROFILE_DIR"),
     "zsxq":        ("generators.social.zsxq.scraper",        "create_zsxq_browser",     "ZSXQ_PROFILE_DIR"),
     "douyin":      ("generators.social.douyin.scraper",      "create_douyin_browser",   "DOUYIN_PROFILE_DIR"),
+    "kuaishou":    ("generators.social.kuaishou.scraper",    "create_kuaishou_browser", "KUAISHOU_PROFILE_DIR"),
 }
 
 
