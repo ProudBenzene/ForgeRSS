@@ -18,6 +18,7 @@ from generators.ai_coding_docs.claude_code import ClaudeCodeDocsGenerator
 from generators.ai_coding_docs.cursor_docs import CursorDocsGenerator
 from generators.ai_coding_docs.qwen_code import QwenCodeDocsGenerator
 from generators.finance.cninfo_announcements import CninfoAnnouncementsGenerator
+from generators.finance.xueqiu.generator import XueqiuUserGenerator
 from generators.social.zhihu.generator_hot import ZhihuHotGenerator
 from generators.social.zhihu.generator_user import ZhihuUserGenerator
 from generators.social.bilibili.generator import BilibiliUPGenerator
@@ -40,6 +41,7 @@ GENERATORS = {
     "nmpa_drug": NMPADrugGenerator,
     # Finance
     "cninfo_announcements": CninfoAnnouncementsGenerator,
+    "xueqiu_user": XueqiuUserGenerator,
     # AI
     "anthropic_news": AnthropicNewsGenerator,
     "anthropic_research": AnthropicResearchGenerator,

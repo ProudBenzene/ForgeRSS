@@ -32,6 +32,11 @@ env:
   # 不下载 mp3（CI 不持久化 downloads/）。Fork 后改成你自己关心的播客即可。
   XIAOYUZHOU_PODCAST_ID: ${{ vars.XIAOYUZHOU_PODCAST_ID || '63b7c6697dcc05cd33b51cd5' }}
   XIAOYUZHOU_DOWNLOAD_AUDIO: 'false'
+  # Xueqiu: 默认订阅一个示例账号作为 CI demo（用户 fork 后可改）
+  # 这里用「证券日报」(uid=8353550788) — 机构号高频更新，适合验证抓取健康。
+  # 无需登录，DrissionPage headless 直接过 Aliyun WAF。
+  XUEQIU_USER_ID: ${{ vars.XUEQIU_USER_ID || '8353550788' }}
+  XUEQIU_MAX_POSTS: '20'
 
 jobs:
   generate:

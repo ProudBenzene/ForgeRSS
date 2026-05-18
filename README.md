@@ -51,9 +51,10 @@
 | **Cursor Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_cursor_docs.xml) |
 | **Qwen Code Docs** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_qwen_code_docs.xml) |
 | **IDSociety Science Speaks** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_idsociety.xml) |
-| **国家药监局药品公告** | 需本地运行（见下方说明） |
 | **巨潮资讯网公司公告** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_cninfo_announcements.xml) |
 | **小宇宙播客（示例订阅）** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_xiaoyuzhou.xml) |
+| **雪球用户动态（示例订阅）** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_xueqiu_user.xml) |
+| **国家药监局药品公告** | 需本地运行（见下方说明） |
 | **知乎热榜** | 需本地运行（见下方说明） |
 | **知乎用户动态** | 需本地运行（见下方说明） |
 | **B 站 UP 主视频** | 需本地运行（见下方说明） |
@@ -89,6 +90,7 @@
 | **快手用户** | 社交媒体 | **DrissionPage + 登录 + CDP** | `feed_kuaishou_user.xml` | **手动** | **仅本地** |
 | **微博用户** | 社交媒体 | **DrissionPage + 登录** | `feed_weibo_user.xml` | **手动** | **仅本地** |
 | 小宇宙播客 | 播客 | curl_cffi (Next.js SSR) | `feed_xiaoyuzhou.xml` | 6小时 | **CI/本地** |
+| 雪球用户 | 金融 | DrissionPage headless（无登录） | `feed_xueqiu_user.xml` | 6小时 | **CI/本地** |
 
 ---
 
@@ -301,6 +303,9 @@ python -m generators.social.weibo.scraper --login
 
 > **小宇宙** 无需登录 / 浏览器 / 任何 setup —— curl_cffi 一击就过（吃 Next.js SSR
 > 数据），见下方独立章节。
+>
+> **雪球** 无需登录，DrissionPage headless 模式直接过 Aliyun WAF，**CI 可跑**，
+> 见下方独立章节。
 
 ### 验证登录态
 
@@ -391,6 +396,32 @@ CNINFO_DOWNLOAD_PDF=true python scripts/run_single.py cninfo_announcements
 ```
 
 PDF 自动归档到 `downloads/cninfo_pdfs/<公司名>_<股票代码>/<标题>.pdf`。
+
+---
+
+## 雪球用户动态订阅（**无需登录 / 无需浏览器登录**）
+
+雪球用户主页走的是阿里云 WAF，不能直接 curl 抓。用 DrissionPage **headless** 模式启动一次真实 Chrome 进程过 WAF 拿到 HTML，再解析时间线。整个流程不需要登录态、不需要 cookie、不依赖 Display，**CI 可跑**。
+
+```bash
+# 订阅一个用户，自动追新（接受 uid / 完整 URL）
+XUEQIU_USER_ID="8353550788" python scripts/run_single.py xueqiu_user --max 20
+XUEQIU_USER_ID="https://xueqiu.com/u/8353550788" python scripts/run_single.py xueqiu_user --max 20
+
+# 多账号合并到同一 Feed（逗号分隔）
+XUEQIU_USER_ID="8353550788,1247347556" python scripts/run_single.py xueqiu_user --max 20
+```
+
+每条 RSS item 自适应两种帖型：
+
+- **长文型**（机构号常见）：列表只给摘要，自动追抓详情页拿完整正文 + 标题；保留页内股票链接 `$股票名(代码)$` 等富文本
+- **回复型**（个人 V 常见）：直接使用列表 DOM（已含完整对话上下文），**不**追抓详情页（详情页只剩自己说的话，反而丢失被回复人原帖上下文）；嵌套引用的他人帖子保留作者 + 时间 + 计数 + 跳转链接，不再递归
+
+### 局限
+
+- 仅抓主页第一屏（约 20 条），不翻页 — 对「追新」场景够用，对历史回溯不够
+- 付费内容 / 仅好友可见 — 抓不到（需登录态）
+- "关注的博主回复在最上方"这种登录后个性化排序拿不到 — RSS 按时间倒序天然合理
 
 ---
 
@@ -513,7 +544,8 @@ forgerss/
 │   │   ├── idsociety.py
 │   │   └── nmpa_drug.py       # 国家药监局（需桌面环境）
 │   ├── finance/               # 金融/公司公告
-│   │   └── cninfo_announcements.py
+│   │   ├── cninfo_announcements.py
+│   │   └── xueqiu/            # 雪球用户动态（无需登录）
 │   ├── social/                # 社交媒体（每平台一个目录，scraper+generator）
 │   │   ├── base/              # 通用下载工具
 │   │   ├── zhihu/
@@ -564,14 +596,15 @@ MAX_ARTICLES=50
 RUN_INTERVAL=21600  # 默认 6 小时
 
 # 社交媒体配置
-ZHIHU_USER_ID=excited-vczh                          # 知乎用户
+ZHIHU_USER_ID=excited-vczh                          # 知乎用户（逗号分隔多个）
 BILIBILI_UP_MID=546195                              # B 站 UP 主（逗号分隔多个）
-XHS_USER_ID=664f367c00000000070064da                # 小红书用户（也可以是完整 URL）
-ZSXQ_GROUP_ID=88514182418182                        # 知识星球群组（也可以是完整 URL）
-DOUYIN_SEC_UID=MS4wLjABAAAAxxxx                     # 抖音用户（也可以是完整 URL / 分享短链）
-KUAISHOU_USER_ID=3xxxxxxxxxxxxxx                    # 快手用户（也可以是完整 URL / 分享短链）
-WEIBO_USER_ID=1234567890                            # 微博用户（也可以是完整 URL）
-XIAOYUZHOU_PODCAST_ID=63b7c6697dcc05cd33b51cd5      # 小宇宙节目（也可以是完整 URL）
+XHS_USER_ID=664f367c00000000070064da                # 小红书用户（也可以是完整 URL；逗号分隔多个）
+ZSXQ_GROUP_ID=88514182418182                        # 知识星球群组（也可以是完整 URL；逗号分隔多个）
+DOUYIN_SEC_UID=MS4wLjABAAAAxxxx                     # 抖音用户（也可以是完整 URL / 分享短链；逗号分隔多个）
+KUAISHOU_USER_ID=3xxxxxxxxxxxxxx                    # 快手用户（也可以是完整 URL / 分享短链；逗号分隔多个）
+WEIBO_USER_ID=1234567890                            # 微博用户（也可以是完整 URL；逗号分隔多个）
+XIAOYUZHOU_PODCAST_ID=63b7c6697dcc05cd33b51cd5      # 小宇宙节目（也可以是完整 URL；逗号分隔多个）
+XUEQIU_USER_ID=8353550788                           # 雪球用户（也可以是完整 URL；逗号分隔多个）
 
 # 可选下载（默认 false）
 BILIBILI_DOWNLOAD_VIDEOS=true                       # B 站视频下载
