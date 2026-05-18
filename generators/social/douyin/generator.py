@@ -22,16 +22,20 @@ Example:
 """
 
 import hashlib
+import json
 import logging
 import os
 import random
 import re
 import time
+from collections import OrderedDict
 from datetime import datetime
+from html import escape as html_escape
 from pathlib import Path
 from typing import Optional
 
 import pytz
+from bs4 import BeautifulSoup
 
 from generators.base import Article, BaseFeedGenerator
 from generators.social.douyin.scraper import (
@@ -40,11 +44,92 @@ from generators.social.douyin.scraper import (
     DOUYIN_PROFILE_DIR,
 )
 
+CN_TZ = pytz.timezone("Asia/Shanghai")
+
+# Image-post (note) photos sit under a stable URL marker. Related-post thumbnails
+# use a different `tplv-dy-resize-*` token, so this filter is precise.
+NOTE_IMG_MARKER = "tplv-dy-aweme-images"
+
 logger = logging.getLogger(__name__)
 
 # downloads/douyin/ (project root)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 DOWNLOAD_DIR = PROJECT_ROOT / "downloads" / "douyin"
+
+
+def _extract_note_metadata(html: str) -> tuple[str, Optional[datetime]]:
+    """Pull desc + createTime out of the React Server Components stream.
+
+    Douyin's note pages embed `aweme.detail` inside one of the
+    `self.__pace_f.push([1,"<payload>"])` calls. We walk every push, decode the
+    payload's JS string escapes via json.loads, then regex out the two fields
+    we care about.
+    """
+    unescaped = ""
+    for m in re.finditer(r'self\.__pace_f\.push\(\[1,"', html):
+        i = m.end()
+        out = []
+        esc = False
+        while i < len(html):
+            c = html[i]
+            if esc:
+                out.append(c)
+                esc = False
+            elif c == "\\":
+                out.append(c)
+                esc = True
+            elif c == '"':
+                break
+            else:
+                out.append(c)
+            i += 1
+        raw = "".join(out)
+        try:
+            decoded = json.loads(f'"{raw}"')
+        except Exception:
+            decoded = raw.replace('\\"', '"').replace('\\\\', '\\')
+        if '"desc":' in decoded and '"createTime":' in decoded and len(decoded) > len(unescaped):
+            unescaped = decoded
+    if not unescaped:
+        return "", None
+
+    desc = ""
+    m_desc = re.search(r'"desc":"((?:[^"\\]|\\.)*)"', unescaped)
+    if m_desc:
+        raw_desc = m_desc.group(1)
+        try:
+            desc = json.loads(f'"{raw_desc}"')
+        except Exception:
+            desc = raw_desc
+
+    create_time = None
+    m_ct = re.search(r'"createTime":(\d+)', unescaped)
+    if m_ct:
+        ts = int(m_ct.group(1))
+        if 10**9 < ts < 10**11:
+            create_time = datetime.fromtimestamp(ts, tz=CN_TZ)
+
+    return desc, create_time
+
+
+def _extract_note_images(soup: BeautifulSoup) -> list[str]:
+    """Return the gallery photos in DOM order, deduped by Douyin image hash.
+
+    Filter: URL must contain `tplv-dy-aweme-images` (note-main-image marker;
+    related-post thumbnails use `tplv-dy-resize-origshort-*` and are excluded).
+    """
+    seen = OrderedDict()
+    for img in soup.find_all("img"):
+        src = img.get("src") or img.get("data-src") or ""
+        if not src or NOTE_IMG_MARKER not in src:
+            continue
+        if src.startswith("//"):
+            src = "https:" + src
+        m = re.search(r"/tos-cn-i-[^/]+/([A-Za-z0-9]+)", src)
+        key = m.group(1) if m else src
+        if key not in seen:
+            seen[key] = src
+    return list(seen.values())
 
 
 def _parse_user_input(raw: str) -> tuple[str, str]:
@@ -114,6 +199,9 @@ class DouyinUserGenerator(BaseFeedGenerator):
 
     # Whether to download videos as mp4 (default: false, RSS only).
     DOWNLOAD_VIDEOS = os.environ.get("DOUYIN_DOWNLOAD_VIDEOS", "false").lower() == "true"
+
+    # Whether to download image-post photos as jpeg (default: false).
+    DOWNLOAD_IMAGES = os.environ.get("DOUYIN_DOWNLOAD_IMAGES", "false").lower() == "true"
 
     def __init__(self):
         super().__init__()
@@ -206,26 +294,53 @@ class DouyinUserGenerator(BaseFeedGenerator):
                 self.logger.warning("No video items found with any selector")
                 return []
 
-            self.logger.info(f"Found {len(video_items)} video cards on page")
+            self.logger.info(f"Found {len(video_items)} post cards on page")
 
-            parsed = 0
+            # Phase 1: pull card-level info (href / type / list title / thumbnail).
+            # We don't build Articles yet because note posts need a detail-page
+            # visit, which would invalidate the surrounding list-item handles.
+            cards = []
             for item in video_items:
-                if parsed >= max_videos:
+                if len(cards) >= max_videos:
                     break
                 try:
-                    article = self._parse_video_item(item, sec_uid, author_name)
+                    info = self._extract_card_info(item)
+                    if info:
+                        cards.append(info)
+                except Exception as e:
+                    self.logger.debug(f"Card extraction failed: {e}")
+                    continue
+            self.logger.info(
+                f"Card mix: {sum(1 for c in cards if c['aweme_type']=='video')} videos, "
+                f"{sum(1 for c in cards if c['aweme_type']=='note')} notes"
+            )
+
+            # Phase 2: build Articles. Videos are list-only (no detail visit);
+            # notes navigate to the detail page to pull the 9-photo gallery + desc.
+            for info in cards:
+                try:
+                    if info["aweme_type"] == "note":
+                        article = self._build_note_article(
+                            browser, info, sec_uid, author_name
+                        )
+                    else:
+                        article = self._build_video_article(info, sec_uid, author_name)
                     if article:
                         articles.append(article)
-                        parsed += 1
                 except Exception as e:
-                    self.logger.debug(f"Parse failed for one item: {e}")
+                    self.logger.debug(f"Article build failed for {info.get('href')}: {e}")
                     continue
 
-            # Download videos if enabled. Done after parsing so we only download
+            # Download media if enabled. Done after parsing so we only fetch
             # what made the cut.
-            if self.DOWNLOAD_VIDEOS and articles:
+            if self.DOWNLOAD_VIDEOS:
                 for art in articles:
-                    self._download_video(art.url, sec_uid, browser=browser)
+                    if "/video/" in art.url:
+                        self._download_video(art.url, sec_uid, browser=browser)
+            if self.DOWNLOAD_IMAGES:
+                for art in articles:
+                    if "/note/" in art.url:
+                        self._download_note_images(art, sec_uid)
 
         except Exception as e:
             self.logger.error(f"Error fetching videos for {sec_uid[:24]}: {e}")
@@ -249,7 +364,10 @@ class DouyinUserGenerator(BaseFeedGenerator):
         return f"User{sec_uid[:8]}"
 
     def _scroll_for_videos(self, browser, target: int):
-        """Scroll the profile page until we have enough video cards (or give up)."""
+        """Scroll the profile page until we have enough post cards (or give up).
+
+        Counts both /video/<id> (regular videos) and /note/<id> (image posts).
+        """
         max_scrolls = 8
         no_change = 0
         prev_count = 0
@@ -258,7 +376,10 @@ class DouyinUserGenerator(BaseFeedGenerator):
             browser.wait(2)
             try:
                 links = browser.eles('tag:a', timeout=1)
-                cnt = len([a for a in links if '/video/' in (a.attr('href') or '')])
+                cnt = sum(
+                    1 for a in links
+                    if re.search(r'/(?:video|note)/', a.attr('href') or '')
+                )
             except Exception:
                 cnt = 0
             if cnt >= target * 2:
@@ -267,14 +388,14 @@ class DouyinUserGenerator(BaseFeedGenerator):
             if cnt == prev_count:
                 no_change += 1
                 if no_change >= 2:
-                    self.logger.info(f"No new videos after 2 attempts, stopping scroll")
+                    self.logger.info(f"No new posts after 2 attempts, stopping scroll")
                     return
             else:
                 no_change = 0
             prev_count = cnt
 
     def _find_video_items(self, browser) -> list:
-        """Try several CSS selectors to locate video cards."""
+        """Try several CSS selectors to locate post cards (videos + notes)."""
         selectors = [
             'css:[data-e2e="user-post-item"]',  # current douyin layout marker
             'css:.user-post-item',
@@ -289,23 +410,29 @@ class DouyinUserGenerator(BaseFeedGenerator):
                     return items
             except Exception:
                 continue
-        # Last resort: every <a href="/video/..."> on page
+        # Last resort: every <a href="/video/..."> or /note/ on the page
         try:
             links = browser.eles('tag:a', timeout=1)
-            return [a for a in links if '/video/' in (a.attr('href') or '')]
+            return [
+                a for a in links
+                if re.search(r'/(?:video|note)/', a.attr('href') or '')
+            ]
         except Exception:
             return []
 
-    def _parse_video_item(self, item, sec_uid: str, author_name: str) -> Optional[Article]:
-        """Extract one video Article from a list-page item."""
-        # Find the video link
+    def _extract_card_info(self, item) -> Optional[dict]:
+        """Return a card descriptor: aweme_type / href / id / list title / cover.
+
+        Detail-page enrichment (notes) and Article construction (both types)
+        happens later — this method only reads the list-item DOM.
+        """
         if item.tag == 'a':
             link_elem = item
         else:
             link_elem = None
             for a in (item.eles('tag:a', timeout=0.5) or []):
                 href = a.attr('href') or ''
-                if '/video/' in href:
+                if re.search(r'/(?:video|note)/', href):
                     link_elem = a
                     break
             if not link_elem:
@@ -319,12 +446,11 @@ class DouyinUserGenerator(BaseFeedGenerator):
         elif href.startswith('/'):
             href = 'https://www.douyin.com' + href
 
-        m = re.search(r'/video/(\d+)', href)
+        m = re.search(r'/(video|note)/(\d+)', href)
         if not m:
             return None
-        video_id = m.group(1)
+        aweme_type, aweme_id = m.group(1), m.group(2)
 
-        # Title: try multiple sources
         title = None
         for sel in [
             'css:[data-e2e="user-post-item-desc"]',
@@ -341,7 +467,6 @@ class DouyinUserGenerator(BaseFeedGenerator):
             except Exception:
                 continue
         if not title:
-            # fall back to img alt
             try:
                 img = item.ele('tag:img', timeout=0.3)
                 if img:
@@ -350,10 +475,7 @@ class DouyinUserGenerator(BaseFeedGenerator):
                         title = alt
             except Exception:
                 pass
-        if not title:
-            title = f"video_{video_id}"
 
-        # Cover image
         thumbnail = ""
         try:
             img = item.ele('tag:img', timeout=0.3)
@@ -365,40 +487,168 @@ class DouyinUserGenerator(BaseFeedGenerator):
         except Exception:
             pass
 
-        # Stable URL hash for dedup. Douyin URLs are already unique (contain video_id),
-        # so URL itself is the dedup key — but keep author prefix in title for readability.
-        url_hash = hashlib.md5(href.encode()).hexdigest()[:12]
+        return {
+            "href": href,
+            "aweme_type": aweme_type,
+            "aweme_id": aweme_id,
+            "list_title": title or f"{aweme_type}_{aweme_id}",
+            "thumbnail": thumbnail,
+        }
 
-        # Use current time as a best-effort published_at (real time requires detail page)
-        pub_date = datetime.now(pytz.timezone("Asia/Shanghai"))
+    def _build_video_article(
+        self, info: dict, sec_uid: str, author_name: str
+    ) -> Article:
+        """Build an Article from a list-only video card (no detail-page visit)."""
+        href = info["href"]
+        title = info["list_title"]
+        thumbnail = info["thumbnail"]
+        pub_date = datetime.now(CN_TZ)
 
         html_parts = [
             f'<div style="font-size:16px;line-height:1.8;color:#333">',
-            f'<p><strong>作者：</strong>{author_name}</p>',
+            f'<p><strong>作者：</strong>{html_escape(author_name)}</p>',
         ]
         if thumbnail:
             html_parts.append(
-                f'<p><a href="{href}"><img src="{thumbnail}" alt="{title}" '
+                f'<p><a href="{html_escape(href)}"><img src="{html_escape(thumbnail)}" '
+                f'alt="{html_escape(title)}" '
                 f'style="max-width:100%;height:auto;border-radius:8px" /></a></p>'
             )
-        html_parts.append(f'<p>{title}</p>')
+        html_parts.append(f'<p>{html_escape(title)}</p>')
         html_parts.append(
-            f'<p style="margin-top:12px"><a href="{href}" '
+            f'<p style="margin-top:12px"><a href="{html_escape(href)}" '
             f'style="color:#fe2c55">查看原视频 &rarr;</a></p>'
         )
         html_parts.append('</div>')
-        content = '\n'.join(html_parts)
 
         return Article(
             url=href,
             title=f"[{author_name}] {title}",
             published_at=pub_date,
-            content=content,
+            content='\n'.join(html_parts),
             summary=title,
             author=author_name,
             images=[thumbnail] if thumbnail else [],
             category="抖音",
         )
+
+    def _build_note_article(
+        self, browser, info: dict, sec_uid: str, author_name: str
+    ) -> Optional[Article]:
+        """Open the note detail page, pull desc + 9 gallery photos, build Article."""
+        href = info["href"]
+        self.logger.info(f"Note detail: {href}")
+        try:
+            browser.get(href)
+        except Exception as e:
+            self.logger.warning(f"Failed to open note {href}: {e}")
+            return None
+        browser.wait(random.uniform(3, 5))
+
+        html = browser.html
+        if not html or "扫码登录" in html or "登录抖音" in html:
+            self.logger.warning(f"Note detail blocked by login: {href}")
+            return None
+
+        soup = BeautifulSoup(html, "html.parser")
+
+        title_text = ""
+        t = soup.find("title")
+        if t and t.text:
+            title_text = re.sub(r"\s*-\s*抖音\s*$", "", t.text).strip()
+
+        desc, create_time = _extract_note_metadata(html)
+        if not title_text:
+            title_text = (desc[:50] + ("…" if len(desc) > 50 else "")) if desc else info["list_title"]
+
+        images = _extract_note_images(soup)
+        if not images and info.get("thumbnail"):
+            images = [info["thumbnail"]]
+        self.logger.info(f"Note {info['aweme_id']}: {len(images)} photos, desc {len(desc)} chars")
+
+        pub_date = create_time or datetime.now(CN_TZ)
+
+        body = [f'<div style="font-size:16px;line-height:1.8;color:#333">']
+        body.append(
+            f'<p style="color:#888;font-size:13px">'
+            f'<strong>作者：</strong>{html_escape(author_name)} · 图文笔记 · {len(images)} 张</p>'
+        )
+        for src in images:
+            body.append(
+                f'<p><img src="{html_escape(src)}" '
+                f'style="max-width:100%;height:auto;border-radius:8px;margin:6px 0" /></p>'
+            )
+        if desc:
+            body.append(
+                f'<div style="margin-top:12px;white-space:pre-wrap">{html_escape(desc)}</div>'
+            )
+        body.append(
+            f'<p style="margin-top:16px"><a href="{html_escape(href)}" '
+            f'style="color:#fe2c55">在抖音查看 &rarr;</a></p>'
+        )
+        body.append('</div>')
+
+        return Article(
+            url=href,
+            title=f"[{author_name}] {title_text}",
+            published_at=pub_date,
+            content='\n'.join(body),
+            summary=(desc or title_text)[:280],
+            author=author_name,
+            images=images,
+            category="抖音",
+        )
+
+    def _download_note_images(self, article: Article, sec_uid: str) -> None:
+        """Download every photo from a note Article to downloads/douyin/<sec_uid>/notes/<id>/."""
+        if not article.images:
+            return
+        try:
+            from curl_cffi import requests as _creq
+        except ImportError:
+            self.logger.error("curl_cffi not installed; cannot download note images")
+            return
+
+        m = re.search(r'/note/(\d+)', article.url)
+        if not m:
+            return
+        note_id = m.group(1)
+        out_dir = DOWNLOAD_DIR / sec_uid[:24] / "notes" / note_id
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+            "Referer": article.url,
+        }
+        for idx, src in enumerate(article.images, 1):
+            ext = ".jpg"
+            sl = src.lower()
+            if ".webp" in sl:
+                ext = ".webp"
+            elif ".png" in sl:
+                ext = ".png"
+            dest = out_dir / f"{idx:02d}{ext}"
+            if dest.exists() and dest.stat().st_size > 0:
+                continue
+            r = None
+            try:
+                r = _creq.get(src, headers=headers, impersonate="chrome",
+                              timeout=60, stream=True)
+                if r.status_code != 200:
+                    self.logger.warning(f"img {idx} HTTP {r.status_code}")
+                    continue
+                with open(dest, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=64 * 1024):
+                        if chunk:
+                            f.write(chunk)
+            except Exception as e:
+                self.logger.warning(f"img {idx} download failed: {e}")
+            finally:
+                if r is not None:
+                    try: r.close()
+                    except Exception: pass
+        self.logger.info(f"Note {note_id} photos -> {out_dir}")
 
     def _download_video(self, video_page_url: str, sec_uid: str, browser=None) -> Optional[Path]:
         """Download a Douyin video.

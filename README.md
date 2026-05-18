@@ -363,7 +363,7 @@ WEIBO_USER_ID="https://weibo.com/u/1234567890" python scripts/run_single.py weib
 - **B 站 UP 主**：视频标题、BV 链接、封面、播放/弹幕/时长，可选下载 mp4
 - **小红书用户**：笔记标题、作者、完整 URL（带 xsec_token 防失效），可选下载图片/视频
 - **知识星球**：话题文本、作者、发布时间，可选下载帖内 PDF / 音频 / 图片附件（按 `<群名>_<群ID>/<话题>_<topicID>/` 归档）
-- **抖音**：视频标题（含 hashtag）、作者、真实视频 URL；可选 mp4 下载——通过 CDP 拦截 douyinvod.com CDN 流（video + audio 分两路），用 curl_cffi 下载后 ffmpeg 合并。**需要本机安装 ffmpeg**
+- **抖音**：自动识别两种贴型 —— **视频帖** `/video/`（标题含 hashtag、作者、真实视频 URL；可选 mp4 下载，通过 CDP 拦截 douyinvod.com CDN 流，video + audio 分两路用 curl_cffi 下载后 ffmpeg 合并，**需本机安装 ffmpeg**）；**图文笔记** `/note/`（自动进详情页拉取全部画廊图片 + 文案 + 发布时间塞进 RSS；可选 `DOUYIN_DOWNLOAD_IMAGES=true` 落盘到 `downloads/douyin/<sec_uid>/notes/<note_id>/`）
 - **快手**：视频标题、作者、`/short-video/<id>` 真实链接；可选 mp4 下载——CDP 拦截 djvod.ndcimgs.com，**单文件 mp4 免 ffmpeg**
 - **微博**：标题（前 50 字正文 / 「N 张图片」/「视频」自适应）、作者、`weibo.com/<uid>/<bid>` 链接；图文帖自动嵌入图片（最多 9 张，自动升级到 /large/）；可选 `WEIBO_DOWNLOAD_VIDEOS=true` 下载视频帖的 mp4
 
@@ -611,6 +611,7 @@ BILIBILI_DOWNLOAD_VIDEOS=true                       # B 站视频下载
 XHS_DOWNLOAD_MEDIA=true                             # 小红书媒体
 ZSXQ_DOWNLOAD_ATTACHMENTS=true                      # 知识星球附件（PDF/音频/图片）
 DOUYIN_DOWNLOAD_VIDEOS=true                         # 抖音视频下载（需 ffmpeg）
+DOUYIN_DOWNLOAD_IMAGES=true                         # 抖音图文笔记图片下载（不需 ffmpeg）
 KUAISHOU_DOWNLOAD_VIDEOS=true                       # 快手视频下载（单文件，免 ffmpeg）
 WEIBO_DOWNLOAD_VIDEOS=true                          # 微博视频帖下载
 XIAOYUZHOU_DOWNLOAD_AUDIO=true                      # 小宇宙音频下载（mp3）
