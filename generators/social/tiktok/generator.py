@@ -45,11 +45,19 @@ class TikTokUserGenerator(BaseFeedGenerator):
     
     def __init__(self):
         super().__init__()
-        
+
         if not self.USERS:
             self.logger.warning("No users configured. Set TIKTOK_USER environment variable.")
             self.logger.warning("Example: TIKTOK_USER='@username1,@username2'")
-    
+
+    def run(self, full_refresh: bool = False, max_articles: int = 50) -> bool:
+        # No config = nothing to do; treat as success so CI doesn't fail for fork users
+        # who haven't opted into this platform yet.
+        if not self.USERS:
+            self.logger.info("Skipping tiktok_user: TIKTOK_USER not configured")
+            return True
+        return super().run(full_refresh=full_refresh, max_articles=max_articles)
+
     def fetch_articles(self) -> list[Article]:
         """Fetch latest videos from configured users."""
         try:

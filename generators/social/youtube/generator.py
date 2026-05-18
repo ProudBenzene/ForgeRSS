@@ -46,11 +46,19 @@ class YouTubeChannelGenerator(BaseFeedGenerator):
     
     def __init__(self):
         super().__init__()
-        
+
         if not self.CHANNELS:
             self.logger.warning("No channels configured. Set YOUTUBE_CHANNEL environment variable.")
             self.logger.warning("Example: YOUTUBE_CHANNEL='@YouTube,UCxxxxxx'")
-    
+
+    def run(self, full_refresh: bool = False, max_articles: int = 50) -> bool:
+        # No config = nothing to do; treat as success so CI doesn't fail for fork users
+        # who haven't opted into this platform yet.
+        if not self.CHANNELS:
+            self.logger.info("Skipping youtube_channel: YOUTUBE_CHANNEL not configured")
+            return True
+        return super().run(full_refresh=full_refresh, max_articles=max_articles)
+
     def fetch_articles(self) -> list[Article]:
         """Fetch latest videos from configured channels."""
         try:
