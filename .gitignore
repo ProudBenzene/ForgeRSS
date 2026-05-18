@@ -44,6 +44,9 @@ data/*.db-wal
 data/*.db-shm
 cache/*.json
 
+# Internal research / SaaS reference docs (not for public repo)
+docs/
+
 # SQLite databases anywhere in the repo (e.g., weixin_videos.db)
 *.db
 *.sqlite
