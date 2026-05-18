@@ -53,12 +53,15 @@
 | **IDSociety Science Speaks** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_idsociety.xml) |
 | **国家药监局药品公告** | 需本地运行（见下方说明） |
 | **巨潮资讯网公司公告** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_cninfo_announcements.xml) |
+| **小宇宙播客（示例订阅）** | [订阅](https://cdn.jsdelivr.net/gh/tmwgsicp/ForgeRSS@main/feeds/feed_xiaoyuzhou.xml) |
 | **知乎热榜** | 需本地运行（见下方说明） |
 | **知乎用户动态** | 需本地运行（见下方说明） |
 | **B 站 UP 主视频** | 需本地运行（见下方说明） |
 | **小红书用户笔记** | 需本地运行（见下方说明） |
 | **知识星球话题** | 需本地运行（见下方说明） |
-| **抖音 UP 主视频** | 需本地运行（见下方说明） |
+| **抖音用户视频** | 需本地运行（见下方说明） |
+| **快手用户视频** | 需本地运行（见下方说明） |
+| **微博用户动态** | 需本地运行（见下方说明） |
 
 > **更新频率**：新闻类 Feed 每 6 小时自动更新，文档类 Feed 每周更新一次（周一 00:00 UTC）。所有 Feed 包含完整文章内容，使用 jsDelivr CDN 托管，兼容所有 RSS 阅读器。
 
@@ -83,6 +86,9 @@
 | **小红书用户** | 社交媒体 | **DrissionPage + 登录** | `feed_xiaohongshu_user.xml` | **手动** | **仅本地** |
 | **知识星球话题** | 社交媒体 | **DrissionPage + 登录** | `feed_zsxq_topics.xml` | **手动** | **仅本地** |
 | **抖音用户** | 社交媒体 | **DrissionPage + 登录 + CDP + ffmpeg** | `feed_douyin_user.xml` | **手动** | **仅本地** |
+| **快手用户** | 社交媒体 | **DrissionPage + 登录 + CDP** | `feed_kuaishou_user.xml` | **手动** | **仅本地** |
+| **微博用户** | 社交媒体 | **DrissionPage + 登录** | `feed_weibo_user.xml` | **手动** | **仅本地** |
+| 小宇宙播客 | 播客 | curl_cffi (Next.js SSR) | `feed_xiaoyuzhou.xml` | 6小时 | **CI/本地** |
 
 ---
 
@@ -285,7 +291,16 @@ python -m generators.social.zsxq.scraper --login
 
 # 抖音（视频下载需 ffmpeg）
 python -m generators.social.douyin.scraper --login
+
+# 快手
+python -m generators.social.kuaishou.scraper --login
+
+# 微博
+python -m generators.social.weibo.scraper --login
 ```
+
+> **小宇宙** 无需登录 / 浏览器 / 任何 setup —— curl_cffi 一击就过（吃 Next.js SSR
+> 数据），见下方独立章节。
 
 ### 验证登录态
 
@@ -324,6 +339,16 @@ DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" python scripts/run_single.py douyin_user --max
 # 或：DOUYIN_SEC_UID="https://v.douyin.com/<code>/" ...
 DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" DOUYIN_DOWNLOAD_VIDEOS=true \
   python scripts/run_single.py douyin_user --max 5
+
+# 快手用户视频（接受用户 id / 完整 URL / 分享短链；单文件 mp4，免 ffmpeg）
+KUAISHOU_USER_ID="3xxxxxxxxxxxxxx" python scripts/run_single.py kuaishou_user --max 10
+KUAISHOU_USER_ID="https://v.kuaishou.com/<code>/" KUAISHOU_DOWNLOAD_VIDEOS=true \
+  python scripts/run_single.py kuaishou_user --max 5
+
+# 微博用户（自动识别纯文字 / 图文 / 纯图 / 视频四种帖型）
+WEIBO_USER_ID="1234567890" python scripts/run_single.py weibo_user --max 10
+# 或粘贴完整 URL：
+WEIBO_USER_ID="https://weibo.com/u/1234567890" python scripts/run_single.py weibo_user --max 10
 ```
 
 ### 内容说明
@@ -334,6 +359,8 @@ DOUYIN_SEC_UID="MS4wLjABAAAAxxxx" DOUYIN_DOWNLOAD_VIDEOS=true \
 - **小红书用户**：笔记标题、作者、完整 URL（带 xsec_token 防失效），可选下载图片/视频
 - **知识星球**：话题文本、作者、发布时间，可选下载帖内 PDF / 音频 / 图片附件（按 `<群名>_<群ID>/<话题>_<topicID>/` 归档）
 - **抖音**：视频标题（含 hashtag）、作者、真实视频 URL；可选 mp4 下载——通过 CDP 拦截 douyinvod.com CDN 流（video + audio 分两路），用 curl_cffi 下载后 ffmpeg 合并。**需要本机安装 ffmpeg**
+- **快手**：视频标题、作者、`/short-video/<id>` 真实链接；可选 mp4 下载——CDP 拦截 djvod.ndcimgs.com，**单文件 mp4 免 ffmpeg**
+- **微博**：标题（前 50 字正文 / 「N 张图片」/「视频」自适应）、作者、`weibo.com/<uid>/<bid>` 链接；图文帖自动嵌入图片（最多 9 张，自动升级到 /large/）；可选 `WEIBO_DOWNLOAD_VIDEOS=true` 下载视频帖的 mp4
 
 ### 法律风险提示
 
@@ -364,6 +391,50 @@ CNINFO_DOWNLOAD_PDF=true python scripts/run_single.py cninfo_announcements
 ```
 
 PDF 自动归档到 `downloads/cninfo_pdfs/<公司名>_<股票代码>/<标题>.pdf`。
+
+---
+
+## 小宇宙播客订阅（**无需登录 / 无需浏览器**）
+
+小宇宙 web 是 Next.js SSG，节目页 HTML 已经包含最近 15 集的完整元数据（标题/封面/简介/音频 URL）。整个抓取流程是纯 curl_cffi + JSON 解析，**0 资源占用，CI 可跑**。
+
+```bash
+# 订阅一个节目，自动追新
+XIAOYUZHOU_PODCAST_ID="63b7c6697dcc05cd33b51cd5" \
+  python scripts/run_single.py xiaoyuzhou --max 10
+
+# 也可以直接粘贴节目主页 URL
+XIAOYUZHOU_PODCAST_ID="https://www.xiaoyuzhoufm.com/podcast/63b7c6697dcc05cd33b51cd5" \
+  python scripts/run_single.py xiaoyuzhou --max 10
+
+# 可选：下载每集 mp3 到本地（默认 false）
+XIAOYUZHOU_PODCAST_ID="<id>" XIAOYUZHOU_DOWNLOAD_AUDIO=true \
+  python scripts/run_single.py xiaoyuzhou --max 5
+```
+
+每条 RSS item 包含：
+- 节目品牌色 header strip + 主播列表
+- Episode 封面 + 时长 + shownotes 全文
+- HTML5 `<audio controls>` 内嵌播放器（多数 RSS 阅读器原生支持）
+- 标准 `<enclosure>` 音频附件协议
+- 节目简介 footer + 订阅数 + 总集数
+
+### ⚠️ 局限：付费节目
+
+当前实现为**无登录**模式，意味着：
+
+| 节目类型 | 支持情况 |
+|---|---|
+| 完全免费节目 | ✅ 完整支持，所有集都能抓 + 下载 |
+| 付费节目的试听集（`PREVIEW`） | ✅ 试听段能抓到 |
+| 付费节目的已购集（`PAID` + 你已购买） | ⚠️ 当前**无法访问**，audio URL 会被服务端屏蔽 |
+| 付费节目的未购集 | ❌ 注定无法访问 |
+
+如果需要订阅付费节目，需要扩展为「DrissionPage + 登录态」模式（跟知乎/B 站等同款方案）。当前版本不支持。
+
+### 仅取最近 15 集
+
+小宇宙节目主页 SSR 数据只塞最近 15 集，更早的需要异步翻页加载。**对「追新」场景够用**（cron 6 小时一次，根本不会遗漏新发布）；**对历史回溯不够**（一次性导出全部历史集需要额外开发）。
 
 ---
 
@@ -449,6 +520,10 @@ forgerss/
 │   │   ├── bilibili/
 │   │   ├── xiaohongshu/
 │   │   ├── zsxq/
+│   │   ├── douyin/            # 抖音
+│   │   ├── kuaishou/          # 快手
+│   │   ├── weibo/             # 微博
+│   │   ├── xiaoyuzhou/        # 小宇宙播客（无需登录/浏览器）
 │   │   ├── youtube/           # 计划中
 │   │   └── tiktok/            # 计划中
 │   └── utils/                 # 登录态检测等
@@ -494,12 +569,18 @@ BILIBILI_UP_MID=546195                              # B 站 UP 主（逗号分�
 XHS_USER_ID=664f367c00000000070064da                # 小红书用户（也可以是完整 URL）
 ZSXQ_GROUP_ID=88514182418182                        # 知识星球群组（也可以是完整 URL）
 DOUYIN_SEC_UID=MS4wLjABAAAAxxxx                     # 抖音用户（也可以是完整 URL / 分享短链）
+KUAISHOU_USER_ID=3xxxxxxxxxxxxxx                    # 快手用户（也可以是完整 URL / 分享短链）
+WEIBO_USER_ID=1234567890                            # 微博用户（也可以是完整 URL）
+XIAOYUZHOU_PODCAST_ID=63b7c6697dcc05cd33b51cd5      # 小宇宙节目（也可以是完整 URL）
 
 # 可选下载（默认 false）
 BILIBILI_DOWNLOAD_VIDEOS=true                       # B 站视频下载
 XHS_DOWNLOAD_MEDIA=true                             # 小红书媒体
 ZSXQ_DOWNLOAD_ATTACHMENTS=true                      # 知识星球附件（PDF/音频/图片）
 DOUYIN_DOWNLOAD_VIDEOS=true                         # 抖音视频下载（需 ffmpeg）
+KUAISHOU_DOWNLOAD_VIDEOS=true                       # 快手视频下载（单文件，免 ffmpeg）
+WEIBO_DOWNLOAD_VIDEOS=true                          # 微博视频帖下载
+XIAOYUZHOU_DOWNLOAD_AUDIO=true                      # 小宇宙音频下载（mp3）
 
 # 巨潮资讯（三选一）
 CNINFO_KEYWORDS="股权激励,业绩快报"                  # 按主题关键词
