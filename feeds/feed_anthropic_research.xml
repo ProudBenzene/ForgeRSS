@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 22 May 2026 14:45:41 +0000</lastBuildDate>
+<lastBuildDate>Fri, 22 May 2026 19:50:32 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,231 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>Project Glasswing: An initial update</title>
+  <link>https://www.anthropic.com/research/glasswing-initial-update</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/glasswing-initial-update</guid>
+  <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
+
+Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
+
+Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’s limited by how quickly we can verify, disclose, and patch the large numbers of vulnerabilities found by AI.
+
+In this post, we discuss what we’ve learned about this critical challenge for cybersecurity in the first weeks of Project Glasswing. We focus on the early public evidence of Mythos Preview’s performance, on the initial results of our effort to scan thousands of open-source software projects, and on what this progress means for cyberdefenders today. We also cover what to expect next from Project Glasswing, and how we’re thinking about releasing Mythos-class models in the future.
+
+Our approach to discussing Mythos Preview’s findings
+
+The software industry’s longstanding convention is to disclose new vulnerabilities 90 days after they’re discovered (or, if a patch is created before the 90 days is up, around 45 days after the patch becomes available). This allows time for end users to update their software before a vulnerability can be exploited by attackers. Our ownCoordinated Vulnerability Disclosure policytakes this approach.
+
+However, this means that disclosed vulnerabilities are a lagging indicator of the accelerating frontier of AI models’ cyber capabilities: we’re not yet at the point where we can fully detail our partners’ findings with Mythos Preview without putting end users at risk. Instead, we provide illustrative examples of the model’s performance, along with aggregate statistics on our progress to date. Once patches for the vulnerabilities that Mythos Preview has discovered are widely deployed, we’ll provide much more detail about what we’ve learned.
+
+Evidence from our partners and external testers
+
+Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
+
+After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than tens thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
+
+This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
+
+The UK’s AI Security Institutereportsthat Mythos Preview is the first model to solve both of their cyber ranges (simulations of multistep cyberattacks) end to end;
+
+Mozillafound and fixed271 vulnerabilitiesin Firefox 150 while testing Mythos Preview—over ten times more than they found in Firefox 148 with Claude Opus 4.6;
+
+XBOW, an independent security platform,reportsthat Mythos Preview is a “significant step up over all existing models” on its web exploit benchmark, and provides “absolutely unprecedented precision” on a token-for-token basis;
+
+ExploitBenchandExploitGym, two recently released academic benchmarks for measuring models’ exploit development capabilities, show Mythos Preview as the strongest performer. We discuss what these benchmarks tell us about the model in more detail on ourFrontier Red Team blog.
+
+More generally, we’re now seeing that patched software is being rolled out much more quickly. The latest Palo Alto Networks release included overfive timesas many patches as usual. Microsofthas reportedthat the number of new patches they’ll release will “continue trending larger for some time.” And Oracle is finding and fixing vulnerabilities across its products and cloudmultiple times fasterthan before.
+
+Mythos Preview has also proved useful for other kinds of security work. For example, at one of our Glasswing partner banks, Mythos Preview helped to detect and prevent a fraudulent $1.5 million wire transfer after a threat actor compromised a customer’s email account and made spoof phone calls.
+
+For the last few months, Anthropic has used Mythos Preview to scan more than 1,000 open-source projects, which collectively underpin much of the internet—and much of our own infrastructure.
+
+So far, Mythos Preview has found what it estimates are 6,202 high- or critical-severity vulnerabilities in these projects (out of 23,019 in total, including those it estimates as medium- or low-severity).
+
+1,752 of those high- or critical-rated vulnerabilities have now been carefully assessed by one of six independent security research firms, or in a small number of cases by ourselves. Of these, 90.6% (1,587) have proved to be valid true positives, and 62.4% (1,094) were confirmed as either high- or critical-severity. That means that even if Mythos Preview finds no further vulnerabilities, at our current post-triage true-positive rates, it’s on track to have surfaced nearly 3,900 high- or critical-severity vulnerabilities in open-source code—in addition to those it has found for Project Glasswing’s partners. To be clear, we intend to continue scanning open-source code for some time, so we expect this number to rise.
+
+One example of an open-source vulnerability that Mythos Preview detected was inwolfSSL, an open-source cryptography library that’s known for its security and is used by billions of devices worldwide. Mythos Previewconstructed an exploitthat would let an attacker forge certificates that would (for instance) allow them to host a fake website for a bank or email provider. The website would look perfectly legitimate to an end user, despite being controlled by the attacker. We’ll release our full technical analysis of this now-patched vulnerability (assignedCVE-2026-5194) in the coming weeks.
+
+As we noted above, the bottleneck infixingbugs like these is the human capacity to triage, report, and design and deploy patches for them. Finding them in the first place has become vastly more straightforward with Mythos Preview. We’ve created adashboard of the open-source vulnerabilitieswe’ve scanned, below, which shows the different steps in our disclosure process and will track our progress over time. This shows vulnerabilities of all severity levels, rather than only the subset initially assessed as high- or critical-severity by Mythos Preview. Note the steep drop-off at each phase, reflecting the amount of human effort required to verify and fix each of the vulnerabilities.
+
+Our process for triaging vulnerabilities is intensive. First, we or one of the external security firms we work with reproduce the issue that Mythos has found and re-assess its severity. Once we’ve confirmed that a vulnerability is real, we check for whether there are already fixes in place, and write a detailed report to the software’s maintainers. We take considerable care here: on top of the regular challenges of maintaining open-source software, maintainers have been facing a deluge of low-quality, AI-generated bug reports. Indeed, several maintainers have told us they’re currently severely capacity constrained, and some have even asked us to slow down our rate of our disclosures because they need more time to design patches. (On average, a high- or critical-severity bug found by Mythos Preview takes two weeks to patch.)
+
+On maintainers’ request, we sometimes disclose bugs directly, without further assessment. We’ve now reported 1,129 such unvetted bugs, of which Mythos Preview estimated that 175 were high- or critical-severity.
+
+We estimate that we’ve disclosed 530 high- or critical-severity bugs to maintainers so far. This is based on Claude’s assessment of severity in the case of direct disclosures, and maintainers’ or our security partners’ assessment where available. There are a further 827 confirmed vulnerabilities (estimated as high- or critical-severity in the same manner) that we’re aiming to disclose as quickly as possible.
+
+75 of the 530 high- or critical-severity bugs we’ve reported have now been patched, and 65 of those have been given public advisories. The number of patches is still relatively low for three reasons. First, we’re still early in the 90-day window that’s set out in our Coordinated Vulnerability Disclosure policy: we expect many more patches to land soon. Second, we are likely to be undercounting patches because some vulnerabilities are patched without a public advisory: in those cases, we’re reliant on scanning for the patches ourselves using Claude. Third, the low volume of patches reflects a genuine problem: even at our relatively slow pace of disclosures, Mythos Preview is adding to an already-overloaded security ecosystem.
+
+The relative ease of finding vulnerabilities compared with the difficulty of fixing them amounts to a major challenge for cybersecurity. Confronting this challenge successfully will make our software far safer than before. Below we discuss some ways that cyber defenders can adapt.
+
+Adapting to a new phase of cybersecurity
+
+Models with similar cybersecurity skills to Mythos Preview will soon be more broadly available. There is a clear need for a larger effort across the software industry to manage the volume of findings that these models will generate.
+
+Currently, there’s often a long lag between the discovery of a vulnerability, the creation of a patch for it, and the time when the patch is widely deployed by end users. This leaves open a significant window for attackers to exploit critical software. Mythos-class models significantly shrink the time and cost required to find and exploit vulnerabilities, magnifying the risk associated with these time lags. Ultimately, Mythos-class models will enable developers to build far more secure software by catching bugs before they are deployed. But this interim period—while vulnerabilities are being rapidly discovered and slowly patched—presents new risks.
+
+Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
+
+Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly-available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
+
+Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
+
+Tools for cyberdefence with publicly available AI models
+
+Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
+
+To begin, we’ve releasedClaude Securityin public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
+
+We’ve also begun ourCyber Verification Program, which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
+
+Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
+
+Theskills(custom instructions for repeated work) that we and our partners have built and shared;
+
+A harness that helps Claude map the codebase, spin up scanning subagents, triage its findings, and write reports;
+
+A threat model builder, which maps a codebase to identify potential targets for attack and prioritizes the model’s work accordingly.
+
+Cisco, one of our Project Glasswing partners, has also recently open-sourced itsFoundry Security Specto help other defenders build an evaluation system similar to the one they use themselves.
+
+Supporting the ecosystem
+
+We’ve formed apartnershipwith the Open Source Security Foundation’s Alpha-Omega project, which will support the foundation’s efforts to assist maintainers in processing and triaging bug reports. We’re also continuing to publish research into how frontier model capabilities can best support cyberdefenders.
+
+We’ve also supported the development ofExploitBenchandExploitGym, the two new benchmarks that allow researchers to track frontier AI models’ exploit development capabilities over time, as we discusshere. We’re supporting the development of other high-quality quantitative benchmarks through ourExternal Researcher Access Program. Finally,Claude for Open Sourcesupports maintainers and contributors, and we’re committing to scan any open-source package that we adopt ourselves in the future.
+
+What's next for Project Glasswing
+
+The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
+
+Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defences. We hope that our generally-available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
+
+Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
+
+On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
+
+2028: Two scenarios for global AI leadership
+
+Our views on the AI competition between the US and China.
+
+New research on how we've reduced agentic misalignment.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
+
+Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
+
+Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’s limited by how quickly we can verify, disclose, and patch the large numbers of vulnerabilities found by AI.
+
+In this post, we discuss what we’ve learned about this critical challenge for cybersecurity in the first weeks of Project Glasswing. We focus on the early public evidence of Mythos Preview’s performance, on the initial results of our effort to scan thousands of open-source software projects, and on what this progress means for cyberdefenders today. We also cover what to expect next from Project Glasswing, and how we’re thinking about releasing Mythos-class models in the future.
+
+Our approach to discussing Mythos Preview’s findings
+
+The software industry’s longstanding convention is to disclose new vulnerabilities 90 days after they’re discovered (or, if a patch is created before the 90 days is up, around 45 days after the patch becomes available). This allows time for end users to update their software before a vulnerability can be exploited by attackers. Our ownCoordinated Vulnerability Disclosure policytakes this approach.
+
+However, this means that disclosed vulnerabilities are a lagging indicator of the accelerating frontier of AI models’ cyber capabilities: we’re not yet at the point where we can fully detail our partners’ findings with Mythos Preview without putting end users at risk. Instead, we provide illustrative examples of the model’s performance, along with aggregate statistics on our progress to date. Once patches for the vulnerabilities that Mythos Preview has discovered are widely deployed, we’ll provide much more detail about what we’ve learned.
+
+Evidence from our partners and external testers
+
+Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
+
+After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than tens thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
+
+This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
+
+The UK’s AI Security Institutereportsthat Mythos Preview is the first model to solve both of their cyber ranges (simulations of multistep cyberattacks) end to end;
+
+Mozillafound and fixed271 vulnerabilitiesin Firefox 150 while testing Mythos Preview—over ten times more than they found in Firefox 148 with Claude Opus 4.6;
+
+XBOW, an independent security platform,reportsthat Mythos Preview is a “significant step up over all existing models” on its web exploit benchmark, and provides “absolutely unprecedented precision” on a token-for-token basis;
+
+ExploitBenchandExploitGym, two recently released academic benchmarks for measuring models’ exploit development capabilities, show Mythos Preview as the strongest performer. We discuss what these benchmarks tell us about the model in more detail on ourFrontier Red Team blog.
+
+More generally, we’re now seeing that patched software is being rolled out much more quickly. The latest Palo Alto Networks release included overfive timesas many patches as usual. Microsofthas reportedthat the number of new patches they’ll release will “continue trending larger for some time.” And Oracle is finding and fixing vulnerabilities across its products and cloudmultiple times fasterthan before.
+
+Mythos Preview has also proved useful for other kinds of security work. For example, at one of our Glasswing partner banks, Mythos Preview helped to detect and prevent a fraudulent $1.5 million wire transfer after a threat actor compromised a customer’s email account and made spoof phone calls.
+
+For the last few months, Anthropic has used Mythos Preview to scan more than 1,000 open-source projects, which collectively underpin much of the internet—and much of our own infrastructure.
+
+So far, Mythos Preview has found what it estimates are 6,202 high- or critical-severity vulnerabilities in these projects (out of 23,019 in total, including those it estimates as medium- or low-severity).
+
+1,752 of those high- or critical-rated vulnerabilities have now been carefully assessed by one of six independent security research firms, or in a small number of cases by ourselves. Of these, 90.6% (1,587) have proved to be valid true positives, and 62.4% (1,094) were confirmed as either high- or critical-severity. That means that even if Mythos Preview finds no further vulnerabilities, at our current post-triage true-positive rates, it’s on track to have surfaced nearly 3,900 high- or critical-severity vulnerabilities in open-source code—in addition to those it has found for Project Glasswing’s partners. To be clear, we intend to continue scanning open-source code for some time, so we expect this number to rise.
+
+One example of an open-source vulnerability that Mythos Preview detected was inwolfSSL, an open-source cryptography library that’s known for its security and is used by billions of devices worldwide. Mythos Previewconstructed an exploitthat would let an attacker forge certificates that would (for instance) allow them to host a fake website for a bank or email provider. The website would look perfectly legitimate to an end user, despite being controlled by the attacker. We’ll release our full technical analysis of this now-patched vulnerability (assignedCVE-2026-5194) in the coming weeks.
+
+As we noted above, the bottleneck infixingbugs like these is the human capacity to triage, report, and design and deploy patches for them. Finding them in the first place has become vastly more straightforward with Mythos Preview. We’ve created adashboard of the open-source vulnerabilitieswe’ve scanned, below, which shows the different steps in our disclosure process and will track our progress over time. This shows vulnerabilities of all severity levels, rather than only the subset initially assessed as high- or critical-severity by Mythos Preview. Note the steep drop-off at each phase, reflecting the amount of human effort required to verify and fix each of the vulnerabilities.
+
+Our process for triaging vulnerabilities is intensive. First, we or one of the external security firms we work with reproduce the issue that Mythos has found and re-assess its severity. Once we’ve confirmed that a vulnerability is real, we check for whether there are already fixes in place, and write a detailed report to the software’s maintainers. We take considerable care here: on top of the regular challenges of maintaining open-source software, maintainers have been facing a deluge of low-quality, AI-generated bug reports. Indeed, several maintainers have told us they’re currently severely capacity constrained, and some have even asked us to slow down our rate of our disclosures because they need more time to design patches. (On average, a high- or critical-severity bug found by Mythos Preview takes two weeks to patch.)
+
+On maintainers’ request, we sometimes disclose bugs directly, without further assessment. We’ve now reported 1,129 such unvetted bugs, of which Mythos Preview estimated that 175 were high- or critical-severity.
+
+We estimate that we’ve disclosed 530 high- or critical-severity bugs to maintainers so far. This is based on Claude’s assessment of severity in the case of direct disclosures, and maintainers’ or our security partners’ assessment where available. There are a further 827 confirmed vulnerabilities (estimated as high- or critical-severity in the same manner) that we’re aiming to disclose as quickly as possible.
+
+75 of the 530 high- or critical-severity bugs we’ve reported have now been patched, and 65 of those have been given public advisories. The number of patches is still relatively low for three reasons. First, we’re still early in the 90-day window that’s set out in our Coordinated Vulnerability Disclosure policy: we expect many more patches to land soon. Second, we are likely to be undercounting patches because some vulnerabilities are patched without a public advisory: in those cases, we’re reliant on scanning for the patches ourselves using Claude. Third, the low volume of patches reflects a genuine problem: even at our relatively slow pace of disclosures, Mythos Preview is adding to an already-overloaded security ecosystem.
+
+The relative ease of finding vulnerabilities compared with the difficulty of fixing them amounts to a major challenge for cybersecurity. Confronting this challenge successfully will make our software far safer than before. Below we discuss some ways that cyber defenders can adapt.
+
+Adapting to a new phase of cybersecurity
+
+Models with similar cybersecurity skills to Mythos Preview will soon be more broadly available. There is a clear need for a larger effort across the software industry to manage the volume of findings that these models will generate.
+
+Currently, there’s often a long lag between the discovery of a vulnerability, the creation of a patch for it, and the time when the patch is widely deployed by end users. This leaves open a significant window for attackers to exploit critical software. Mythos-class models significantly shrink the time and cost required to find and exploit vulnerabilities, magnifying the risk associated with these time lags. Ultimately, Mythos-class models will enable developers to build far more secure software by catching bugs before they are deployed. But this interim period—while vulnerabilities are being rapidly discovered and slowly patched—presents new risks.
+
+Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
+
+Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly-available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
+
+Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
+
+Tools for cyberdefence with publicly available AI models
+
+Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
+
+To begin, we’ve releasedClaude Securityin public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
+
+We’ve also begun ourCyber Verification Program, which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
+
+Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
+
+Theskills(custom instructions for repeated work) that we and our partners have built and shared;
+
+A harness that helps Claude map the codebase, spin up scanning subagents, triage its findings, and write reports;
+
+A threat model builder, which maps a codebase to identify potential targets for attack and prioritizes the model’s work accordingly.
+
+Cisco, one of our Project Glasswing partners, has also recently open-sourced itsFoundry Security Specto help other defenders build an evaluation system similar to the one they use themselves.
+
+Supporting the ecosystem
+
+We’ve formed apartnershipwith the Open Source Security Foundation’s Alpha-Omega project, which will support the foundation’s efforts to assist maintainers in processing and triaging bug reports. We’re also continuing to publish research into how frontier model capabilities can best support cyberdefenders.
+
+We’ve also supported the development ofExploitBenchandExploitGym, the two new benchmarks that allow researchers to track frontier AI models’ exploit development capabilities over time, as we discusshere. We’re supporting the development of other high-quality quantitative benchmarks through ourExternal Researcher Access Program. Finally,Claude for Open Sourcesupports maintainers and contributors, and we’re committing to scan any open-source package that we adopt ourselves in the future.
+
+What's next for Project Glasswing
+
+The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
+
+Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defences. We hope that our generally-available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
+
+Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
+
+On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
+
+2028: Two scenarios for global AI leadership
+
+Our views on the AI competition between the US and China.
+
+New research on how we've reduced agentic misalignment.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>2028: Two scenarios for global AI leadership</title>
   <link>https://www.anthropic.com/research/2028-ai-leadership</link>
@@ -197,13 +422,15 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 New research on how we've reduced agentic misalignment.
 
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
 
 It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
@@ -382,13 +609,15 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 New research on how we've reduced agentic misalignment.
 
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -476,15 +705,17 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -565,15 +796,17 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Natural Language Autoencoders: Turning Claude’s thoughts into text</title>
@@ -653,13 +886,15 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
 
 Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
@@ -732,13 +967,15 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Donating our open-source alignment tool</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Donating our open-source alignment tool</title>
@@ -770,15 +1007,15 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
 
 Petri has been part of our alignment assessme...</p><div style="font-size:16px;line-height:1.8;color:#333">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
@@ -803,15 +1040,15 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Focus areas for The Anthropic Institute</title>
@@ -971,15 +1208,15 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
 
 Our agenda focuses on four areas for research:
@@ -1132,15 +1369,15 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>How people ask Claude for personal guidance</title>
@@ -1218,15 +1455,15 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">People don’t just come to Claude for code reviews or meeting summaries. They ask whether to take the job, how to talk to their crush, if they should move halfway across the world. Using ourprivacy-preserving analysis toolon a random sample of 1 million claude.ai conversations, we found that roughly 6% were people coming to Claude for personal guidance—seeking not just information but perspective on what to do next.
 
 In this study, we looked at what types of guidance people ask of Claude. We expl...</p><div style="font-size:16px;line-height:1.8;color:#333">People don’t just come to Claude for code reviews or meeting summaries. They ask whether to take the job, how to talk to their crush, if they should move halfway across the world. Using ourprivacy-preserving analysis toolon a random sample of 1 million claude.ai conversations, we found that roughly 6% were people coming to Claude for personal guidance—seeking not just information but perspective on what to do next.
@@ -1297,15 +1534,15 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</title>
@@ -1417,15 +1654,15 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
 Subscribe to Anthropic Science
 
@@ -1534,15 +1771,15 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
 Subscribe to Anthropic Science
 
@@ -1584,15 +1821,15 @@ We will analyze the insights from this study as part of our economic research, p
 
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">TheEconomic Researchteam is launching the Anthropic Economic Index Survey, a monthly survey conducted throughAnthropic Interviewer.
 
 Understanding AI&apos;s economic impact requires moving beyond the quantitative data we have today. Usage and diffusion metrics tell us how AI is being deployed, and traditional labor market indicators—like employment rates, wage trends, and layoffs—track what has already happened, often with meaningful delay. Both are essential, but neither captures how people experien...</p><div style="font-size:16px;line-height:1.8;color:#333">TheEconomic Researchteam is launching the Anthropic Economic Index Survey, a monthly survey conducted throughAnthropic Interviewer.
@@ -1623,15 +1860,15 @@ We will analyze the insights from this study as part of our economic research, p
 
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>What 81,000 people told us about the economics of AI</title>
@@ -1725,15 +1962,15 @@ Removing these “solopreneurs” still leaves management tied with computer and
 
 A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
 
 Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
@@ -1820,156 +2057,15 @@ Removing these “solopreneurs” still leaves management tied with computer and
 
 A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
 
-2028: Two scenarios for global AI leadership
+Project Glasswing: An initial update
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Automated Alignment Researchers: Using large language models to scale scalable oversight</title>
-  <link>https://www.anthropic.com/research/automated-alignment-researchers</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/automated-alignment-researchers</guid>
-  <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Large language models’ ever-accelerating rate of improvement raises two particularly important questions for alignment research.
-
-One is how alignment can keep up. Frontier AI models are now contributing to the development of their successors. But can they provide the same kind of uplift foralignmentresearchers? Could our language models be used to help align themselves?
-
-A second question is what we’ll do once models become smarter than us. Aligning smarter-than-human AI models is a research ar...</p><div style="font-size:16px;line-height:1.8;color:#333">Large language models’ ever-accelerating rate of improvement raises two particularly important questions for alignment research.
-
-One is how alignment can keep up. Frontier AI models are now contributing to the development of their successors. But can they provide the same kind of uplift foralignmentresearchers? Could our language models be used to help align themselves?
-
-A second question is what we’ll do once models become smarter than us. Aligning smarter-than-human AI models is a research area known as “scalable oversight”. Scalable oversight has largely been discussed intheoretical, rather than practical, terms—but at AI’scurrent paceof improvement, that might not be the case for much longer. For instance, models are already generating vast amounts of code. If their skills progress to the point where they’re generating millions of lines of incredibly complicated code that we can’t parse ourselves, itcould becomevery difficult to tell whether they’re acting in the ways we intend.
-
-In a new Anthropic Fellows study, we pursue both of these questions.
-
-Our new study focuses on a problem known as “weak-to-strong supervision”, a problem that mirrors the one of overseeing smarter-than-human AI models. We start with a relatively strong “base” model—that is, a potentially-capable model that hasn’t yet received fine-tuning to provide its best-possible answers. Then, we use a muchweakermodel as a “teacher” to provide that extra fine-tuning, which it does by demonstrating whatitconsiders ideal outputs to the strong base model. Finally, we evaluate how well the strong model performs after that weak fine-tuning.
-
-In the worst case, the strong model will only be as good as its weak teacher. Ideally, however, the strong model will have learned from the weak teacher’s feedback—it will have interpreted those weak signals in a useful way, using that feedback to improve its performance. We can quantify how well it did so: if the strong model shows no improvement at all (it performs only as well as its weak teacher), we score it 0; if it uses the teacher’s feedback to achieve the ideal outcome—the best performance the strong model could possibly deliver—we score it 1. This measure represents the “performance gap recovered” (between the weak model and the upper limit of the strong model), or the PGR.
-
-As a proxy for scalable oversight, the weak model stands in for humans, and the strong model for the much-smarter-than-human models we might one day need to oversee. If we can make progress on weak-to-strong supervision, we might find that our methods help us keep those ultra-smart models aligned to our values.
-
-Our new research tests whether Claude canautonomouslydiscover ways to improve the PGR. We ask: can Claude develop, test, and analyze alignment ideas of its own? And, if it can, what might that imply about how far today’s AI models can accelerate the pace of alignment research?
-
-To find out, we began with nine copies of Claude Opus 4.6, and gave each one a few extra tools. Each Claude had a place to work and think (that is, a sandbox), a shared forum to circulate its findings with the others, a storage system to upload its code, and a remote server where it could receive a PGR score for each of its ideas. We also provided some background knowledge about model training and inference. We referred to these tooled-up Claude models as Automated Alignment Researchers (or AARs).
-
-To prevent each AAR from pursuing near-identical ideas, we prompted each one with a slightly different (but intentionally ambiguous) starting place: we recommended that one used some interpretability tools, that another thought about reweighting the data in the dataset, and so on.1Beyond that, though, we didn’t tell the AARs what to do. It was up to them to propose their own ideas, run their experiments, analyze their results, and share their findings and code with one another in order to work out what to try next.
-
-To provide a benchmark for the AARs’ results, we compared their work to a human baseline. Two of our researchers spent seven days iterating on four of the most promising generalization methods from prior research. On the open-weights models we tested (Qwen 3-4B-Base as the strong model, Qwen 1.5-0.5B-Chat as the weak teacher), the humans recovered 23% of the total performance gap (i.e., achieved a PGR of 0.23).2
-
-Claude improved on this result dramatically. After five further days (and 800 cumulative hours of research), the AARs closed almost the entire remaining performance gap, achieving a final PGR of 0.97. This cost about $18,000 in tokens and model training expenses, or $22 per AAR-hour. You can see how each individual AAR progressed from the human baseline (at 0 hours) in the graph below.
-
-Claude, then, did exceptionally well. But how inventive were its methods, and could they be useful in real-world applications? To find out, we ran two further tests.
-
-First, we tested whether the AARs’ ideas could recover the performance gap onheld-outdatasets—that is, on tasks that the AARs hadn’t already seen. We took the AARs’ two highest-performing methods (on a dataset of chat tasks) and applied them to math and coding tasks. Here, our results were relatively promising: the AARs’ most effective method successfully generalized to both new datasets, with PGRs of 0.94 on math and 0.47 on coding (which was still double the human baseline). The AARs’ second-best method saw mixed results: it worked on math (0.75), but not on code, where it made matters worse. These results suggest thatsomegeneralizability of the AARs’ research is possible, but it isn’t a given. We encourage others who try experiments in automated research to stress-test AARs’ ideas against held-out datasets, too.
-
-Next, we tested whether the AARs’ ideas would work at production scale. We tried out the AARs’ most effective method on Claude Sonnet 4 with our production training infrastructure. Here, though, we had less success. The AARs’ method didn’t lead to a statistically significant improvement. We think this might reflect limitations of this early trial, rather than something more fundamental: our scoring method was quite simple, and we only evaluated a single idea. Nevertheless, this does illustrate a limitation of AARs (at least at their current capabilities): AARs tend to capitalize on opportunities unique to the models and datasets they’re given, which means their methods might not work elsewhere. To mitigate this, we suggest allowing AARs to test against multiple domains and datasets during their research. This is one area that future experimentation with AARs could explore.
-
-A few iterations of our experiment taught us more about how to make AARs most effective. For instance, we found that giving each AAR a different starting point helped a lot, even if that starting point was vague. When we tried our experimentwithoutsetting the AARs off in different directions, they all quickly settled on similar ideas, making much less progress overall (though they still achieved a PGR of almost triple the human baseline). On the other hand, we found that giving the AARs toomuchstructure hurt their progress badly. When we prescribed a specific workflow (“propose ideas, then generate a plan, then write the code…”), we found we’d ultimately constrained Claude’s work. Left to its own devices, Claude was much more adaptable, designing cheap experiments to test out its ideas before subsequently committing to much more intensive testing.
-
-The success of our AARs in recovering the performance gap between two open-weights models is certainlynota sign that frontier AI models are now general-purpose alignment scientists. We deliberately chose a problem that is unusually well-suited to automation, since it has a single, objective measure of success that the models can optimize against. Most alignment problems aren’t nearly as neat as this one. And, as we mention below, even in this setting our AARs did their best to game the problem: human oversight remains essential.
-
-But we do think these results have some important implications.
-
-Keeping pace.This study indicates that Claude can meaningfully increase the rate of experimentation and exploration in alignment research. Human researchers can delegate questions to AARs at a very large scale; Claude can take on the task of developing novel hypotheses and iterating on its own results.
-
-Moreover, making progress on weak-to-strong supervision mightitselfhelp us build more general-purpose Automated Alignment Researchers, which is why we chose this problem for our study. In this study, we frame the weak-to-strong supervision problem as a “crisp” task with a verifiable outcome (increasing the PGR score). We do this because we need a way to automatically and reliably evaluate whether the AAR has made progress. However, if AARs discovered much better weak-to-strong supervision methods that generalized across domains, we could use those same methods to train the AARs to evaluate progress on “fuzzier” tasks that are much harder to verify. (For instance, we could conduct weak-to-strong supervision on Claude’s ability to scope research projects.) This is important, because alignment research—unlike capabilities research—often requires solving much “fuzzier” problems.
-
-Taste and diversity.One possible counter to tools like AARs is that today’s frontier models still lack “research taste” (industry parlance for having an intuitive sense of which ideas might work and which won’t). But the success of AARs in this experiment suggests that the sheer volume of ideas might compensate for a lack of “taste”. If AARs can run many experiments very cheaply, it’s possible they could “brute force” their way into the findings that a very high-taste researcher might’ve come up with, or find success in directions that those researchers might otherwise have given up on.
-
-In turn, this means that the core bottleneck in alignment research could becomeevaluation(making sure that experiments are set up sufficiently well that we’re confident in their results), rather thangeneration(relying on human researchers to propose promising ideas).
-
-Alien science.This work might have some stranger implications, too. AARs, by their nature, are designed to discover ideas that humans might not have considered. But we still need a way to verify whether their ideas and results are sound. For now, we’re still able to interpret what the AARs have done and why. But that might not always be the case: over time, the models’ ideas could become much harder to verify, or corrupted in ways that are tricky for humans to parse or catch. That could mean creating an “alien science”.
-
-Preventing hacks.Even in this highly circumscribed environment, we observed the models “rewardhacking”—that is, trying to game our set-up. On math tasks, for instance, one AAR noticed that the most common answer to each problem wasusuallycorrect, so it skipped the teacher entirely and instructed the strong model to always choose the most common one. On a coding task, where the model had to predict whether a piece of code was right, the AAR realized it could run the code against some tests and simply read off the right answer. Hacks like these don’t invalidate our results (we detected and disqualified these entries), but they clearly do provide a warning. Any deployment of automated researchers will require evaluations that the AARs can't tamper with—and human inspections of both their results and their methods.
-
-To read this research in full, see ourAlignment Science blog. The code and datasets for this work arepublicly available, here.
-
-These are available (along with the rest of our code and data)here.
-
-We chose these models for several reasons. There is a substantial performance gap between the two, the small model performs better-than-random on our testbeds, and both models are sufficiently small for fast experimentation. We use open-weights models for all Anthropic Fellows projects.
+An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/automated-alignment-researchers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Large language models’ ever-accelerating rate of improvement raises two particularly important questions for alignment research.
-
-One is how alignment can keep up. Frontier AI models are now contributing to the development of their successors. But can they provide the same kind of uplift foralignmentresearchers? Could our language models be used to help align themselves?
-
-A second question is what we’ll do once models become smarter than us. Aligning smarter-than-human AI models is a research ar...</p><div style="font-size:16px;line-height:1.8;color:#333">Large language models’ ever-accelerating rate of improvement raises two particularly important questions for alignment research.
-
-One is how alignment can keep up. Frontier AI models are now contributing to the development of their successors. But can they provide the same kind of uplift foralignmentresearchers? Could our language models be used to help align themselves?
-
-A second question is what we’ll do once models become smarter than us. Aligning smarter-than-human AI models is a research area known as “scalable oversight”. Scalable oversight has largely been discussed intheoretical, rather than practical, terms—but at AI’scurrent paceof improvement, that might not be the case for much longer. For instance, models are already generating vast amounts of code. If their skills progress to the point where they’re generating millions of lines of incredibly complicated code that we can’t parse ourselves, itcould becomevery difficult to tell whether they’re acting in the ways we intend.
-
-In a new Anthropic Fellows study, we pursue both of these questions.
-
-Our new study focuses on a problem known as “weak-to-strong supervision”, a problem that mirrors the one of overseeing smarter-than-human AI models. We start with a relatively strong “base” model—that is, a potentially-capable model that hasn’t yet received fine-tuning to provide its best-possible answers. Then, we use a muchweakermodel as a “teacher” to provide that extra fine-tuning, which it does by demonstrating whatitconsiders ideal outputs to the strong base model. Finally, we evaluate how well the strong model performs after that weak fine-tuning.
-
-In the worst case, the strong model will only be as good as its weak teacher. Ideally, however, the strong model will have learned from the weak teacher’s feedback—it will have interpreted those weak signals in a useful way, using that feedback to improve its performance. We can quantify how well it did so: if the strong model shows no improvement at all (it performs only as well as its weak teacher), we score it 0; if it uses the teacher’s feedback to achieve the ideal outcome—the best performance the strong model could possibly deliver—we score it 1. This measure represents the “performance gap recovered” (between the weak model and the upper limit of the strong model), or the PGR.
-
-As a proxy for scalable oversight, the weak model stands in for humans, and the strong model for the much-smarter-than-human models we might one day need to oversee. If we can make progress on weak-to-strong supervision, we might find that our methods help us keep those ultra-smart models aligned to our values.
-
-Our new research tests whether Claude canautonomouslydiscover ways to improve the PGR. We ask: can Claude develop, test, and analyze alignment ideas of its own? And, if it can, what might that imply about how far today’s AI models can accelerate the pace of alignment research?
-
-To find out, we began with nine copies of Claude Opus 4.6, and gave each one a few extra tools. Each Claude had a place to work and think (that is, a sandbox), a shared forum to circulate its findings with the others, a storage system to upload its code, and a remote server where it could receive a PGR score for each of its ideas. We also provided some background knowledge about model training and inference. We referred to these tooled-up Claude models as Automated Alignment Researchers (or AARs).
-
-To prevent each AAR from pursuing near-identical ideas, we prompted each one with a slightly different (but intentionally ambiguous) starting place: we recommended that one used some interpretability tools, that another thought about reweighting the data in the dataset, and so on.1Beyond that, though, we didn’t tell the AARs what to do. It was up to them to propose their own ideas, run their experiments, analyze their results, and share their findings and code with one another in order to work out what to try next.
-
-To provide a benchmark for the AARs’ results, we compared their work to a human baseline. Two of our researchers spent seven days iterating on four of the most promising generalization methods from prior research. On the open-weights models we tested (Qwen 3-4B-Base as the strong model, Qwen 1.5-0.5B-Chat as the weak teacher), the humans recovered 23% of the total performance gap (i.e., achieved a PGR of 0.23).2
-
-Claude improved on this result dramatically. After five further days (and 800 cumulative hours of research), the AARs closed almost the entire remaining performance gap, achieving a final PGR of 0.97. This cost about $18,000 in tokens and model training expenses, or $22 per AAR-hour. You can see how each individual AAR progressed from the human baseline (at 0 hours) in the graph below.
-
-Claude, then, did exceptionally well. But how inventive were its methods, and could they be useful in real-world applications? To find out, we ran two further tests.
-
-First, we tested whether the AARs’ ideas could recover the performance gap onheld-outdatasets—that is, on tasks that the AARs hadn’t already seen. We took the AARs’ two highest-performing methods (on a dataset of chat tasks) and applied them to math and coding tasks. Here, our results were relatively promising: the AARs’ most effective method successfully generalized to both new datasets, with PGRs of 0.94 on math and 0.47 on coding (which was still double the human baseline). The AARs’ second-best method saw mixed results: it worked on math (0.75), but not on code, where it made matters worse. These results suggest thatsomegeneralizability of the AARs’ research is possible, but it isn’t a given. We encourage others who try experiments in automated research to stress-test AARs’ ideas against held-out datasets, too.
-
-Next, we tested whether the AARs’ ideas would work at production scale. We tried out the AARs’ most effective method on Claude Sonnet 4 with our production training infrastructure. Here, though, we had less success. The AARs’ method didn’t lead to a statistically significant improvement. We think this might reflect limitations of this early trial, rather than something more fundamental: our scoring method was quite simple, and we only evaluated a single idea. Nevertheless, this does illustrate a limitation of AARs (at least at their current capabilities): AARs tend to capitalize on opportunities unique to the models and datasets they’re given, which means their methods might not work elsewhere. To mitigate this, we suggest allowing AARs to test against multiple domains and datasets during their research. This is one area that future experimentation with AARs could explore.
-
-A few iterations of our experiment taught us more about how to make AARs most effective. For instance, we found that giving each AAR a different starting point helped a lot, even if that starting point was vague. When we tried our experimentwithoutsetting the AARs off in different directions, they all quickly settled on similar ideas, making much less progress overall (though they still achieved a PGR of almost triple the human baseline). On the other hand, we found that giving the AARs toomuchstructure hurt their progress badly. When we prescribed a specific workflow (“propose ideas, then generate a plan, then write the code…”), we found we’d ultimately constrained Claude’s work. Left to its own devices, Claude was much more adaptable, designing cheap experiments to test out its ideas before subsequently committing to much more intensive testing.
-
-The success of our AARs in recovering the performance gap between two open-weights models is certainlynota sign that frontier AI models are now general-purpose alignment scientists. We deliberately chose a problem that is unusually well-suited to automation, since it has a single, objective measure of success that the models can optimize against. Most alignment problems aren’t nearly as neat as this one. And, as we mention below, even in this setting our AARs did their best to game the problem: human oversight remains essential.
-
-But we do think these results have some important implications.
-
-Keeping pace.This study indicates that Claude can meaningfully increase the rate of experimentation and exploration in alignment research. Human researchers can delegate questions to AARs at a very large scale; Claude can take on the task of developing novel hypotheses and iterating on its own results.
-
-Moreover, making progress on weak-to-strong supervision mightitselfhelp us build more general-purpose Automated Alignment Researchers, which is why we chose this problem for our study. In this study, we frame the weak-to-strong supervision problem as a “crisp” task with a verifiable outcome (increasing the PGR score). We do this because we need a way to automatically and reliably evaluate whether the AAR has made progress. However, if AARs discovered much better weak-to-strong supervision methods that generalized across domains, we could use those same methods to train the AARs to evaluate progress on “fuzzier” tasks that are much harder to verify. (For instance, we could conduct weak-to-strong supervision on Claude’s ability to scope research projects.) This is important, because alignment research—unlike capabilities research—often requires solving much “fuzzier” problems.
-
-Taste and diversity.One possible counter to tools like AARs is that today’s frontier models still lack “research taste” (industry parlance for having an intuitive sense of which ideas might work and which won’t). But the success of AARs in this experiment suggests that the sheer volume of ideas might compensate for a lack of “taste”. If AARs can run many experiments very cheaply, it’s possible they could “brute force” their way into the findings that a very high-taste researcher might’ve come up with, or find success in directions that those researchers might otherwise have given up on.
-
-In turn, this means that the core bottleneck in alignment research could becomeevaluation(making sure that experiments are set up sufficiently well that we’re confident in their results), rather thangeneration(relying on human researchers to propose promising ideas).
-
-Alien science.This work might have some stranger implications, too. AARs, by their nature, are designed to discover ideas that humans might not have considered. But we still need a way to verify whether their ideas and results are sound. For now, we’re still able to interpret what the AARs have done and why. But that might not always be the case: over time, the models’ ideas could become much harder to verify, or corrupted in ways that are tricky for humans to parse or catch. That could mean creating an “alien science”.
-
-Preventing hacks.Even in this highly circumscribed environment, we observed the models “rewardhacking”—that is, trying to game our set-up. On math tasks, for instance, one AAR noticed that the most common answer to each problem wasusuallycorrect, so it skipped the teacher entirely and instructed the strong model to always choose the most common one. On a coding task, where the model had to predict whether a piece of code was right, the AAR realized it could run the code against some tests and simply read off the right answer. Hacks like these don’t invalidate our results (we detected and disqualified these entries), but they clearly do provide a warning. Any deployment of automated researchers will require evaluations that the AARs can't tamper with—and human inspections of both their results and their methods.
-
-To read this research in full, see ourAlignment Science blog. The code and datasets for this work arepublicly available, here.
-
-These are available (along with the rest of our code and data)here.
-
-We chose these models for several reasons. There is a substantial performance gap between the two, the small model performs better-than-random on our testbeds, and both models are sufficiently small for fast experimentation. We use open-weights models for all Anthropic Fellows projects.
-
-2028: Two scenarios for global AI leadership
-
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/automated-alignment-researchers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Vend: Phase two</title>
@@ -2077,15 +2173,15 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2190,110 +2286,25 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
 New research on how we've reduced agentic misalignment.
 
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
 Subscribe to the Frontier Red Team newsletter
 
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/project-vend-2" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Economic Research</title>
-  <link>https://www.anthropic.com/research/team/economic-research</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -2387,10 +2398,103 @@ Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>Alignment</title>
+  <link>https://www.anthropic.com/research/team/alignment</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+  <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+
+Stress-testing safeguards
+
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+
+May 8, 2026AlignmentTeaching Claude why
+
+May 7, 2026AlignmentDonating our open-source alignment tool
+
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+
+Feb 23, 2026AlignmentThe persona selection model
+
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+
+Stress-testing safeguards
+
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+
+May 8, 2026AlignmentTeaching Claude why
+
+May 7, 2026AlignmentDonating our open-source alignment tool
+
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+
+Feb 23, 2026AlignmentThe persona selection model
+
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2484,97 +2588,89 @@ Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 S
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Alignment</title>
-  <link>https://www.anthropic.com/research/team/alignment</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
+  <title>Economic Research</title>
+  <link>https://www.anthropic.com/research/team/economic-research</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+  <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Evaluation and oversight
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Evaluation and oversight
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
 
-Stress-testing safeguards
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
 
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
 
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
 
-May 8, 2026AlignmentTeaching Claude why
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
 
-May 7, 2026AlignmentDonating our open-source alignment tool
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
 
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
 
-Feb 23, 2026AlignmentThe persona selection model
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
 
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
 
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
 
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
 
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Evaluation and oversight
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
 
-Evaluation and oversight
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
 
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
 
-Stress-testing safeguards
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
 
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
 
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-May 8, 2026AlignmentTeaching Claude why
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
 
-May 7, 2026AlignmentDonating our open-source alignment tool
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
 
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
 
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
 
-Feb 23, 2026AlignmentThe persona selection model
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
 
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
 
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
