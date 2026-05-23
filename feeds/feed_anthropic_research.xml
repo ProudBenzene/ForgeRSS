@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 22 May 2026 19:50:32 +0000</lastBuildDate>
+<lastBuildDate>Sat, 23 May 2026 03:02:13 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -37,7 +37,7 @@ Evidence from our partners and external testers
 
 Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
 
-After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than tens thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
+After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than ten thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
 
 This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
 
@@ -81,11 +81,11 @@ Currently, there’s often a long lag between the discovery of a vulnerability, 
 
 Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
 
-Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly-available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
+Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
 
 Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
 
-Tools for cyberdefence with publicly available AI models
+Tools for cyberdefense with publicly available AI models
 
 Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
 
@@ -113,7 +113,7 @@ What's next for Project Glasswing
 
 The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
 
-Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defences. We hope that our generally-available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
+Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defenses. We hope that our generally available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
 
 Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
 
@@ -146,7 +146,7 @@ Evidence from our partners and external testers
 
 Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
 
-After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than tens thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
+After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than ten thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
 
 This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
 
@@ -190,11 +190,11 @@ Currently, there’s often a long lag between the discovery of a vulnerability, 
 
 Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
 
-Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly-available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
+Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
 
 Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
 
-Tools for cyberdefence with publicly available AI models
+Tools for cyberdefense with publicly available AI models
 
 Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
 
@@ -222,7 +222,7 @@ What's next for Project Glasswing
 
 The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
 
-Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defences. We hope that our generally-available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
+Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defenses. We hope that our generally available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
 
 Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
 
@@ -2301,200 +2301,95 @@ Subscribe to the Frontier Red Team newsletter
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/project-vend-2" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Interpretability</title>
-  <link>https://www.anthropic.com/research/team/interpretability</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+  <title>Economic Research</title>
+  <link>https://www.anthropic.com/research/team/economic-research</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+  <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Safety through understanding
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Safety through understanding
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
 
-Multidisciplinary approach
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
 
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
 
-Tracing the thoughts of a large language model
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
 
-Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
 
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
 
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
 
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
 
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
 
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
 
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
 
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-Safety through understanding
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
 
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
 
-Safety through understanding
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
 
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-Multidisciplinary approach
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-Tracing the thoughts of a large language model
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
 
-Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
 
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
 
-Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
 
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
 
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
 
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
 
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
 
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Alignment</title>
-  <link>https://www.anthropic.com/research/team/alignment</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-
-Stress-testing safeguards
-
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
-
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
-
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
-
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
-
-May 8, 2026AlignmentTeaching Claude why
-
-May 7, 2026AlignmentDonating our open-source alignment tool
-
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-
-Feb 23, 2026AlignmentThe persona selection model
-
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-
-Stress-testing safeguards
-
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-
-Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
-
-How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
-
-This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
-
-Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
-
-May 8, 2026AlignmentTeaching Claude why
-
-May 7, 2026AlignmentDonating our open-source alignment tool
-
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-
-Feb 23, 2026AlignmentThe persona selection model
-
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2588,89 +2483,194 @@ Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 S
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Economic Research</title>
-  <link>https://www.anthropic.com/research/team/economic-research</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
+  <title>Alignment</title>
+  <link>https://www.anthropic.com/research/team/alignment</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+  <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+Evaluation and oversight
 
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+Evaluation and oversight
 
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
 
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+Stress-testing safeguards
 
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
 
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
 
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
 
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
 
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
 
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+May 8, 2026AlignmentTeaching Claude why
 
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+May 7, 2026AlignmentDonating our open-source alignment tool
 
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
 
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
 
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+Feb 23, 2026AlignmentThe persona selection model
 
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
 
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
 
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
 
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
 
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
 
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+Evaluation and oversight
 
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+Evaluation and oversight
 
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
 
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+Stress-testing safeguards
 
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
 
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+Claude 3 was the first model with "character training"—alignment aimed at nurturing traits like curiosity, open-mindedness, and thoughtfulness.
 
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+How would we know if an AI system is "right for the wrong reasons"—appearing well-behaved while pursuing hidden goals? This paper develops the science of alignment audits by deliberately training a model with a hidden objective and asking blinded research teams to uncover it, testing techniques from interpretability to behavioral analysis.
 
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+This paper provides the first empirical example of a model engaging in alignment faking without being trained to do so—selectively complying with training objectives while strategically preserving existing preferences.
 
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+Can minor specification gaming evolve into more dangerous behaviors? This paper demonstrates that models trained on low-level reward hacking—like sycophancy—can generalize to tampering with their own reward functions, even covering their tracks. The behavior emerged without explicit training, and common safety techniques reduced but didn't eliminate it.
 
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+May 8, 2026AlignmentTeaching Claude why
 
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+May 7, 2026AlignmentDonating our open-source alignment tool
 
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
 
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
 
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+Feb 23, 2026AlignmentThe persona selection model
 
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
 
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Interpretability</title>
+  <link>https://www.anthropic.com/research/team/interpretability</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
+  <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Tracing the thoughts of a large language model
+
+Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Tracing the thoughts of a large language model
+
+Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
