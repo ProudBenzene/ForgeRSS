@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Wed, 27 May 2026 20:27:52 +0000</lastBuildDate>
+<lastBuildDate>Thu, 28 May 2026 03:45:22 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -19,120 +19,8 @@
   <guid isPermaLink="false">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</guid>
   <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">For nearly 80 years, mathematicians have studied a deceptively simple question: if you placennnpoints in the plane, how many pairs of points can be exactly distance111apart?
-
-This is the planar unit distance problem, first posed by Paul Erdős in 1946. It is one of the best-known questions in combinatorial geometry, easy to state and remarkably difficult to resolve. The 2005 bookResearch Problems in Discrete Geometry, by Brass, Moser, and Pach, calls it “possibly the best known (and simplest to e...</p><div style="font-size:16px;line-height:1.8;color:#333">For nearly 80 years, mathematicians have studied a deceptively simple question: if you placennnpoints in the plane, how many pairs of points can be exactly distance111apart?
-
-This is the planar unit distance problem, first posed by Paul Erdős in 1946. It is one of the best-known questions in combinatorial geometry, easy to state and remarkably difficult to resolve. The 2005 bookResearch Problems in Discrete Geometry, by Brass, Moser, and Pach, calls it “possibly the best known (and simplest to explain) problem in combinatorial geometry.” Noga Alon, a leading combinatorialist at Princeton, describes it as “one of Erdős’ favorite problems.” Erdős even offered a monetary prize for resolving this problem.
-
-Today, we share a breakthrough on the unit distance problem. Since Erdős’s original work, the prevailing belief has been that the “square grid” constructions depicted further below were essentially optimal for maximizing the number of unit-distance pairs. An internal OpenAI model has disproved this longstanding conjecture, providing an infinite family of examples that yield a polynomial improvement. The proof has been checked by a group of external mathematicians. They have also written a companion paper explaining the argument and providing further background and context for the significance of the result.
-
-The result is also notable for how it was found. The proof came from a new general-purpose reasoning model, rather than from a system trained specifically for mathematics, scaffolded to search through proof strategies, or targeted at the unit distance problem in particular. As part of a broader effort to test whether advanced models can contribute to frontier research, we evaluated it on a collection of Erdős problems. In this case, it produced a proof resolving the open problem.
-
-This proof is an important milestone for the math and AI communities. It marks the first time that a prominent open problem, central to a subfield of mathematics, has been solved autonomously by AI. It also demonstrates the depth of reasoning these systems now support. Mathematics provides a particularly clear testbed for reasoning: the problems are precise, potential proofs can be checked, and a long argument only works if the reasoning holds together from beginning to end. The method by which the problem was solved is also notable. The proof brings unexpected, sophisticated ideas from algebraic number theory to bear on an elementary geometric question.
-
-Fields medalist Tim Gowers, writing in the companion paper, calls the result “a milestone in AI mathematics.” According to leading number theorist Arul Shankar, “In my opinion this paper demonstrates that current AI models go beyond just helpers to human mathematicians – they are capable of having original ingenious ideas, and then carrying them out to fruition”.
-
-Mathematicians on the result
-
-The proof is availablehere⁠(opens in a new window). The companion paper by leading external mathematicians is availablehere⁠(opens in a new window). You can find an abridged version of the model’s chain of thoughthere⁠(opens in a new window).
-
-Previously known construction of many unit distances from a rescaled square grid.
-
-The unit distance problem
-
-Letu(n)u(n)u(n)be the largest possible number of unit-distance pairs amongnnnpoints in the plane. Examples attaining linear growth rate are easy to construct: placingnnnpoints in a line givesn−1n-1n−1pairs, while a square grid gives about2n2n2npairs. The previously best known construction, coming from a rescaled square grid, turns out to give even more:n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)for a constantCCC. Sincelog⁡log⁡(n)\log \log(n)loglog(n)tends to infinity withnnn, the additional term in the exponent tends to000, meaning these constructions achieve growth only slightly faster than linear. For decades, it was widely believed that this rate was essentially the best possible, and no construction could improve significantly over the square grid. In technical terms, Erdős conjectured an upper bound ofn1+o(1)n^{1+o(1)}n1+o(1)in which the additionalo(1)o(1)o(1)indicates a term tending to000withnnn.Our new result disproves this conjecture. More precisely, for infinitely many values ofnnn, the proof constructs configurations ofnnnpoints with at leastn1+δn^{1+\delta}n1+δunit-distance pairs, for some fixed exponentδ>0\delta > 0δ>0. (The original AI proof does not give an explicitδ\deltaδ, but a forthcoming refinement due to Princeton mathematics professor Will Sawin has shown one can takeδ=0.014\delta=0.014δ=0.014.)The history of the problem helps to see why the result is surprising. The best known lower bound had been essentially unchanged since Erdős’s original 1946 construction. The best upper bound,O(n4/3)O(n^{4/3})O(n4/3), dates to work by Spencer, Szemerédi, and Trotter in 1984, and despite later refinements and related structural work by Székely, Katz and Silier, Pach, Raz, and Solymosi and by others, the upper bound has remained essentially unchanged. As evidence in favor of the conjecture, Matoušek and Alon-Bucić-Sauermann studied the problem with non-Euclidean distances in the plane, and proved that "most" of these non-Euclidean distances obey the conjecture in some sense.Surprisingly, the key ingredients of the construction come from a very different part of mathematics known as algebraic number theory, which studies concepts like factorization in extensions of the integers known as algebraic number fields.
-
-After verifying the initial proof, we investigated the success rate of our models on this problem with varying amounts of test-time compute. The results are shown here.
-
-New techniques from algebraic number theory
-
-At a high level, the proof begins with a familiar geometric idea and pushes it in an unexpected direction.
-
-Erdős’s original lower bound can be understood through the Gaussian integers: numbers of the forma+bia+bia+bi, whereaaaandbbbare integers andiiiis the square root of−1-1−1. The Gaussian integers extend the ordinary integers and, like them, enjoy properties such a unique factorization into primes. Such extensions of the ordinary integers or rationals are known as algebraic number fields. The new argument replaces the Gaussian integers by more complicated generalizations from algebraic number theory with richer symmetries that can create many more unit-length differences.
-
-The precise argument uses tools such as infinite class field towers and Golod–Shafarevich theory to show the number fields required for the argument actually exist. These ideas were well-known to algebraic number theorists, but it came as a great surprise that these concepts have implications for geometric questions in the Euclidean plane.
-
-What this means for mathematics
-
-This result marks an important moment in the interaction between AI and mathematics: an AI system has autonomously resolved a longstanding open problem at the center of an active field. It also offers an early glimpse of a new kind of collaboration between AI and human mathematicians. In this case, the companion work by external mathematicians paints a substantially richer picture than the original solution alone.
-
-As Thomas Bloom writes in the companion note:
-
-“When assessing the importance and influence of an AI-generated proof, a question I ask myself is: has this taught us something new about the problem? Do we understand discrete geometry better now? I think the answer is a moderated yes: this shows that there is a lot more that number theoretic constructions have to say about these sorts of questions than we suspected; moreover, that the number theory required can be very deep. No doubt many algebraic number theorists will be taking a close look at other open problems in discrete geometry in the coming months.”
-
-The unexpected connection between algebraic number theory and discrete geometry revealed by the solution is part of what makes the result notable. It does not simply settle a specific conjecture, but may provide mathematicians with a bridge to begin exploring further related problems.
-
-Bloom also points toward a broader possibility:
-
-“The frontiers of knowledge are very spiky, and no doubt the coming months and years will see similar successes in many other areas of mathematics, where long-standing open problems are resolved by an AI revealing unexpected connections and pushing the existing technical machinery to its limit. AI is helping us to more fully explore the cathedral of mathematics we have build over the centuries; what other unseen wonders are waiting in the wings?”
-
-This result provides a promising example: AI contributing not only a solution, but a mathematical discovery whose significance becomes clearer and richer through subsequent human understanding.
-
-The takeaway is bigger than this particular result. Better mathematical reasoning can make AI a stronger research partner: something that can hold together difficult lines of thought, connect ideas across distant areas of knowledge, surface promising paths experts may not have prioritized, and help researchers make progress on problems that would otherwise be too complex or time-intensive to tackle.
-
-Those capabilities matter beyond mathematics. If a model can keep a complicated argument coherent, connect ideas across distant areas of knowledge, and produce work that survives expert scrutiny, those are also useful abilities in biology, physics, materials science, engineering, and medicine, and they are part of our longer-term path toward more automated research: systems that can help scientists and engineers explore more ideas and pursue harder technical questions.
-
-AI is about to start taking a very serious role in the creative parts of research, and most importantly AI research itself. While this progress is not unexpected, it reinforces the urgency we feel about understanding this next phase of AI development, the challenges of aligning very intelligent systems, and the future of human-AI collaboration.
-
-That future still depends on human judgment. Expertise becomes more valuable, not less. AI can help search, suggest, and verify. People choose the problems that matter, interpret the results, and decide what questions to pursue next.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">For nearly 80 years, mathematicians have studied a deceptively simple question: if you placennnpoints in the plane, how many pairs of points can be exactly distance111apart?
-
-This is the planar unit distance problem, first posed by Paul Erdős in 1946. It is one of the best-known questions in combinatorial geometry, easy to state and remarkably difficult to resolve. The 2005 bookResearch Problems in Discrete Geometry, by Brass, Moser, and Pach, calls it “possibly the best known (and simplest to e...</p><div style="font-size:16px;line-height:1.8;color:#333">For nearly 80 years, mathematicians have studied a deceptively simple question: if you placennnpoints in the plane, how many pairs of points can be exactly distance111apart?
-
-This is the planar unit distance problem, first posed by Paul Erdős in 1946. It is one of the best-known questions in combinatorial geometry, easy to state and remarkably difficult to resolve. The 2005 bookResearch Problems in Discrete Geometry, by Brass, Moser, and Pach, calls it “possibly the best known (and simplest to explain) problem in combinatorial geometry.” Noga Alon, a leading combinatorialist at Princeton, describes it as “one of Erdős’ favorite problems.” Erdős even offered a monetary prize for resolving this problem.
-
-Today, we share a breakthrough on the unit distance problem. Since Erdős’s original work, the prevailing belief has been that the “square grid” constructions depicted further below were essentially optimal for maximizing the number of unit-distance pairs. An internal OpenAI model has disproved this longstanding conjecture, providing an infinite family of examples that yield a polynomial improvement. The proof has been checked by a group of external mathematicians. They have also written a companion paper explaining the argument and providing further background and context for the significance of the result.
-
-The result is also notable for how it was found. The proof came from a new general-purpose reasoning model, rather than from a system trained specifically for mathematics, scaffolded to search through proof strategies, or targeted at the unit distance problem in particular. As part of a broader effort to test whether advanced models can contribute to frontier research, we evaluated it on a collection of Erdős problems. In this case, it produced a proof resolving the open problem.
-
-This proof is an important milestone for the math and AI communities. It marks the first time that a prominent open problem, central to a subfield of mathematics, has been solved autonomously by AI. It also demonstrates the depth of reasoning these systems now support. Mathematics provides a particularly clear testbed for reasoning: the problems are precise, potential proofs can be checked, and a long argument only works if the reasoning holds together from beginning to end. The method by which the problem was solved is also notable. The proof brings unexpected, sophisticated ideas from algebraic number theory to bear on an elementary geometric question.
-
-Fields medalist Tim Gowers, writing in the companion paper, calls the result “a milestone in AI mathematics.” According to leading number theorist Arul Shankar, “In my opinion this paper demonstrates that current AI models go beyond just helpers to human mathematicians – they are capable of having original ingenious ideas, and then carrying them out to fruition”.
-
-Mathematicians on the result
-
-The proof is availablehere⁠(opens in a new window). The companion paper by leading external mathematicians is availablehere⁠(opens in a new window). You can find an abridged version of the model’s chain of thoughthere⁠(opens in a new window).
-
-Previously known construction of many unit distances from a rescaled square grid.
-
-The unit distance problem
-
-Letu(n)u(n)u(n)be the largest possible number of unit-distance pairs amongnnnpoints in the plane. Examples attaining linear growth rate are easy to construct: placingnnnpoints in a line givesn−1n-1n−1pairs, while a square grid gives about2n2n2npairs. The previously best known construction, coming from a rescaled square grid, turns out to give even more:n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)for a constantCCC. Sincelog⁡log⁡(n)\log \log(n)loglog(n)tends to infinity withnnn, the additional term in the exponent tends to000, meaning these constructions achieve growth only slightly faster than linear. For decades, it was widely believed that this rate was essentially the best possible, and no construction could improve significantly over the square grid. In technical terms, Erdős conjectured an upper bound ofn1+o(1)n^{1+o(1)}n1+o(1)in which the additionalo(1)o(1)o(1)indicates a term tending to000withnnn.Our new result disproves this conjecture. More precisely, for infinitely many values ofnnn, the proof constructs configurations ofnnnpoints with at leastn1+δn^{1+\delta}n1+δunit-distance pairs, for some fixed exponentδ>0\delta > 0δ>0. (The original AI proof does not give an explicitδ\deltaδ, but a forthcoming refinement due to Princeton mathematics professor Will Sawin has shown one can takeδ=0.014\delta=0.014δ=0.014.)The history of the problem helps to see why the result is surprising. The best known lower bound had been essentially unchanged since Erdős’s original 1946 construction. The best upper bound,O(n4/3)O(n^{4/3})O(n4/3), dates to work by Spencer, Szemerédi, and Trotter in 1984, and despite later refinements and related structural work by Székely, Katz and Silier, Pach, Raz, and Solymosi and by others, the upper bound has remained essentially unchanged. As evidence in favor of the conjecture, Matoušek and Alon-Bucić-Sauermann studied the problem with non-Euclidean distances in the plane, and proved that "most" of these non-Euclidean distances obey the conjecture in some sense.Surprisingly, the key ingredients of the construction come from a very different part of mathematics known as algebraic number theory, which studies concepts like factorization in extensions of the integers known as algebraic number fields.
-
-After verifying the initial proof, we investigated the success rate of our models on this problem with varying amounts of test-time compute. The results are shown here.
-
-New techniques from algebraic number theory
-
-At a high level, the proof begins with a familiar geometric idea and pushes it in an unexpected direction.
-
-Erdős’s original lower bound can be understood through the Gaussian integers: numbers of the forma+bia+bia+bi, whereaaaandbbbare integers andiiiis the square root of−1-1−1. The Gaussian integers extend the ordinary integers and, like them, enjoy properties such a unique factorization into primes. Such extensions of the ordinary integers or rationals are known as algebraic number fields. The new argument replaces the Gaussian integers by more complicated generalizations from algebraic number theory with richer symmetries that can create many more unit-length differences.
-
-The precise argument uses tools such as infinite class field towers and Golod–Shafarevich theory to show the number fields required for the argument actually exist. These ideas were well-known to algebraic number theorists, but it came as a great surprise that these concepts have implications for geometric questions in the Euclidean plane.
-
-What this means for mathematics
-
-This result marks an important moment in the interaction between AI and mathematics: an AI system has autonomously resolved a longstanding open problem at the center of an active field. It also offers an early glimpse of a new kind of collaboration between AI and human mathematicians. In this case, the companion work by external mathematicians paints a substantially richer picture than the original solution alone.
-
-As Thomas Bloom writes in the companion note:
-
-“When assessing the importance and influence of an AI-generated proof, a question I ask myself is: has this taught us something new about the problem? Do we understand discrete geometry better now? I think the answer is a moderated yes: this shows that there is a lot more that number theoretic constructions have to say about these sorts of questions than we suspected; moreover, that the number theory required can be very deep. No doubt many algebraic number theorists will be taking a close look at other open problems in discrete geometry in the coming months.”
-
-The unexpected connection between algebraic number theory and discrete geometry revealed by the solution is part of what makes the result notable. It does not simply settle a specific conjecture, but may provide mathematicians with a bridge to begin exploring further related problems.
-
-Bloom also points toward a broader possibility:
-
-“The frontiers of knowledge are very spiky, and no doubt the coming months and years will see similar successes in many other areas of mathematics, where long-standing open problems are resolved by an AI revealing unexpected connections and pushing the existing technical machinery to its limit. AI is helping us to more fully explore the cathedral of mathematics we have build over the centuries; what other unseen wonders are waiting in the wings?”
-
-This result provides a promising example: AI contributing not only a solution, but a mathematical discovery whose significance becomes clearer and richer through subsequent human understanding.
-
-The takeaway is bigger than this particular result. Better mathematical reasoning can make AI a stronger research partner: something that can hold together difficult lines of thought, connect ideas across distant areas of knowledge, surface promising paths experts may not have prioritized, and help researchers make progress on problems that would otherwise be too complex or time-intensive to tackle.
-
-Those capabilities matter beyond mathematics. If a model can keep a complicated argument coherent, connect ideas across distant areas of knowledge, and produce work that survives expert scrutiny, those are also useful abilities in biology, physics, materials science, engineering, and medicine, and they are part of our longer-term path toward more automated research: systems that can help scientists and engineers explore more ideas and pursue harder technical questions.
-
-AI is about to start taking a very serious role in the creative parts of research, and most importantly AI research itself. While this progress is not unexpected, it reinforces the urgency we feel about understanding this next phase of AI development, the challenges of aligning very intelligent systems, and the future of human-AI collaboration.
-
-That future still depends on human judgment. Expertise becomes more valuable, not less. AI can help search, suggest, and verify. People choose the problems that matter, interpret the results, and decide what questions to pursue next.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Advancing voice intelligence with new models in the API</title>
@@ -140,8 +28,221 @@ That future still depends on human judgment. Expertise becomes more valuable, no
   <guid isPermaLink="false">https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</guid>
   <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing voice intelligence with new models in the API</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing voice intelligence with new models in the API</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
+
+We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
+
+GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
+
+GPT‑Realti...</p><div style="font-size:16px;line-height:1.8;color:#333">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
+
+We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
+
+GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
+
+GPT‑Realtime‑Translate, a new live translation model that translates speech from 70+ input languages into 13 output languages while keeping pace with the speaker.
+
+GPT‑Realtime‑Whisper, a new streaming speech-to-text that transcribes speech live as the speaker talks.
+
+我今晚要临时办一场晚餐聚会。我只有 30 分钟，要招待两位素食朋友，其中一位不吃蘑菇，而且厨房很小。请帮我规划一份简单的菜单。
+
+我要在日本的一场现场活动中欢迎来宾。用日语说一段温暖、自然的欢迎词，就像主持人为一场特别活动开场那样。
+
+我的订单号是 Orbit-742Q。请清楚地复述一遍，这样我就能确认是否正确。
+
+请帮我练习如何告诉团队我们已达成发布里程碑。先用沉稳自信的语气说一遍，然后再用更兴奋的语气说一遍。
+
+我正在为一次公路旅行策划问答游戏。给我三个听起来很简单的陷阱问题，然后用一句话解释每个答案。
+
+此演示有时间限制。使用即表示你同意 OpenAI 的《条款》，并确认已知悉我们的《隐私政策》。
+
+Voice is becoming one of the most natural ways for people to use software. It lets someone ask for help while driving, change a travel plan while walking through an airport, get support in their preferred language, or move through a task without stopping to type.
+
+But building useful voice products takes more than fast turn-taking or a natural-sounding voice. A voice agent needs to understand what someone means, keep track of context, recover when a request changes, use tools while the conversation continues, and respond in a way that feels appropriate to the moment.
+
+Together, the models we are launching move realtime audio from simple call-and-response toward voice interfaces that can actually do work: listen, reason, translate, transcribe, and take action as a conversation unfolds.
+
+Voice as an interface between people and products
+
+As voice becomes a more natural way to use software, we’re seeing developers build around three emerging patterns in voice AI:
+
+Voice-to-action,where people can describe what they need and the system can reason through the request, use tools, and complete the task. For example, Zillow is building an assistant that can listen, reason, and act on requests like: “find me homes within my BuyAbility, avoid busy streets, and schedule a tour for Saturday.”
+
+Systems-to-voice,where software can turn context into live spoken guidance. For example, a travel app could proactively tell a traveler: “Your inbound flight is delayed, but you can still make your connection. I found the new gate, mapped the fastest route through the terminal, and your bag is still expected to transfer.”
+
+Voice-to-voice,where AI can help live conversations continue across languages, tasks, or changing context. For example, Deutsche Telekom is building voice support experiences where customers can speak in the language they’re most comfortable using, while the model translates the conversation in real time.
+
+These patterns can also work together. Priceline is working toward a future where travelers can manage entire trips by voice: searching for flights and hotels conversationally, handling changes like adjusting a hotel reservation after a flight delay or getting real-time updates on TSA wait times, and translating conversations once travelers are on the ground.
+
+Realtime voice: helping voice models reason and take action
+
+GPT‑Realtime‑2 is built for live voice interactions where the model keeps the conversation moving while it reasons through a request, calls tools, handles corrections or interruptions, and responds in a way that fits the moment.
+
+Preambles:Developers can enable short phrases before a main response, like “let me check that” or “one moment while I look into it,” so users know the agent is working on the request.
+
+Parallel tool calls and tool transparency:The model can call multiple tools at once and make those actions audible with phrases like “checking your calendar” or “looking that up now,” helping agents stay responsive while completing tasks.
+
+Stronger recovery behavior:The model can recover more gracefully by saying things like “I’m having trouble with that right now,” instead of failing silently or breaking the conversation.
+
+Longer context for agentic workflows:We’re increasing the context window from 32K to 128K to support longer, more coherent sessions and more complex task flows.
+
+Stronger domain understanding:The model better retains specialized terminology, proper nouns, healthcare terms, and other vocabulary that matters in production settings.
+
+More controllable tone and delivery:The model can better adjust its tone—speaking calmly while resolving an issue, empathetically when a user is frustrated, or upbeat when confirming a successful action.
+
+Adjustable reasoning effort:Developers can now select fromminimal, low, medium, high, and xhighreasoning levels, withlow as the default, balancing lower latency for straightforward interactions with more deliberate reasoning for complex requests.
+
+The gains show up on audio evals that map closely to production voice agents: GPT‑Realtime‑2 (high) scores 15.2% higher on Big Bench Audio for audio intelligence than GPT‑Realtime‑1.5. GPT‑Realtime‑2 (xhigh) scores 13.8% higher on Audio MultiChallenge for instruction following, improving over GPT‑Realtime‑1.5 and showing stronger reasoning, context management, and control in live conversations.
+
+Big Bench Audio⁠评估支持音频输入的语言模型在高难度推理能力方面的表现。Audio MultiChallenge⁠（在新窗口中打开）评估口语对话系统在多轮对话中的智能表现，包括指令遵循、上下文整合、自洽性以及处理自然语音修正的能力。
+
+The magic of GPT‑Realtime‑2 shows up across a variety of different use cases:
+
+During early testing, businesses used GPT‑Realtime‑2 to build voice agents that help customers and employees get things done through natural conversation:
+
+Realtime translation: build live multilingual voice experiences
+
+GPT‑Realtime‑Translate helps developers build live multilingual voice experiences where each person can speak in their preferred language and hear the conversation translated in real time and read the real time transcriptions. It supports more than 70 input languages and 13 output languages, making it useful for customer support, cross-border sales, education, events, media, and creator platforms serving global audiences.
+
+For developers, live translation needs to preserve meaning while keeping pace with the speaker, even when people speak naturally, switch context, or use regional pronunciation and domain-specific language. For example, Deutsche Telekom is testing the model for multilingual voice interactions, where lower latency and stronger fluency can make cross-language conversations feel more natural.
+
+In this video, Vimeo shows how GPT‑Realtime‑Translate can translate a product education video live as it plays, so global customers can hear updates in their preferred language without waiting for a separately produced version.
+
+Realtime transcription: build low-latency transcription experiences
+
+GPT‑Realtime‑Whisper is a new streaming transcription model built for low-latency speech-to-text. It transcribes audio as people speak, so live products can feel faster, more responsive, and more natural—from captions that appear in the moment, to meeting notes that keep up with the conversation.
+
+The model makes live speech usable inside business workflows as it happens. Teams can power captions for meetings, classrooms, broadcasts, and events; generate notes and summaries while conversations are still in progress; build voice agents that need to understand users continuously; and create faster follow-up workflows for customer support, healthcare, sales, recruiting, and other high-volume spoken interactions.
+
+The Realtime API incorporates multiple layers of safeguards and mitigations to help prevent misuse. We employ active classifiers over Realtime API sessions, meaning certain conversations can be halted if they are detected as violating our harmful content guidelines. Developers can also easily add their own additional safety guardrails using theAgents SDK⁠.⁠（在新窗口中打开）
+
+Ourusage policies⁠⁠prohibit repurposing or distributing outputs from our services for spam, deception, or other harmful purposes. Developers must also make it clear to end users when they’re interacting with AI, unless it’s already obvious from the context.
+
+The Realtime API fully supportsEU Data Residency⁠⁠（在新窗口中打开）for EU-based applications and is covered by ourenterprise privacy commitments⁠⁠.
+
+Pricing & availability
+
+GPT‑Realtime‑2, GPT‑Realtime‑Translate and GPT‑Realtime‑Whisper are available in the Realtime API. GPT‑Realtime‑2 is priced at $32 / 1M audio input tokens ($0.40 for cached input tokens) and $64 / 1M audio output tokens. GPT‑Realtime‑Translate is priced at $0.034 per minute. GPT‑Realtime‑Whisper is priced at $0.017 per minute.
+
+You can test the new realtime voice models in thePlayground⁠（在新窗口中打开）.
+
+To start building,open this prompt in Codex⁠to add GPT‑Realtime‑2 to an existing app or start a new one. If you don’t have Codex yet, download theCodex app⁠first.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
+
+We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
+
+GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
+
+GPT‑Realti...</p><div style="font-size:16px;line-height:1.8;color:#333">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
+
+We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
+
+GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
+
+GPT‑Realtime‑Translate, a new live translation model that translates speech from 70+ input languages into 13 output languages while keeping pace with the speaker.
+
+GPT‑Realtime‑Whisper, a new streaming speech-to-text that transcribes speech live as the speaker talks.
+
+我今晚要临时办一场晚餐聚会。我只有 30 分钟，要招待两位素食朋友，其中一位不吃蘑菇，而且厨房很小。请帮我规划一份简单的菜单。
+
+我要在日本的一场现场活动中欢迎来宾。用日语说一段温暖、自然的欢迎词，就像主持人为一场特别活动开场那样。
+
+我的订单号是 Orbit-742Q。请清楚地复述一遍，这样我就能确认是否正确。
+
+请帮我练习如何告诉团队我们已达成发布里程碑。先用沉稳自信的语气说一遍，然后再用更兴奋的语气说一遍。
+
+我正在为一次公路旅行策划问答游戏。给我三个听起来很简单的陷阱问题，然后用一句话解释每个答案。
+
+此演示有时间限制。使用即表示你同意 OpenAI 的《条款》，并确认已知悉我们的《隐私政策》。
+
+Voice is becoming one of the most natural ways for people to use software. It lets someone ask for help while driving, change a travel plan while walking through an airport, get support in their preferred language, or move through a task without stopping to type.
+
+But building useful voice products takes more than fast turn-taking or a natural-sounding voice. A voice agent needs to understand what someone means, keep track of context, recover when a request changes, use tools while the conversation continues, and respond in a way that feels appropriate to the moment.
+
+Together, the models we are launching move realtime audio from simple call-and-response toward voice interfaces that can actually do work: listen, reason, translate, transcribe, and take action as a conversation unfolds.
+
+Voice as an interface between people and products
+
+As voice becomes a more natural way to use software, we’re seeing developers build around three emerging patterns in voice AI:
+
+Voice-to-action,where people can describe what they need and the system can reason through the request, use tools, and complete the task. For example, Zillow is building an assistant that can listen, reason, and act on requests like: “find me homes within my BuyAbility, avoid busy streets, and schedule a tour for Saturday.”
+
+Systems-to-voice,where software can turn context into live spoken guidance. For example, a travel app could proactively tell a traveler: “Your inbound flight is delayed, but you can still make your connection. I found the new gate, mapped the fastest route through the terminal, and your bag is still expected to transfer.”
+
+Voice-to-voice,where AI can help live conversations continue across languages, tasks, or changing context. For example, Deutsche Telekom is building voice support experiences where customers can speak in the language they’re most comfortable using, while the model translates the conversation in real time.
+
+These patterns can also work together. Priceline is working toward a future where travelers can manage entire trips by voice: searching for flights and hotels conversationally, handling changes like adjusting a hotel reservation after a flight delay or getting real-time updates on TSA wait times, and translating conversations once travelers are on the ground.
+
+Realtime voice: helping voice models reason and take action
+
+GPT‑Realtime‑2 is built for live voice interactions where the model keeps the conversation moving while it reasons through a request, calls tools, handles corrections or interruptions, and responds in a way that fits the moment.
+
+Preambles:Developers can enable short phrases before a main response, like “let me check that” or “one moment while I look into it,” so users know the agent is working on the request.
+
+Parallel tool calls and tool transparency:The model can call multiple tools at once and make those actions audible with phrases like “checking your calendar” or “looking that up now,” helping agents stay responsive while completing tasks.
+
+Stronger recovery behavior:The model can recover more gracefully by saying things like “I’m having trouble with that right now,” instead of failing silently or breaking the conversation.
+
+Longer context for agentic workflows:We’re increasing the context window from 32K to 128K to support longer, more coherent sessions and more complex task flows.
+
+Stronger domain understanding:The model better retains specialized terminology, proper nouns, healthcare terms, and other vocabulary that matters in production settings.
+
+More controllable tone and delivery:The model can better adjust its tone—speaking calmly while resolving an issue, empathetically when a user is frustrated, or upbeat when confirming a successful action.
+
+Adjustable reasoning effort:Developers can now select fromminimal, low, medium, high, and xhighreasoning levels, withlow as the default, balancing lower latency for straightforward interactions with more deliberate reasoning for complex requests.
+
+The gains show up on audio evals that map closely to production voice agents: GPT‑Realtime‑2 (high) scores 15.2% higher on Big Bench Audio for audio intelligence than GPT‑Realtime‑1.5. GPT‑Realtime‑2 (xhigh) scores 13.8% higher on Audio MultiChallenge for instruction following, improving over GPT‑Realtime‑1.5 and showing stronger reasoning, context management, and control in live conversations.
+
+Big Bench Audio⁠评估支持音频输入的语言模型在高难度推理能力方面的表现。Audio MultiChallenge⁠（在新窗口中打开）评估口语对话系统在多轮对话中的智能表现，包括指令遵循、上下文整合、自洽性以及处理自然语音修正的能力。
+
+The magic of GPT‑Realtime‑2 shows up across a variety of different use cases:
+
+During early testing, businesses used GPT‑Realtime‑2 to build voice agents that help customers and employees get things done through natural conversation:
+
+Realtime translation: build live multilingual voice experiences
+
+GPT‑Realtime‑Translate helps developers build live multilingual voice experiences where each person can speak in their preferred language and hear the conversation translated in real time and read the real time transcriptions. It supports more than 70 input languages and 13 output languages, making it useful for customer support, cross-border sales, education, events, media, and creator platforms serving global audiences.
+
+For developers, live translation needs to preserve meaning while keeping pace with the speaker, even when people speak naturally, switch context, or use regional pronunciation and domain-specific language. For example, Deutsche Telekom is testing the model for multilingual voice interactions, where lower latency and stronger fluency can make cross-language conversations feel more natural.
+
+In this video, Vimeo shows how GPT‑Realtime‑Translate can translate a product education video live as it plays, so global customers can hear updates in their preferred language without waiting for a separately produced version.
+
+Realtime transcription: build low-latency transcription experiences
+
+GPT‑Realtime‑Whisper is a new streaming transcription model built for low-latency speech-to-text. It transcribes audio as people speak, so live products can feel faster, more responsive, and more natural—from captions that appear in the moment, to meeting notes that keep up with the conversation.
+
+The model makes live speech usable inside business workflows as it happens. Teams can power captions for meetings, classrooms, broadcasts, and events; generate notes and summaries while conversations are still in progress; build voice agents that need to understand users continuously; and create faster follow-up workflows for customer support, healthcare, sales, recruiting, and other high-volume spoken interactions.
+
+The Realtime API incorporates multiple layers of safeguards and mitigations to help prevent misuse. We employ active classifiers over Realtime API sessions, meaning certain conversations can be halted if they are detected as violating our harmful content guidelines. Developers can also easily add their own additional safety guardrails using theAgents SDK⁠.⁠（在新窗口中打开）
+
+Ourusage policies⁠⁠prohibit repurposing or distributing outputs from our services for spam, deception, or other harmful purposes. Developers must also make it clear to end users when they’re interacting with AI, unless it’s already obvious from the context.
+
+The Realtime API fully supportsEU Data Residency⁠⁠（在新窗口中打开）for EU-based applications and is covered by ourenterprise privacy commitments⁠⁠.
+
+Pricing & availability
+
+GPT‑Realtime‑2, GPT‑Realtime‑Translate and GPT‑Realtime‑Whisper are available in the Realtime API. GPT‑Realtime‑2 is priced at $32 / 1M audio input tokens ($0.40 for cached input tokens) and $64 / 1M audio output tokens. GPT‑Realtime‑Translate is priced at $0.034 per minute. GPT‑Realtime‑Whisper is priced at $0.017 per minute.
+
+You can test the new realtime voice models in thePlayground⁠（在新窗口中打开）.
+
+To start building,open this prompt in Codex⁠to add GPT‑Realtime‑2 to an existing app or start a new one. If you don’t have Codex yet, download theCodex app⁠first.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5 Instant System CardSafety</title>
+  <link>https://openai.com/index/gpt-5-5-instant-system-card/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant-system-card/</guid>
+  <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5 Instant: smarter, clearer, and more personalized</title>
@@ -577,23 +678,6 @@ GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取�
 来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.5 Instant System CardSafety</title>
-  <link>https://openai.com/index/gpt-5-5-instant-system-card/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant-system-card/</guid>
-  <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Where the goblins came from</title>
   <link>https://openai.com/index/where-the-goblins-came-from/</link>
   <guid isPermaLink="false">https://openai.com/index/where-the-goblins-came-from/</guid>
@@ -720,8 +804,24 @@ GPT‑5.1 中一个可测量的微小词汇怪癖。
   <guid isPermaLink="false">https://openai.com/index/gpt-5-5-system-card/</guid>
   <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5 System CardSafety</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5 System CardSafety</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including tar...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
+
+We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
+
+This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including tar...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 is a new model designed for complex, real-world work, including writing code, researching online, analyzing information, creating documents and spreadsheets, and moving across tools to get things done. Relative to earlier models, GPT‑5.5 understands the task earlier, asks for less guidance, uses tools more effectively, checks it work and keeps going until it’s done.
+
+We subjected the model to our full suite of predeployment safety evaluations and our Preparedness Framework, including targeted red-teaming for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 early-access partners before release. We are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving legitimate, beneficial uses of advanced capabilities.
+
+We generally treat GPT‑5.5’s safety results as strong proxies for GPT‑5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute. As noted below, we separately evaluate GPT‑5.5 Pro in certain cases because we judge that the setting could materially impact the relevant risks or appropriate safeguards posture. Except where noted, the results in system cards describe evaluations we ran in an offline setting.
+
+This card was updated on April 24, 2026, to include additional information about safeguards for the deployment of GPT‑5.5 and GPT‑5.5 Pro in the API.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing GPT-5.5</title>
@@ -931,10 +1031,19 @@ EngineeringMay 13, 2026</div><hr style="margin:24px 0;border:none;border-top:1px
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing ChatGPT Images 2.0</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-chatgpt-images-2-0/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>GPT-5.3 Instant</title>
+  <link>https://openai.com/index/gpt-5-3-instant/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
+  <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -943,19 +1052,10 @@ EngineeringMay 13, 2026</div><hr style="margin:24px 0;border:none;border-top:1px
   <title>GPT-5.3-Codex</title>
   <link>https://openai.com/index/introducing-gpt-5-3-codex/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-3-codex/</guid>
-  <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3-Codex</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-3-codex/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.3 Instant</title>
-  <link>https://openai.com/index/gpt-5-3-instant/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>

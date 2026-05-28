@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Wed, 27 May 2026 20:24:33 +0000</lastBuildDate>
+<lastBuildDate>Thu, 28 May 2026 03:42:26 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,223 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>Coding agents in the social sciences</title>
+  <link>https://www.anthropic.com/research/coding-agents-social-sciences</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/coding-agents-social-sciences</guid>
+  <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
+
+The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
+
+There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use co...</p><div style="font-size:16px;line-height:1.8;color:#333">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
+
+The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
+
+There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use coding agents as those with female names. Researchers at top universities are 40% more likely than others to use coding agents.
+
+Users of coding agents post more working papers and grant proposals than others in the same discipline and career stage, but this could reflect pre-existing differences among early adopters.
+
+Researchers are more optimistic about AI helping write publishable papers than about the effects of AI on the social sciences as a whole.
+
+How are AI coding agents changing how we study the economy and society?
+
+The human sciences are shifting: for the first time, core research tasks can be handed off to machines. AI chatbots increasingly contribute to scientific research, including in the mostprestigious publicationsand in thesocial sciences. This has spurred optimism that AI could boost research productivity—while also stoking fears about overloaded peer review and a deluge of academic AI slop.
+
+But while turn-taking AI chatbots have primarily been used forwriting assistance, coding agents could restructure social science research more radically. Agentic coding platforms like Claude Code and Codex can take a research idea and a dataset, write and run an analysis, interpret the output, and iterate autonomously. What had been irreducibly human steps in empirical research can, for the first time, beautomated. At the extreme, researchers have built multi-agent pipelines to automatecomputer science researchand autonomously execute socialscience research ideas.
+
+These tools could accelerate science and make it more daring: fast research execution should mean cheap and plentiful discovery. They could also amplify disparities in research resources and exacerbate congestion in the scholarly record. More deeply, as AI handles a broadening swath of research tasks, its distinctive analytical choices could stamp our collective understanding of our economy, our society, and ourselves.
+
+In this post, we offer a first look, drawing on a survey of 1,260 quantitative social scientists fielded in early 2026. The survey is the baseline wave of a larger ongoing study of how coding agents affect research productivity, including a randomized experiment providing researchers with access to Claude Code. We will publish results from this experiment in the future. For now, we report what the baseline survey reveals about who is using these tools and for what; how output differs between users and non-users; and what researchers expect about the implications of growing adoption.
+
+A new survey on AI coding agent use among quantitative social scientists
+
+We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in theAppendix).
+
+Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
+
+Coding agents haven't reached most social scientists
+
+We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
+
+But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).1
+
+Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
+
+Adoption is highly uneven
+
+Figure 1 shows there is large variation in the overall adoption rate, from 39% of economists and 25% of political scientists to single digits for public health (6%), education (4%) and communication (6%). This gradient roughly tracks differences across fields in overall AI use, but differences in coding agent adoption are steeper on average.
+
+Just over a quarter of doctoral students and postdocs use coding agents at least weekly; among tenured professors that rate falls by more than half. The researchers adopting coding agents are the juniors—more technologically fluent, more likely to be working directly with code and data, and facing stronger career pressures to produce research.
+
+Adoption differences extend beyond discipline and career stage. We classify researcher names according to gender and find that those with typically male names have adopted coding agents at more than twice the rate of respondents with typically female names. High-status and private universities also see notably higher use. All of these differences are significant at the p<0.05 level. These differences are starker than the differences in overall AI use, and suggest higher inequality, at least in this early period of coding agent adoption.
+
+The gender gap in coding agent use does not just reflect a gap in rates of trying AI. Among respondents who have tried using AI for research, there is even a slightly larger gender gap in regular coding agent use than in the overall sample. These differences also persist when comparing across genders in the same disciplines and career stages.
+
+Researchers mainly use AI to code and edit, not write
+
+Among researchers using AI, whether through coding agents or chatbots, what are they actually using it for? Debate about AI in academic research has focused heavily on writing: hallucinated literature reviews, “it’s not X, it’s Y” strewn across formulaic introductions, and the possibility of fully automated paper writing.
+
+But Figure 4 shows that the most common use, for both coding agent users and others, is for coding up analysis of quantitative data: 97% of coding agent users and 77% of other AI users report using it to generate code. Next most common is editing prose, followed by asking for methods advice and background on prior research. Aggregating across coding agent users and others, only a third of all AI users have used it to draft prose at all. These patterns generally hold across disciplines, with only economists and management researchers commonly using AI to draft prose.
+
+Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals
+
+Are coding agents making researchers more productive? That’s the question motivating the broader study this survey kicks off. The experiment we are running on this question is still ongoing. But the baseline survey lets us compare coding agent users to others across a whole bunch of checkpoints in the research process. This comparison is purely descriptive: we compare researchers who select into coding agent use to those who do not, and expect that the two groups differ in a number of ways that we cannot adjust for. Differences should not be interpreted as causal, but as a first cut comparison between researchers using coding agents and those who are not.
+
+Figure 5 shows self-reported output over the six months before the survey at different stages of the research process, from projects started to papers submitted. The adjusted estimates compare coding agent users to others, controlling for career stage, discipline, and the week they completed the survey. Coding agent users are starting more projects, posting more working papers, submitting more grants, and possibly sending out more conference submissions.
+
+So are coding agent users writing more papers? First, consider the differences in early pipeline output between coding agent users and others. Coding agent users are starting projects at a pace of around a quarter of a paper more and posting around a half of a working paper more than non agent users. In percentage terms, coding agent users look around 10% (empirical projects started) to 75% (working papers posted) more productive than others in their discipline and career stage.
+
+However, this productivity difference only appears for these early pipeline measures. We find no evidence that coding agent users are submitting more new papers to journals or resubmitting papers more quickly. This could reflect the timeline of getting a paper to submission, as coding agent use is a recent phenomenon. But it could also reflect that coding agents are more useful at getting projects up and running than they are at the last mile of perfecting a paper for journal submission.
+
+Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall
+
+We also asked researchers what they expected of AI tools. Does AI make social scientists more productive, in terms of writing publishable papers? And do they think AI will make the social sciences better or worse?
+
+Researchers are optimistic about AI raising paper-writing productivity. On a 1 to 10 scale, 88% of respondents were above a 5, and half were at 8 or above. Figure 6 shows that these ratings vary strongly with AI use. The left side of the plot shows researchers that use AI for more types of tasks are more optimistic. The right side shows coding agent users are more optimistic than others.
+
+The survey is drawing from people who are interested in trying these tools out, so it should not be surprising to see some optimism about productivity. But even among these optimists, there is a real gap between views about AI helping narrowly with publishable papers and broadly affecting the social sciences. 70% of respondents are more optimistic about paper productivity than about broader field impact. There are few researchers more optimistic about field impacts than about paper productivity, and many who are more pessimistic.
+
+Social scientists who are using coding agents are posting more working papers and applying for more grants. Relative to others in their discipline and career stage, they are also starting more projects. But as of March 2026, they are not yet driving a surge in journal submissions. The increased number of project starts may be early evidence of productivity increasing. It could also indicate that early adopters were already more productive researchers.
+
+Overall, early adoption of coding agents has tilted toward early career researchers, men, and those at higher status universities. Coding agent use is currently more unevenly distributed across these categories than LLM use more broadly. We also find suggestive evidence that researchers fear that the immediate benefits of rising paper productivity may come along with field-level costs. Perhaps more papers means congestion and competition for attention; perhaps respondents fear that some researchers will use AI tools in ways that exacerbate existing problems in social science, like selective reporting and risk-averse, incremental research.
+
+There are several caveats to the findings in this report. The data presented here is based on an email survey of quantitative social scientists, recruited explicitly to participate in a study on workflows and AI use. We expect that the respondents are both heavier users and more optimistic about LLMs than non-responders. The early-stage productivity differences we see should be interpreted descriptively. The early adopters of coding agents may be more productive and otherwise different from non-adopters in many ways that we cannot measure directly in the survey. Finally, we only look here at the number of projects researchers report, and report nothing about their quality. In future updates on this study, we will show results comparing coding agent users to a clean comparison group, and assess whether the content, and not just quantity, of coding agent augmented work looks different.
+
+Notwithstanding these limitations, we show that coding agents are diffusing into the social sciences. The way we study the economy and politics, for example, is increasingly through analysis decisions made in part by AI coding agents. We plan to bring more evidence in future reports on the potential and risks of this kind of automation.
+
+Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
+
+Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
+
+Alvero, A. J., Stoltz, D. S., Stuhler, O., & Taylor, M. A. (2026). Generative AI in Sociological Research: State of the Discipline.Sociological Science,13, 45-62.
+
+Korinek, A. (2025).AI agents for economic research(No. w34202). National Bureau of Economic Research. NBER Working Paper Series.
+
+Liang, W., Zhang, Y., Wu, Z., Lepp, H., Ji, W., Zhao, X., ... & Zou, J. (2025). Quantifying large language model usage in scientific papers.Nature Human Behaviour, 1-11.
+
+Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., ... & Clune, J. (2026). Towards end-to-end automation of AI research.Nature,651(8107), 914-919.
+
+Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
+
+We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
+
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
+2028: Two scenarios for global AI leadership
+
+Our views on the AI competition between the US and China.
+
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
+
+The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
+
+There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use co...</p><div style="font-size:16px;line-height:1.8;color:#333">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
+
+The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
+
+There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use coding agents as those with female names. Researchers at top universities are 40% more likely than others to use coding agents.
+
+Users of coding agents post more working papers and grant proposals than others in the same discipline and career stage, but this could reflect pre-existing differences among early adopters.
+
+Researchers are more optimistic about AI helping write publishable papers than about the effects of AI on the social sciences as a whole.
+
+How are AI coding agents changing how we study the economy and society?
+
+The human sciences are shifting: for the first time, core research tasks can be handed off to machines. AI chatbots increasingly contribute to scientific research, including in the mostprestigious publicationsand in thesocial sciences. This has spurred optimism that AI could boost research productivity—while also stoking fears about overloaded peer review and a deluge of academic AI slop.
+
+But while turn-taking AI chatbots have primarily been used forwriting assistance, coding agents could restructure social science research more radically. Agentic coding platforms like Claude Code and Codex can take a research idea and a dataset, write and run an analysis, interpret the output, and iterate autonomously. What had been irreducibly human steps in empirical research can, for the first time, beautomated. At the extreme, researchers have built multi-agent pipelines to automatecomputer science researchand autonomously execute socialscience research ideas.
+
+These tools could accelerate science and make it more daring: fast research execution should mean cheap and plentiful discovery. They could also amplify disparities in research resources and exacerbate congestion in the scholarly record. More deeply, as AI handles a broadening swath of research tasks, its distinctive analytical choices could stamp our collective understanding of our economy, our society, and ourselves.
+
+In this post, we offer a first look, drawing on a survey of 1,260 quantitative social scientists fielded in early 2026. The survey is the baseline wave of a larger ongoing study of how coding agents affect research productivity, including a randomized experiment providing researchers with access to Claude Code. We will publish results from this experiment in the future. For now, we report what the baseline survey reveals about who is using these tools and for what; how output differs between users and non-users; and what researchers expect about the implications of growing adoption.
+
+A new survey on AI coding agent use among quantitative social scientists
+
+We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in theAppendix).
+
+Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
+
+Coding agents haven't reached most social scientists
+
+We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
+
+But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).1
+
+Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
+
+Adoption is highly uneven
+
+Figure 1 shows there is large variation in the overall adoption rate, from 39% of economists and 25% of political scientists to single digits for public health (6%), education (4%) and communication (6%). This gradient roughly tracks differences across fields in overall AI use, but differences in coding agent adoption are steeper on average.
+
+Just over a quarter of doctoral students and postdocs use coding agents at least weekly; among tenured professors that rate falls by more than half. The researchers adopting coding agents are the juniors—more technologically fluent, more likely to be working directly with code and data, and facing stronger career pressures to produce research.
+
+Adoption differences extend beyond discipline and career stage. We classify researcher names according to gender and find that those with typically male names have adopted coding agents at more than twice the rate of respondents with typically female names. High-status and private universities also see notably higher use. All of these differences are significant at the p<0.05 level. These differences are starker than the differences in overall AI use, and suggest higher inequality, at least in this early period of coding agent adoption.
+
+The gender gap in coding agent use does not just reflect a gap in rates of trying AI. Among respondents who have tried using AI for research, there is even a slightly larger gender gap in regular coding agent use than in the overall sample. These differences also persist when comparing across genders in the same disciplines and career stages.
+
+Researchers mainly use AI to code and edit, not write
+
+Among researchers using AI, whether through coding agents or chatbots, what are they actually using it for? Debate about AI in academic research has focused heavily on writing: hallucinated literature reviews, “it’s not X, it’s Y” strewn across formulaic introductions, and the possibility of fully automated paper writing.
+
+But Figure 4 shows that the most common use, for both coding agent users and others, is for coding up analysis of quantitative data: 97% of coding agent users and 77% of other AI users report using it to generate code. Next most common is editing prose, followed by asking for methods advice and background on prior research. Aggregating across coding agent users and others, only a third of all AI users have used it to draft prose at all. These patterns generally hold across disciplines, with only economists and management researchers commonly using AI to draft prose.
+
+Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals
+
+Are coding agents making researchers more productive? That’s the question motivating the broader study this survey kicks off. The experiment we are running on this question is still ongoing. But the baseline survey lets us compare coding agent users to others across a whole bunch of checkpoints in the research process. This comparison is purely descriptive: we compare researchers who select into coding agent use to those who do not, and expect that the two groups differ in a number of ways that we cannot adjust for. Differences should not be interpreted as causal, but as a first cut comparison between researchers using coding agents and those who are not.
+
+Figure 5 shows self-reported output over the six months before the survey at different stages of the research process, from projects started to papers submitted. The adjusted estimates compare coding agent users to others, controlling for career stage, discipline, and the week they completed the survey. Coding agent users are starting more projects, posting more working papers, submitting more grants, and possibly sending out more conference submissions.
+
+So are coding agent users writing more papers? First, consider the differences in early pipeline output between coding agent users and others. Coding agent users are starting projects at a pace of around a quarter of a paper more and posting around a half of a working paper more than non agent users. In percentage terms, coding agent users look around 10% (empirical projects started) to 75% (working papers posted) more productive than others in their discipline and career stage.
+
+However, this productivity difference only appears for these early pipeline measures. We find no evidence that coding agent users are submitting more new papers to journals or resubmitting papers more quickly. This could reflect the timeline of getting a paper to submission, as coding agent use is a recent phenomenon. But it could also reflect that coding agents are more useful at getting projects up and running than they are at the last mile of perfecting a paper for journal submission.
+
+Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall
+
+We also asked researchers what they expected of AI tools. Does AI make social scientists more productive, in terms of writing publishable papers? And do they think AI will make the social sciences better or worse?
+
+Researchers are optimistic about AI raising paper-writing productivity. On a 1 to 10 scale, 88% of respondents were above a 5, and half were at 8 or above. Figure 6 shows that these ratings vary strongly with AI use. The left side of the plot shows researchers that use AI for more types of tasks are more optimistic. The right side shows coding agent users are more optimistic than others.
+
+The survey is drawing from people who are interested in trying these tools out, so it should not be surprising to see some optimism about productivity. But even among these optimists, there is a real gap between views about AI helping narrowly with publishable papers and broadly affecting the social sciences. 70% of respondents are more optimistic about paper productivity than about broader field impact. There are few researchers more optimistic about field impacts than about paper productivity, and many who are more pessimistic.
+
+Social scientists who are using coding agents are posting more working papers and applying for more grants. Relative to others in their discipline and career stage, they are also starting more projects. But as of March 2026, they are not yet driving a surge in journal submissions. The increased number of project starts may be early evidence of productivity increasing. It could also indicate that early adopters were already more productive researchers.
+
+Overall, early adoption of coding agents has tilted toward early career researchers, men, and those at higher status universities. Coding agent use is currently more unevenly distributed across these categories than LLM use more broadly. We also find suggestive evidence that researchers fear that the immediate benefits of rising paper productivity may come along with field-level costs. Perhaps more papers means congestion and competition for attention; perhaps respondents fear that some researchers will use AI tools in ways that exacerbate existing problems in social science, like selective reporting and risk-averse, incremental research.
+
+There are several caveats to the findings in this report. The data presented here is based on an email survey of quantitative social scientists, recruited explicitly to participate in a study on workflows and AI use. We expect that the respondents are both heavier users and more optimistic about LLMs than non-responders. The early-stage productivity differences we see should be interpreted descriptively. The early adopters of coding agents may be more productive and otherwise different from non-adopters in many ways that we cannot measure directly in the survey. Finally, we only look here at the number of projects researchers report, and report nothing about their quality. In future updates on this study, we will show results comparing coding agent users to a clean comparison group, and assess whether the content, and not just quantity, of coding agent augmented work looks different.
+
+Notwithstanding these limitations, we show that coding agents are diffusing into the social sciences. The way we study the economy and politics, for example, is increasingly through analysis decisions made in part by AI coding agents. We plan to bring more evidence in future reports on the potential and risks of this kind of automation.
+
+Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
+
+Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
+
+Alvero, A. J., Stoltz, D. S., Stuhler, O., & Taylor, M. A. (2026). Generative AI in Sociological Research: State of the Discipline.Sociological Science,13, 45-62.
+
+Korinek, A. (2025).AI agents for economic research(No. w34202). National Bureau of Economic Research. NBER Working Paper Series.
+
+Liang, W., Zhang, Y., Wu, Z., Lepp, H., Ji, W., Zhao, X., ... & Zou, J. (2025). Quantifying large language model usage in scientific papers.Nature Human Behaviour, 1-11.
+
+Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., ... & Clune, J. (2026). Towards end-to-end automation of AI research.Nature,651(8107), 914-919.
+
+Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
+
+We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
+
+Project Glasswing: An initial update
+
+An early update on what we've learned from Project Glasswing.
+
+2028: Two scenarios for global AI leadership
+
+Our views on the AI competition between the US and China.
+
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Project Glasswing: An initial update</title>
   <link>https://www.anthropic.com/research/glasswing-initial-update</link>
@@ -119,15 +336,15 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
 
 Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
@@ -228,15 +445,15 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>2028: Two scenarios for global AI leadership</title>
@@ -422,15 +639,15 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
 
 It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
@@ -609,15 +826,15 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
-New research on how we've reduced agentic misalignment.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -705,17 +922,17 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -796,17 +1013,17 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Natural Language Autoencoders: Turning Claude’s thoughts into text</title>
@@ -886,15 +1103,17 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
 
 Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
@@ -967,15 +1186,17 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Donating our open-source alignment tool</title>
@@ -1007,15 +1228,17 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
 
 Petri has been part of our alignment assessme...</p><div style="font-size:16px;line-height:1.8;color:#333">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
@@ -1040,15 +1263,17 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Focus areas for The Anthropic Institute</title>
@@ -1208,15 +1433,17 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
 
 Our agenda focuses on four areas for research:
@@ -1369,15 +1596,17 @@ The tech tree:AI is speeding up some sciences far faster than others, depending 
 
 The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>How people ask Claude for personal guidance</title>
@@ -1455,15 +1684,17 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">People don’t just come to Claude for code reviews or meeting summaries. They ask whether to take the job, how to talk to their crush, if they should move halfway across the world. Using ourprivacy-preserving analysis toolon a random sample of 1 million claude.ai conversations, we found that roughly 6% were people coming to Claude for personal guidance—seeking not just information but perspective on what to do next.
 
 In this study, we looked at what types of guidance people ask of Claude. We expl...</p><div style="font-size:16px;line-height:1.8;color:#333">People don’t just come to Claude for code reviews or meeting summaries. They ask whether to take the job, how to talk to their crush, if they should move halfway across the world. Using ourprivacy-preserving analysis toolon a random sample of 1 million claude.ai conversations, we found that roughly 6% were people coming to Claude for personal guidance—seeking not just information but perspective on what to do next.
@@ -1534,15 +1765,17 @@ At the bottom of every response on claude.ai is an option to send feedback via a
 
 At the bottom of every response on claude.ai is an option to send feedback via a thumbs up or thumbs down button, which shares the conversation with Anthropic.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-personal-guidance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench</title>
@@ -1654,6 +1887,10 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
@@ -1661,8 +1898,6 @@ An early update on what we've learned from Project Glasswing.
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.
 
 Subscribe to Anthropic Science
 
@@ -1771,6 +2006,10 @@ We’re eager to build even longer-horizon, real-world tasks that push model res
 
 If you are interested in understanding how models perform on difficult verifiable computational biology tasks, you canaccess BioMysteryBench hereand visitclaude.com/lifesciencesto learn more.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
@@ -1778,8 +2017,6 @@ An early update on what we've learned from Project Glasswing.
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.
 
 Subscribe to Anthropic Science
 
@@ -1821,15 +2058,17 @@ We will analyze the insights from this study as part of our economic research, p
 
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">TheEconomic Researchteam is launching the Anthropic Economic Index Survey, a monthly survey conducted throughAnthropic Interviewer.
 
 Understanding AI&apos;s economic impact requires moving beyond the quantitative data we have today. Usage and diffusion metrics tell us how AI is being deployed, and traditional labor market indicators—like employment rates, wage trends, and layoffs—track what has already happened, often with meaningful delay. Both are essential, but neither captures how people experien...</p><div style="font-size:16px;line-height:1.8;color:#333">TheEconomic Researchteam is launching the Anthropic Economic Index Survey, a monthly survey conducted throughAnthropic Interviewer.
@@ -1860,107 +2099,9 @@ We will analyze the insights from this study as part of our economic research, p
 
 If you have further questions, reach out via the message icon in the lower right corner of ourHelp Center.
 
-Project Glasswing: An initial update
+Coding agents in the social sciences
 
-An early update on what we've learned from Project Glasswing.
-
-2028: Two scenarios for global AI leadership
-
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>What 81,000 people told us about the economics of AI</title>
-  <link>https://www.anthropic.com/research/81k-economics</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/81k-economics</guid>
-  <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
-
-Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
-
-Respondents experiencing the largest speedups from AI express higher concern about job displacement.
-
-In order to inform the public...</p><div style="font-size:16px;line-height:1.8;color:#333">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
-
-Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
-
-Respondents experiencing the largest speedups from AI express higher concern about job displacement.
-
-In order to inform the public about the economic changes we’re observing with AI, ourEconomic Indexshares what work Claude is being asked to do, and in which jobs Claude is doing the largest share of tasks. To date, however, we’ve lacked information on how these usage patterns map onto people’s thoughts and impressions of AI.
-
-Our recentsurvey study with 81,000 Claude usersprovides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-The survey asked people about their visions and fears around advances in AI. Many of the thoughts that people shared touched on economic topics. We learned that many people fear job displacement—though they also feel more productive and empowered at work. In some cases, AI has enabled them to start businesses, or given them time for more important things; in others, AI feels stifling, or imposed on them by their employers.
-
-The survey’s results provide initial evidence thatobserved exposure(our measure of AI displacement risk) is correlated with economic concern around AI. People in highly exposed occupations—as defined by the tasks Claude is observed performing—were more nervous about economic displacement. This is consistent with people being broadly aware of AI’s diffusion and potential impacts. We expand on our findings below.
-
-Who worries about job displacement?
-
-“Well like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.”—Software engineer.1
-
-One fifth of the respondents in our survey voiced concern about economic displacement. Some worried about this in the abstract: one software developer cautioned about “the possibility of AI in its current state being used to replace junior positions.” Others lamented that their jobs, or aspects of their jobs, were being automated away. One market researcher said, “In terms of improving my capability, it's no doubt. [B]ut in the future AI may replace my work.” In some jobs, people felt it made their work harder. One software developer observed that “when AI arrived, the project managers started giving harder and harder tickets and bugs to solve.”
-
-Throughout this report, we use Claude-powered classifiers to infer people’s attributes and sentiments from their responses. For example, many participants mention their line of work in passing or give informative details about their work life, which allows us to infer their occupation. Similarly, we quantify concerns about job loss by prompting Claude to identify and interpret direct quotes in which respondents indicate that their own role is at risk of AI-driven displacement. We give example prompts inthe Appendix.
-
-Respondents’ perceived threat from AI was correlated with ourown measure of observed exposure, which reflects the percentage of a job’s tasks for which Claude is used. A respondent was more concerned about AI when our observed exposure measure for that respondent was higher. Elementary school teachers were less worried about their own displacement than software engineers, for example, consistent with the fact that Claude usage skews toward coding tasks.
-
-We show this in Figure 1 below. The y-axis is the percentage of respondents in a given occupation who said that AI is already replacing their role or is likely to do so soon. The x-axis is observed exposure. The plot shows that, on average, people in more exposed occupations tended to express more concern about their jobs being automated away. For every 10-percentage-point increase in exposure, perceived job threat increased by 1.3 percentage points. People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%.
-
-Another important worker characteristic is career stage. In previous research, we reportedtentative signsof a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.2We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
-
-Who benefits from AI?
-
-Using Claude to assess the survey responses, we rated the extent of people’s self-reported productivity gains from AI on a 1–7 scale, where 1 is “less productive,” 2 is “no change,” and each subsequent level denotes a larger gain. Responses that scored 7 included testimonials like, “It used to take months to make the website I [made] in 4-5 days”; Claude gave a 5 to statements like, “What might have taken four hours was accomplished in half the time,” and a 2 to ones like, “Personally, I had AI help me fix code on a website. But it took multiple passes to get the result I was after.”3
-
-Overall, people reported meaningful productivity gains on average. The mean productivity rating was 5.1, corresponding to “substantially more productive.” Our respondents were, of course, active Claude users who were willing to take a survey. This could make them more likely to report productivity benefits than the average user. Some 3% reported negative or neutral impacts, and 42% did not give a clear indication on productivity.
-
-This splits somewhat across income lines. The left panel in Figure 3 shows that people in high-paying jobs, like software developers, conveyed the largest productivity gains from AI. This result is not driven only by coding; it holds when we leave out computer and math occupations. It echoes a previousEconomic Index findingthat also favored higher-paid workers: in tasks requiring greater levels of education, Claude tended to reduce the time taken to complete a task (relative to doing it without AI) by a higher percentage.
-
-Some of the lowest-paid workers describe high productivity gains as well. This included a customer service representative using “AI to save me a lot of time with creating a response based on another one.” And in some cases, people in low-wage jobs were using AI on technical side projects. One delivery driver, for example, was using Claude to start an e-commerce business, and a landscaper was building a music application.
-
-We look at this in more detail in the right panel of Figure 3, showing the inferred productivity gain by major occupational group. At the top are management occupations. These respondents are mostly entrepreneurs using Claude to build a business.4The next highest category is computer and math, which includes software developers. The two groups exhibiting the mildest productivity improvements were workers in scientific and legal professions. Some lawyers worried about AI’s ability to follow precise instructions. For example: “I have given very specific rules about what is where, how to read a legal document, what I want it to do… but it diverges every time.”
-
-A key question as AI diffuses through the economy is where the benefits will accrue—to workers, their managers, consumers, or corporations. Respondents indicated the recipient of these gains in about a quarter of interviews. Overall, most of these people cited benefits to themselves, through faster tasks, expanded scope, and freed-up time.5But 10% of respondents who named a recipient said that employers or clients were asking for and getting more work. A smaller share mentioned benefits to AI companies, and an even smaller share said that AI would be a net negative. This depended on career stage: only 60% of early-career workers indicated that they personally benefited from AI, compared to 80% of senior professionals.
-
-Respondents also shared where they experienced gains in productivity. We separate this into scope, speed, quality, and cost. For example, many people using AI for coding tasks said things like, “I’m a non tech guy but now I’m a full stack developer.” This is an expansion of scope; AI unlocks new abilities for them. In contrast, some users sped up tasks they were already doing, like the accountant who said, “I built a tool that helps me finish a financing task in 15 minutes that used to take 2 hours.” Quality gains often came from more thorough checks of code, contracts, and other paperwork. And a small share of respondents mentioned the low cost of using AI: “[I]f I hire a social media manager it’s over my budget.”
-
-We find that the most common productivity enhancement is in scope, which was cited by 48% of users who explicitly mentioned productivity effects. 40% of users who mentioned productivity emphasized speed.
-
-People’s experience with Claude might also shape their concerns about AI. To assess this, we measured the speedup reported by respondents, by extracting whether their work was now much slower (which we coded as 1), showed no change in speed (4), or had become much faster (7).
-
-We found that the relationship between speedup and perceived job threat is U-shaped (see Figure 6). The leftmost bar shows respondents who reported that AI slowed them down. These respondents were more likely to indicate that AI posed a significant threat to their livelihoods. For example, some creative workers, like fine artists and writers, found AI too stifling and rigid to help them at their own work. At the same time, they feared the diffusion of AI into creative fields would make it harder for them to find work.
-
-For the remaining respondents, perceived job threat increases consistently with the level of speedup implied by their answers. This makes some economic sense: if the time required to do one’s tasks is shrinking quickly, there may be more uncertainty about the future viability of the role.
-
-The Economic Index reveals what people do with AI. But another key input for understanding AI’s economic impact is to hear directly from people about their experience. The responses explored here show that people’s intuitions track the usage data: they worry most about AI’s effect in the jobs where we observe Claude doing the most work. We also find higher levels of economic anxiety among early-career workers, which aligns with past research.
-
-There are also signs that Claude empowers its users. People are most likely to talk about benefits flowing to themselves rather than to employers or AI companies. High-wage workers were the most enthusiastic about the productivity impacts of AI, but people with low-wage jobs and lower levels of education also reported large productivity gains. Most respondents reported that Claude enhanced their capabilities in the form of broadening the scope of their work or speeding it up. But users experiencing the largest speedups were also the most nervous about AI’s job impacts.
-
-There are key caveats to our analysis, owing to the nature of the data. First, our survey is limited to users of personal accounts on Claude.ai who chose to respond. Among other potential biases, these users could be more likely to perceive the benefits as flowing to themselves. Second, the users weren’t asked directly about many of the derived variables here, so our inferences on occupation, career stage, and other variables from contextual clues could be wrong. Relatedly, because the survey is open-ended, our measures are based on what respondents happen to mention; these findings should be confirmed in structured surveys that ask about these topics directly.
-
-Still, the interviews surface real insights about people’s feelings around the economics of AI, showing how qualitative data can surface quantitative hypotheses. And the large share of economic-related concerns is a strong signal in itself.
-
-See the final section of thelinked PDF.
-
-We thank the 80,508 Claude users who shared their stories.
-
-Maxim Massenkoff led the analysis and wrote the blog post. Saffron Huang led the interview project and provided guidance throughout.
-
-Zoe Hitzig and Eva Lyubich provided critical feedback and methodological guidance. Keir Bradwell and Rebecca Hiscott gave editorial support. Hanah Ho and Kim Withee contributed to design. Grace Yun, AJ Alt, and Thomas Millar implemented Anthropic Interviewer within Claude.ai. Chelsea Larsson, Jane Leibrock, and Matt Gallivan contributed to survey and experience design. Theodore Sumers contributed to the data processing and clustering infrastructure. Peter McCrory, Deep Ganguli, and Jack Clark provided critical feedback, direction and organizational support.
-
-Additionally, we thank Miriam Chaum, Ankur Rathi, Santi Ruiz, and David Saunders for their discussion, feedback, and support.
-
-We inferred people’s occupations using the first question in the survey (“What’s the last thing you used an AI chatbot for?”) or indications given in other responses.
-
-This came from various indications in the written responses. For example, several users mentioned using Claude for homework, which put them in the early-career group. And many referred to running their own businesses and being involved in hiring decisions, which put them in the senior group.
-
-The scale is not centered because most people say positive things about productivity, yielding almost entirely 6s and 7s on the original Likert scale. The scale we use here ran from 1 = less productive, 2 = no change, 3 = slightly more productive, 4 = moderately more productive, 5 = substantially more productive, 6 = much more productive, to 7 = transformatively more productive—AI has fundamentally changed what or how much they can produce.
-
-Removing these “solopreneurs” still leaves management tied with computer and math occupations for showing the highest productivity benefit.
-
-A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
+Results from a survey of 1,260 social scientists about AI and coding agent use.
 
 Project Glasswing: An initial update
 
@@ -1968,104 +2109,7 @@ An early update on what we've learned from Project Glasswing.
 
 2028: Two scenarios for global AI leadership
 
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
-
-Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
-
-Respondents experiencing the largest speedups from AI express higher concern about job displacement.
-
-In order to inform the public...</p><div style="font-size:16px;line-height:1.8;color:#333">Our recent survey of 81,000 Claude users shows that people who work in roles that are more exposed to AI have more concerns about AI-driven job displacement. These concerns are also higher among early-career respondents.
-
-Those in the highest- and lowest-paid occupations report the largest productivity gains, most commonly from increases in scope (doing new tasks).
-
-Respondents experiencing the largest speedups from AI express higher concern about job displacement.
-
-In order to inform the public about the economic changes we’re observing with AI, ourEconomic Indexshares what work Claude is being asked to do, and in which jobs Claude is doing the largest share of tasks. To date, however, we’ve lacked information on how these usage patterns map onto people’s thoughts and impressions of AI.
-
-Our recentsurvey study with 81,000 Claude usersprovides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-The survey asked people about their visions and fears around advances in AI. Many of the thoughts that people shared touched on economic topics. We learned that many people fear job displacement—though they also feel more productive and empowered at work. In some cases, AI has enabled them to start businesses, or given them time for more important things; in others, AI feels stifling, or imposed on them by their employers.
-
-The survey’s results provide initial evidence thatobserved exposure(our measure of AI displacement risk) is correlated with economic concern around AI. People in highly exposed occupations—as defined by the tasks Claude is observed performing—were more nervous about economic displacement. This is consistent with people being broadly aware of AI’s diffusion and potential impacts. We expand on our findings below.
-
-Who worries about job displacement?
-
-“Well like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.”—Software engineer.1
-
-One fifth of the respondents in our survey voiced concern about economic displacement. Some worried about this in the abstract: one software developer cautioned about “the possibility of AI in its current state being used to replace junior positions.” Others lamented that their jobs, or aspects of their jobs, were being automated away. One market researcher said, “In terms of improving my capability, it's no doubt. [B]ut in the future AI may replace my work.” In some jobs, people felt it made their work harder. One software developer observed that “when AI arrived, the project managers started giving harder and harder tickets and bugs to solve.”
-
-Throughout this report, we use Claude-powered classifiers to infer people’s attributes and sentiments from their responses. For example, many participants mention their line of work in passing or give informative details about their work life, which allows us to infer their occupation. Similarly, we quantify concerns about job loss by prompting Claude to identify and interpret direct quotes in which respondents indicate that their own role is at risk of AI-driven displacement. We give example prompts inthe Appendix.
-
-Respondents’ perceived threat from AI was correlated with ourown measure of observed exposure, which reflects the percentage of a job’s tasks for which Claude is used. A respondent was more concerned about AI when our observed exposure measure for that respondent was higher. Elementary school teachers were less worried about their own displacement than software engineers, for example, consistent with the fact that Claude usage skews toward coding tasks.
-
-We show this in Figure 1 below. The y-axis is the percentage of respondents in a given occupation who said that AI is already replacing their role or is likely to do so soon. The x-axis is observed exposure. The plot shows that, on average, people in more exposed occupations tended to express more concern about their jobs being automated away. For every 10-percentage-point increase in exposure, perceived job threat increased by 1.3 percentage points. People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%.
-
-Another important worker characteristic is career stage. In previous research, we reportedtentative signsof a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.2We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
-
-Who benefits from AI?
-
-Using Claude to assess the survey responses, we rated the extent of people’s self-reported productivity gains from AI on a 1–7 scale, where 1 is “less productive,” 2 is “no change,” and each subsequent level denotes a larger gain. Responses that scored 7 included testimonials like, “It used to take months to make the website I [made] in 4-5 days”; Claude gave a 5 to statements like, “What might have taken four hours was accomplished in half the time,” and a 2 to ones like, “Personally, I had AI help me fix code on a website. But it took multiple passes to get the result I was after.”3
-
-Overall, people reported meaningful productivity gains on average. The mean productivity rating was 5.1, corresponding to “substantially more productive.” Our respondents were, of course, active Claude users who were willing to take a survey. This could make them more likely to report productivity benefits than the average user. Some 3% reported negative or neutral impacts, and 42% did not give a clear indication on productivity.
-
-This splits somewhat across income lines. The left panel in Figure 3 shows that people in high-paying jobs, like software developers, conveyed the largest productivity gains from AI. This result is not driven only by coding; it holds when we leave out computer and math occupations. It echoes a previousEconomic Index findingthat also favored higher-paid workers: in tasks requiring greater levels of education, Claude tended to reduce the time taken to complete a task (relative to doing it without AI) by a higher percentage.
-
-Some of the lowest-paid workers describe high productivity gains as well. This included a customer service representative using “AI to save me a lot of time with creating a response based on another one.” And in some cases, people in low-wage jobs were using AI on technical side projects. One delivery driver, for example, was using Claude to start an e-commerce business, and a landscaper was building a music application.
-
-We look at this in more detail in the right panel of Figure 3, showing the inferred productivity gain by major occupational group. At the top are management occupations. These respondents are mostly entrepreneurs using Claude to build a business.4The next highest category is computer and math, which includes software developers. The two groups exhibiting the mildest productivity improvements were workers in scientific and legal professions. Some lawyers worried about AI’s ability to follow precise instructions. For example: “I have given very specific rules about what is where, how to read a legal document, what I want it to do… but it diverges every time.”
-
-A key question as AI diffuses through the economy is where the benefits will accrue—to workers, their managers, consumers, or corporations. Respondents indicated the recipient of these gains in about a quarter of interviews. Overall, most of these people cited benefits to themselves, through faster tasks, expanded scope, and freed-up time.5But 10% of respondents who named a recipient said that employers or clients were asking for and getting more work. A smaller share mentioned benefits to AI companies, and an even smaller share said that AI would be a net negative. This depended on career stage: only 60% of early-career workers indicated that they personally benefited from AI, compared to 80% of senior professionals.
-
-Respondents also shared where they experienced gains in productivity. We separate this into scope, speed, quality, and cost. For example, many people using AI for coding tasks said things like, “I’m a non tech guy but now I’m a full stack developer.” This is an expansion of scope; AI unlocks new abilities for them. In contrast, some users sped up tasks they were already doing, like the accountant who said, “I built a tool that helps me finish a financing task in 15 minutes that used to take 2 hours.” Quality gains often came from more thorough checks of code, contracts, and other paperwork. And a small share of respondents mentioned the low cost of using AI: “[I]f I hire a social media manager it’s over my budget.”
-
-We find that the most common productivity enhancement is in scope, which was cited by 48% of users who explicitly mentioned productivity effects. 40% of users who mentioned productivity emphasized speed.
-
-People’s experience with Claude might also shape their concerns about AI. To assess this, we measured the speedup reported by respondents, by extracting whether their work was now much slower (which we coded as 1), showed no change in speed (4), or had become much faster (7).
-
-We found that the relationship between speedup and perceived job threat is U-shaped (see Figure 6). The leftmost bar shows respondents who reported that AI slowed them down. These respondents were more likely to indicate that AI posed a significant threat to their livelihoods. For example, some creative workers, like fine artists and writers, found AI too stifling and rigid to help them at their own work. At the same time, they feared the diffusion of AI into creative fields would make it harder for them to find work.
-
-For the remaining respondents, perceived job threat increases consistently with the level of speedup implied by their answers. This makes some economic sense: if the time required to do one’s tasks is shrinking quickly, there may be more uncertainty about the future viability of the role.
-
-The Economic Index reveals what people do with AI. But another key input for understanding AI’s economic impact is to hear directly from people about their experience. The responses explored here show that people’s intuitions track the usage data: they worry most about AI’s effect in the jobs where we observe Claude doing the most work. We also find higher levels of economic anxiety among early-career workers, which aligns with past research.
-
-There are also signs that Claude empowers its users. People are most likely to talk about benefits flowing to themselves rather than to employers or AI companies. High-wage workers were the most enthusiastic about the productivity impacts of AI, but people with low-wage jobs and lower levels of education also reported large productivity gains. Most respondents reported that Claude enhanced their capabilities in the form of broadening the scope of their work or speeding it up. But users experiencing the largest speedups were also the most nervous about AI’s job impacts.
-
-There are key caveats to our analysis, owing to the nature of the data. First, our survey is limited to users of personal accounts on Claude.ai who chose to respond. Among other potential biases, these users could be more likely to perceive the benefits as flowing to themselves. Second, the users weren’t asked directly about many of the derived variables here, so our inferences on occupation, career stage, and other variables from contextual clues could be wrong. Relatedly, because the survey is open-ended, our measures are based on what respondents happen to mention; these findings should be confirmed in structured surveys that ask about these topics directly.
-
-Still, the interviews surface real insights about people’s feelings around the economics of AI, showing how qualitative data can surface quantitative hypotheses. And the large share of economic-related concerns is a strong signal in itself.
-
-See the final section of thelinked PDF.
-
-We thank the 80,508 Claude users who shared their stories.
-
-Maxim Massenkoff led the analysis and wrote the blog post. Saffron Huang led the interview project and provided guidance throughout.
-
-Zoe Hitzig and Eva Lyubich provided critical feedback and methodological guidance. Keir Bradwell and Rebecca Hiscott gave editorial support. Hanah Ho and Kim Withee contributed to design. Grace Yun, AJ Alt, and Thomas Millar implemented Anthropic Interviewer within Claude.ai. Chelsea Larsson, Jane Leibrock, and Matt Gallivan contributed to survey and experience design. Theodore Sumers contributed to the data processing and clustering infrastructure. Peter McCrory, Deep Ganguli, and Jack Clark provided critical feedback, direction and organizational support.
-
-Additionally, we thank Miriam Chaum, Ankur Rathi, Santi Ruiz, and David Saunders for their discussion, feedback, and support.
-
-We inferred people’s occupations using the first question in the survey (“What’s the last thing you used an AI chatbot for?”) or indications given in other responses.
-
-This came from various indications in the written responses. For example, several users mentioned using Claude for homework, which put them in the early-career group. And many referred to running their own businesses and being involved in hiring decisions, which put them in the senior group.
-
-The scale is not centered because most people say positive things about productivity, yielding almost entirely 6s and 7s on the original Likert scale. The scale we use here ran from 1 = less productive, 2 = no change, 3 = slightly more productive, 4 = moderately more productive, 5 = substantially more productive, 6 = much more productive, to 7 = transformatively more productive—AI has fundamentally changed what or how much they can produce.
-
-Removing these “solopreneurs” still leaves management tied with computer and math occupations for showing the highest productivity benefit.
-
-A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.
-
-2028: Two scenarios for global AI leadership
-
-Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/81k-economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Our views on the AI competition between the US and China.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-survey-announcement" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Vend: Phase two</title>
@@ -2173,6 +2217,10 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
@@ -2180,8 +2228,6 @@ An early update on what we've learned from Project Glasswing.
 2028: Two scenarios for global AI leadership
 
 Our views on the AI competition between the US and China.
-
-New research on how we've reduced agentic misalignment.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2286,6 +2332,10 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.
+
 Project Glasswing: An initial update
 
 An early update on what we've learned from Project Glasswing.
@@ -2294,114 +2344,15 @@ An early update on what we've learned from Project Glasswing.
 
 Our views on the AI competition between the US and China.
 
-New research on how we've reduced agentic misalignment.
-
 Subscribe to the Frontier Red Team newsletter
 
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/project-vend-2" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Interpretability</title>
-  <link>https://www.anthropic.com/research/team/interpretability</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Tracing the thoughts of a large language model
-
-Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Tracing the thoughts of a large language model
-
-Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2495,95 +2446,10 @@ Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 S
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Economic Research</title>
-  <link>https://www.anthropic.com/research/team/economic-research</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index: Tracking AI’s role in the US and global economy
-
-This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
-
-We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations
-
-Sep 15, 2025Economic ResearchAnthropic Economic Index report: Uneven geographic and enterprise AI adoption</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 24 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -2671,6 +2537,188 @@ Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavi
 Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Economic Research</title>
+  <link>https://www.anthropic.com/research/team/economic-research</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+  <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
+
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+
+Anthropic Economic Index: Tracking AI’s role in the US and global economy
+
+This report maps how Claude is used differently across US states and countries, finding strong correlations between income and AI adoption. It also tracks a notable shift: directive automation has risen from 27% to 39% of conversations since December 2024, with businesses automating far more than consumers.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
+
+Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Interpretability</title>
+  <link>https://www.anthropic.com/research/team/interpretability</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
+  <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Tracing the thoughts of a large language model
+
+Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Tracing the thoughts of a large language model
+
+Circuit tracing lets us watch Claude think, uncovering a shared conceptual space where reasoning happens before being translated into language—suggesting the model can learn something in one language and apply it in another.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect—a step toward understanding what's actually happening inside these models.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Neural networks pack many concepts into single neurons. This paper shows how and when models represent more features than they have dimensions.
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
