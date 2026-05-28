@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/engineering</link>
 <description>Engineering blog from Anthropic - MCP, Claude Code, and more</description>
 <language>en</language>
-<lastBuildDate>Thu, 28 May 2026 16:04:38 +0000</lastBuildDate>
+<lastBuildDate>Thu, 28 May 2026 20:32:31 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/engineering" rel="self" type="application/rss+xml"/>
 <image>
@@ -8395,17 +8395,23 @@ Use this file to discover all available pages before exploring further.
 
 ​Give Claude a way to verify its work
 
-​Explore first, then plan, then code
+In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
 
-read /src/auth and understand how we handle sessions and login.also look at how we manage environment variables for secrets.
-
-read /src/au...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
+Across a session: set the check as a/goalcondition. A separate evaluator re-...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
 Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
 
 Use this file to discover all available pages before exploring further.
 
 ​Give Claude a way to verify its work
+
+In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
+
+Across a session: set the check as a/goalcondition. A separate evaluator re-checks it after every turn and Claude keeps working until it holds.
+
+As a deterministic gate: aStop hookruns your check as a script and blocks the turn from ending until it passes. Claude Code overrides the hook and ends the turn after 8 consecutive blocks.
+
+By a second opinion: averification subagentor adynamic workflowthat checks its own findings has a fresh model try to refute the result, so the agent doing the work isn’t the one grading it.
 
 ​Explore first, then plan, then code
 
@@ -8646,17 +8652,23 @@ Use this file to discover all available pages before exploring further.
 
 ​Give Claude a way to verify its work
 
-​Explore first, then plan, then code
+In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
 
-read /src/auth and understand how we handle sessions and login.also look at how we manage environment variables for secrets.
-
-read /src/au...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
+Across a session: set the check as a/goalcondition. A separate evaluator re-...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
 Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
 
 Use this file to discover all available pages before exploring further.
 
 ​Give Claude a way to verify its work
+
+In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
+
+Across a session: set the check as a/goalcondition. A separate evaluator re-checks it after every turn and Claude keeps working until it holds.
+
+As a deterministic gate: aStop hookruns your check as a script and blocks the turn from ending until it passes. Claude Code overrides the hook and ends the turn after 8 consecutive blocks.
+
+By a second opinion: averification subagentor adynamic workflowthat checks its own findings has a fresh model try to refute the result, so the agent doing the work isn’t the one grading it.
 
 ​Explore first, then plan, then code
 
