@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Tue, 02 Jun 2026 04:03:20 +0000</lastBuildDate>
+<lastBuildDate>Tue, 02 Jun 2026 16:30:56 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,127 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Expanding Project Glasswing</title>
+  <link>https://www.anthropic.com/news/expanding-project-glasswing</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/expanding-project-glasswing</guid>
+  <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
+
+We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
+
+We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Project Glasswing partners, the security industry, open-source software maintainers, and the US government, we’re extending the partnership to approximately 150 new organizations. Each one will need to meet our security requirements before they gain access.
+
+The organizations in this new group are based in more than 15 countries, and most provide critical infrastructure to many more. (In the future, we intend to expand our geographical reach much further.) The group covers several industries that weren’t well represented in our initial cohort, such as power, water, healthcare, communications, and hardware. And many of the new partners are vendors—companies or nonprofits that maintain codebases that are relied upon by lots of other organizations around the world, including governments.
+
+What each partner has in common is that a successful attack on their codebase could be catastrophic. For most partners, we estimate that a major attack could affect more than 100 million people, with important ramifications for both global and national security.
+
+This expansion is the next step toward our long-term goals: for AI to makeallsoftware more secure, and for us to help the industry adjust to how AI could change many of the core assumptions of cybersecurity.
+
+The role of Project Glasswing
+
+Project Glasswing and the capabilities of Claude Mythos Preview have sparked broad conversations—both within the software industry and with governments—about how AI is changing cybersecurity. These conversations have informed how we’ve expanded the program. They’ve also shaped our thinking about the very purpose of Project Glasswing.
+
+Cheap, fast AI models with powerful cyber capabilities are around the corner. We want Project Glasswing to spur institutions toward operating norms that reflect this reality.
+
+Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefendersadapt to maintain pace.
+
+We see our role as twofold. First, to help the software industry adapt by safely providing wide access to better models, tools, and common infrastructure. Second, to steadily shift the support we provide, from finding vulnerabilities to disclosing, fixing, and deploying patched software. We’ll now discuss each of these in turn.
+
+Supporting cyberdefenders
+
+So far, companies, nonprofits, maintainers, and researchers have acted quickly. Within the first weeks of Project Glasswing, each member began using Mythos Preview at large scale, sharing information and best practices with other partners, and working with third parties to triage the model’s findings. These organizations’ methods for adapting to new tools can, and should, be replicated widely across the millions of organizations and developers who are vulnerable to cyberattacks.
+
+To support this, we recently releasedClaude Security, a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—the toolswe developed to help Project Glasswing’s partners find vulnerabilities more quickly.
+
+We intend to go much further: our longer-term aim is to support the industry in creating new initiatives, standards, and infrastructure for the era of powerful cyber models.
+
+Accelerating patching and the rest of security
+
+As we’vepreviously discussed, the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
+
+Mythos Preview itself can help. Many of Project Glasswing’s partners now use the model to write patches, as well as for pre-release checks that prevent vulnerabilities from appearing in the first place. Models like Mythos Preview can also be used for penetration testing (simulating a cyberattack to identify how vulnerabilities might be exploited), automating threat detection and response, and rebuilding legacy codebases in memory-safe languages, among many other defensive tasks.
+
+We’re in discussions with third parties about how we might substantially scale up the reviewing and patching of vulnerabilities in open-source software. We’re also working on sharing ideas and best practices for disclosing vulnerabilities to open-source maintainers, with the intent of making these reports easier to triage and to act upon.
+
+To address the scale of this coming challenge, hundreds of thousands of organizations, researchers, and maintainers will likely need access to the most advanced cyber capabilities and tools available.
+
+We’re working as quickly as we can to safely release Mythos-level capabilities in general access. To do so, we’ll need highly robust safeguards that prevent the model’s cyber capabilities from being misused—safeguards that we (and, to our knowledge, all other AI developers) have yet to develop. Because cybersecurity has both helpful and destructive uses, making safeguards that are both strong and precise enough is a major challenge.
+
+In the meantime, we plan to expand Project Glasswing even further—prioritizing additional essential infrastructure providers, maintainers of critical open-source software, and safety testers. We intend for future expansions to cover organizations in the US and overseas, just as this one does. We also intend to scale up our Cyber Verification Program, which would grant Mythos-class capabilities to many more organizations for specific cyberdefense tasks.
+
+In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
+
+Anthropic confidentially submits draft S-1 to the SEC
+
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
+
+Anthropic raises $65B in Series H funding at $965B post-money valuation
+
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
+
+Introducing Claude Opus 4.8
+
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
+
+We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
+
+We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Project Glasswing partners, the security industry, open-source software maintainers, and the US government, we’re extending the partnership to approximately 150 new organizations. Each one will need to meet our security requirements before they gain access.
+
+The organizations in this new group are based in more than 15 countries, and most provide critical infrastructure to many more. (In the future, we intend to expand our geographical reach much further.) The group covers several industries that weren’t well represented in our initial cohort, such as power, water, healthcare, communications, and hardware. And many of the new partners are vendors—companies or nonprofits that maintain codebases that are relied upon by lots of other organizations around the world, including governments.
+
+What each partner has in common is that a successful attack on their codebase could be catastrophic. For most partners, we estimate that a major attack could affect more than 100 million people, with important ramifications for both global and national security.
+
+This expansion is the next step toward our long-term goals: for AI to makeallsoftware more secure, and for us to help the industry adjust to how AI could change many of the core assumptions of cybersecurity.
+
+The role of Project Glasswing
+
+Project Glasswing and the capabilities of Claude Mythos Preview have sparked broad conversations—both within the software industry and with governments—about how AI is changing cybersecurity. These conversations have informed how we’ve expanded the program. They’ve also shaped our thinking about the very purpose of Project Glasswing.
+
+Cheap, fast AI models with powerful cyber capabilities are around the corner. We want Project Glasswing to spur institutions toward operating norms that reflect this reality.
+
+Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefendersadapt to maintain pace.
+
+We see our role as twofold. First, to help the software industry adapt by safely providing wide access to better models, tools, and common infrastructure. Second, to steadily shift the support we provide, from finding vulnerabilities to disclosing, fixing, and deploying patched software. We’ll now discuss each of these in turn.
+
+Supporting cyberdefenders
+
+So far, companies, nonprofits, maintainers, and researchers have acted quickly. Within the first weeks of Project Glasswing, each member began using Mythos Preview at large scale, sharing information and best practices with other partners, and working with third parties to triage the model’s findings. These organizations’ methods for adapting to new tools can, and should, be replicated widely across the millions of organizations and developers who are vulnerable to cyberattacks.
+
+To support this, we recently releasedClaude Security, a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—the toolswe developed to help Project Glasswing’s partners find vulnerabilities more quickly.
+
+We intend to go much further: our longer-term aim is to support the industry in creating new initiatives, standards, and infrastructure for the era of powerful cyber models.
+
+Accelerating patching and the rest of security
+
+As we’vepreviously discussed, the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
+
+Mythos Preview itself can help. Many of Project Glasswing’s partners now use the model to write patches, as well as for pre-release checks that prevent vulnerabilities from appearing in the first place. Models like Mythos Preview can also be used for penetration testing (simulating a cyberattack to identify how vulnerabilities might be exploited), automating threat detection and response, and rebuilding legacy codebases in memory-safe languages, among many other defensive tasks.
+
+We’re in discussions with third parties about how we might substantially scale up the reviewing and patching of vulnerabilities in open-source software. We’re also working on sharing ideas and best practices for disclosing vulnerabilities to open-source maintainers, with the intent of making these reports easier to triage and to act upon.
+
+To address the scale of this coming challenge, hundreds of thousands of organizations, researchers, and maintainers will likely need access to the most advanced cyber capabilities and tools available.
+
+We’re working as quickly as we can to safely release Mythos-level capabilities in general access. To do so, we’ll need highly robust safeguards that prevent the model’s cyber capabilities from being misused—safeguards that we (and, to our knowledge, all other AI developers) have yet to develop. Because cybersecurity has both helpful and destructive uses, making safeguards that are both strong and precise enough is a major challenge.
+
+In the meantime, we plan to expand Project Glasswing even further—prioritizing additional essential infrastructure providers, maintainers of critical open-source software, and safety testers. We intend for future expansions to cover organizations in the US and overseas, just as this one does. We also intend to scale up our Cyber Verification Program, which would grant Mythos-class capabilities to many more organizations for specific cyberdefense tasks.
+
+In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
+
+Anthropic confidentially submits draft S-1 to the SEC
+
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
+
+Anthropic raises $65B in Series H funding at $965B post-money valuation
+
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
+
+Introducing Claude Opus 4.8
+
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Anthropic confidentially submits draft S-1 to the SEC</title>
   <link>https://www.anthropic.com/news/confidential-draft-s1-sec</link>
@@ -25,34 +146,34 @@ The number of shares to be offered and the price have not yet been set. This ann
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
 Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
 
 Introducing Claude Opus 4.8
 
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securiti...</p><div style="font-size:16px;line-height:1.8;color:#333">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
 Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
 
 Introducing Claude Opus 4.8
 
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Opus 4.8</title>
@@ -100,17 +221,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
 
 Opus 4.8 launches alongside several new features. Users on claude.ai now have control over the amount of effort Claude puts into a task. Claude Code has a new “dynamic workflows” feature that allows it to tackle very large-scale problems. And fast mode for Opus 4.8—where the model can work at 2.5×...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
@@ -151,17 +272,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic raises $65B in Series H funding at $965B post-money valuation</title>
@@ -193,17 +314,17 @@ We have significantly expanded our compute capacity in recent weeks. We signed a
 
 We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Introducing Claude Opus 4.8
 
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
 
 Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. T...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
@@ -228,17 +349,17 @@ We have significantly expanded our compute capacity in recent weeks. We signed a
 
 We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Introducing Claude Opus 4.8
 
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.
-
-Anthropic opens Milan office to support Italian enterprise, research, and developers
-
-We're opening a new office in Milan, our sixth in Europe.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic opens Milan office to support Italian enterprise, research, and developers</title>
@@ -262,17 +383,17 @@ Chris Ciauri, MD International at Anthropic, commented: “We are here to suppor
 
 The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country&apos;s developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
 
 This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV&apos;s first encyclical and the first papal teaching dedicate...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country's developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
@@ -289,17 +410,17 @@ Chris Ciauri, MD International at Anthropic, commented: “We are here to suppor
 
 The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening</title>
@@ -321,17 +442,17 @@ Our Korea team will focus on building partnerships with enterprises and startups
 
 For more information about career opportunities in our Seoul office, visitanthropic.com/careers.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Korea is one of the most active markets in the world for Claude.ai. According to our latestEconomic Index, Koreans use Claude at more than 3.5 times the rate expected for the population size, with usage skewing heavily toward technical and creative work. To support that momentum, KiYoung Choi is joining Anthropic as Representative Director of Korea, ahead of the opening of ourSeoul office. In the coming weeks, senior leadership from Anthropic will travel to Seoul to officially open the office an...</p><div style="font-size:16px;line-height:1.8;color:#333">Korea is one of the most active markets in the world for Claude.ai. According to our latestEconomic Index, Koreans use Claude at more than 3.5 times the rate expected for the population size, with usage skewing heavily toward technical and creative work. To support that momentum, KiYoung Choi is joining Anthropic as Representative Director of Korea, ahead of the opening of ourSeoul office. In the coming weeks, senior leadership from Anthropic will travel to Seoul to officially open the office and meet with customers.
 
 KiYoung joins from Snowflake, where he served as General Manager for Korea. He brings over three decades of experience leading technology businesses across Korea and Asia-Pacific. Throughout his career, he has helped some of the largest Korean enterprises navigate transformative shifts in technology, ranging from cloud computing to AI adoption. Previously, he held country leadership roles at Google Cloud, Adobe, Autodesk, and Microsoft.
@@ -346,17 +467,17 @@ Our Korea team will focus on building partnerships with enterprises and startups
 
 For more information about career opportunities in our Seoul office, visitanthropic.com/careers.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic co-founder Chris Olah&apos;s remarks on Pope Leo XIV&apos;s encyclical &quot;Magnifica humanitas&quot;</title>
@@ -416,17 +537,17 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">On Monday May 25, 2026, Pope Leo XIV releasedan encyclicalon the topic of AI: &quot;Magnifica humanitas: On safeguarding the human person in the time of artificial Intelligence.&quot; Anthropic co-founder Chris Olah was invited to speak at the presentation of the encyclical in the Vatican City, doing so as part of Anthropic’s initiative towiden the conversationon the important questions raised by AI. Below are his full remarks.
 
 Distinguished Speakers,
@@ -479,17 +600,17 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Widening the conversation on frontier AI</title>
@@ -525,17 +646,17 @@ In the months ahead, we plan to engage with more groups—including legal schola
 
 We’ll keep deepening the relationships we’ve already formed, testing what we’ve heard against our research, and sharing what we learn.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">At Anthropic, we want to build AI systems that advance humanity and act for the global good. To do so, we need to engage with those who see the world from a variety of different perspectives.
 
 Over the past several months, we’ve been organizing dialogues with groups whose work and traditions bear on the questions raised by AI. Our first round of discussions has been with wisdom traditions—including scholars, clergy, philosophers, and ethicists from more than 15 religious and cross-cultural group...</p><div style="font-size:16px;line-height:1.8;color:#333">At Anthropic, we want to build AI systems that advance humanity and act for the global good. To do so, we need to engage with those who see the world from a variety of different perspectives.
@@ -564,17 +685,17 @@ In the months ahead, we plan to engage with more groups—including legal schola
 
 We’ll keep deepening the relationships we’ve already formed, testing what we’ve heard against our research, and sharing what we learn.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</title>
@@ -628,17 +749,17 @@ Joint research from KPMG and the McCombs School of Business at UT Austin is help
 
 KPMG clients can contact their KPMG account team to discuss how Claude inside Digital Gateway applies to their business. Enterprises can visit ourEnterprise pageto explore how Claude can transform their operations, and developers can access the Anthropic API atclaude.com/platform/api.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">KPMG—one of the world&apos;s largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
 
 As part of this alliance, KPMG is embedding Claude inside Digital Gateway, the software KPMG&apos;s people and clients use to do the actual work—starting with new tools for tax and legal clients. And every one of KPMG&apos;s 276,000+ employees globally will gain access to...</p><div style="font-size:16px;line-height:1.8;color:#333">KPMG—one of the world's largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
@@ -685,35 +806,9 @@ Joint research from KPMG and the McCombs School of Business at UT Austin is help
 
 KPMG clients can contact their KPMG account team to discuss how Claude inside Digital Gateway applies to their business. Enterprises can visit ourEnterprise pageto explore how Claude can transform their operations, and developers can access the Anthropic API atclaude.com/platform/api.
 
-Anthropic confidentially submits draft S-1 to the SEC
+Expanding Project Glasswing
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Anthropic acquires Stainless</title>
-  <link>https://www.anthropic.com/news/anthropic-acquires-stainless</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/anthropic-acquires-stainless</guid>
-  <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The frontier of AI is shifting from models that answer to agents that act—and agents are only as capable as the systems they can reach. Today, Anthropic is acquiring Stainless, a leader in SDKs and MCP server tooling, to extend that reach even further.
-
-Founded in 2022, Stainless has powered the generation of every official Anthropic SDK since the earliest days of our API. Hundreds of companies rely on Stainless to generate SDKs, CLIs, and MCP servers—the libraries, command-line tools, and conne...</p><div style="font-size:16px;line-height:1.8;color:#333">The frontier of AI is shifting from models that answer to agents that act—and agents are only as capable as the systems they can reach. Today, Anthropic is acquiring Stainless, a leader in SDKs and MCP server tooling, to extend that reach even further.
-
-Founded in 2022, Stainless has powered the generation of every official Anthropic SDK since the earliest days of our API. Hundreds of companies rely on Stainless to generate SDKs, CLIs, and MCP servers—the libraries, command-line tools, and connectors that let developers and agents use an API. Stainless turns an API spec into SDKs across TypeScript, Python, Go, Java, and more. Each one is fast, reliable, and built to feel native in its language.
-
-“Stainless has shaped how developers experience the Claude API since the start, and it’s been great to work with them on that,” said Katelyn Lesse, Head of Platform Engineering at Anthropic. “Agents are only as useful as what they can connect to. We’re excited to bring the Stainless team into Anthropic to advance Claude’s ability to connect to data and tools.”
-
-“I started Stainless because SDKs deserve as much care as the APIs they wrap. Anthropic was one of the first teams to bet on this with us,” said Alex Rattray, Founder and CEO of Stainless. “We have been watching what developers have built on Claude over the last few years, which made bringing our teams together an easy decision. The team gets to keep doing the work we love, on the platform where it matters most.”
-
-Anthropic created MCP to make agent connectivity possible. By bringing together the Stainless and Anthropic teams, the Claude Platform continues to push the frontier of developer experience and agent connectivity.
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
@@ -721,34 +816,7 @@ Anthropic has confidentially submitted a draft S-1 registration statement to the
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-acquires-stainless" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The frontier of AI is shifting from models that answer to agents that act—and agents are only as capable as the systems they can reach. Today, Anthropic is acquiring Stainless, a leader in SDKs and MCP server tooling, to extend that reach even further.
-
-Founded in 2022, Stainless has powered the generation of every official Anthropic SDK since the earliest days of our API. Hundreds of companies rely on Stainless to generate SDKs, CLIs, and MCP servers—the libraries, command-line tools, and conne...</p><div style="font-size:16px;line-height:1.8;color:#333">The frontier of AI is shifting from models that answer to agents that act—and agents are only as capable as the systems they can reach. Today, Anthropic is acquiring Stainless, a leader in SDKs and MCP server tooling, to extend that reach even further.
-
-Founded in 2022, Stainless has powered the generation of every official Anthropic SDK since the earliest days of our API. Hundreds of companies rely on Stainless to generate SDKs, CLIs, and MCP servers—the libraries, command-line tools, and connectors that let developers and agents use an API. Stainless turns an API spec into SDKs across TypeScript, Python, Go, Java, and more. Each one is fast, reliable, and built to feel native in its language.
-
-“Stainless has shaped how developers experience the Claude API since the start, and it’s been great to work with them on that,” said Katelyn Lesse, Head of Platform Engineering at Anthropic. “Agents are only as useful as what they can connect to. We’re excited to bring the Stainless team into Anthropic to advance Claude’s ability to connect to data and tools.”
-
-“I started Stainless because SDKs deserve as much care as the APIs they wrap. Anthropic was one of the first teams to bet on this with us,” said Alex Rattray, Founder and CEO of Stainless. “We have been watching what developers have built on Claude over the last few years, which made bringing our teams together an easy decision. The team gets to keep doing the work we love, on the platform where it matters most.”
-
-Anthropic created MCP to make agent connectivity possible. By bringing together the Stainless and Anthropic teams, the Claude Platform continues to push the frontier of developer experience and agent connectivity.
-
-Anthropic confidentially submits draft S-1 to the SEC
-
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-acquires-stainless" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Design by Anthropic Labs</title>
@@ -804,17 +872,17 @@ For Enterprise organizations, Claude Design is off by default. Admins can enable
 
 Start designing atclaude.ai/design.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today, we’re launchingClaude Design, a newAnthropic Labsproduct that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.
 
 Claude Design is powered by our most capable vision model,Claude Opus 4.7, and is available in research preview for Claude Pro, Max, Team, and Enterprise subscribers. We’re rolling out to users gradually throughout the day.
@@ -863,17 +931,17 @@ For Enterprise organizations, Claude Design is off by default. Admins can enable
 
 Start designing atclaude.ai/design.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Claude is a space to think</title>
@@ -929,17 +997,17 @@ Our experience of using the internet has made it easy to assume that advertising
 
 We think Claude should work the same way.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">There are many good places for advertising. A conversation with Claude is not one of them.
 
 Advertising drives competition, helps people discover new products, and allows services like email and social media to be offered for free. We’ve run our ownad campaigns, and our AI models have, in turn, helped many of our customers in the advertising industry.
@@ -988,17 +1056,17 @@ Our experience of using the internet has made it easy to assume that advertising
 
 We think Claude should work the same way.
 
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
