@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/engineering</link>
 <description>Engineering blog from Anthropic - MCP, Claude Code, and more</description>
 <language>en</language>
-<lastBuildDate>Wed, 03 Jun 2026 16:54:35 +0000</lastBuildDate>
+<lastBuildDate>Wed, 03 Jun 2026 21:03:12 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/engineering" rel="self" type="application/rss+xml"/>
 <image>
@@ -8389,19 +8389,13 @@ Subagent output to a filesystem to minimize the ‘game of telephone.’Direct s
   <category>Engineering</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
-Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
-
-Use this file to discover all available pages before exploring further.
-
 ​Give Claude a way to verify its work
 
 In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
 
-Across a session: set the check as a/goalcondition. A separate evaluator re-...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
+Across a session: set the check as a/goalcondition. A separate evaluator re-checks it after every turn and Claude keeps working until it holds.
 
-Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
-
-Use this file to discover all available pages before exploring further.
+As a deterministic gate: aStop hookruns your check as a script and blocks the turn fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
 ​Give Claude a way to verify its work
 
@@ -8646,19 +8640,13 @@ CLAUDE.md: store project conventions and persistent context
 Was this page helpful?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/engineering/claude-code-best-practices" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
-Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
-
-Use this file to discover all available pages before exploring further.
-
 ​Give Claude a way to verify its work
 
 In one prompt: ask Claude to run the check and iterate in the same message, as in the table above.
 
-Across a session: set the check as a/goalcondition. A separate evaluator re-...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
+Across a session: set the check as a/goalcondition. A separate evaluator re-checks it after every turn and Claude keeps working until it holds.
 
-Fetch the complete documentation index at:https://code.claude.com/docs/llms.txt
-
-Use this file to discover all available pages before exploring further.
+As a deterministic gate: aStop hookruns your check as a script and blocks the turn fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 
 ​Give Claude a way to verify its work
 
