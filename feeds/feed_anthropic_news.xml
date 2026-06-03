@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Wed, 03 Jun 2026 04:11:19 +0000</lastBuildDate>
+<lastBuildDate>Wed, 03 Jun 2026 11:04:48 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,143 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>What we learned mapping a year’s worth of AI-enabled cyber threats</title>
+  <link>https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack</guid>
+  <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Policy</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
+
+In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&amp;CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR...</p><div style="font-size:16px;line-height:1.8;color:#333">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
+
+In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR), and are sharing a more detailed analysis here. These 832 cases are just a subset of the total number of accounts banned during this period, but they represent those where we had enough detail to conduct a thorough assessment of the attackers’ techniques.
+
+There were three main conclusions from our analysis:
+
+Malicious actors are using AI in ways that make them more dangerous.More specifically, threat actors are using AI in the later, more complex stages of their cyber operations.
+
+Cyberattacks are becoming more autonomous,and the fact that AI can be used to chain together many parts of the attack means that the old ways of differentiating high- from low-risk actors are no longer as effective.
+
+The MITRE ATT&CK framework does not fully capture the tools and activities that make AI-enabled attackers so dangerous.
+
+Below we provide a summary of each of these conclusions. You can read a longer analysis on ourFrontier Red Team blog.
+
+How AI makes attackers more dangerous
+
+The most common AI-enabled activities in our database related to preparing for a cyberattack, such as writing malware (560 of the 832 accounts we studied, or 67.3%, used AI for this purpose). A smaller number of actors use AI for more complex activities—for example, 54 of the 832 actors (6.5%) used AI to assist with “lateral movement,” which involves navigating deep inside a compromised network.
+
+We found evidence consistent with AI being used to help increase the threat level of attackers. In the first six-month period of our analysis, 33% of actors were classified by our risk-scoring system as medium risk or higher. But by the second six-month period, that share had jumped to 56%—a roughly 1.7-fold increase.
+
+Across the period we studied, attackers’ use of AI shifted from techniques to gain initial access to a system towards activity carried out once they wereinsidethe system. For example, the use of AI for account discovery—identifying valid accounts inside a compromised environment—rose 8.9%, while AI-assisted phishing—a common technique to gain access to a system—fell 8.6%. This suggests that attackers are increasingly applying AI deeper in the attack life cycle.
+
+These sorts of “post-compromise” techniques used to be restricted to actors with the technical knowledge to carry them out. Our investigation shows that AI can now be made to perform these activities on behalf of less sophisticated actors.
+
+Why it’s harder to assess an actor’s threat level
+
+How do security teams assess the risk level of a cyberattacker? Traditionally, they’ve used information like how many different techniques they employ and what tools or interfaces they use. But our analysis suggests that these signals no longer paint an accurate picture of the risk level of a given threat actor.
+
+Now that AI can perform highly technical tasks on an actor’s behalf, there’s little correlation between the skill of a threat actor and how many techniques they use: the least-skilled actors in our dataset used about 16 distinct techniques on average, whereas the most skilled used about 20. Likewise, the specific platform used—Claude Code, an API, or a chat interface—also did not correlate with an actor’s risk level.
+
+Whatoften helpsdistinguish higher-risk actors is where in the attack life cycle they apply AI. For example, they concentrate their use of AI on more operationally demanding techniques—those that require significant time, oversight, or real-time decision making to carry out—like account discovery, lateral movement, and privilege escalation, rather than just on tasks that allow them to gain initial access to the system.
+
+But even that signal is already eroding: as discussed in the previous section, those operational techniques are exactly where the broader population is heading as more actors get classified as higher risk. The more durable differentiator is the type of scaffolding attackers build around the model: higher-risk actors design architectures that allow models to chain together discrete stages of a cyberattack and carry them out with minimal human input.
+
+Why security frameworks need to change
+
+Many of the behaviors that distinguish the highest-risk actors—such as the use of AI to orchestrate steps in the attack chain sequentially, make real-time decisions about what to do next, and execute without human intervention—are not yet included as attacker techniques in the MITRE ATT&CK framework.
+
+Consider the state-sponsored cyber espionage operation wedisrupted in November 2025. In that case, a malicious actor manipulated Claude Code into attempting to infiltrate targets around the world, with little human intervention. Mapping it against the MITRE ATT&CK framework shows that the actor used 30 techniques across 13 tactics, which was comparable to many medium-risk actors in our dataset. Clearly, focusing on the number of techniques this actor used underplays how dangerous they really were (by contrast, applying our risk-scoring methodology to this attack earns it the maximum risk score of 100).
+
+In that attack, the model worked as an autonomous agent: it executed commands, exploited vulnerabilities, stole credentials, and made tactical decisions, only requiring human input at a few key moments. There is no ATT&CK ID for this type of agentic orchestration—yet these are precisely the behaviors we expect to see much more of as AI agents become more capable.
+
+The findings from this analysis helped inform the safeguards we build into our models. For example, we’ve developed and deployed cyber safeguards on our most capable models to detect and block some of the activities uncovered here, like developing malware or mass data exfiltration. Following on from our work with Verizon, we’re also in discussions with MITRE about how the ATT&CK framework might evolve to include the AI-enabled behaviors we observed.
+
+Frontier models are rapidly changing the tools both attackers and defenders have at their disposal. We are committed to helping defenders get ahead of these evolving tactics, and to putting the most powerful tools in the hands of defenders first. We’ll continue to share what we learn fromProject Glasswing, from datasets like the one we gathered here, and from our other cybersecurity activities.
+
+In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
+
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
+Anthropic confidentially submits draft S-1 to the SEC
+
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
+
+Anthropic raises $65B in Series H funding at $965B post-money valuation
+
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
+
+Subscribe to the Frontier Red Team newsletter
+
+Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
+
+In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&amp;CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR...</p><div style="font-size:16px;line-height:1.8;color:#333">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
+
+In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR), and are sharing a more detailed analysis here. These 832 cases are just a subset of the total number of accounts banned during this period, but they represent those where we had enough detail to conduct a thorough assessment of the attackers’ techniques.
+
+There were three main conclusions from our analysis:
+
+Malicious actors are using AI in ways that make them more dangerous.More specifically, threat actors are using AI in the later, more complex stages of their cyber operations.
+
+Cyberattacks are becoming more autonomous,and the fact that AI can be used to chain together many parts of the attack means that the old ways of differentiating high- from low-risk actors are no longer as effective.
+
+The MITRE ATT&CK framework does not fully capture the tools and activities that make AI-enabled attackers so dangerous.
+
+Below we provide a summary of each of these conclusions. You can read a longer analysis on ourFrontier Red Team blog.
+
+How AI makes attackers more dangerous
+
+The most common AI-enabled activities in our database related to preparing for a cyberattack, such as writing malware (560 of the 832 accounts we studied, or 67.3%, used AI for this purpose). A smaller number of actors use AI for more complex activities—for example, 54 of the 832 actors (6.5%) used AI to assist with “lateral movement,” which involves navigating deep inside a compromised network.
+
+We found evidence consistent with AI being used to help increase the threat level of attackers. In the first six-month period of our analysis, 33% of actors were classified by our risk-scoring system as medium risk or higher. But by the second six-month period, that share had jumped to 56%—a roughly 1.7-fold increase.
+
+Across the period we studied, attackers’ use of AI shifted from techniques to gain initial access to a system towards activity carried out once they wereinsidethe system. For example, the use of AI for account discovery—identifying valid accounts inside a compromised environment—rose 8.9%, while AI-assisted phishing—a common technique to gain access to a system—fell 8.6%. This suggests that attackers are increasingly applying AI deeper in the attack life cycle.
+
+These sorts of “post-compromise” techniques used to be restricted to actors with the technical knowledge to carry them out. Our investigation shows that AI can now be made to perform these activities on behalf of less sophisticated actors.
+
+Why it’s harder to assess an actor’s threat level
+
+How do security teams assess the risk level of a cyberattacker? Traditionally, they’ve used information like how many different techniques they employ and what tools or interfaces they use. But our analysis suggests that these signals no longer paint an accurate picture of the risk level of a given threat actor.
+
+Now that AI can perform highly technical tasks on an actor’s behalf, there’s little correlation between the skill of a threat actor and how many techniques they use: the least-skilled actors in our dataset used about 16 distinct techniques on average, whereas the most skilled used about 20. Likewise, the specific platform used—Claude Code, an API, or a chat interface—also did not correlate with an actor’s risk level.
+
+Whatoften helpsdistinguish higher-risk actors is where in the attack life cycle they apply AI. For example, they concentrate their use of AI on more operationally demanding techniques—those that require significant time, oversight, or real-time decision making to carry out—like account discovery, lateral movement, and privilege escalation, rather than just on tasks that allow them to gain initial access to the system.
+
+But even that signal is already eroding: as discussed in the previous section, those operational techniques are exactly where the broader population is heading as more actors get classified as higher risk. The more durable differentiator is the type of scaffolding attackers build around the model: higher-risk actors design architectures that allow models to chain together discrete stages of a cyberattack and carry them out with minimal human input.
+
+Why security frameworks need to change
+
+Many of the behaviors that distinguish the highest-risk actors—such as the use of AI to orchestrate steps in the attack chain sequentially, make real-time decisions about what to do next, and execute without human intervention—are not yet included as attacker techniques in the MITRE ATT&CK framework.
+
+Consider the state-sponsored cyber espionage operation wedisrupted in November 2025. In that case, a malicious actor manipulated Claude Code into attempting to infiltrate targets around the world, with little human intervention. Mapping it against the MITRE ATT&CK framework shows that the actor used 30 techniques across 13 tactics, which was comparable to many medium-risk actors in our dataset. Clearly, focusing on the number of techniques this actor used underplays how dangerous they really were (by contrast, applying our risk-scoring methodology to this attack earns it the maximum risk score of 100).
+
+In that attack, the model worked as an autonomous agent: it executed commands, exploited vulnerabilities, stole credentials, and made tactical decisions, only requiring human input at a few key moments. There is no ATT&CK ID for this type of agentic orchestration—yet these are precisely the behaviors we expect to see much more of as AI agents become more capable.
+
+The findings from this analysis helped inform the safeguards we build into our models. For example, we’ve developed and deployed cyber safeguards on our most capable models to detect and block some of the activities uncovered here, like developing malware or mass data exfiltration. Following on from our work with Verizon, we’re also in discussions with MITRE about how the ATT&CK framework might evolve to include the AI-enabled behaviors we observed.
+
+Frontier models are rapidly changing the tools both attackers and defenders have at their disposal. We are committed to helping defenders get ahead of these evolving tactics, and to putting the most powerful tools in the hands of defenders first. We’ll continue to share what we learn fromProject Glasswing, from datasets like the one we gathered here, and from our other cybersecurity activities.
+
+In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
+
+Expanding Project Glasswing
+
+We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
+
+Anthropic confidentially submits draft S-1 to the SEC
+
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
+
+Anthropic raises $65B in Series H funding at $965B post-money valuation
+
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
+
+Subscribe to the Frontier Red Team newsletter
+
+Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Expanding Project Glasswing</title>
   <link>https://www.anthropic.com/news/expanding-project-glasswing</link>
@@ -65,17 +202,17 @@ In the meantime, we plan to expand Project Glasswing even further—prioritizing
 
 In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
 
 We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
@@ -122,17 +259,17 @@ In the meantime, we plan to expand Project Glasswing even further—prioritizing
 
 In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Anthropic confidentially submits draft S-1 to the SEC
 
 Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic confidentially submits draft S-1 to the SEC</title>
@@ -146,34 +283,34 @@ The number of shares to be offered and the price have not yet been set. This ann
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securiti...</p><div style="font-size:16px;line-height:1.8;color:#333">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic raises $65B in Series H funding at $965B post-money valuation
 
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Opus 4.8</title>
@@ -221,17 +358,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
 
 Opus 4.8 launches alongside several new features. Users on claude.ai now have control over the amount of effort Claude puts into a task. Claude Code has a new “dynamic workflows” feature that allows it to tackle very large-scale problems. And fast mode for Opus 4.8—where the model can work at 2.5×...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
@@ -272,17 +409,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic raises $65B in Series H funding at $965B post-money valuation</title>
@@ -314,17 +451,17 @@ We have significantly expanded our compute capacity in recent weeks. We signed a
 
 We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
 
 Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. T...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
@@ -349,17 +486,17 @@ We have significantly expanded our compute capacity in recent weeks. We signed a
 
 We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Introducing Claude Opus 4.8
-
-An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic opens Milan office to support Italian enterprise, research, and developers</title>
@@ -383,17 +520,17 @@ Chris Ciauri, MD International at Anthropic, commented: “We are here to suppor
 
 The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country&apos;s developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
 
 This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV&apos;s first encyclical and the first papal teaching dedicate...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country's developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
@@ -410,17 +547,17 @@ Chris Ciauri, MD International at Anthropic, commented: “We are here to suppor
 
 The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening</title>
@@ -442,17 +579,17 @@ Our Korea team will focus on building partnerships with enterprises and startups
 
 For more information about career opportunities in our Seoul office, visitanthropic.com/careers.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Korea is one of the most active markets in the world for Claude.ai. According to our latestEconomic Index, Koreans use Claude at more than 3.5 times the rate expected for the population size, with usage skewing heavily toward technical and creative work. To support that momentum, KiYoung Choi is joining Anthropic as Representative Director of Korea, ahead of the opening of ourSeoul office. In the coming weeks, senior leadership from Anthropic will travel to Seoul to officially open the office an...</p><div style="font-size:16px;line-height:1.8;color:#333">Korea is one of the most active markets in the world for Claude.ai. According to our latestEconomic Index, Koreans use Claude at more than 3.5 times the rate expected for the population size, with usage skewing heavily toward technical and creative work. To support that momentum, KiYoung Choi is joining Anthropic as Representative Director of Korea, ahead of the opening of ourSeoul office. In the coming weeks, senior leadership from Anthropic will travel to Seoul to officially open the office and meet with customers.
 
 KiYoung joins from Snowflake, where he served as General Manager for Korea. He brings over three decades of experience leading technology businesses across Korea and Asia-Pacific. Throughout his career, he has helped some of the largest Korean enterprises navigate transformative shifts in technology, ranging from cloud computing to AI adoption. Previously, he held country leadership roles at Google Cloud, Adobe, Autodesk, and Microsoft.
@@ -467,17 +604,17 @@ Our Korea team will focus on building partnerships with enterprises and startups
 
 For more information about career opportunities in our Seoul office, visitanthropic.com/careers.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic co-founder Chris Olah&apos;s remarks on Pope Leo XIV&apos;s encyclical &quot;Magnifica humanitas&quot;</title>
@@ -537,17 +674,17 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">On Monday May 25, 2026, Pope Leo XIV releasedan encyclicalon the topic of AI: &quot;Magnifica humanitas: On safeguarding the human person in the time of artificial Intelligence.&quot; Anthropic co-founder Chris Olah was invited to speak at the presentation of the encyclical in the Vatican City, doing so as part of Anthropic’s initiative towiden the conversationon the important questions raised by AI. Below are his full remarks.
 
 Distinguished Speakers,
@@ -600,17 +737,17 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Widening the conversation on frontier AI</title>
@@ -646,17 +783,17 @@ In the months ahead, we plan to engage with more groups—including legal schola
 
 We’ll keep deepening the relationships we’ve already formed, testing what we’ve heard against our research, and sharing what we learn.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">At Anthropic, we want to build AI systems that advance humanity and act for the global good. To do so, we need to engage with those who see the world from a variety of different perspectives.
 
 Over the past several months, we’ve been organizing dialogues with groups whose work and traditions bear on the questions raised by AI. Our first round of discussions has been with wisdom traditions—including scholars, clergy, philosophers, and ethicists from more than 15 religious and cross-cultural group...</p><div style="font-size:16px;line-height:1.8;color:#333">At Anthropic, we want to build AI systems that advance humanity and act for the global good. To do so, we need to engage with those who see the world from a variety of different perspectives.
@@ -685,69 +822,9 @@ In the months ahead, we plan to engage with more groups—including legal schola
 
 We’ll keep deepening the relationships we’ve already formed, testing what we’ve heard against our research, and sharing what we learn.
 
-Expanding Project Glasswing
+What we learned mapping a year’s worth of AI-enabled cyber threats
 
-We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
-
-Anthropic confidentially submits draft S-1 to the SEC
-
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</title>
-  <link>https://www.anthropic.com/news/anthropic-kpmg</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/anthropic-kpmg</guid>
-  <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">KPMG—one of the world&apos;s largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
-
-As part of this alliance, KPMG is embedding Claude inside Digital Gateway, the software KPMG&apos;s people and clients use to do the actual work—starting with new tools for tax and legal clients. And every one of KPMG&apos;s 276,000+ employees globally will gain access to...</p><div style="font-size:16px;line-height:1.8;color:#333">KPMG—one of the world's largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
-
-As part of this alliance, KPMG is embedding Claude inside Digital Gateway, the software KPMG's people and clients use to do the actual work—starting with new tools for tax and legal clients. And every one of KPMG's 276,000+ employees globally will gain access to Claude.
-
-Anthropic is also naming KPMG a preferred partner for private equity, and the two companies will build new Claude-powered products together for PE portfolio companies.
-
-KPMG helps organizations in various industries work together to transform, innovate, and effectively compete in tomorrow’s fast-changing world. Integrating AI across its core business furthers this mission—and requires trust and diligence.
-
-“At KPMG, we’re innovating and redefining how work gets done,” said Bill Thomas, Global Chairman and CEO, KPMG International. “This global alliance with Anthropic reflects our shared commitment to responsible AI, prioritizing security, trust, and governance as KPMG firms scale these capabilities to our clients and people around the world.”
-
-“KPMG works in industries where accuracy, accountability, and trust aren’t optional, and they're applying the same standard to AI. They’re rolling Claude out to 276,000 people across the business, and using it for client work in tax and private equity. They're also bringing it into cybersecurity, where it helps find and fix vulnerabilities. That's what a firm-wide commitment to AI looks like, and we're proud to be the partner they chose,” said Daniela Amodei, Co-founder and President of Anthropic.
-
-Claude for 276,000+ KPMG people
-
-Beyond the client-facing platform, every KPMG employee—all 276,000+ of them—will have access to Claude. That builds on two years of adoption inside KPMG in the US, including its AI and Data Labs, and the firm's internal teams.
-
-As the rollout expands, KPMG and Anthropic will work with shared clients to co-develop new offerings, and modernize business functions by bringing Claude into more of KPMG’s business functions to help their team solve problems that weren't solvable before.
-
-Cybersecurity is one of those areas. Across the alliance, KPMG and Anthropic teams will use Claude to find and fix vulnerabilities in critical systems, with the work guided by KPMG's Trusted AI framework.
-
-“Our clients depend on us where accuracy, judgment, and knowledge matter most,” said Tim Walsh, Chair and CEO of KPMG US. “AI is changing how we deliver—trust and innovation are the core of this new offering and we’re proud to partner with Anthropic to deliver incredible value to our clients and our people. It’s one of the most important things we'll do.”
-
-Claude powers KPMG’s Digital Gateway platform
-
-Digital Gateway is KPMG's main platform for client work—built on Microsoft Azure, it's where KPMG's tax expertise, proprietary tools, and client data live together, and where KPMG's people build the AI tools they use day to day.
-
-With Claude Cowork and Managed Agents embedded inside it, KPMG professionals and their clients can build new AI capabilities directly in the platform—work that used to mean jumping between tools, chat windows, and weeks of effort.
-
-“Building an AI agent to help clients adjust to changing tax regulations used to take weeks and required teams to switch between multiple tools and chat windows,” said Rema Serafi, Vice Chair, Tax at KPMG US. “With Cowork and Managed Agents integrated in Digital Gateway, that same capability takes minutes. This is a totally different way of working.”
-
-A preferred partner for private equity
-
-PE firms are betting that AI will reshape how their portfolio companies run. KPMG becomes a preferred consultant for deploying Claude and Anthropic's agents into those portfolio companies—helping them with direct access to Claude to build new AI-driven products, processes, and services responsibly.
-
-This work lands with the employees and builders inside portfolio companies. To set them up for success, KPMG developed a new portfolio of PE-focused offerings, including KPMG Blaze, which can embed Claude Code to help teams modernize aging IT systems faster and ship new AI-enabled technology in a fraction of the usual time.
-
-“Human in the loop” in practice
-
-Joint research from KPMG and the McCombs School of Business at UT Austin is helping clarify how the value of AI deployments depends on what people do alongside the technology—not just the technology itself.
-
-“Organizations often talk about keeping a ‘human in the loop’ when using AI, but KPMG and UT Austin's research helps clarify what that human should be doing,” said Ethan Burris, Senior Associate Dean for Academic Affairs, McCombs School of Business at UT Austin. “We find that the greatest value comes not just from technical adoption, but from the ways employees exercise judgment, shape workflows, interface with the technology, evaluate its outputs, and make decisions with AI. As these tools become more embedded in consequential work, responsible deployment will require both capable technology and a much clearer understanding of the human role in creating value.”
-
-KPMG clients can contact their KPMG account team to discuss how Claude inside Digital Gateway applies to their business. Enterprises can visit ourEnterprise pageto explore how Claude can transform their operations, and developers can access the Anthropic API atclaude.com/platform/api.
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
 
 Expanding Project Glasswing
 
@@ -755,68 +832,7 @@ We’re extending Project Glasswing to approximately 150 new organizations in mo
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">KPMG—one of the world&apos;s largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
-
-As part of this alliance, KPMG is embedding Claude inside Digital Gateway, the software KPMG&apos;s people and clients use to do the actual work—starting with new tools for tax and legal clients. And every one of KPMG&apos;s 276,000+ employees globally will gain access to...</p><div style="font-size:16px;line-height:1.8;color:#333">KPMG—one of the world's largest professional services firms for audit, tax, legal, and advisory services across 138 countries and territories—has announced a global alliance with Anthropic to bring Claude into the heart of its business.
-
-As part of this alliance, KPMG is embedding Claude inside Digital Gateway, the software KPMG's people and clients use to do the actual work—starting with new tools for tax and legal clients. And every one of KPMG's 276,000+ employees globally will gain access to Claude.
-
-Anthropic is also naming KPMG a preferred partner for private equity, and the two companies will build new Claude-powered products together for PE portfolio companies.
-
-KPMG helps organizations in various industries work together to transform, innovate, and effectively compete in tomorrow’s fast-changing world. Integrating AI across its core business furthers this mission—and requires trust and diligence.
-
-“At KPMG, we’re innovating and redefining how work gets done,” said Bill Thomas, Global Chairman and CEO, KPMG International. “This global alliance with Anthropic reflects our shared commitment to responsible AI, prioritizing security, trust, and governance as KPMG firms scale these capabilities to our clients and people around the world.”
-
-“KPMG works in industries where accuracy, accountability, and trust aren’t optional, and they're applying the same standard to AI. They’re rolling Claude out to 276,000 people across the business, and using it for client work in tax and private equity. They're also bringing it into cybersecurity, where it helps find and fix vulnerabilities. That's what a firm-wide commitment to AI looks like, and we're proud to be the partner they chose,” said Daniela Amodei, Co-founder and President of Anthropic.
-
-Claude for 276,000+ KPMG people
-
-Beyond the client-facing platform, every KPMG employee—all 276,000+ of them—will have access to Claude. That builds on two years of adoption inside KPMG in the US, including its AI and Data Labs, and the firm's internal teams.
-
-As the rollout expands, KPMG and Anthropic will work with shared clients to co-develop new offerings, and modernize business functions by bringing Claude into more of KPMG’s business functions to help their team solve problems that weren't solvable before.
-
-Cybersecurity is one of those areas. Across the alliance, KPMG and Anthropic teams will use Claude to find and fix vulnerabilities in critical systems, with the work guided by KPMG's Trusted AI framework.
-
-“Our clients depend on us where accuracy, judgment, and knowledge matter most,” said Tim Walsh, Chair and CEO of KPMG US. “AI is changing how we deliver—trust and innovation are the core of this new offering and we’re proud to partner with Anthropic to deliver incredible value to our clients and our people. It’s one of the most important things we'll do.”
-
-Claude powers KPMG’s Digital Gateway platform
-
-Digital Gateway is KPMG's main platform for client work—built on Microsoft Azure, it's where KPMG's tax expertise, proprietary tools, and client data live together, and where KPMG's people build the AI tools they use day to day.
-
-With Claude Cowork and Managed Agents embedded inside it, KPMG professionals and their clients can build new AI capabilities directly in the platform—work that used to mean jumping between tools, chat windows, and weeks of effort.
-
-“Building an AI agent to help clients adjust to changing tax regulations used to take weeks and required teams to switch between multiple tools and chat windows,” said Rema Serafi, Vice Chair, Tax at KPMG US. “With Cowork and Managed Agents integrated in Digital Gateway, that same capability takes minutes. This is a totally different way of working.”
-
-A preferred partner for private equity
-
-PE firms are betting that AI will reshape how their portfolio companies run. KPMG becomes a preferred consultant for deploying Claude and Anthropic's agents into those portfolio companies—helping them with direct access to Claude to build new AI-driven products, processes, and services responsibly.
-
-This work lands with the employees and builders inside portfolio companies. To set them up for success, KPMG developed a new portfolio of PE-focused offerings, including KPMG Blaze, which can embed Claude Code to help teams modernize aging IT systems faster and ship new AI-enabled technology in a fraction of the usual time.
-
-“Human in the loop” in practice
-
-Joint research from KPMG and the McCombs School of Business at UT Austin is helping clarify how the value of AI deployments depends on what people do alongside the technology—not just the technology itself.
-
-“Organizations often talk about keeping a ‘human in the loop’ when using AI, but KPMG and UT Austin's research helps clarify what that human should be doing,” said Ethan Burris, Senior Associate Dean for Academic Affairs, McCombs School of Business at UT Austin. “We find that the greatest value comes not just from technical adoption, but from the ways employees exercise judgment, shape workflows, interface with the technology, evaluate its outputs, and make decisions with AI. As these tools become more embedded in consequential work, responsible deployment will require both capable technology and a much clearer understanding of the human role in creating value.”
-
-KPMG clients can contact their KPMG account team to discuss how Claude inside Digital Gateway applies to their business. Enterprises can visit ourEnterprise pageto explore how Claude can transform their operations, and developers can access the Anthropic API atclaude.com/platform/api.
-
-Expanding Project Glasswing
-
-We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
-
-Anthropic confidentially submits draft S-1 to the SEC
-
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-kpmg" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/widening-conversation-ai" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Design by Anthropic Labs</title>
@@ -872,17 +888,17 @@ For Enterprise organizations, Claude Design is off by default. Admins can enable
 
 Start designing atclaude.ai/design.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today, we’re launchingClaude Design, a newAnthropic Labsproduct that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.
 
 Claude Design is powered by our most capable vision model,Claude Opus 4.7, and is available in research preview for Claude Pro, Max, Team, and Enterprise subscribers. We’re rolling out to users gradually throughout the day.
@@ -931,17 +947,17 @@ For Enterprise organizations, Claude Design is off by default. Admins can enable
 
 Start designing atclaude.ai/design.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Claude is a space to think</title>
@@ -997,17 +1013,17 @@ Our experience of using the internet has made it easy to assume that advertising
 
 We think Claude should work the same way.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">There are many good places for advertising. A conversation with Claude is not one of them.
 
 Advertising drives competition, helps people discover new products, and allows services like email and social media to be offered for free. We’ve run our ownad campaigns, and our AI models have, in turn, helped many of our customers in the advertising industry.
@@ -1056,17 +1072,17 @@ Our experience of using the internet has made it easy to assume that advertising
 
 We think Claude should work the same way.
 
+What we learned mapping a year’s worth of AI-enabled cyber threats
+
+As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.
+
 Expanding Project Glasswing
 
 We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.
 
 Anthropic confidentially submits draft S-1 to the SEC
 
-Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-Anthropic raises $65B in Series H funding at $965B post-money valuation
-
-Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-is-a-space-to-think" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
