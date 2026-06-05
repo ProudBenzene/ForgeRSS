@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Fri, 05 Jun 2026 09:57:33 +0000</lastBuildDate>
+<lastBuildDate>Fri, 05 Jun 2026 14:59:41 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -713,17 +713,23 @@ Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1
   <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
   <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personal...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
 
-Smarter, more accurate answers with less to sort through
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
-Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
+Yes - this is clean and correct.
 
-GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
+You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
 Yes - this is clean and correct.
 
@@ -799,11 +805,9 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
+这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
 
-These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
-
-With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
+通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
 
 how do i tell my coworker to quit yapping all the time
 
@@ -867,11 +871,7 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
-
-More personalized responses and controls
-
-Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
+如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
 
 What new tea place should I try?
 
@@ -917,30 +917,32 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
+我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
 
-While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
+如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
 
-We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
+记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
 
-Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
+GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
 
-Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
+来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personal...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
+Yes - this is clean and correct.
 
-Smarter, more accurate answers with less to sort through
+You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
 Yes - this is clean and correct.
 
@@ -1016,11 +1018,9 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
+这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
 
-These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
-
-With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
+通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
 
 how do i tell my coworker to quit yapping all the time
 
@@ -1084,11 +1084,7 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
-
-More personalized responses and controls
-
-Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
+如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
 
 What new tea place should I try?
 
@@ -1134,19 +1130,15 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
+我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
 
-While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
+如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
 
-We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
+记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
 
-Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
+GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
 
-Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
-
-GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
-
-Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Where the goblins came from</title>
@@ -1307,10 +1299,28 @@ This card was updated on April 24, 2026, to include additional information about
 Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>GPT-5.3 Instant</title>
+  <link>https://openai.com/index/gpt-5-3-instant/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
+  <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.4</title>
+  <link>https://openai.com/index/introducing-gpt-5-4/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
+  <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>GPT-5.5</title>
   <link>https://openai.com/index/introducing-gpt-5-5/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
 
@@ -1674,24 +1684,6 @@ OpenAI MRCR v2 8-needle 128K-256K
 OpenAI MRCR v2 8-needle 256K-512K
 
 OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.3 Instant</title>
-  <link>https://openai.com/index/gpt-5-3-instant/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Sat, 09 Mar 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.4</title>
-  <link>https://openai.com/index/introducing-gpt-5-4/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
