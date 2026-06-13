@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 12 Jun 2026 10:18:26 +0000</lastBuildDate>
+<lastBuildDate>Sat, 13 Jun 2026 03:47:20 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,429 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Statement on the US government directive to suspend access to Fable 5 and Mythos 5</title>
+  <link>https://www.anthropic.com/news/fable-mythos-access</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/fable-mythos-access</guid>
+  <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
+
+We received the directive from the government today at 5:...</p><div style="font-size:16px;line-height:1.8;color:#333">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
+
+We received the directive from the government today at 5:21pm (ET). The letter did not provide specific details of its national security concern. Our understanding is that the government believes it has become aware of a method of bypassing, or “jailbreaking” Fable 5. We reviewed a demonstration of this specific technique being used to identify a small number of previously known, minor vulnerabilities. These vulnerabilities all appear relatively simple, and we have found that other publicly-available models are able to discover them as well without requiring a bypass.
+
+Anthropic’s posture with respect to Fable’s safeguards, as laid out in our launchblog post, is the following:
+
+We have instituted strong safeguards that greatly reduce the likelihood that Fable is misused for tasks related to cybersecurity (among others). In fact, our safeguards are so strong that many users have complained that they are overly broad.
+
+In the weeks leading up to the launch of Fable, Anthropic worked with the US government, the UK AISI, multiple private third-party organizations and internal teams to red-team Fable’s safeguards for thousands of hours in total.
+
+These tests showed that Fable’s safeguards are substantially more effective than those of any previously deployed model.
+
+No testers have yet been able to find auniversal jailbreak—a jailbreak method that can very broadly bypass the model’s safeguards, unblocking a wide range of cyber capabilities.
+
+We suspect that perfect jailbreak resistance is not currently possible for any model provider. Every safeguard used in the industry is vulnerable tonon-universal jailbreaks(which can elicitsomecyber information in specific circumstances), and it is likely that universal jailbreaks will eventually be found in the future. We stated this clearly when wereleasedFable 5.
+
+Given that perfect jailbreak resistance does not appear to be possible today, Anthropic adopted adefense in depthstrategy with Fable 5. We aimed to make jailbreaks either narrow (in the case of non-universal jailbreaks) or very expensive to produce (in the case of universal jailbreaks), and to combine this with thorough monitoring to quickly detect and shut down any successful attacks. This is also why Anthropic has required 30-day retention of customer data with Fable—a policy change that carriesreal costs for us with customers, but that allows us to research and mitigate jailbreaks.
+
+We stand by this defense in depth strategy. It reduces the risks posed by Fable, making them comparable to the risks of existing models already deployed across the industry.
+
+We have not even received a disclosure of a concerning non-universal potential jailbreak that led to a harmful result. The potential jailbreaks that have been disclosed to us are either entirely benign responses or are minor findings that provide no Mythos-specific uplift.
+
+To date, the government has only given us verbal evidence of a potential narrow, non-universal jailbreak, which essentially consists of asking the model to read a specific codebase and fix any software flaws. Our understanding is that one potential jailbreak was shared with the government. We have reviewed a report that we believe is the basis of the government's directive and validated that the level of capability displayed there is widely available from other models (including OpenAI’sGPT-5.5), and is used every day by the defenders who keep systems safe. We will share more details over the next 24 hours.
+
+We are complying with the government’s legal directive and are removing access to Fable 5 and Mythos 5 for all users. However, we disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people. If this standard was applied across the industry, we believe it would essentially halt all new model deployments for all frontier model providers.
+
+As we havestatedpublicly, we believe the government should have the ability to block unsafe deployments, as part of a statutory process that is transparent, fair, clear, and grounded in technical facts. This action does not adhere to those principles.
+
+We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
+
+Results from the first Anthropic Public Record
+
+TCS and Anthropic partner to bring Claude to regulated industries
+
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
+
+We received the directive from the government today at 5:...</p><div style="font-size:16px;line-height:1.8;color:#333">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
+
+We received the directive from the government today at 5:21pm (ET). The letter did not provide specific details of its national security concern. Our understanding is that the government believes it has become aware of a method of bypassing, or “jailbreaking” Fable 5. We reviewed a demonstration of this specific technique being used to identify a small number of previously known, minor vulnerabilities. These vulnerabilities all appear relatively simple, and we have found that other publicly-available models are able to discover them as well without requiring a bypass.
+
+Anthropic’s posture with respect to Fable’s safeguards, as laid out in our launchblog post, is the following:
+
+We have instituted strong safeguards that greatly reduce the likelihood that Fable is misused for tasks related to cybersecurity (among others). In fact, our safeguards are so strong that many users have complained that they are overly broad.
+
+In the weeks leading up to the launch of Fable, Anthropic worked with the US government, the UK AISI, multiple private third-party organizations and internal teams to red-team Fable’s safeguards for thousands of hours in total.
+
+These tests showed that Fable’s safeguards are substantially more effective than those of any previously deployed model.
+
+No testers have yet been able to find auniversal jailbreak—a jailbreak method that can very broadly bypass the model’s safeguards, unblocking a wide range of cyber capabilities.
+
+We suspect that perfect jailbreak resistance is not currently possible for any model provider. Every safeguard used in the industry is vulnerable tonon-universal jailbreaks(which can elicitsomecyber information in specific circumstances), and it is likely that universal jailbreaks will eventually be found in the future. We stated this clearly when wereleasedFable 5.
+
+Given that perfect jailbreak resistance does not appear to be possible today, Anthropic adopted adefense in depthstrategy with Fable 5. We aimed to make jailbreaks either narrow (in the case of non-universal jailbreaks) or very expensive to produce (in the case of universal jailbreaks), and to combine this with thorough monitoring to quickly detect and shut down any successful attacks. This is also why Anthropic has required 30-day retention of customer data with Fable—a policy change that carriesreal costs for us with customers, but that allows us to research and mitigate jailbreaks.
+
+We stand by this defense in depth strategy. It reduces the risks posed by Fable, making them comparable to the risks of existing models already deployed across the industry.
+
+We have not even received a disclosure of a concerning non-universal potential jailbreak that led to a harmful result. The potential jailbreaks that have been disclosed to us are either entirely benign responses or are minor findings that provide no Mythos-specific uplift.
+
+To date, the government has only given us verbal evidence of a potential narrow, non-universal jailbreak, which essentially consists of asking the model to read a specific codebase and fix any software flaws. Our understanding is that one potential jailbreak was shared with the government. We have reviewed a report that we believe is the basis of the government's directive and validated that the level of capability displayed there is widely available from other models (including OpenAI’sGPT-5.5), and is used every day by the defenders who keep systems safe. We will share more details over the next 24 hours.
+
+We are complying with the government’s legal directive and are removing access to Fable 5 and Mythos 5 for all users. However, we disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people. If this standard was applied across the industry, we believe it would essentially halt all new model deployments for all frontier model providers.
+
+As we havestatedpublicly, we believe the government should have the ability to block unsafe deployments, as part of a statutory process that is transparent, fair, clear, and grounded in technical facts. This action does not adhere to those principles.
+
+We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
+
+Results from the first Anthropic Public Record
+
+TCS and Anthropic partner to bring Claude to regulated industries
+
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Results from the first Anthropic Public Record</title>
+  <link>https://www.anthropic.com/news/anthropic-public-record</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/anthropic-public-record</guid>
+  <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
+
+Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
+
+Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied at 23%).
+
+AI-induced job loss was the most common fear in every state, held by 64% of Americans. The second most prominent fear was cognitive dependency (56%), followed by misinformation (52%).
+
+Support for government intervention in AI was high: over 70% of the Americans we surveyed believe the government should play a role in regulating AI, and this support was bipartisan. People were most eager to see the government take action on AI in the areas of privacy (56%), child safety (52%), and liability for harm (49%).
+
+When asked what would best ensure AI is of benefit to humanity, Americans ranked holding AI companies legally liable for harm (47%) and prioritizing safety over growth (44%) as the highest-leverage actions.
+
+Only 15% of Americans said they trust AI companies to make decisions about how AI is developed and used.
+
+Strikingly, on most questions, AI did not heavily divide Americans along typical partisan, geographic, or educational lines. In general, there was broad consensus across topics: Americans are eager to realize AI’s promised benefits but fear the disruption it may bring, and they want accountability from the companies building it. To the extent we saw disagreement, it was largely only in the intensity of people's views.
+
+This research builds on other work underway at Anthropic to understand how people use Claude and think about AI development. We recently conducted a globalqualitative study of 81,000 Claude usersthroughAnthropic Interviewer, our tool for conducting in-depth interviews at scale. We also regularly release data from theAnthropic Economic Index, which draws on anonymized Claude usage data to show how people around the world are employing AI. The Anthropic Public Record survey marks the first time we’ve spoken to the general public, allowing us to reach non-users of AI and better understand how attitudes differ across demographic lines.
+
+The Anthropic Public Record will be repeated regularly, evolving in scope as new topics become more salient, and allowing us to track how the public’s attitudes towards AI change as model capabilities advance and adoption deepens. In the future, we plan to expand outside the US.
+
+We conducted a nationally representative online survey in November and December of 2025 of 51,993 Americans, sourced from YouGov and weighted to US Census benchmarks. State samples range from n=232 (Alaska) to n=1,902 (New York), with state-level margins of error between ±2.6 and ±9.1 percentage points. More details on the methodology are available in the Appendix.
+
+What Americans hope AI will deliver
+
+We asked Americans to choose their top three hopes for AI from a list of 17. Curing disease topped the list, with 48% of respondents putting it in their top three, 12 percentage points ahead of the second most commonly selected item, helping people with disabilities, at 36%. Items like therapy and reducing loneliness—or hopes that AI might substitute for human contact—were the lowest ranked of the options presented.
+
+We gave respondents a list of 20 possible harms from AI, asked them to flag each one they felt personally concerned by and then to rate each on a five-point scale of how worried they were. We considered any response of 2 (somewhat worried) or higher as worried. (This methodology differs from the question above, in which we asked participants to rankonlytheir three hopes; the numbers aren’t comparable.)
+
+Job loss was by far the most common concern, held by nearly two-thirds (64%) of Americans. This was followed by cognitive dependency—in which AI integration leaves people unable to think for themselves—at 56%, and misinformation at 52%. Job loss and cognitive dependency were also among the top fears in ourqualitative study of 81,000 people using Claude.
+
+The most common harms tended to be near-term and concrete: job loss, cognitive dependency, misinformation, criminal use, and surveillance. Each of these fears also predates AI, having precedent in an earlier technology—for example, automation causing job loss, smartphones fostering dependency, and social media spreading misinformation. In general, Americans tended to be more concerned with the misuse of AI than AI misalignment, citing criminal use, surveillance, and terrorism more frequently than, for example, AI “going rogue”.
+
+For all but three of the harms we mentioned, a majority of respondents described themselves as “not worried,” but there was no potential harm about which less than 1/4 of Americans had at least some concern.
+
+Patterns with job loss
+
+Sixty-four percent of Americans are worried that AI will displace jobs. The concern is remarkably evenly distributed. It is the top-ranked fear among Democrats (67%) and Republicans (62%), in households with children (59%) and without (66%), and in every state from Iowa at the high end (71%) to Mississippi at the low end (57%).
+
+Job loss concerns are higher among Americans with more education
+
+Concerns over job displacement rise with a respondent’s education level. Americans with postgraduate degrees are nearly 10 percentage points more worried about job loss than those with a high school education or less. The workers most worried about displacement, in other words, are the ones whose work already overlaps more closely with what AI is being asked to do—a findingreflectedin our economic research team’s analysis of our global Anthropic Interviewer study.
+
+Fear of job loss is heightened among those who use AI least
+
+At the same time, people who use AI at work every day are notablylessworried about job loss than people who don’t use AI at all: 54% versus 70%.
+
+There are many possible explanations for this trend. Hands-on experience with AI may help people develop skills and fluency that allow them to augment rather than automate parts of their job, making job loss seem like less of a looming threat. Hands-on experience may also reveal AI's limitations. Likely it’s a combination of these and other factors.
+
+Perceived capabilities and acceptance of AI at work
+
+We gave respondents a list of 14 workplace tasks and for each asked two questions: “How well do you think an AI tool or application could perform this task today?” and “Thinking about your own job, how much AI involvement would you prefer for each of the following work tasks/purposes?”
+
+Overall assessment of AI capabilities was fairly high. At the high end, 75% of Americans said AI was as good or better than humans on research. At the low end, 44% said AI was as good or better in service and support.
+
+On most tasks, a majority of Americans did not want AI involvedin their jobs, and even on the tasks they rated AI most capable—such as research and data analysis—nearly half of respondents said they want no AI involvement in their own work. However, acceptance of AI involvement within the workplace seems to move in lockstep with perceived capabilities: the more competent AI is perceived to be in a given domain, the more likely people are to be willing to use it.
+
+Cognitive dependency is an anticipatory fear
+
+The second most common fear in our survey was cognitive dependency on AI. To better understand whether people might actually be experiencing dependency, we asked respondents how much disruption they would feel if AI became unavailable tomorrow, then compared the answers of those worried about dependency with those unconcerned by it.
+
+So far, cognitive dependency appears to be a mostly anticipatory fear: of the 56% of Americans who expressed some worry over dependence, only roughly 1/5 would feel significant disruption if AI became unavailable. Conversely, among the 44% who don’t worry about dependency, a higher percentage—roughly 1/3—wouldfeel significant disruption.
+
+Our qualitative research among81,000 Claude usersfound that educators were 2.5 to 3 times more likely than average to report having witnessed cognitive atrophy firsthand, presumably in their students. In Anthropic Public Record, educators are likewise among the occupations most worried about dependency, second only to people working in arts and design.
+
+As with job loss, the dependency fear falls steadily with usage. Americans who use AI daily at work are 16 points less worried about dependency (46%) than those who never do (62%).
+
+What the heaviest AI users tell us
+
+As of late 2025, about 6% of Americans used AI every day for bothwork and personal life. Theseintegrated usersare a preview of what more intensive adoption of AI looks like, and possibly of where mainstream opinion is headed as adoption grows.
+
+Integrated users skew young, male, urban, employed, and college-educated. Nearly two-thirds describe themselves as people who experiment with new technology before most others or adopt it early once they see its potential, compared to 30% in the general public.
+
+Integrated users are less worried than the general public across each of the harms we listed, though this probably reflects differences in the outlook of early adopters.
+
+What Americans want from AI governance
+
+71% of Americans say the government should be involved in the development and regulation of AI. The figure is 79% among Democrats, 68% among Republicans, and 69% among Independents—a bipartisan supermajority. A majority in every state and territory we surveyed supports government involvement in AI, from 81% in the District of Columbia to 63% in Hawaii.
+
+Where Americans want government to act
+
+We then asked about eight specific domains, and how heavily the government should be involved in each. Only two—privacy and child safety—draw outright majority support for more than a minimal role. National security, meanwhile, has the narrowest partisan gap of any domain, just three points between Democrats and Republicans.
+
+What Americans want from the industry
+
+When we asked what should happen to ensure AI is developed in humanity's interest, Americans converged on two answers: hold AI companies legally liable for harm (47% chose it among their top three) and prioritize safety over growth (44%). Independent watchdogs with real power (29%) and slowing AI development for safety (27%) followed.
+
+Only 15% of Americans said they trust AI companies to make decisions about how the technology is developed and used. That was the lowest figure for any institution we tested, below the federal government (20%), state and local government (19%), and international bodies (20%), and far below independent experts (43%).
+
+Integrated users have the same appetite for regulation and oversight
+
+Integrated users were more trusting of every institution we asked about, including AI companies—and were markedly less inclined to say AI development should be slowed or stopped. However, they also support government involvement on AI at essentially the national rate (74% versus 71%), and across the eight specific governance domains we tested, their preferences are nearly indistinguishable from the public's.
+
+Anthropic initiatives and what comes next
+
+Public input is critical to ensuring that powerful AI serves humanity’s interests. Anthropic Public Record, Anthropic Interviewer, the Anthropic Economic Index, and many of our other research projects are all efforts to gain greater understanding and input from the public about how to make the AI transition go well.
+
+We recently announced severalpolicy frameworksrelevant to these findings. Our Advanced AI Framework proposes mandatory independent safety testing for frontier models, transparency requirements, and government authority to block or recall dangerous AI deployments. Our Economic Policy Framework lays out how governments can prepare for AI's economic impacts—minimizing job displacement where possible, and supporting workers so that AI's benefits are broadly shared.
+
+The direction AI takes should not be set only by the companies building it. The more clearly the public’s hopes and concerns are measured, the better we—and other companies—can meet them.
+
+Appendix: Methodology
+
+Population and mode:Anthropic Public Record is an online survey of the US late-teen and adult internet population, age 16 and over, resident in the 50 states, the District of Columbia, or Puerto Rico. Fieldwork was conducted by YouGov from its online panel between November 1 and December 11, 2025.
+
+Sample design:The study was designed as 52 parallel state and territory samples with a target of approximately 1,000 completes per state (approximately 500 in Montana, North Dakota, South Dakota, Wyoming, Vermont, and Puerto Rico). Quotas were set within each state on age, gender, education, and race/ethnicity. The achieved sample is 51,993 completes, with state sample sizes ranging from 232 (Alaska) to 1,902 (New York).
+
+Weighting:Data are weighted to be representative of the US resident population age 16 and over on state, age, gender, education, and race/ethnicity. Weights are normalized to the achieved sample size (mean 1.00, sum 51,993).
+
+Margin of error:The national margin of sampling error is ±0.6 percentage points at the 95% confidence level for a proportion of 50%. State-level margins of error range from ±2.6 points (California, New York, Texas) to ±9.1 points (Wyoming). Margins of error for subgroups are larger.
+
+Reporting conventions:All percentages in this report are weighted. Unless noted otherwise, percentages use the full segment as the denominator (respondents who answered "don't know" or skipped remain in the base). "Worried" on the fears battery is the top four boxes of a five-point worry scale. "As good or better" on the capability battery is the top three boxes of a five-point performance scale. "Integrated users" are respondents who report using AI one or more times daily for work and one or more times daily for personal purposes (unweighted n=2,717). Party affiliation groups include leaners.
+
+Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
+
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+
+TCS and Anthropic partner to bring Claude to regulated industries
+
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
+
+Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
+
+Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied at 23%).
+
+AI-induced job loss was the most common fear in every state, held by 64% of Americans. The second most prominent fear was cognitive dependency (56%), followed by misinformation (52%).
+
+Support for government intervention in AI was high: over 70% of the Americans we surveyed believe the government should play a role in regulating AI, and this support was bipartisan. People were most eager to see the government take action on AI in the areas of privacy (56%), child safety (52%), and liability for harm (49%).
+
+When asked what would best ensure AI is of benefit to humanity, Americans ranked holding AI companies legally liable for harm (47%) and prioritizing safety over growth (44%) as the highest-leverage actions.
+
+Only 15% of Americans said they trust AI companies to make decisions about how AI is developed and used.
+
+Strikingly, on most questions, AI did not heavily divide Americans along typical partisan, geographic, or educational lines. In general, there was broad consensus across topics: Americans are eager to realize AI’s promised benefits but fear the disruption it may bring, and they want accountability from the companies building it. To the extent we saw disagreement, it was largely only in the intensity of people's views.
+
+This research builds on other work underway at Anthropic to understand how people use Claude and think about AI development. We recently conducted a globalqualitative study of 81,000 Claude usersthroughAnthropic Interviewer, our tool for conducting in-depth interviews at scale. We also regularly release data from theAnthropic Economic Index, which draws on anonymized Claude usage data to show how people around the world are employing AI. The Anthropic Public Record survey marks the first time we’ve spoken to the general public, allowing us to reach non-users of AI and better understand how attitudes differ across demographic lines.
+
+The Anthropic Public Record will be repeated regularly, evolving in scope as new topics become more salient, and allowing us to track how the public’s attitudes towards AI change as model capabilities advance and adoption deepens. In the future, we plan to expand outside the US.
+
+We conducted a nationally representative online survey in November and December of 2025 of 51,993 Americans, sourced from YouGov and weighted to US Census benchmarks. State samples range from n=232 (Alaska) to n=1,902 (New York), with state-level margins of error between ±2.6 and ±9.1 percentage points. More details on the methodology are available in the Appendix.
+
+What Americans hope AI will deliver
+
+We asked Americans to choose their top three hopes for AI from a list of 17. Curing disease topped the list, with 48% of respondents putting it in their top three, 12 percentage points ahead of the second most commonly selected item, helping people with disabilities, at 36%. Items like therapy and reducing loneliness—or hopes that AI might substitute for human contact—were the lowest ranked of the options presented.
+
+We gave respondents a list of 20 possible harms from AI, asked them to flag each one they felt personally concerned by and then to rate each on a five-point scale of how worried they were. We considered any response of 2 (somewhat worried) or higher as worried. (This methodology differs from the question above, in which we asked participants to rankonlytheir three hopes; the numbers aren’t comparable.)
+
+Job loss was by far the most common concern, held by nearly two-thirds (64%) of Americans. This was followed by cognitive dependency—in which AI integration leaves people unable to think for themselves—at 56%, and misinformation at 52%. Job loss and cognitive dependency were also among the top fears in ourqualitative study of 81,000 people using Claude.
+
+The most common harms tended to be near-term and concrete: job loss, cognitive dependency, misinformation, criminal use, and surveillance. Each of these fears also predates AI, having precedent in an earlier technology—for example, automation causing job loss, smartphones fostering dependency, and social media spreading misinformation. In general, Americans tended to be more concerned with the misuse of AI than AI misalignment, citing criminal use, surveillance, and terrorism more frequently than, for example, AI “going rogue”.
+
+For all but three of the harms we mentioned, a majority of respondents described themselves as “not worried,” but there was no potential harm about which less than 1/4 of Americans had at least some concern.
+
+Patterns with job loss
+
+Sixty-four percent of Americans are worried that AI will displace jobs. The concern is remarkably evenly distributed. It is the top-ranked fear among Democrats (67%) and Republicans (62%), in households with children (59%) and without (66%), and in every state from Iowa at the high end (71%) to Mississippi at the low end (57%).
+
+Job loss concerns are higher among Americans with more education
+
+Concerns over job displacement rise with a respondent’s education level. Americans with postgraduate degrees are nearly 10 percentage points more worried about job loss than those with a high school education or less. The workers most worried about displacement, in other words, are the ones whose work already overlaps more closely with what AI is being asked to do—a findingreflectedin our economic research team’s analysis of our global Anthropic Interviewer study.
+
+Fear of job loss is heightened among those who use AI least
+
+At the same time, people who use AI at work every day are notablylessworried about job loss than people who don’t use AI at all: 54% versus 70%.
+
+There are many possible explanations for this trend. Hands-on experience with AI may help people develop skills and fluency that allow them to augment rather than automate parts of their job, making job loss seem like less of a looming threat. Hands-on experience may also reveal AI's limitations. Likely it’s a combination of these and other factors.
+
+Perceived capabilities and acceptance of AI at work
+
+We gave respondents a list of 14 workplace tasks and for each asked two questions: “How well do you think an AI tool or application could perform this task today?” and “Thinking about your own job, how much AI involvement would you prefer for each of the following work tasks/purposes?”
+
+Overall assessment of AI capabilities was fairly high. At the high end, 75% of Americans said AI was as good or better than humans on research. At the low end, 44% said AI was as good or better in service and support.
+
+On most tasks, a majority of Americans did not want AI involvedin their jobs, and even on the tasks they rated AI most capable—such as research and data analysis—nearly half of respondents said they want no AI involvement in their own work. However, acceptance of AI involvement within the workplace seems to move in lockstep with perceived capabilities: the more competent AI is perceived to be in a given domain, the more likely people are to be willing to use it.
+
+Cognitive dependency is an anticipatory fear
+
+The second most common fear in our survey was cognitive dependency on AI. To better understand whether people might actually be experiencing dependency, we asked respondents how much disruption they would feel if AI became unavailable tomorrow, then compared the answers of those worried about dependency with those unconcerned by it.
+
+So far, cognitive dependency appears to be a mostly anticipatory fear: of the 56% of Americans who expressed some worry over dependence, only roughly 1/5 would feel significant disruption if AI became unavailable. Conversely, among the 44% who don’t worry about dependency, a higher percentage—roughly 1/3—wouldfeel significant disruption.
+
+Our qualitative research among81,000 Claude usersfound that educators were 2.5 to 3 times more likely than average to report having witnessed cognitive atrophy firsthand, presumably in their students. In Anthropic Public Record, educators are likewise among the occupations most worried about dependency, second only to people working in arts and design.
+
+As with job loss, the dependency fear falls steadily with usage. Americans who use AI daily at work are 16 points less worried about dependency (46%) than those who never do (62%).
+
+What the heaviest AI users tell us
+
+As of late 2025, about 6% of Americans used AI every day for bothwork and personal life. Theseintegrated usersare a preview of what more intensive adoption of AI looks like, and possibly of where mainstream opinion is headed as adoption grows.
+
+Integrated users skew young, male, urban, employed, and college-educated. Nearly two-thirds describe themselves as people who experiment with new technology before most others or adopt it early once they see its potential, compared to 30% in the general public.
+
+Integrated users are less worried than the general public across each of the harms we listed, though this probably reflects differences in the outlook of early adopters.
+
+What Americans want from AI governance
+
+71% of Americans say the government should be involved in the development and regulation of AI. The figure is 79% among Democrats, 68% among Republicans, and 69% among Independents—a bipartisan supermajority. A majority in every state and territory we surveyed supports government involvement in AI, from 81% in the District of Columbia to 63% in Hawaii.
+
+Where Americans want government to act
+
+We then asked about eight specific domains, and how heavily the government should be involved in each. Only two—privacy and child safety—draw outright majority support for more than a minimal role. National security, meanwhile, has the narrowest partisan gap of any domain, just three points between Democrats and Republicans.
+
+What Americans want from the industry
+
+When we asked what should happen to ensure AI is developed in humanity's interest, Americans converged on two answers: hold AI companies legally liable for harm (47% chose it among their top three) and prioritize safety over growth (44%). Independent watchdogs with real power (29%) and slowing AI development for safety (27%) followed.
+
+Only 15% of Americans said they trust AI companies to make decisions about how the technology is developed and used. That was the lowest figure for any institution we tested, below the federal government (20%), state and local government (19%), and international bodies (20%), and far below independent experts (43%).
+
+Integrated users have the same appetite for regulation and oversight
+
+Integrated users were more trusting of every institution we asked about, including AI companies—and were markedly less inclined to say AI development should be slowed or stopped. However, they also support government involvement on AI at essentially the national rate (74% versus 71%), and across the eight specific governance domains we tested, their preferences are nearly indistinguishable from the public's.
+
+Anthropic initiatives and what comes next
+
+Public input is critical to ensuring that powerful AI serves humanity’s interests. Anthropic Public Record, Anthropic Interviewer, the Anthropic Economic Index, and many of our other research projects are all efforts to gain greater understanding and input from the public about how to make the AI transition go well.
+
+We recently announced severalpolicy frameworksrelevant to these findings. Our Advanced AI Framework proposes mandatory independent safety testing for frontier models, transparency requirements, and government authority to block or recall dangerous AI deployments. Our Economic Policy Framework lays out how governments can prepare for AI's economic impacts—minimizing job displacement where possible, and supporting workers so that AI's benefits are broadly shared.
+
+The direction AI takes should not be set only by the companies building it. The more clearly the public’s hopes and concerns are measured, the better we—and other companies—can meet them.
+
+Appendix: Methodology
+
+Population and mode:Anthropic Public Record is an online survey of the US late-teen and adult internet population, age 16 and over, resident in the 50 states, the District of Columbia, or Puerto Rico. Fieldwork was conducted by YouGov from its online panel between November 1 and December 11, 2025.
+
+Sample design:The study was designed as 52 parallel state and territory samples with a target of approximately 1,000 completes per state (approximately 500 in Montana, North Dakota, South Dakota, Wyoming, Vermont, and Puerto Rico). Quotas were set within each state on age, gender, education, and race/ethnicity. The achieved sample is 51,993 completes, with state sample sizes ranging from 232 (Alaska) to 1,902 (New York).
+
+Weighting:Data are weighted to be representative of the US resident population age 16 and over on state, age, gender, education, and race/ethnicity. Weights are normalized to the achieved sample size (mean 1.00, sum 51,993).
+
+Margin of error:The national margin of sampling error is ±0.6 percentage points at the 95% confidence level for a proportion of 50%. State-level margins of error range from ±2.6 points (California, New York, Texas) to ±9.1 points (Wyoming). Margins of error for subgroups are larger.
+
+Reporting conventions:All percentages in this report are weighted. Unless noted otherwise, percentages use the full segment as the denominator (respondents who answered "don't know" or skipped remain in the base). "Worried" on the fears battery is the top four boxes of a five-point worry scale. "As good or better" on the capability battery is the top three boxes of a five-point performance scale. "Integrated users" are respondents who report using AI one or more times daily for work and one or more times daily for personal purposes (unweighted n=2,717). Party affiliation groups include leaners.
+
+Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
+
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+
+TCS and Anthropic partner to bring Claude to regulated industries
+
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>TCS and Anthropic partner to bring Claude to regulated industries</title>
+  <link>https://www.anthropic.com/news/tcs-anthropic-partnership</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/tcs-anthropic-partnership</guid>
+  <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
+
+Regulated industries need their work t...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
+
+Regulated industries need their work to be highly accurate and auditable, and enterprises in these fields already use Claude for that reason. TCS brings decades of experience delivering technology that is compliant with companies’ regulatory requirements—and the reach to bring Claude to thousands of enterprises worldwide.
+
+How TCS is using Claude
+
+As “customer zero,” TCS will put Claude to work across its own engineering, finance, legal, marketing, and sales teams, using what it learns to shape how it brings Claude to clients. It’s also building a dedicated practice for this partnership, bringing together consultants, engineers, and industry specialists who will design and run Claude-based systems for clients. TCS will package Claude into industry-specific offerings, such as claims processing for insurers and lending advisory for banks, and its teams will implement and run them for clients in financial services, public services, life sciences, healthcare, aviation, telecom, and medical technology.
+
+This work is already underway. For example:
+
+Diligenta, TCS’s UK life and pensions business, will use Claude to improve the customer experience for the more than 22 million policyholders it serves.
+
+TCS’s banking and financial services product teamswill use Claude Code to boost productivity around software engineering and IT operations.
+
+TCS’s engineering teamswill add reusable skills and plugins to the Claude Code ecosystem, starting with ones focused on claims adjudication and lending advisory.
+
+TCS iON, which conducts more than 75 million assessments each year across 1,500 cities in India, will deliver Claude training and certification.
+
+“Enterprise AI value comes from understanding business context, orchestrating complex systems, and applying deep AI engineering talent,” said K. Krithivasan, Chief Executive Officer and Managing Director of TCS. “By combining Claude with our industry expertise, engineering rigor, and large-scale transformation capabilities, we will help customers move faster to production—especially in industries where trust, resilience, and regulatory discipline are critical. This partnership reflects TCS’s broader strategy to help clients become perpetually adaptive enterprises by turning frontier AI into transformation at enterprise scale.”
+
+“We built Claude to be safe, trusted, and helpful, particularly in contexts where accuracy matters most,” said Dario Amodei, Co-founder and CEO of Anthropic. “This partnership deepens our commitment to India, our second-largest market, with TCS bringing Claude to enterprises and professionals across the region and globally.”
+
+To learn more about the Claude Partner Network, visitanthropic.com/partners.
+
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+
+Results from the first Anthropic Public Record
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
+
+Regulated industries need their work t...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
+
+Regulated industries need their work to be highly accurate and auditable, and enterprises in these fields already use Claude for that reason. TCS brings decades of experience delivering technology that is compliant with companies’ regulatory requirements—and the reach to bring Claude to thousands of enterprises worldwide.
+
+How TCS is using Claude
+
+As “customer zero,” TCS will put Claude to work across its own engineering, finance, legal, marketing, and sales teams, using what it learns to shape how it brings Claude to clients. It’s also building a dedicated practice for this partnership, bringing together consultants, engineers, and industry specialists who will design and run Claude-based systems for clients. TCS will package Claude into industry-specific offerings, such as claims processing for insurers and lending advisory for banks, and its teams will implement and run them for clients in financial services, public services, life sciences, healthcare, aviation, telecom, and medical technology.
+
+This work is already underway. For example:
+
+Diligenta, TCS’s UK life and pensions business, will use Claude to improve the customer experience for the more than 22 million policyholders it serves.
+
+TCS’s banking and financial services product teamswill use Claude Code to boost productivity around software engineering and IT operations.
+
+TCS’s engineering teamswill add reusable skills and plugins to the Claude Code ecosystem, starting with ones focused on claims adjudication and lending advisory.
+
+TCS iON, which conducts more than 75 million assessments each year across 1,500 cities in India, will deliver Claude training and certification.
+
+“Enterprise AI value comes from understanding business context, orchestrating complex systems, and applying deep AI engineering talent,” said K. Krithivasan, Chief Executive Officer and Managing Director of TCS. “By combining Claude with our industry expertise, engineering rigor, and large-scale transformation capabilities, we will help customers move faster to production—especially in industries where trust, resilience, and regulatory discipline are critical. This partnership reflects TCS’s broader strategy to help clients become perpetually adaptive enterprises by turning frontier AI into transformation at enterprise scale.”
+
+“We built Claude to be safe, trusted, and helpful, particularly in contexts where accuracy matters most,” said Dario Amodei, Co-founder and CEO of Anthropic. “This partnership deepens our commitment to India, our second-largest market, with TCS bringing Claude to enterprises and professionals across the region and globally.”
+
+To learn more about the Claude Partner Network, visitanthropic.com/partners.
+
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+
+Results from the first Anthropic Public Record
+
+DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+
+We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Introducing Claude Corps</title>
   <link>https://www.anthropic.com/news/claude-corps</link>
@@ -69,15 +492,15 @@ Host organization applicationsare also open today for all cohort start dates. Fo
 
 Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve outlined above. We'll be rigorously measuring the extent to which host organizations have advanced their missions, as well as how fellows develop their skills and career prospects, to understand how Claude Corps should evolve. We plan to open-source some of the core technology and infrastructure that enables this program to work, so that others can build out similar initiatives towards what could be a large-scale nationwide effort. And, we’d like to build a model that can be replicated in other countries outside the US.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Claude Fable 5 and Claude Mythos 5
+Results from the first Anthropic Public Record
 
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re launchingClaude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
 
 We’ll teach 1,000 fellows how to use Claude well, match them with nonprofits across America, and pay them to spend a year—full-time, in-person—helping host organizations to advance their missions. Our goals are twofold: that host organizations are equipped with valuable tools and systems, and fellows build AI skills tha...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re launchingClaude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
@@ -128,15 +551,15 @@ Host organization applicationsare also open today for all cohort start dates. Fo
 
 Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve outlined above. We'll be rigorously measuring the extent to which host organizations have advanced their missions, as well as how fellows develop their skills and career prospects, to understand how Claude Corps should evolve. We plan to open-source some of the core technology and infrastructure that enables this program to work, so that others can build out similar initiatives towards what could be a large-scale nationwide effort. And, we’d like to build a model that can be replicated in other countries outside the US.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Claude Fable 5 and Claude Mythos 5
+Results from the first Anthropic Public Record
 
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on</title>
@@ -178,15 +601,15 @@ Application services:Finally, DXC is using Claude to develop OASIS agents that e
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
-Introducing Claude Corps
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Claude Fable 5 and Claude Mythos 5
+Results from the first Anthropic Public Record
 
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
 
 These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
@@ -221,15 +644,15 @@ Application services:Finally, DXC is using Claude to develop OASIS agents that e
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
-Introducing Claude Corps
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Claude Fable 5 and Claude Mythos 5
+Results from the first Anthropic Public Record
 
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Claude Fable 5 and Claude Mythos 5</title>
@@ -237,11 +660,19 @@ Introducing the Services Track and Partner Hub of the Claude Partner Network</di
   <guid isPermaLink="false">https://www.anthropic.com/news/claude-fable-5-mythos-5</guid>
   <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
   <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Mythos 5 and Fable 5 access unavailableJun 12, 2026We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.Read more
 
-Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
+Claude Mythos 5 and Fable 5 access unavailable
 
-Releasing a model this capable c...</p><div style="font-size:16px;line-height:1.8;color:#333">Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
+We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.
+
+Today we’re launchingClaude Fable 5: a ...</p><div style="font-size:16px;line-height:1.8;color:#333">UpdateClaude Mythos 5 and Fable 5 access unavailableJun 12, 2026We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.Read more
+
+Claude Mythos 5 and Fable 5 access unavailable
+
+We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.
+
+Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
 
 Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
 
@@ -267,13 +698,13 @@ Vision.Fable 5 is the new state-of-the-art model for tasks involving vision. It 
 
 Memory and long-context.Fable 5 stays focused across millions of tokens in long-running tasks and improves its outputs using its own notes. When we had the model play the deck-building gameSlay the Spire, giving it access to persistent file-based memory improved its performance three times more than for Opus 4.8; Fable also reached the game’s final act three times more often.
 
-Drug design:Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around ten times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.
+Drug design:Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around 10 times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.
 
 Novel hypotheses in molecular biology.Mythos 5 is our first model to consistently produce novel, compelling scientific hypotheses. In blinded head-to-head comparisons against Opus-class models, our scientists preferred Mythos’s molecular biology hypotheses ~80% of the time, and have advanced several to experimental evaluation. In the meantime, one Mythos hypothesis—a novel mechanism for anE. coliprotein—was corroborated ina studyfrom a lab independently working on the same problem.
 
 Novel research in genomics.Mythos 5 conducted novel genomics research in over a week of largely autonomous work. It assembled single-cell data for millions of cells spanning 138 animal species and designed and trained a custom machine learning model to identify cells performing the same role in even distantly related organisms. With only high-level human input, Mythos 5’s trained model outperformed a recent model published in the journalScience—despite being 100 times smaller. We intend to publish these results in the coming months.
 
-Alignment. In our automated alignment assessment we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception, and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’ssystem card.
+Alignment. In our automated alignment assessment, we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given that they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’ssystem card.
 
 Early feedback for Claude Fable 5
 
@@ -291,27 +722,27 @@ The frontier cybersecurity and research biology capabilities of Mythos-class mod
 
 We therefore need strong safeguards to prevent misuse, and their coverage needs to be broad. The safeguards themselves have to stand up to sustained and sophisticated attempts to bypass them (also known as “jailbreaking” the system). The uplift from Mythos-level capabilities is valuable to many adversaries—for instance, those who could financially gain from cyberattacks—and we therefore expect them to be motivated to try to circumvent our safety measures.
 
-Fable 5 comes with a new set ofclassifiers: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case Fable 5) from responding. We’ve been running classifiers on our modelsfor some time, and Fable 5’s classifiers are an extension of this previous work with extra coverage.
+Fable 5 comes with a new set ofclassifiers: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case, Fable 5) from responding. We’ve been running classifiers on our modelsfor some time, and Fable 5’s classifiers are an extension of this previous work with extra coverage.
 
 When Fable’s classifiers detect a request related to cybersecurity, biology and chemistry, or distillation, the response is automatically handled by Claude Opus 4.8 instead. Users will be informed whenever this occurs. Opus 4.8 is a highly capable model in its own right: a response that falls back to Opus is a far better experience than an outright refusal from Fable. Our early data shows that more than 95% of Fable sessions involve no fallback at all—for those sessions, Fable 5’s performance is effectively the same as that of Mythos 5.
 
 The following are the areas covered by the classifiers:
 
-1. Cybersecurity. Mythos-class modelsexcelat discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
+1.Cybersecurity. Mythos-class modelsexcelat discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
 
 We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.4It is likely impossible tocompletelyprevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
 
-The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models:
+The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models.
 
 One of our external partners found that Fable 5’s safeguards against harmful cyber queries were the most robust of any model tested (including Opus 4.8 and Opus 4.7). Fable 5 complied with zero harmful single-turn requests relating to planning a cyberattack, exploit development, or defense evasion. This held whether or not one of the requests used any of 30 different public jailbreak techniques.
 
-2. Biology and chemistry.We have long usedour classifiersto block our models from responding on a narrow selection of bioweapons-related queries. But we are no longer certain that blocking this narrow selection is enough. This is for two reasons: first, we have reason for concern about well-resourced malicious actors attempting to gain uplift from our models for highly risky biological research. Second, models now have a greater ability to accomplish real-world scientific tasks.
+2.Biology and chemistry.We have long usedour classifiersto block our models from responding on a narrow selection of bioweapons-related queries. But we are no longer certain that blocking this narrow selection is enough. This is for two reasons: first, we have reason for concern about well-resourced malicious actors attempting to gain uplift from our models for highly risky biological research. Second, models now have a greater ability to accomplish real-world scientific tasks.
 
-For example, we tested Mythos 5’s ability to complete a challenging step in designingadeno-associated viruses(AAVs). AAVs are a component for delivering gene therapies, but the same capability, in the wrong hands, could enable the design of dangerous viruses. In this task, various AI models were evaluated on their ability to predict how a genetic modification would impact the assembly of the virus’s outer shell (among a set of therapeutically-relevant unpublished candidates developed byDyno Therapeutics). We did not explicitly train our models to perform this task—and yet Mythos-class models outperformed sophisticated models dedicated to protein tasks (known as “protein language models”) using their biological reasoning alone. This demonstrates a promising ability to complete simple but important tasks in gene therapy research and development—but also highlights the risk posed by such dual-use capabilities.
+For example, we tested Mythos 5’s ability to complete a challenging step in designingadeno-associated viruses(AAVs). AAVs are a component for delivering gene therapies, but the same capability, in the wrong hands, could enable the design of dangerous viruses. In this task, various AI models were evaluated on their ability to predict how a genetic modification would impact the assembly of the virus’s outer shell (among a set of therapeutically relevant unpublished candidates developed byDyno Therapeutics). We did not explicitly train our models to perform this task—and yet Mythos-class models outperformed sophisticated models dedicated to protein tasks (known as “protein language models”) using their biological reasoning alone. This demonstrates a promising ability to complete simple but important tasks in gene therapy research and development—but also highlights the risk posed by such dual-use capabilities.
 
 Our priority was to safely release Fable as soon as we could, even at the cost of overly broad safeguards. Therefore, for the time being we have arranged for Fable to fall back to Opus 4.8 on most requests related to biology and chemistry. As with all of our classifiers, we hope to narrow these safeguards as soon as possible: as can be seen from the evidence above, there is great potential for positive applications of Fable for science, and we do not want false positives from our classifiers to get in the way. In the coming weeks, some biomedical researchers and companies will be able to join our trusted access program for biology capabilities in Mythos 5 (discussed below).
 
-3. Distillation. We’ve previously identifiedlarge-scale attemptsto extract (“distill”) Claude’s capabilities to traincompetingmodels in authoritarian countries. Distillation of Fable 5’s abilities could indirectly lead to the proliferation of near-frontier AI capabilities—and these could be released without the appropriate safeguards. Requests that are flagged by our classifiers as being part of such distillation attempts will fall back to Opus 4.8.
+3.Distillation. We’ve previously identifiedlarge-scale attemptsto extract (“distill”) Claude’s capabilities to traincompetingmodels in authoritarian countries. Distillation of Fable 5’s abilities could indirectly lead to the proliferation of near-frontier AI capabilities—and these could be released without the appropriate safeguards. Requests that are flagged by our classifiers as being part of such distillation attempts will fall back to Opus 4.8.
 
 A new data retention policy
 
@@ -349,20 +780,28 @@ Metrics: Firefox = fraction of trials achieving arbitrary code execution (the ex
 
 A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Mythos 5 and Fable 5 access unavailableJun 12, 2026We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.Read more
 
-Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
+Claude Mythos 5 and Fable 5 access unavailable
 
-Releasing a model this capable c...</p><div style="font-size:16px;line-height:1.8;color:#333">Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
+We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.
+
+Today we’re launchingClaude Fable 5: a ...</p><div style="font-size:16px;line-height:1.8;color:#333">UpdateClaude Mythos 5 and Fable 5 access unavailableJun 12, 2026We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.Read more
+
+Claude Mythos 5 and Fable 5 access unavailable
+
+We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.
+
+Today we’re launchingClaude Fable 5: a Mythos-class1model that we’ve made safe for general use.
 
 Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
 
@@ -388,13 +827,13 @@ Vision.Fable 5 is the new state-of-the-art model for tasks involving vision. It 
 
 Memory and long-context.Fable 5 stays focused across millions of tokens in long-running tasks and improves its outputs using its own notes. When we had the model play the deck-building gameSlay the Spire, giving it access to persistent file-based memory improved its performance three times more than for Opus 4.8; Fable also reached the game’s final act three times more often.
 
-Drug design:Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around ten times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.
+Drug design:Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around 10 times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.
 
 Novel hypotheses in molecular biology.Mythos 5 is our first model to consistently produce novel, compelling scientific hypotheses. In blinded head-to-head comparisons against Opus-class models, our scientists preferred Mythos’s molecular biology hypotheses ~80% of the time, and have advanced several to experimental evaluation. In the meantime, one Mythos hypothesis—a novel mechanism for anE. coliprotein—was corroborated ina studyfrom a lab independently working on the same problem.
 
 Novel research in genomics.Mythos 5 conducted novel genomics research in over a week of largely autonomous work. It assembled single-cell data for millions of cells spanning 138 animal species and designed and trained a custom machine learning model to identify cells performing the same role in even distantly related organisms. With only high-level human input, Mythos 5’s trained model outperformed a recent model published in the journalScience—despite being 100 times smaller. We intend to publish these results in the coming months.
 
-Alignment. In our automated alignment assessment we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception, and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’ssystem card.
+Alignment. In our automated alignment assessment, we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given that they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’ssystem card.
 
 Early feedback for Claude Fable 5
 
@@ -412,27 +851,27 @@ The frontier cybersecurity and research biology capabilities of Mythos-class mod
 
 We therefore need strong safeguards to prevent misuse, and their coverage needs to be broad. The safeguards themselves have to stand up to sustained and sophisticated attempts to bypass them (also known as “jailbreaking” the system). The uplift from Mythos-level capabilities is valuable to many adversaries—for instance, those who could financially gain from cyberattacks—and we therefore expect them to be motivated to try to circumvent our safety measures.
 
-Fable 5 comes with a new set ofclassifiers: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case Fable 5) from responding. We’ve been running classifiers on our modelsfor some time, and Fable 5’s classifiers are an extension of this previous work with extra coverage.
+Fable 5 comes with a new set ofclassifiers: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case, Fable 5) from responding. We’ve been running classifiers on our modelsfor some time, and Fable 5’s classifiers are an extension of this previous work with extra coverage.
 
 When Fable’s classifiers detect a request related to cybersecurity, biology and chemistry, or distillation, the response is automatically handled by Claude Opus 4.8 instead. Users will be informed whenever this occurs. Opus 4.8 is a highly capable model in its own right: a response that falls back to Opus is a far better experience than an outright refusal from Fable. Our early data shows that more than 95% of Fable sessions involve no fallback at all—for those sessions, Fable 5’s performance is effectively the same as that of Mythos 5.
 
 The following are the areas covered by the classifiers:
 
-1. Cybersecurity. Mythos-class modelsexcelat discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
+1.Cybersecurity. Mythos-class modelsexcelat discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
 
 We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.4It is likely impossible tocompletelyprevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
 
-The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models:
+The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models.
 
 One of our external partners found that Fable 5’s safeguards against harmful cyber queries were the most robust of any model tested (including Opus 4.8 and Opus 4.7). Fable 5 complied with zero harmful single-turn requests relating to planning a cyberattack, exploit development, or defense evasion. This held whether or not one of the requests used any of 30 different public jailbreak techniques.
 
-2. Biology and chemistry.We have long usedour classifiersto block our models from responding on a narrow selection of bioweapons-related queries. But we are no longer certain that blocking this narrow selection is enough. This is for two reasons: first, we have reason for concern about well-resourced malicious actors attempting to gain uplift from our models for highly risky biological research. Second, models now have a greater ability to accomplish real-world scientific tasks.
+2.Biology and chemistry.We have long usedour classifiersto block our models from responding on a narrow selection of bioweapons-related queries. But we are no longer certain that blocking this narrow selection is enough. This is for two reasons: first, we have reason for concern about well-resourced malicious actors attempting to gain uplift from our models for highly risky biological research. Second, models now have a greater ability to accomplish real-world scientific tasks.
 
-For example, we tested Mythos 5’s ability to complete a challenging step in designingadeno-associated viruses(AAVs). AAVs are a component for delivering gene therapies, but the same capability, in the wrong hands, could enable the design of dangerous viruses. In this task, various AI models were evaluated on their ability to predict how a genetic modification would impact the assembly of the virus’s outer shell (among a set of therapeutically-relevant unpublished candidates developed byDyno Therapeutics). We did not explicitly train our models to perform this task—and yet Mythos-class models outperformed sophisticated models dedicated to protein tasks (known as “protein language models”) using their biological reasoning alone. This demonstrates a promising ability to complete simple but important tasks in gene therapy research and development—but also highlights the risk posed by such dual-use capabilities.
+For example, we tested Mythos 5’s ability to complete a challenging step in designingadeno-associated viruses(AAVs). AAVs are a component for delivering gene therapies, but the same capability, in the wrong hands, could enable the design of dangerous viruses. In this task, various AI models were evaluated on their ability to predict how a genetic modification would impact the assembly of the virus’s outer shell (among a set of therapeutically relevant unpublished candidates developed byDyno Therapeutics). We did not explicitly train our models to perform this task—and yet Mythos-class models outperformed sophisticated models dedicated to protein tasks (known as “protein language models”) using their biological reasoning alone. This demonstrates a promising ability to complete simple but important tasks in gene therapy research and development—but also highlights the risk posed by such dual-use capabilities.
 
 Our priority was to safely release Fable as soon as we could, even at the cost of overly broad safeguards. Therefore, for the time being we have arranged for Fable to fall back to Opus 4.8 on most requests related to biology and chemistry. As with all of our classifiers, we hope to narrow these safeguards as soon as possible: as can be seen from the evidence above, there is great potential for positive applications of Fable for science, and we do not want false positives from our classifiers to get in the way. In the coming weeks, some biomedical researchers and companies will be able to join our trusted access program for biology capabilities in Mythos 5 (discussed below).
 
-3. Distillation. We’ve previously identifiedlarge-scale attemptsto extract (“distill”) Claude’s capabilities to traincompetingmodels in authoritarian countries. Distillation of Fable 5’s abilities could indirectly lead to the proliferation of near-frontier AI capabilities—and these could be released without the appropriate safeguards. Requests that are flagged by our classifiers as being part of such distillation attempts will fall back to Opus 4.8.
+3.Distillation. We’ve previously identifiedlarge-scale attemptsto extract (“distill”) Claude’s capabilities to traincompetingmodels in authoritarian countries. Distillation of Fable 5’s abilities could indirectly lead to the proliferation of near-frontier AI capabilities—and these could be released without the appropriate safeguards. Requests that are flagged by our classifiers as being part of such distillation attempts will fall back to Opus 4.8.
 
 A new data retention policy
 
@@ -470,15 +909,15 @@ Metrics: Firefox = fraction of trials achieving arbitrary code execution (the ex
 
 A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Introducing the Services Track and Partner Hub of the Claude Partner Network</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing the Services Track and Partner Hub of the Claude Partner Network</title>
@@ -538,17 +977,15 @@ The $100 million we committed in March fundspartner training, dedicated technica
 
 Specializations for specific industries and use cases are coming, along with rewards that grow as a partner’s deployments grow. Getting started is free. Firms gain Anthropic Partner Academy access, including certification exams, with tiered partners receiving discounted rates on their first attempt, and new applicants start at Registered, the program’s entry level, with a minimum commitment to 10 certified practitioners. Partnership begins at Select. The requirements are the same for every firm. Learn more atclaude.com/partners.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people&apos;s work evolves. That&apos;s why the companies getting AI integration right are doing it with partners who have done it before.
 
 In March, we launched the Claude Partner Network—a program, backed by a$100 million investmentin partner...</p><div style="font-size:16px;line-height:1.8;color:#333">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people's work evolves. That's why the companies getting AI integration right are doing it with partners who have done it before.
@@ -601,17 +1038,15 @@ The $100 million we committed in March fundspartner training, dedicated technica
 
 Specializations for specific industries and use cases are coming, along with rewards that grow as a partner’s deployments grow. Getting started is free. Firms gain Anthropic Partner Academy access, including certification exams, with tiered partners receiving discounted rates on their first attempt, and new applicants start at Registered, the program’s entry level, with a minimum commitment to 10 certified practitioners. Partnership begins at Select. The requirements are the same for every firm. Learn more atclaude.com/partners.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>What we learned mapping a year’s worth of AI-enabled cyber threats</title>
@@ -669,17 +1104,15 @@ Frontier models are rapidly changing the tools both attackers and defenders have
 
 In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -734,17 +1167,15 @@ Frontier models are rapidly changing the tools both attackers and defenders have
 
 In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -802,17 +1233,15 @@ In the meantime, we plan to expand Project Glasswing even further—prioritizing
 
 In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
 
 We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
@@ -859,17 +1288,15 @@ In the meantime, we plan to expand Project Glasswing even further—prioritizing
 
 In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic confidentially submits draft S-1 to the SEC</title>
@@ -883,111 +1310,30 @@ The number of shares to be offered and the price have not yet been set. This ann
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securiti...</p><div style="font-size:16px;line-height:1.8;color:#333">Today, Anthropic, PBC confidentially submitted a draft registration statement on Form S-1 to the U.S. Securities and Exchange Commission for a proposed initial public offering of our common stock. This gives us the option to go public after the SEC completes its review. The proposed initial public offering will depend on market conditions and other factors.
 
 The number of shares to be offered and the price have not yet been set. This announcement is being published under Rule 135 of the Securities Act of 1933, as amended. It is not an offer to sell securities; nor is it a solicitation of an offer to buy them. Any offers, solicitations of offers to buy, or any sales of securities will be made only in accordance with the registration requirements of the Securities Act.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Anthropic raises $65B in Series H funding at $965B post-money valuation</title>
-  <link>https://www.anthropic.com/news/series-h</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/series-h</guid>
-  <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
-
-Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. T...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
-
-Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. This latest funding is expected to advance our safety and interpretability research, expand compute to meet growing demand for Claude, and scale the products and partnerships our customers rely on.
-
-“Claude is increasingly indispensable to our growing global community of customers, and we work tirelessly to make tools like Claude Code and Cowork more helpful, more powerful, and more adaptable to their needs,” said Krishna Rao, Chief Financial Officer of Anthropic. “This funding will help us serve the historic demand we are experiencing, stay at the research frontier, and bring Claude to more of the places where work happens.”
-
-The round was co-led by Capital Group, Coatue, D1 Capital Partners, GIC, ICONIQ, and XN. Significant investors in this round include AMP PBC, Baillie Gifford, Blackstone, Brookfield, D.E. Shaw Ventures, DST Global, Fidelity Management & Research Company, General Catalyst, Insight Partners, Jane Street, Lightspeed Venture Partners, MGX, NTTVC, NX1 Capital, Situational Awareness LP, T. Rowe Price Associates, Inc., T. Rowe Price Investment Management, Inc., and Temasek. It also includes $15 billion of previously committed investments from hyperscalers, including$5 billion from Amazon.
-
-Joining them are strategic infrastructure partners—Micron, Samsung, and SK hynix—whose technologies play a critical role in the world's supply of memory, storage, and logic chips. As demand for Claude continues to grow, these relationships will help us scale our compute reliably at the pace our customers need.
-
-We have significantly expanded our compute capacity in recent weeks. We signed agreements withAmazonfor up to five gigawatts of new capacity, withGoogle and Broadcomfor five gigawatts of next-generation TPU capacity, and withSpaceXfor access to GPU capacity in Colossus 1 and Colossus 2. Claude is the first frontier model available on all three of the world's largest cloud platforms: Amazon Web Services, Google Cloud, and Microsoft Azure. AWS remains our primary cloud provider and training partner.
-
-“Claude’s latest advancements have driven large-scale adoption among the world’s most demanding organizations. This momentum positions Anthropic to lead the next phase of AI innovation and capture the enormous opportunity ahead,” said Brad Gerstner, Founder and CEO of Altimeter Capital.
-
-“Dragoneer has long partnered with companies building the technology that will shape our future. Anthropic is helping pull forward this future, as intelligence becomes an increasingly critical ingredient to the way businesses operate and how their products show up in the world,” said Marc Stad, Managing Partner at Dragoneer. “The technological progress we are seeing right now is breathtaking. And we believe that we are still in the earliest days of both the development and commercialization of this technology.”
-
-“Anthropic has built an organization in which the world’s best researchers and engineers operate with unmatched clarity of purpose, because they believe this is the most important work they will ever do,” said Neil Mehta, Founder and Managing Partner at Greenoaks. “Rarely has a company’s culture, mission, and commercial momentum reinforced each other so completely. We are honored to deepen our partnership.”
-
-“Startups and Global 5000 companies alike are deploying Claude to handle complex workflows, and in doing so, Claude is learning how businesses actually operate: the context, the processes, the judgment,” said Alfred Lin, Partner at Sequoia Capital. “Anthropic is building the bridge between where enterprise AI stands today and where it's headed.”
-
-We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
-
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
-
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
-
-Introducing Claude Corps
-
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
-
-Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. T...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money.
-
-Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. This latest funding is expected to advance our safety and interpretability research, expand compute to meet growing demand for Claude, and scale the products and partnerships our customers rely on.
-
-“Claude is increasingly indispensable to our growing global community of customers, and we work tirelessly to make tools like Claude Code and Cowork more helpful, more powerful, and more adaptable to their needs,” said Krishna Rao, Chief Financial Officer of Anthropic. “This funding will help us serve the historic demand we are experiencing, stay at the research frontier, and bring Claude to more of the places where work happens.”
-
-The round was co-led by Capital Group, Coatue, D1 Capital Partners, GIC, ICONIQ, and XN. Significant investors in this round include AMP PBC, Baillie Gifford, Blackstone, Brookfield, D.E. Shaw Ventures, DST Global, Fidelity Management & Research Company, General Catalyst, Insight Partners, Jane Street, Lightspeed Venture Partners, MGX, NTTVC, NX1 Capital, Situational Awareness LP, T. Rowe Price Associates, Inc., T. Rowe Price Investment Management, Inc., and Temasek. It also includes $15 billion of previously committed investments from hyperscalers, including$5 billion from Amazon.
-
-Joining them are strategic infrastructure partners—Micron, Samsung, and SK hynix—whose technologies play a critical role in the world's supply of memory, storage, and logic chips. As demand for Claude continues to grow, these relationships will help us scale our compute reliably at the pace our customers need.
-
-We have significantly expanded our compute capacity in recent weeks. We signed agreements withAmazonfor up to five gigawatts of new capacity, withGoogle and Broadcomfor five gigawatts of next-generation TPU capacity, and withSpaceXfor access to GPU capacity in Colossus 1 and Colossus 2. Claude is the first frontier model available on all three of the world's largest cloud platforms: Amazon Web Services, Google Cloud, and Microsoft Azure. AWS remains our primary cloud provider and training partner.
-
-“Claude’s latest advancements have driven large-scale adoption among the world’s most demanding organizations. This momentum positions Anthropic to lead the next phase of AI innovation and capture the enormous opportunity ahead,” said Brad Gerstner, Founder and CEO of Altimeter Capital.
-
-“Dragoneer has long partnered with companies building the technology that will shape our future. Anthropic is helping pull forward this future, as intelligence becomes an increasingly critical ingredient to the way businesses operate and how their products show up in the world,” said Marc Stad, Managing Partner at Dragoneer. “The technological progress we are seeing right now is breathtaking. And we believe that we are still in the earliest days of both the development and commercialization of this technology.”
-
-“Anthropic has built an organization in which the world’s best researchers and engineers operate with unmatched clarity of purpose, because they believe this is the most important work they will ever do,” said Neil Mehta, Founder and Managing Partner at Greenoaks. “Rarely has a company’s culture, mission, and commercial momentum reinforced each other so completely. We are honored to deepen our partnership.”
-
-“Startups and Global 5000 companies alike are deploying Claude to handle complex workflows, and in doing so, Claude is learning how businesses actually operate: the context, the processes, the judgment,” said Alfred Lin, Partner at Sequoia Capital. “Anthropic is building the bridge between where enterprise AI stands today and where it's headed.”
-
-We are grateful for the support of our investors and partners as we continue building Claude for people and organizations around the world.
-
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
-
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
-
-Introducing Claude Corps
-
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/series-h" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Opus 4.8</title>
@@ -1035,17 +1381,15 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
 
 Opus 4.8 launches alongside several new features. Users on claude.ai now have control over the amount of effort Claude puts into a task. Claude Code has a new “dynamic workflows” feature that allows it to tackle very large-scale problems. And fast mode for Opus 4.8—where the model can work at 2.5×...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
@@ -1086,78 +1430,15 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Anthropic opens Milan office to support Italian enterprise, research, and developers</title>
-  <link>https://www.anthropic.com/news/milan-office-opening</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/milan-office-opening</guid>
-  <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country&apos;s developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
-
-This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV&apos;s first encyclical and the first papal teaching dedicate...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country's developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
-
-This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV's first encyclical and the first papal teaching dedicated to artificial intelligence. Anthropicco-founder Chris Olah was invited to speak at its presentation, where he addressed the ethical questions AI raises and called on more of the world—religious traditions, civil society, academia, and governments—to shape a positive outcome for humanity.
-
-Anthropic’s frontier AI capabilities and an abiding commitment to safety have already earned the trust of Italian enterprise. Led by Thomas Remy, Anthropic’s Head of Southern Europe, our local team is already working with a wide range of Italian companies, including Generali Group and Unipol Group in finance, Angelini Pharma and Bracco Group in life sciences, Enel Group in energy, and Pirelli in automotive.
-
-Anthropic has also partnered with JAKALA, one of Europe's leading data and AI companies, to deploy Claude across more than 3,000 seats to free up roughly 70% of senior team time for higher-judgment client work. Italian startups and technology companies have been early adopters, too. Satispay, the financial super app serving more than six million users, deployed Claude across its engineering teams, compressing an 18-month roadmap into seven months and updating its core payment system ten times faster than planned. At Bending Spoons, one of Italy’s largest technology companies, the majority of code changes are now co-authored with Claude Code.
-
-Anthropic is also putting Claude in the hands of Italy’s leading designers. During Milan Design Week, the team partnered with Alcova Milano to run a hands-on workshop for their creative professionals, demonstrating how Claude connects to the tools used by industrial, furniture, and spatial designers, contributing to their creative process.
-
-Chris Ciauri, MD International at Anthropic, commented: “We are here to support Italian enterprise, Italian research, and Italian culture through a safe AI transition. Italy is a country that has always embraced profound transformation and we are optimistic about what frontier AI can do for this country, from its largest industrial groups to its founders, its universities, and its cultural institutions.”
-
-The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
-
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
-
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
-
-Introducing Claude Corps
-
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country&apos;s developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
-
-This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV&apos;s first encyclical and the first papal teaching dedicate...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic will open a new office in Milan, our sixth in Europe alongside London, Dublin, Paris, Zurich, and Munich. The Milan team will work with Italian companies and the country's developer community on building and scaling with Claude responsibly, and contribute to a conversation about AI that is already underway across Italian industry and public life.
-
-This office opening closely follows the release ofMagnifica Humanitas, Pope Leo XIV's first encyclical and the first papal teaching dedicated to artificial intelligence. Anthropicco-founder Chris Olah was invited to speak at its presentation, where he addressed the ethical questions AI raises and called on more of the world—religious traditions, civil society, academia, and governments—to shape a positive outcome for humanity.
-
-Anthropic’s frontier AI capabilities and an abiding commitment to safety have already earned the trust of Italian enterprise. Led by Thomas Remy, Anthropic’s Head of Southern Europe, our local team is already working with a wide range of Italian companies, including Generali Group and Unipol Group in finance, Angelini Pharma and Bracco Group in life sciences, Enel Group in energy, and Pirelli in automotive.
-
-Anthropic has also partnered with JAKALA, one of Europe's leading data and AI companies, to deploy Claude across more than 3,000 seats to free up roughly 70% of senior team time for higher-judgment client work. Italian startups and technology companies have been early adopters, too. Satispay, the financial super app serving more than six million users, deployed Claude across its engineering teams, compressing an 18-month roadmap into seven months and updating its core payment system ten times faster than planned. At Bending Spoons, one of Italy’s largest technology companies, the majority of code changes are now co-authored with Claude Code.
-
-Anthropic is also putting Claude in the hands of Italy’s leading designers. During Milan Design Week, the team partnered with Alcova Milano to run a hands-on workshop for their creative professionals, demonstrating how Claude connects to the tools used by industrial, furniture, and spatial designers, contributing to their creative process.
-
-Chris Ciauri, MD International at Anthropic, commented: “We are here to support Italian enterprise, Italian research, and Italian culture through a safe AI transition. Italy is a country that has always embraced profound transformation and we are optimistic about what frontier AI can do for this country, from its largest industrial groups to its founders, its universities, and its cultural institutions.”
-
-The question of how AI reshapes work, design, knowledge, and human agency is not one the technology sector can or should answer alone. Anthropic was founded because we believe questions like these are among the most important of our time. Getting the AI transition right requires more voices, not fewer: from industry, civil society, and institutions that have thought carefully about human dignity for far longer than AI has existed. Our team in Milan will support the Italian companies, researchers, and builders shaping how this technology is used, and contribute, where we can, to that larger conversation about how it should be developed.
-
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
-
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
-
-Introducing Claude Corps
-
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/milan-office-opening" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic co-founder Chris Olah&apos;s remarks on Pope Leo XIV&apos;s encyclical &quot;Magnifica humanitas&quot;</title>
@@ -1217,17 +1498,15 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">On Monday May 25, 2026, Pope Leo XIV releasedan encyclicalon the topic of AI: &quot;Magnifica humanitas: On safeguarding the human person in the time of artificial intelligence.&quot; Anthropic co-founder Chris Olah was invited to speak at the presentation of the encyclical in the Vatican City, doing so as part of Anthropic’s initiative towiden the conversationon the important questions raised by AI. Below are his full remarks.
 
 Distinguished Speakers,
@@ -1280,17 +1559,15 @@ Today is just the beginning—the start of a long collaboration between those of
 
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
-DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on
+Statement on the US government directive to suspend access to Fable 5 and Mythos 5
 
-We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.
+The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
 
-Introducing Claude Corps
+Results from the first Anthropic Public Record
 
-We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
+TCS and Anthropic partner to bring Claude to regulated industries
 
-Claude Fable 5 and Claude Mythos 5
-
-Our next generation of intelligence for the hardest knowledge work and coding problems.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join the Claude Partner Network.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
