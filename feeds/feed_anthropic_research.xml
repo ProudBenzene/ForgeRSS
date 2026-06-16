@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Tue, 16 Jun 2026 16:58:02 +0000</lastBuildDate>
+<lastBuildDate>Tue, 16 Jun 2026 20:56:46 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,251 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>Agentic coding and persistent returns to expertise</title>
+  <link>https://www.anthropic.com/research/claude-code-expertise</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/claude-code-expertise</guid>
+  <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
+
+In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
+
+In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Claude does per instruction. On coding tasks, every major occupation succeeds––accomplishes what the person set out to do, with verifiable evidence like passing tests or committed work––at nearly the same rate as software engineers, on average.
+
+The more domain expertise a person has, the more often the session ends in success—though the gap between intermediate and expert users is modest. Over the seven months we observe, the share of sessions spent debugging fell by nearly half, and usage shifted toward more end-to-end agentic use: deploying and running code, analyzing data, and writing non-code documents.
+
+Over those seven months, the value of the typical task, which we estimate through a comparison to freelance job postings, rose in almost every kind of work—about 25% on average.
+
+Agentic coding has taken off. The share of GitHub projects with coding agent activity has more than doubled since late 2025,1and Claude Code users now spend an average of 20 hours per week using the tool.2Can people without formal coding experience successfully direct an agent through complex technical work? And what will rapid adoption and improvement of these tools mean for knowledge work broadly? While we don’t have full answers to these questions yet, we look to Claude Code usage data for early signals.
+
+This report provides evidence on how Claude Code is used in practice, based on aprivacy-preserving analysisof ~400,000 interactive sessions from ~235,000 people between October 2025 and April 2026. It builds on prior work focused onmeasures of autonomyin Claude Code sessions, andhow Claude Code is changing work at Anthropic.3Here, we introduce a framework for describing interactive AI coding-assistant usage: what kind of work is being done, who is doing it, and whether it succeeds. We focus on Claude Code usage through a command-line interface (CLI),Claude.ai, or the Claude Code desktop app.4By tracking how agentic coding usage changes as models get more capable, we can better understand how these tools affect the labor market for coding professionals and knowledge workers.
+
+What happens on Claude Code may be a preview of where knowledge work is headed, as agents become embedded in non-coding work. We find that Claude is handling more complex and more valuable tasks. At the same time, there remains a clear division of labor in agentic coding: People decide what to build, and the agent decides how to build it.
+
+We also see evidence that domain expertise, and not coding proficiency, amplifies effective use of the tool. In particular, domain experts succeed more often, and more easily recover from errors and misunderstandings. However, the gap between experts and intermediates is modest—suggesting that proficiency in a domain is enough to use the tool almost as effectively as those with deep mastery.
+
+These findings give us an early read on possible transitions in the labor market. In our data, success is determined by how well a person understands the problem they are trying to solve, not whether they’re trained in coding. If these patterns hold across the economy, it suggests that while agentic coding tools may be absorbing some implementation-heavy work, they are also rewarding those with firm understanding of the problems they solve on the job. Coding agents are not substituting for domain expertise—the more understanding a worker brings to an agent, the more quality work the agent is able to do.
+
+The division of labor
+
+What people use Claude Code for
+
+To understand what people are using Claude Code for, we classify each session into one of nine work modes—the single activity that best describes what the session is trying to accomplish.5Four modes involve writing or maintaining code directly:buildingsomething new,fixingsomething broken,testingcode, andorchestratingother agents or automated pipelines. Another category isoperatingsoftware—deploying, configuring, running pipelines, monitoring systems. Two categories are more about working out what to do:understandinghow an existing system works, andplanninga change before making it. And two take actions unrelated to code, or where code is incidental to the final product:analyzingdata, andcommunicatingvia presentations and other prose-based documents.
+
+About 56% of sessions consist of writing (25%), fixing (26%), or testing and orchestrating code (5%). Operating software comprises 17%, while 14% of sessions are planning or exploring, and 13% produce analysis or prose (Figure 1).
+
+We classify each session by having a model read its transcript, then using our privacy-preserving analysis tool, we check them against telemetry that's recorded automatically for every session, including whether any lines of code were added or deleted. The two sources have high agreement—for instance, more than 90% of sessions our classifier labeled as creating or modifying code showed code changes in the telemetry. See theAppendixfor details.
+
+How autonomous is Claude Code? Capability evaluations suggest the ceiling is high and rising: on benchmarks such asMETR's time-horizon evaluations, frontier models can now complete software tasks that would take a person hours, autonomously working through obstacles along the way. But what does usage actually look like in practice? Here, we look at how much steering is done by the person and by Claude in real sessions.
+
+We investigate this question from two angles. First, we focus on the extent to which people are entrustingdecisionsto Claude, and second we look at how manyactionsthey give to Claude. To understand the division of decision-making in a session, we build a privacy-preserving decision attribution classifier based on the content of a session. We ask a classifier to list all the meaningful decisions in a session. We separate these decisions into planning (what to do, which approach to take, what counts as done) and execution (which files to change, what code to write, what language to write in, which commands to run). The classifier then attributes each decision to Claude or to the user, giving every session two numbers: the user's share of planning decisions and the user's share of execution decisions.
+
+On average, people make about 70% of the planning decisions but only 20% of the execution decisions (Figure 2). In practice, there is a clear division of labor in agentic coding––people decide what to build, and the agent decides how to build it.
+
+To understand the delegation of actions in a session, we look at the session’s structure instead of its content. A Claude Code session involves Claude and the user going back and forth trading prompts (from the user) and actions (taken by Claude)––the user writes a prompt and Claude goes off and does some work, and then the user writes another prompt, and so forth. In a typical session, there are about 4 such turns. In our historical data from October to April, each prompt the user sends sets off a chain of around 10 actions taken by Claude on average––and sometimes over 100.6In each turn, Claude reads files, edits code, runs commands, and writes on average 2,400 words of output.
+
+How much Claude does between check-ins largely tracks who is making the decisions. When the user keeps control of execution (i.e. makes over 80% of execution decisions), Claude takes fewer actions per turn (about 8 actions). And when Claude takes control of planning (i.e. makes over 80% of planning decisions), it takes on the highest number of actions (about 16).
+
+From each transcript, Claude rates the user's apparent expertise at the task on a five-point scale from novice to expert. The expertise classifier looks for three signals: how precisely the user frames their directions, what they ask Claude to verify, and whether the user tends to correct Claude or Claude tends to correct the user. Note that expertise is capturing something quite different from job title or general ability, and, crucially, it istask-specific. A senior engineer asking their first Rust question is a beginner at Rust. An accountant who has never used Python, but tells Claude exactly which reconciliation rules a Python script must enforce and catches the edge case it mishandles at month-end close, is an expert at that task.
+
+The table below shows how we defined each expertise level in the classifier along with an example request from a public dataset of coding agent sessions,SWE-chat. The conversation categorized as Novice gives generic instructions with no implied domain-specific knowledge. The Expert conversation conveys deep knowledge of the codebase and technical environment.
+
+We quantify how expertise relates to Claude’s output and activity per prompt. In typical novice sessions, each prompt sets off about 5 Claude actions and roughly 600 words of output, while expert sessions set off action chains more than twice as long (12 actions) carrying five times the output (3200 words) (Figure 3). This gap between novice and expert sessions appears within every kind of work and every band of task value.
+
+These measures complement the autonomy measures in ourprior report on Claude Code, which tracked how long the agent runs and how often people approve its actions automatically. Our decision attribution measure, by contrast, captures who makes the substantive decisions in a session as a whole, while our measures of output and actions per prompt measure how much autonomous activity from Claude each human prompt sets off.
+
+Who uses Claude Code, and for what
+
+To understand who is doing this work, we infer each user's occupation from the session transcript, mapping it to one of 23 major groups in the Bureau of Labor Statistics’ Standard Occupational Classification (SOC) taxonomy. The classifier is instructed to rely only on signals such as the project context the agent loads at the start of a session, the names and structure of their files, any artifacts they reference (e.g., legal filings, clinical data, financial reports, a curriculum, etc.) and vocabulary they use.7It is explicitly instructednotto treat the act of coding as evidence of a coding profession. A session is classified into the coding SOC code (Computer and Mathematical Occupations) only when there is clear signal that software or data work is the user’s job. A session in which a lawyer builds a script to automatically flag missing clauses across a folder of contracts is mapped into Legal Occupations, even if the session’s work is primarily software. The session is left unclassified when there is no signal about the user’s occupation.
+
+We were able to infer occupation in about 70% of sessions. Within this set, Computer and Mathematical Occupations, a category which encompasses most software-related jobs, is unsurprisingly the largest group. The next largest are Business and Financial Operations, Arts, Design and Media, Management, and Life, Physical, and Social Sciences. The fastest-growing non-software occupation groups in our sample are management, sales, and legal occupations.
+
+The composition of the work done with Claude Code changed substantially between October 2025 and April 2026. The clearest change is that the share of sessions spent fixing broken code fell from 33% to 19% (Figure 4). In its place, we saw a greater share of the work that surrounds code. Operating software grew from 14% to 21% of sessions. Writing and data analysis roughly doubled, from about 10% to 20% of sessions.
+
+The tasks themselves also grew more valuable. We approximate each session's economic value by asking what the work would cost on a freelance marketplace, calibrated against a public dataset of real postings. By this measure, the estimated value of the average session rose by 27% between October and April. The rise holds across many kinds of work. Building, operating, and fixing-type tasks all grew more valuable by roughly a third or more (about 43%, 34%, and 32% respectively). These price estimates are coarse, so we use them primarily to compare tasks to one another over time, not as dollar values to be read literally.8For details about the construction of the task estimator, see theAppendix.
+
+Success depends on what the user brings
+
+The estimated value of a task is one way to get a sense of how Claude Code is helping people do their work. Another angle is to look at how many sessions are successful, and what characteristics of a session are linked to success. Across all our measures of success, we see a clear pattern: the more expertise a person exhibits in a session, the higher the likelihood of success. Most of the gain is concentrated at the lower end of the expertise scale––the gap between novice sessions and intermediate sessions is bigger than the gap between intermediate and expert.
+
+Before turning to the characteristics of successful sessions, we should be precise about how we measure success. We do not observe users’ real-world outcomes, and we cannot ask them directly whether they got what they wanted out of Claude. Instead, we rely on two complementary transcript-based measures. The first,judged success,comesfrom a classifier that reads the full transcript and decides whether the person succeeded in doing what they set out to do (with options: succeeded, partially succeeded, failed, no clear goal). Two companion classifiers then rate the strength of the evidence for that judgment to determineverified success. A success signal classifierlooks for verifiable evidence of success. In particular, it looks for git activity like commits and pull requests matching the work, as well as test suites passing, and explicit affirmation from the user. It scores the session from "no signal" to “weak signal” (1) to "multiple hard signals” (5). A parallel failure signal scores the evidence that things went wrong—errors, failed tests, retries, the user pushing back on the output. Verified success requiresboththat the session is judged successful and there is at least one hard verifiable signal of success. For the following analysis, which is focused on the degree of success or failure in a session, we exclude sessions classified as having “no clear goal,” which comprise about 7.7% of our full sample.
+
+The returns to expertise
+
+So what kinds of sessions are most successful? It turns out that the expertise rating of a session, described above, matters a great deal for the success of a session.
+
+One might worry that expertise isn't the real driver—perhaps experts simply pick different tasks, or differ in other ways. Throughout this section, we partially address this worry by comparing sessions doing the same kind of work, at the same estimated value, in the same month, on the same subject, from people in the same broad occupation group, and ask how outcomes differ by the person’s rated expertise.
+
+Across all of our success measures, the more expertise a person exhibits in a session, the more likely it is that the session succeeds. A novice-rated session reaches our strictest measure,verified success,15% of the time and at least partial success 77% of the time. A session rated intermediate or up reaches verified success 28-33% of the time and partial success 91-92% of the time (Figure 5).
+
+In each measure, most of the gain comes from moving from novice to intermediate; between intermediate and expert, the slope decreases. In theAppendix, we give details about the regressions behind Figure 5.
+
+A similar gradient appears in sessions that run into challenges along the way. We say a sessionhits troublewhen the failure signal records verified evidence of failure. This could be an error, a failed test, multiple attempts to do the same thing, or the user expressing frustration or dissatisfaction. Among sessions that hit trouble, the share that are verified successes rises from 4% for novice-rated sessions to 15% for expert-rated ones, accounting for all the controls described above (Figure 5). Looking at the looser measures, we find that the share of at least partial success is 60% for novice and 80-81% for intermediate through expert sessions.
+
+We also track the inverse relationship––expertise versus various measures of failure. Note that in this analysis, the sessions judged as failures are those that do not even partially succeed. We say a troubled session isabandonedif it is judged as failedandzero lines of code are written: 19% of sessions where the user appears to be a novice end abandoned, against 5-7% for everyone else. In other words, the least experienced users are more likely to give up when they are struggling to get the outcome they are after. Part of the value of expertise appears to be the ability to steer the agent in the right direction.9
+
+Occupation may matter less than expertise
+
+People in software-related occupations reach verified success in about 30% of their sessions overall, while users from other professions reach verified success about 26% of the time. Among sessions that produce code (i.e., sessions that add or modify at least one line of code), those numbers are 34% and 29% respectively (Figure 6). The gap between software-related occupations and other occupations narrows under our looser definition of success––with both groups reaching at least partial success in code-producing sessions 89% and 88% of the time, respectively. That five-point gap is small, and it has neither widened nor narrowed over seven months, even as the success rates in both groups increased. In code-producing sessions, every one of the ten largest occupations in our dataset lands within seven points of software engineers in terms of their success. Management occupations are highest on verified success, slightly above the software engineering occupations. Their higher verified success rates may reflect management skills that transfer to directing an agent. But they may also partly reflect our measurement: verification rests partially on explicit confirmation in the transcript, and managers may be more likely to communicate when they get what they ask for.10
+
+The results in this report offer an emerging picture of how agentic coding amplifies some forms of knowledge and skills, while substituting for others. In sessions that produce code, every major occupation succeeds at rates within a few points of those in software-related occupations. It appears that coding agents are making a coding background less relevant to successful programming.
+
+At the same time, successful sessions are more likely to exhibit domain expertise. Sessions rated expert reach verified success more than twice as often as those rated novice, and when a session hits trouble, novices abandon the session at several times the rate of everyone else. The shape of the collaboration gives this picture more color—domain experts are able to direct Claude to do more work with each instruction they give. So, the ability to steer Claude toward success comes more from command of a domain than from the ability to write code. A person with such command, in any field, may now be able to do technical work they previously could not. A person without any such expertise will get far less from the same tool. And the gains come mostly from competence, not mastery––a working grasp of the domain captures most of the benefit, while deep specialization adds only a bit more beyond that.
+
+These findings are preliminary. As in most of our research, we cannot measure real-world outcomes, like whether code written in a session is actually used or discarded thereafter, or whether it produces an economically valuable artifact. In addition, the non-interactive usage this report excludes is a substantial share of activity. Developing a framework to measure it is a priority for future work. And all of our classifications of sessions depend on a model's reading of the transcript. In theAppendix, we show that our classifiers track independent telemetry in expected directions, and agree with a strong reference model on the majority of sessions. But classifiers remain challenging to validate at scale, and Claude Code sessions add further difficulty, as they may be too long and complex for human labels to serve as ground truth.
+
+The picture in this report will be updated as the models, the users, and the division of labor between them change. We hope that these measures will allow us to track consequential shifts as they happen. For instance, if the returns to expertise begin to decrease over time, that would suggest that models are starting to supply the essential judgment that users currently bring, and that the gains from these tools are broadening beyond domain experts. If the share of coding sessions completed successfully by users outside software occupations continues to grow, it could indicate that software production is becoming a part of ordinary work in every field, rather than the product of a single occupation. These shifts would change who benefits from agentic coding, and by how much, and would have implications for what is most valued in the labor market.
+
+With acknowledgements to: Jake Eaton, Sarah Pollack, Hanah Ho, Szymon Sacher, Anton Korinek, Santi Ruiz, Kerry Persen, Ankur Rathi, Alex Tamkin, Heather Whitney, Cat Wu, Kacie Jenkins, Jennifer Martinez, Amie Rotherham, Boris Cherny, Eleanor Dorfman, Miles McCain, and Jack Clark.
+
+A first study, covering 128,000 public repositories, detected coding-agent activity in an estimated 16-23% of projects as of the end of October 2025.A follow-up studyusing the same methodology found adoption rates more than twice as high among projects created after that period. Detection of agentic coding activity relies on agent co-authorship tags and configuration files, which likely undercount actual usage.
+
+Note that this measures hours in which Claude Code was actively running, not the user’s hands-on time typing to Claude.
+
+In addition,Sarkar (2026)andBaumann et al. (2026)have offered lenses through which to understand agentic coding, by studying Cursor IDE sessions and publicly available sessions, respectively.
+
+Note that we exclude Claude Code usage that runs through third party integrated developer environments, and software development kits. We also therefore exclude sessions in “headless” mode where a user runs a single prompt in the CLI viaclaude -p “<prompt>”. We exclude this usage since it differs in two key ways––much of it is programmatic, with Claude Code embedded in automated tools and pipelines rather than conversing with a user, and even when a user is present, we do not see a user’s session end-to-end the way we do on the surfaces we include.
+
+All classifiers in this report use Claude Sonnet 4.6 unless otherwise noted. Details about the classifiers, including their exact full text and validation results, can be found in theAppendix.
+
+The tail of actions per prompt is long. About 2% of sessions average more than 100 actions per prompt, about 1 in 270 average more than 200, and about 1 in 2,300 average more than 500.
+
+Like all measures in this report, these inferences are produced using our privacy-preserving analysis tool. No researcher reads individual transcripts, occupation labels are never linked to identifiable users, and we only observe aggregates over a minimum number of distinct users.
+
+The estimation approach we take here is intended to get at relative differences in the value of sessions, not absolute value. The dollar amount is based on comparisons to the freelancer market—not salaried work—and comes from an ultimately fuzzy match between the Claude Code session and the job posting. Since the relative estimates will remove any consistent bias from these issues, we place more emphasis there.
+
+Conditioning on trouble selects different sessions for different users. Experts hit trouble less often overall, so the troubled sessions they do have are likely to be on harder problems—using the price estimate of the session as a proxy for the complexity of the session, we see that the average estimated value of a troubled session roughly doubles from the bottom of the expertise scale to the top. Part of the gap in recovery rates may therefore reflect that novices get stuck on routine problems while experts get stuck on challenging hard problems.
+
+Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
+
+Paving the way for agents in biology
+
+Making Claude a chemist
+
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
+
+In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
+
+In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Claude does per instruction. On coding tasks, every major occupation succeeds––accomplishes what the person set out to do, with verifiable evidence like passing tests or committed work––at nearly the same rate as software engineers, on average.
+
+The more domain expertise a person has, the more often the session ends in success—though the gap between intermediate and expert users is modest. Over the seven months we observe, the share of sessions spent debugging fell by nearly half, and usage shifted toward more end-to-end agentic use: deploying and running code, analyzing data, and writing non-code documents.
+
+Over those seven months, the value of the typical task, which we estimate through a comparison to freelance job postings, rose in almost every kind of work—about 25% on average.
+
+Agentic coding has taken off. The share of GitHub projects with coding agent activity has more than doubled since late 2025,1and Claude Code users now spend an average of 20 hours per week using the tool.2Can people without formal coding experience successfully direct an agent through complex technical work? And what will rapid adoption and improvement of these tools mean for knowledge work broadly? While we don’t have full answers to these questions yet, we look to Claude Code usage data for early signals.
+
+This report provides evidence on how Claude Code is used in practice, based on aprivacy-preserving analysisof ~400,000 interactive sessions from ~235,000 people between October 2025 and April 2026. It builds on prior work focused onmeasures of autonomyin Claude Code sessions, andhow Claude Code is changing work at Anthropic.3Here, we introduce a framework for describing interactive AI coding-assistant usage: what kind of work is being done, who is doing it, and whether it succeeds. We focus on Claude Code usage through a command-line interface (CLI),Claude.ai, or the Claude Code desktop app.4By tracking how agentic coding usage changes as models get more capable, we can better understand how these tools affect the labor market for coding professionals and knowledge workers.
+
+What happens on Claude Code may be a preview of where knowledge work is headed, as agents become embedded in non-coding work. We find that Claude is handling more complex and more valuable tasks. At the same time, there remains a clear division of labor in agentic coding: People decide what to build, and the agent decides how to build it.
+
+We also see evidence that domain expertise, and not coding proficiency, amplifies effective use of the tool. In particular, domain experts succeed more often, and more easily recover from errors and misunderstandings. However, the gap between experts and intermediates is modest—suggesting that proficiency in a domain is enough to use the tool almost as effectively as those with deep mastery.
+
+These findings give us an early read on possible transitions in the labor market. In our data, success is determined by how well a person understands the problem they are trying to solve, not whether they’re trained in coding. If these patterns hold across the economy, it suggests that while agentic coding tools may be absorbing some implementation-heavy work, they are also rewarding those with firm understanding of the problems they solve on the job. Coding agents are not substituting for domain expertise—the more understanding a worker brings to an agent, the more quality work the agent is able to do.
+
+The division of labor
+
+What people use Claude Code for
+
+To understand what people are using Claude Code for, we classify each session into one of nine work modes—the single activity that best describes what the session is trying to accomplish.5Four modes involve writing or maintaining code directly:buildingsomething new,fixingsomething broken,testingcode, andorchestratingother agents or automated pipelines. Another category isoperatingsoftware—deploying, configuring, running pipelines, monitoring systems. Two categories are more about working out what to do:understandinghow an existing system works, andplanninga change before making it. And two take actions unrelated to code, or where code is incidental to the final product:analyzingdata, andcommunicatingvia presentations and other prose-based documents.
+
+About 56% of sessions consist of writing (25%), fixing (26%), or testing and orchestrating code (5%). Operating software comprises 17%, while 14% of sessions are planning or exploring, and 13% produce analysis or prose (Figure 1).
+
+We classify each session by having a model read its transcript, then using our privacy-preserving analysis tool, we check them against telemetry that's recorded automatically for every session, including whether any lines of code were added or deleted. The two sources have high agreement—for instance, more than 90% of sessions our classifier labeled as creating or modifying code showed code changes in the telemetry. See theAppendixfor details.
+
+How autonomous is Claude Code? Capability evaluations suggest the ceiling is high and rising: on benchmarks such asMETR's time-horizon evaluations, frontier models can now complete software tasks that would take a person hours, autonomously working through obstacles along the way. But what does usage actually look like in practice? Here, we look at how much steering is done by the person and by Claude in real sessions.
+
+We investigate this question from two angles. First, we focus on the extent to which people are entrustingdecisionsto Claude, and second we look at how manyactionsthey give to Claude. To understand the division of decision-making in a session, we build a privacy-preserving decision attribution classifier based on the content of a session. We ask a classifier to list all the meaningful decisions in a session. We separate these decisions into planning (what to do, which approach to take, what counts as done) and execution (which files to change, what code to write, what language to write in, which commands to run). The classifier then attributes each decision to Claude or to the user, giving every session two numbers: the user's share of planning decisions and the user's share of execution decisions.
+
+On average, people make about 70% of the planning decisions but only 20% of the execution decisions (Figure 2). In practice, there is a clear division of labor in agentic coding––people decide what to build, and the agent decides how to build it.
+
+To understand the delegation of actions in a session, we look at the session’s structure instead of its content. A Claude Code session involves Claude and the user going back and forth trading prompts (from the user) and actions (taken by Claude)––the user writes a prompt and Claude goes off and does some work, and then the user writes another prompt, and so forth. In a typical session, there are about 4 such turns. In our historical data from October to April, each prompt the user sends sets off a chain of around 10 actions taken by Claude on average––and sometimes over 100.6In each turn, Claude reads files, edits code, runs commands, and writes on average 2,400 words of output.
+
+How much Claude does between check-ins largely tracks who is making the decisions. When the user keeps control of execution (i.e. makes over 80% of execution decisions), Claude takes fewer actions per turn (about 8 actions). And when Claude takes control of planning (i.e. makes over 80% of planning decisions), it takes on the highest number of actions (about 16).
+
+From each transcript, Claude rates the user's apparent expertise at the task on a five-point scale from novice to expert. The expertise classifier looks for three signals: how precisely the user frames their directions, what they ask Claude to verify, and whether the user tends to correct Claude or Claude tends to correct the user. Note that expertise is capturing something quite different from job title or general ability, and, crucially, it istask-specific. A senior engineer asking their first Rust question is a beginner at Rust. An accountant who has never used Python, but tells Claude exactly which reconciliation rules a Python script must enforce and catches the edge case it mishandles at month-end close, is an expert at that task.
+
+The table below shows how we defined each expertise level in the classifier along with an example request from a public dataset of coding agent sessions,SWE-chat. The conversation categorized as Novice gives generic instructions with no implied domain-specific knowledge. The Expert conversation conveys deep knowledge of the codebase and technical environment.
+
+We quantify how expertise relates to Claude’s output and activity per prompt. In typical novice sessions, each prompt sets off about 5 Claude actions and roughly 600 words of output, while expert sessions set off action chains more than twice as long (12 actions) carrying five times the output (3200 words) (Figure 3). This gap between novice and expert sessions appears within every kind of work and every band of task value.
+
+These measures complement the autonomy measures in ourprior report on Claude Code, which tracked how long the agent runs and how often people approve its actions automatically. Our decision attribution measure, by contrast, captures who makes the substantive decisions in a session as a whole, while our measures of output and actions per prompt measure how much autonomous activity from Claude each human prompt sets off.
+
+Who uses Claude Code, and for what
+
+To understand who is doing this work, we infer each user's occupation from the session transcript, mapping it to one of 23 major groups in the Bureau of Labor Statistics’ Standard Occupational Classification (SOC) taxonomy. The classifier is instructed to rely only on signals such as the project context the agent loads at the start of a session, the names and structure of their files, any artifacts they reference (e.g., legal filings, clinical data, financial reports, a curriculum, etc.) and vocabulary they use.7It is explicitly instructednotto treat the act of coding as evidence of a coding profession. A session is classified into the coding SOC code (Computer and Mathematical Occupations) only when there is clear signal that software or data work is the user’s job. A session in which a lawyer builds a script to automatically flag missing clauses across a folder of contracts is mapped into Legal Occupations, even if the session’s work is primarily software. The session is left unclassified when there is no signal about the user’s occupation.
+
+We were able to infer occupation in about 70% of sessions. Within this set, Computer and Mathematical Occupations, a category which encompasses most software-related jobs, is unsurprisingly the largest group. The next largest are Business and Financial Operations, Arts, Design and Media, Management, and Life, Physical, and Social Sciences. The fastest-growing non-software occupation groups in our sample are management, sales, and legal occupations.
+
+The composition of the work done with Claude Code changed substantially between October 2025 and April 2026. The clearest change is that the share of sessions spent fixing broken code fell from 33% to 19% (Figure 4). In its place, we saw a greater share of the work that surrounds code. Operating software grew from 14% to 21% of sessions. Writing and data analysis roughly doubled, from about 10% to 20% of sessions.
+
+The tasks themselves also grew more valuable. We approximate each session's economic value by asking what the work would cost on a freelance marketplace, calibrated against a public dataset of real postings. By this measure, the estimated value of the average session rose by 27% between October and April. The rise holds across many kinds of work. Building, operating, and fixing-type tasks all grew more valuable by roughly a third or more (about 43%, 34%, and 32% respectively). These price estimates are coarse, so we use them primarily to compare tasks to one another over time, not as dollar values to be read literally.8For details about the construction of the task estimator, see theAppendix.
+
+Success depends on what the user brings
+
+The estimated value of a task is one way to get a sense of how Claude Code is helping people do their work. Another angle is to look at how many sessions are successful, and what characteristics of a session are linked to success. Across all our measures of success, we see a clear pattern: the more expertise a person exhibits in a session, the higher the likelihood of success. Most of the gain is concentrated at the lower end of the expertise scale––the gap between novice sessions and intermediate sessions is bigger than the gap between intermediate and expert.
+
+Before turning to the characteristics of successful sessions, we should be precise about how we measure success. We do not observe users’ real-world outcomes, and we cannot ask them directly whether they got what they wanted out of Claude. Instead, we rely on two complementary transcript-based measures. The first,judged success,comesfrom a classifier that reads the full transcript and decides whether the person succeeded in doing what they set out to do (with options: succeeded, partially succeeded, failed, no clear goal). Two companion classifiers then rate the strength of the evidence for that judgment to determineverified success. A success signal classifierlooks for verifiable evidence of success. In particular, it looks for git activity like commits and pull requests matching the work, as well as test suites passing, and explicit affirmation from the user. It scores the session from "no signal" to “weak signal” (1) to "multiple hard signals” (5). A parallel failure signal scores the evidence that things went wrong—errors, failed tests, retries, the user pushing back on the output. Verified success requiresboththat the session is judged successful and there is at least one hard verifiable signal of success. For the following analysis, which is focused on the degree of success or failure in a session, we exclude sessions classified as having “no clear goal,” which comprise about 7.7% of our full sample.
+
+The returns to expertise
+
+So what kinds of sessions are most successful? It turns out that the expertise rating of a session, described above, matters a great deal for the success of a session.
+
+One might worry that expertise isn't the real driver—perhaps experts simply pick different tasks, or differ in other ways. Throughout this section, we partially address this worry by comparing sessions doing the same kind of work, at the same estimated value, in the same month, on the same subject, from people in the same broad occupation group, and ask how outcomes differ by the person’s rated expertise.
+
+Across all of our success measures, the more expertise a person exhibits in a session, the more likely it is that the session succeeds. A novice-rated session reaches our strictest measure,verified success,15% of the time and at least partial success 77% of the time. A session rated intermediate or up reaches verified success 28-33% of the time and partial success 91-92% of the time (Figure 5).
+
+In each measure, most of the gain comes from moving from novice to intermediate; between intermediate and expert, the slope decreases. In theAppendix, we give details about the regressions behind Figure 5.
+
+A similar gradient appears in sessions that run into challenges along the way. We say a sessionhits troublewhen the failure signal records verified evidence of failure. This could be an error, a failed test, multiple attempts to do the same thing, or the user expressing frustration or dissatisfaction. Among sessions that hit trouble, the share that are verified successes rises from 4% for novice-rated sessions to 15% for expert-rated ones, accounting for all the controls described above (Figure 5). Looking at the looser measures, we find that the share of at least partial success is 60% for novice and 80-81% for intermediate through expert sessions.
+
+We also track the inverse relationship––expertise versus various measures of failure. Note that in this analysis, the sessions judged as failures are those that do not even partially succeed. We say a troubled session isabandonedif it is judged as failedandzero lines of code are written: 19% of sessions where the user appears to be a novice end abandoned, against 5-7% for everyone else. In other words, the least experienced users are more likely to give up when they are struggling to get the outcome they are after. Part of the value of expertise appears to be the ability to steer the agent in the right direction.9
+
+Occupation may matter less than expertise
+
+People in software-related occupations reach verified success in about 30% of their sessions overall, while users from other professions reach verified success about 26% of the time. Among sessions that produce code (i.e., sessions that add or modify at least one line of code), those numbers are 34% and 29% respectively (Figure 6). The gap between software-related occupations and other occupations narrows under our looser definition of success––with both groups reaching at least partial success in code-producing sessions 89% and 88% of the time, respectively. That five-point gap is small, and it has neither widened nor narrowed over seven months, even as the success rates in both groups increased. In code-producing sessions, every one of the ten largest occupations in our dataset lands within seven points of software engineers in terms of their success. Management occupations are highest on verified success, slightly above the software engineering occupations. Their higher verified success rates may reflect management skills that transfer to directing an agent. But they may also partly reflect our measurement: verification rests partially on explicit confirmation in the transcript, and managers may be more likely to communicate when they get what they ask for.10
+
+The results in this report offer an emerging picture of how agentic coding amplifies some forms of knowledge and skills, while substituting for others. In sessions that produce code, every major occupation succeeds at rates within a few points of those in software-related occupations. It appears that coding agents are making a coding background less relevant to successful programming.
+
+At the same time, successful sessions are more likely to exhibit domain expertise. Sessions rated expert reach verified success more than twice as often as those rated novice, and when a session hits trouble, novices abandon the session at several times the rate of everyone else. The shape of the collaboration gives this picture more color—domain experts are able to direct Claude to do more work with each instruction they give. So, the ability to steer Claude toward success comes more from command of a domain than from the ability to write code. A person with such command, in any field, may now be able to do technical work they previously could not. A person without any such expertise will get far less from the same tool. And the gains come mostly from competence, not mastery––a working grasp of the domain captures most of the benefit, while deep specialization adds only a bit more beyond that.
+
+These findings are preliminary. As in most of our research, we cannot measure real-world outcomes, like whether code written in a session is actually used or discarded thereafter, or whether it produces an economically valuable artifact. In addition, the non-interactive usage this report excludes is a substantial share of activity. Developing a framework to measure it is a priority for future work. And all of our classifications of sessions depend on a model's reading of the transcript. In theAppendix, we show that our classifiers track independent telemetry in expected directions, and agree with a strong reference model on the majority of sessions. But classifiers remain challenging to validate at scale, and Claude Code sessions add further difficulty, as they may be too long and complex for human labels to serve as ground truth.
+
+The picture in this report will be updated as the models, the users, and the division of labor between them change. We hope that these measures will allow us to track consequential shifts as they happen. For instance, if the returns to expertise begin to decrease over time, that would suggest that models are starting to supply the essential judgment that users currently bring, and that the gains from these tools are broadening beyond domain experts. If the share of coding sessions completed successfully by users outside software occupations continues to grow, it could indicate that software production is becoming a part of ordinary work in every field, rather than the product of a single occupation. These shifts would change who benefits from agentic coding, and by how much, and would have implications for what is most valued in the labor market.
+
+With acknowledgements to: Jake Eaton, Sarah Pollack, Hanah Ho, Szymon Sacher, Anton Korinek, Santi Ruiz, Kerry Persen, Ankur Rathi, Alex Tamkin, Heather Whitney, Cat Wu, Kacie Jenkins, Jennifer Martinez, Amie Rotherham, Boris Cherny, Eleanor Dorfman, Miles McCain, and Jack Clark.
+
+A first study, covering 128,000 public repositories, detected coding-agent activity in an estimated 16-23% of projects as of the end of October 2025.A follow-up studyusing the same methodology found adoption rates more than twice as high among projects created after that period. Detection of agentic coding activity relies on agent co-authorship tags and configuration files, which likely undercount actual usage.
+
+Note that this measures hours in which Claude Code was actively running, not the user’s hands-on time typing to Claude.
+
+In addition,Sarkar (2026)andBaumann et al. (2026)have offered lenses through which to understand agentic coding, by studying Cursor IDE sessions and publicly available sessions, respectively.
+
+Note that we exclude Claude Code usage that runs through third party integrated developer environments, and software development kits. We also therefore exclude sessions in “headless” mode where a user runs a single prompt in the CLI viaclaude -p “<prompt>”. We exclude this usage since it differs in two key ways––much of it is programmatic, with Claude Code embedded in automated tools and pipelines rather than conversing with a user, and even when a user is present, we do not see a user’s session end-to-end the way we do on the surfaces we include.
+
+All classifiers in this report use Claude Sonnet 4.6 unless otherwise noted. Details about the classifiers, including their exact full text and validation results, can be found in theAppendix.
+
+The tail of actions per prompt is long. About 2% of sessions average more than 100 actions per prompt, about 1 in 270 average more than 200, and about 1 in 2,300 average more than 500.
+
+Like all measures in this report, these inferences are produced using our privacy-preserving analysis tool. No researcher reads individual transcripts, occupation labels are never linked to identifiable users, and we only observe aggregates over a minimum number of distinct users.
+
+The estimation approach we take here is intended to get at relative differences in the value of sessions, not absolute value. The dollar amount is based on comparisons to the freelancer market—not salaried work—and comes from an ultimately fuzzy match between the Claude Code session and the job posting. Since the relative estimates will remove any consistent bias from these issues, we place more emphasis there.
+
+Conditioning on trouble selects different sessions for different users. Experts hit trouble less often overall, so the troubled sessions they do have are likely to be on harder problems—using the price estimate of the session as a proxy for the complexity of the session, we see that the average estimated value of a troubled session roughly doubles from the bottom of the expertise scale to the top. Part of the gap in recovery rates may therefore reflect that novices get stuck on routine problems while experts get stuck on challenging hard problems.
+
+Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
+
+Paving the way for agents in biology
+
+Making Claude a chemist
+
+Coding agents in the social sciences
+
+Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Paving the way for agents in biology</title>
   <link>https://www.anthropic.com/research/agents-in-biology</link>
@@ -107,15 +352,13 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Agentic coding and persistent returns to expertise
+
 Making Claude a chemist
 
 Coding agents in the social sciences
 
 Results from a survey of 1,260 social scientists about AI and coding agent use.
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.
 
 Subscribe to Anthropic Science
 
@@ -208,15 +451,13 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Agentic coding and persistent returns to expertise
+
 Making Claude a chemist
 
 Coding agents in the social sciences
 
 Results from a survey of 1,260 social scientists about AI and coding agent use.
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.
 
 Subscribe to Anthropic Science
 
@@ -284,15 +525,13 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
 Coding agents in the social sciences
 
 Results from a survey of 1,260 social scientists about AI and coding agent use.
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.
 
 Subscribe to Anthropic Science
 
@@ -353,15 +592,13 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
 Coding agents in the social sciences
 
 Results from a survey of 1,260 social scientists about AI and coding agent use.
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.
 
 Subscribe to Anthropic Science
 
@@ -469,13 +706,11 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
 
 The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
@@ -572,13 +807,11 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Project Glasswing: An initial update
-
-An early update on what we've learned from Project Glasswing.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Glasswing: An initial update</title>
@@ -686,13 +919,11 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
 
 Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
@@ -793,13 +1024,11 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>2028: Two scenarios for global AI leadership</title>
@@ -985,13 +1214,11 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
 
 It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
@@ -1170,13 +1397,11 @@ America and its allies have developed both the world’s most capable frontier A
 
 In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -1264,13 +1489,11 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -1351,13 +1574,11 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Natural Language Autoencoders: Turning Claude’s thoughts into text</title>
@@ -1437,13 +1658,11 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
 
 Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
@@ -1516,13 +1735,11 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Donating our open-source alignment tool</title>
@@ -1554,13 +1771,11 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
 
 Petri has been part of our alignment assessme...</p><div style="font-size:16px;line-height:1.8;color:#333">In October 2025, we launchedPetri, an open-source toolbox of alignment tests that can be applied to any large language model. Petri, which was developed as part of our Anthropic Fellows program, can be used to rapidly and easily test AI models for concerning tendencies like deception, sycophancy, and cooperation with harmful requests. It’s part of our efforts to develop alignment tools that are open and useful for the whole AI development community.
@@ -1585,338 +1800,11 @@ You can read more about Petri 3.0 onthe Meridian Labs blog.
 
 Instructions to install and use Petri can be found on thePetri website.
 
-Paving the way for agents in biology
-
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Focus areas for The Anthropic Institute</title>
-  <link>https://www.anthropic.com/research/anthropic-institute-agenda</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/anthropic-institute-agenda</guid>
-  <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-
-Our agenda focuses on four areas for research:
-
-Threats and resilience
-
-AI systems in the wild
-
-InCore Views on AI Safety, we wrote that doing effective safety research required close contact with frontier AI systems. The same logic applies to d...</p><div style="font-size:16px;line-height:1.8;color:#333">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-
-Our agenda focuses on four areas for research:
-
-Threats and resilience
-
-AI systems in the wild
-
-InCore Views on AI Safety, we wrote that doing effective safety research required close contact with frontier AI systems. The same logic applies to doing effective research on AI’s impacts on security, the economy, and society.
-
-At Anthropic, we can see early evidence that jobs like software engineering are changing radically. We’re watching the internal economy of Anthropic start to shift, new threats emerge from the systems we build, and early signs of AI contributing to speeding up the research and development of AI itself. In order to realize the full benefits of AI progress, we want to share as much of that information as we can. We’re researching how these dynamics might shape the outside world, and how the public can help direct those changes.
-
-At TAI, we’ll study AI's real-world impacts from our position within a frontier lab, then publish those findings, to help external organizations, governments, and the public make better decisions about AI development.
-
-We’ll share research, data, and tools to make it easier for individual researchers and institutions to work on these research questions. In particular, we’ll share:
-
-More granular information fromThe Anthropic Economic Index, at a higher cadence, about what we’re seeing in labor impacts and usage of AI. We’ll try to be an early warning signal for significant change and disruption.
-
-Research on the societal areas most in need of investment in resilience in the face of new AI-enabled security risks.
-
-More detailed information about how our work at Anthropic has sped up as a result of new AI tools, and ideas about the implications of potential recursive self-improvement of AI systems.
-
-TAI will shape the decisions Anthropic makes.That may look like the company sharing data with the world that it otherwise would not (like the Economic Index), or approaching how it releases technology differently (like cyber threat analyses which feed into initiatives likeProject Glasswing).
-
-We expect that work developed by The Anthropic Institute will increasingly serve as important inputs to Anthropic’sLong-Term Benefit Trust(LTBT). The LTBT’s mission is to ensure that Anthropic continually optimizes its actions for the long-term benefit of humanity. We’ve developed this research agenda with the LTBT, as well as with staff across Anthropic.
-
-This is a living agenda, rather than a fixed one. We'll continue to fine-tune these questions as evidence accumulates, and we expect new questions to emerge that aren't captured here today. We welcome feedback on this agenda, and will revise it in light of what we learn through our conversations.
-
-If you are interested in helping us answer some of these questions, we welcome your application to become an Anthropic Fellow. The Fellowship is a four-month funded opportunity to tackle one or more of these questions with mentorship from TAI team members. You can find out more and apply to the next cohorthere.
-
-Last updated: May 7, 2026
-
-It’s crucial to understand how the deployment of increasingly powerful AI systems changes the economy. We also need to develop the necessary economic data and predictive ability to choose to deploy AI in ways that benefit the public.
-
-To answer the questions in this pillar of our research, we’ll further develop the data withinThe Anthropic Economic Index. We’ll also explore other methods to sharpen our models of how powerful AI could affect society, whether by driving job loss, unprecedented economic growth, or other effects.
-
-AI adoption and diffusion
-
-Who adopts AI?AI development is concentrated in a small number of companies in a small number of countries, but deployment is global. What determines whether a country, region, or city can access AI? If it can access it, how does it capture economic value from AI? What policies and business models meaningfully shift that balance? How do free or open weight models contribute to this dynamic?
-
-Adoption in firms:What causes AI adoption at the firm level, and what are the consequences? How does AI change the scale at which a firm or team can be most efficient? How concentrated is AI usage across firms? How do changes in concentration of AI adoption translate into markups and labor share? If a 3-person team or company can now do what required 300 before, what happens to industrial organization? Or, if firms can more easily centralize knowledge and there are benefits from doing so at scale, will we see larger, more expansive firms with a greater incentive to systematically surveil workers?
-
-Is AI a general purpose technology?Is AI following the pattern of previous “general purpose technologies,” where adoption is fastest in high-margin commercial applications, and slowest where social returns exceed private returns? Are there policies or decisions that could change these dynamics?
-
-Productivity and economic growth
-
-Productivity growth:What impact will AI have on the rate of innovation and productivity growth across the economy?
-
-Sharing the gains:What pre- or re-distributive mechanisms could effectively spread the gains from AI development and deployment more broadly?
-
-Transaction costs in markets:How does AI affect systems of exchange and transaction costs in marketplaces? When does access to agents able to negotiate on your behalf improve market efficiency and equitable outcomes? When does it not?
-
-Broad labor market impacts
-
-AI and jobs:How will AI change jobs and employment in different parts of the economy? What new tasks and jobs could emerge as AI automates existing parts of the economy? How will these changes vary across regions and countries? OurAnthropic Economic Index Surveywill provide monthly signals of how people see AI affecting their work, and what they expect for the future. We’re also updating theEconomic Indexto share more high-frequency, granular data.
-
-Can AI diffusion be modulated?Central banks seek to moderate inflation through “dials” like the policy rate and forward guidance. Are there analogous dials that AI companies (at an industry level, in partnership with government) might turn to control the rate of AI diffusion on a sector-by-sector basis? Would there be a clear public benefit to turning them?
-
-The future of jobs and workplaces
-
-Worker views of their jobs:How are workers across the economy experiencing changes in their professions? How much influence do they have over these changes, and can 'worker' power be preserved or transformed?
-
-The professional pipeline:Many professions rely on junior roles (like paralegals, junior analysts, and associate developers) to serve as training for the senior practitioners of the future. If AI absorbs the tasks that historically built expertise, how do people become experts in the first place? What does this mean for the long-term supply of senior judgment in a field?
-
-Studying for the future:What should people study today to be well positioned for the future? What are the professions of the future? How does AI change what it means to learn something and to develop expertise?
-
-The role of paid work:If AI substantially reduces the centrality of paid work in human life, what conditions will allow people to reallocate their time and effort toward other sources of meaning, and what can we learn from historical or contemporary populations where work has been scarce or optional? How do societies navigate this transition?
-
-Threats and resilience
-
-AI systems tend to advance many capabilities at once, includingdual-use capabilities. An AI system that gets better at biology also gets better at creating biological weapons. AI systems which are performant at computer programming also get better at hacking into computers. If we can better understand the potential for threats to be exacerbated by AI systems, society can more easily become resilient to this changed threat landscape.
-
-We're asking these questions to help develop partnerships to improve the world's resilience in the face of transformative AI, and to develop early warning systems for new threats that may emerge. Many of these questions will drive the research agenda of ourFrontier Red Team.
-
-Assessing risk and dual-use capabilities:
-
-Dual-use technology:Powerful AI is inherently dual-use: the same tools that improve health and education can enable surveillance and repression. Can we build observability tools to understand whether and how this is happening?
-
-Pricing risk appropriately:What are the effective, market-driven approaches to improve societal resilience to anticipated threats from AI systems? Can we develop new ways of pricing risk, or technical tools and human organizations to improve resilience ahead of the arrival of predictable threats (like improved AI cyberattack capabilities)?
-
-Offense-defense balance:Will AI-enabled capabilities structurally benefit the attacker in domains like cyber and bio? When AI is applied in more conventional domains, like increasing integration into command and control systems, does it benefit the attacker? More generally, how will AI change the character of human conflict?
-
-Establishing risk mitigations:
-
-Planning for crisis scenarios:During the Cold War, the American president had a hotline directly to the Kremlin, for use in the event of a nuclear crisis. What geopolitical infrastructure would be needed in the event of a crisis scenario involving AI systems? This infrastructure might not necessarily be state-to-state, but could be company-to-state or company-to-company.
-
-Faster defensive mechanisms:AI capabilities can advance in months. Regulatory, insurance, and infrastructure responses operate on timescales of years. How do we close that gap? Can defensive mechanisms—like automated patching, AI-enabled threat detection, or pre-positioned response capabilities match the tempo and scale of AI-enabled offense? Or is the asymmetry structural? And how do we roll these defensive mechanisms out as effectively as possible?
-
-Intelligence capabilities for surveillance
-
-AI’s effect on surveillance:How does AI change how surveillance works? Will it make surveillance cheaper, or more effective, or both?
-
-AI systems in the wild
-
-The interaction of people and organizations with AI systems will be a major source of societal change. Understanding the ways AI systems might alter the people and institutions that interact with them is a core focus area for ourSocietal Impactsteam. To study these changes, we are advancing our existing tools and building new ones to carry out our research, ranging from software for better observability of our platform to tools for conducting large-scale qualitative surveys.
-
-The impact of AI to individuals and societies:
-
-Group epistemology:When a large fraction of a population consults the same few models, what happens to our epistemology? Can we find ways to measure large-scale changes in beliefs, writing style, and problem-solving approaches that are attributable to shared AI use?
-
-Critical thinking:As AI systems become more capable and more trusted, how do we detect and avoid the degradation of human critical thinking skills that may come from increasing deference to AI judgment?
-
-Technological interfaces:The interfaces for technologies can determine how people interact with them—televisions make people passive viewers, and computers can make it easier for people to be generative creators. What interfaces can be built to cause AI systems to improve and promote human agency?
-
-Managing human-AI systems:How might humans manage teams composed of a mixture of humans and AI systems effectively? And how might this be inverted—how might AI systems manage teams that consist of humans, AIs, or some combination thereof?
-
-Identifying significant impacts from AI:
-
-Behavioral effects:In the same way that social media led to behavioral changes in people, AI may shape human behavior. What kinds of monitoring or measurement can inform researchers about this dynamic?
-
-Enabling research:Are there transparency regimes and tools that can enable a broad set of people, not just frontier AI companies, to easily study real-world AI usage?
-
-Understanding and governing AI models:
-
-System “values”:What are the expressed “values” of AI systems and how do these relate to how these systems were trained? More specifically, how can we measure the influence that an AI “constitution” has on behavior of the model once deployed? We’ll extend ourpreviousresearchon these questions.
-
-Governing autonomous agents:What aspects of existing laws, governance systems, and accountability mechanisms could be adapted to autonomous AI agents? For example, how naval law treats abandoned ships has relevance to how the law might treat agents that run without human oversight. Conversely, are there aspects of existing law which already apply to AI agents and shouldn’t?
-
-Reliability of agents:What aspects of autonomous AI agents could be adapted to fit into existing laws, governance systems, and accountability mechanisms? For example, can we ensure AI agents have a unique identity that they reliably output, even in the absence of direct human control?
-
-AI governance of AI:How effectively can we use AI to govern AI systems? What are areas of AI oversight where humans either have a comparative advantage or a legal or normative requirement to be 'in the loop'?
-
-Agent interactions:What kinds of norms emerge in how AI agents interact with one another? How might different agents express different preferences, and how might these influence other agents?
-
-As AI systems get more powerful, scientists are using them to carry out more of their research. This means that more scientific research is occurring autonomously or semi-autonomously with less and less active oversight from humans. In AI research itself, increasingly powerful systems may be used to help develop successor versions of themselves. We sometimes call this “AI-driven AI R&D.”
-
-AI-driven AI R&D may be a “natural dividend” of making smarter and more capable systems. In the same way that advances in coding capabilities have led to dual-use cyber capabilities, and advances in scientific capabilities may lead to dual-use bio capabilities, advances in complex technical work may naturally yield AI systems which are capable of developing AI systems.
-
-AI-driven AI R&D holds within itself the potential for significant danger. As policymakers assess the levers they can pull, it will be crucial to understand how the rate of AI progress is changing, and whether AI research might start to see a compounding return.
-
-Governance of AI R&D:If AI systems are being used to autonomously develop and improve themselves, how do humans exercise meaningful visibility into and control over these systems? What will eventually govern these systems?
-
-Fire drill scenarios:How do we run a "fire drill" for an intelligence explosion? What would a tabletop exercise look like that actually tests the decision-making of lab leadership, boards, and governments?
-
-Telemetry for AI R&D:How can we measure the aggregate speed of AI research and development? What sorts of telemetry and underlying technical affordances must exist in order to gather this information? How might metrics relating to AI R&D serve as early warning signals for recursive self-improvement?
-
-Controlling AI acceleration:If an intelligence explosion was upon us, what intervention points would facilitate slowing or otherwise changing the rate of the explosion? Assuming humans can intervene, which entities should wield this capacity—governments? Companies?
-
-AI for R&D in general—that is, AI-driven research in other fields:
-
-The tech tree:AI is speeding up some sciences far faster than others, depending on data availability, evaluation signals, and how much knowledge is tacit or institutionally gated. How uneven is this gradient, and what does the changing composition of scientific progress imply for which human problems get solved first?
-
-The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
+Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
 
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-
-Our agenda focuses on four areas for research:
-
-Threats and resilience
-
-AI systems in the wild
-
-InCore Views on AI Safety, we wrote that doing effective safety research required close contact with frontier AI systems. The same logic applies to d...</p><div style="font-size:16px;line-height:1.8;color:#333">AtThe Anthropic Institute(TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
-
-Our agenda focuses on four areas for research:
-
-Threats and resilience
-
-AI systems in the wild
-
-InCore Views on AI Safety, we wrote that doing effective safety research required close contact with frontier AI systems. The same logic applies to doing effective research on AI’s impacts on security, the economy, and society.
-
-At Anthropic, we can see early evidence that jobs like software engineering are changing radically. We’re watching the internal economy of Anthropic start to shift, new threats emerge from the systems we build, and early signs of AI contributing to speeding up the research and development of AI itself. In order to realize the full benefits of AI progress, we want to share as much of that information as we can. We’re researching how these dynamics might shape the outside world, and how the public can help direct those changes.
-
-At TAI, we’ll study AI's real-world impacts from our position within a frontier lab, then publish those findings, to help external organizations, governments, and the public make better decisions about AI development.
-
-We’ll share research, data, and tools to make it easier for individual researchers and institutions to work on these research questions. In particular, we’ll share:
-
-More granular information fromThe Anthropic Economic Index, at a higher cadence, about what we’re seeing in labor impacts and usage of AI. We’ll try to be an early warning signal for significant change and disruption.
-
-Research on the societal areas most in need of investment in resilience in the face of new AI-enabled security risks.
-
-More detailed information about how our work at Anthropic has sped up as a result of new AI tools, and ideas about the implications of potential recursive self-improvement of AI systems.
-
-TAI will shape the decisions Anthropic makes.That may look like the company sharing data with the world that it otherwise would not (like the Economic Index), or approaching how it releases technology differently (like cyber threat analyses which feed into initiatives likeProject Glasswing).
-
-We expect that work developed by The Anthropic Institute will increasingly serve as important inputs to Anthropic’sLong-Term Benefit Trust(LTBT). The LTBT’s mission is to ensure that Anthropic continually optimizes its actions for the long-term benefit of humanity. We’ve developed this research agenda with the LTBT, as well as with staff across Anthropic.
-
-This is a living agenda, rather than a fixed one. We'll continue to fine-tune these questions as evidence accumulates, and we expect new questions to emerge that aren't captured here today. We welcome feedback on this agenda, and will revise it in light of what we learn through our conversations.
-
-If you are interested in helping us answer some of these questions, we welcome your application to become an Anthropic Fellow. The Fellowship is a four-month funded opportunity to tackle one or more of these questions with mentorship from TAI team members. You can find out more and apply to the next cohorthere.
-
-Last updated: May 7, 2026
-
-It’s crucial to understand how the deployment of increasingly powerful AI systems changes the economy. We also need to develop the necessary economic data and predictive ability to choose to deploy AI in ways that benefit the public.
-
-To answer the questions in this pillar of our research, we’ll further develop the data withinThe Anthropic Economic Index. We’ll also explore other methods to sharpen our models of how powerful AI could affect society, whether by driving job loss, unprecedented economic growth, or other effects.
-
-AI adoption and diffusion
-
-Who adopts AI?AI development is concentrated in a small number of companies in a small number of countries, but deployment is global. What determines whether a country, region, or city can access AI? If it can access it, how does it capture economic value from AI? What policies and business models meaningfully shift that balance? How do free or open weight models contribute to this dynamic?
-
-Adoption in firms:What causes AI adoption at the firm level, and what are the consequences? How does AI change the scale at which a firm or team can be most efficient? How concentrated is AI usage across firms? How do changes in concentration of AI adoption translate into markups and labor share? If a 3-person team or company can now do what required 300 before, what happens to industrial organization? Or, if firms can more easily centralize knowledge and there are benefits from doing so at scale, will we see larger, more expansive firms with a greater incentive to systematically surveil workers?
-
-Is AI a general purpose technology?Is AI following the pattern of previous “general purpose technologies,” where adoption is fastest in high-margin commercial applications, and slowest where social returns exceed private returns? Are there policies or decisions that could change these dynamics?
-
-Productivity and economic growth
-
-Productivity growth:What impact will AI have on the rate of innovation and productivity growth across the economy?
-
-Sharing the gains:What pre- or re-distributive mechanisms could effectively spread the gains from AI development and deployment more broadly?
-
-Transaction costs in markets:How does AI affect systems of exchange and transaction costs in marketplaces? When does access to agents able to negotiate on your behalf improve market efficiency and equitable outcomes? When does it not?
-
-Broad labor market impacts
-
-AI and jobs:How will AI change jobs and employment in different parts of the economy? What new tasks and jobs could emerge as AI automates existing parts of the economy? How will these changes vary across regions and countries? OurAnthropic Economic Index Surveywill provide monthly signals of how people see AI affecting their work, and what they expect for the future. We’re also updating theEconomic Indexto share more high-frequency, granular data.
-
-Can AI diffusion be modulated?Central banks seek to moderate inflation through “dials” like the policy rate and forward guidance. Are there analogous dials that AI companies (at an industry level, in partnership with government) might turn to control the rate of AI diffusion on a sector-by-sector basis? Would there be a clear public benefit to turning them?
-
-The future of jobs and workplaces
-
-Worker views of their jobs:How are workers across the economy experiencing changes in their professions? How much influence do they have over these changes, and can 'worker' power be preserved or transformed?
-
-The professional pipeline:Many professions rely on junior roles (like paralegals, junior analysts, and associate developers) to serve as training for the senior practitioners of the future. If AI absorbs the tasks that historically built expertise, how do people become experts in the first place? What does this mean for the long-term supply of senior judgment in a field?
-
-Studying for the future:What should people study today to be well positioned for the future? What are the professions of the future? How does AI change what it means to learn something and to develop expertise?
-
-The role of paid work:If AI substantially reduces the centrality of paid work in human life, what conditions will allow people to reallocate their time and effort toward other sources of meaning, and what can we learn from historical or contemporary populations where work has been scarce or optional? How do societies navigate this transition?
-
-Threats and resilience
-
-AI systems tend to advance many capabilities at once, includingdual-use capabilities. An AI system that gets better at biology also gets better at creating biological weapons. AI systems which are performant at computer programming also get better at hacking into computers. If we can better understand the potential for threats to be exacerbated by AI systems, society can more easily become resilient to this changed threat landscape.
-
-We're asking these questions to help develop partnerships to improve the world's resilience in the face of transformative AI, and to develop early warning systems for new threats that may emerge. Many of these questions will drive the research agenda of ourFrontier Red Team.
-
-Assessing risk and dual-use capabilities:
-
-Dual-use technology:Powerful AI is inherently dual-use: the same tools that improve health and education can enable surveillance and repression. Can we build observability tools to understand whether and how this is happening?
-
-Pricing risk appropriately:What are the effective, market-driven approaches to improve societal resilience to anticipated threats from AI systems? Can we develop new ways of pricing risk, or technical tools and human organizations to improve resilience ahead of the arrival of predictable threats (like improved AI cyberattack capabilities)?
-
-Offense-defense balance:Will AI-enabled capabilities structurally benefit the attacker in domains like cyber and bio? When AI is applied in more conventional domains, like increasing integration into command and control systems, does it benefit the attacker? More generally, how will AI change the character of human conflict?
-
-Establishing risk mitigations:
-
-Planning for crisis scenarios:During the Cold War, the American president had a hotline directly to the Kremlin, for use in the event of a nuclear crisis. What geopolitical infrastructure would be needed in the event of a crisis scenario involving AI systems? This infrastructure might not necessarily be state-to-state, but could be company-to-state or company-to-company.
-
-Faster defensive mechanisms:AI capabilities can advance in months. Regulatory, insurance, and infrastructure responses operate on timescales of years. How do we close that gap? Can defensive mechanisms—like automated patching, AI-enabled threat detection, or pre-positioned response capabilities match the tempo and scale of AI-enabled offense? Or is the asymmetry structural? And how do we roll these defensive mechanisms out as effectively as possible?
-
-Intelligence capabilities for surveillance
-
-AI’s effect on surveillance:How does AI change how surveillance works? Will it make surveillance cheaper, or more effective, or both?
-
-AI systems in the wild
-
-The interaction of people and organizations with AI systems will be a major source of societal change. Understanding the ways AI systems might alter the people and institutions that interact with them is a core focus area for ourSocietal Impactsteam. To study these changes, we are advancing our existing tools and building new ones to carry out our research, ranging from software for better observability of our platform to tools for conducting large-scale qualitative surveys.
-
-The impact of AI to individuals and societies:
-
-Group epistemology:When a large fraction of a population consults the same few models, what happens to our epistemology? Can we find ways to measure large-scale changes in beliefs, writing style, and problem-solving approaches that are attributable to shared AI use?
-
-Critical thinking:As AI systems become more capable and more trusted, how do we detect and avoid the degradation of human critical thinking skills that may come from increasing deference to AI judgment?
-
-Technological interfaces:The interfaces for technologies can determine how people interact with them—televisions make people passive viewers, and computers can make it easier for people to be generative creators. What interfaces can be built to cause AI systems to improve and promote human agency?
-
-Managing human-AI systems:How might humans manage teams composed of a mixture of humans and AI systems effectively? And how might this be inverted—how might AI systems manage teams that consist of humans, AIs, or some combination thereof?
-
-Identifying significant impacts from AI:
-
-Behavioral effects:In the same way that social media led to behavioral changes in people, AI may shape human behavior. What kinds of monitoring or measurement can inform researchers about this dynamic?
-
-Enabling research:Are there transparency regimes and tools that can enable a broad set of people, not just frontier AI companies, to easily study real-world AI usage?
-
-Understanding and governing AI models:
-
-System “values”:What are the expressed “values” of AI systems and how do these relate to how these systems were trained? More specifically, how can we measure the influence that an AI “constitution” has on behavior of the model once deployed? We’ll extend ourpreviousresearchon these questions.
-
-Governing autonomous agents:What aspects of existing laws, governance systems, and accountability mechanisms could be adapted to autonomous AI agents? For example, how naval law treats abandoned ships has relevance to how the law might treat agents that run without human oversight. Conversely, are there aspects of existing law which already apply to AI agents and shouldn’t?
-
-Reliability of agents:What aspects of autonomous AI agents could be adapted to fit into existing laws, governance systems, and accountability mechanisms? For example, can we ensure AI agents have a unique identity that they reliably output, even in the absence of direct human control?
-
-AI governance of AI:How effectively can we use AI to govern AI systems? What are areas of AI oversight where humans either have a comparative advantage or a legal or normative requirement to be 'in the loop'?
-
-Agent interactions:What kinds of norms emerge in how AI agents interact with one another? How might different agents express different preferences, and how might these influence other agents?
-
-As AI systems get more powerful, scientists are using them to carry out more of their research. This means that more scientific research is occurring autonomously or semi-autonomously with less and less active oversight from humans. In AI research itself, increasingly powerful systems may be used to help develop successor versions of themselves. We sometimes call this “AI-driven AI R&D.”
-
-AI-driven AI R&D may be a “natural dividend” of making smarter and more capable systems. In the same way that advances in coding capabilities have led to dual-use cyber capabilities, and advances in scientific capabilities may lead to dual-use bio capabilities, advances in complex technical work may naturally yield AI systems which are capable of developing AI systems.
-
-AI-driven AI R&D holds within itself the potential for significant danger. As policymakers assess the levers they can pull, it will be crucial to understand how the rate of AI progress is changing, and whether AI research might start to see a compounding return.
-
-Governance of AI R&D:If AI systems are being used to autonomously develop and improve themselves, how do humans exercise meaningful visibility into and control over these systems? What will eventually govern these systems?
-
-Fire drill scenarios:How do we run a "fire drill" for an intelligence explosion? What would a tabletop exercise look like that actually tests the decision-making of lab leadership, boards, and governments?
-
-Telemetry for AI R&D:How can we measure the aggregate speed of AI research and development? What sorts of telemetry and underlying technical affordances must exist in order to gather this information? How might metrics relating to AI R&D serve as early warning signals for recursive self-improvement?
-
-Controlling AI acceleration:If an intelligence explosion was upon us, what intervention points would facilitate slowing or otherwise changing the rate of the explosion? Assuming humans can intervene, which entities should wield this capacity—governments? Companies?
-
-AI for R&D in general—that is, AI-driven research in other fields:
-
-The tech tree:AI is speeding up some sciences far faster than others, depending on data availability, evaluation signals, and how much knowledge is tacit or institutionally gated. How uneven is this gradient, and what does the changing composition of scientific progress imply for which human problems get solved first?
-
-The jagged frontier:Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
-
-Paving the way for agents in biology
-
-Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/anthropic-institute-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/donating-open-source-petri" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Vend: Phase two</title>
@@ -2024,13 +1912,11 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
 Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2135,13 +2021,11 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Agentic coding and persistent returns to expertise
+
 Paving the way for agents in biology
 
 Making Claude a chemist
-
-Coding agents in the social sciences
-
-Results from a survey of 1,260 social scientists about AI and coding agent use.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2151,7 +2035,7 @@ Get updates on our latest red-teaming research and findings.</div><hr style="mar
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2245,192 +2129,10 @@ Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 S
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Economic Research</title>
-  <link>https://www.anthropic.com/research/team/economic-research</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-May 27, 2026Economic ResearchCoding agents in the social sciences
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-May 27, 2026Economic ResearchCoding agents in the social sciences
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives
-
-Nov 25, 2025Economic ResearchEstimating AI productivity gains from Claude conversations</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Alignment</title>
-  <link>https://www.anthropic.com/research/team/alignment</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-
-Stress-testing safeguards
-
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-
-New research on how we've reduced agentic misalignment.
-
-Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
-
-Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
-
-Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
-
-We show for the first time that realistic AI training processes can accidentally produce misaligned models.
-
-May 8, 2026AlignmentTeaching Claude why
-
-May 7, 2026AlignmentDonating our open-source alignment tool
-
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-
-Feb 23, 2026AlignmentThe persona selection model
-
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
-
-Evaluation and oversight
-
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
-
-Stress-testing safeguards
-
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
-
-New research on how we've reduced agentic misalignment.
-
-Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
-
-Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
-
-Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
-
-We show for the first time that realistic AI training processes can accidentally produce misaligned models.
-
-May 8, 2026AlignmentTeaching Claude why
-
-May 7, 2026AlignmentDonating our open-source alignment tool
-
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
-
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
-
-Feb 23, 2026AlignmentThe persona selection model
-
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
-
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
-
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
-
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -2526,6 +2228,188 @@ Mar 13, 2025AlignmentAuditing language models for hidden objectives
 Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Alignment</title>
+  <link>https://www.anthropic.com/research/team/alignment</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+  <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+
+Stress-testing safeguards
+
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+
+New research on how we've reduced agentic misalignment.
+
+Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
+
+Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
+
+Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
+
+We show for the first time that realistic AI training processes can accidentally produce misaligned models.
+
+May 8, 2026AlignmentTeaching Claude why
+
+May 7, 2026AlignmentDonating our open-source alignment tool
+
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+
+Feb 23, 2026AlignmentThe persona selection model
+
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+
+Evaluation and oversight
+
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+
+Stress-testing safeguards
+
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+
+New research on how we've reduced agentic misalignment.
+
+Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
+
+Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
+
+Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
+
+We show for the first time that realistic AI training processes can accidentally produce misaligned models.
+
+May 8, 2026AlignmentTeaching Claude why
+
+May 7, 2026AlignmentDonating our open-source alignment tool
+
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+
+Feb 23, 2026AlignmentThe persona selection model
+
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Economic Research</title>
+  <link>https://www.anthropic.com/research/team/economic-research</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+  <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+
+Anthropic Economic Index report: Learning curves
+
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
+
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
+
+Jun 17, 2026Economic ResearchAgentic coding and persistent returns to expertise
+
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+
+Anthropic Economic Index report: Learning curves
+
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
+
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
+
+Jun 17, 2026Economic ResearchAgentic coding and persistent returns to expertise
+
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitives</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
