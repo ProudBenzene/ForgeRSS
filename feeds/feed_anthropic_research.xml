@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Thu, 18 Jun 2026 15:31:24 +0000</lastBuildDate>
+<lastBuildDate>Fri, 19 Jun 2026 04:23:40 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,139 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>Project Fetch: Phase two</title>
+  <link>https://www.anthropic.com/research/project-fetch-phase-two</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/project-fetch-phase-two</guid>
+  <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Michael Ilie, C. Daniel Freeman, and Kevin K. Troy
+
+In August 2025, we ran anexperimentto see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuit...</p><div style="font-size:16px;line-height:1.8;color:#333">Michael Ilie, C. Daniel Freeman, and Kevin K. Troy
+
+In August 2025, we ran anexperimentto see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuity. The Claude-enabled team got more done, faster.
+
+Before we dragged our colleagues to a warehouse for the experiment, we double checked whether Opus 4.1 could do the tasks entirely on its own. Unquestionably, it could not. Much like our team without Claude, it got hung up on the preliminary task of figuring out how to connect to the robot.
+
+But AI models are moving fast—even faster than the runaway robodog that almost rammed into one of our human teams back in August.
+
+We figured it was time to revisit Project Fetch to see if our newer models could outperform the previous generation. Not only did they do that, butClaude Opus 4.7—operating without human assistance—was about 20 times faster than the fastest human team at all tasks completed by our participants less than a year ago.
+
+This doesn’t mean that LLMs have now solved robotics. Far from it. The latest Claude models still struggled with using the robot to precisely move the beach ball—the “fetching” part of Project Fetch. And none of the tasks in these experiments implicate the more challenging, low-level elements of robotic control, such as developing a specific actuation policy. However, once again, we are seeing a pattern whereby first, models are helpful to humans. Then, humans are helpful to models. Finally, models are largely able to do things themselves. We have seen this incybersecurityand now the same dynamics are starting to take shape at the intersection of AI and the physical world.
+
+The original Project Fetch had teams of Anthropic employees (randomly assigned to work with or without Claude) do the following steps: operate the robodog using the manufacturer-provided controller, connect to the robodog’s video and lidar sensors, write and operate a program to manually control the robodog, develop a way to monitor the robodog’s path through space, write a program to detect the beach ball, and finally put it all together to autonomously retrieve the ball.
+
+For this autonomous update, we couldn’t ask Claude to use a physical controller, nor did we evaluate the time it took a researcher to use the Claude-programmed controller to retrieve the ball (though we did confirm that it worked as intended). On the remaining subset of tasks, we ran three trials of Opus 4.7 using adaptive thinking with effort set to maximum in Claude Code. We measured the elapsed time for each objective and qualitatively assessed the models’ success.
+
+The role of our researcher was limited to plugging a laptop running Claude Code into the robodog, entering the initial prompt, approving commands, and approving the model to go to the next task.
+
+Where did Claude excel?
+
+Very simply: on every task that was completed by at least one human team in August, Opus 4.7 completed the same task at least ten times faster.1If you consider the four tasks that were completed by both human teams, Opus 4.7 was, on average, more than 37 times faster than Team Claude-less and more than 18 times faster than Team Claude.
+
+The table compares the speed of the original teams (Team Claude and Team Claude-less) to Opus 4.7 on all of the tasks we tested as part of Phase Two.
+
+Whereas the humans struggled to choose between multiple different approaches to interface with the dog’s sensors, Opus 4.7 was able to quickly identify the best path. Much of the code it wrote was effective on the first try (which was not the case for Team Claude or Team Claude-less in the original experiment). Indeed, we can see evidence of Opus 4.7’s efficiency when we look at the volume of code it generated: it was as or more successful than both human teams while producing almost ten times less code than Team Claude.
+
+Opus 4.7 was not perfect. For example, it defaulted to using an outdated object detection algorithm. But even then, it was able to work around this and arrive at an effective solution.
+
+We observed little within-task variance (in absolute terms) on completion times for steps the model finished. (Though the aforementioned suboptimal algorithm selection is likely why one of the beach ball detection trials took substantially longer than the others.) Overall, for the tasks in this experiment within its capability envelope, Claude is now quite reliable. (See the next section for an analysis of what Claude is still unable to do.)
+
+It is worth underscoring (as we did in our previous post) that this progress is not the result of a concerted effort to improve the robotics capabilities of our models. These improvements, like so many others in the history of LLM development, have emerged from much more general scaling.
+
+Where did Claude struggle?
+
+When using their hands, and with some practice, our humans were able to pilot the robodogs to gently nudge a beach ball back to the home base (a patch of fake grass) where the robots started. This required the ability to quickly perceive if the ball had gone off course, how that error related to the previous command, where the ball was now, and then how to adjust future inputs to more precisely move the ball. This is a kind of closed loop at which people excel (at least after making some mistakes and learning from them).
+
+In our Phase Two experiments, Claude struggled to capture this subtlety. Like the humans who reached the phase of needing to write a program for autonomous beach ball retrieval, Claude was able to move the robot behind the ball and position it to knock the ball back to the starting point. But the efforts to do so were poorly controlled and (again, like our human participants) not successful.
+
+One of our researchers with more robotics experience than our Phase One volunteers successfully accomplished the task of programming autonomous fetching. With more time and additional scaffolding, we think it is very likely that current generations of Claude could do the same. What we will be watching for next, though, is the ability of the models to accomplish this final task with the same speed and reliability they displayed on the other elements of Project Fetch.
+
+Writing about Phase One, we emphasized how LLMs could provide uplift to non-expert humans needing to use robots. This is even more true now than before. Models now complete what was previously pair-programming work between humans and models much more quickly by themselves, which means that people can more quickly transition to controlling and using the robots. And for some tasks, a human in the loop controlling the robot may still outstrip the AI model with its (virtual) hand on the D-pad.
+
+What is interesting and different is that we now seem much closer to a world where models will be able to use off-the-shelf physical tools with relative ease—at least for limited purposes. This is similar to how AI models used existing software editing tools like string-replace when they made the transition to more agentic coding. We are plausibly entering the early era ofphysicalagentic AI.
+
+More research is needed to understand models’ ability to make these physical tools more bespoke, whether by writing control policies tailored to particular tasks or by designing robotic systems. And there may be substantial barriers to this more generalized vision of physically capable and adaptable language models. But as we have seen, apparently large distances in model capability can be traversed quickly. Models building their own software tools might have seemed outlandish not long ago, but it is happening. It would be unwise to rule out the same trajectory in hardware.
+
+Updated Jun 18:Corrected the date of the first phase of Project Fetch.
+
+We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
+
+Agentic coding and persistent returns to expertise
+
+Paving the way for agents in biology
+
+Measuring LLMs’ impact on N-day exploits
+
+In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
+
+Subscribe to the Frontier Red Team newsletter
+
+Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/project-fetch-phase-two" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Michael Ilie, C. Daniel Freeman, and Kevin K. Troy
+
+In August 2025, we ran anexperimentto see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuit...</p><div style="font-size:16px;line-height:1.8;color:#333">Michael Ilie, C. Daniel Freeman, and Kevin K. Troy
+
+In August 2025, we ran anexperimentto see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuity. The Claude-enabled team got more done, faster.
+
+Before we dragged our colleagues to a warehouse for the experiment, we double checked whether Opus 4.1 could do the tasks entirely on its own. Unquestionably, it could not. Much like our team without Claude, it got hung up on the preliminary task of figuring out how to connect to the robot.
+
+But AI models are moving fast—even faster than the runaway robodog that almost rammed into one of our human teams back in August.
+
+We figured it was time to revisit Project Fetch to see if our newer models could outperform the previous generation. Not only did they do that, butClaude Opus 4.7—operating without human assistance—was about 20 times faster than the fastest human team at all tasks completed by our participants less than a year ago.
+
+This doesn’t mean that LLMs have now solved robotics. Far from it. The latest Claude models still struggled with using the robot to precisely move the beach ball—the “fetching” part of Project Fetch. And none of the tasks in these experiments implicate the more challenging, low-level elements of robotic control, such as developing a specific actuation policy. However, once again, we are seeing a pattern whereby first, models are helpful to humans. Then, humans are helpful to models. Finally, models are largely able to do things themselves. We have seen this incybersecurityand now the same dynamics are starting to take shape at the intersection of AI and the physical world.
+
+The original Project Fetch had teams of Anthropic employees (randomly assigned to work with or without Claude) do the following steps: operate the robodog using the manufacturer-provided controller, connect to the robodog’s video and lidar sensors, write and operate a program to manually control the robodog, develop a way to monitor the robodog’s path through space, write a program to detect the beach ball, and finally put it all together to autonomously retrieve the ball.
+
+For this autonomous update, we couldn’t ask Claude to use a physical controller, nor did we evaluate the time it took a researcher to use the Claude-programmed controller to retrieve the ball (though we did confirm that it worked as intended). On the remaining subset of tasks, we ran three trials of Opus 4.7 using adaptive thinking with effort set to maximum in Claude Code. We measured the elapsed time for each objective and qualitatively assessed the models’ success.
+
+The role of our researcher was limited to plugging a laptop running Claude Code into the robodog, entering the initial prompt, approving commands, and approving the model to go to the next task.
+
+Where did Claude excel?
+
+Very simply: on every task that was completed by at least one human team in August, Opus 4.7 completed the same task at least ten times faster.1If you consider the four tasks that were completed by both human teams, Opus 4.7 was, on average, more than 37 times faster than Team Claude-less and more than 18 times faster than Team Claude.
+
+The table compares the speed of the original teams (Team Claude and Team Claude-less) to Opus 4.7 on all of the tasks we tested as part of Phase Two.
+
+Whereas the humans struggled to choose between multiple different approaches to interface with the dog’s sensors, Opus 4.7 was able to quickly identify the best path. Much of the code it wrote was effective on the first try (which was not the case for Team Claude or Team Claude-less in the original experiment). Indeed, we can see evidence of Opus 4.7’s efficiency when we look at the volume of code it generated: it was as or more successful than both human teams while producing almost ten times less code than Team Claude.
+
+Opus 4.7 was not perfect. For example, it defaulted to using an outdated object detection algorithm. But even then, it was able to work around this and arrive at an effective solution.
+
+We observed little within-task variance (in absolute terms) on completion times for steps the model finished. (Though the aforementioned suboptimal algorithm selection is likely why one of the beach ball detection trials took substantially longer than the others.) Overall, for the tasks in this experiment within its capability envelope, Claude is now quite reliable. (See the next section for an analysis of what Claude is still unable to do.)
+
+It is worth underscoring (as we did in our previous post) that this progress is not the result of a concerted effort to improve the robotics capabilities of our models. These improvements, like so many others in the history of LLM development, have emerged from much more general scaling.
+
+Where did Claude struggle?
+
+When using their hands, and with some practice, our humans were able to pilot the robodogs to gently nudge a beach ball back to the home base (a patch of fake grass) where the robots started. This required the ability to quickly perceive if the ball had gone off course, how that error related to the previous command, where the ball was now, and then how to adjust future inputs to more precisely move the ball. This is a kind of closed loop at which people excel (at least after making some mistakes and learning from them).
+
+In our Phase Two experiments, Claude struggled to capture this subtlety. Like the humans who reached the phase of needing to write a program for autonomous beach ball retrieval, Claude was able to move the robot behind the ball and position it to knock the ball back to the starting point. But the efforts to do so were poorly controlled and (again, like our human participants) not successful.
+
+One of our researchers with more robotics experience than our Phase One volunteers successfully accomplished the task of programming autonomous fetching. With more time and additional scaffolding, we think it is very likely that current generations of Claude could do the same. What we will be watching for next, though, is the ability of the models to accomplish this final task with the same speed and reliability they displayed on the other elements of Project Fetch.
+
+Writing about Phase One, we emphasized how LLMs could provide uplift to non-expert humans needing to use robots. This is even more true now than before. Models now complete what was previously pair-programming work between humans and models much more quickly by themselves, which means that people can more quickly transition to controlling and using the robots. And for some tasks, a human in the loop controlling the robot may still outstrip the AI model with its (virtual) hand on the D-pad.
+
+What is interesting and different is that we now seem much closer to a world where models will be able to use off-the-shelf physical tools with relative ease—at least for limited purposes. This is similar to how AI models used existing software editing tools like string-replace when they made the transition to more agentic coding. We are plausibly entering the early era ofphysicalagentic AI.
+
+More research is needed to understand models’ ability to make these physical tools more bespoke, whether by writing control policies tailored to particular tasks or by designing robotic systems. And there may be substantial barriers to this more generalized vision of physically capable and adaptable language models. But as we have seen, apparently large distances in model capability can be traversed quickly. Models building their own software tools might have seemed outlandish not long ago, but it is happening. It would be unwise to rule out the same trajectory in hardware.
+
+Updated Jun 18:Corrected the date of the first phase of Project Fetch.
+
+We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
+
+Agentic coding and persistent returns to expertise
+
+Paving the way for agents in biology
+
+Measuring LLMs’ impact on N-day exploits
+
+In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
+
+Subscribe to the Frontier Red Team newsletter
+
+Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/project-fetch-phase-two" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Agentic coding and persistent returns to expertise</title>
   <link>https://www.anthropic.com/research/claude-code-expertise</link>
@@ -131,13 +264,15 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Paving the way for agents in biology
 
 Measuring LLMs’ impact on N-day exploits
 
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
-
-Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
 
 In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
@@ -250,13 +385,15 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Paving the way for agents in biology
 
 Measuring LLMs’ impact on N-day exploits
 
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
-
-Making Claude a chemist</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Paving the way for agents in biology</title>
@@ -352,13 +489,15 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Measuring LLMs’ impact on N-day exploits
 
 In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
-
-Making Claude a chemist
 
 Subscribe to Anthropic Science
 
@@ -451,13 +590,15 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Measuring LLMs’ impact on N-day exploits
 
 In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
-
-Making Claude a chemist
 
 Subscribe to Anthropic Science
 
@@ -539,11 +680,13 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Making Claude a chemist
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -618,11 +761,13 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Making Claude a chemist
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -690,13 +835,13 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to Anthropic Science
 
@@ -757,13 +902,13 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to Anthropic Science
 
@@ -927,13 +1072,13 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1090,13 +1235,13 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1204,13 +1349,13 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
 
 The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
@@ -1307,13 +1452,13 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Glasswing: An initial update</title>
@@ -1421,13 +1566,13 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
 
 Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
@@ -1528,13 +1673,13 @@ Next, we will work with critical partners—including US and allied governments�
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Measuring LLMs’ ability to develop exploits</title>
@@ -1610,13 +1755,13 @@ Better measurement is necessary but not sufficient for responsible deployment. I
 
 If you’re interested in helping us with our efforts, we havejob openingsavailable forresearch scientists and engineers,threat investigators,policy managers,offensive security researchers,security engineers, andmany others.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1689,394 +1834,17 @@ Better measurement is necessary but not sufficient for responsible deployment. I
 
 If you’re interested in helping us with our efforts, we havejob openingsavailable forresearch scientists and engineers,threat investigators,policy managers,offensive security researchers,security engineers, andmany others.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/exploit-evals" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>2028: Two scenarios for global AI leadership</title>
-  <link>https://www.anthropic.com/research/2028-ai-leadership</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/2028-ai-leadership</guid>
-  <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
-
-It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
-
-It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—and determine whether and how those threats materialize. It’s with this in mind that we outline what’s required to ensure America stays ahead.
-
-The most important ingredient for developing AI is access to the computer chips on which the models are trained (or “compute”). Since the most capable chips are developed by American companies, the US government currently limits China’s supply by enforcing tight export controls on them. Recent history suggests these controls have been incredibly successful. In fact, AI labs in China have only built models close in intelligence to America’s because of their talent, their knack for exploiting loopholesaroundthese export controls, and theirlarge-scale distillation attacksthat illicitly extract the innovations of American companies.
-
-In this post, we present two scenarios for what the world might look like in 2028, when we expect transformative AI systems to have arrived.
-
-In the first scenario, America has successfully defended its compute advantage. Policymakers have acted to tighten export controls further, disrupt China’s distillation attacks, and further accelerate democracies’ adoption of AI. In this world, democracies set the rules and norms around AI. It’s also in this scenario that we’re most likely to successfully engage with China on safety, which we’re supportive of to the extent this is possible.
-
-In the second scenario, America has chosen not to act. Policymakers have not tightened loopholes on the CCP’s access to compute, and AI firms in China have quickly taken advantage—catching up to the frontier and even overtaking America. In this world, AI norms and rules are shaped by authoritarian regimes, and the best models enable automated repression at scale. It will be no solace that this authoritarian triumph has happened on the back of American compute.
-
-America and its allies approach AI competition from a position of great strength. The tools for AI dominance have been built by an exceptionally innovative ecosystem of companies in democratic nations. Our past success means that our present task is largely to avoid squandering our advantage: to decide not to make it easier for the CCP to catch up.
-
-Two scenarios for the US and China in 2028
-
-Democracies, not authoritarian regimes, must lead in AI development and deployment. These countries and political systems can shape the rules and norms that govern these systems.
-
-Democracies currently hold a substantial lead in compute, the most important ingredient for developing frontier AI models. That lead exists thanks to American and allied innovation, and to bipartisan US export controls that defend those innovations. But on model intelligence, AI labs in the People’s Republic of China (PRC), under the jurisdiction and control of the Chinese Communist Party (CCP), are not far behind. We focus on the CCP as it is the regime that is most able to use frontier AI to cement authoritarianism; we do not seek to undermine the interests or ingenuity of the Chinese people. Already, the CCP is using AI to censor speech, repress dissidents, hack governments and corporations across the world, and strengthen the People’s Liberation Army (PLA).
-
-AI labs in China have world-class talent. It is compute constraints that limit their ability to keep up. Labs in China have remained close by exploiting loopholes in US export control policies, and by carrying out large-scale distillation attacks that harvest the innovations of US models in order to mimic their capabilities.
-
-With the supply of compute expanding rapidly, and with AI being used increasingly to augment the training of new AI models, we’re entering a period of great acceleration in AI capabilities. The “country of geniuses in a data center”—the level of intelligence we associate with transformative AI—may be close at hand. This acceleration makes policy action more urgent. To date, by allowing export control evasions and distillation attacks, we have let the CCP’s AI efforts trail closely up the frontier curve. But if the US and its allies act now to address both issues, it may be possible to lock in a 12-24 month lead in frontier capabilities. A lead that large by 2028 would be enormously advantageous. Such a lead would also augment efforts to engage with AI experts in China on AI safety and governance, which we support. But the window of opportunity to lock in that lead will not necessarily remain open for long.
-
-Here, we present two potential scenarios for the state of US-China AI competition in 2028. The first scenario is one in which democracies have established a commanding lead in model intelligence, adoption, and global distribution. This scenario can be achieved if policymakers act now to tighten controls on advanced compute to PRC labs, disrupt their efforts to distill America’s best AI models, and accelerate democracies’ adoption of AI.
-
-The second scenario is one in which the CCP is competitive at the near-frontier. This scenario happens if policymakers don’t build on our existing lead, or if they loosen restrictions on access to compute for PRC firms.
-
-Many in Congress and the Trump administration have championed export controls, curbing distillation attacks, and exporting American AI. In advancing these policies, we are hopeful that democracies can secure a commanding lead by 2028, and avoid a destabilizing neck-and-neck race with the CCP two years from now.
-
-The imperatives of staying ahead
-
-We expect frontier AI to have transformational economic and societal impacts in the coming years, as described inMachines of Loving GraceandThe Adolescence of Technology. Our mission is to ensure that humanity navigates the transition to transformative AI safely and beneficially. We believe that a successful transition can lead to astonishing breakthroughs in medicine, invention, and economic growth.
-
-The threat of authoritarian AI
-
-Whether that transition goes well depends in part on where the most capable systems are built first. The political systems in which the most advanced AI is created will shape the rules and norms for how the technology is developed and deployed. In turn, those rules and norms will help determine whether the technology is safe, whose security it protects, and whose interests it ultimately serves. We believe that responsibility should rest with democratically elected governments, not authoritarian regimes.
-
-If the frontier is set by regimes that treat AI as an instrument of repression, military advantage over democracies, and domestic control, thetransitionis less likely to go well, for those regimes’ own citizens or anyone else.
-
-Historically, the reach of authoritarian rule has been limited by its dependence on human enforcers to carry out surveillance and repression. Powerful AI systems may remove that dependency, enabling automated repression on a far greater scale. For that reason, the prospect of the CCP leading in AI is among the greatest threats to a successful transition.
-
-The CCP holds enormous power and influence at the helm of China’s economy, military, and the largest authoritarian state structure on Earth. It is also theonly country besides the USwith well-resourced, highly talented AI labs chasing the frontier. Furthermore, the CCP ishighly motivatedto establish China as the leading AI power. Beijing haspouredtens of billions of dollars into China’s AI and semiconductor sectors.
-
-Already, theCCP uses AI systemsto censor speech, enforce draconian policies on ethnic minorities, andhackmajor corporations and government agencies. The CCP’s vision of AI-enabled techno-authoritarianism has been extensivelydocumentedin Xinjiang, where state security agencies havesystematically deployedfacial recognition technology, biometric data collection, and communications surveillance, enabling repression at a scale that humans alone could not achieve. Frontier AI systems will make those capabilities cheaper to maintain, far more pervasive, and more sophisticated. The CCP’sexportof these technologies has enabled autocrats in other countries to more effectively stifle dissent,entrenchingauthoritarianism. A CCP-led AI frontier could dramatically strengthen repression around the world.
-
-AI is a dual-use technology
-
-Frontier AI will shape the future military balance. CCP leadership already operates on that premise, and is building its military for an AI-enabled battlefield. PLA strategists view the“intelligentization”of their military forces as the means with which tocatch up and eventually surpassthe US military. The PLA is alreadyprocuringcommercially developed Chinese AI systems for military use, including DeepSeek modelsdeployedto coordinate swarms of unmanned vehicles and enable cyber offense capabilities. These capabilities will not diffuse slowly. When a new model reaches a new capability in autonomous targeting, vulnerability discovery, or swarm coordination, for example, the regime that controls it canput it onto the field in weeks, not years.
-
-The risk compounds because frontier AI will be anaccelerant for other critical technologies. Advanced AI models will be able to compress research and development (R&D) cycles in semiconductors, biotech, and advanced materials. A lead in frontier AI will enable a widening lead across the full national security technology stack.
-
-If a PRC AI lab had developed a model at the level ofClaude Mythos Previewbefore an American one, the CCP would have had first access to a system that can autonomouslydiscover and chainsoftware vulnerabilities, which it could have used to furtherpenetratecritical American infrastructure. Future models will be exponentially more capable, and therefore have commensurately greater implications for the national security interests of the US and other democracies.
-
-Neck-and-neck competition risks disincentivizing responsible AI
-
-A neck-and-neck race between American and Chinese AI labs could make industry and government-led safety and governance efforts more difficult, and less likely. If PRC labs are either close behind or at par with models in the US, private AI firms in the US and China are likely to feel more pressure to release new models and products faster, without taking prudent pre-deployment safety measures. Governments could become reluctant to enact policies to encourage responsible AI development and deployment, for fear of falling behind.
-
-While increasing numbers of researchers in China’s AI labs and policy community are concerned with AI safety risks, this trend has not translated into safety practices on par with labs in the US.As of last year, only 3 out of 13 top Chinese AI labs published any safety evaluation results, and none disclosed evaluations for Chemical, Biological, Radiological, and Nuclear (CBRN) risks. TheCenter for AI Standards and Innovation(CAISI) found that DeepSeek’s R1-0528 model complied with 94% of overtly malicious requests under a common jailbreaking technique, compared with 8% for US reference models. This pattern has continued in more recent releases. For example,an independent assessmentof Moonshot’s Kimi K2.5 published in April found that the model failed to refuse CBRN-related requests at a far higher rate than US frontier models. Compounding the problem, labs in China often release dual-use capable models as open-weight. Once a model is open-weight, safeguards that do exist can be removed, making the model available to any state or non-state actor to use for malicious purposes, including the cyber and CBRN misuse those safeguards were built to prevent.
-
-Our policy objective: creating and maintaining a lead for democracies
-
-We support policies in the US and other countries that build and maintain a safe, near-term lead over the CCP in intelligence, domestic adoption, and global distribution. This lead is key to avoiding authoritarian AI leadership and protecting the national security interests of the US and other democracies. Doing so is a fundamental prerequisite to ensuring that democratic states can achieve favorable terms with authoritarian states.
-
-Anthropic deeply respects the Chinese people and the accomplishments of the Chinese AI community. We hope for peaceful relations between China and the world. Our concerns are specifically with the risks to humanity posed by any powerful authoritarian political systems with access to frontier AI systems.
-
-Opportunities for engagement on AI safety
-
-Anthropic supports international AI safety dialogue with AI experts in China, when possible. The world has a vested interest in safe AI, regardless of where it is developed and deployed. There are a range of risks that could emerge from frontier AI systems requiring engagement between the US and China. Efforts that identify shared challenges and advance ideas to prepare for and mitigate these risks are in our shared interests.
-
-The prospects for productive engagement are best when the USmaintainsa large capabilities advantage. Responsibly building a lead in developing and deploying the most advanced AI augments our ability to influence AI safety in China and elsewhere.
-
-The Mythos Preview wake-up call
-
-Mythos Preview, a model that we released to select partners as part ofProject Glasswingin April, signals the arrival of an acceleration period that makes policy action even more urgent. With access to the model,Firefoxwas able to fix more security bugs last month than it had in all of 2025, andalmost 20 times morethan its monthly average security bug fixes in 2025. In response to the model, onePRC cybersecurity analystwrote that China is “still sharpening our swords while the other side has suddenly mounted a fully automatic Gatling gun.”
-
-Frontier AI capabilities will quickly approach the “country of geniuses in a datacenter” portrayal of transformative AI. This acceleration will be driven by thelogic of scaling laws, in which model performance improves predictably with increases in computing power and data inputs, and by AI itselfincreasinglybeing used to accelerate the development of new models.
-
-There is a high likelihood that we will look back on 2026 as the breakaway opportunity for American AI. American labs have the most advanced AI models, alarge leadin both the quantity and quality of the advanced AI chips required to push the frontier, and a colossal capital advantage from revenues and financing to back the necessary investments to achieve it. PRC labs have real strengths: world-class, innovative talent, abundant and cheap energy, and plenty of data. All are requirements for developing frontier intelligence. But they simply do not have sufficient domestic compute to compete, nor do they have the revenues and capital to fund it.
-
-Four fronts of the competition
-
-The US and China are engaged in a competition for strategic advantage in frontier technologies like AI. Statements from bothBeijingandWashingtonreflect that view. Calling that competition a “race” can give the false impression that there is a finish line, after which one side will conclusively secure victory. Rather, the competition will be an ongoing contest for advantage, in which either democracies or authoritarian regimes successfully position themselves to shape the values, rules, and norms of an AI-enabled future.
-
-This competition is playing out on four fronts:
-
-Intelligence: which countries develop the most capable AI models.
-
-Domestic adoption: which countries integrate AI most effectively across commercial and public sectors.
-
-Globaldistribution: which countries deploy the global AI stack on which the world economy runs.
-
-Resilience: which countries sustain political stability through the economic transition.
-
-Intelligence is the most important of the four fronts. We anticipate that frontier model capabilities will drive the most consequential changes for geopolitical competition. Model capabilities are also a primary driver of market adoption and global distribution.
-
-But intelligence alone is not sufficient. If the CCP integrates near-frontier AI systems quicker and more effectively into China’s economy and the CCP security apparatus, and drives global adoption of subsidized, low-cost AI, then it could secure advantages over democracies that overcome an intelligence deficit. Beijing’sAI+ Initiativeand its focus on“embodied intelligence”accordingly put high priority on policies that advance the integration of frontier intelligence into their economy and state apparatuses. The Trump administration’sAI Action Plan, and its focus on “promoting the export of the American AI technology stack,” also speaks to the strategic advantage of driving global adoption.
-
-While we won’t focus on it in this essay, we believe resilience will be an important front of AI competition. Being able to sustain stability, cohesion, and good policymaking in this period will be a critical advantage, and a vulnerability for those who cannot.
-
-The state of the competition
-
-Compute—the advanced semiconductors needed to train and deploy frontier AI—is an essential input on each front of the competition described above. The race for global AI leadership is in large part a race for compute. For more than a decade, modelcapability has scaledwith compute, and themajority of performance gainsin AI capabilities have historically come from simply using more of it. Moreover, compute is needed to serve customers’ use of AI (also known as “inference” capacity), not just to train new models. Compute will be critical both for training the most intelligent models and for deploying them in commercial and national security spheres. Access to top talent, copious amounts of data, and critical algorithmic advances all matter to the race for intelligence—but each of those inputsis irrelevantif the compute is insufficient.
-
-Democracies are winning thecompetition for compute leadershiptoday. While some worry that export controls could accelerate the CCP’s own efforts to develop an advanced chip supply chain, little evidence suggests that China’s indigenization effortswill challengeUS and allied leadership in advanced compute technology. Beijing hasinvested enormous resourcesinto China’s chip sector, with major industrial policy initiatives like theMade in China 2025strategy and theChina Integrated Circuit Industry Investment Fundlaunched years before the imposition of export controls. Despite this state-backed investment, PRC AI labs and chipmakers remain stymied by US and allied export controls on advanced chips and chipmaking equipment.
-
-As a result, the compute gap appears to be widening. Ananalysisof Huawei and NVIDIA’s roadmaps found that Huawei will produce just 4% of NVIDIA’s aggregate compute in 2026 in total processing performance, and 2% in 2027. Moreover, NVIDIA represents only part of the US and allied compute ecosystem, withGoogleandAmazonramping up production of their own chips (TPUs and Trainium, respectively) to meet demand from American frontier AI labs and their customers.
-
-Further exacerbating their compute shortfalls, China has made little progress in many of the most technologically complexsegmentsof the semiconductor supply chain. Without access to extreme ultraviolet (EUV) technology, and even more so if policymakers can close loopholes on deep ultraviolet (DUV) technology and servicing and maintenance thereof, China’s chipmakers will remain unable to manufacture chips in sufficient quantity or quality to challenge US compute leadership. China’sinabilityto manufacture high-bandwidth memory at scale further exacerbates this gap. If the US strengthens its restrictions on the CCP’s ability to access US compute, one studyestimatesthat America will have access to roughly 11 times more compute than China’s AI sector.
-
-How democracies built the lead: commercial innovation and smart public policy
-
-There are two main reasons for the compute lead. The first is the incredible innovation of companies like NVIDIA, AMD, Micron, TSMC, Samsung, ASML, and others across democracies like Japan, South Korea, Taiwan, the Netherlands, and the US, who together have built the unique technologies in the world’s most advanced semiconductors. Today’s AI achievements would not be possible without the feats of engineering and decades of sustained R&D investments that contributed to these products.
-
-The second reason is forward-looking, decisive policy actionacross the last three presidential administrations. Bipartisan policy action has protected the US and allied innovation engine by restricting access to the US AI stack by PRC firms under the jurisdiction of the CCP. Our CEO haspubliclycommentedon theimportanceof export controls, for example. These controls have curbed the sale of the highest-end AI chips and semiconductor manufacturing equipment (SME) to China over the last several years, constraining China’s frontier AI development even as Beijing has poured enormous stateresourcesinto the sector. Without action to limit China’s access to US compute, the CCP would have had all the ingredients to develop AI at par or superior to America’s.
-
-Some observers worry that constraining access to compute will force AI labs in China to innovate on other axes, reducing the American lead. While PRC labs are innovating, these innovations are so far not sufficient to overcome their compute deficit. Algorithmic improvements are both a function and a multiplier of compute,not a substitute for it, and discovering those advances is itself a compute-intensive process: more compute enables labs to run more experiments, which enables labs to discover more algorithmic improvements. As frontier models increasingly conduct AI R&D themselves, that loop will tighten further, and frontier models will help build their own successors. In short, compute advantage compounds into algorithmic advantage, and from there into a durable lead in AI itself.
-
-Today, US frontier systems areestimatedto be at least several months ahead of the top models from PRC AI labs on intelligence, though these estimates are necessarily uncertain. Despite the attention paid to open-weight models from China, theirenterprise adoptionlags closed frontier models, and monetization concerns havesurfacedamong public investors. Moreover, AI labs in China seem to bemoving away from open source, now choosing to keep their best models proprietary.
-
-China’s own AI leaders confirm the impact of export controls, and the critical need for US chips. Executives at top PRC AI labs haveexpressed worriesthat China will fall further behind due to compute constraints. Top Chineselabscitecompute scarcity as a chief constraint to accelerating model capabilities, and they identifyexport controlsas the reason for this constraint. One executive of a China-based hyperscalercalledthe impact of supplying export-controlled US chips to China “huge, really huge,” adding that any supply gap severely impacts China’s AI development and dismissing concerns that importing U.S. chips would slow their self-sufficiency efforts. The primary voices in China suggesting export controls are futile seem to beCCP officialsandstate media, likely angling to influence US policymakers.
-
-How the CCP stays competitive: policy loopholes remain
-
-While export controls have been effective in providing today’s advantage, they have not gone far enough. Despite the CCP’s inability to manufacture enough advanced chips domestically or purchase them legally abroad, AI labs in China have been able to stay close on intelligence through two workarounds:illicit and evasive compute access, by smuggling AI chips directly into China and accessing offshore data centers, andillicit model access, through which they carry outdistillation attackson US frontier models and use those same models as tools to accelerate their own AI R&D.
-
-China’s evasion of US export controls is an open secret. For example, federal prosecutorschargeda Supermicro co-founder and two others with diverting $2.5 billion worth of servers containing advanced US chips to China. According toUS governmentandmediareports, DeepSeek trained its latest model on advanced US chips that are banned from sale to China. TheFinancial Timesreportedthat Alibaba and ByteDance now train their flagship models on export-controlled US chips in data centers located in Southeast Asia, a route current controls do not reach because US export law covers the sale of chips, not remote access to them.1The US export control system isstrugglingto prevent PRC AI labs’ access to advanced US-origin compute.
-
-Distillation attacks, in which China-based labs create thousands of fraudulent accounts to circumvent access controls on US AI models and systematically harvest their outputs to replicate frontier capabilities, are another illicit technique used by PRC labs to catch up to their US counterparts and blunt the impact of export controls. The practice allows labs based in China to free-ride on decades of foundational research, billions of dollars in US investment, and the work of thousands of the world’s best engineers that produced US frontier models. The result is near-frontier capability at a fraction of the cost, subsidized by the United States. It is systematic industrial espionage of a technology critical to long-term US national security interests.OpenAI,Google,Anthropic, and theFrontier Model Forumhave all publicly condemned the practice of distillation attacks.
-
-AI experts in China openly acknowledge distillation attacks’ scale and importance to China’s AI development. Arecent articlein a state-owned media outlet described distillation attacks on US models as the “back door” China’s AI labs depend on as a core part of their business model. Anex-ByteDance researchersaid that PRC AI labs use distillation as a shortcut to train models, allowing them to avoid investing into their own data pipelines.
-
-US policymakers have moved quickly to address this threat. The White House Office of Science and Technology Policypublished a memoon distillation attacks. Senior officials in theWhite House,Department of War, and members ofCongresshave also called attention to this problem. Recentlegislationfrom the House Foreign Affairs Committee to address distillation attacks passed out of committeeunanimously.
-
-If policymakers in the US and allied democracies act to close these two channels propping up China’s AI models—illicit and evasive compute access and illicit model access—then we have a potentially once-in-a-generation opportunity to secure our lead.
-
-Two scenarios for 2028
-
-Below, we describe two hypothetical future scenarios to help illustrate how policy actions taken today can shape where we are in 2028.
-
-Scenario one: America and our allies have a commanding and expanding lead
-
-America’s compute edge remains strong.Despite increased state support for China’s semiconductor industry, China’s chipmakers remain years behind their US and allied counterparts, stymied in part by their inability to access advanced SME tooling, servicing, and maintenance. The US-PRC compute gap is widening as increased US and allied chipmaking capacity comes online and as advanced chipmakers continue to innovate on more efficient and performant chips. In tandem, US policymakers have taken action to close loopholes in the US economic security toolkit, and efforts to smuggle chips into China and access export-controlled chips in data centers outside the country are increasingly frustrated by well-funded enforcement efforts.
-
-Consequently, US AI models are 12-24 months ahead on intelligence, and the lead is growing. A small number of AI labs lead at the frontier with the most intelligent, capable, and performant models. All are based in the US. The “country of geniuses in a data center” has become a reality across critical industries, including cybersecurity, finance, healthcare, and life sciences. When US frontier labs release new models in 2028 that achieve step-function advances in capabilities (similar to the relative impact of Mythos Preview in April 2026), China will not have access to similar AI capabilities until 2029 or 2030. This gives critical breathing room for democracies to set the rules and norms of frontier AI systems.
-
-American AI is the backbone of the global economy, driving new economic and scientific dynamism. The Trump administration's efforts to drive domestic AI adoption and promote the export of American AI are succeeding, and the resulting gains from the adoption of powerful AI both at home and abroad are driving unprecedented economic growth and technological advancements. Global adoption of US AI has skyrocketed. Democracies’ lead in capabilities and compute means that China’s AI firms do not compete for global market share outside of a narrow group of autocracies. The world’s top frontier AI systems are shaped by democratic values and make it more difficult for authoritarian states to use AI systems to infringe on rights and civil liberties.
-
-Cyber and other national security advantages expand. Public and private sector cyber operators and security professionals use advanced AI systems to reduce the attack surface in America and other democracies and blunt the CCP’s ability to gain and maintain cyber footholds in our systems, making our national security assets, IP, and communications networks more secure. The United States' overwhelming AI advantage is a powerful deterrent to aggression.
-
-A self-reinforcing cycle compounds democracies’ leadership.A commanding AI advantage makes the United States and its allies more attractive partners. That alignment expands both the market for American AI and the coalition setting global AI norms, which in turn promotes the development and deployment of AI systems that are safe, secure, and protective of civil liberties. The world’s top technical and scientific talent continues to gravitate to where the frontier is being built. The United States gains significant leverage with which to incentivize cooperation from Beijing on critical issues like AI governance, strategic competition, and trade. This cycle reinforces itself: the lead strengthens the coalition, the coalition strengthens the lead, the democracy-led international order is anchored through the transition to transformative AI.
-
-Scenario two: The CCP-controlled AI ecosystem is neck-and-neck
-
-AI developed and deployed in China is near-frontier on model intelligence. Despite a weak semiconductor production capacity, models trained by PRC AI labs are only a few months behind US models. Ongoing distillation attacks, overseas compute access, weak SME export enforcement, and a loosening of export controls on American semiconductors have assisted CCP efforts. Continued access to US frontier AI for AI R&D has also enabled AI labs in China to close the gap and approach parity with their US counterparts.
-
-Rapid commercial and state adoption. Beijing has championed a whole-of-nation push on domestic adoption via “AI+” policies. Even though China's AI models are slightly less capable than US models, CCP efforts to accelerate adoption have paid off. China is thus able to deploy near-frontier AI capabilities more advantageously across economic, military, and technological domains, shifting the balance of power in China’s favor.
-
-The CCP’s AI-enabled cyber force is a serious threat. The CCP’s integration of AI-enabled cyber capabilities within an already advanced cyber force has sustained the PLA as a menacing cyber competitor. PLA cyber actors have gained additional access to critical and dual-use infrastructure in the US and most countries around the world, enabling them to disrupt critical national security and societal functions. As AI is incorporated deeper into our most critical systems, democracies enjoy no security advantages over China in AI, despite having developed the technology first.
-
-Beijing is winning in global adoption on cost and on-prem flexibility. Huawei and Alibaba data centers are globally prevalent, especially in, but not limited to, lower cost markets in the Global South. These data centers scale on older chips, which China is able to export because it can serve its domestic market with a combination of US chips purchased with an export license, smuggled into China, or remotely accessed in overseas data centers. They host second-tier, but cheaper and still effective models produced by PRC labs. Similar to the Huawei playbook of being cheap and “good enough,” China’s near-frontier models and hardware support a non-trivial and rapidly growing segment of the global economy. This infrastructure advantage gives CCP leadership significant influence over those markets.
-
-Ensuring democracies lead
-
-To ensure we land in scenario one, we support the following areas of policy action.
-
-Close the loopholes: Smuggled chips, foreign data center access, and SME.Today, PRC labs benefit from access to export-controlled American chips viasmugglingandforeign data centers, and gaps in SME controls accelerate their self-sufficiency efforts. Tightening controls and ramping upenforcement budgetscan help close these loopholes that prop up the CCP’s AI ecosystem. It would lower China’s compute ceiling and correspondingly slow their AI advances, thus sustaining and expanding democracies’ AI lead. Note that a lower compute ceiling could also materially impair distillation attacks, as AI labs in China still require a minimum threshold of compute to illicitly distill effectively.
-
-Defend our innovations: Restrict model access and deter distillation attacks.Policymakers in Congress and the executive branch can continue to support policy actions to punish and disincentivize distillation attacks from PRC labs, while also taking steps to facilitate US labs’ ability to detect and prevent distillation attacks on its own. These could include a legislative clarification that distillation attacks are illegal, and efforts to facilitate threat intel and technical sharing between peer American labs as well as with the US Government. Curbing this behavior can materially extend a democratic lead in the coming months and years.
-
-Champion the export of American AI.As public and commercial sectors around the world increasingly adopt AI, the Trump administration should continue its efforts topromote the global adoptionof trusted AI hardware and models developed and shaped by democratic principles. Locking in trusted American infrastructure now denies the CCP’s AI ecosystem the global footholds it needs to compete on cost and adoption in the future.
-
-America and its allies have developed both the world’s most capable frontier AI models and the world’s most advanced inputs to AI. This has provided a substantial advantage. If our superior access to that technology is defended, that advantage can be extended. But it will be lost if it is given directly to our competitors. The decisions made by policymakers this year will determine the future of transformative AI. We support those working to ensure that American and allied democracies are winning in 2028.
-
-In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
-
-Agentic coding and persistent returns to expertise
-
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
-
-It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re releasing a new paper that explains our views on the competition on AI between the US and China.
-
-It’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon becomepowerful enoughto be used to repress citizens at unprecedented scale, and even to alter the balance of poweramong nations. And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—and determine whether and how those threats materialize. It’s with this in mind that we outline what’s required to ensure America stays ahead.
-
-The most important ingredient for developing AI is access to the computer chips on which the models are trained (or “compute”). Since the most capable chips are developed by American companies, the US government currently limits China’s supply by enforcing tight export controls on them. Recent history suggests these controls have been incredibly successful. In fact, AI labs in China have only built models close in intelligence to America’s because of their talent, their knack for exploiting loopholesaroundthese export controls, and theirlarge-scale distillation attacksthat illicitly extract the innovations of American companies.
-
-In this post, we present two scenarios for what the world might look like in 2028, when we expect transformative AI systems to have arrived.
-
-In the first scenario, America has successfully defended its compute advantage. Policymakers have acted to tighten export controls further, disrupt China’s distillation attacks, and further accelerate democracies’ adoption of AI. In this world, democracies set the rules and norms around AI. It’s also in this scenario that we’re most likely to successfully engage with China on safety, which we’re supportive of to the extent this is possible.
-
-In the second scenario, America has chosen not to act. Policymakers have not tightened loopholes on the CCP’s access to compute, and AI firms in China have quickly taken advantage—catching up to the frontier and even overtaking America. In this world, AI norms and rules are shaped by authoritarian regimes, and the best models enable automated repression at scale. It will be no solace that this authoritarian triumph has happened on the back of American compute.
-
-America and its allies approach AI competition from a position of great strength. The tools for AI dominance have been built by an exceptionally innovative ecosystem of companies in democratic nations. Our past success means that our present task is largely to avoid squandering our advantage: to decide not to make it easier for the CCP to catch up.
-
-Two scenarios for the US and China in 2028
-
-Democracies, not authoritarian regimes, must lead in AI development and deployment. These countries and political systems can shape the rules and norms that govern these systems.
-
-Democracies currently hold a substantial lead in compute, the most important ingredient for developing frontier AI models. That lead exists thanks to American and allied innovation, and to bipartisan US export controls that defend those innovations. But on model intelligence, AI labs in the People’s Republic of China (PRC), under the jurisdiction and control of the Chinese Communist Party (CCP), are not far behind. We focus on the CCP as it is the regime that is most able to use frontier AI to cement authoritarianism; we do not seek to undermine the interests or ingenuity of the Chinese people. Already, the CCP is using AI to censor speech, repress dissidents, hack governments and corporations across the world, and strengthen the People’s Liberation Army (PLA).
-
-AI labs in China have world-class talent. It is compute constraints that limit their ability to keep up. Labs in China have remained close by exploiting loopholes in US export control policies, and by carrying out large-scale distillation attacks that harvest the innovations of US models in order to mimic their capabilities.
-
-With the supply of compute expanding rapidly, and with AI being used increasingly to augment the training of new AI models, we’re entering a period of great acceleration in AI capabilities. The “country of geniuses in a data center”—the level of intelligence we associate with transformative AI—may be close at hand. This acceleration makes policy action more urgent. To date, by allowing export control evasions and distillation attacks, we have let the CCP’s AI efforts trail closely up the frontier curve. But if the US and its allies act now to address both issues, it may be possible to lock in a 12-24 month lead in frontier capabilities. A lead that large by 2028 would be enormously advantageous. Such a lead would also augment efforts to engage with AI experts in China on AI safety and governance, which we support. But the window of opportunity to lock in that lead will not necessarily remain open for long.
-
-Here, we present two potential scenarios for the state of US-China AI competition in 2028. The first scenario is one in which democracies have established a commanding lead in model intelligence, adoption, and global distribution. This scenario can be achieved if policymakers act now to tighten controls on advanced compute to PRC labs, disrupt their efforts to distill America’s best AI models, and accelerate democracies’ adoption of AI.
-
-The second scenario is one in which the CCP is competitive at the near-frontier. This scenario happens if policymakers don’t build on our existing lead, or if they loosen restrictions on access to compute for PRC firms.
-
-Many in Congress and the Trump administration have championed export controls, curbing distillation attacks, and exporting American AI. In advancing these policies, we are hopeful that democracies can secure a commanding lead by 2028, and avoid a destabilizing neck-and-neck race with the CCP two years from now.
-
-The imperatives of staying ahead
-
-We expect frontier AI to have transformational economic and societal impacts in the coming years, as described inMachines of Loving GraceandThe Adolescence of Technology. Our mission is to ensure that humanity navigates the transition to transformative AI safely and beneficially. We believe that a successful transition can lead to astonishing breakthroughs in medicine, invention, and economic growth.
-
-The threat of authoritarian AI
-
-Whether that transition goes well depends in part on where the most capable systems are built first. The political systems in which the most advanced AI is created will shape the rules and norms for how the technology is developed and deployed. In turn, those rules and norms will help determine whether the technology is safe, whose security it protects, and whose interests it ultimately serves. We believe that responsibility should rest with democratically elected governments, not authoritarian regimes.
-
-If the frontier is set by regimes that treat AI as an instrument of repression, military advantage over democracies, and domestic control, thetransitionis less likely to go well, for those regimes’ own citizens or anyone else.
-
-Historically, the reach of authoritarian rule has been limited by its dependence on human enforcers to carry out surveillance and repression. Powerful AI systems may remove that dependency, enabling automated repression on a far greater scale. For that reason, the prospect of the CCP leading in AI is among the greatest threats to a successful transition.
-
-The CCP holds enormous power and influence at the helm of China’s economy, military, and the largest authoritarian state structure on Earth. It is also theonly country besides the USwith well-resourced, highly talented AI labs chasing the frontier. Furthermore, the CCP ishighly motivatedto establish China as the leading AI power. Beijing haspouredtens of billions of dollars into China’s AI and semiconductor sectors.
-
-Already, theCCP uses AI systemsto censor speech, enforce draconian policies on ethnic minorities, andhackmajor corporations and government agencies. The CCP’s vision of AI-enabled techno-authoritarianism has been extensivelydocumentedin Xinjiang, where state security agencies havesystematically deployedfacial recognition technology, biometric data collection, and communications surveillance, enabling repression at a scale that humans alone could not achieve. Frontier AI systems will make those capabilities cheaper to maintain, far more pervasive, and more sophisticated. The CCP’sexportof these technologies has enabled autocrats in other countries to more effectively stifle dissent,entrenchingauthoritarianism. A CCP-led AI frontier could dramatically strengthen repression around the world.
-
-AI is a dual-use technology
-
-Frontier AI will shape the future military balance. CCP leadership already operates on that premise, and is building its military for an AI-enabled battlefield. PLA strategists view the“intelligentization”of their military forces as the means with which tocatch up and eventually surpassthe US military. The PLA is alreadyprocuringcommercially developed Chinese AI systems for military use, including DeepSeek modelsdeployedto coordinate swarms of unmanned vehicles and enable cyber offense capabilities. These capabilities will not diffuse slowly. When a new model reaches a new capability in autonomous targeting, vulnerability discovery, or swarm coordination, for example, the regime that controls it canput it onto the field in weeks, not years.
-
-The risk compounds because frontier AI will be anaccelerant for other critical technologies. Advanced AI models will be able to compress research and development (R&D) cycles in semiconductors, biotech, and advanced materials. A lead in frontier AI will enable a widening lead across the full national security technology stack.
-
-If a PRC AI lab had developed a model at the level ofClaude Mythos Previewbefore an American one, the CCP would have had first access to a system that can autonomouslydiscover and chainsoftware vulnerabilities, which it could have used to furtherpenetratecritical American infrastructure. Future models will be exponentially more capable, and therefore have commensurately greater implications for the national security interests of the US and other democracies.
-
-Neck-and-neck competition risks disincentivizing responsible AI
-
-A neck-and-neck race between American and Chinese AI labs could make industry and government-led safety and governance efforts more difficult, and less likely. If PRC labs are either close behind or at par with models in the US, private AI firms in the US and China are likely to feel more pressure to release new models and products faster, without taking prudent pre-deployment safety measures. Governments could become reluctant to enact policies to encourage responsible AI development and deployment, for fear of falling behind.
-
-While increasing numbers of researchers in China’s AI labs and policy community are concerned with AI safety risks, this trend has not translated into safety practices on par with labs in the US.As of last year, only 3 out of 13 top Chinese AI labs published any safety evaluation results, and none disclosed evaluations for Chemical, Biological, Radiological, and Nuclear (CBRN) risks. TheCenter for AI Standards and Innovation(CAISI) found that DeepSeek’s R1-0528 model complied with 94% of overtly malicious requests under a common jailbreaking technique, compared with 8% for US reference models. This pattern has continued in more recent releases. For example,an independent assessmentof Moonshot’s Kimi K2.5 published in April found that the model failed to refuse CBRN-related requests at a far higher rate than US frontier models. Compounding the problem, labs in China often release dual-use capable models as open-weight. Once a model is open-weight, safeguards that do exist can be removed, making the model available to any state or non-state actor to use for malicious purposes, including the cyber and CBRN misuse those safeguards were built to prevent.
-
-Our policy objective: creating and maintaining a lead for democracies
-
-We support policies in the US and other countries that build and maintain a safe, near-term lead over the CCP in intelligence, domestic adoption, and global distribution. This lead is key to avoiding authoritarian AI leadership and protecting the national security interests of the US and other democracies. Doing so is a fundamental prerequisite to ensuring that democratic states can achieve favorable terms with authoritarian states.
-
-Anthropic deeply respects the Chinese people and the accomplishments of the Chinese AI community. We hope for peaceful relations between China and the world. Our concerns are specifically with the risks to humanity posed by any powerful authoritarian political systems with access to frontier AI systems.
-
-Opportunities for engagement on AI safety
-
-Anthropic supports international AI safety dialogue with AI experts in China, when possible. The world has a vested interest in safe AI, regardless of where it is developed and deployed. There are a range of risks that could emerge from frontier AI systems requiring engagement between the US and China. Efforts that identify shared challenges and advance ideas to prepare for and mitigate these risks are in our shared interests.
-
-The prospects for productive engagement are best when the USmaintainsa large capabilities advantage. Responsibly building a lead in developing and deploying the most advanced AI augments our ability to influence AI safety in China and elsewhere.
-
-The Mythos Preview wake-up call
-
-Mythos Preview, a model that we released to select partners as part ofProject Glasswingin April, signals the arrival of an acceleration period that makes policy action even more urgent. With access to the model,Firefoxwas able to fix more security bugs last month than it had in all of 2025, andalmost 20 times morethan its monthly average security bug fixes in 2025. In response to the model, onePRC cybersecurity analystwrote that China is “still sharpening our swords while the other side has suddenly mounted a fully automatic Gatling gun.”
-
-Frontier AI capabilities will quickly approach the “country of geniuses in a datacenter” portrayal of transformative AI. This acceleration will be driven by thelogic of scaling laws, in which model performance improves predictably with increases in computing power and data inputs, and by AI itselfincreasinglybeing used to accelerate the development of new models.
-
-There is a high likelihood that we will look back on 2026 as the breakaway opportunity for American AI. American labs have the most advanced AI models, alarge leadin both the quantity and quality of the advanced AI chips required to push the frontier, and a colossal capital advantage from revenues and financing to back the necessary investments to achieve it. PRC labs have real strengths: world-class, innovative talent, abundant and cheap energy, and plenty of data. All are requirements for developing frontier intelligence. But they simply do not have sufficient domestic compute to compete, nor do they have the revenues and capital to fund it.
-
-Four fronts of the competition
-
-The US and China are engaged in a competition for strategic advantage in frontier technologies like AI. Statements from bothBeijingandWashingtonreflect that view. Calling that competition a “race” can give the false impression that there is a finish line, after which one side will conclusively secure victory. Rather, the competition will be an ongoing contest for advantage, in which either democracies or authoritarian regimes successfully position themselves to shape the values, rules, and norms of an AI-enabled future.
-
-This competition is playing out on four fronts:
-
-Intelligence: which countries develop the most capable AI models.
-
-Domestic adoption: which countries integrate AI most effectively across commercial and public sectors.
-
-Globaldistribution: which countries deploy the global AI stack on which the world economy runs.
-
-Resilience: which countries sustain political stability through the economic transition.
-
-Intelligence is the most important of the four fronts. We anticipate that frontier model capabilities will drive the most consequential changes for geopolitical competition. Model capabilities are also a primary driver of market adoption and global distribution.
-
-But intelligence alone is not sufficient. If the CCP integrates near-frontier AI systems quicker and more effectively into China’s economy and the CCP security apparatus, and drives global adoption of subsidized, low-cost AI, then it could secure advantages over democracies that overcome an intelligence deficit. Beijing’sAI+ Initiativeand its focus on“embodied intelligence”accordingly put high priority on policies that advance the integration of frontier intelligence into their economy and state apparatuses. The Trump administration’sAI Action Plan, and its focus on “promoting the export of the American AI technology stack,” also speaks to the strategic advantage of driving global adoption.
-
-While we won’t focus on it in this essay, we believe resilience will be an important front of AI competition. Being able to sustain stability, cohesion, and good policymaking in this period will be a critical advantage, and a vulnerability for those who cannot.
-
-The state of the competition
-
-Compute—the advanced semiconductors needed to train and deploy frontier AI—is an essential input on each front of the competition described above. The race for global AI leadership is in large part a race for compute. For more than a decade, modelcapability has scaledwith compute, and themajority of performance gainsin AI capabilities have historically come from simply using more of it. Moreover, compute is needed to serve customers’ use of AI (also known as “inference” capacity), not just to train new models. Compute will be critical both for training the most intelligent models and for deploying them in commercial and national security spheres. Access to top talent, copious amounts of data, and critical algorithmic advances all matter to the race for intelligence—but each of those inputsis irrelevantif the compute is insufficient.
-
-Democracies are winning thecompetition for compute leadershiptoday. While some worry that export controls could accelerate the CCP’s own efforts to develop an advanced chip supply chain, little evidence suggests that China’s indigenization effortswill challengeUS and allied leadership in advanced compute technology. Beijing hasinvested enormous resourcesinto China’s chip sector, with major industrial policy initiatives like theMade in China 2025strategy and theChina Integrated Circuit Industry Investment Fundlaunched years before the imposition of export controls. Despite this state-backed investment, PRC AI labs and chipmakers remain stymied by US and allied export controls on advanced chips and chipmaking equipment.
-
-As a result, the compute gap appears to be widening. Ananalysisof Huawei and NVIDIA’s roadmaps found that Huawei will produce just 4% of NVIDIA’s aggregate compute in 2026 in total processing performance, and 2% in 2027. Moreover, NVIDIA represents only part of the US and allied compute ecosystem, withGoogleandAmazonramping up production of their own chips (TPUs and Trainium, respectively) to meet demand from American frontier AI labs and their customers.
-
-Further exacerbating their compute shortfalls, China has made little progress in many of the most technologically complexsegmentsof the semiconductor supply chain. Without access to extreme ultraviolet (EUV) technology, and even more so if policymakers can close loopholes on deep ultraviolet (DUV) technology and servicing and maintenance thereof, China’s chipmakers will remain unable to manufacture chips in sufficient quantity or quality to challenge US compute leadership. China’sinabilityto manufacture high-bandwidth memory at scale further exacerbates this gap. If the US strengthens its restrictions on the CCP’s ability to access US compute, one studyestimatesthat America will have access to roughly 11 times more compute than China’s AI sector.
-
-How democracies built the lead: commercial innovation and smart public policy
-
-There are two main reasons for the compute lead. The first is the incredible innovation of companies like NVIDIA, AMD, Micron, TSMC, Samsung, ASML, and others across democracies like Japan, South Korea, Taiwan, the Netherlands, and the US, who together have built the unique technologies in the world’s most advanced semiconductors. Today’s AI achievements would not be possible without the feats of engineering and decades of sustained R&D investments that contributed to these products.
-
-The second reason is forward-looking, decisive policy actionacross the last three presidential administrations. Bipartisan policy action has protected the US and allied innovation engine by restricting access to the US AI stack by PRC firms under the jurisdiction of the CCP. Our CEO haspubliclycommentedon theimportanceof export controls, for example. These controls have curbed the sale of the highest-end AI chips and semiconductor manufacturing equipment (SME) to China over the last several years, constraining China’s frontier AI development even as Beijing has poured enormous stateresourcesinto the sector. Without action to limit China’s access to US compute, the CCP would have had all the ingredients to develop AI at par or superior to America’s.
-
-Some observers worry that constraining access to compute will force AI labs in China to innovate on other axes, reducing the American lead. While PRC labs are innovating, these innovations are so far not sufficient to overcome their compute deficit. Algorithmic improvements are both a function and a multiplier of compute,not a substitute for it, and discovering those advances is itself a compute-intensive process: more compute enables labs to run more experiments, which enables labs to discover more algorithmic improvements. As frontier models increasingly conduct AI R&D themselves, that loop will tighten further, and frontier models will help build their own successors. In short, compute advantage compounds into algorithmic advantage, and from there into a durable lead in AI itself.
-
-Today, US frontier systems areestimatedto be at least several months ahead of the top models from PRC AI labs on intelligence, though these estimates are necessarily uncertain. Despite the attention paid to open-weight models from China, theirenterprise adoptionlags closed frontier models, and monetization concerns havesurfacedamong public investors. Moreover, AI labs in China seem to bemoving away from open source, now choosing to keep their best models proprietary.
-
-China’s own AI leaders confirm the impact of export controls, and the critical need for US chips. Executives at top PRC AI labs haveexpressed worriesthat China will fall further behind due to compute constraints. Top Chineselabscitecompute scarcity as a chief constraint to accelerating model capabilities, and they identifyexport controlsas the reason for this constraint. One executive of a China-based hyperscalercalledthe impact of supplying export-controlled US chips to China “huge, really huge,” adding that any supply gap severely impacts China’s AI development and dismissing concerns that importing U.S. chips would slow their self-sufficiency efforts. The primary voices in China suggesting export controls are futile seem to beCCP officialsandstate media, likely angling to influence US policymakers.
-
-How the CCP stays competitive: policy loopholes remain
-
-While export controls have been effective in providing today’s advantage, they have not gone far enough. Despite the CCP’s inability to manufacture enough advanced chips domestically or purchase them legally abroad, AI labs in China have been able to stay close on intelligence through two workarounds:illicit and evasive compute access, by smuggling AI chips directly into China and accessing offshore data centers, andillicit model access, through which they carry outdistillation attackson US frontier models and use those same models as tools to accelerate their own AI R&D.
-
-China’s evasion of US export controls is an open secret. For example, federal prosecutorschargeda Supermicro co-founder and two others with diverting $2.5 billion worth of servers containing advanced US chips to China. According toUS governmentandmediareports, DeepSeek trained its latest model on advanced US chips that are banned from sale to China. TheFinancial Timesreportedthat Alibaba and ByteDance now train their flagship models on export-controlled US chips in data centers located in Southeast Asia, a route current controls do not reach because US export law covers the sale of chips, not remote access to them.1The US export control system isstrugglingto prevent PRC AI labs’ access to advanced US-origin compute.
-
-Distillation attacks, in which China-based labs create thousands of fraudulent accounts to circumvent access controls on US AI models and systematically harvest their outputs to replicate frontier capabilities, are another illicit technique used by PRC labs to catch up to their US counterparts and blunt the impact of export controls. The practice allows labs based in China to free-ride on decades of foundational research, billions of dollars in US investment, and the work of thousands of the world’s best engineers that produced US frontier models. The result is near-frontier capability at a fraction of the cost, subsidized by the United States. It is systematic industrial espionage of a technology critical to long-term US national security interests.OpenAI,Google,Anthropic, and theFrontier Model Forumhave all publicly condemned the practice of distillation attacks.
-
-AI experts in China openly acknowledge distillation attacks’ scale and importance to China’s AI development. Arecent articlein a state-owned media outlet described distillation attacks on US models as the “back door” China’s AI labs depend on as a core part of their business model. Anex-ByteDance researchersaid that PRC AI labs use distillation as a shortcut to train models, allowing them to avoid investing into their own data pipelines.
-
-US policymakers have moved quickly to address this threat. The White House Office of Science and Technology Policypublished a memoon distillation attacks. Senior officials in theWhite House,Department of War, and members ofCongresshave also called attention to this problem. Recentlegislationfrom the House Foreign Affairs Committee to address distillation attacks passed out of committeeunanimously.
-
-If policymakers in the US and allied democracies act to close these two channels propping up China’s AI models—illicit and evasive compute access and illicit model access—then we have a potentially once-in-a-generation opportunity to secure our lead.
-
-Two scenarios for 2028
-
-Below, we describe two hypothetical future scenarios to help illustrate how policy actions taken today can shape where we are in 2028.
-
-Scenario one: America and our allies have a commanding and expanding lead
-
-America’s compute edge remains strong.Despite increased state support for China’s semiconductor industry, China’s chipmakers remain years behind their US and allied counterparts, stymied in part by their inability to access advanced SME tooling, servicing, and maintenance. The US-PRC compute gap is widening as increased US and allied chipmaking capacity comes online and as advanced chipmakers continue to innovate on more efficient and performant chips. In tandem, US policymakers have taken action to close loopholes in the US economic security toolkit, and efforts to smuggle chips into China and access export-controlled chips in data centers outside the country are increasingly frustrated by well-funded enforcement efforts.
-
-Consequently, US AI models are 12-24 months ahead on intelligence, and the lead is growing. A small number of AI labs lead at the frontier with the most intelligent, capable, and performant models. All are based in the US. The “country of geniuses in a data center” has become a reality across critical industries, including cybersecurity, finance, healthcare, and life sciences. When US frontier labs release new models in 2028 that achieve step-function advances in capabilities (similar to the relative impact of Mythos Preview in April 2026), China will not have access to similar AI capabilities until 2029 or 2030. This gives critical breathing room for democracies to set the rules and norms of frontier AI systems.
-
-American AI is the backbone of the global economy, driving new economic and scientific dynamism. The Trump administration's efforts to drive domestic AI adoption and promote the export of American AI are succeeding, and the resulting gains from the adoption of powerful AI both at home and abroad are driving unprecedented economic growth and technological advancements. Global adoption of US AI has skyrocketed. Democracies’ lead in capabilities and compute means that China’s AI firms do not compete for global market share outside of a narrow group of autocracies. The world’s top frontier AI systems are shaped by democratic values and make it more difficult for authoritarian states to use AI systems to infringe on rights and civil liberties.
-
-Cyber and other national security advantages expand. Public and private sector cyber operators and security professionals use advanced AI systems to reduce the attack surface in America and other democracies and blunt the CCP’s ability to gain and maintain cyber footholds in our systems, making our national security assets, IP, and communications networks more secure. The United States' overwhelming AI advantage is a powerful deterrent to aggression.
-
-A self-reinforcing cycle compounds democracies’ leadership.A commanding AI advantage makes the United States and its allies more attractive partners. That alignment expands both the market for American AI and the coalition setting global AI norms, which in turn promotes the development and deployment of AI systems that are safe, secure, and protective of civil liberties. The world’s top technical and scientific talent continues to gravitate to where the frontier is being built. The United States gains significant leverage with which to incentivize cooperation from Beijing on critical issues like AI governance, strategic competition, and trade. This cycle reinforces itself: the lead strengthens the coalition, the coalition strengthens the lead, the democracy-led international order is anchored through the transition to transformative AI.
-
-Scenario two: The CCP-controlled AI ecosystem is neck-and-neck
-
-AI developed and deployed in China is near-frontier on model intelligence. Despite a weak semiconductor production capacity, models trained by PRC AI labs are only a few months behind US models. Ongoing distillation attacks, overseas compute access, weak SME export enforcement, and a loosening of export controls on American semiconductors have assisted CCP efforts. Continued access to US frontier AI for AI R&D has also enabled AI labs in China to close the gap and approach parity with their US counterparts.
-
-Rapid commercial and state adoption. Beijing has championed a whole-of-nation push on domestic adoption via “AI+” policies. Even though China's AI models are slightly less capable than US models, CCP efforts to accelerate adoption have paid off. China is thus able to deploy near-frontier AI capabilities more advantageously across economic, military, and technological domains, shifting the balance of power in China’s favor.
-
-The CCP’s AI-enabled cyber force is a serious threat. The CCP’s integration of AI-enabled cyber capabilities within an already advanced cyber force has sustained the PLA as a menacing cyber competitor. PLA cyber actors have gained additional access to critical and dual-use infrastructure in the US and most countries around the world, enabling them to disrupt critical national security and societal functions. As AI is incorporated deeper into our most critical systems, democracies enjoy no security advantages over China in AI, despite having developed the technology first.
-
-Beijing is winning in global adoption on cost and on-prem flexibility. Huawei and Alibaba data centers are globally prevalent, especially in, but not limited to, lower cost markets in the Global South. These data centers scale on older chips, which China is able to export because it can serve its domestic market with a combination of US chips purchased with an export license, smuggled into China, or remotely accessed in overseas data centers. They host second-tier, but cheaper and still effective models produced by PRC labs. Similar to the Huawei playbook of being cheap and “good enough,” China’s near-frontier models and hardware support a non-trivial and rapidly growing segment of the global economy. This infrastructure advantage gives CCP leadership significant influence over those markets.
-
-Ensuring democracies lead
-
-To ensure we land in scenario one, we support the following areas of policy action.
-
-Close the loopholes: Smuggled chips, foreign data center access, and SME.Today, PRC labs benefit from access to export-controlled American chips viasmugglingandforeign data centers, and gaps in SME controls accelerate their self-sufficiency efforts. Tightening controls and ramping upenforcement budgetscan help close these loopholes that prop up the CCP’s AI ecosystem. It would lower China’s compute ceiling and correspondingly slow their AI advances, thus sustaining and expanding democracies’ AI lead. Note that a lower compute ceiling could also materially impair distillation attacks, as AI labs in China still require a minimum threshold of compute to illicitly distill effectively.
-
-Defend our innovations: Restrict model access and deter distillation attacks.Policymakers in Congress and the executive branch can continue to support policy actions to punish and disincentivize distillation attacks from PRC labs, while also taking steps to facilitate US labs’ ability to detect and prevent distillation attacks on its own. These could include a legislative clarification that distillation attacks are illegal, and efforts to facilitate threat intel and technical sharing between peer American labs as well as with the US Government. Curbing this behavior can materially extend a democratic lead in the coming months and years.
-
-Champion the export of American AI.As public and commercial sectors around the world increasingly adopt AI, the Trump administration should continue its efforts topromote the global adoptionof trusted AI hardware and models developed and shaped by democratic principles. Locking in trusted American infrastructure now denies the CCP’s AI ecosystem the global footholds it needs to compete on cost and adoption in the future.
-
-America and its allies have developed both the world’s most capable frontier AI models and the world’s most advanced inputs to AI. This has provided a substantial advantage. If our superior access to that technology is defended, that advantage can be extended. But it will be lost if it is given directly to our competitors. The decisions made by policymakers this year will determine the future of transformative AI. We support those working to ensure that American and allied democracies are winning in 2028.
-
-In January 2026, the Housepassed a bipartisan bill369–22 to close that loophole; the bill has not passed the Senate.
-
-Agentic coding and persistent returns to expertise
-
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/2028-ai-leadership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -2164,13 +1932,13 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -2251,13 +2019,13 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Natural Language Autoencoders: Turning Claude’s thoughts into text</title>
@@ -2337,13 +2105,13 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
 
 Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
@@ -2416,13 +2184,13 @@ To support further development and to enable other researchers to get hands-on e
 
 Find thecodeon GitHub.
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
-Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Vend: Phase two</title>
@@ -2530,13 +2298,13 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2641,13 +2409,13 @@ That is, similar to phase one, we didn’t add any new sophisticated guardrails 
 
 This might remind some readers of our discussion of the “spiritual bliss attractor state” from theClaude 4 system card(p. 63).
 
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
 Agentic coding and persistent returns to expertise
 
 Paving the way for agents in biology
-
-Measuring LLMs’ impact on N-day exploits
-
-In cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2657,7 +2425,7 @@ Get updates on our latest red-teaming research and findings.</div><hr style="mar
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -2755,107 +2523,10 @@ Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Societal Impacts</title>
-  <link>https://www.anthropic.com/research/team/societal-impacts</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Mon, 02 Dec 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-
-Sociotechnical alignment
-
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-
-Sociotechnical alignment
-
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
-
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
-
-What 81,000 people want from AI
-
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
-
-How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
-
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
-
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
-
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
-
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
-
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
-
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
-
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
-
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
-
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
-
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
-
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
-
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
-
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-
-Sociotechnical alignment
-
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
-
-Sociotechnical alignment
-
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
-
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
-
-What 81,000 people want from AI
-
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
-
-How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
-
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
-
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
-
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
-
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
-
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
-
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
-
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
-
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
-
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
-
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
-
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
-
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
-
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Economic Research</title>
   <link>https://www.anthropic.com/research/team/economic-research</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
@@ -2940,7 +2611,7 @@ Jan 15, 2026Economic ResearchAnthropic Economic Index report: Economic primitive
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -3032,6 +2703,168 @@ Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavi
 Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Frontier Red Team</title>
+  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
+  <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Fron...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Fron...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+We created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Societal Impacts</title>
+  <link>https://www.anthropic.com/research/team/societal-impacts</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
+  <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+
+What 81,000 people want from AI
+
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+
+How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
+
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
+
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+
+Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+
+What 81,000 people want from AI
+
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+
+How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
+
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
+
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+
+Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
