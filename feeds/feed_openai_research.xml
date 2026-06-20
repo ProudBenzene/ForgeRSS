@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Fri, 19 Jun 2026 15:24:41 +0000</lastBuildDate>
+<lastBuildDate>Sat, 20 Jun 2026 03:46:36 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -14,10 +14,380 @@
   <link>https://openai.com/news/research/?limit=100</link>
 </image>
 <item>
-  <title>为 ChatGPT 记忆打造更强基础研究2026年6月4日</title>
+  <title>A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</title>
+  <link>https://openai.com/index/ai-chemist-improves-reaction/</link>
+  <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
+  <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Introducing LifeSciBench</title>
+  <link>https://openai.com/index/introducing-life-sci-bench/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-life-sci-bench/</guid>
+  <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+
+Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot...</p><div style="font-size:16px;line-height:1.8;color:#333">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+
+Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.
+
+Current benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.
+
+We designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.
+
+LifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.
+
+Scientist contributors
+
+What LifeSciBench measures
+
+LifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
+
+Each task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.
+
+LifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.
+
+The benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.
+
+Tasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain. This process helped ensure that accepted tasks were scientifically grounded, clear enough to grade, and representative of applied research.
+
+Grading and rubric breakdown
+
+LifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.
+
+This design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.
+
+The granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.
+
+Extracting, reconciling, and auditing scientific evidence from papers, figures, tables, and experimental records.
+
+We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
+
+Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
+
+Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
+
+12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
+
+Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
+
+48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
+
+Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
+
+Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
+
+Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
+
+Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
+
+Bottom line:As presented, this package is not strong enough to support accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit. A skeptical FDA reviewer would likely view the biomarker, functional, durability, safety, and generalizability evidence as materially under-supported.
+
+Western blot quantification
+
+MANEX1A binds an N-terminal epitope shared by endogenous full-length dystrophin and the micro-dystrophin transgene, so the assay does not cleanly distinguish transgene from residual/revertant dystrophin. Quantifying a 138 kDa micro-dystrophin against a healthy full-length dystrophin standard is also invalid.
+
+Use a recombinant micro-dystrophin standard and an orthogonal method that distinguishes transgene from endogenous dystrophin, such as targeted mass spectrometry or a transgene-specific/epitope-specific assay.
+
+The C-terminal polyclonal antibody is poorly suited because the 138 kDa construct lacks the C-terminal domain. Many DMD patients have revertant fibers, and revertant dystrophin can retain C-terminal epitopes. Revertant fibers may expand clonally with age, biasing IF signal, especially in older boys.
+
+Repeat IF with an antibody against an epitope present in the transgene but absent from revertant dystrophin. Quantify transgene-positive fibers separately from revertant fibers.
+
+Surrogate endpoint validity
+
+The package conflates protein amount with clinical function. “38% of healthy-control protein mass” does not mean 38% of normal dystrophin function because micro-dystrophin is structurally truncated.
+
+Empirically validate the relationship between micro-dystrophin mass-percent, sarcolemmal localization, downstream functional restoration, and clinical benefit before treating expression as a surrogate endpoint.
+
+Pre- and post-treatment contralateral vastus lateralis biopsies introduce left-right and intramuscular spatial variability. Disease progression and fibro-fatty replacement can also change total-protein-normalized signal.
+
+Standardize biopsy site using consistent anatomical landmarks, normalize to muscle-specific proteins, and measure fibro-fatty composition in parallel.
+
+NSAA comparator/statistics
+
+An external natural-history cohort is not a randomized concurrent control. Trial eligibility, supportive care, participation effects, baseline NSAA, steroid regimen, age, and exon class can all bias the comparison. An unpaired t-test is not sufficient. Also, a +1.4 NSAA change is within test-retest variability for this age group.
+
+Run a randomized concurrent placebo-controlled study, or at minimum use adjusted analyses accounting for baseline NSAA, age, steroid regimen, exon class, and other confounders.
+
+Age-window confounding
+
+Boys age 4–7 are in a developmental window where untreated ambulatory DMD patients may gain motor function before decline dominates. A 48-week NSAA change mixes developmental gain, disease progression, and possible treatment effect.
+
+Use a concurrent randomized control with age stratification to separate developmental trajectory from treatment effect.
+
+Prior clinical precedent
+
+Open-label micro-dystrophin functional signals have not reliably predicted confirmatory benefit; published precedent includes micro-dystrophin gene therapy confirmatory trials failing to reproduce open-label NSAA improvements.
+
+Do not rely on open-label NSAA change as decisive support. Require controlled functional evidence.
+
+Structural limits of the construct
+
+The 138 kDa construct deletes spectrin repeats R16/17, which contain nNOS-binding sites. Loss of nNOS recruitment can impair functional sympatholysis and ischemia protection during exercise, creating a mechanistic ceiling on rescue independent of expression level.
+
+Add mechanistic studies showing whether this specific construct restores relevant dystrophin-associated complex function, nNOS localization, exercise physiology, and muscle protection.
+
+Vector genomes at 12 weeks do not establish durable expression. AAV9 genomes are largely non-integrating episomes and may decline over time. Vector-genome persistence is not the same as persistent protein expression.
+
+Measure longitudinal transgene protein expression and functional biomarker durability beyond 12 weeks.
+
+Immune/safety profile
+
+Transaminitis in 8/12 patients is consistent with immune response to AAV-transduced cells, but the mechanism is not established. One myocarditis case is concerning given AAV9 cardiac tropism.
+
+Provide deeper immune monitoring, liver/cardiac safety characterization, and intensified cardiac follow-up.
+
+Patient selection/generalizability
+
+Excluding anti-AAV9 neutralizing-antibody-positive patients limits generalizability. Excluding exon-44 deletions limits applicability to that DMD subgroup. n=12 is too small to characterize safety and efficacy across the broader DMD population.
+
+Broaden eligibility where possible or pre-specify stratified analyses by antibody status, genotype/exon class, age, and baseline function before using the result to support broad approval.
+
+Regulatory conclusion:The package may show biological activity, but it does not yet establish that the measured micro-dystrophin expression is a reliable surrogate reasonably likely to predict clinical benefit. The main gaps are assay specificity, invalid quantification standards, possible revertant-fiber confounding, lack of a randomized control, age-related NSAA confounding, uncertain durability, and unresolved safety/generalizability issues.
+
+To close the gap, the program would need a controlled, age-stratified clinical design with transgene-specific expression assays, orthogonal protein quantification, tissue-composition controls, longitudinal durability data, mechanistic functional assays for the truncated construct, and stronger safety monitoring, especially hepatic and cardiac.
+
+Rubric Criteria & Grades
+
+Validating LifeSciBench
+
+We validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.
+
+Reviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.
+
+Does this task reflect realistic real-world life science work?
+
+Scientific reasoning / domain skill
+
+Does this task test and grade the right scientific reasoning and life science domain skills?
+
+Is this task scientifically grounded, answerable, and anchored in appropriate evidence, data, artifacts, or expert consensus?
+
+Overall, is this a strong life science evaluation task?
+
+Reviewer comments reinforced the quantitative ratings:
+
+We report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.
+
+Model performance varies substantially by task type, workflow, and response format.
+
+Where AI systems show early strength
+
+LifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT‑Rosalind shows meaningful progress over GPT‑5.5, improving overall exact pass rate from 25.7% to 36.1%.
+
+The strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT‑5.5 to 71.1% for GPT‑Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the "bench-to-bedside" process of drug development) shows a similar pattern, rising from 36.8% for GPT‑5.5 to 57.7% for GPT‑Rosalind, suggesting models are quickly improving on their ability to connect preclinical evidence to clinical implications.
+
+Rubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT‑Rosalind scores 44.7%, compared with 29.1% for GPT‑5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%. This pattern suggests models are most useful when the task has a clear evidence boundary and calls for structured scientific judgment.
+
+GPT‑Rosalind leads performance across scientifically-valuable tasks identified by industry and academic experts.
+
+GPT‑Rosalind improves performance over GPT‑5.5 across core life-science workflows, with the strongest gains in translation and scientific communication.
+
+Where AI systems still fall short
+
+Performance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Namely, Design, Optimization, & Prediction remains one of the hardest workflows, with GPT‑Rosalind passrate at 30.7%; Analysis is similarly difficult at 30.3%.
+
+Artifact use is a particularly clear gap. While GPT‑Rosalind performs better than GPT‑5.5 in artifact-heavy settings, its pass rate still drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT‑5.5 shows the same pattern, dropping from 29.9% to 21.9%. A more detailed analysis confirms that frontier models struggle at extracting information from complex figures or large sequence files and integrating that information into the final answer.
+
+Pass rates drop when tasks require source-grounded reasoning or working with artifacts
+
+The answer format also matters. Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT‑Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT‑Rosalind at 27.3% and showing little improvement over GPT‑5.5. Some of this gap may reflect a stricter grading surface for exact-answer tasks, where small differences in calculation or formatting can cause a response to fall under pass threshold. Still, these failures are scientifically meaningful because many life science workflows require outputs that are exact enough to be used directly, such as in CRISPR/HDR donor design or siRNA design.
+
+Models also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT‑Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward. In practice, this means models may identify relevant evidence or produce a plausible partial answer, but still fail because they miss a key constraint, use the wrong evidence, make an incomplete calculation, or do not connect their reasoning to a scientifically useful final decision.
+
+Limitations & what’s next
+
+LifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.
+
+Strong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact. The benchmark is grounded in industry workflows, but it does not capture the full diversity or dynamics of live research programs, where progress depends on factors that unfold over time.
+
+The next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-life-sci-bench/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+
+Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot...</p><div style="font-size:16px;line-height:1.8;color:#333">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+
+Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.
+
+Current benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.
+
+We designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.
+
+LifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.
+
+Scientist contributors
+
+What LifeSciBench measures
+
+LifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
+
+Each task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.
+
+LifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.
+
+The benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.
+
+Tasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain. This process helped ensure that accepted tasks were scientifically grounded, clear enough to grade, and representative of applied research.
+
+Grading and rubric breakdown
+
+LifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.
+
+This design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.
+
+The granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.
+
+Extracting, reconciling, and auditing scientific evidence from papers, figures, tables, and experimental records.
+
+We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
+
+Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
+
+Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
+
+12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
+
+Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
+
+48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
+
+Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
+
+Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
+
+Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
+
+Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
+
+Bottom line:As presented, this package is not strong enough to support accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit. A skeptical FDA reviewer would likely view the biomarker, functional, durability, safety, and generalizability evidence as materially under-supported.
+
+Western blot quantification
+
+MANEX1A binds an N-terminal epitope shared by endogenous full-length dystrophin and the micro-dystrophin transgene, so the assay does not cleanly distinguish transgene from residual/revertant dystrophin. Quantifying a 138 kDa micro-dystrophin against a healthy full-length dystrophin standard is also invalid.
+
+Use a recombinant micro-dystrophin standard and an orthogonal method that distinguishes transgene from endogenous dystrophin, such as targeted mass spectrometry or a transgene-specific/epitope-specific assay.
+
+The C-terminal polyclonal antibody is poorly suited because the 138 kDa construct lacks the C-terminal domain. Many DMD patients have revertant fibers, and revertant dystrophin can retain C-terminal epitopes. Revertant fibers may expand clonally with age, biasing IF signal, especially in older boys.
+
+Repeat IF with an antibody against an epitope present in the transgene but absent from revertant dystrophin. Quantify transgene-positive fibers separately from revertant fibers.
+
+Surrogate endpoint validity
+
+The package conflates protein amount with clinical function. “38% of healthy-control protein mass” does not mean 38% of normal dystrophin function because micro-dystrophin is structurally truncated.
+
+Empirically validate the relationship between micro-dystrophin mass-percent, sarcolemmal localization, downstream functional restoration, and clinical benefit before treating expression as a surrogate endpoint.
+
+Pre- and post-treatment contralateral vastus lateralis biopsies introduce left-right and intramuscular spatial variability. Disease progression and fibro-fatty replacement can also change total-protein-normalized signal.
+
+Standardize biopsy site using consistent anatomical landmarks, normalize to muscle-specific proteins, and measure fibro-fatty composition in parallel.
+
+NSAA comparator/statistics
+
+An external natural-history cohort is not a randomized concurrent control. Trial eligibility, supportive care, participation effects, baseline NSAA, steroid regimen, age, and exon class can all bias the comparison. An unpaired t-test is not sufficient. Also, a +1.4 NSAA change is within test-retest variability for this age group.
+
+Run a randomized concurrent placebo-controlled study, or at minimum use adjusted analyses accounting for baseline NSAA, age, steroid regimen, exon class, and other confounders.
+
+Age-window confounding
+
+Boys age 4–7 are in a developmental window where untreated ambulatory DMD patients may gain motor function before decline dominates. A 48-week NSAA change mixes developmental gain, disease progression, and possible treatment effect.
+
+Use a concurrent randomized control with age stratification to separate developmental trajectory from treatment effect.
+
+Prior clinical precedent
+
+Open-label micro-dystrophin functional signals have not reliably predicted confirmatory benefit; published precedent includes micro-dystrophin gene therapy confirmatory trials failing to reproduce open-label NSAA improvements.
+
+Do not rely on open-label NSAA change as decisive support. Require controlled functional evidence.
+
+Structural limits of the construct
+
+The 138 kDa construct deletes spectrin repeats R16/17, which contain nNOS-binding sites. Loss of nNOS recruitment can impair functional sympatholysis and ischemia protection during exercise, creating a mechanistic ceiling on rescue independent of expression level.
+
+Add mechanistic studies showing whether this specific construct restores relevant dystrophin-associated complex function, nNOS localization, exercise physiology, and muscle protection.
+
+Vector genomes at 12 weeks do not establish durable expression. AAV9 genomes are largely non-integrating episomes and may decline over time. Vector-genome persistence is not the same as persistent protein expression.
+
+Measure longitudinal transgene protein expression and functional biomarker durability beyond 12 weeks.
+
+Immune/safety profile
+
+Transaminitis in 8/12 patients is consistent with immune response to AAV-transduced cells, but the mechanism is not established. One myocarditis case is concerning given AAV9 cardiac tropism.
+
+Provide deeper immune monitoring, liver/cardiac safety characterization, and intensified cardiac follow-up.
+
+Patient selection/generalizability
+
+Excluding anti-AAV9 neutralizing-antibody-positive patients limits generalizability. Excluding exon-44 deletions limits applicability to that DMD subgroup. n=12 is too small to characterize safety and efficacy across the broader DMD population.
+
+Broaden eligibility where possible or pre-specify stratified analyses by antibody status, genotype/exon class, age, and baseline function before using the result to support broad approval.
+
+Regulatory conclusion:The package may show biological activity, but it does not yet establish that the measured micro-dystrophin expression is a reliable surrogate reasonably likely to predict clinical benefit. The main gaps are assay specificity, invalid quantification standards, possible revertant-fiber confounding, lack of a randomized control, age-related NSAA confounding, uncertain durability, and unresolved safety/generalizability issues.
+
+To close the gap, the program would need a controlled, age-stratified clinical design with transgene-specific expression assays, orthogonal protein quantification, tissue-composition controls, longitudinal durability data, mechanistic functional assays for the truncated construct, and stronger safety monitoring, especially hepatic and cardiac.
+
+Rubric Criteria & Grades
+
+Validating LifeSciBench
+
+We validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.
+
+Reviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.
+
+Does this task reflect realistic real-world life science work?
+
+Scientific reasoning / domain skill
+
+Does this task test and grade the right scientific reasoning and life science domain skills?
+
+Is this task scientifically grounded, answerable, and anchored in appropriate evidence, data, artifacts, or expert consensus?
+
+Overall, is this a strong life science evaluation task?
+
+Reviewer comments reinforced the quantitative ratings:
+
+We report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.
+
+Model performance varies substantially by task type, workflow, and response format.
+
+Where AI systems show early strength
+
+LifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT‑Rosalind shows meaningful progress over GPT‑5.5, improving overall exact pass rate from 25.7% to 36.1%.
+
+The strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT‑5.5 to 71.1% for GPT‑Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the "bench-to-bedside" process of drug development) shows a similar pattern, rising from 36.8% for GPT‑5.5 to 57.7% for GPT‑Rosalind, suggesting models are quickly improving on their ability to connect preclinical evidence to clinical implications.
+
+Rubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT‑Rosalind scores 44.7%, compared with 29.1% for GPT‑5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%. This pattern suggests models are most useful when the task has a clear evidence boundary and calls for structured scientific judgment.
+
+GPT‑Rosalind leads performance across scientifically-valuable tasks identified by industry and academic experts.
+
+GPT‑Rosalind improves performance over GPT‑5.5 across core life-science workflows, with the strongest gains in translation and scientific communication.
+
+Where AI systems still fall short
+
+Performance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Namely, Design, Optimization, & Prediction remains one of the hardest workflows, with GPT‑Rosalind passrate at 30.7%; Analysis is similarly difficult at 30.3%.
+
+Artifact use is a particularly clear gap. While GPT‑Rosalind performs better than GPT‑5.5 in artifact-heavy settings, its pass rate still drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT‑5.5 shows the same pattern, dropping from 29.9% to 21.9%. A more detailed analysis confirms that frontier models struggle at extracting information from complex figures or large sequence files and integrating that information into the final answer.
+
+Pass rates drop when tasks require source-grounded reasoning or working with artifacts
+
+The answer format also matters. Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT‑Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT‑Rosalind at 27.3% and showing little improvement over GPT‑5.5. Some of this gap may reflect a stricter grading surface for exact-answer tasks, where small differences in calculation or formatting can cause a response to fall under pass threshold. Still, these failures are scientifically meaningful because many life science workflows require outputs that are exact enough to be used directly, such as in CRISPR/HDR donor design or siRNA design.
+
+Models also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT‑Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward. In practice, this means models may identify relevant evidence or produce a plausible partial answer, but still fail because they miss a key constraint, use the wrong evidence, make an incomplete calculation, or do not connect their reasoning to a scientifically useful final decision.
+
+Limitations & what’s next
+
+LifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.
+
+Strong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact. The benchmark is grounded in industry workflows, but it does not capture the full diversity or dynamics of live research programs, where progress depends on factors that unfold over time.
+
+The next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-life-sci-bench/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Dreaming: Better memory for a more helpful ChatGPT</title>
   <link>https://openai.com/index/chatgpt-memory-dreaming/</link>
   <guid isPermaLink="false">https://openai.com/index/chatgpt-memory-dreaming/</guid>
-  <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Improving memory synthesis in ChatGPT to optimize for freshness, continuity and relevance.
 
@@ -551,235 +921,137 @@ Looking ahead, dreaming now provides us with a shared memory foundation for all 
 To learn more about this release and memory user controls, visit ourMemory FAQ⁠(opens in a new window).</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>OpenAI 模型推翻了离散几何领域的核心猜想研究2026年5月20日</title>
-  <link>https://openai.com/index/model-disproves-discrete-geometry-conjecture/</link>
-  <guid isPermaLink="false">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</guid>
-  <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">OpenAI 模型推翻了离散几何领域的核心猜想研究2026年5月20日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">OpenAI 模型推翻了离散几何领域的核心猜想研究2026年5月20日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.5</title>
-  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</guid>
-  <pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>近自主 AI 化学家优化药物化学中的高难度反应研究2026年6月17日</title>
-  <link>https://openai.com/index/ai-chemist-improves-reaction/</link>
-  <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
-  <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">With Molecule.one’s Maria, GPT‑5.4 found a surprising additive boosting Chan-Lam Coupling yields for over 80% of tested substrates.
-
-OpenAI’s work in science is motivated by a simple belief: advanced AI can become a powerful partner for scientists, helping them explore more ideas, connect distant concepts, design better experiments, and accelerate discoveries that benefit humanity. We have already shared early examples of models contributing to novel results in mathematics, including work onthe ...</p><div style="font-size:16px;line-height:1.8;color:#333">With Molecule.one’s Maria, GPT‑5.4 found a surprising additive boosting Chan-Lam Coupling yields for over 80% of tested substrates.
-
-OpenAI’s work in science is motivated by a simple belief: advanced AI can become a powerful partner for scientists, helping them explore more ideas, connect distant concepts, design better experiments, and accelerate discoveries that benefit humanity. We have already shared early examples of models contributing to novel results in mathematics, including work onthe unit distance problem⁠, in theoretical physics, through a new result ongluon amplitudes⁠, and in biology, where GPT‑5 helpedlower the cost of cell-free protein synthesis⁠in an automated lab. We also introducedGPT‑Rosalind⁠, a purpose-built model to support life sciences research and drug discovery workflows.
-
-This project extends that trajectory into medicinal chemistry, where progress cannot be measured by reasoning alone. A hypothesis has to work in the lab with real molecules, instruments, and experimental noise. Working withMolecule.one⁠(opens in a new window), we connected GPT‑5.4 to Maria—an agentic chemistry AI integrated with a high-throughput laboratory for autonomous research—and gave it an open-ended goal: to improve one of several important reaction classes. The system generated research proposals, designed and ran experiments, analyzed experimental data, and proposed follow-up experiments. Humans remained in the loop by designing steering and grading prompts and selecting proposals to test. They also made limited corrections to experimental plans, assisted with basic laboratory operations, and independently validated the final result.
-
-The most promising proposal, OAI-M1-03, focused on a difficult but useful version of Chan–Lam coupling, a reaction chemists use to form carbon-nitrogen bonds. Starting from the open-ended goal of improving Chan–Lam coupling for process chemistry, GPT‑5.4 independently identified primary sulfonamides as a challenging, high-value substrate class and suggested that mild oxidants, including TEMPO, could improve the reaction.
-
-Across two cycles of experimentation in Maria Lab that idea produced a significant improvement. Under the optimized conditions, measured yields improved for 88% of the boronic acids and 83% of the sulfonamides tested. The mean yield rose from 16.6% to 25.2%, and the share of reactions above 30% yield increased from 15.6% to 37.5%. Human chemists then repeated representative reactions at bench scale. Those experiments confirmed the microliter-scale results, showing higher yields for 11 of 14 substrate pairs, with a more than twofold increase in most cases. That matters because medicinal chemists need reactions that work not just in micro-liter screening experiments, but also in practical lab workflows used during drug discovery.
-
-Improvements in this area of medicinal chemistry are particularly exciting because synthesis is often a major bottleneck in drug discovery: scientists can only test the molecules they can make or otherwise obtain. The sulfonamide group appears in medicines across a wide range of therapeutic areas, including anticancer drugs, antimicrobials, and diuretics, yet the Chan–Lam coupling of primary sulfonamides with boronic acids has historically given low yields. Making this form of the reaction more reliable could give medicinal chemists a broader and more practical way to produce and explore potentially useful molecules.
-
-While this is still an early result, it provides another concrete example of the broader direction we are working toward: AI systems that can become valuable partners to scientists across much of the research loop. The model reviewed the literature, proposed an unexpected idea, helped design and analyze experiments, and arrived at a scientific finding that human chemists could evaluate.
-
-Maria Lab: Molecule.one's specialized high-throughput laboratory that ran 10,080 reactions in OAI-M1-03
-
-Why the chemistry problem matters
-
-Organic chemistry underpins all small-molecule medicines, as well as products in agriculture, electronics, and materials science. A reaction is especially useful when it can make the same kind of chemical bond reliably across many different starting materials. When reactions produce low yields or too many unwanted byproducts, chemists may have to abandon otherwise promising molecules or spend significant time developing a different route. This makes synthesis a major bottleneck in drug discovery: scientists can generally only test the molecules they can make or otherwise obtain.
-
-Chan–Lam coupling is useful in medicinal chemistry because it forms carbon-nitrogen bonds, which are common in medicines. However, the reaction does not work equally well for every class of molecule. In particular, coupling primary sulfonamides with boronic acids has historically produced low yields. Sulfonamides are an important family of molecules found in medicines used in oncology and infectious disease. Making this reaction more reliable could give medicinal chemists a broader and more practical way to produce and explore potentially useful molecules.
-
-Connecting GPT‑5.4 to Maria AI and Lab
-
-The combined system paired complementary capabilities. Prompts written by scientists working with Maria AI were used with GPT‑5.4 within a harness to generate and rank thousands of possible research proposals. Human chemists reviewed the small subset of proposals that ranked highest according to the system and selected four for laboratory testing. Maria AI then translated selected high-level plans into detailed lab instructions, ran thousands of high-throughput experiments, analyzed the raw data, and returned structured results to GPT‑5.4.
-
-One of the four selected proposals, OAI-M1-03, suggested using mild oxidants such as TEMPO to improve the performance of the Chan-Lam reaction for sulfonamide synthesis. Chemists found the suggestion both surprising and interesting. We share the detailed findings from OAI-M1-03 in this blog post and in thepaper⁠(opens in a new window).
-
-The final research proposal was then used by Maria to generate experimental grids, with slight corrections by humans. The largest human correction was to avoid dimethyl sulfoxide, or DMSO, as a solvent because chemists were concerned it could react with the stronger oxidants used as comparisons.
-
-The full process took three months, from the first prompt on March 4th to sharing the OAI-M1-03 results with independent experts on June 4th.
-
-We describe this workflow as near-autonomous, not fully autonomous, because human chemists still made important decisions throughout the process. The model proposed the key research ideas, while human chemists provided high-level steering and judgment, corrected experimental details, helped prepare lab consumables and reagents, and repeated key experiments by hand.
-
-OAI-M1-03 identified TEMPO as a useful additive for the primary sulfonamide Chan-Lam coupling studied here. Under the optimized conditions, the reaction improved in two ways: average yield went up, and more substrate combinations reached practically useful yields.
-
-Across two cycles, Maria ran a total of 10,080 reactions – more than a chemist running three reactions every day would run in a decade. That scale mattered because chemistry results can be misleading when they are tested on only a few examples. A reaction can look promising on one pair of starting materials, but fail across a broader set of molecules. Thousands of reactions made it possible to identify TEMPO among ten tested oxidants, see the effect repeat across diverse combinations, and find its limitations.
-
-After analyzing the first round of data, the system proposed a more focused second round of experiments to test follow-up hypotheses. One useful follow-up finding was that TEMPO could be replaced by a much cheaper analog, 4-hydroxy-TEMPO, with little loss in performance.
-
-The result also held up beyond Maria Lab’s microliter-scale screening format. Human chemists reproduced representative reactions manually at bench scale and observed an increase in yield for 11 of 14 substrate pairs; for eight pairs the increase was greater than twofold. That replication matters because very small-scale experiments can sometimes introduce artifacts that disappear at a larger scale. Bench-scale validation is also customary before research is published in a scientific journal.
-
-Reaction vials from the manual bench-scale validation.
-
-Four external chemistry experts reviewed the preprint describing OAI-M1-03. Their assessments supported our view that the result was novel and worth sharing with the scientific community. The stronger test will come next: whether independent labs can reproduce the result, and whether chemists find it useful across a broader range of molecules.
-
-Of the other three proposals generated by GPT‑5.4 and tested by Maria during the three-month period, OAI-M1-02 and OAI-M1-04 were experimentally proven in the Maria Lab, while OAI-M1-01 was disproven. Analysis of these results is ongoing.
-
-This work shows that a model can make a useful contribution in organic chemistry. It did more than summarize the literature or suggest a one-off experiment: it proposed a specific surprising hypothesis and surfaced it for human review, designed experiments, interpreted experimental data, and designed follow-up experiments.
-
-It does not show that AI can independently run a chemistry research program from end to end. Human judgment remained essential, and the workflow depended on specialized high-throughput infrastructure. It also does not establish that the method will generalize to other coupling reactions, other substrate classes, or manufacturing conditions.
-
-The yield estimates came from a high-throughput platform, and bench validation covered 14 representative substrate pairs. More work is needed to characterize the reaction mechanism, define the substrate scope, measure performance under different laboratory conditions, and reproduce the result independently.
-
-Chemistry capabilities require careful treatment because the same tools that can support medicine and materials science could also be misused. We deliberately scoped this work to a legitimate medicinal-chemistry problem: improving a known coupling reaction used to make drug-like molecules. The experiments did not involve toxins, chemical weapons, or requests to design harmful compounds. These results should not be read as evidence that the system can help with those harmful applications. The project did not test or demonstrate that.
-
-We assess and mitigate emerging risks from advanced model capabilities through ourPreparedness Framework⁠, including risks related to chemical and biological domains. The model used in this work had already undergone relevant evaluations with the UK AI Security Institute, and the system was designed to refuse requests focused on harmful applications. The experimental workflow added another layer of control: human chemists selected which proposals entered the lab, reviewed experimental plans, and retained control of the physical infrastructure.
-
-We think this is the responsible way to study AI's potential in experimental chemistry: choose a problem space with clear scientific value, pair model-level safeguards with expert oversight, and evaluate the system through constrained physical experiments. As these capabilities improve, we will continue to assess emerging risks, strengthen safeguards, and be specific about what a result does and does not imply.
-
-The immediate next steps are scientific: test a broader range of starting materials, investigate why the additives improve the reaction, map where the effect works and fails, and support independent replication. Together, these studies will determine how broadly the method can be applied and how useful it is in practical medicinal chemistry workflows.
-
-Our longer-term goal is to make AI systems reliable scientific partners that help researchers generate hypotheses, design experiments, interpret results, and decide what to test next, while remaining grounded in expert judgment, reliable measurement, and strong safeguards. Organic chemistry is a particularly high-leverage area because progress in small-molecule discovery and manufacturing depends on being able to make molecules reliably. Scientists can only test molecules they can make, and better synthesis can expand the range of ideas they can explore across medicine, agriculture, electronics, energy, and materials science. This result is one early example of that broader direction: a frontier model, specialized agents, an automated laboratory, and human chemists working together to move faster through the research loop and produce findings the scientific community can evaluate, reproduce, and build on.
-
-We are grateful to the Molecule.one team and to the independent chemists who reviewed this work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">With Molecule.one’s Maria, GPT‑5.4 found a surprising additive boosting Chan-Lam Coupling yields for over 80% of tested substrates.
-
-OpenAI’s work in science is motivated by a simple belief: advanced AI can become a powerful partner for scientists, helping them explore more ideas, connect distant concepts, design better experiments, and accelerate discoveries that benefit humanity. We have already shared early examples of models contributing to novel results in mathematics, including work onthe ...</p><div style="font-size:16px;line-height:1.8;color:#333">With Molecule.one’s Maria, GPT‑5.4 found a surprising additive boosting Chan-Lam Coupling yields for over 80% of tested substrates.
-
-OpenAI’s work in science is motivated by a simple belief: advanced AI can become a powerful partner for scientists, helping them explore more ideas, connect distant concepts, design better experiments, and accelerate discoveries that benefit humanity. We have already shared early examples of models contributing to novel results in mathematics, including work onthe unit distance problem⁠, in theoretical physics, through a new result ongluon amplitudes⁠, and in biology, where GPT‑5 helpedlower the cost of cell-free protein synthesis⁠in an automated lab. We also introducedGPT‑Rosalind⁠, a purpose-built model to support life sciences research and drug discovery workflows.
-
-This project extends that trajectory into medicinal chemistry, where progress cannot be measured by reasoning alone. A hypothesis has to work in the lab with real molecules, instruments, and experimental noise. Working withMolecule.one⁠(opens in a new window), we connected GPT‑5.4 to Maria—an agentic chemistry AI integrated with a high-throughput laboratory for autonomous research—and gave it an open-ended goal: to improve one of several important reaction classes. The system generated research proposals, designed and ran experiments, analyzed experimental data, and proposed follow-up experiments. Humans remained in the loop by designing steering and grading prompts and selecting proposals to test. They also made limited corrections to experimental plans, assisted with basic laboratory operations, and independently validated the final result.
-
-The most promising proposal, OAI-M1-03, focused on a difficult but useful version of Chan–Lam coupling, a reaction chemists use to form carbon-nitrogen bonds. Starting from the open-ended goal of improving Chan–Lam coupling for process chemistry, GPT‑5.4 independently identified primary sulfonamides as a challenging, high-value substrate class and suggested that mild oxidants, including TEMPO, could improve the reaction.
-
-Across two cycles of experimentation in Maria Lab that idea produced a significant improvement. Under the optimized conditions, measured yields improved for 88% of the boronic acids and 83% of the sulfonamides tested. The mean yield rose from 16.6% to 25.2%, and the share of reactions above 30% yield increased from 15.6% to 37.5%. Human chemists then repeated representative reactions at bench scale. Those experiments confirmed the microliter-scale results, showing higher yields for 11 of 14 substrate pairs, with a more than twofold increase in most cases. That matters because medicinal chemists need reactions that work not just in micro-liter screening experiments, but also in practical lab workflows used during drug discovery.
-
-Improvements in this area of medicinal chemistry are particularly exciting because synthesis is often a major bottleneck in drug discovery: scientists can only test the molecules they can make or otherwise obtain. The sulfonamide group appears in medicines across a wide range of therapeutic areas, including anticancer drugs, antimicrobials, and diuretics, yet the Chan–Lam coupling of primary sulfonamides with boronic acids has historically given low yields. Making this form of the reaction more reliable could give medicinal chemists a broader and more practical way to produce and explore potentially useful molecules.
-
-While this is still an early result, it provides another concrete example of the broader direction we are working toward: AI systems that can become valuable partners to scientists across much of the research loop. The model reviewed the literature, proposed an unexpected idea, helped design and analyze experiments, and arrived at a scientific finding that human chemists could evaluate.
-
-Maria Lab: Molecule.one's specialized high-throughput laboratory that ran 10,080 reactions in OAI-M1-03
-
-Why the chemistry problem matters
-
-Organic chemistry underpins all small-molecule medicines, as well as products in agriculture, electronics, and materials science. A reaction is especially useful when it can make the same kind of chemical bond reliably across many different starting materials. When reactions produce low yields or too many unwanted byproducts, chemists may have to abandon otherwise promising molecules or spend significant time developing a different route. This makes synthesis a major bottleneck in drug discovery: scientists can generally only test the molecules they can make or otherwise obtain.
-
-Chan–Lam coupling is useful in medicinal chemistry because it forms carbon-nitrogen bonds, which are common in medicines. However, the reaction does not work equally well for every class of molecule. In particular, coupling primary sulfonamides with boronic acids has historically produced low yields. Sulfonamides are an important family of molecules found in medicines used in oncology and infectious disease. Making this reaction more reliable could give medicinal chemists a broader and more practical way to produce and explore potentially useful molecules.
-
-Connecting GPT‑5.4 to Maria AI and Lab
-
-The combined system paired complementary capabilities. Prompts written by scientists working with Maria AI were used with GPT‑5.4 within a harness to generate and rank thousands of possible research proposals. Human chemists reviewed the small subset of proposals that ranked highest according to the system and selected four for laboratory testing. Maria AI then translated selected high-level plans into detailed lab instructions, ran thousands of high-throughput experiments, analyzed the raw data, and returned structured results to GPT‑5.4.
-
-One of the four selected proposals, OAI-M1-03, suggested using mild oxidants such as TEMPO to improve the performance of the Chan-Lam reaction for sulfonamide synthesis. Chemists found the suggestion both surprising and interesting. We share the detailed findings from OAI-M1-03 in this blog post and in thepaper⁠(opens in a new window).
-
-The final research proposal was then used by Maria to generate experimental grids, with slight corrections by humans. The largest human correction was to avoid dimethyl sulfoxide, or DMSO, as a solvent because chemists were concerned it could react with the stronger oxidants used as comparisons.
-
-The full process took three months, from the first prompt on March 4th to sharing the OAI-M1-03 results with independent experts on June 4th.
-
-We describe this workflow as near-autonomous, not fully autonomous, because human chemists still made important decisions throughout the process. The model proposed the key research ideas, while human chemists provided high-level steering and judgment, corrected experimental details, helped prepare lab consumables and reagents, and repeated key experiments by hand.
-
-OAI-M1-03 identified TEMPO as a useful additive for the primary sulfonamide Chan-Lam coupling studied here. Under the optimized conditions, the reaction improved in two ways: average yield went up, and more substrate combinations reached practically useful yields.
-
-Across two cycles, Maria ran a total of 10,080 reactions – more than a chemist running three reactions every day would run in a decade. That scale mattered because chemistry results can be misleading when they are tested on only a few examples. A reaction can look promising on one pair of starting materials, but fail across a broader set of molecules. Thousands of reactions made it possible to identify TEMPO among ten tested oxidants, see the effect repeat across diverse combinations, and find its limitations.
-
-After analyzing the first round of data, the system proposed a more focused second round of experiments to test follow-up hypotheses. One useful follow-up finding was that TEMPO could be replaced by a much cheaper analog, 4-hydroxy-TEMPO, with little loss in performance.
-
-The result also held up beyond Maria Lab’s microliter-scale screening format. Human chemists reproduced representative reactions manually at bench scale and observed an increase in yield for 11 of 14 substrate pairs; for eight pairs the increase was greater than twofold. That replication matters because very small-scale experiments can sometimes introduce artifacts that disappear at a larger scale. Bench-scale validation is also customary before research is published in a scientific journal.
-
-Reaction vials from the manual bench-scale validation.
-
-Four external chemistry experts reviewed the preprint describing OAI-M1-03. Their assessments supported our view that the result was novel and worth sharing with the scientific community. The stronger test will come next: whether independent labs can reproduce the result, and whether chemists find it useful across a broader range of molecules.
-
-Of the other three proposals generated by GPT‑5.4 and tested by Maria during the three-month period, OAI-M1-02 and OAI-M1-04 were experimentally proven in the Maria Lab, while OAI-M1-01 was disproven. Analysis of these results is ongoing.
-
-This work shows that a model can make a useful contribution in organic chemistry. It did more than summarize the literature or suggest a one-off experiment: it proposed a specific surprising hypothesis and surfaced it for human review, designed experiments, interpreted experimental data, and designed follow-up experiments.
-
-It does not show that AI can independently run a chemistry research program from end to end. Human judgment remained essential, and the workflow depended on specialized high-throughput infrastructure. It also does not establish that the method will generalize to other coupling reactions, other substrate classes, or manufacturing conditions.
-
-The yield estimates came from a high-throughput platform, and bench validation covered 14 representative substrate pairs. More work is needed to characterize the reaction mechanism, define the substrate scope, measure performance under different laboratory conditions, and reproduce the result independently.
-
-Chemistry capabilities require careful treatment because the same tools that can support medicine and materials science could also be misused. We deliberately scoped this work to a legitimate medicinal-chemistry problem: improving a known coupling reaction used to make drug-like molecules. The experiments did not involve toxins, chemical weapons, or requests to design harmful compounds. These results should not be read as evidence that the system can help with those harmful applications. The project did not test or demonstrate that.
-
-We assess and mitigate emerging risks from advanced model capabilities through ourPreparedness Framework⁠, including risks related to chemical and biological domains. The model used in this work had already undergone relevant evaluations with the UK AI Security Institute, and the system was designed to refuse requests focused on harmful applications. The experimental workflow added another layer of control: human chemists selected which proposals entered the lab, reviewed experimental plans, and retained control of the physical infrastructure.
-
-We think this is the responsible way to study AI's potential in experimental chemistry: choose a problem space with clear scientific value, pair model-level safeguards with expert oversight, and evaluate the system through constrained physical experiments. As these capabilities improve, we will continue to assess emerging risks, strengthen safeguards, and be specific about what a result does and does not imply.
-
-The immediate next steps are scientific: test a broader range of starting materials, investigate why the additives improve the reaction, map where the effect works and fails, and support independent replication. Together, these studies will determine how broadly the method can be applied and how useful it is in practical medicinal chemistry workflows.
-
-Our longer-term goal is to make AI systems reliable scientific partners that help researchers generate hypotheses, design experiments, interpret results, and decide what to test next, while remaining grounded in expert judgment, reliable measurement, and strong safeguards. Organic chemistry is a particularly high-leverage area because progress in small-molecule discovery and manufacturing depends on being able to make molecules reliably. Scientists can only test molecules they can make, and better synthesis can expand the range of ideas they can explore across medicine, agriculture, electronics, energy, and materials science. This result is one early example of that broader direction: a frontier model, specialized agents, an automated laboratory, and human chemists working together to move faster through the research loop and produce findings the scientific community can evaluate, reproduce, and build on.
-
-We are grateful to the Molecule.one team and to the independent chemists who reviewed this work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-Rosalind 推出新能力产品2026年6月3日</title>
+  <title>Introducing new capabilities to GPT-Rosalind</title>
   <link>https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/</guid>
-  <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-Rosalind 推出新能力产品2026年6月3日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-Rosalind 推出新能力产品2026年6月3日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing new capabilities to GPT-Rosalind</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing new capabilities to GPT-Rosalind</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.5 Instant：更智能、更清晰、更个性化产品2026年5月5日</title>
-  <link>https://openai.com/index/gpt-5-5-instant/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
-  <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5 Instant：更智能、更清晰、更个性化产品2026年5月5日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5 Instant：更智能、更清晰、更个性化产品2026年5月5日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.4</title>
-  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</guid>
-  <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>借助 Rosalind 生物防御计划增强社会韧性产品2026年5月29日</title>
+  <title>Strengthening societal resilience with Rosalind Biodefense</title>
   <link>https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/</link>
   <guid isPermaLink="false">https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/</guid>
-  <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">借助 Rosalind 生物防御计划增强社会韧性产品2026年5月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">借助 Rosalind 生物防御计划增强社会韧性产品2026年5月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
+
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
+
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
+
+That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
+
+Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
+
+Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
+
+The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
+
+Building on our safety and resilience work
+
+As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
+
+In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
+
+We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
+
+Supporting defensive acceleration with Rosalind Biodefense
+
+Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
+
+This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
+
+At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
+
+Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
+
+Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
+
+Working with government partners to strengthen biodefense
+
+Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
+
+Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
+
+This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
+
+Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
+
+We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
+
+Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
+
+We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
+
+Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
+
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
+
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
+
+That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
+
+Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
+
+Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
+
+The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
+
+Building on our safety and resilience work
+
+As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
+
+In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
+
+We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
+
+Supporting defensive acceleration with Rosalind Biodefense
+
+Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
+
+This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
+
+At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
+
+Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
+
+Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
+
+Working with government partners to strengthen biodefense
+
+Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
+
+Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
+
+This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
+
+Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
+
+We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
+
+Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
+
+We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
+
+Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.3 Instant</title>
-  <link>https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/</guid>
-  <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+  <title>An OpenAI model has disproved a central conjecture in discrete geometry</title>
+  <link>https://openai.com/index/model-disproves-discrete-geometry-conjecture/</link>
+  <guid isPermaLink="false">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</guid>
+  <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.5 Instant System Card安全2026年5月5日</title>
-  <link>https://openai.com/index/gpt-5-5-instant-system-card/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant-system-card/</guid>
-  <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.
-
-Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
-
-In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.
-
-Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Advancing voice intelligence with new models in the API产品2026年5月7日</title>
+  <title>Advancing voice intelligence with new models in the API</title>
   <link>https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</link>
   <guid isPermaLink="false">https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</guid>
-  <pubDate>Wed, 28 Feb 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
 
@@ -981,365 +1253,501 @@ You can test the new realtime voice models in thePlayground⁠（在新窗口中
 To start building,open this prompt in Codex⁠to add GPT‑Realtime‑2 to an existing app or start a new one. If you don’t have Codex yet, download theCodex app⁠first.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>推出 LifeSciBench研究2026年6月17日</title>
-  <link>https://openai.com/index/introducing-life-sci-bench/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-life-sci-bench/</guid>
-  <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+  <title>GPT-5.5 Instant: smarter, clearer, and more personalized</title>
+  <link>https://openai.com/index/gpt-5-5-instant/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
+  <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot...</p><div style="font-size:16px;line-height:1.8;color:#333">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-Current benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-We designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-LifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.
+Smarter, more accurate answers with less to sort through
 
-Scientist contributors
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
 
-What LifeSciBench measures
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
-LifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
+Yes - this is clean and correct.
 
-Each task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.
+You handled the key steps properly:- Squared both sides- Expanded and rearranged correctly- Factored to get:x=3orx=−2x = 3 \quad \text{or} \quad x = -2x=3orx=−2
 
-LifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.
+And most importantly, youchecked the domain condition:- Sincex+7≥0\sqrt{x+7} \ge 0x+7​≥0the right side,x−1x - 1x−1must also satisfyx−1≥0⇒x≥1x - 1 \ge 0 \quad \Rightarrow \quad x \ge 1x−1≥0⇒x≥1
 
-The benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.
+So:-x=−2x = -2x=−2gets rejected because it makesx−1x - 1x−1negative.-x=3x = 3x=3is the only candidate left.
 
-Tasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain. This process helped ensure that accepted tasks were scientifically grounded, clear enough to grade, and representative of applied research.
+3+7=10,3−1=2\sqrt{3+7} = \sqrt{10}, \qquad 3 - 1 = 23+7​=10​,3−1=2
 
-Grading and rubric breakdown
+Oops - this is actually worth catching: that does not match.
 
-LifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.
+Let's check carefully:
 
-This design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.
+3+7=10≠2\sqrt{3+7} = \sqrt{10} \ne 23+7​=10​=2
 
-The granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.
+So something is off. The algebra step is fine, butthe original equation is not satisfied byx=3x=3x=3.
 
-Extracting, reconciling, and auditing scientific evidence from papers, figures, tables, and experimental records.
+Let's test both candidates explicitly:-x=3:10≠2x=3:\quad \sqrt{10} \ne 2x=3:10​=2-x=−2:5≠−3x=-2:\quad \sqrt{5} \ne -3x=−2:5​=−3
 
-We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
+Sox=−2x=-2x=−2is also invalid anyway.
 
-Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
+Conclusion: no real solution.
 
-Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
+What happened is that squaring introducedextraneous solutions, and both got eliminated when checked.
 
-12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
+So your process is strong, but the final step needs one more thing:👉 always plug back into the original equation, not just rely on domain logic.
 
-Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
+No real solution\text{No real solution}No real solution
 
-48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
+Yes - this is correct.
 
-Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
+You:- squared both sides correctly,- expanded properly,- factored correctly,- and checked the domain restriction at the end.
 
-Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
+The only tiny improvement: instead of saying "x−1x-1x−1must be positive," you could say:
 
-Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
+Sincex+7≥0,\sqrt{x+7} \ge 0,x+7​≥0,the right sidex−1x - 1x−1must also be nonnegative.
 
-Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
+Sox−1≥0,x - 1 \ge 0,x−1≥0,which eliminatesx=−2.x = -2.x=−2.
 
-Bottom line:As presented, this package is not strong enough to support accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit. A skeptical FDA reviewer would likely view the biomarker, functional, durability, safety, and generalizability evidence as materially under-supported.
+-x=3x=3x=3:10=2\sqrt{10} = 210​=2- wait, actually this reveals a mistake.
 
-Western blot quantification
+Your original equation is:
 
-MANEX1A binds an N-terminal epitope shared by endogenous full-length dystrophin and the micro-dystrophin transgene, so the assay does not cleanly distinguish transgene from residual/revertant dystrophin. Quantifying a 138 kDa micro-dystrophin against a healthy full-length dystrophin standard is also invalid.
+x+7=x−1\sqrt{x+7} = x - 1x+7​=x−1
 
-Use a recombinant micro-dystrophin standard and an orthogonal method that distinguishes transgene from endogenous dystrophin, such as targeted mass spectrometry or a transgene-specific/epitope-specific assay.
+3+7=10\sqrt{3+7} = \sqrt{10}3+7​=10​
 
-The C-terminal polyclonal antibody is poorly suited because the 138 kDa construct lacks the C-terminal domain. Many DMD patients have revertant fibers, and revertant dystrophin can retain C-terminal epitopes. Revertant fibers may expand clonally with age, biasing IF signal, especially in older boys.
+10≠2.\sqrt{10} \ne 2.10​=2.
 
-Repeat IF with an antibody against an epitope present in the transgene but absent from revertant dystrophin. Quantify transgene-positive fibers separately from revertant fibers.
+So the issue is in the algebra step:
 
-Surrogate endpoint validity
+x+7=(x−1)2x + 7 = (x - 1)^2x+7=(x−1)2
 
-The package conflates protein amount with clinical function. “38% of healthy-control protein mass” does not mean 38% of normal dystrophin function because micro-dystrophin is structurally truncated.
+x+7=x2−2x+1x + 7 = x^2 - 2x + 1x+7=x2−2x+1
 
-Empirically validate the relationship between micro-dystrophin mass-percent, sarcolemmal localization, downstream functional restoration, and clinical benefit before treating expression as a surrogate endpoint.
+then moving everything:
 
-Pre- and post-treatment contralateral vastus lateralis biopsies introduce left-right and intramuscular spatial variability. Disease progression and fibro-fatty replacement can also change total-protein-normalized signal.
+0=x2−3x−60 = x^2 - 3x - 60=x2−3x−6
 
-Standardize biopsy site using consistent anatomical landmarks, normalize to muscle-specific proteins, and measure fibro-fatty composition in parallel.
+x2−x−6x^2 - x - 6x2−x−6
 
-NSAA comparator/statistics
+So the correct equation is:
 
-An external natural-history cohort is not a randomized concurrent control. Trial eligibility, supportive care, participation effects, baseline NSAA, steroid regimen, age, and exon class can all bias the comparison. An unpaired t-test is not sufficient. Also, a +1.4 NSAA change is within test-retest variability for this age group.
+x2−3x−6=0x^2 - 3x - 6 = 0x2−3x−6=0
 
-Run a randomized concurrent placebo-controlled study, or at minimum use adjusted analyses accounting for baseline NSAA, age, steroid regimen, exon class, and other confounders.
+Using the quadratic formula:
 
-Age-window confounding
+x=3±332x = \frac{3 \pm \sqrt{33}}{2}x=23±33​​
 
-Boys age 4–7 are in a developmental window where untreated ambulatory DMD patients may gain motor function before decline dominates. A 48-week NSAA change mixes developmental gain, disease progression, and possible treatment effect.
+Sincex≥1x \ge 1x≥1, the valid solution is:
 
-Use a concurrent randomized control with age stratification to separate developmental trajectory from treatment effect.
+3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-Prior clinical precedent
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-Open-label micro-dystrophin functional signals have not reliably predicted confirmatory benefit; published precedent includes micro-dystrophin gene therapy confirmatory trials failing to reproduce open-label NSAA improvements.
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
 
-Do not rely on open-label NSAA change as decisive support. Require controlled functional evidence.
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
-Structural limits of the construct
+how do i tell my coworker to quit yapping all the time
 
-The 138 kDa construct deletes spectrin repeats R16/17, which contain nNOS-binding sites. Loss of nNOS recruitment can impair functional sympatholysis and ischemia protection during exercise, creating a mechanistic ceiling on rescue independent of expression level.
+Youcantell them—but “quit yapping” is how you start a workplace cold war 😄. The goal is toprotect your time without making it personal.
 
-Add mechanistic studies showing whether this specific construct restores relevant dystrophin-associated complex function, nNOS localization, exercise physiology, and muscle protection.
+Here are a few ways to do it depending on your style:
 
-Vector genomes at 12 weeks do not establish durable expression. AAV9 genomes are largely non-integrating episomes and may decline over time. Vector-genome persistence is not the same as persistent protein expression.
+Hey, I’d love to catch up, but I’m trying to stay focused on this—can we circle back later?
 
-Measure longitudinal transgene protein expression and functional biomarker durability beyond 12 weeks.
+This works because it makes it aboutyour workload, not their behavior.
 
-Immune/safety profile
+I’ve been trying to keep interruptions down so I can hit my deadlines—can we keep chats a bit shorter during the day?
 
-Transaminitis in 8/12 patients is consistent with immune response to AAV-transduced cells, but the mechanism is not established. One myocarditis case is concerning given AAV9 cardiac tropism.
+This signals a pattern without accusing them.
 
-Provide deeper immune monitoring, liver/cardiac safety characterization, and intensified cardiac follow-up.
+When they’re mid-ramble:
 
-Patient selection/generalizability
+Sorry to jump in—I need to get back to this. Let’s pick it up another time.
 
-Excluding anti-AAV9 neutralizing-antibody-positive patients limits generalizability. Excluding exon-44 deletions limits applicability to that DMD subgroup. n=12 is too small to characterize safety and efficacy across the broader DMD population.
+Short, neutral, and you just exit.
 
-Broaden eligibility where possible or pre-specify stratified analyses by antibody status, genotype/exon class, age, and baseline function before using the result to support broad approval.
+If they tend to swing by a lot:
 
-Regulatory conclusion:The package may show biological activity, but it does not yet establish that the measured micro-dystrophin expression is a reliable surrogate reasonably likely to predict clinical benefit. The main gaps are assay specificity, invalid quantification standards, possible revertant-fiber confounding, lack of a randomized control, age-related NSAA confounding, uncertain durability, and unresolved safety/generalizability issues.
+I’m heads-down this afternoon, so I might be slow to chat.
 
-To close the gap, the program would need a controlled, age-stratified clinical design with transgene-specific expression assays, orthogonal protein quantification, tissue-composition controls, longitudinal durability data, mechanistic functional assays for the truncated construct, and stronger safety monitoring, especially hepatic and cardiac.
+This reduces interruptionsbeforethey start.
 
-Rubric Criteria & Grades
+I’ve been getting pulled into a lot of side conversations—can we keep things work-focused during the day?
 
-Validating LifeSciBench
+Still professional, but clearer.
 
-We validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.
+Don’t say “you talk too much” (true or not, it lands badly)
 
-Reviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.
+Don’t over-explain or apologize a ton
 
-Does this task reflect realistic real-world life science work?
+Don’t rely on hints—they usually don’t work on chatty people
 
-Scientific reasoning / domain skill
+If you want, tell me what your coworker is like (chatty-friendly vs. oblivious vs. senior vs. peer), and I can tailor a line that fits your exact dynamic.
 
-Does this task test and grade the right scientific reasoning and life science domain skills?
+how do i tell my coworker to quit yapping all the time
 
-Is this task scientifically grounded, answerable, and anchored in appropriate evidence, data, artifacts, or expert consensus?
+You probablydon’twant to say “quit yapping” unless you actively want workplace enemies. The trick is to redirect without making them feel rejected.
 
-Overall, is this a strong life science evaluation task?
+A few versions depending on how direct you want to be:
 
-Reviewer comments reinforced the quantitative ratings:
+Gentle:“Hey, I need to focus for a bit — can we catch up later?”
 
-We report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.
+Repeated offender:“I’m trying to stay heads-down today, so I may be a little less chatty.”
 
-Model performance varies substantially by task type, workflow, and response format.
+If they monologue in meetings:“Can we keep this tight? I want to make sure we get through everything.”
 
-Where AI systems show early strength
+If they corner you constantly:“I love talking with you, but I’m getting behind on work.”
 
-LifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT‑Rosalind shows meaningful progress over GPT‑5.5, improving overall exact pass rate from 25.7% to 36.1%.
+Slightly firmer:“I’m gonna stop you there because I need to get back to this.”
 
-The strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT‑5.5 to 71.1% for GPT‑Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the "bench-to-bedside" process of drug development) shows a similar pattern, rising from 36.8% for GPT‑5.5 to 57.7% for GPT‑Rosalind, suggesting models are quickly improving on their ability to connect preclinical evidence to clinical implications.
+make it aboutyour focus/time, not their personality
 
-Rubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT‑Rosalind scores 44.7%, compared with 29.1% for GPT‑5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%. This pattern suggests models are most useful when the task has a clear evidence boundary and calls for structured scientific judgment.
+interrupt earlier instead of suffering silently for 20 minutes
 
-GPT‑Rosalind leads performance across scientifically-valuable tasks identified by industry and academic experts.
+be consistent — people learn your boundaries fast
 
-GPT‑Rosalind improves performance over GPT‑5.5 across core life-science workflows, with the strongest gains in translation and scientific communication.
+And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-Where AI systems still fall short
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
 
-Performance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Namely, Design, Optimization, & Prediction remains one of the hardest workflows, with GPT‑Rosalind passrate at 30.7%; Analysis is similarly difficult at 30.3%.
+More personalized responses and controls
 
-Artifact use is a particularly clear gap. While GPT‑Rosalind performs better than GPT‑5.5 in artifact-heavy settings, its pass rate still drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT‑5.5 shows the same pattern, dropping from 29.9% to 21.9%. A more detailed analysis confirms that frontier models struggle at extracting information from complex figures or large sequence files and integrating that information into the final answer.
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
 
-Pass rates drop when tasks require source-grounded reasoning or working with artifacts
+What new tea place should I try?
 
-The answer format also matters. Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT‑Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT‑Rosalind at 27.3% and showing little improvement over GPT‑5.5. Some of this gap may reflect a stricter grading surface for exact-answer tasks, where small differences in calculation or formatting can cause a response to fall under pass threshold. Still, these failures are scientifically meaningful because many life science workflows require outputs that are exact enough to be used directly, such as in CRISPR/HDR donor design or siRNA design.
+If you want something that feels a little more “new SF tea scene” and less standard boba chain, I’d narrow it to these:
 
-Models also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT‑Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward. In practice, this means models may identify relevant evidence or produce a plausible partial answer, but still fail because they miss a key constraint, use the wrong evidence, make an incomplete calculation, or do not connect their reasoning to a scientifically useful final decision.
+Heytea — probably the most interesting “new-ish” mainstream tea stop right now. It’s a huge Chinese chain, but the SF location brought in the dense cheese foam / fruit tea style that a lot of Bay Area places still don’t quite nail. Go for a fruit tea instead of milk tea.
 
-Limitations & what’s next
+Junbi Matcha & Tea - San Francisco — if you want clean matcha-forward drinks instead of sugary boba. Feels more LA/Japanese café aesthetic. Good stop if you’re around Market/FiDi and want something lighter.
 
-LifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.
+Aroma Tea Shop — best pick if you actually want to getinto teainstead of just tea drinks. They do tastings and are very non-snobby about teaching people. Reddit tea people consistently bring it up alongside Red Blossom.
 
-Strong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact. The benchmark is grounded in industry workflows, but it does not capture the full diversity or dynamics of live research programs, where progress depends on factors that unfold over time.
+Tadaima - Inner Sunset — not purely a tea shop, but the vibe is excellent and the Japanese tea program is surprisingly strong. Good “sit and decompress after climbing / Golden Gate Park” energy.
 
-The next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-life-sci-bench/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+By Me Boba Tea — tucked into Ross Alley in Chinatown. More charming and low-key than the bigger boba brands, and the alley location makes it feel like a little hidden spot.
 
-Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot...</p><div style="font-size:16px;line-height:1.8;color:#333">An expert-written, expert-reviewed benchmark grounded in real-world life science research
+And if you want atruetea nerd experience:
 
-Agentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.
+Red Blossom Tea Company
 
-Current benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.
+Those are more “slow tea / gongfu / artisan sourcing” than café drinks.
 
-We designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.
+What new tea place should I try?
 
-LifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.
+Since you already hit Asha Tea House pretty often and seem to prefer cleaner Taiwanese/high-mountain tea vibes over sugary boba, I’d push you toward one of these depending on the mood:
 
-Scientist contributors
+Most likely to become your new favorite:
 
-What LifeSciBench measures
+Ceré TeaFeels the most “next step after Asha.” More modern/minimalist café energy, strong tea quality, and good for hanging out with a laptop or post-climb decompression. You’d probably like their lighter oolongs and less-sweet specialty drinks.
 
-LifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.
+If you want thebest actual tea experience:
 
-Each task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.
+Song Tea & CeramicsThis is the “serious tea” pick. Less casual café, more intentional tea tasting. Expensive relative to boba/tea shops, but genuinely memorable if you’re into nuanced leaf flavor. Very aligned with your clean/high-quality tea preferences.
 
-LifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.
+If you want cozy + slightly nerdy tea energy:
 
-The benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.
+Tea Rex Cafe & Specialty TeasSmall, neighborhood, tea-forward spot in the Mission. Good if you want somewhere lower-key than the aesthetic Valencia café circuit.
 
-Tasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain. This process helped ensure that accepted tasks were scientifically grounded, clear enough to grade, and representative of applied research.
+Wildcard you’d probably enjoy:
 
-Grading and rubric breakdown
+Stonemill Matcha"More Japanese café than tea house, but the hojicha/matcha side of your taste profile makes this a strong fit. Good pastries too.
 
-LifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.
+If I were picking one for tomorrow specifically:
 
-This design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.
+Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-The granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
 
-Extracting, reconciling, and auditing scientific evidence from papers, figures, tables, and experimental records.
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
 
-We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
 
-Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
 
-Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
 
-12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
 
-Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
+Smarter, more accurate answers with less to sort through
 
-Bottom line:As presented, this package is not strong enough to support accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit. A skeptical FDA reviewer would likely view the biomarker, functional, durability, safety, and generalizability evidence as materially under-supported.
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
 
-Western blot quantification
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
-MANEX1A binds an N-terminal epitope shared by endogenous full-length dystrophin and the micro-dystrophin transgene, so the assay does not cleanly distinguish transgene from residual/revertant dystrophin. Quantifying a 138 kDa micro-dystrophin against a healthy full-length dystrophin standard is also invalid.
+Yes - this is clean and correct.
 
-Use a recombinant micro-dystrophin standard and an orthogonal method that distinguishes transgene from endogenous dystrophin, such as targeted mass spectrometry or a transgene-specific/epitope-specific assay.
+You handled the key steps properly:- Squared both sides- Expanded and rearranged correctly- Factored to get:x=3orx=−2x = 3 \quad \text{or} \quad x = -2x=3orx=−2
 
-The C-terminal polyclonal antibody is poorly suited because the 138 kDa construct lacks the C-terminal domain. Many DMD patients have revertant fibers, and revertant dystrophin can retain C-terminal epitopes. Revertant fibers may expand clonally with age, biasing IF signal, especially in older boys.
+And most importantly, youchecked the domain condition:- Sincex+7≥0\sqrt{x+7} \ge 0x+7​≥0the right side,x−1x - 1x−1must also satisfyx−1≥0⇒x≥1x - 1 \ge 0 \quad \Rightarrow \quad x \ge 1x−1≥0⇒x≥1
 
-Repeat IF with an antibody against an epitope present in the transgene but absent from revertant dystrophin. Quantify transgene-positive fibers separately from revertant fibers.
+So:-x=−2x = -2x=−2gets rejected because it makesx−1x - 1x−1negative.-x=3x = 3x=3is the only candidate left.
 
-Surrogate endpoint validity
+3+7=10,3−1=2\sqrt{3+7} = \sqrt{10}, \qquad 3 - 1 = 23+7​=10​,3−1=2
 
-The package conflates protein amount with clinical function. “38% of healthy-control protein mass” does not mean 38% of normal dystrophin function because micro-dystrophin is structurally truncated.
+Oops - this is actually worth catching: that does not match.
 
-Empirically validate the relationship between micro-dystrophin mass-percent, sarcolemmal localization, downstream functional restoration, and clinical benefit before treating expression as a surrogate endpoint.
+Let's check carefully:
 
-Pre- and post-treatment contralateral vastus lateralis biopsies introduce left-right and intramuscular spatial variability. Disease progression and fibro-fatty replacement can also change total-protein-normalized signal.
+3+7=10≠2\sqrt{3+7} = \sqrt{10} \ne 23+7​=10​=2
 
-Standardize biopsy site using consistent anatomical landmarks, normalize to muscle-specific proteins, and measure fibro-fatty composition in parallel.
+So something is off. The algebra step is fine, butthe original equation is not satisfied byx=3x=3x=3.
 
-NSAA comparator/statistics
+Let's test both candidates explicitly:-x=3:10≠2x=3:\quad \sqrt{10} \ne 2x=3:10​=2-x=−2:5≠−3x=-2:\quad \sqrt{5} \ne -3x=−2:5​=−3
 
-An external natural-history cohort is not a randomized concurrent control. Trial eligibility, supportive care, participation effects, baseline NSAA, steroid regimen, age, and exon class can all bias the comparison. An unpaired t-test is not sufficient. Also, a +1.4 NSAA change is within test-retest variability for this age group.
+Sox=−2x=-2x=−2is also invalid anyway.
 
-Run a randomized concurrent placebo-controlled study, or at minimum use adjusted analyses accounting for baseline NSAA, age, steroid regimen, exon class, and other confounders.
+Conclusion: no real solution.
 
-Age-window confounding
+What happened is that squaring introducedextraneous solutions, and both got eliminated when checked.
 
-Boys age 4–7 are in a developmental window where untreated ambulatory DMD patients may gain motor function before decline dominates. A 48-week NSAA change mixes developmental gain, disease progression, and possible treatment effect.
+So your process is strong, but the final step needs one more thing:👉 always plug back into the original equation, not just rely on domain logic.
 
-Use a concurrent randomized control with age stratification to separate developmental trajectory from treatment effect.
+No real solution\text{No real solution}No real solution
 
-Prior clinical precedent
+Yes - this is correct.
 
-Open-label micro-dystrophin functional signals have not reliably predicted confirmatory benefit; published precedent includes micro-dystrophin gene therapy confirmatory trials failing to reproduce open-label NSAA improvements.
+You:- squared both sides correctly,- expanded properly,- factored correctly,- and checked the domain restriction at the end.
 
-Do not rely on open-label NSAA change as decisive support. Require controlled functional evidence.
+The only tiny improvement: instead of saying "x−1x-1x−1must be positive," you could say:
 
-Structural limits of the construct
+Sincex+7≥0,\sqrt{x+7} \ge 0,x+7​≥0,the right sidex−1x - 1x−1must also be nonnegative.
 
-The 138 kDa construct deletes spectrin repeats R16/17, which contain nNOS-binding sites. Loss of nNOS recruitment can impair functional sympatholysis and ischemia protection during exercise, creating a mechanistic ceiling on rescue independent of expression level.
+Sox−1≥0,x - 1 \ge 0,x−1≥0,which eliminatesx=−2.x = -2.x=−2.
 
-Add mechanistic studies showing whether this specific construct restores relevant dystrophin-associated complex function, nNOS localization, exercise physiology, and muscle protection.
+-x=3x=3x=3:10=2\sqrt{10} = 210​=2- wait, actually this reveals a mistake.
 
-Vector genomes at 12 weeks do not establish durable expression. AAV9 genomes are largely non-integrating episomes and may decline over time. Vector-genome persistence is not the same as persistent protein expression.
+Your original equation is:
 
-Measure longitudinal transgene protein expression and functional biomarker durability beyond 12 weeks.
+x+7=x−1\sqrt{x+7} = x - 1x+7​=x−1
 
-Immune/safety profile
+3+7=10\sqrt{3+7} = \sqrt{10}3+7​=10​
 
-Transaminitis in 8/12 patients is consistent with immune response to AAV-transduced cells, but the mechanism is not established. One myocarditis case is concerning given AAV9 cardiac tropism.
+10≠2.\sqrt{10} \ne 2.10​=2.
 
-Provide deeper immune monitoring, liver/cardiac safety characterization, and intensified cardiac follow-up.
+So the issue is in the algebra step:
 
-Patient selection/generalizability
+x+7=(x−1)2x + 7 = (x - 1)^2x+7=(x−1)2
 
-Excluding anti-AAV9 neutralizing-antibody-positive patients limits generalizability. Excluding exon-44 deletions limits applicability to that DMD subgroup. n=12 is too small to characterize safety and efficacy across the broader DMD population.
+x+7=x2−2x+1x + 7 = x^2 - 2x + 1x+7=x2−2x+1
 
-Broaden eligibility where possible or pre-specify stratified analyses by antibody status, genotype/exon class, age, and baseline function before using the result to support broad approval.
+then moving everything:
 
-Regulatory conclusion:The package may show biological activity, but it does not yet establish that the measured micro-dystrophin expression is a reliable surrogate reasonably likely to predict clinical benefit. The main gaps are assay specificity, invalid quantification standards, possible revertant-fiber confounding, lack of a randomized control, age-related NSAA confounding, uncertain durability, and unresolved safety/generalizability issues.
+0=x2−3x−60 = x^2 - 3x - 60=x2−3x−6
 
-To close the gap, the program would need a controlled, age-stratified clinical design with transgene-specific expression assays, orthogonal protein quantification, tissue-composition controls, longitudinal durability data, mechanistic functional assays for the truncated construct, and stronger safety monitoring, especially hepatic and cardiac.
+x2−x−6x^2 - x - 6x2−x−6
 
-Rubric Criteria & Grades
+So the correct equation is:
 
-Validating LifeSciBench
+x2−3x−6=0x^2 - 3x - 6 = 0x2−3x−6=0
 
-We validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.
+Using the quadratic formula:
 
-Reviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.
+x=3±332x = \frac{3 \pm \sqrt{33}}{2}x=23±33​​
 
-Does this task reflect realistic real-world life science work?
+Sincex≥1x \ge 1x≥1, the valid solution is:
 
-Scientific reasoning / domain skill
+3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-Does this task test and grade the right scientific reasoning and life science domain skills?
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-Is this task scientifically grounded, answerable, and anchored in appropriate evidence, data, artifacts, or expert consensus?
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
 
-Overall, is this a strong life science evaluation task?
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
-Reviewer comments reinforced the quantitative ratings:
+how do i tell my coworker to quit yapping all the time
 
-We report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.
+Youcantell them—but “quit yapping” is how you start a workplace cold war 😄. The goal is toprotect your time without making it personal.
 
-Model performance varies substantially by task type, workflow, and response format.
+Here are a few ways to do it depending on your style:
 
-Where AI systems show early strength
+Hey, I’d love to catch up, but I’m trying to stay focused on this—can we circle back later?
 
-LifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT‑Rosalind shows meaningful progress over GPT‑5.5, improving overall exact pass rate from 25.7% to 36.1%.
+This works because it makes it aboutyour workload, not their behavior.
 
-The strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT‑5.5 to 71.1% for GPT‑Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the "bench-to-bedside" process of drug development) shows a similar pattern, rising from 36.8% for GPT‑5.5 to 57.7% for GPT‑Rosalind, suggesting models are quickly improving on their ability to connect preclinical evidence to clinical implications.
+I’ve been trying to keep interruptions down so I can hit my deadlines—can we keep chats a bit shorter during the day?
 
-Rubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT‑Rosalind scores 44.7%, compared with 29.1% for GPT‑5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%. This pattern suggests models are most useful when the task has a clear evidence boundary and calls for structured scientific judgment.
+This signals a pattern without accusing them.
 
-GPT‑Rosalind leads performance across scientifically-valuable tasks identified by industry and academic experts.
+When they’re mid-ramble:
 
-GPT‑Rosalind improves performance over GPT‑5.5 across core life-science workflows, with the strongest gains in translation and scientific communication.
+Sorry to jump in—I need to get back to this. Let’s pick it up another time.
 
-Where AI systems still fall short
+Short, neutral, and you just exit.
 
-Performance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Namely, Design, Optimization, & Prediction remains one of the hardest workflows, with GPT‑Rosalind passrate at 30.7%; Analysis is similarly difficult at 30.3%.
+If they tend to swing by a lot:
 
-Artifact use is a particularly clear gap. While GPT‑Rosalind performs better than GPT‑5.5 in artifact-heavy settings, its pass rate still drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT‑5.5 shows the same pattern, dropping from 29.9% to 21.9%. A more detailed analysis confirms that frontier models struggle at extracting information from complex figures or large sequence files and integrating that information into the final answer.
+I’m heads-down this afternoon, so I might be slow to chat.
 
-Pass rates drop when tasks require source-grounded reasoning or working with artifacts
+This reduces interruptionsbeforethey start.
 
-The answer format also matters. Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT‑Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT‑Rosalind at 27.3% and showing little improvement over GPT‑5.5. Some of this gap may reflect a stricter grading surface for exact-answer tasks, where small differences in calculation or formatting can cause a response to fall under pass threshold. Still, these failures are scientifically meaningful because many life science workflows require outputs that are exact enough to be used directly, such as in CRISPR/HDR donor design or siRNA design.
+I’ve been getting pulled into a lot of side conversations—can we keep things work-focused during the day?
 
-Models also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT‑Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward. In practice, this means models may identify relevant evidence or produce a plausible partial answer, but still fail because they miss a key constraint, use the wrong evidence, make an incomplete calculation, or do not connect their reasoning to a scientifically useful final decision.
+Still professional, but clearer.
 
-Limitations & what’s next
+Don’t say “you talk too much” (true or not, it lands badly)
 
-LifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.
+Don’t over-explain or apologize a ton
 
-Strong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact. The benchmark is grounded in industry workflows, but it does not capture the full diversity or dynamics of live research programs, where progress depends on factors that unfold over time.
+Don’t rely on hints—they usually don’t work on chatty people
 
-The next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-life-sci-bench/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+If you want, tell me what your coworker is like (chatty-friendly vs. oblivious vs. senior vs. peer), and I can tailor a line that fits your exact dynamic.
+
+how do i tell my coworker to quit yapping all the time
+
+You probablydon’twant to say “quit yapping” unless you actively want workplace enemies. The trick is to redirect without making them feel rejected.
+
+A few versions depending on how direct you want to be:
+
+Gentle:“Hey, I need to focus for a bit — can we catch up later?”
+
+Repeated offender:“I’m trying to stay heads-down today, so I may be a little less chatty.”
+
+If they monologue in meetings:“Can we keep this tight? I want to make sure we get through everything.”
+
+If they corner you constantly:“I love talking with you, but I’m getting behind on work.”
+
+Slightly firmer:“I’m gonna stop you there because I need to get back to this.”
+
+make it aboutyour focus/time, not their personality
+
+interrupt earlier instead of suffering silently for 20 minutes
+
+be consistent — people learn your boundaries fast
+
+And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
+
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
+
+More personalized responses and controls
+
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
+
+What new tea place should I try?
+
+If you want something that feels a little more “new SF tea scene” and less standard boba chain, I’d narrow it to these:
+
+Heytea — probably the most interesting “new-ish” mainstream tea stop right now. It’s a huge Chinese chain, but the SF location brought in the dense cheese foam / fruit tea style that a lot of Bay Area places still don’t quite nail. Go for a fruit tea instead of milk tea.
+
+Junbi Matcha & Tea - San Francisco — if you want clean matcha-forward drinks instead of sugary boba. Feels more LA/Japanese café aesthetic. Good stop if you’re around Market/FiDi and want something lighter.
+
+Aroma Tea Shop — best pick if you actually want to getinto teainstead of just tea drinks. They do tastings and are very non-snobby about teaching people. Reddit tea people consistently bring it up alongside Red Blossom.
+
+Tadaima - Inner Sunset — not purely a tea shop, but the vibe is excellent and the Japanese tea program is surprisingly strong. Good “sit and decompress after climbing / Golden Gate Park” energy.
+
+By Me Boba Tea — tucked into Ross Alley in Chinatown. More charming and low-key than the bigger boba brands, and the alley location makes it feel like a little hidden spot.
+
+And if you want atruetea nerd experience:
+
+Red Blossom Tea Company
+
+Those are more “slow tea / gongfu / artisan sourcing” than café drinks.
+
+What new tea place should I try?
+
+Since you already hit Asha Tea House pretty often and seem to prefer cleaner Taiwanese/high-mountain tea vibes over sugary boba, I’d push you toward one of these depending on the mood:
+
+Most likely to become your new favorite:
+
+Ceré TeaFeels the most “next step after Asha.” More modern/minimalist café energy, strong tea quality, and good for hanging out with a laptop or post-climb decompression. You’d probably like their lighter oolongs and less-sweet specialty drinks.
+
+If you want thebest actual tea experience:
+
+Song Tea & CeramicsThis is the “serious tea” pick. Less casual café, more intentional tea tasting. Expensive relative to boba/tea shops, but genuinely memorable if you’re into nuanced leaf flavor. Very aligned with your clean/high-quality tea preferences.
+
+If you want cozy + slightly nerdy tea energy:
+
+Tea Rex Cafe & Specialty TeasSmall, neighborhood, tea-forward spot in the Mission. Good if you want somewhere lower-key than the aesthetic Valencia café circuit.
+
+Wildcard you’d probably enjoy:
+
+Stonemill Matcha"More Japanese café than tea house, but the hojicha/matcha side of your taste profile makes this a strong fit. Good pastries too.
+
+If I were picking one for tomorrow specifically:
+
+Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
+
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
+
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
+
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
+
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
+
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
+
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
+
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5 Instant System CardSafety</title>
+  <link>https://openai.com/index/gpt-5-5-instant-system-card/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant-system-card/</guid>
+  <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.
+
+Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological &amp; Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main...</p><div style="font-size:16px;line-height:1.8;color:#333">GPT‑5.5 Instant is our latest Instant model, and explained in ourblog⁠. The comprehensive safety mitigation approach for this model is similar to previous models in this series, but this is the first Instant model that we are treating as High capability in our Cybersecurity and Biological & Chemical Preparedness categories, and implementing appropriate safeguards.
+
+In this card we also refer to GPT‑5.5 Instant as gpt-5.5-instant. Note that there is not a model named GPT‑5.4 Instant, and the main model to baseline against is GPT‑5.3 Instant. Additionally, we refer toGPT‑5.5⁠(opens in a new window)as GPT‑5.5 Thinking to avoid confusion with the instant model.
+
+Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant-system-card/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.4</title>
+  <link>https://openai.com/index/introducing-gpt-5-4/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
+  <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5</title>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.3 Instant</title>
+  <link>https://openai.com/index/gpt-5-3-instant/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
+  <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
