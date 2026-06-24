@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Wed, 24 Jun 2026 14:37:53 +0000</lastBuildDate>
+<lastBuildDate>Wed, 24 Jun 2026 19:54:23 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -19,8 +19,136 @@
   <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
   <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing LifeSciBench</title>
@@ -389,8 +517,520 @@ The next step is to connect benchmark performance to deployment studies in live 
   <guid isPermaLink="false">https://openai.com/index/chatgpt-memory-dreaming/</guid>
   <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Dreaming: Better memory for a more helpful ChatGPT</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Dreaming: Better memory for a more helpful ChatGPT</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
+
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
+
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
+
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
+
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
+
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
+
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所...</p><div style="font-size:16px;line-height:1.8;color:#333">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
+
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
+
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
+
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
+
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
+
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
+
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所有没有写下来的内容。已保存记忆也往往会随着时间变得陈旧，并最终变得不正确或无关。
+
+2025 年 4 月，我们更新了 ChatGPT 的记忆，让模型能够参考已保存记忆列表之外的聊天上下文；这是通过引入第一版“做梦”(Dreaming)功能来实现的 — 这是一种让 ChatGPT 通过参考聊天历史在后台自动整理记忆的方法。
+
+与已保存记忆不同，“做梦”功能利用后台流程，让 ChatGPT 能够从许多对话中学习并整合 ChatGPT 的记忆状态，从而始终为你的对话提供最新、最相关的上下文。“做梦”功能还让记忆更容易纳入对话中自然出现的上下文，而不必依赖明确要求记住某件事。
+
+在过去一年里，“做梦”功能补充了已保存记忆，使 ChatGPT 个性化回复的能力实现了大幅提升，并抵消了已保存记忆的陈旧性。然而，从历史上看，它从来不足以作为一个独立的记忆系统。
+
+今天，我们将推出一种基于“做梦”功能构建的、能力显著更强且计算效率更高的记忆架构。
+
+由“做梦”功能整合出的记忆可通过记忆摘要页面中可见的摘要进行查看。通过记忆摘要，你可以快速了解 ChatGPT 对你的了解重点，添加或更新关于你自己的信息，并提供关于 ChatGPT 应在何时提起哪些话题的指示。如果你想深入了解某个特定领域，只需和模型聊天即可。
+
+当我们思考 ChatGPT 中“好的记忆”是什么样子时，会想到几点：
+
+延续有用的上下文：你告诉 ChatGPT 一次，它就会在你之后的聊天中记住这些信息。
+
+遵循偏好和限制：如果你描述了某个偏好（例如你是素食者），那么 ChatGPT 今后应采取与该偏好一致的行动。
+
+随时间保持最新：记忆应考虑时间的流逝。想象一下“用户正在为下周六的生日派对做计划”；最终，星期天会到来。
+
+我们可以评估 ChatGPT Plus 和 Pro 的记忆在上述三个记忆目标上的改进情况。我们分别针对以下各项进行评估：
+
+2025：已保存记忆 + Dreaming V0
+
+当你与 ChatGPT 开始新的聊天时，不必从头介绍自己。ChatGPT 可以为你节省时间，并基于先前的上下文继续推进，尤其适用于复杂、长期进行的项目。
+
+例如，想象你正在使用 ChatGPT 选购与你当前相机兼容的新相机设备。如果你过去曾与 ChatGPT 讨论过你的相机配置，你就可以询问与“我的摄影配置”兼容的产品，并获得符合你需求的定制推荐。
+
+What would I need to buy to use TTL for my underwater photography setup?
+
+To useTTL flash underwater, you need a compatible chain fromcamera → housing/trigger → cable → strobe. What you buy depends mostly on whether your setup usesfiber-optic TTLorelectrical TTL.
+
+TTL-capable underwater strobeLook for strobes that support your TTL type, such asInon S-TTL,Sea & Sea DS-TTL,Ikelite DS TTL, or compatible Backscatter/Nauticam systems. TTL has to be supported by the strobe, not just the camera.
+
+TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠（在新窗口中打开）)
+
+Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠（在新窗口中打开）)Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
+
+Housing compatibility partsYou may need ahot-shoe adapter,bulkhead,fiber optic window/adapter, or housing-specific TTL board. Many TTL triggers mount inside the housing on the camera hot shoe.
+
+Strobe arms, clamps, tray, and mounting hardwareTTL controls exposure, but you still need to physically mount and aim the strobes.
+
+Batteries and sparesBring strobe batteries, trigger batteries if required, spare fiber optic cables or sync cord O-rings, and silicone grease for serviceable O-rings.
+
+Fiber optic TTLis usually easiest if your housing has optical ports or can use the camera’s pop-up flash/LED trigger. It is common with compact, mirrorless, Nauticam, Sea & Sea, AOI, and Olympus/OM TG-style setups.
+
+Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠（在新窗口中打开）)
+
+You need all three to match:
+
+camera brand/protocol + housing/trigger type + strobe TTL system
+
+Sony camera + Nauticam housing + optical TTL trigger + Inon/Sea & Sea-compatible fiber optic strobe
+
+Nikon/Canon/Sony camera + Ikelite housing/bulkhead + Ikelite DS Link TTL converter + Ikelite DS strobe
+
+Compact camera with built-in flash + fiber optic cable + S-TTL/DS-TTL-capable strobe
+
+So the practical answer is: buy aTTL-compatible strobe, thecorrect TTL trigger/converter for your camera and housing, and theright fiber optic or electrical sync cable. The exact part numbers depend on your camera, housing, and strobe model.
+
+模型给出通用回应，让用户自行进行复杂的兼容性检查。
+
+What would I need to buy to use TTL for my underwater photography setup?
+
+I’ll verify this against your actual setup: Sony A1 II in Nauticam NA-A1II, with Backscatter Mini Flash 3 and Inon Z-330 strobes. The key question is whether you want TTL with the Mini Flash 3, the Z-330s, or both.
+
+Foryour setup—Sony A1 II + Nauticam NA-A1II + Backscatter Mini Flash 3 + Inon Z-330— there are two different TTL paths:
+
+Backscatter Smart Control TTL LED Nauticam Flash Trigger for SonySKU: BS-TR-SN2
+
+Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠（在新窗口中打开）)
+
+You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠（在新窗口中打开）)
+
+For theInon Z-330, the relevant unit is:
+
+UW Technics 11075-HSS TTL Converter for Sony / Nauticam
+
+UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠（在新窗口中打开）)
+
+But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠（在新窗口中打开）)
+
+Since you shoot macro and have theMini Flash 3, I’d buy theBackscatter Smart Control TTL LED Nauticam Flash Trigger for Sony — BS-TR-SN2.
+
+The catch: there probably isno single trigger that gives true TTL for both the Mini Flash 3 and Inon Z-330 at the same time. The Backscatter trigger is the right TTL solution for the MF-3; the UW Technics converter is the right TTL solution for the Z-330. So choose based on which strobe you actually want TTL for.
+
+For your use case, I’d prioritizeMini Flash 3 TTL / SC Macroand treat the Z-330s as manual when needed.
+
+模型记得用户的相机配置，并推荐了兼容产品。
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+我们可以基于类似这样的示例构建评估，其中模型需要回应一个提示，而该提示要求它回忆关于用户的事实信息。如果模型以正确使用相关上下文的方式作出回应，就会获得奖励。在这项评估中，新的基于“做梦”功能的系统提升了模型回忆相关事实的能力。
+
+记忆还能帮助 ChatGPT 以更符合你的偏好和限制的方式作出回应。
+
+想象你正在计划一次新加坡之旅。出发前两个月，你请 ChatGPT 帮忙制定行程。ChatGPT 已经从过去的旅行规划中知道，你喜欢野生动物摄影，偏好空调强劲的酒店，并且比起拥挤的酒吧更喜欢安静的晚餐。
+
+Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
+
+Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠（在新窗口中打开）)
+
+Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠（在新窗口中打开）)
+
+Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠（在新窗口中打开）)
+
+Afternoon:Kampong GlamandHaji Lanefor Sultan Mosque, murals, boutiques, and cafés. Then head toLittle Indiaaround golden hour for temples, flower garlands, Tekka Centre, and dinner.
+
+Evening: either cocktails around Ann Siang / Club Street, or keep it low-key with a night walk along the Singapore River: Boat Quay to Clarke Quay to Robertson Quay.
+
+Pick one based on your energy.
+
+For nature: doSingapore Botanic Gardensearly, then the National Orchid Garden, followed by lunch in Dempsey Hill or Tiong Bahru. This is the best “green Singapore” day without leaving the city.
+
+For beach/resort mode: go toSentosa. Choose the southern beaches, Fort Siloso Skywalk, or a beach club. I would skip trying to do every Sentosa attraction unless you love theme parks.
+
+For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠（在新窗口中打开）)
+
+Marina Bay / CBDis easiest if you want polished, walkable, skyline-heavy Singapore and minimal transit.
+
+Chinatown / Telok Ayer / Tanjong Pagaris my top pick for a few free days: great food, MRT access, heritage streets, cocktail bars, and close to work districts.
+
+Bugis / Kampong Glamis better if you want boutique hotels, cafés, street art, and a slightly more relaxed neighborhood feel.
+
+Orchardis convenient for shopping and rainy-day malls, but less atmospheric.
+
+Book Gardens by the Bay conservatories/Skyway, any special restaurants, and possibly a cocktail bar. For hawker centres, do not over-plan; just go hungry, carry tissues or wet wipes, and be ready to share tables.
+
+Bring breathable work clothes, comfortable walking shoes, a small umbrella, and a light layer for aggressive air-conditioning. I would also plan one “rain-flexible” indoor block each day, because showers can arrive suddenly even when the forecast looks fine.
+
+My suggested balance:Day 1 Marina Bay/Gardens, Day 2 Chinatown–Kampong Glam–Little India, Day 3 Botanic Gardens or Sentosa. That gives you the Singapore highlights without turning your post-work break into another work project.
+
+模型给出了更偏游客化的通用回应，没有帮助预订酒店，并且在很大程度上忽视了用户的兴趣。
+
+Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
+
+I’ll build this around your known constraints: a few free days after work, hot/humid July weather, wildlife/photography/nature bias, strong AC needs for sleep, and good but not overly social dining. I’ll verify current July logistics and then give a practical short itinerary rather than a generic Singapore list.
+
+Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠（在新窗口中打开）)
+
+Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Dinner: do something easy nearby: Marina Bay / Tanjong Pagar / Telok Ayer. For you, I’d prioritize reservation-based restaurants with real tables over hawker centers on the first night, because you dislike cramped solo seating.
+
+Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
+
+Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
+
+This is a full day. I would not add Singapore Zoo unless you have 4 free days; Mandai can become exhausting fast.
+
+Early morning:Singapore Botanic GardensorMacRitchie / Windsor Nature Park. For a few free days, Botanic Gardens is the safer pick: easier transport, less sweaty, better bailout options, and more consistent casual photography. MacRitchie / Windsor is better if you want more actual forest, but it is hotter, sweatier, and less predictable.
+
+Late afternoon:Joo Chiat / KatongorChinatown / Telok Ayerfor walking, architecture, coffee, and dinner. This gives you a different texture from Marina Bay without turning the day into a logistics project.
+
+Cloud Forest / Gardens by the Bay— best combination of photogenic, iconic, heat-managed.
+
+Bird Paradise + Night Safari— best wildlife-focused day.
+
+Botanic Gardens early morning— best low-stress outdoor nature.
+
+Joo Chiat / Katong— best neighborhood walk.
+
+Hawker centers— worth doing, but not ideal for your seating preferences unless timed off-peak.
+
+I would skipSentosaunless you specifically want beach/resort stuff. I would also skip a packed “greatest hits” day of Merlion / Orchard / Little India / Chinatown / Clarke Quay; it’s inefficient and hot. For you, the trip will be better if each day has one strong anchor plus one easy evening plan.
+
+Since this is a work trip, your hotel may be fixed. If you can choose or extend at the same hotel, the hard gate is still AC. Singapore hotels are generally AC-heavy, but your requirement is unusually strict.
+
+Send the exact free dates and whether your work hotel is fixed. Then I’d turn this into a day-by-day plan with restaurant targets and a hotel/AC callout.
+
+模型给出的回应针对用户对野生动物摄影、安静晚餐以及酒店预订优先事项的兴趣进行了个性化处理。
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+关于 ChatGPT 应如何回应的指示（“不要再提 Stan”）。
+
+会影响与你相关内容的隐性偏好（“我住在旧金山附近” → 本地选项应针对该地区进行定制）
+
+在开发新的记忆系统时，我们提升了 ChatGPT 应用过去对话中相关偏好的能力。沿用上面“我是素食者”的例子，当一位素食用户询问备餐建议时，我们可以评估模型是否正确利用记忆来生成适合素食者的用餐选项。
+
+传统记忆系统可能会变得陈旧。例如，你告诉 ChatGPT：“我在新加坡，今晚需要一个晚餐推荐。”随后，时间过去，你的旅程结束了，而你却想不通为什么 ChatGPT 仍然认为你在新加坡。
+
+通过“做梦”功能，记忆会随着时间流逝自动更新，使 ChatGPT 能够在旅程结束时，将其记忆从“你七月要去新加坡”修订为“你在 2026 年七月去过新加坡”。然后，当你回到家后，ChatGPT 又可以根据你的居住地点和时区提供定制推荐。
+
+Help me find something for take-out tonight that's still open.
+
+It’sabout 5:19 AM Sunday in Singapore, so your safest take-out/delivery bets are 24-hour places.
+
+McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠（在新窗口中打开）)
+
+Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠（在新窗口中打开）)
+
+89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠（在新窗口中打开）)
+
+126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠（在新窗口中打开）)
+
+Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠（在新窗口中打开）)
+
+For the fastest path: openGrabFood / foodpanda / Deliveroo, set filter toOpen now, then search“prata,” “McDonald’s,” “Srisun,” “89.7,” “dim sum,”or“nasi lemak.”If you tell me your neighborhood or nearest MRT, I’ll narrow it to specific nearby places.
+
+Help me find something for take-out tonight that's still open.
+
+I’ll use Portola Valley / Ladera as the starting point and prioritize places that are plausibly open for takeout tonight, then narrow to low-friction options rather than a huge list.
+
+Fortonight, Saturday May 30, near Ladera / Portola Valley, I’d start here:
+
+Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠（在新窗口中打开）)
+
+Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠（在新窗口中打开）)
+
+Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠（在新窗口中打开）)
+
+Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠（在新窗口中打开）)
+
+State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠（在新窗口中打开）)
+
+My pick:Alpine Innfor easiest local takeout,Tavernaif you want something less heavy,State of Mindif it’s later and you want the most reliable post-9 pm option.
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+在我们的记忆评估中，我们衡量 ChatGPT 是否能正确回应那些时间流逝会对正确答案或推荐产生实质影响的提示。“做梦”功能在这一方面带来了显著提升：
+
+在 OpenAI，我们的使命是确保通用人工智能造福全人类。
+
+虽然基于“做梦”功能的记忆已面向 Plus 和 Pro 用户开放了一段时间，但直到现在，我们才有能力为免费版用户提供一个既达到质量标准又适合大规模服务的版本。近期改进将面向免费版用户提供“做梦”功能所需的计算量降低了约 5 倍，使我们能够在未来几周开始向免费版用户推出“做梦”功能，并提升 Plus 和 Pro 用户的记忆容量。
+
+展望未来，“做梦”功能现在为所有用户提供了一个共享的记忆基础。这项更新代表了我们迄今能力最强的记忆系统，我们将继续改进它。
+
+要详细了解此版本和记忆用户控制，请访问我们的记忆常见问题⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
+
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
+
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
+
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
+
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
+
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
+
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所...</p><div style="font-size:16px;line-height:1.8;color:#333">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
+
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
+
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
+
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
+
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
+
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
+
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所有没有写下来的内容。已保存记忆也往往会随着时间变得陈旧，并最终变得不正确或无关。
+
+2025 年 4 月，我们更新了 ChatGPT 的记忆，让模型能够参考已保存记忆列表之外的聊天上下文；这是通过引入第一版“做梦”(Dreaming)功能来实现的 — 这是一种让 ChatGPT 通过参考聊天历史在后台自动整理记忆的方法。
+
+与已保存记忆不同，“做梦”功能利用后台流程，让 ChatGPT 能够从许多对话中学习并整合 ChatGPT 的记忆状态，从而始终为你的对话提供最新、最相关的上下文。“做梦”功能还让记忆更容易纳入对话中自然出现的上下文，而不必依赖明确要求记住某件事。
+
+在过去一年里，“做梦”功能补充了已保存记忆，使 ChatGPT 个性化回复的能力实现了大幅提升，并抵消了已保存记忆的陈旧性。然而，从历史上看，它从来不足以作为一个独立的记忆系统。
+
+今天，我们将推出一种基于“做梦”功能构建的、能力显著更强且计算效率更高的记忆架构。
+
+由“做梦”功能整合出的记忆可通过记忆摘要页面中可见的摘要进行查看。通过记忆摘要，你可以快速了解 ChatGPT 对你的了解重点，添加或更新关于你自己的信息，并提供关于 ChatGPT 应在何时提起哪些话题的指示。如果你想深入了解某个特定领域，只需和模型聊天即可。
+
+当我们思考 ChatGPT 中“好的记忆”是什么样子时，会想到几点：
+
+延续有用的上下文：你告诉 ChatGPT 一次，它就会在你之后的聊天中记住这些信息。
+
+遵循偏好和限制：如果你描述了某个偏好（例如你是素食者），那么 ChatGPT 今后应采取与该偏好一致的行动。
+
+随时间保持最新：记忆应考虑时间的流逝。想象一下“用户正在为下周六的生日派对做计划”；最终，星期天会到来。
+
+我们可以评估 ChatGPT Plus 和 Pro 的记忆在上述三个记忆目标上的改进情况。我们分别针对以下各项进行评估：
+
+2025：已保存记忆 + Dreaming V0
+
+当你与 ChatGPT 开始新的聊天时，不必从头介绍自己。ChatGPT 可以为你节省时间，并基于先前的上下文继续推进，尤其适用于复杂、长期进行的项目。
+
+例如，想象你正在使用 ChatGPT 选购与你当前相机兼容的新相机设备。如果你过去曾与 ChatGPT 讨论过你的相机配置，你就可以询问与“我的摄影配置”兼容的产品，并获得符合你需求的定制推荐。
+
+What would I need to buy to use TTL for my underwater photography setup?
+
+To useTTL flash underwater, you need a compatible chain fromcamera → housing/trigger → cable → strobe. What you buy depends mostly on whether your setup usesfiber-optic TTLorelectrical TTL.
+
+TTL-capable underwater strobeLook for strobes that support your TTL type, such asInon S-TTL,Sea & Sea DS-TTL,Ikelite DS TTL, or compatible Backscatter/Nauticam systems. TTL has to be supported by the strobe, not just the camera.
+
+TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠（在新窗口中打开）)
+
+Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠（在新窗口中打开）)Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
+
+Housing compatibility partsYou may need ahot-shoe adapter,bulkhead,fiber optic window/adapter, or housing-specific TTL board. Many TTL triggers mount inside the housing on the camera hot shoe.
+
+Strobe arms, clamps, tray, and mounting hardwareTTL controls exposure, but you still need to physically mount and aim the strobes.
+
+Batteries and sparesBring strobe batteries, trigger batteries if required, spare fiber optic cables or sync cord O-rings, and silicone grease for serviceable O-rings.
+
+Fiber optic TTLis usually easiest if your housing has optical ports or can use the camera’s pop-up flash/LED trigger. It is common with compact, mirrorless, Nauticam, Sea & Sea, AOI, and Olympus/OM TG-style setups.
+
+Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠（在新窗口中打开）)
+
+You need all three to match:
+
+camera brand/protocol + housing/trigger type + strobe TTL system
+
+Sony camera + Nauticam housing + optical TTL trigger + Inon/Sea & Sea-compatible fiber optic strobe
+
+Nikon/Canon/Sony camera + Ikelite housing/bulkhead + Ikelite DS Link TTL converter + Ikelite DS strobe
+
+Compact camera with built-in flash + fiber optic cable + S-TTL/DS-TTL-capable strobe
+
+So the practical answer is: buy aTTL-compatible strobe, thecorrect TTL trigger/converter for your camera and housing, and theright fiber optic or electrical sync cable. The exact part numbers depend on your camera, housing, and strobe model.
+
+模型给出通用回应，让用户自行进行复杂的兼容性检查。
+
+What would I need to buy to use TTL for my underwater photography setup?
+
+I’ll verify this against your actual setup: Sony A1 II in Nauticam NA-A1II, with Backscatter Mini Flash 3 and Inon Z-330 strobes. The key question is whether you want TTL with the Mini Flash 3, the Z-330s, or both.
+
+Foryour setup—Sony A1 II + Nauticam NA-A1II + Backscatter Mini Flash 3 + Inon Z-330— there are two different TTL paths:
+
+Backscatter Smart Control TTL LED Nauticam Flash Trigger for SonySKU: BS-TR-SN2
+
+Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠（在新窗口中打开）)
+
+You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠（在新窗口中打开）)
+
+For theInon Z-330, the relevant unit is:
+
+UW Technics 11075-HSS TTL Converter for Sony / Nauticam
+
+UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠（在新窗口中打开）)
+
+But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠（在新窗口中打开）)
+
+Since you shoot macro and have theMini Flash 3, I’d buy theBackscatter Smart Control TTL LED Nauticam Flash Trigger for Sony — BS-TR-SN2.
+
+The catch: there probably isno single trigger that gives true TTL for both the Mini Flash 3 and Inon Z-330 at the same time. The Backscatter trigger is the right TTL solution for the MF-3; the UW Technics converter is the right TTL solution for the Z-330. So choose based on which strobe you actually want TTL for.
+
+For your use case, I’d prioritizeMini Flash 3 TTL / SC Macroand treat the Z-330s as manual when needed.
+
+模型记得用户的相机配置，并推荐了兼容产品。
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+我们可以基于类似这样的示例构建评估，其中模型需要回应一个提示，而该提示要求它回忆关于用户的事实信息。如果模型以正确使用相关上下文的方式作出回应，就会获得奖励。在这项评估中，新的基于“做梦”功能的系统提升了模型回忆相关事实的能力。
+
+记忆还能帮助 ChatGPT 以更符合你的偏好和限制的方式作出回应。
+
+想象你正在计划一次新加坡之旅。出发前两个月，你请 ChatGPT 帮忙制定行程。ChatGPT 已经从过去的旅行规划中知道，你喜欢野生动物摄影，偏好空调强劲的酒店，并且比起拥挤的酒吧更喜欢安静的晚餐。
+
+Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
+
+Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠（在新窗口中打开）)
+
+Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠（在新窗口中打开）)
+
+Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠（在新窗口中打开）)
+
+Afternoon:Kampong GlamandHaji Lanefor Sultan Mosque, murals, boutiques, and cafés. Then head toLittle Indiaaround golden hour for temples, flower garlands, Tekka Centre, and dinner.
+
+Evening: either cocktails around Ann Siang / Club Street, or keep it low-key with a night walk along the Singapore River: Boat Quay to Clarke Quay to Robertson Quay.
+
+Pick one based on your energy.
+
+For nature: doSingapore Botanic Gardensearly, then the National Orchid Garden, followed by lunch in Dempsey Hill or Tiong Bahru. This is the best “green Singapore” day without leaving the city.
+
+For beach/resort mode: go toSentosa. Choose the southern beaches, Fort Siloso Skywalk, or a beach club. I would skip trying to do every Sentosa attraction unless you love theme parks.
+
+For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠（在新窗口中打开）)
+
+Marina Bay / CBDis easiest if you want polished, walkable, skyline-heavy Singapore and minimal transit.
+
+Chinatown / Telok Ayer / Tanjong Pagaris my top pick for a few free days: great food, MRT access, heritage streets, cocktail bars, and close to work districts.
+
+Bugis / Kampong Glamis better if you want boutique hotels, cafés, street art, and a slightly more relaxed neighborhood feel.
+
+Orchardis convenient for shopping and rainy-day malls, but less atmospheric.
+
+Book Gardens by the Bay conservatories/Skyway, any special restaurants, and possibly a cocktail bar. For hawker centres, do not over-plan; just go hungry, carry tissues or wet wipes, and be ready to share tables.
+
+Bring breathable work clothes, comfortable walking shoes, a small umbrella, and a light layer for aggressive air-conditioning. I would also plan one “rain-flexible” indoor block each day, because showers can arrive suddenly even when the forecast looks fine.
+
+My suggested balance:Day 1 Marina Bay/Gardens, Day 2 Chinatown–Kampong Glam–Little India, Day 3 Botanic Gardens or Sentosa. That gives you the Singapore highlights without turning your post-work break into another work project.
+
+模型给出了更偏游客化的通用回应，没有帮助预订酒店，并且在很大程度上忽视了用户的兴趣。
+
+Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
+
+I’ll build this around your known constraints: a few free days after work, hot/humid July weather, wildlife/photography/nature bias, strong AC needs for sleep, and good but not overly social dining. I’ll verify current July logistics and then give a practical short itinerary rather than a generic Singapore list.
+
+Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠（在新窗口中打开）)
+
+Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠（在新窗口中打开）)
+
+Dinner: do something easy nearby: Marina Bay / Tanjong Pagar / Telok Ayer. For you, I’d prioritize reservation-based restaurants with real tables over hawker centers on the first night, because you dislike cramped solo seating.
+
+Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
+
+Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
+
+This is a full day. I would not add Singapore Zoo unless you have 4 free days; Mandai can become exhausting fast.
+
+Early morning:Singapore Botanic GardensorMacRitchie / Windsor Nature Park. For a few free days, Botanic Gardens is the safer pick: easier transport, less sweaty, better bailout options, and more consistent casual photography. MacRitchie / Windsor is better if you want more actual forest, but it is hotter, sweatier, and less predictable.
+
+Late afternoon:Joo Chiat / KatongorChinatown / Telok Ayerfor walking, architecture, coffee, and dinner. This gives you a different texture from Marina Bay without turning the day into a logistics project.
+
+Cloud Forest / Gardens by the Bay— best combination of photogenic, iconic, heat-managed.
+
+Bird Paradise + Night Safari— best wildlife-focused day.
+
+Botanic Gardens early morning— best low-stress outdoor nature.
+
+Joo Chiat / Katong— best neighborhood walk.
+
+Hawker centers— worth doing, but not ideal for your seating preferences unless timed off-peak.
+
+I would skipSentosaunless you specifically want beach/resort stuff. I would also skip a packed “greatest hits” day of Merlion / Orchard / Little India / Chinatown / Clarke Quay; it’s inefficient and hot. For you, the trip will be better if each day has one strong anchor plus one easy evening plan.
+
+Since this is a work trip, your hotel may be fixed. If you can choose or extend at the same hotel, the hard gate is still AC. Singapore hotels are generally AC-heavy, but your requirement is unusually strict.
+
+Send the exact free dates and whether your work hotel is fixed. Then I’d turn this into a day-by-day plan with restaurant targets and a hotel/AC callout.
+
+模型给出的回应针对用户对野生动物摄影、安静晚餐以及酒店预订优先事项的兴趣进行了个性化处理。
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+关于 ChatGPT 应如何回应的指示（“不要再提 Stan”）。
+
+会影响与你相关内容的隐性偏好（“我住在旧金山附近” → 本地选项应针对该地区进行定制）
+
+在开发新的记忆系统时，我们提升了 ChatGPT 应用过去对话中相关偏好的能力。沿用上面“我是素食者”的例子，当一位素食用户询问备餐建议时，我们可以评估模型是否正确利用记忆来生成适合素食者的用餐选项。
+
+传统记忆系统可能会变得陈旧。例如，你告诉 ChatGPT：“我在新加坡，今晚需要一个晚餐推荐。”随后，时间过去，你的旅程结束了，而你却想不通为什么 ChatGPT 仍然认为你在新加坡。
+
+通过“做梦”功能，记忆会随着时间流逝自动更新，使 ChatGPT 能够在旅程结束时，将其记忆从“你七月要去新加坡”修订为“你在 2026 年七月去过新加坡”。然后，当你回到家后，ChatGPT 又可以根据你的居住地点和时区提供定制推荐。
+
+Help me find something for take-out tonight that's still open.
+
+It’sabout 5:19 AM Sunday in Singapore, so your safest take-out/delivery bets are 24-hour places.
+
+McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠（在新窗口中打开）)
+
+Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠（在新窗口中打开）)
+
+89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠（在新窗口中打开）)
+
+126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠（在新窗口中打开）)
+
+Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠（在新窗口中打开）)
+
+For the fastest path: openGrabFood / foodpanda / Deliveroo, set filter toOpen now, then search“prata,” “McDonald’s,” “Srisun,” “89.7,” “dim sum,”or“nasi lemak.”If you tell me your neighborhood or nearest MRT, I’ll narrow it to specific nearby places.
+
+Help me find something for take-out tonight that's still open.
+
+I’ll use Portola Valley / Ladera as the starting point and prioritize places that are plausibly open for takeout tonight, then narrow to low-friction options rather than a huge list.
+
+Fortonight, Saturday May 30, near Ladera / Portola Valley, I’d start here:
+
+Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠（在新窗口中打开）)
+
+Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠（在新窗口中打开）)
+
+Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠（在新窗口中打开）)
+
+Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠（在新窗口中打开）)
+
+State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠（在新窗口中打开）)
+
+My pick:Alpine Innfor easiest local takeout,Tavernaif you want something less heavy,State of Mindif it’s later and you want the most reliable post-9 pm option.
+
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
+
+在我们的记忆评估中，我们衡量 ChatGPT 是否能正确回应那些时间流逝会对正确答案或推荐产生实质影响的提示。“做梦”功能在这一方面带来了显著提升：
+
+在 OpenAI，我们的使命是确保通用人工智能造福全人类。
+
+虽然基于“做梦”功能的记忆已面向 Plus 和 Pro 用户开放了一段时间，但直到现在，我们才有能力为免费版用户提供一个既达到质量标准又适合大规模服务的版本。近期改进将面向免费版用户提供“做梦”功能所需的计算量降低了约 5 倍，使我们能够在未来几周开始向免费版用户推出“做梦”功能，并提升 Plus 和 Pro 用户的记忆容量。
+
+展望未来，“做梦”功能现在为所有用户提供了一个共享的记忆基础。这项更新代表了我们迄今能力最强的记忆系统，我们将继续改进它。
+
+要详细了解此版本和记忆用户控制，请访问我们的记忆常见问题⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing new capabilities to GPT-Rosalind</title>
@@ -407,108 +1047,116 @@ The next step is to connect benchmark performance to deployment studies in live 
   <guid isPermaLink="false">https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/</guid>
   <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
 
-AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
+人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
 
-AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
+因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
 
-That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
+启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
 
-Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
+扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
 
-Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
+我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速...</p><div style="font-size:16px;line-height:1.8;color:#333">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
 
-The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
+人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
 
-Building on our safety and resilience work
+因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
 
-As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
+启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
 
-In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
+扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
 
-We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
+我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速医疗反制措施的开发；构建更早的预警系统；加强诊断、应急准备和响应能力；以及支持建立一个稳健的评估生态系统。在未来的几周内，我们将继续分享我们在这些领域的更多工作进展。
 
-Supporting defensive acceleration with Rosalind Biodefense
+随着 AI 模型在生物学领域的能力日益提升，我们一直致力于确保这些能力的部署既能推动科学进步，又能强化安全防线。我们的方法侧重于构建多层韧性：对防备评测进行投入、开展生物领域专属的能力评估、针对双用途生物学请求优化模型的安全行为、实施监测与合规审查、引入专家红队测试，并针对高风险能力部署安全控制措施。
 
-Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
+2025 年 7 月，我们发布了 ChatGPT 智能体，这是我们在准备框架 (Preparedness Framework)下首个定义为“生物学高能力”的模型，并为此启用了强有力的安全防护措施，以最大程度降低危害风险。自那时起，随着模型能力的不断演进，我们持续优化这些防护措施，并分享了详细的评估报告⁠（在新窗口中打开）。同时，我们继续与外部测试团队在部署前评估方面保持紧密合作，他们的发现有助于验证并完善我们的方法。
 
-This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
+此外，我们还与外部专家及公共部门合作伙伴紧密联手，共同强化更广泛的生物安全生态系统，合作伙伴包括资深生物学家、美国 AI 标准与创新研究所 (CAISI) 和英国 AI 安全研究所 (UK AISI) 等政府机构、洛斯阿拉莫斯国家实验室以及前沿模型论坛 (Frontier Model Forum)。今天的发布立足于前期成果，进一步扩大受信任合作伙伴使用GPT‑Rosalind开展高影响力防御应用的途径。这一举措既为研发新型反制措施的防御者提供支持，也向承担公共卫生与生物防御任务的政府伙伴扩展受信任的访问权限。
 
-At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
+通过 Rosalind 生物防御计划加速防御能力建设
 
-Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
+加速防御能力建设的核心，是确保前沿 AI 能力能够切实赋能那些构建社会防线的群体。为了帮助受信任的开发者将前沿能力转化为实际的防御手段，我们正式启动了 Rosalind 生物防御计划。这是一项全新的倡议，旨在利用 GPT‑Rosalind（我们专为生命科学研究打造的前沿推理模型），推动 AI 在生命科学领域的高影响力防御应用开发。
 
-Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
+该计划旨在帮助受信任的开发者将前沿 AI 能力应用于具有操作性的生物防御工具中，从而在生物威胁出现之前强化防备。OpenAI 将资助 GPT‑Rosalind 的访问额度，并为那些构建前沿生物安全应用、旨在巩固社会防线，并打造大流行病防备能力的受信任开发者提供启动支持。这涵盖了流行病学建模、早期检测、筛查、应急准备、非药物干预 (NPI) 以及其他与公共卫生相关的能力领域。
 
-Working with government partners to strengthen biodefense
+在启动阶段，我们正为首批利用 GPT‑Rosalind 在生物防御全栈领域构建前沿应用的机构提供支持。它们的工作贯穿了生物威胁的全生命周期：从预防、早期检测到社会韧性以及医疗反制措施的开发。这些实践有助于展示前沿 AI 如何辅助公共卫生团队、研究人员、基础设施运营商以及社区，共同防范无论是自然发生还是人工合成的生物风险。
 
-Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
+Fourth Eon Biosecurity 致力于构建能够与 AI 等新技术同步演进的自适应筛查基础设施。该机构从基于功能的 DNA 合成筛查入手，协助处理生物材料的实验室和企业拦截不安全或恶意的订单，其中包括涉及新型设计的订单。
 
-Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
+我们的目标不仅是在抽象层面上加速生命科学研究，更是为了助力创造出能够增强社会韧性的产品与干预手段，并展示负责任、高影响力的生物防御在实践中究竟如何落地。我们对那些先进 AI 能够切实提升防御研究工作流速度、质量或规模的项目尤为感兴趣，包括文献综述、实验方案设计支持、模型构建、数据协调、模拟、决策支持和科学传播。我们欢迎来自学术界、非营利组织、政府附属机构、使命驱动型企业以及其他符合条件且项目涉及明确公共利益的研究团队提交申请。
 
-This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
+强化生物防范能力需要一个由众多防御者构成的广泛生态系统。除了支持开发新型防御应用的受信任构建者外，我们还在向那些在预防、检测和应对生物威胁中发挥核心作用的公共机构扩大访问权限。今天，我们正式向特定承担已获批公共卫生和生物防御任务的美国政府及盟友合作伙伴，扩展 GPT‑Rosalind 的受信任访问权限。此举旨在让符合条件的团队将前沿 AI 应用于高影响力的工作流中，例如早期预警系统、疫情响应规划、诊断、应急准备以及医疗反制措施的开发。
 
-Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
+在保护社区、将科学证据转化为行动，以及为新出现的生物挑战做好准备方面，政府公共卫生机构和研究组织发挥着至关重要的作用。通过受信任访问模式扩大访问范围，我们可以协助符合条件的团队将 GPT‑Rosalind 用于具有明确益处的防御工作，同时维持与先进生物能力相匹配的安全、防范及问责控制措施。
 
-We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
+这一扩展举措体现了我们更为广泛的方法理念：在提升强大工具可及性的同时，部署相应的安全防护措施，并对整个生态系统的韧性进行持续投入。强大的社会防备能力有赖于政府、研究机构、行业，以及技术提供商之间的通力合作。向符合条件的公共卫生与科学合作伙伴开放 GPT‑Rosalind，是帮助该生态系统更高效地开展准备、响应和防御工作的重要一步。
 
-Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
+劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
 
-We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
+劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
 
-Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
+同时，我们也在与约翰斯·霍普金斯大学应用物理实验室展开合作，该实验室计划将 GPT‑Rosalind 整合到蛋白质工程平台中，以加速用于治疗、反制措施开发以及新兴生物威胁特征分析的突变酶筛查。此外，我们正向流行病防范创新联盟 (CEPI) 开放 GPT‑Rosalind 的访问权限，该联盟正专注于其“100 天任务”(100 Days Mission)，旨在加速针对流行病和大流行病威胁（包括当前的埃博拉疫情）的疫苗开发。
 
-AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
+今天的发布只是我们更广泛愿景的初步尝试 — 即利用 GPT‑Rosalind 全面赋能公共卫生、生物防御和生命科学研究。Rosalind 生物防御计划面向全球符合条件的申请者开放，我们期待支持更多构建防御应用的机构，利用 GPT‑Rosalind 来提升社会韧性。
 
-AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
+随着时间的推移，我们也期望继续扩大受信任的政府合作伙伴与 GPT‑Rosalind 的协作方式。通过从首批部署中汲取经验，并继续与美国及海外的合作伙伴深化对话，我们将持续优化所需的访问路径、支持的模型和安全防护措施，以协助符合条件的机构负责任地使用前沿生命科学 AI。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
 
-That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
+人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
 
-Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
+因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
 
-Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
+启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
 
-The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
+扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
 
-Building on our safety and resilience work
+我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速...</p><div style="font-size:16px;line-height:1.8;color:#333">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
 
-As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
+人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
 
-In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
+因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
 
-We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
+启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
 
-Supporting defensive acceleration with Rosalind Biodefense
+扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
 
-Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
+我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速医疗反制措施的开发；构建更早的预警系统；加强诊断、应急准备和响应能力；以及支持建立一个稳健的评估生态系统。在未来的几周内，我们将继续分享我们在这些领域的更多工作进展。
 
-This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
+随着 AI 模型在生物学领域的能力日益提升，我们一直致力于确保这些能力的部署既能推动科学进步，又能强化安全防线。我们的方法侧重于构建多层韧性：对防备评测进行投入、开展生物领域专属的能力评估、针对双用途生物学请求优化模型的安全行为、实施监测与合规审查、引入专家红队测试，并针对高风险能力部署安全控制措施。
 
-At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
+2025 年 7 月，我们发布了 ChatGPT 智能体，这是我们在准备框架 (Preparedness Framework)下首个定义为“生物学高能力”的模型，并为此启用了强有力的安全防护措施，以最大程度降低危害风险。自那时起，随着模型能力的不断演进，我们持续优化这些防护措施，并分享了详细的评估报告⁠（在新窗口中打开）。同时，我们继续与外部测试团队在部署前评估方面保持紧密合作，他们的发现有助于验证并完善我们的方法。
 
-Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
+此外，我们还与外部专家及公共部门合作伙伴紧密联手，共同强化更广泛的生物安全生态系统，合作伙伴包括资深生物学家、美国 AI 标准与创新研究所 (CAISI) 和英国 AI 安全研究所 (UK AISI) 等政府机构、洛斯阿拉莫斯国家实验室以及前沿模型论坛 (Frontier Model Forum)。今天的发布立足于前期成果，进一步扩大受信任合作伙伴使用GPT‑Rosalind开展高影响力防御应用的途径。这一举措既为研发新型反制措施的防御者提供支持，也向承担公共卫生与生物防御任务的政府伙伴扩展受信任的访问权限。
 
-Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
+通过 Rosalind 生物防御计划加速防御能力建设
 
-Working with government partners to strengthen biodefense
+加速防御能力建设的核心，是确保前沿 AI 能力能够切实赋能那些构建社会防线的群体。为了帮助受信任的开发者将前沿能力转化为实际的防御手段，我们正式启动了 Rosalind 生物防御计划。这是一项全新的倡议，旨在利用 GPT‑Rosalind（我们专为生命科学研究打造的前沿推理模型），推动 AI 在生命科学领域的高影响力防御应用开发。
 
-Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
+该计划旨在帮助受信任的开发者将前沿 AI 能力应用于具有操作性的生物防御工具中，从而在生物威胁出现之前强化防备。OpenAI 将资助 GPT‑Rosalind 的访问额度，并为那些构建前沿生物安全应用、旨在巩固社会防线，并打造大流行病防备能力的受信任开发者提供启动支持。这涵盖了流行病学建模、早期检测、筛查、应急准备、非药物干预 (NPI) 以及其他与公共卫生相关的能力领域。
 
-Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
+在启动阶段，我们正为首批利用 GPT‑Rosalind 在生物防御全栈领域构建前沿应用的机构提供支持。它们的工作贯穿了生物威胁的全生命周期：从预防、早期检测到社会韧性以及医疗反制措施的开发。这些实践有助于展示前沿 AI 如何辅助公共卫生团队、研究人员、基础设施运营商以及社区，共同防范无论是自然发生还是人工合成的生物风险。
 
-This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
+Fourth Eon Biosecurity 致力于构建能够与 AI 等新技术同步演进的自适应筛查基础设施。该机构从基于功能的 DNA 合成筛查入手，协助处理生物材料的实验室和企业拦截不安全或恶意的订单，其中包括涉及新型设计的订单。
 
-Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
+我们的目标不仅是在抽象层面上加速生命科学研究，更是为了助力创造出能够增强社会韧性的产品与干预手段，并展示负责任、高影响力的生物防御在实践中究竟如何落地。我们对那些先进 AI 能够切实提升防御研究工作流速度、质量或规模的项目尤为感兴趣，包括文献综述、实验方案设计支持、模型构建、数据协调、模拟、决策支持和科学传播。我们欢迎来自学术界、非营利组织、政府附属机构、使命驱动型企业以及其他符合条件且项目涉及明确公共利益的研究团队提交申请。
 
-We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
+强化生物防范能力需要一个由众多防御者构成的广泛生态系统。除了支持开发新型防御应用的受信任构建者外，我们还在向那些在预防、检测和应对生物威胁中发挥核心作用的公共机构扩大访问权限。今天，我们正式向特定承担已获批公共卫生和生物防御任务的美国政府及盟友合作伙伴，扩展 GPT‑Rosalind 的受信任访问权限。此举旨在让符合条件的团队将前沿 AI 应用于高影响力的工作流中，例如早期预警系统、疫情响应规划、诊断、应急准备以及医疗反制措施的开发。
 
-Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
+在保护社区、将科学证据转化为行动，以及为新出现的生物挑战做好准备方面，政府公共卫生机构和研究组织发挥着至关重要的作用。通过受信任访问模式扩大访问范围，我们可以协助符合条件的团队将 GPT‑Rosalind 用于具有明确益处的防御工作，同时维持与先进生物能力相匹配的安全、防范及问责控制措施。
 
-We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
+这一扩展举措体现了我们更为广泛的方法理念：在提升强大工具可及性的同时，部署相应的安全防护措施，并对整个生态系统的韧性进行持续投入。强大的社会防备能力有赖于政府、研究机构、行业，以及技术提供商之间的通力合作。向符合条件的公共卫生与科学合作伙伴开放 GPT‑Rosalind，是帮助该生态系统更高效地开展准备、响应和防御工作的重要一步。
 
-Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
+
+劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
+
+同时，我们也在与约翰斯·霍普金斯大学应用物理实验室展开合作，该实验室计划将 GPT‑Rosalind 整合到蛋白质工程平台中，以加速用于治疗、反制措施开发以及新兴生物威胁特征分析的突变酶筛查。此外，我们正向流行病防范创新联盟 (CEPI) 开放 GPT‑Rosalind 的访问权限，该联盟正专注于其“100 天任务”(100 Days Mission)，旨在加速针对流行病和大流行病威胁（包括当前的埃博拉疫情）的疫苗开发。
+
+今天的发布只是我们更广泛愿景的初步尝试 — 即利用 GPT‑Rosalind 全面赋能公共卫生、生物防御和生命科学研究。Rosalind 生物防御计划面向全球符合条件的申请者开放，我们期待支持更多构建防御应用的机构，利用 GPT‑Rosalind 来提升社会韧性。
+
+随着时间的推移，我们也期望继续扩大受信任的政府合作伙伴与 GPT‑Rosalind 的协作方式。通过从首批部署中汲取经验，并继续与美国及海外的合作伙伴深化对话，我们将持续优化所需的访问路径、支持的模型和安全防护措施，以协助符合条件的机构负责任地使用前沿生命科学 AI。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>An OpenAI model has disproved a central conjecture in discrete geometry</title>
@@ -516,104 +1164,8 @@ Advance your public health and biodefense mission</div><hr style="margin:24px 0;
   <guid isPermaLink="false">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</guid>
   <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
-
-这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
-
-今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无...</p><div style="font-size:16px;line-height:1.8;color:#333">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
-
-这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
-
-今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无限示例。这一证明已经过一组外部数学家团队的审阅。他们还撰写了一篇配套论文，对该论证进行了详细阐释，并为这一成果的重大意义提供了进一步的背景与脉络支撑。
-
-该成果的发现方式同样引人瞩目。此证明诞生于一个全新的通用推理模型，而非专门针对数学进行训练，或依赖特定框架搜索证明策略，亦或是专门攻克单位距离问题的定制系统。作为评估先进模型能否助力前沿研究的工作的一部分，我们在一系列埃尔德什难题上对该模型进行了测试。而在平面单位距离问题上，它成功交出了一份解决该难题的证明。
-
-对于数学界和 AI 领域而言，该证明都是一座重要的里程碑。它标志着人工智能首次自主解决了一个在数学分支领域占据核心地位的未解问题。同时，它也展示了这类系统如今所具备的深度推理能力。数学为推理能力提供了一个格外清晰的试验场：问题定义严密，潜在的证明可被验证，而且一个长篇论证只有在逻辑环环相扣的前提下才能成立。解决该难题的方法同样令人惊叹。该证明巧妙地引入了代数数论中高深且意想不到的思想，成功攻克了这个初等几何问题。
-
-菲尔兹奖得主蒂莫西·高尔斯 (Tim Gowers) 在配套论文中将这一成果称为“人工智能数学领域的一座里程碑”。顶尖数论学家阿鲁尔·尚卡尔 (Arul Shankar) 则表示：“在我看来，这篇论文表明当前的 AI 模型不仅仅是人类数学家的助手 – 它们有能力产生独创且精妙的见解，并能将其最终变为实际成果。”
-
-证明可在此处⁠（在新窗口中打开）查看。由外部顶尖数学家撰写的配套论文可点击此处⁠（在新窗口中打开）阅读。你可以在这里⁠（在新窗口中打开）找到模型思维链的节选版本。
-
-此前已知的构造：由缩放后的正方形网格产生大量单位距离。
-
-设u(n)u(n)u(n)为平面上nnn个点之间可能存在的单位距离点对的最大数量。达到线性增长率的示例很容易构建：将nnn个点排成一条直线可以得到n−1n-1n−1对，而正方形网格可以得到大约2n2n2n对。此前已知最优的结构源自缩放的正方形网格，结果表明它能提供更多对：对于常数CCC，其数量为n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)。由于log⁡log⁡(n)\log \log(n)loglog(n)随着nnn趋于无穷大，指数中的附加项趋于000，这意味着这些结构实现的增长率仅略快于线性。几十年来，学术界普遍认为这一速率基本上已达上限，没有任何结构能比正方形网格做出显著改善。用技术术语来说，埃尔德什猜想其上限为n1+o(1)n^{1+o(1)}n1+o(1)，其中附加的o(1)o(1)o(1)表示一个随着nnn趋于000的项。我们的新成果推翻了这一猜想。更准确地说，对于无数个nnn值，该证明构建了包含至少n1+δn^{1+\delta}n1+δ个单位距离点对的nnn点配置，其中δ>0\delta > 0δ>0为某个固定指数。（最初的 AI 证明并未给出明确的δ\deltaδ值，但普林斯顿大学数学教授威尔·萨温 (Will Sawin) 随后进行的细化推导表明δ=0.014\delta=0.014δ=0.014。）回顾该问题的历史有助于理解为什么这一结果如此令人震惊。自埃尔德什 1946 年最初的构建以来，已知最优的下限基本上没有改变。而最优的上限O(n4/3)O(n^{4/3})O(n4/3)则要追溯到 1984 年斯宾塞 (Spencer)、塞迈雷迪 (Szemerédi) 和特罗特 (Trotter) 的研究工作，尽管后来有塞凯伊 (Székely)、卡茨和西利尔 (Katz and Silier)、帕赫 (Pach)、拉兹 (Raz) 以及索利莫西 (Solymosi) 等人的进一步细化和相关结构研究，该上限也基本上停滞不前。作为支持该猜想的证据，马图谢克 (Matoušek) 以及阿隆、布齐奇和绍尔曼 (Alon-Bucić-Sauermann) 研究了平面中非欧几里得距离下的该问题，并证明了在某种意义上，“绝大多数”非欧几里得距离都符合该猜想。令人惊奇的是，该构建方法的核心要素来自于一个完全不同的数学分支：代数数论，该学科主要研究诸如代数数域（即整数集的扩张）中的因式分解等概念。
-
-在验证了最初的证明之后，我们研究了模型在调用不同规模的“测试阶段算力” (test-time compute) 时，攻克该难题的成功率。结果如图所示。
-
-从高层逻辑来看，该证明始于一个人们熟知的几何概念，并将其推向了一个意想不到的方向。
-
-埃尔德什最初的下限可以通过高斯整数 (Gaussian integers) 来理解：即形式为a+bia+bia+bi的数，其中aaa和bbb为整数，而iii是−1-1−1的平方根。高斯整数对普通整数进行了扩张，并且与普通整数一样，享有诸如唯一质因数分解等性质。这种对普通整数或有理数的扩张被称为代数数域。新的论证用代数数论中更复杂的推广形式取代了高斯整数，这些形式具备更丰富的对称性，从而能够产生多得多的单位长度差值。
-
-具体论证过程中，模型使用了诸如无限阶级域塔 (infinite class field towers) 和高洛德-沙法列维奇理论 (Golod–Shafarevich theory) 等工具，证明了该论证所需的数域确实存在。这些思想对于代数数论学家来说早已耳熟能详，但令人大为震惊的是，这些概念竟然会对欧几里得平面上的几何问题产生影响。
-
-这一成果标志着人工智能与数学互动过程中的一个重要时刻：AI 系统自主解决了一个在活跃领域核心位置上历史悠久的难题。它同时也让我们初次窥见人工智能与人类数学家之间一种全新的协作形式。在这项研究中，外部数学家团队开展的配套研究工作，勾勒出了一幅比单纯的原始解法要丰富得多的宏大图景。
-
-正如托马斯·布鲁姆 (Thomas Bloom) 在配套注解中所写：
-
-“在评估一个由 AI 生成的证明的重要性与影响力时，我会问自己一个问题：这是否让我们对该问题有了新的认识？我们现在对离散几何的理解更深刻了吗？我认为答案是有限度的肯定：这表明，数论结构在处理此类问题时，所发挥的作用远超我们在此前的预想；此外，所需的数论知识可能非常高深。毫无疑问，许多代数数论学家将在未来的几个月里，对离散几何中的其他开放性问题展开深入研究。”
-
-该解法揭示了代数数论与离散几何之间意想不到的联系，这正是此成果引人注目的原因之一。它不仅解决了一个特定的猜想，更可能为数学家们架起一座桥梁，以此开始探索更多相关课题。
-
-“人类知识的前沿往往是由参差不齐的突破点构成的。毫无疑问，在未来的几个月和几年里，数学的许多其他领域也将迎来类似的成功。随着 AI 揭示出意料之外的关联，并将现有的技术机制推向极限，那些由来已久的难题将迎刃而解。AI 正在帮助我们更全面地探索几个世纪以来人类共同构建的数学殿堂；在这座殿堂的侧幕中，还有多少未曾遇见的奇迹在静候出场？”
-
-该成果让我们看到这个方向的巨大潜力：AI 带来的不仅是一个答案，更是一项数学发现，而这项发现的重大意义在人类随后的理解与剖析下，变得愈发清晰和丰富。
-
-该事件的意义不止于具体结果。更强大的数学推理能力可以让 AI 成为更得力的科研伙伴：它能够梳理并维系复杂的思维脉络，将相距遥远的知识领域串联起来，发掘出专家此前可能并未优先考虑的潜在路径，并帮助研究人员在那些原本因过于复杂或极度耗时而难以解决的问题上取得进展。
-
-这些能力的重要性超越了数学。如果一个模型能够让复杂的论证保持严密连贯，跨越知识领域串联思想，并产出经得起专家严苛审阅的成果，那么这些能力在生物学、物理学、材料科学、工程学以及医学领域同样大有可为。同时，这也是迈向高度自动化研究的长远工作的一部分 — 即打造出能够协助科学家和工程师探索更多设想、攻克更艰难技术课题的系统。
-
-人工智能即将在科研的创造性环节（以及 AI 自身研究中）扮演举足轻重的角色。虽然这种进步完全在预料之中，但它进一步增强了我们的紧迫感，促使我们去深刻理解 AI 发展的下一阶段、对齐极度智能系统所面临的挑战，以及人类与 AI 协作的未来。
-
-然而，这一未来依然取决于人类的判断。人类的专业知识非但没有贬值，反而变得愈发宝贵。AI 可以协助搜索、提出建议并辅助验证；但选择核心课题、解读研究成果、指引下一步探索方向的工作，始终由人类主导。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
-
-这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
-
-今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无...</p><div style="font-size:16px;line-height:1.8;color:#333">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
-
-这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
-
-今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无限示例。这一证明已经过一组外部数学家团队的审阅。他们还撰写了一篇配套论文，对该论证进行了详细阐释，并为这一成果的重大意义提供了进一步的背景与脉络支撑。
-
-该成果的发现方式同样引人瞩目。此证明诞生于一个全新的通用推理模型，而非专门针对数学进行训练，或依赖特定框架搜索证明策略，亦或是专门攻克单位距离问题的定制系统。作为评估先进模型能否助力前沿研究的工作的一部分，我们在一系列埃尔德什难题上对该模型进行了测试。而在平面单位距离问题上，它成功交出了一份解决该难题的证明。
-
-对于数学界和 AI 领域而言，该证明都是一座重要的里程碑。它标志着人工智能首次自主解决了一个在数学分支领域占据核心地位的未解问题。同时，它也展示了这类系统如今所具备的深度推理能力。数学为推理能力提供了一个格外清晰的试验场：问题定义严密，潜在的证明可被验证，而且一个长篇论证只有在逻辑环环相扣的前提下才能成立。解决该难题的方法同样令人惊叹。该证明巧妙地引入了代数数论中高深且意想不到的思想，成功攻克了这个初等几何问题。
-
-菲尔兹奖得主蒂莫西·高尔斯 (Tim Gowers) 在配套论文中将这一成果称为“人工智能数学领域的一座里程碑”。顶尖数论学家阿鲁尔·尚卡尔 (Arul Shankar) 则表示：“在我看来，这篇论文表明当前的 AI 模型不仅仅是人类数学家的助手 – 它们有能力产生独创且精妙的见解，并能将其最终变为实际成果。”
-
-证明可在此处⁠（在新窗口中打开）查看。由外部顶尖数学家撰写的配套论文可点击此处⁠（在新窗口中打开）阅读。你可以在这里⁠（在新窗口中打开）找到模型思维链的节选版本。
-
-此前已知的构造：由缩放后的正方形网格产生大量单位距离。
-
-设u(n)u(n)u(n)为平面上nnn个点之间可能存在的单位距离点对的最大数量。达到线性增长率的示例很容易构建：将nnn个点排成一条直线可以得到n−1n-1n−1对，而正方形网格可以得到大约2n2n2n对。此前已知最优的结构源自缩放的正方形网格，结果表明它能提供更多对：对于常数CCC，其数量为n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)。由于log⁡log⁡(n)\log \log(n)loglog(n)随着nnn趋于无穷大，指数中的附加项趋于000，这意味着这些结构实现的增长率仅略快于线性。几十年来，学术界普遍认为这一速率基本上已达上限，没有任何结构能比正方形网格做出显著改善。用技术术语来说，埃尔德什猜想其上限为n1+o(1)n^{1+o(1)}n1+o(1)，其中附加的o(1)o(1)o(1)表示一个随着nnn趋于000的项。我们的新成果推翻了这一猜想。更准确地说，对于无数个nnn值，该证明构建了包含至少n1+δn^{1+\delta}n1+δ个单位距离点对的nnn点配置，其中δ>0\delta > 0δ>0为某个固定指数。（最初的 AI 证明并未给出明确的δ\deltaδ值，但普林斯顿大学数学教授威尔·萨温 (Will Sawin) 随后进行的细化推导表明δ=0.014\delta=0.014δ=0.014。）回顾该问题的历史有助于理解为什么这一结果如此令人震惊。自埃尔德什 1946 年最初的构建以来，已知最优的下限基本上没有改变。而最优的上限O(n4/3)O(n^{4/3})O(n4/3)则要追溯到 1984 年斯宾塞 (Spencer)、塞迈雷迪 (Szemerédi) 和特罗特 (Trotter) 的研究工作，尽管后来有塞凯伊 (Székely)、卡茨和西利尔 (Katz and Silier)、帕赫 (Pach)、拉兹 (Raz) 以及索利莫西 (Solymosi) 等人的进一步细化和相关结构研究，该上限也基本上停滞不前。作为支持该猜想的证据，马图谢克 (Matoušek) 以及阿隆、布齐奇和绍尔曼 (Alon-Bucić-Sauermann) 研究了平面中非欧几里得距离下的该问题，并证明了在某种意义上，“绝大多数”非欧几里得距离都符合该猜想。令人惊奇的是，该构建方法的核心要素来自于一个完全不同的数学分支：代数数论，该学科主要研究诸如代数数域（即整数集的扩张）中的因式分解等概念。
-
-在验证了最初的证明之后，我们研究了模型在调用不同规模的“测试阶段算力” (test-time compute) 时，攻克该难题的成功率。结果如图所示。
-
-从高层逻辑来看，该证明始于一个人们熟知的几何概念，并将其推向了一个意想不到的方向。
-
-埃尔德什最初的下限可以通过高斯整数 (Gaussian integers) 来理解：即形式为a+bia+bia+bi的数，其中aaa和bbb为整数，而iii是−1-1−1的平方根。高斯整数对普通整数进行了扩张，并且与普通整数一样，享有诸如唯一质因数分解等性质。这种对普通整数或有理数的扩张被称为代数数域。新的论证用代数数论中更复杂的推广形式取代了高斯整数，这些形式具备更丰富的对称性，从而能够产生多得多的单位长度差值。
-
-具体论证过程中，模型使用了诸如无限阶级域塔 (infinite class field towers) 和高洛德-沙法列维奇理论 (Golod–Shafarevich theory) 等工具，证明了该论证所需的数域确实存在。这些思想对于代数数论学家来说早已耳熟能详，但令人大为震惊的是，这些概念竟然会对欧几里得平面上的几何问题产生影响。
-
-这一成果标志着人工智能与数学互动过程中的一个重要时刻：AI 系统自主解决了一个在活跃领域核心位置上历史悠久的难题。它同时也让我们初次窥见人工智能与人类数学家之间一种全新的协作形式。在这项研究中，外部数学家团队开展的配套研究工作，勾勒出了一幅比单纯的原始解法要丰富得多的宏大图景。
-
-正如托马斯·布鲁姆 (Thomas Bloom) 在配套注解中所写：
-
-“在评估一个由 AI 生成的证明的重要性与影响力时，我会问自己一个问题：这是否让我们对该问题有了新的认识？我们现在对离散几何的理解更深刻了吗？我认为答案是有限度的肯定：这表明，数论结构在处理此类问题时，所发挥的作用远超我们在此前的预想；此外，所需的数论知识可能非常高深。毫无疑问，许多代数数论学家将在未来的几个月里，对离散几何中的其他开放性问题展开深入研究。”
-
-该解法揭示了代数数论与离散几何之间意想不到的联系，这正是此成果引人注目的原因之一。它不仅解决了一个特定的猜想，更可能为数学家们架起一座桥梁，以此开始探索更多相关课题。
-
-“人类知识的前沿往往是由参差不齐的突破点构成的。毫无疑问，在未来的几个月和几年里，数学的许多其他领域也将迎来类似的成功。随着 AI 揭示出意料之外的关联，并将现有的技术机制推向极限，那些由来已久的难题将迎刃而解。AI 正在帮助我们更全面地探索几个世纪以来人类共同构建的数学殿堂；在这座殿堂的侧幕中，还有多少未曾遇见的奇迹在静候出场？”
-
-该成果让我们看到这个方向的巨大潜力：AI 带来的不仅是一个答案，更是一项数学发现，而这项发现的重大意义在人类随后的理解与剖析下，变得愈发清晰和丰富。
-
-该事件的意义不止于具体结果。更强大的数学推理能力可以让 AI 成为更得力的科研伙伴：它能够梳理并维系复杂的思维脉络，将相距遥远的知识领域串联起来，发掘出专家此前可能并未优先考虑的潜在路径，并帮助研究人员在那些原本因过于复杂或极度耗时而难以解决的问题上取得进展。
-
-这些能力的重要性超越了数学。如果一个模型能够让复杂的论证保持严密连贯，跨越知识领域串联思想，并产出经得起专家严苛审阅的成果，那么这些能力在生物学、物理学、材料科学、工程学以及医学领域同样大有可为。同时，这也是迈向高度自动化研究的长远工作的一部分 — 即打造出能够协助科学家和工程师探索更多设想、攻克更艰难技术课题的系统。
-
-人工智能即将在科研的创造性环节（以及 AI 自身研究中）扮演举足轻重的角色。虽然这种进步完全在预料之中，但它进一步增强了我们的紧迫感，促使我们去深刻理解 AI 发展的下一阶段、对齐极度智能系统所面临的挑战，以及人类与 AI 协作的未来。
-
-然而，这一未来依然取决于人类的判断。人类的专业知识非但没有贬值，反而变得愈发宝贵。AI 可以协助搜索、提出建议并辅助验证；但选择核心课题、解读研究成果、指引下一步探索方向的工作，始终由人类主导。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Advancing voice intelligence with new models in the API</title>
@@ -847,21 +1399,23 @@ Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1
   <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
   <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
 
-We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
+Yes - this is clean and correct.
 
-Smarter, more accurate answers with less to sort through
+You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
 Yes - this is clean and correct.
 
@@ -937,11 +1491,9 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
+这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
 
-These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
-
-With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
+通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
 
 how do i tell my coworker to quit yapping all the time
 
@@ -1005,11 +1557,7 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
-
-More personalized responses and controls
-
-Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
+如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
 
 What new tea place should I try?
 
@@ -1055,34 +1603,32 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
+我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
 
-While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
+如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
 
-We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
+记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
 
-Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
+GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
 
-Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
+来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
 
-We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
+Yes - this is clean and correct.
 
-We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
+You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
 
-Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
+由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
 
-Smarter, more accurate answers with less to sort through
+Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
 
-Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
-
-GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
+GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
 
 Yes - this is clean and correct.
 
@@ -1158,11 +1704,9 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
+这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
 
-These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
-
-With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
+通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
 
 how do i tell my coworker to quit yapping all the time
 
@@ -1226,11 +1770,7 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
-
-More personalized responses and controls
-
-Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
+如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
 
 What new tea place should I try?
 
@@ -1276,25 +1816,21 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
+我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
 
-While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
+如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
 
-We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
+记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
 
-Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
+GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
 
-Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
-
-GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
-
-Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.3 Instant</title>
   <link>https://openai.com/index/gpt-5-3-instant/</link>
   <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们对 ChatGPT 使用率最高的模型进行了更新，旨在让日常对话变得更实用、更顺畅。GPT‑5.3 Instant 不仅能提供更精准的回答，还能在联网搜索时给出信息更丰富、语境更契合的结果。此外，我们大幅减少了那些影响体验的机械化回复、冗余的免责声明以及生硬的语气，确保对话流程自然连贯。
 
@@ -2312,22 +2848,692 @@ GPT‑5.3 Instant 自即日起面向所有 ChatGPT 用户开放，开发者也�
 我们针对 GPT‑5.3 Instant 进行了全面的安全训练与评估，并在随附的系统卡⁠中详细披露了相关工作。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.5</title>
-  <link>https://openai.com/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
+
+GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
+...</p><div style="font-size:16px;line-height:1.8;color:#333">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
+
+GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
+
+在 Codex 与 API 中，GPT‑5.4 是我们发布的第一个具备原生且顶尖计算机使用能力的通用模型，让智能体能够操作计算机，并跨应用程序执行复杂的工作流程。该模型支持高达1M Token 的上下文，允许智能体在长周期内进行任务规划、执行与验证。此外，GPT‑5.4 通过工具搜索功能优化了模型在庞大的工具与连接器生态中的运作方式，帮助智能体在不牺牲智能的前提下，更高效地发现并使用正确工具。最后，GPT‑5.4 是我们迄今为止 Token 效率最高的推理模型，与 GPT‑5.2 相比，解决相同问题所需的 Token 数量显著减少 — 这直接转化为更低的 Token 消耗和更快的响应速度。
+
+GPT‑5.4 在通用推理、编程和专业知识工作方面都有全面提升，因此能支持更可靠的智能体、更高效的开发流程，并在 ChatGPT、API 和 Codex 中带来更高质量的输出。
+
+SWE-Bench Pro (Public)
+
+*此前报告的数据为 64.7%。GPT‑5.3‑Codex 现已达到 74.0% — 通过引入一个能够保留原始图像分辨率的新 API 参数。
+
+基于 GPT‑5.2 的通用推理能力，GPT‑5.4 在专业人士关注的实际任务中，能够提供更加稳定且精炼的输出。
+
+在GDPval⁠（一项评估智能体在 44 个职业中产出明确知识工作能力的测试）中，GPT‑5.4 刷新纪录。在与行业专业人士的横向评测中，GPT‑5.4 在83.0%的案例里达到了持平或更优的水准（GPT‑5.2 为71.0%）。
+
+在 GDPval 测试中，模型尝试完成定义明确的知识型工作，内容涵盖美国 GDP 贡献度最高的 9 个行业中的 44 种职业。任务要求生成真实的工作成果，例如销售演示文稿、会计表格、急诊排班表、制造业图表或短视频。GPT‑5.4 的推理强度设置为 xhigh，GPT‑5.2 的推理强度设置为 heavy（在 ChatGPT 中可用的较低强度）。
+
+我们重点提升了 GPT‑5.4 创建和编辑表格、演示文稿及文档的能力。在针对初级投行分析师水平的电子表格建模任务内部基准测试中，GPT‑5.4 的平均得分达到87.5%，而 GPT‑5.2 为68.4%。在演示文稿评估测试中，人工评分者在68.0%的情况下更偏好 GPT‑5.4 而非 GPT‑5.2 生成的作品，主要原因在于其更强的审美水平、更丰富的视觉元素，以及对图像生成功能更有效的运用。
+
+文档是在推理强度设置为 xhigh 的情况下生成的
+
+你可以在 ChatGPT 中使用 GPT‑5.4 Thinking 或 Pro 模型体验这些功能。如果你是 Enterprise 客户，建议使用我们新发布的ChatGPT Excel 和 Google Sheets 插件⁠（在新窗口中打开），该插件也于今天推出。同时，我们也更新了 Codex 和 API 中的电子表格⁠（在新窗口中打开）及演示文稿⁠（在新窗口中打开）技能。
+
+为了提升 GPT‑5.4 在实际工作中的表现，我们持续致力于降低幻觉与错误率。GPT‑5.4 是我们迄今为止准确率最高的模型：在用户标记了事实错误的一组去标识化提示词测试中，与 GPT‑5.2 相比，GPT‑5.4 的单项陈述错误率降低了 33%，完整回复包含错误的概率降低了 18%。
+
+GPT‑5.4 是我们首款原生支持计算机使用能力的通用模型，这标志着在开发与智能体领域向前迈出了重要一步。如果你正在构建跨网页和软件系统执行任务的智能体，GPT‑5.4 是目前市面上的最佳选择。
+
+我们设计 GPT‑5.4 的初衷，是让其在各种“计算机使用”负载中都能表现出色。它擅长通过 Playwright 等库编写代码来操作计算机，也能根据屏幕截图直接下达鼠标和键盘指令。开发者可以通过“开发者消息”引导模型行为，从而灵活调整其表现以适配特定场景。你甚至可以根据不同的风险承受能力，通过指定自定义确认策略来配置模型的安全行为。
+
+模型的性能与灵活性，在针对不同场景下“计算机使用”能力的基准测试中得到充分体现。在OSWorld-Verified测试（该测试通过屏幕截图以及键盘/鼠标操作，来评估模型导航桌面环境的能力）中，GPT‑5.4 达到了75.0%的成功率，刷新了纪录。这一成绩远超 GPT‑5.2 的47.3%，并超越了人类72.4%的表现。1
+
+在评估浏览器使用能力的WebArena-Verified基准测试中，GPT‑5.4 在同时结合 DOM 和屏幕截图驱动的交互方式下，达到了领先的67.3%成功率（GPT‑5.2 为65.4%）。而在同样评估浏览器使用能力的Online-Mind2Web测试中，仅凭基于屏幕截图的观察，GPT‑5.4 就能达到92.8%的成功率，远超 ChatGPT Atlas 智能体模式，后者的成功率为70.9%。
+
+一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
+
+GPT‑5.4 能够解析浏览器界面的截图，并通过基于坐标的点击与 UI 元素进行交互，从而完成发送电子邮件和安排日历日程的任务。
+
+GPT‑5.4 在“计算机使用”方面的提升，源于模型更强的通用视觉感知能力。在评估视觉理解与推理能力的MMMU-Pro测试中，GPT‑5.4 在不使用工具的情况下达到了81.2%的成功率（GPT‑5.2 为79.5%）。此外，视觉感知的提升也转化为更强的文档解析能力：在OmniDocBench测试中，GPT‑5.4 在不使用推理强度的情况下平均误差（通过模型预测值与标准答案之间的归一化编辑距离衡量）降至0.109，较 GPT‑5.2 的0.140有显著提升。
+
+MMMUPro 在测试时将推理强度设置为 xhigh。OmniDocBench 在测试时将推理强度设置为 none，以反映低成本、低延迟的性能表现。
+
+我们同时提升了对高细节、高分辨率图像的视觉理解能力，这对于要求全保真度的场景至关重要。从 GPT‑5.4 起，我们将引入“原始 (original)”图像输入细节⁠（在新窗口中打开）级别。该级别支持全保真感知，上限为 1024 万总像素或 6000 像素的最大长边（以较低者为准）；同时，“高 (high)”图像输入细节级别现在最高支持 256 万总像素或 2048 像素的最大长边。在与 API 用户进行的早期测试中，我们观察到在使用“原始”或“高”细节时，模型的定位能力、图像理解以及点击准确度均有显著提升。
+
+在 API 中，开发者可以通过更新后的计算机工具来使用这些功能。请参考我们更新后的文档⁠（在新窗口中打开），以获取最佳实践建议。
+
+GPT‑5.4 结合了 GPT‑5.3‑Codex 的编程优势，以及领先的知识型工作与“计算机使用”能力。这对于长时间运行的任务至关重要。在这些任务中，模型可以自主使用工具、进行迭代并推进工作，从而减少人工干预。在 SWE-Bench Pro 测试中，GPT‑5.4 的表现超越了 GPT‑5.3‑Codex 或与其持平，同时在各项推理任务中拥有更低的延迟。
+
+我们通过观察模型的生产环境行为并进行离线模拟来估算延迟。延迟估算涵盖了工具调用耗时（代码执行时间）、采样 Token 以及输入 Token。实际延迟可能会有显著差异，并取决于诸多我们的模拟中未涵盖的因素。推理强度已从 none 调整为 xhigh。
+
+开启 Codex 中的 /fast 模式后，可将 GPT‑5.4 的 Token 吐字速度提升至 1.5 倍。模型本身及其智能水平完全一致，只是速度更快。这意味着用户在处理编码任务、迭代和调试时，能够始终保持专注顺畅的状态。通过使用优先处理服务⁠（在新窗口中打开），开发者也可以在 API 中以同样的高速访问 GPT‑5.4。
+
+在评估和内部测试中，我们发现 GPT‑5.4 擅长处理复杂的垂直前端任务。与我们此前发布的任何模型相比，其产出的结果在审美水平和功能性上都有显著提升。
+
+为了展示模型在“计算机使用”与编程能力上的双重进化，我们还将发布一个名为“Playwright (Interactive)”的实验性Codex 技能⁠（在新窗口中打开）。它允许 Codex 对网页和 Electron 应用进行可视化调试；甚至在构建应用的过程中，它就能同步对该应用进行实时测试。
+
+由 GPT‑5.4 仅凭一条简单的模糊提示词生成的主题公园模拟游戏。该游戏利用 Playwright Interactive 进行浏览器端自动化测试，并使用图像生成技术制作了全套等轴测 (Isometric) 游戏资产。模拟系统涵盖了基于网格的路径铺设、设施与景观建设、游客寻路、排队机制以及设施运行周期。同时，公园的各项指标（如资金、游客数、满意度、清洁度及评分）会根据布局表现和游客反馈动态波动。我们利用 Playwright 实现了浏览器端的自动化游戏测试，包括公园的扩建、路径与景点的增删、相机导航检查，并跨多个游戏轮次验证了游客行为、排队状态、设施状态以及 UI 指标的更新准确性。
+
+提示:使用 $playwright-interactive 和 $imagegen 工具。创建一个可以在浏览器中构建并导航的交互式等轴测 (isometric ) 主题公园模拟游戏。利用 imagegen 确立整体视觉风格，并生成全套游戏资产，包括游乐设施、路径、地形、树木、水体、食品摊位、装饰物、建筑、图标以及 UI 插画。游戏世界必须具备高度的统一感、精致度以及丰富的视觉表现，艺术风格需高端且适配等轴测视角。允许平滑地铺设或拆除路径、添加景点、布置景观并环绕公园移动，同时能够监控游客活动、设施状态以及公园的发展情况。系统需包含可信的游客移动算法，以及简单的公园管理系统（如资金、清洁度、排队和满意度）。确保整体体验充满趣味、逻辑清晰且完整，而非粗糙的原型。在优先级上，趣味性、易读性以及出色的游戏手感高于写实度。
+
+在进行玩法测试时，务必通过多轮操作来构建并扩张公园。验证设施放置与导航是否顺畅，确认游客对公园布局及景点的反应，并确保视觉效果、UI 以及交互体验稳定且统一。
+
+在 GPT‑5.4 中，我们显著优化了模型与外部工具的协作方式。现在，智能体能够在更庞大的工具生态中进行操作，更可靠地筛选匹配工具，并以更低的成本和延迟完成多步骤的工作流程。
+
+在 API 层面，GPT‑5.4 引入了工具搜索⁠（在新窗口中打开）功能。这使得模型在面对海量工具选项时，依然能够保持高效运作。
+
+在此之前，当模型调用工具时，所有的工具定义都必须预先包含在提示词中。对于拥有大量工具的系统，这会导致每次请求都额外增加数千甚至数万个 Token，不仅推高了成本、减慢了响应速度，还让上下文中充斥着模型可能永远用不到的冗余信息。
+
+通过工具搜索，GPT‑5.4 不再需要预加载完整定义，而是接收一份精简的可选工具列表及工具搜索能力。当模型需要调用特定工具时，它会即时查找该工具的定义，并将其添加到当前的对话上下文。
+
+这种方法大幅减少了重度工具调用工作流程所需的 Token 数量，并有效保留了缓存，使请求变得更快、成本更低。它还让智能体能够可靠地与更庞大的工具生态协同工作。对于那些工具定义可能包含数万个 Token 的 MCP 服务器而言，效率提升尤为显著。
+
+为了展示效率提升的实际效果，我们对 ScaleMCP Atlas⁠（在新窗口中打开）基准测试中的 250 个任务进行了评估。在开启全部 36 个 MCP 服务器的情况下，我们对比了两种模式：(1) 将每个 MCP 函数直接暴露在模型上下文中；(2) 将所有 MCP 服务器置于“工具搜索”之后。结果显示，在保持同等准确率的前提下，“工具搜索”配置将总 Token 使用量降低了 47%。
+
+示例 Token 计数是基于 MCP-Atlas 公开数据集中 250 个任务的平均值得出的。
+
+GPT‑5.4 同样优化了工具调用能力，使其在推理过程中能更准确、更高效地判断调用工具的时机与方式，这在 API 环境下尤为突出。相比 GPT‑5.2，它在 Toolathlon 基准测试中能以更少的轮次达到更高的准确率。该测试旨在评估 AI 智能体利用真实世界工具和 API 完成多步任务的能力 — 例如，智能体需要读取邮件、提取作业附件、上传并评分，最后将结果记录到电子表格中。
+
+一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
+
+针对那些对延迟极度敏感、且倾向于将推理强度设为“无 (None)”的使用场景，GPT‑5.4 相比前代产品有显著提升。
+
+在τ2-bench⁠⁠（在新窗口中打开）测试中，模型必须利用工具来完成某项客服任务；该场景下可能包含一名模拟用户，此用户能够进行交流并针对环境状态执行操作。在测试中，推理强度设为 None。
+
+GPT‑5.4 在智能体联网搜索方面表现更佳。在 BrowseComp 基准测试（衡量 AI 智能体通过持续浏览网页获取难寻信息的能力）中，GPT‑5.4 相比 GPT‑5.2 提升了 17 个百分点；而 GPT‑5.4 Pro 更是创下了 89.3% 的纪录。
+
+在实际应用中，这意味着 GPT‑5.4 Thinking 能够更强有力地解答那些需要整合全网多方信息的复杂问题。它能以更强的持久性进行多轮搜索，从而锁定最相关的信源 — 尤其是在处理“大海捞针”式的问题时，它能高效提炼核心信息，并给出逻辑清晰、论证严密的回答。
+
+在 BrowseComp 测试中，我们使用了搜索黑名单，剔除了包含测试答案的网站，以防止数据污染并确保性能评估的公正性。由于 GPT‑5.4 的测试时间晚于 GPT‑5.2，其得分反映了模型能力、搜索系统优化以及互联网实时状态的综合变化。此外，GPT‑5.4 采用了范围更广、经过更新的黑名单进行测试。测试模型统一调用 ChatGPT 搜索工具，该工具与 API 搜索可能存在细微差异。
+
+与 Codex 开始工作时会概述思路类似，ChatGPT 中的 GPT‑5.4 Thinking 现在也会在处理更长、更复杂的查询时，通过“前言 (preamble)”来简述其工作方案。此外，你还可以在模型生成过程中实时添加指令或调整其方向。这让你能更轻松地引导模型达成预期的结果，而无需推倒重来，或通过多轮额外对话进行补救。该功能目前已在chatgpt.com⁠（在新窗口中打开）和 Android 应用上线，iOS 应用也将于近期推出。
+
+该模型在处理困难任务时能够进行更深入的思考，同时对会话早期的步骤保持更强的记忆。这使其能够应对更长的工作流和更复杂的提示词，并确保整个过程中给出的回答始终连贯且高度切题。
+
+在筹备 GPT‑5.4 部署的近几个月里，我们持续完善了自 GPT‑5.3‑Codex 以来引入的安全防护措施。与 GPT‑5.3‑Codex 类似，根据我们的《准备框架》(Preparedness Framework)，我们将 GPT‑5.4 评定为具有“高网络能力”级别，并按照系统卡⁠中的记录，为其配置了相应的安全防护进行部署。这些举措包括一套扩展版网络安全技术栈，涵盖了监控系统、可信访问控制，以及针对零数据留存 (ZDR) 层面高风险请求的异步拦截机制；与此同时，我们也对更广泛的安全生态系统持续投入资源。
+
+由于网络安全能力本质上具有“双重用途 (dual-use)”，我们在部署时保持审慎态度，并持续优化策略与分类器。针对 ZDR 界面上的特定客户，请求级拦截仍是我们网络风险缓解栈的一部分；鉴于分类器仍在迭代中，在我们持续完善这些防护措施的过程中，可能会出现一些误报。这些更新旨在优化防护措施的实际运行效果，包括减少不必要的拒答和过度生硬的免责声明，同时确保对滥用行为的强力防御。
+
+我们持续开展关于思维链 (CoT) 可监测性的安全研究，以更深入地理解模型的推理逻辑，并协助检测潜在的违规行为。作为该项工作的一部分，我们推出了全新的开源评估指标 —CoT 可控性⁠，用于衡量模型是否能故意混淆其推理过程以规避监控。研究发现，GPT‑5.4 Thinking 控制其 CoT 的能力较低。从安全性角度来看，这是一个积极的特性，表明该模型尚不具备隐藏其真实推理逻辑的能力，也证明了 CoT 监控依然是一项有效的安全手段。
+
+GPT‑5.4 自今日起将在 ChatGPT 和 Codex 中逐步推出。在 API 方面，GPT‑5.4 已正式上线，模型名称为gpt-5.4。此外，针对在极复杂任务中追求极致性能的开发者，GPT‑5.4 Pro 也已通过 API 提供，模型名称为gpt-5.4-pro。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 自即日起向 ChatGPT Plus、Team 及 Pro 用户开放，并取代 GPT‑5.2 Thinking。GPT‑5.2 Thinking 将在模型选择器的“传统模型 (Legacy Models)”栏目中为付费用户保留三个月，随后将于 2026 年 6 月 5 日正式停用。使用 Enterprise 和 Edu 套餐的用户可以通过管理员设置开启早期访问权限。此外，GPT‑5.4 Pro 版本将专门提供给 Pro 和 Enterprise 用户。ChatGPT 中 GPT‑5.4 Thinking 的上下文窗口⁠（在新窗口中打开）与 GPT‑5.2 Thinking 相比保持不变。
+
+GPT‑5.4 是我们首款融合了 GPT‑5.3‑codex 前沿编程能力的常规推理模型，目前正在 ChatGPT、API 及 Codex 平台同步推出。我们将其命名为 GPT‑5.4，旨在体现这一跨越式提升，并简化用户在使用 Codex 时对模型的选择。未来，我们的 Instant 模型和 Thinking 模型将以不同的迭代速度持续进化。
+
+Codex 中的 GPT‑5.4 包含对 1M 上下文窗口的实验性支持。开发者可以通过配置model_context_window和model_auto_compact_token_limit来试用此功能。超过标准 272K 上下文窗口的请求，将按正常费率的 2 倍计入用量限制。
+
+在 API 方面，为了体现能力的提升，GPT‑5.4 的单 Token 价格高于 GPT‑5.2；但凭借更出色的 Token 效率，它在处理许多任务时能显著减少所需的总 Token 数。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准 API 费率的两倍。
+
+SWE-Bench Pro (Public)
+
+Frontier Science Research
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+Graphwalks BFS 0K–128K
+
+Graphwalks BFS 256K–1M
+
+Graphwalks parents 0–128K（准确率）
+
+Graphwalks parents 256K–1M（准确率）
+
+OpenAI MRCR v2 8-needle 4K–8K
+
+OpenAI MRCR v2 8-needle 8K–16K
+
+OpenAI MRCR v2 8-needle 16K–32K
+
+OpenAI MRCR v2 8-needle 32K–64K
+
+OpenAI MRCR v2 8-needle 64K–128K
+
+OpenAI MRCR v2 8-needle 128K–256K
+
+OpenAI MRCR v2 8-needle 256K–512K
+
+OpenAI MRCR v2 8-needle 512K–1M
+
+OmniDocBench（归一化编辑距离）
+
+所有评估均在推理强度设为 xhigh 的情况下运行，除非另有说明。所有基准测试均在研究环境中完成，因此在某些情况下，结果可能会与正式上线的 ChatGPT 输出略有不同。
+
+1人类表现数据引用自OSWorld：在真实计算机环境中对开放式任务进行多模态智能体基准测试⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
+
+GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
+...</p><div style="font-size:16px;line-height:1.8;color:#333">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
+
+GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
+
+在 Codex 与 API 中，GPT‑5.4 是我们发布的第一个具备原生且顶尖计算机使用能力的通用模型，让智能体能够操作计算机，并跨应用程序执行复杂的工作流程。该模型支持高达1M Token 的上下文，允许智能体在长周期内进行任务规划、执行与验证。此外，GPT‑5.4 通过工具搜索功能优化了模型在庞大的工具与连接器生态中的运作方式，帮助智能体在不牺牲智能的前提下，更高效地发现并使用正确工具。最后，GPT‑5.4 是我们迄今为止 Token 效率最高的推理模型，与 GPT‑5.2 相比，解决相同问题所需的 Token 数量显著减少 — 这直接转化为更低的 Token 消耗和更快的响应速度。
+
+GPT‑5.4 在通用推理、编程和专业知识工作方面都有全面提升，因此能支持更可靠的智能体、更高效的开发流程，并在 ChatGPT、API 和 Codex 中带来更高质量的输出。
+
+SWE-Bench Pro (Public)
+
+*此前报告的数据为 64.7%。GPT‑5.3‑Codex 现已达到 74.0% — 通过引入一个能够保留原始图像分辨率的新 API 参数。
+
+基于 GPT‑5.2 的通用推理能力，GPT‑5.4 在专业人士关注的实际任务中，能够提供更加稳定且精炼的输出。
+
+在GDPval⁠（一项评估智能体在 44 个职业中产出明确知识工作能力的测试）中，GPT‑5.4 刷新纪录。在与行业专业人士的横向评测中，GPT‑5.4 在83.0%的案例里达到了持平或更优的水准（GPT‑5.2 为71.0%）。
+
+在 GDPval 测试中，模型尝试完成定义明确的知识型工作，内容涵盖美国 GDP 贡献度最高的 9 个行业中的 44 种职业。任务要求生成真实的工作成果，例如销售演示文稿、会计表格、急诊排班表、制造业图表或短视频。GPT‑5.4 的推理强度设置为 xhigh，GPT‑5.2 的推理强度设置为 heavy（在 ChatGPT 中可用的较低强度）。
+
+我们重点提升了 GPT‑5.4 创建和编辑表格、演示文稿及文档的能力。在针对初级投行分析师水平的电子表格建模任务内部基准测试中，GPT‑5.4 的平均得分达到87.5%，而 GPT‑5.2 为68.4%。在演示文稿评估测试中，人工评分者在68.0%的情况下更偏好 GPT‑5.4 而非 GPT‑5.2 生成的作品，主要原因在于其更强的审美水平、更丰富的视觉元素，以及对图像生成功能更有效的运用。
+
+文档是在推理强度设置为 xhigh 的情况下生成的
+
+你可以在 ChatGPT 中使用 GPT‑5.4 Thinking 或 Pro 模型体验这些功能。如果你是 Enterprise 客户，建议使用我们新发布的ChatGPT Excel 和 Google Sheets 插件⁠（在新窗口中打开），该插件也于今天推出。同时，我们也更新了 Codex 和 API 中的电子表格⁠（在新窗口中打开）及演示文稿⁠（在新窗口中打开）技能。
+
+为了提升 GPT‑5.4 在实际工作中的表现，我们持续致力于降低幻觉与错误率。GPT‑5.4 是我们迄今为止准确率最高的模型：在用户标记了事实错误的一组去标识化提示词测试中，与 GPT‑5.2 相比，GPT‑5.4 的单项陈述错误率降低了 33%，完整回复包含错误的概率降低了 18%。
+
+GPT‑5.4 是我们首款原生支持计算机使用能力的通用模型，这标志着在开发与智能体领域向前迈出了重要一步。如果你正在构建跨网页和软件系统执行任务的智能体，GPT‑5.4 是目前市面上的最佳选择。
+
+我们设计 GPT‑5.4 的初衷，是让其在各种“计算机使用”负载中都能表现出色。它擅长通过 Playwright 等库编写代码来操作计算机，也能根据屏幕截图直接下达鼠标和键盘指令。开发者可以通过“开发者消息”引导模型行为，从而灵活调整其表现以适配特定场景。你甚至可以根据不同的风险承受能力，通过指定自定义确认策略来配置模型的安全行为。
+
+模型的性能与灵活性，在针对不同场景下“计算机使用”能力的基准测试中得到充分体现。在OSWorld-Verified测试（该测试通过屏幕截图以及键盘/鼠标操作，来评估模型导航桌面环境的能力）中，GPT‑5.4 达到了75.0%的成功率，刷新了纪录。这一成绩远超 GPT‑5.2 的47.3%，并超越了人类72.4%的表现。1
+
+在评估浏览器使用能力的WebArena-Verified基准测试中，GPT‑5.4 在同时结合 DOM 和屏幕截图驱动的交互方式下，达到了领先的67.3%成功率（GPT‑5.2 为65.4%）。而在同样评估浏览器使用能力的Online-Mind2Web测试中，仅凭基于屏幕截图的观察，GPT‑5.4 就能达到92.8%的成功率，远超 ChatGPT Atlas 智能体模式，后者的成功率为70.9%。
+
+一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
+
+GPT‑5.4 能够解析浏览器界面的截图，并通过基于坐标的点击与 UI 元素进行交互，从而完成发送电子邮件和安排日历日程的任务。
+
+GPT‑5.4 在“计算机使用”方面的提升，源于模型更强的通用视觉感知能力。在评估视觉理解与推理能力的MMMU-Pro测试中，GPT‑5.4 在不使用工具的情况下达到了81.2%的成功率（GPT‑5.2 为79.5%）。此外，视觉感知的提升也转化为更强的文档解析能力：在OmniDocBench测试中，GPT‑5.4 在不使用推理强度的情况下平均误差（通过模型预测值与标准答案之间的归一化编辑距离衡量）降至0.109，较 GPT‑5.2 的0.140有显著提升。
+
+MMMUPro 在测试时将推理强度设置为 xhigh。OmniDocBench 在测试时将推理强度设置为 none，以反映低成本、低延迟的性能表现。
+
+我们同时提升了对高细节、高分辨率图像的视觉理解能力，这对于要求全保真度的场景至关重要。从 GPT‑5.4 起，我们将引入“原始 (original)”图像输入细节⁠（在新窗口中打开）级别。该级别支持全保真感知，上限为 1024 万总像素或 6000 像素的最大长边（以较低者为准）；同时，“高 (high)”图像输入细节级别现在最高支持 256 万总像素或 2048 像素的最大长边。在与 API 用户进行的早期测试中，我们观察到在使用“原始”或“高”细节时，模型的定位能力、图像理解以及点击准确度均有显著提升。
+
+在 API 中，开发者可以通过更新后的计算机工具来使用这些功能。请参考我们更新后的文档⁠（在新窗口中打开），以获取最佳实践建议。
+
+GPT‑5.4 结合了 GPT‑5.3‑Codex 的编程优势，以及领先的知识型工作与“计算机使用”能力。这对于长时间运行的任务至关重要。在这些任务中，模型可以自主使用工具、进行迭代并推进工作，从而减少人工干预。在 SWE-Bench Pro 测试中，GPT‑5.4 的表现超越了 GPT‑5.3‑Codex 或与其持平，同时在各项推理任务中拥有更低的延迟。
+
+我们通过观察模型的生产环境行为并进行离线模拟来估算延迟。延迟估算涵盖了工具调用耗时（代码执行时间）、采样 Token 以及输入 Token。实际延迟可能会有显著差异，并取决于诸多我们的模拟中未涵盖的因素。推理强度已从 none 调整为 xhigh。
+
+开启 Codex 中的 /fast 模式后，可将 GPT‑5.4 的 Token 吐字速度提升至 1.5 倍。模型本身及其智能水平完全一致，只是速度更快。这意味着用户在处理编码任务、迭代和调试时，能够始终保持专注顺畅的状态。通过使用优先处理服务⁠（在新窗口中打开），开发者也可以在 API 中以同样的高速访问 GPT‑5.4。
+
+在评估和内部测试中，我们发现 GPT‑5.4 擅长处理复杂的垂直前端任务。与我们此前发布的任何模型相比，其产出的结果在审美水平和功能性上都有显著提升。
+
+为了展示模型在“计算机使用”与编程能力上的双重进化，我们还将发布一个名为“Playwright (Interactive)”的实验性Codex 技能⁠（在新窗口中打开）。它允许 Codex 对网页和 Electron 应用进行可视化调试；甚至在构建应用的过程中，它就能同步对该应用进行实时测试。
+
+由 GPT‑5.4 仅凭一条简单的模糊提示词生成的主题公园模拟游戏。该游戏利用 Playwright Interactive 进行浏览器端自动化测试，并使用图像生成技术制作了全套等轴测 (Isometric) 游戏资产。模拟系统涵盖了基于网格的路径铺设、设施与景观建设、游客寻路、排队机制以及设施运行周期。同时，公园的各项指标（如资金、游客数、满意度、清洁度及评分）会根据布局表现和游客反馈动态波动。我们利用 Playwright 实现了浏览器端的自动化游戏测试，包括公园的扩建、路径与景点的增删、相机导航检查，并跨多个游戏轮次验证了游客行为、排队状态、设施状态以及 UI 指标的更新准确性。
+
+提示:使用 $playwright-interactive 和 $imagegen 工具。创建一个可以在浏览器中构建并导航的交互式等轴测 (isometric ) 主题公园模拟游戏。利用 imagegen 确立整体视觉风格，并生成全套游戏资产，包括游乐设施、路径、地形、树木、水体、食品摊位、装饰物、建筑、图标以及 UI 插画。游戏世界必须具备高度的统一感、精致度以及丰富的视觉表现，艺术风格需高端且适配等轴测视角。允许平滑地铺设或拆除路径、添加景点、布置景观并环绕公园移动，同时能够监控游客活动、设施状态以及公园的发展情况。系统需包含可信的游客移动算法，以及简单的公园管理系统（如资金、清洁度、排队和满意度）。确保整体体验充满趣味、逻辑清晰且完整，而非粗糙的原型。在优先级上，趣味性、易读性以及出色的游戏手感高于写实度。
+
+在进行玩法测试时，务必通过多轮操作来构建并扩张公园。验证设施放置与导航是否顺畅，确认游客对公园布局及景点的反应，并确保视觉效果、UI 以及交互体验稳定且统一。
+
+在 GPT‑5.4 中，我们显著优化了模型与外部工具的协作方式。现在，智能体能够在更庞大的工具生态中进行操作，更可靠地筛选匹配工具，并以更低的成本和延迟完成多步骤的工作流程。
+
+在 API 层面，GPT‑5.4 引入了工具搜索⁠（在新窗口中打开）功能。这使得模型在面对海量工具选项时，依然能够保持高效运作。
+
+在此之前，当模型调用工具时，所有的工具定义都必须预先包含在提示词中。对于拥有大量工具的系统，这会导致每次请求都额外增加数千甚至数万个 Token，不仅推高了成本、减慢了响应速度，还让上下文中充斥着模型可能永远用不到的冗余信息。
+
+通过工具搜索，GPT‑5.4 不再需要预加载完整定义，而是接收一份精简的可选工具列表及工具搜索能力。当模型需要调用特定工具时，它会即时查找该工具的定义，并将其添加到当前的对话上下文。
+
+这种方法大幅减少了重度工具调用工作流程所需的 Token 数量，并有效保留了缓存，使请求变得更快、成本更低。它还让智能体能够可靠地与更庞大的工具生态协同工作。对于那些工具定义可能包含数万个 Token 的 MCP 服务器而言，效率提升尤为显著。
+
+为了展示效率提升的实际效果，我们对 ScaleMCP Atlas⁠（在新窗口中打开）基准测试中的 250 个任务进行了评估。在开启全部 36 个 MCP 服务器的情况下，我们对比了两种模式：(1) 将每个 MCP 函数直接暴露在模型上下文中；(2) 将所有 MCP 服务器置于“工具搜索”之后。结果显示，在保持同等准确率的前提下，“工具搜索”配置将总 Token 使用量降低了 47%。
+
+示例 Token 计数是基于 MCP-Atlas 公开数据集中 250 个任务的平均值得出的。
+
+GPT‑5.4 同样优化了工具调用能力，使其在推理过程中能更准确、更高效地判断调用工具的时机与方式，这在 API 环境下尤为突出。相比 GPT‑5.2，它在 Toolathlon 基准测试中能以更少的轮次达到更高的准确率。该测试旨在评估 AI 智能体利用真实世界工具和 API 完成多步任务的能力 — 例如，智能体需要读取邮件、提取作业附件、上传并评分，最后将结果记录到电子表格中。
+
+一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
+
+针对那些对延迟极度敏感、且倾向于将推理强度设为“无 (None)”的使用场景，GPT‑5.4 相比前代产品有显著提升。
+
+在τ2-bench⁠⁠（在新窗口中打开）测试中，模型必须利用工具来完成某项客服任务；该场景下可能包含一名模拟用户，此用户能够进行交流并针对环境状态执行操作。在测试中，推理强度设为 None。
+
+GPT‑5.4 在智能体联网搜索方面表现更佳。在 BrowseComp 基准测试（衡量 AI 智能体通过持续浏览网页获取难寻信息的能力）中，GPT‑5.4 相比 GPT‑5.2 提升了 17 个百分点；而 GPT‑5.4 Pro 更是创下了 89.3% 的纪录。
+
+在实际应用中，这意味着 GPT‑5.4 Thinking 能够更强有力地解答那些需要整合全网多方信息的复杂问题。它能以更强的持久性进行多轮搜索，从而锁定最相关的信源 — 尤其是在处理“大海捞针”式的问题时，它能高效提炼核心信息，并给出逻辑清晰、论证严密的回答。
+
+在 BrowseComp 测试中，我们使用了搜索黑名单，剔除了包含测试答案的网站，以防止数据污染并确保性能评估的公正性。由于 GPT‑5.4 的测试时间晚于 GPT‑5.2，其得分反映了模型能力、搜索系统优化以及互联网实时状态的综合变化。此外，GPT‑5.4 采用了范围更广、经过更新的黑名单进行测试。测试模型统一调用 ChatGPT 搜索工具，该工具与 API 搜索可能存在细微差异。
+
+与 Codex 开始工作时会概述思路类似，ChatGPT 中的 GPT‑5.4 Thinking 现在也会在处理更长、更复杂的查询时，通过“前言 (preamble)”来简述其工作方案。此外，你还可以在模型生成过程中实时添加指令或调整其方向。这让你能更轻松地引导模型达成预期的结果，而无需推倒重来，或通过多轮额外对话进行补救。该功能目前已在chatgpt.com⁠（在新窗口中打开）和 Android 应用上线，iOS 应用也将于近期推出。
+
+该模型在处理困难任务时能够进行更深入的思考，同时对会话早期的步骤保持更强的记忆。这使其能够应对更长的工作流和更复杂的提示词，并确保整个过程中给出的回答始终连贯且高度切题。
+
+在筹备 GPT‑5.4 部署的近几个月里，我们持续完善了自 GPT‑5.3‑Codex 以来引入的安全防护措施。与 GPT‑5.3‑Codex 类似，根据我们的《准备框架》(Preparedness Framework)，我们将 GPT‑5.4 评定为具有“高网络能力”级别，并按照系统卡⁠中的记录，为其配置了相应的安全防护进行部署。这些举措包括一套扩展版网络安全技术栈，涵盖了监控系统、可信访问控制，以及针对零数据留存 (ZDR) 层面高风险请求的异步拦截机制；与此同时，我们也对更广泛的安全生态系统持续投入资源。
+
+由于网络安全能力本质上具有“双重用途 (dual-use)”，我们在部署时保持审慎态度，并持续优化策略与分类器。针对 ZDR 界面上的特定客户，请求级拦截仍是我们网络风险缓解栈的一部分；鉴于分类器仍在迭代中，在我们持续完善这些防护措施的过程中，可能会出现一些误报。这些更新旨在优化防护措施的实际运行效果，包括减少不必要的拒答和过度生硬的免责声明，同时确保对滥用行为的强力防御。
+
+我们持续开展关于思维链 (CoT) 可监测性的安全研究，以更深入地理解模型的推理逻辑，并协助检测潜在的违规行为。作为该项工作的一部分，我们推出了全新的开源评估指标 —CoT 可控性⁠，用于衡量模型是否能故意混淆其推理过程以规避监控。研究发现，GPT‑5.4 Thinking 控制其 CoT 的能力较低。从安全性角度来看，这是一个积极的特性，表明该模型尚不具备隐藏其真实推理逻辑的能力，也证明了 CoT 监控依然是一项有效的安全手段。
+
+GPT‑5.4 自今日起将在 ChatGPT 和 Codex 中逐步推出。在 API 方面，GPT‑5.4 已正式上线，模型名称为gpt-5.4。此外，针对在极复杂任务中追求极致性能的开发者，GPT‑5.4 Pro 也已通过 API 提供，模型名称为gpt-5.4-pro。
+
+在 ChatGPT 中，GPT‑5.4 Thinking 自即日起向 ChatGPT Plus、Team 及 Pro 用户开放，并取代 GPT‑5.2 Thinking。GPT‑5.2 Thinking 将在模型选择器的“传统模型 (Legacy Models)”栏目中为付费用户保留三个月，随后将于 2026 年 6 月 5 日正式停用。使用 Enterprise 和 Edu 套餐的用户可以通过管理员设置开启早期访问权限。此外，GPT‑5.4 Pro 版本将专门提供给 Pro 和 Enterprise 用户。ChatGPT 中 GPT‑5.4 Thinking 的上下文窗口⁠（在新窗口中打开）与 GPT‑5.2 Thinking 相比保持不变。
+
+GPT‑5.4 是我们首款融合了 GPT‑5.3‑codex 前沿编程能力的常规推理模型，目前正在 ChatGPT、API 及 Codex 平台同步推出。我们将其命名为 GPT‑5.4，旨在体现这一跨越式提升，并简化用户在使用 Codex 时对模型的选择。未来，我们的 Instant 模型和 Thinking 模型将以不同的迭代速度持续进化。
+
+Codex 中的 GPT‑5.4 包含对 1M 上下文窗口的实验性支持。开发者可以通过配置model_context_window和model_auto_compact_token_limit来试用此功能。超过标准 272K 上下文窗口的请求，将按正常费率的 2 倍计入用量限制。
+
+在 API 方面，为了体现能力的提升，GPT‑5.4 的单 Token 价格高于 GPT‑5.2；但凭借更出色的 Token 效率，它在处理许多任务时能显著减少所需的总 Token 数。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准 API 费率的两倍。
+
+SWE-Bench Pro (Public)
+
+Frontier Science Research
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+Graphwalks BFS 0K–128K
+
+Graphwalks BFS 256K–1M
+
+Graphwalks parents 0–128K（准确率）
+
+Graphwalks parents 256K–1M（准确率）
+
+OpenAI MRCR v2 8-needle 4K–8K
+
+OpenAI MRCR v2 8-needle 8K–16K
+
+OpenAI MRCR v2 8-needle 16K–32K
+
+OpenAI MRCR v2 8-needle 32K–64K
+
+OpenAI MRCR v2 8-needle 64K–128K
+
+OpenAI MRCR v2 8-needle 128K–256K
+
+OpenAI MRCR v2 8-needle 256K–512K
+
+OpenAI MRCR v2 8-needle 512K–1M
+
+OmniDocBench（归一化编辑距离）
+
+所有评估均在推理强度设为 xhigh 的情况下运行，除非另有说明。所有基准测试均在研究环境中完成，因此在某些情况下，结果可能会与正式上线的 ChatGPT 输出略有不同。
+
+1人类表现数据引用自OSWorld：在真实计算机环境中对开放式任务进行多模态智能体基准测试⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5</title>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+
+Expert-SWE (Internal)
+
+FrontierMath Tier 1–3
+
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+
+Prompt:# Algebraic geometry surface intersection
+
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+
+Git repo, journal, plan (Markdown files)
+
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+
+SWE-Bench Pro (Public) *
+
+Expert-SWE (Internal)
+
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+
+Tau2-bench Telecom***（原始提示词）
+
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+
+Graphwalks BFS 256k f1
+
+Graphwalks BFS 1mil f1
+
+Graphwalks parents 256k f1
+
+Graphwalks parents 1mil f1
+
+OpenAI MRCR v2 8-needle 4K-8K
+
+OpenAI MRCR v2 8-needle 8K-16K
+
+OpenAI MRCR v2 8-needle 16K-32K
+
+OpenAI MRCR v2 8-needle 32K-64K
+
+OpenAI MRCR v2 8-needle 64K-128K
+
+OpenAI MRCR v2 8-needle 128K-256K
+
+OpenAI MRCR v2 8-needle 256K-512K
+
+OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+
+Expert-SWE (Internal)
+
+FrontierMath Tier 1–3
+
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+
+Prompt:# Algebraic geometry surface intersection
+
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+
+Git repo, journal, plan (Markdown files)
+
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+
+SWE-Bench Pro (Public) *
+
+Expert-SWE (Internal)
+
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+
+Tau2-bench Telecom***（原始提示词）
+
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+
+Graphwalks BFS 256k f1
+
+Graphwalks BFS 1mil f1
+
+Graphwalks parents 256k f1
+
+Graphwalks parents 1mil f1
+
+OpenAI MRCR v2 8-needle 4K-8K
+
+OpenAI MRCR v2 8-needle 8K-16K
+
+OpenAI MRCR v2 8-needle 16K-32K
+
+OpenAI MRCR v2 8-needle 32K-64K
+
+OpenAI MRCR v2 8-needle 64K-128K
+
+OpenAI MRCR v2 8-needle 128K-256K
+
+OpenAI MRCR v2 8-needle 256K-512K
+
+OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
