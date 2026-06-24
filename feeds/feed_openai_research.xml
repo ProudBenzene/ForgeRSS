@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Wed, 24 Jun 2026 03:42:16 +0000</lastBuildDate>
+<lastBuildDate>Wed, 24 Jun 2026 09:36:49 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -517,55 +517,57 @@ The next step is to connect benchmark performance to deployment studies in live 
   <guid isPermaLink="false">https://openai.com/index/chatgpt-memory-dreaming/</guid>
   <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Improving memory synthesis in ChatGPT to optimize for freshness, continuity and relevance.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
 
-Today we’re beginning to roll out a more capable and scalable system for synthesizing memory, developed to tackle the staleness, correctness, and scalability challenges that we observe when memory is applied to the hundreds of millions of users and multi-year time horizons in ChatGPT.
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
 
-Memory is what helps ChatGPT learn your preferences, projects, and constraints, allowing future conversations to start fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Improving memory synthesis in ChatGPT to optimize for freshness, continuity and relevance.
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
 
-Today we’re beginning to roll out a more capable and scalable system for synthesizing memory, developed to tackle the staleness, correctness, and scalability challenges that we observe when memory is applied to the hundreds of millions of users and multi-year time horizons in ChatGPT.
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
 
-Memory is what helps ChatGPT learn your preferences, projects, and constraints, allowing future conversations to start from shared context rather than from scratch.
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
 
-Over the last two years, memory has grown into a critical part of the ChatGPT experience, helping ChatGPT better understand your context so it can help you accomplish meaningful goals over time. This is central to making ChatGPT more useful: knowing you, helping you, and doing more for you.
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
 
-This update is available to Plus and Pro users in the US today, and will roll out to additional countries and Free and Go users over the coming weeks.
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所...</p><div style="font-size:16px;line-height:1.8;color:#333">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
 
-How memory has evolved
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
 
-Memory first launched in April 2024 (also known as saved memories). The feature let you ask ChatGPT to remember information and carry it forward into future chats.
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
 
-Saved memories were only written during the conversation and relied on strong cues to decide when to trigger memory, such as an instruction to "remember I’m traveling to Singapore in July." In practice, interacting with this system could feel like talking to someone who took a few notes, but still forgot everything that wasn’t written down. Saved memories also tend to go stale over time and eventually become incorrect or irrelevant.
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
 
-In April 2025, we updated ChatGPT’s memory by giving the model the ability to reference chat context outside of the saved memories list; this was done by introducing the first version ofdreaming—a method for ChatGPT toautomaticallycurate memories in the background by referencing chat history.
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
 
-In contrast to saved memories, dreaming leverages a background process that allows ChatGPT to learn from many conversations and synthesize ChatGPT’s memory state in order to always provide the freshest, most relevant context to your conversations. Dreaming also makes it easier for memory to include context that occurs naturally in conversation, without relying on explicit requests to remember something.
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
 
-Over the last year, dreamingsupplementedsaved memories to create a step-function improvement in ChatGPT's ability to personalize responses and offset the staleness of saved memories. However, it historically was never sufficient as a standalone memory system.
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所有没有写下来的内容。已保存记忆也往往会随着时间变得陈旧，并最终变得不正确或无关。
 
-Today, we are launching a significantly more capable and compute-efficient memory architecture built on top of dreaming.
+2025 年 4 月，我们更新了 ChatGPT 的记忆，让模型能够参考已保存记忆列表之外的聊天上下文；这是通过引入第一版“做梦”(Dreaming)功能来实现的 — 这是一种让 ChatGPT 通过参考聊天历史在后台自动整理记忆的方法。
 
-The memories synthesized by dreaming are reviewable through a summary of them made visible in the memory summary page. From the memory summary, you can quickly glean the highlights of what ChatGPT knows about you, add or update information about yourself, and provide instructions on what topics ChatGPT should bring up and when. If you want to drill down into a particular area to learn more, just chat with the model.
+与已保存记忆不同，“做梦”功能利用后台流程，让 ChatGPT 能够从许多对话中学习并整合 ChatGPT 的记忆状态，从而始终为你的对话提供最新、最相关的上下文。“做梦”功能还让记忆更容易纳入对话中自然出现的上下文，而不必依赖明确要求记住某件事。
 
-How we evaluate memory
+在过去一年里，“做梦”功能补充了已保存记忆，使 ChatGPT 个性化回复的能力实现了大幅提升，并抵消了已保存记忆的陈旧性。然而，从历史上看，它从来不足以作为一个独立的记忆系统。
 
-When we think about what "good memory" looks like in ChatGPT, a few things come to mind:
+今天，我们将推出一种基于“做梦”功能构建的、能力显著更强且计算效率更高的记忆架构。
 
-Carry forward useful context:You tell ChatGPT something once, and it remembers that information in your subsequent chats.
+由“做梦”功能整合出的记忆可通过记忆摘要页面中可见的摘要进行查看。通过记忆摘要，你可以快速了解 ChatGPT 对你的了解重点，添加或更新关于你自己的信息，并提供关于 ChatGPT 应在何时提起哪些话题的指示。如果你想深入了解某个特定领域，只需和模型聊天即可。
 
-Follow preferences and constraints:If you describe a preference (e.g., you’re vegetarian), then ChatGPT should take actions that are consistent with that preference going forward.
+当我们思考 ChatGPT 中“好的记忆”是什么样子时，会想到几点：
 
-Stay current over time:Memory should account for the passage of time. Imagine "The user is planning their birthday party for next Saturday"; eventually, Sunday arrives.
+延续有用的上下文：你告诉 ChatGPT 一次，它就会在你之后的聊天中记住这些信息。
 
-We can evaluate how ChatGPT Plus and Pro memory has improved over time with respect to each of the three memory objectives above. We do this for each of:
+遵循偏好和限制：如果你描述了某个偏好（例如你是素食者），那么 ChatGPT 今后应采取与该偏好一致的行动。
 
-2025: Saved memories + Dreaming V0
+随时间保持最新：记忆应考虑时间的流逝。想象一下“用户正在为下周六的生日派对做计划”；最终，星期天会到来。
 
-Carrying forward context
+我们可以评估 ChatGPT Plus 和 Pro 的记忆在上述三个记忆目标上的改进情况。我们分别针对以下各项进行评估：
 
-When you start a new chat with ChatGPT, you don’t have to introduce yourself from scratch. ChatGPT can save you time andbuild on prior context, especially for complex, long-running projects.
+2025：已保存记忆 + Dreaming V0
 
-For example, imagine you’re using ChatGPT to shop for new camera gear that's compatible with your current camera. If you've discussed your camera setup with ChatGPT in the past, you can ask for products that are compatible with "my photography setup" and get tailored recommendations that meet your needs.
+当你与 ChatGPT 开始新的聊天时，不必从头介绍自己。ChatGPT 可以为你节省时间，并基于先前的上下文继续推进，尤其适用于复杂、长期进行的项目。
+
+例如，想象你正在使用 ChatGPT 选购与你当前相机兼容的新相机设备。如果你过去曾与 ChatGPT 讨论过你的相机配置，你就可以询问与“我的摄影配置”兼容的产品，并获得符合你需求的定制推荐。
 
 What would I need to buy to use TTL for my underwater photography setup?
 
@@ -573,9 +575,9 @@ To useTTL flash underwater, you need a compatible chain fromcamera → housing/t
 
 TTL-capable underwater strobeLook for strobes that support your TTL type, such asInon S-TTL,Sea & Sea DS-TTL,Ikelite DS TTL, or compatible Backscatter/Nauticam systems. TTL has to be supported by the strobe, not just the camera.
 
-TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠(opens in a new window))
+TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠（在新窗口中打开）)
 
-Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠(opens in a new window))Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
+Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠（在新窗口中打开）)Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
 
 Housing compatibility partsYou may need ahot-shoe adapter,bulkhead,fiber optic window/adapter, or housing-specific TTL board. Many TTL triggers mount inside the housing on the camera hot shoe.
 
@@ -585,7 +587,7 @@ Batteries and sparesBring strobe batteries, trigger batteries if required, spare
 
 Fiber optic TTLis usually easiest if your housing has optical ports or can use the camera’s pop-up flash/LED trigger. It is common with compact, mirrorless, Nauticam, Sea & Sea, AOI, and Olympus/OM TG-style setups.
 
-Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠(opens in a new window))
+Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠（在新窗口中打开）)
 
 You need all three to match:
 
@@ -599,7 +601,7 @@ Compact camera with built-in flash + fiber optic cable + S-TTL/DS-TTL-capable st
 
 So the practical answer is: buy aTTL-compatible strobe, thecorrect TTL trigger/converter for your camera and housing, and theright fiber optic or electrical sync cable. The exact part numbers depend on your camera, housing, and strobe model.
 
-The model produces a generic response that leaves the user to do complicated compatibility checks on their own.
+模型给出通用回应，让用户自行进行复杂的兼容性检查。
 
 What would I need to buy to use TTL for my underwater photography setup?
 
@@ -609,17 +611,17 @@ Foryour setup—Sony A1 II + Nauticam NA-A1II + Backscatter Mini Flash 3 + Inon 
 
 Backscatter Smart Control TTL LED Nauticam Flash Trigger for SonySKU: BS-TR-SN2
 
-Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠(opens in a new window))
+Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠（在新窗口中打开）)
 
-You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠(opens in a new window))
+You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠（在新窗口中打开）)
 
 For theInon Z-330, the relevant unit is:
 
 UW Technics 11075-HSS TTL Converter for Sony / Nauticam
 
-UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠(opens in a new window))
+UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠（在新窗口中打开）)
 
-But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠(opens in a new window))
+But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠（在新窗口中打开）)
 
 Since you shoot macro and have theMini Flash 3, I’d buy theBackscatter Smart Control TTL LED Nauticam Flash Trigger for Sony — BS-TR-SN2.
 
@@ -627,25 +629,25 @@ The catch: there probably isno single trigger that gives true TTL for both the M
 
 For your use case, I’d prioritizeMini Flash 3 TTL / SC Macroand treat the Z-330s as manual when needed.
 
-The model remembers the user’s camera setup and recommends a compatible product.
+模型记得用户的相机配置，并推荐了兼容产品。
 
-We can construct an eval from examples that resemble this where the model is asked to respond to a prompt that requires it to recall factual information about the user. The model is then rewarded if it responds in a way that correctly uses the relevant context. In this evaluation, the new dreaming-based system improves the model's ability to recall relevant facts.
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-Following preferences
+我们可以基于类似这样的示例构建评估，其中模型需要回应一个提示，而该提示要求它回忆关于用户的事实信息。如果模型以正确使用相关上下文的方式作出回应，就会获得奖励。在这项评估中，新的基于“做梦”功能的系统提升了模型回忆相关事实的能力。
 
-Memory also helps ChatGPT respond in ways that better match your preferences and constraints.
+记忆还能帮助 ChatGPT 以更符合你的偏好和限制的方式作出回应。
 
-Imagine that you’re planning a trip to Singapore. Two months before your trip, you ask ChatGPT to help with an itinerary. ChatGPT already knows from past travel planning that you enjoy wildlife photography, prefer hotels with strong AC, and enjoy a quiet dinner over a crowded bar.
+想象你正在计划一次新加坡之旅。出发前两个月，你请 ChatGPT 帮忙制定行程。ChatGPT 已经从过去的旅行规划中知道，你喜欢野生动物摄影，偏好空调强劲的酒店，并且比起拥挤的酒吧更喜欢安静的晚餐。
 
 Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
 
-Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠(opens in a new window))
+Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠（在新窗口中打开）)
 
-Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠(opens in a new window))
+Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠（在新窗口中打开）)
 
-Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠(opens in a new window))
+Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠（在新窗口中打开）)
 
-Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠(opens in a new window))
+Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠（在新窗口中打开）)
 
 Afternoon:Kampong GlamandHaji Lanefor Sultan Mosque, murals, boutiques, and cafés. Then head toLittle Indiaaround golden hour for temples, flower garlands, Tekka Centre, and dinner.
 
@@ -657,7 +659,7 @@ For nature: doSingapore Botanic Gardensearly, then the National Orchid Garden, f
 
 For beach/resort mode: go toSentosa. Choose the southern beaches, Fort Siloso Skywalk, or a beach club. I would skip trying to do every Sentosa attraction unless you love theme parks.
 
-For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠(opens in a new window))
+For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠（在新窗口中打开）)
 
 Marina Bay / CBDis easiest if you want polished, walkable, skyline-heavy Singapore and minimal transit.
 
@@ -673,23 +675,23 @@ Bring breathable work clothes, comfortable walking shoes, a small umbrella, and 
 
 My suggested balance:Day 1 Marina Bay/Gardens, Day 2 Chinatown–Kampong Glam–Little India, Day 3 Botanic Gardens or Sentosa. That gives you the Singapore highlights without turning your post-work break into another work project.
 
-The model produces a generic response that is more touristy, doesn't help with hotel booking, and largely ignores the user's interests.
+模型给出了更偏游客化的通用回应，没有帮助预订酒店，并且在很大程度上忽视了用户的兴趣。
 
 Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
 
 I’ll build this around your known constraints: a few free days after work, hot/humid July weather, wildlife/photography/nature bias, strong AC needs for sleep, and good but not overly social dining. I’ll verify current July logistics and then give a practical short itinerary rather than a generic Singapore list.
 
-Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠(opens in a new window))
+Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠（在新窗口中打开）)
 
-Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠(opens in a new window))
+Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠（在新窗口中打开）)
 
-Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠(opens in a new window))
+Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠（在新窗口中打开）)
 
 Dinner: do something easy nearby: Marina Bay / Tanjong Pagar / Telok Ayer. For you, I’d prioritize reservation-based restaurants with real tables over hawker centers on the first night, because you dislike cramped solo seating.
 
-Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠(opens in a new window))
+Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
 
-Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠(opens in a new window))
+Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
 
 This is a full day. I would not add Singapore Zoo unless you have 4 free days; Mandai can become exhausting fast.
 
@@ -713,43 +715,35 @@ Since this is a work trip, your hotel may be fixed. If you can choose or extend 
 
 Send the exact free dates and whether your work hotel is fixed. Then I’d turn this into a day-by-day plan with restaurant targets and a hotel/AC callout.
 
-The model produces a response that is personalized to the user’s interests in wildlife photography, quiet dinners, and their priorities when booking a hotel.
+模型给出的回应针对用户对野生动物摄影、安静晚餐以及酒店预订优先事项的兴趣进行了个性化处理。
 
-Preferences can take several forms:
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-Instructions for how ChatGPT should respond ("don't bring up Stan again").
+关于 ChatGPT 应如何回应的指示（“不要再提 Stan”）。
 
-Your personal preferences or constraints ("I’m vegetarian")
+会影响与你相关内容的隐性偏好（“我住在旧金山附近” → 本地选项应针对该地区进行定制）
 
-Implicit preferences that shape what’s relevant to you ("I live near San Francisco" → local options should be tailored to this area)
+在开发新的记忆系统时，我们提升了 ChatGPT 应用过去对话中相关偏好的能力。沿用上面“我是素食者”的例子，当一位素食用户询问备餐建议时，我们可以评估模型是否正确利用记忆来生成适合素食者的用餐选项。
 
-In developing the new memory system, we improved ChatGPT’s ability to apply relevant preferences from past conversations. Following the "I’m vegetarian" example above, we can evaluate whether the model correctly leverages memory to produce vegetarian-friendly dining options when a vegetarian user asks for meal prep suggestions.
+传统记忆系统可能会变得陈旧。例如，你告诉 ChatGPT：“我在新加坡，今晚需要一个晚餐推荐。”随后，时间过去，你的旅程结束了，而你却想不通为什么 ChatGPT 仍然认为你在新加坡。
 
-Staying current over time
-
-Time doesn’t stop when your chat ends.
-
-Traditional memory systems can become stale. For example, you tell ChatGPT "I’m in Singapore and need a dinner recommendation for tonight." Then, time passes, your trip ends, and you wonder why ChatGPT still thinks you’re in Singapore.
-
-With dreaming, memories are automatically updated as time passes, allowing ChatGPT to revise its memory from "You’re going to Singapore in July" to "You went to Singapore in July 2026" when the trip ends. Then, when you’re back home, ChatGPT can again provide recommendations that are tailored to your home location and time zone.
+通过“做梦”功能，记忆会随着时间流逝自动更新，使 ChatGPT 能够在旅程结束时，将其记忆从“你七月要去新加坡”修订为“你在 2026 年七月去过新加坡”。然后，当你回到家后，ChatGPT 又可以根据你的居住地点和时区提供定制推荐。
 
 Help me find something for take-out tonight that's still open.
 
 It’sabout 5:19 AM Sunday in Singapore, so your safest take-out/delivery bets are 24-hour places.
 
-McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠(opens in a new window))
+McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠（在新窗口中打开）)
 
-Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠(opens in a new window))
+Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠（在新窗口中打开）)
 
-89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠(opens in a new window))
+89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠（在新窗口中打开）)
 
-126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠(opens in a new window))
+126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠（在新窗口中打开）)
 
-Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠(opens in a new window))
+Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠（在新窗口中打开）)
 
 For the fastest path: openGrabFood / foodpanda / Deliveroo, set filter toOpen now, then search“prata,” “McDonald’s,” “Srisun,” “89.7,” “dim sum,”or“nasi lemak.”If you tell me your neighborhood or nearest MRT, I’ll narrow it to specific nearby places.
-
-The model thinks the user is still in Singapore.
 
 Help me find something for take-out tonight that's still open.
 
@@ -757,80 +751,80 @@ I’ll use Portola Valley / Ladera as the starting point and prioritize places t
 
 Fortonight, Saturday May 30, near Ladera / Portola Valley, I’d start here:
 
-Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠(opens in a new window))
+Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠（在新窗口中打开）)
 
-Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠(opens in a new window))
+Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠（在新窗口中打开）)
 
-Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠(opens in a new window))
+Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠（在新窗口中打开）)
 
-Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠(opens in a new window))
+Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠（在新窗口中打开）)
 
-State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠(opens in a new window))
+State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠（在新窗口中打开）)
 
 My pick:Alpine Innfor easiest local takeout,Tavernaif you want something less heavy,State of Mindif it’s later and you want the most reliable post-9 pm option.
 
-The model provides responses that are relevant to the user’s home location.
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-In our memory evaluations, we measure whether ChatGPT can correctly respond to prompts where the passage of time materially affects the correct answer or recommendation. Dreaming provides a substantial lift in this area:
+在我们的记忆评估中，我们衡量 ChatGPT 是否能正确回应那些时间流逝会对正确答案或推荐产生实质影响的提示。“做梦”功能在这一方面带来了显著提升：
 
-A more scalable foundation for the future
+在 OpenAI，我们的使命是确保通用人工智能造福全人类。
 
-At OpenAI, our mission is to ensure that artificial general intelligence benefits all of humanity.
+虽然基于“做梦”功能的记忆已面向 Plus 和 Pro 用户开放了一段时间，但直到现在，我们才有能力为免费版用户提供一个既达到质量标准又适合大规模服务的版本。近期改进将面向免费版用户提供“做梦”功能所需的计算量降低了约 5 倍，使我们能够在未来几周开始向免费版用户推出“做梦”功能，并提升 Plus 和 Pro 用户的记忆容量。
 
-While dreaming-based memory has been available to Plus and Pro users for some time, we are only now able to offer Free users a version that meets our quality bar and is practical to serve at scale. Recent improvements reduced the compute required to serve dreaming to Free users by approximately 5x, making it possible to begin rolling out dreaming to Free users over the coming weeks and to increase memory capacity for Plus and Pro users.
+展望未来，“做梦”功能现在为所有用户提供了一个共享的记忆基础。这项更新代表了我们迄今能力最强的记忆系统，我们将继续改进它。
 
-Looking ahead, dreaming now provides us with a shared memory foundation for all users. This update represents our most capable memory system yet, and we’ll continue improving it.
+要详细了解此版本和记忆用户控制，请访问我们的记忆常见问题⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
 
-To learn more about this release and memory user controls, visit ourMemory FAQ⁠(opens in a new window).</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Improving memory synthesis in ChatGPT to optimize for freshness, continuity and relevance.
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
 
-Today we’re beginning to roll out a more capable and scalable system for synthesizing memory, developed to tackle the staleness, correctness, and scalability challenges that we observe when memory is applied to the hundreds of millions of users and multi-year time horizons in ChatGPT.
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
 
-Memory is what helps ChatGPT learn your preferences, projects, and constraints, allowing future conversations to start fr...</p><div style="font-size:16px;line-height:1.8;color:#333">Improving memory synthesis in ChatGPT to optimize for freshness, continuity and relevance.
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
 
-Today we’re beginning to roll out a more capable and scalable system for synthesizing memory, developed to tackle the staleness, correctness, and scalability challenges that we observe when memory is applied to the hundreds of millions of users and multi-year time horizons in ChatGPT.
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
 
-Memory is what helps ChatGPT learn your preferences, projects, and constraints, allowing future conversations to start from shared context rather than from scratch.
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
 
-Over the last two years, memory has grown into a critical part of the ChatGPT experience, helping ChatGPT better understand your context so it can help you accomplish meaningful goals over time. This is central to making ChatGPT more useful: knowing you, helping you, and doing more for you.
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所...</p><div style="font-size:16px;line-height:1.8;color:#333">改进 ChatGPT 中的记忆整合系统，以优化时效性、连续性和相关性
 
-This update is available to Plus and Pro users in the US today, and will roll out to additional countries and Free and Go users over the coming weeks.
+今天，我们开始推出一个能力更强、可扩展性更高的记忆整合系统，旨在应对我们在将记忆应用于 ChatGPT 数亿用户和跨越多年时间跨度时观察到的陈旧性、正确性和可扩展性挑战。
 
-How memory has evolved
+记忆能帮助 ChatGPT 了解你的偏好、项目和限制，让未来的对话可以从共享上下文开始，而不是从零开始。
 
-Memory first launched in April 2024 (also known as saved memories). The feature let you ask ChatGPT to remember information and carry it forward into future chats.
+在过去两年里，记忆已成为 ChatGPT 体验中的关键部分，帮助 ChatGPT 更好地理解你的上下文，从而在一段时间内帮助你实现有意义的目标。这是让 ChatGPT 更有用的核心：了解你、帮助你，并为你做更多事。
 
-Saved memories were only written during the conversation and relied on strong cues to decide when to trigger memory, such as an instruction to "remember I’m traveling to Singapore in July." In practice, interacting with this system could feel like talking to someone who took a few notes, but still forgot everything that wasn’t written down. Saved memories also tend to go stale over time and eventually become incorrect or irrelevant.
+这项更新今天面向美国的 Plus 和 Pro 用户开放，并将在未来几周内向更多国家以及免费版和 Go 用户推出。
 
-In April 2025, we updated ChatGPT’s memory by giving the model the ability to reference chat context outside of the saved memories list; this was done by introducing the first version ofdreaming—a method for ChatGPT toautomaticallycurate memories in the background by referencing chat history.
+记忆最初于 2024 年 4 月推出（也称为已保存记忆）。这项功能让你可以要求 ChatGPT 记住信息，并将其带入未来的聊天。
 
-In contrast to saved memories, dreaming leverages a background process that allows ChatGPT to learn from many conversations and synthesize ChatGPT’s memory state in order to always provide the freshest, most relevant context to your conversations. Dreaming also makes it easier for memory to include context that occurs naturally in conversation, without relying on explicit requests to remember something.
+已保存记忆只会在对话期间写入，并依赖强提示来决定何时触发记忆，例如指示“记住我七月要去新加坡旅行”。在实践中，与这个系统互动可能感觉像是在和一个记了几条笔记的人说话，但他仍然忘了所有没有写下来的内容。已保存记忆也往往会随着时间变得陈旧，并最终变得不正确或无关。
 
-Over the last year, dreamingsupplementedsaved memories to create a step-function improvement in ChatGPT's ability to personalize responses and offset the staleness of saved memories. However, it historically was never sufficient as a standalone memory system.
+2025 年 4 月，我们更新了 ChatGPT 的记忆，让模型能够参考已保存记忆列表之外的聊天上下文；这是通过引入第一版“做梦”(Dreaming)功能来实现的 — 这是一种让 ChatGPT 通过参考聊天历史在后台自动整理记忆的方法。
 
-Today, we are launching a significantly more capable and compute-efficient memory architecture built on top of dreaming.
+与已保存记忆不同，“做梦”功能利用后台流程，让 ChatGPT 能够从许多对话中学习并整合 ChatGPT 的记忆状态，从而始终为你的对话提供最新、最相关的上下文。“做梦”功能还让记忆更容易纳入对话中自然出现的上下文，而不必依赖明确要求记住某件事。
 
-The memories synthesized by dreaming are reviewable through a summary of them made visible in the memory summary page. From the memory summary, you can quickly glean the highlights of what ChatGPT knows about you, add or update information about yourself, and provide instructions on what topics ChatGPT should bring up and when. If you want to drill down into a particular area to learn more, just chat with the model.
+在过去一年里，“做梦”功能补充了已保存记忆，使 ChatGPT 个性化回复的能力实现了大幅提升，并抵消了已保存记忆的陈旧性。然而，从历史上看，它从来不足以作为一个独立的记忆系统。
 
-How we evaluate memory
+今天，我们将推出一种基于“做梦”功能构建的、能力显著更强且计算效率更高的记忆架构。
 
-When we think about what "good memory" looks like in ChatGPT, a few things come to mind:
+由“做梦”功能整合出的记忆可通过记忆摘要页面中可见的摘要进行查看。通过记忆摘要，你可以快速了解 ChatGPT 对你的了解重点，添加或更新关于你自己的信息，并提供关于 ChatGPT 应在何时提起哪些话题的指示。如果你想深入了解某个特定领域，只需和模型聊天即可。
 
-Carry forward useful context:You tell ChatGPT something once, and it remembers that information in your subsequent chats.
+当我们思考 ChatGPT 中“好的记忆”是什么样子时，会想到几点：
 
-Follow preferences and constraints:If you describe a preference (e.g., you’re vegetarian), then ChatGPT should take actions that are consistent with that preference going forward.
+延续有用的上下文：你告诉 ChatGPT 一次，它就会在你之后的聊天中记住这些信息。
 
-Stay current over time:Memory should account for the passage of time. Imagine "The user is planning their birthday party for next Saturday"; eventually, Sunday arrives.
+遵循偏好和限制：如果你描述了某个偏好（例如你是素食者），那么 ChatGPT 今后应采取与该偏好一致的行动。
 
-We can evaluate how ChatGPT Plus and Pro memory has improved over time with respect to each of the three memory objectives above. We do this for each of:
+随时间保持最新：记忆应考虑时间的流逝。想象一下“用户正在为下周六的生日派对做计划”；最终，星期天会到来。
 
-2025: Saved memories + Dreaming V0
+我们可以评估 ChatGPT Plus 和 Pro 的记忆在上述三个记忆目标上的改进情况。我们分别针对以下各项进行评估：
 
-Carrying forward context
+2025：已保存记忆 + Dreaming V0
 
-When you start a new chat with ChatGPT, you don’t have to introduce yourself from scratch. ChatGPT can save you time andbuild on prior context, especially for complex, long-running projects.
+当你与 ChatGPT 开始新的聊天时，不必从头介绍自己。ChatGPT 可以为你节省时间，并基于先前的上下文继续推进，尤其适用于复杂、长期进行的项目。
 
-For example, imagine you’re using ChatGPT to shop for new camera gear that's compatible with your current camera. If you've discussed your camera setup with ChatGPT in the past, you can ask for products that are compatible with "my photography setup" and get tailored recommendations that meet your needs.
+例如，想象你正在使用 ChatGPT 选购与你当前相机兼容的新相机设备。如果你过去曾与 ChatGPT 讨论过你的相机配置，你就可以询问与“我的摄影配置”兼容的产品，并获得符合你需求的定制推荐。
 
 What would I need to buy to use TTL for my underwater photography setup?
 
@@ -838,9 +832,9 @@ To useTTL flash underwater, you need a compatible chain fromcamera → housing/t
 
 TTL-capable underwater strobeLook for strobes that support your TTL type, such asInon S-TTL,Sea & Sea DS-TTL,Ikelite DS TTL, or compatible Backscatter/Nauticam systems. TTL has to be supported by the strobe, not just the camera.
 
-TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠(opens in a new window))
+TTL trigger or TTL converterThis is the key piece. It translates your camera’s flash metering into something the underwater strobe can understand. Examples includeNauticam optical TTL converters,Sea & Sea TTL converters,Backscatter Smart Control optical TTL triggers, orIkelite DS Link TTL converters, depending on housing and camera brand. Backscatter notes that Nauticam optical TTL converters can work with fiber-optic-connected Inon and Sea & Sea TTL strobes, while Ikelite’s DS Link converters are made around Ikelite DS strobes and electrical sync setups. (Backscatter.com⁠（在新窗口中打开）)
 
-Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠(opens in a new window))Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
+Connection cableForfiber optic TTL, buy one fiber optic cable per strobe. Ikelite’s fiber-optic guide says each strobe needs its own light path, converter/adapter, and cord. (Ikelite⁠（在新窗口中打开）)Forelectrical TTL, buy the correct sync cord, such as Ikelite-style, Nikonos 5-pin, or housing-specific bulkhead cable.
 
 Housing compatibility partsYou may need ahot-shoe adapter,bulkhead,fiber optic window/adapter, or housing-specific TTL board. Many TTL triggers mount inside the housing on the camera hot shoe.
 
@@ -850,7 +844,7 @@ Batteries and sparesBring strobe batteries, trigger batteries if required, spare
 
 Fiber optic TTLis usually easiest if your housing has optical ports or can use the camera’s pop-up flash/LED trigger. It is common with compact, mirrorless, Nauticam, Sea & Sea, AOI, and Olympus/OM TG-style setups.
 
-Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠(opens in a new window))
+Electrical TTLis often best if you useIkelite DS strobesor an Ikelite-style housing/bulkhead. Ikelite says its DS Link TTL converters are faster and more reliable than fiber-optic TTL triggers, and they do not require batteries. (Backscatter.com⁠（在新窗口中打开）)
 
 You need all three to match:
 
@@ -864,7 +858,7 @@ Compact camera with built-in flash + fiber optic cable + S-TTL/DS-TTL-capable st
 
 So the practical answer is: buy aTTL-compatible strobe, thecorrect TTL trigger/converter for your camera and housing, and theright fiber optic or electrical sync cable. The exact part numbers depend on your camera, housing, and strobe model.
 
-The model produces a generic response that leaves the user to do complicated compatibility checks on their own.
+模型给出通用回应，让用户自行进行复杂的兼容性检查。
 
 What would I need to buy to use TTL for my underwater photography setup?
 
@@ -874,17 +868,17 @@ Foryour setup—Sony A1 II + Nauticam NA-A1II + Backscatter Mini Flash 3 + Inon 
 
 Backscatter Smart Control TTL LED Nauticam Flash Trigger for SonySKU: BS-TR-SN2
 
-Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠(opens in a new window))
+Backscatter lists it as custom-designed forNauticam full-frame Sony housings, TTL-compatible withMini Flash 3, and the NA-A1II housing page offers it as the “Backscatter Smart Control TTL Flash Trigger” option. (Backscatter.com⁠（在新窗口中打开）)
 
-You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠(opens in a new window))
+You’d use normal optical fiber cables from the housing to the Mini Flash 3. On the MF-3, you’d useSCorSC Macromode; Backscatter says SC / SC Macro are the TTL modes for Mini Flash 3, with SC Macro specifically tuned for close macro work. (Backscatter.com⁠（在新窗口中打开）)
 
 For theInon Z-330, the relevant unit is:
 
 UW Technics 11075-HSS TTL Converter for Sony / Nauticam
 
-UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠(opens in a new window))
+UW Technics explicitly listsInon Z-330as a compatible TTL strobe and supports optical TTL output. (UWTechnics⁠（在新窗口中打开）)
 
-But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠(opens in a new window))
+But I wouldnotbuy this for Mini Flash 3 TTL. Backscatter’s own UW Technics listing says Backscatter strobes aremanual / HSS onlyon that converter, while the Backscatter Smart Control trigger is the one listed for Sony TTL with the Mini Flash 3. (Backscatter.com⁠（在新窗口中打开）)
 
 Since you shoot macro and have theMini Flash 3, I’d buy theBackscatter Smart Control TTL LED Nauticam Flash Trigger for Sony — BS-TR-SN2.
 
@@ -892,25 +886,25 @@ The catch: there probably isno single trigger that gives true TTL for both the M
 
 For your use case, I’d prioritizeMini Flash 3 TTL / SC Macroand treat the Z-330s as manual when needed.
 
-The model remembers the user’s camera setup and recommends a compatible product.
+模型记得用户的相机配置，并推荐了兼容产品。
 
-We can construct an eval from examples that resemble this where the model is asked to respond to a prompt that requires it to recall factual information about the user. The model is then rewarded if it responds in a way that correctly uses the relevant context. In this evaluation, the new dreaming-based system improves the model's ability to recall relevant facts.
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-Following preferences
+我们可以基于类似这样的示例构建评估，其中模型需要回应一个提示，而该提示要求它回忆关于用户的事实信息。如果模型以正确使用相关上下文的方式作出回应，就会获得奖励。在这项评估中，新的基于“做梦”功能的系统提升了模型回忆相关事实的能力。
 
-Memory also helps ChatGPT respond in ways that better match your preferences and constraints.
+记忆还能帮助 ChatGPT 以更符合你的偏好和限制的方式作出回应。
 
-Imagine that you’re planning a trip to Singapore. Two months before your trip, you ask ChatGPT to help with an itinerary. ChatGPT already knows from past travel planning that you enjoy wildlife photography, prefer hotels with strong AC, and enjoy a quiet dinner over a crowded bar.
+想象你正在计划一次新加坡之旅。出发前两个月，你请 ChatGPT 帮忙制定行程。ChatGPT 已经从过去的旅行规划中知道，你喜欢野生动物摄影，偏好空调强劲的酒店，并且比起拥挤的酒吧更喜欢安静的晚餐。
 
 Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
 
-Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠(opens in a new window))
+Great add-on city for a work trip: Singapore is compact, safe, excellent for solo exploring, and easy to do in 2–4 free days. July is hot and humid; expect daytime highs around 31–33°C / 88–91°F, warm nights, and sudden rain, so plan outdoor time early morning or after 5 p.m. and keep midday for museums, malls, cafés, or hotel downtime. Singapore’s official weather service notes typical daily highs of 31–33°C and lows of 23–25°C. (Singapore Weather Service⁠（在新窗口中打开）)
 
-Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠(opens in a new window))
+Start late afternoon atMarina Bayand walk the waterfront: Merlion Park, Helix Bridge, ArtScience Museum exterior, then intoGardens by the Bay. BookCloud Forest,Flower Dome, and either theOCBC SkywayorSupertree Observatoryif views matter to you. Gardens by the Bay lists Cloud Forest and Flower Dome as open daily 9 a.m.–9 p.m.; Supertree Observatory is also listed as 9 a.m.–9 p.m. with last admission at 8:30 p.m., but check maintenance closures before booking. (Gardens by the Bay⁠（在新窗口中打开）)
 
-Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠(opens in a new window))
+Evening: stay for the Supertree light show area, then dinner atLau Pa Satfor an easy first-night hawker experience near the CBD. It has 80+ stalls and local staples like satay, laksa, nasi lemak, bak kut teh, kaya toast, and char kway teow. (Laupasat⁠（在新窗口中打开）)
 
-Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠(opens in a new window))
+Morning:Chinatown. Visit Buddha Tooth Relic Temple, walk the shophouse streets, and eat atMaxwell Food CentreorChinatown Complex Food Centre. Visit Singapore lists Maxwell, Chinatown Complex, Old Airport Road, Tiong Bahru Market, Newton, and others among popular hawker centres. (Visit Singapore⁠（在新窗口中打开）)
 
 Afternoon:Kampong GlamandHaji Lanefor Sultan Mosque, murals, boutiques, and cafés. Then head toLittle Indiaaround golden hour for temples, flower garlands, Tekka Centre, and dinner.
 
@@ -922,7 +916,7 @@ For nature: doSingapore Botanic Gardensearly, then the National Orchid Garden, f
 
 For beach/resort mode: go toSentosa. Choose the southern beaches, Fort Siloso Skywalk, or a beach club. I would skip trying to do every Sentosa attraction unless you love theme parks.
 
-For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠(opens in a new window))
+For local food focus: doTiong Bahru Marketfor breakfast, National Gallery Singapore midday, thenOld Airport Road Food Centrefor dinner. The official events page also shows exhibitions and cultural events, so it is worth checking once your exact July dates are fixed. (Visit Singapore⁠（在新窗口中打开）)
 
 Marina Bay / CBDis easiest if you want polished, walkable, skyline-heavy Singapore and minimal transit.
 
@@ -938,23 +932,23 @@ Bring breathable work clothes, comfortable walking shoes, a small umbrella, and 
 
 My suggested balance:Day 1 Marina Bay/Gardens, Day 2 Chinatown–Kampong Glam–Little India, Day 3 Botanic Gardens or Sentosa. That gives you the Singapore highlights without turning your post-work break into another work project.
 
-The model produces a generic response that is more touristy, doesn't help with hotel booking, and largely ignores the user's interests.
+模型给出了更偏游客化的通用回应，没有帮助预订酒店，并且在很大程度上忽视了用户的兴趣。
 
 Help me plan a trip to Singapore. I'm going to be there for a work trip in July and will have a few days free at the end.
 
 I’ll build this around your known constraints: a few free days after work, hot/humid July weather, wildlife/photography/nature bias, strong AC needs for sleep, and good but not overly social dining. I’ll verify current July logistics and then give a practical short itinerary rather than a generic Singapore list.
 
-Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠(opens in a new window))
+Here’s how I’d structure it:2–3 free days, mostly nature / wildlife / photography, with heat-managed mornings and AC breaks.July is hot and humid: Singapore’s July long-term stats are about31.4°C / 88.5°F average daily max,25.4°C / 77.7°F min,146.6 mm rain, and14 rain days, so outdoor plans should be early morning or evening, not midday. (National Environment Agency⁠（在新窗口中打开）)
 
-Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠(opens in a new window))
+Morning:Cloud Forest + Flower Dome. This is the obvious “touristy” pick, but it fits you well because it’s visually interesting, good for photography, and climate-controlled. Gardens by the Bay lists Cloud Forest and Flower Dome-type attractions running9:00am–9:00pm, and Cloud Forest currently has the Jurassic World experience listed as ongoing. (Gardens by the Bay⁠（在新窗口中打开）)
 
-Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠(opens in a new window))
+Late afternoon / evening:Supertree Grove + Borealis / light show. Gardens currently listsBorealis every Sat, Sun & Mon, 8:00–8:30pmat Supertree Grove, so try to align this with one of those nights. (Gardens by the Bay⁠（在新窗口中打开）)
 
 Dinner: do something easy nearby: Marina Bay / Tanjong Pagar / Telok Ayer. For you, I’d prioritize reservation-based restaurants with real tables over hawker centers on the first night, because you dislike cramped solo seating.
 
-Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠(opens in a new window))
+Morning to afternoon:Bird Paradise + River Wonders. Bird Paradise is probably the best fit photographically; River Wonders is less “wildlife photography” and more controlled exhibits, but it pairs well logistically. River Wonders is listed asdaily 9:00am–6:00pm, last entry 5:00pm. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
 
-Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠(opens in a new window))
+Evening:Night Safari. This is the rare Singapore attraction that is genuinely better at night and avoids the worst heat. Night Safari is listed asdaily 6:00pm–12:00am, last entry 11:15pm, with tram plus walking trails and over 900 nocturnal animals. (Mandai Wildlife Reserve⁠（在新窗口中打开）)
 
 This is a full day. I would not add Singapore Zoo unless you have 4 free days; Mandai can become exhausting fast.
 
@@ -978,43 +972,35 @@ Since this is a work trip, your hotel may be fixed. If you can choose or extend 
 
 Send the exact free dates and whether your work hotel is fixed. Then I’d turn this into a day-by-day plan with restaurant targets and a hotel/AC callout.
 
-The model produces a response that is personalized to the user’s interests in wildlife photography, quiet dinners, and their priorities when booking a hotel.
+模型给出的回应针对用户对野生动物摄影、安静晚餐以及酒店预订优先事项的兴趣进行了个性化处理。
 
-Preferences can take several forms:
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-Instructions for how ChatGPT should respond ("don't bring up Stan again").
+关于 ChatGPT 应如何回应的指示（“不要再提 Stan”）。
 
-Your personal preferences or constraints ("I’m vegetarian")
+会影响与你相关内容的隐性偏好（“我住在旧金山附近” → 本地选项应针对该地区进行定制）
 
-Implicit preferences that shape what’s relevant to you ("I live near San Francisco" → local options should be tailored to this area)
+在开发新的记忆系统时，我们提升了 ChatGPT 应用过去对话中相关偏好的能力。沿用上面“我是素食者”的例子，当一位素食用户询问备餐建议时，我们可以评估模型是否正确利用记忆来生成适合素食者的用餐选项。
 
-In developing the new memory system, we improved ChatGPT’s ability to apply relevant preferences from past conversations. Following the "I’m vegetarian" example above, we can evaluate whether the model correctly leverages memory to produce vegetarian-friendly dining options when a vegetarian user asks for meal prep suggestions.
+传统记忆系统可能会变得陈旧。例如，你告诉 ChatGPT：“我在新加坡，今晚需要一个晚餐推荐。”随后，时间过去，你的旅程结束了，而你却想不通为什么 ChatGPT 仍然认为你在新加坡。
 
-Staying current over time
-
-Time doesn’t stop when your chat ends.
-
-Traditional memory systems can become stale. For example, you tell ChatGPT "I’m in Singapore and need a dinner recommendation for tonight." Then, time passes, your trip ends, and you wonder why ChatGPT still thinks you’re in Singapore.
-
-With dreaming, memories are automatically updated as time passes, allowing ChatGPT to revise its memory from "You’re going to Singapore in July" to "You went to Singapore in July 2026" when the trip ends. Then, when you’re back home, ChatGPT can again provide recommendations that are tailored to your home location and time zone.
+通过“做梦”功能，记忆会随着时间流逝自动更新，使 ChatGPT 能够在旅程结束时，将其记忆从“你七月要去新加坡”修订为“你在 2026 年七月去过新加坡”。然后，当你回到家后，ChatGPT 又可以根据你的居住地点和时区提供定制推荐。
 
 Help me find something for take-out tonight that's still open.
 
 It’sabout 5:19 AM Sunday in Singapore, so your safest take-out/delivery bets are 24-hour places.
 
-McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠(opens in a new window))
+McDelivery / McDonald’s Singapore— easiest islandwide option; McDonald’s says McDelivery is available24 hours, 7 days a week. Breakfast menu should be on now. (McDonald's Singapore⁠（在新窗口中打开）)
 
-Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠(opens in a new window))
+Srisun Express— good for prata, Indian Muslim food, local comfort food; their site says they’rehalal-certified and open 24/7. (Sri Sun Express⁠（在新窗口中打开）)
 
-89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠(opens in a new window))
+89.7 Supper Club— good if you’re nearChangi Village or Geylang East; their outlets page says both locations areopen 24 hours, 7 days a week. (89.7 Supper Club⁠（在新窗口中打开）)
 
-126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠(opens in a new window))
+126 Dim Sum Wen Dao Shi— worth checking on GrabFood/foodpanda if you’re in the East; a 2025 guide says it runs till5:30 AM on weekdaysandround-the-clock on weekends. Since it’s Sunday morning, it may still be available. (Eatbook⁠（在新窗口中打开）)
 
-Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠(opens in a new window))
+Prata around Geylang / Serangoon / Bedok / Jalan Kayu— look in GrabFood or Google Maps for “prata open now”; guides list multiple 24-hour prata/supper spots, including Mufiz Prata Corner and RK Eating House. (Eatbook⁠（在新窗口中打开）)
 
 For the fastest path: openGrabFood / foodpanda / Deliveroo, set filter toOpen now, then search“prata,” “McDonald’s,” “Srisun,” “89.7,” “dim sum,”or“nasi lemak.”If you tell me your neighborhood or nearest MRT, I’ll narrow it to specific nearby places.
-
-The model thinks the user is still in Singapore.
 
 Help me find something for take-out tonight that's still open.
 
@@ -1022,31 +1008,29 @@ I’ll use Portola Valley / Ladera as the starting point and prioritize places t
 
 Fortonight, Saturday May 30, near Ladera / Portola Valley, I’d start here:
 
-Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠(opens in a new window))
+Alpine Inn— safest casual pickup option. Open Saturday until9:30 pmand hasOrder Takeouton its site. Good for burgers / tavern food. (Rossotti's Alpine Inn⁠（在新窗口中打开）)
 
-Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠(opens in a new window))
+Taverna Portola Valley— nearby at Ladera Country Shopper; open daily, Saturday dinner until9:00 pm. Better if you want Greek / Mediterranean. (TAVERNA Portola Valley⁠（在新窗口中打开）)
 
-Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠(opens in a new window))
+Portola Bistro— also nearby; Saturday dinner until9:30 pm. Good option for Italian / Mediterranean / pizza-ish dinner. (Portola Bistro -⁠（在新窗口中打开）)
 
-Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠(opens in a new window))
+Amigos Grill— Mexican, very close in Ladera Country Shopper. Official site says call to order at650-851-3997; DoorDash / order.online lists pickup/delivery ordering until8:40 pm. (Amigos Grill⁠（在新窗口中打开）)
 
-State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠(opens in a new window))
+State of Mind Slice House, Palo Alto— best fallback if you want pizza and can drive farther; Friday–Saturday hours are11 am–10 pm. (State of Mind Slice House⁠（在新窗口中打开）)
 
 My pick:Alpine Innfor easiest local takeout,Tavernaif you want something less heavy,State of Mindif it’s later and you want the most reliable post-9 pm option.
 
-The model provides responses that are relevant to the user’s home location.
+GPT‑5.2 Instant 虽然最终回答了问题，但为了解释其安全边界，加入了一段关于其无法提供何种帮助的冗长开场白。相比之下，GPT‑5.3 Instant 则直接进入正文回复。
 
-In our memory evaluations, we measure whether ChatGPT can correctly respond to prompts where the passage of time materially affects the correct answer or recommendation. Dreaming provides a substantial lift in this area:
+在我们的记忆评估中，我们衡量 ChatGPT 是否能正确回应那些时间流逝会对正确答案或推荐产生实质影响的提示。“做梦”功能在这一方面带来了显著提升：
 
-A more scalable foundation for the future
+在 OpenAI，我们的使命是确保通用人工智能造福全人类。
 
-At OpenAI, our mission is to ensure that artificial general intelligence benefits all of humanity.
+虽然基于“做梦”功能的记忆已面向 Plus 和 Pro 用户开放了一段时间，但直到现在，我们才有能力为免费版用户提供一个既达到质量标准又适合大规模服务的版本。近期改进将面向免费版用户提供“做梦”功能所需的计算量降低了约 5 倍，使我们能够在未来几周开始向免费版用户推出“做梦”功能，并提升 Plus 和 Pro 用户的记忆容量。
 
-While dreaming-based memory has been available to Plus and Pro users for some time, we are only now able to offer Free users a version that meets our quality bar and is practical to serve at scale. Recent improvements reduced the compute required to serve dreaming to Free users by approximately 5x, making it possible to begin rolling out dreaming to Free users over the coming weeks and to increase memory capacity for Plus and Pro users.
+展望未来，“做梦”功能现在为所有用户提供了一个共享的记忆基础。这项更新代表了我们迄今能力最强的记忆系统，我们将继续改进它。
 
-Looking ahead, dreaming now provides us with a shared memory foundation for all users. This update represents our most capable memory system yet, and we’ll continue improving it.
-
-To learn more about this release and memory user controls, visit ourMemory FAQ⁠(opens in a new window).</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+要详细了解此版本和记忆用户控制，请访问我们的记忆常见问题⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-memory-dreaming/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing new capabilities to GPT-Rosalind</title>
@@ -1172,8 +1156,104 @@ Advance your public health and biodefense mission</div><hr style="margin:24px 0;
   <guid isPermaLink="false">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</guid>
   <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">An OpenAI model has disproved a central conjecture in discrete geometry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
+
+这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
+
+今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无...</p><div style="font-size:16px;line-height:1.8;color:#333">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
+
+这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
+
+今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无限示例。这一证明已经过一组外部数学家团队的审阅。他们还撰写了一篇配套论文，对该论证进行了详细阐释，并为这一成果的重大意义提供了进一步的背景与脉络支撑。
+
+该成果的发现方式同样引人瞩目。此证明诞生于一个全新的通用推理模型，而非专门针对数学进行训练，或依赖特定框架搜索证明策略，亦或是专门攻克单位距离问题的定制系统。作为评估先进模型能否助力前沿研究的工作的一部分，我们在一系列埃尔德什难题上对该模型进行了测试。而在平面单位距离问题上，它成功交出了一份解决该难题的证明。
+
+对于数学界和 AI 领域而言，该证明都是一座重要的里程碑。它标志着人工智能首次自主解决了一个在数学分支领域占据核心地位的未解问题。同时，它也展示了这类系统如今所具备的深度推理能力。数学为推理能力提供了一个格外清晰的试验场：问题定义严密，潜在的证明可被验证，而且一个长篇论证只有在逻辑环环相扣的前提下才能成立。解决该难题的方法同样令人惊叹。该证明巧妙地引入了代数数论中高深且意想不到的思想，成功攻克了这个初等几何问题。
+
+菲尔兹奖得主蒂莫西·高尔斯 (Tim Gowers) 在配套论文中将这一成果称为“人工智能数学领域的一座里程碑”。顶尖数论学家阿鲁尔·尚卡尔 (Arul Shankar) 则表示：“在我看来，这篇论文表明当前的 AI 模型不仅仅是人类数学家的助手 – 它们有能力产生独创且精妙的见解，并能将其最终变为实际成果。”
+
+证明可在此处⁠（在新窗口中打开）查看。由外部顶尖数学家撰写的配套论文可点击此处⁠（在新窗口中打开）阅读。你可以在这里⁠（在新窗口中打开）找到模型思维链的节选版本。
+
+此前已知的构造：由缩放后的正方形网格产生大量单位距离。
+
+设u(n)u(n)u(n)为平面上nnn个点之间可能存在的单位距离点对的最大数量。达到线性增长率的示例很容易构建：将nnn个点排成一条直线可以得到n−1n-1n−1对，而正方形网格可以得到大约2n2n2n对。此前已知最优的结构源自缩放的正方形网格，结果表明它能提供更多对：对于常数CCC，其数量为n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)。由于log⁡log⁡(n)\log \log(n)loglog(n)随着nnn趋于无穷大，指数中的附加项趋于000，这意味着这些结构实现的增长率仅略快于线性。几十年来，学术界普遍认为这一速率基本上已达上限，没有任何结构能比正方形网格做出显著改善。用技术术语来说，埃尔德什猜想其上限为n1+o(1)n^{1+o(1)}n1+o(1)，其中附加的o(1)o(1)o(1)表示一个随着nnn趋于000的项。我们的新成果推翻了这一猜想。更准确地说，对于无数个nnn值，该证明构建了包含至少n1+δn^{1+\delta}n1+δ个单位距离点对的nnn点配置，其中δ>0\delta > 0δ>0为某个固定指数。（最初的 AI 证明并未给出明确的δ\deltaδ值，但普林斯顿大学数学教授威尔·萨温 (Will Sawin) 随后进行的细化推导表明δ=0.014\delta=0.014δ=0.014。）回顾该问题的历史有助于理解为什么这一结果如此令人震惊。自埃尔德什 1946 年最初的构建以来，已知最优的下限基本上没有改变。而最优的上限O(n4/3)O(n^{4/3})O(n4/3)则要追溯到 1984 年斯宾塞 (Spencer)、塞迈雷迪 (Szemerédi) 和特罗特 (Trotter) 的研究工作，尽管后来有塞凯伊 (Székely)、卡茨和西利尔 (Katz and Silier)、帕赫 (Pach)、拉兹 (Raz) 以及索利莫西 (Solymosi) 等人的进一步细化和相关结构研究，该上限也基本上停滞不前。作为支持该猜想的证据，马图谢克 (Matoušek) 以及阿隆、布齐奇和绍尔曼 (Alon-Bucić-Sauermann) 研究了平面中非欧几里得距离下的该问题，并证明了在某种意义上，“绝大多数”非欧几里得距离都符合该猜想。令人惊奇的是，该构建方法的核心要素来自于一个完全不同的数学分支：代数数论，该学科主要研究诸如代数数域（即整数集的扩张）中的因式分解等概念。
+
+在验证了最初的证明之后，我们研究了模型在调用不同规模的“测试阶段算力” (test-time compute) 时，攻克该难题的成功率。结果如图所示。
+
+从高层逻辑来看，该证明始于一个人们熟知的几何概念，并将其推向了一个意想不到的方向。
+
+埃尔德什最初的下限可以通过高斯整数 (Gaussian integers) 来理解：即形式为a+bia+bia+bi的数，其中aaa和bbb为整数，而iii是−1-1−1的平方根。高斯整数对普通整数进行了扩张，并且与普通整数一样，享有诸如唯一质因数分解等性质。这种对普通整数或有理数的扩张被称为代数数域。新的论证用代数数论中更复杂的推广形式取代了高斯整数，这些形式具备更丰富的对称性，从而能够产生多得多的单位长度差值。
+
+具体论证过程中，模型使用了诸如无限阶级域塔 (infinite class field towers) 和高洛德-沙法列维奇理论 (Golod–Shafarevich theory) 等工具，证明了该论证所需的数域确实存在。这些思想对于代数数论学家来说早已耳熟能详，但令人大为震惊的是，这些概念竟然会对欧几里得平面上的几何问题产生影响。
+
+这一成果标志着人工智能与数学互动过程中的一个重要时刻：AI 系统自主解决了一个在活跃领域核心位置上历史悠久的难题。它同时也让我们初次窥见人工智能与人类数学家之间一种全新的协作形式。在这项研究中，外部数学家团队开展的配套研究工作，勾勒出了一幅比单纯的原始解法要丰富得多的宏大图景。
+
+正如托马斯·布鲁姆 (Thomas Bloom) 在配套注解中所写：
+
+“在评估一个由 AI 生成的证明的重要性与影响力时，我会问自己一个问题：这是否让我们对该问题有了新的认识？我们现在对离散几何的理解更深刻了吗？我认为答案是有限度的肯定：这表明，数论结构在处理此类问题时，所发挥的作用远超我们在此前的预想；此外，所需的数论知识可能非常高深。毫无疑问，许多代数数论学家将在未来的几个月里，对离散几何中的其他开放性问题展开深入研究。”
+
+该解法揭示了代数数论与离散几何之间意想不到的联系，这正是此成果引人注目的原因之一。它不仅解决了一个特定的猜想，更可能为数学家们架起一座桥梁，以此开始探索更多相关课题。
+
+“人类知识的前沿往往是由参差不齐的突破点构成的。毫无疑问，在未来的几个月和几年里，数学的许多其他领域也将迎来类似的成功。随着 AI 揭示出意料之外的关联，并将现有的技术机制推向极限，那些由来已久的难题将迎刃而解。AI 正在帮助我们更全面地探索几个世纪以来人类共同构建的数学殿堂；在这座殿堂的侧幕中，还有多少未曾遇见的奇迹在静候出场？”
+
+该成果让我们看到这个方向的巨大潜力：AI 带来的不仅是一个答案，更是一项数学发现，而这项发现的重大意义在人类随后的理解与剖析下，变得愈发清晰和丰富。
+
+该事件的意义不止于具体结果。更强大的数学推理能力可以让 AI 成为更得力的科研伙伴：它能够梳理并维系复杂的思维脉络，将相距遥远的知识领域串联起来，发掘出专家此前可能并未优先考虑的潜在路径，并帮助研究人员在那些原本因过于复杂或极度耗时而难以解决的问题上取得进展。
+
+这些能力的重要性超越了数学。如果一个模型能够让复杂的论证保持严密连贯，跨越知识领域串联思想，并产出经得起专家严苛审阅的成果，那么这些能力在生物学、物理学、材料科学、工程学以及医学领域同样大有可为。同时，这也是迈向高度自动化研究的长远工作的一部分 — 即打造出能够协助科学家和工程师探索更多设想、攻克更艰难技术课题的系统。
+
+人工智能即将在科研的创造性环节（以及 AI 自身研究中）扮演举足轻重的角色。虽然这种进步完全在预料之中，但它进一步增强了我们的紧迫感，促使我们去深刻理解 AI 发展的下一阶段、对齐极度智能系统所面临的挑战，以及人类与 AI 协作的未来。
+
+然而，这一未来依然取决于人类的判断。人类的专业知识非但没有贬值，反而变得愈发宝贵。AI 可以协助搜索、提出建议并辅助验证；但选择核心课题、解读研究成果、指引下一步探索方向的工作，始终由人类主导。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
+
+这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
+
+今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无...</p><div style="font-size:16px;line-height:1.8;color:#333">近 80 年来，数学家们一直在研究一个看似简单的问题：如果在平面上放置nnn个点，究竟有多少对点之间的距离可以精确地等于111？
+
+这就是平面单位距离问题，最早由保罗·埃尔德什 (Paul Erdős) 于 1946 年提出。作为组合几何领域最著名的难题之一，它表述起来轻松易懂，解决起来却异常艰难。在 Brass、Moser 和 Pach 于 2005 年出版的著作《离散几何研究问题》(Research Problems in Discrete Geometry)中，该问题被誉为“可能是组合几何中知名度最高（且最容易解释）的问题”。普林斯顿大学顶尖组合数学家诺加·阿隆 (Noga Alon) 将其描述为“埃尔德什最喜欢的难题之一”。埃尔德什甚至曾为解决这一难题设立过现金奖励。
+
+今天，我们分享一项关于单位距离问题的突破性进展。自埃尔德什最初的研究以来，学术界普遍认为，下文展示的“正方形网格”结构在最大化单位距离点对数量方面基本已是最优解。然而，OpenAI 的一个内部模型推翻了这一流传已久的猜想，并提供了一系列可以实现多项式级优化 (polynomial improvement) 的无限示例。这一证明已经过一组外部数学家团队的审阅。他们还撰写了一篇配套论文，对该论证进行了详细阐释，并为这一成果的重大意义提供了进一步的背景与脉络支撑。
+
+该成果的发现方式同样引人瞩目。此证明诞生于一个全新的通用推理模型，而非专门针对数学进行训练，或依赖特定框架搜索证明策略，亦或是专门攻克单位距离问题的定制系统。作为评估先进模型能否助力前沿研究的工作的一部分，我们在一系列埃尔德什难题上对该模型进行了测试。而在平面单位距离问题上，它成功交出了一份解决该难题的证明。
+
+对于数学界和 AI 领域而言，该证明都是一座重要的里程碑。它标志着人工智能首次自主解决了一个在数学分支领域占据核心地位的未解问题。同时，它也展示了这类系统如今所具备的深度推理能力。数学为推理能力提供了一个格外清晰的试验场：问题定义严密，潜在的证明可被验证，而且一个长篇论证只有在逻辑环环相扣的前提下才能成立。解决该难题的方法同样令人惊叹。该证明巧妙地引入了代数数论中高深且意想不到的思想，成功攻克了这个初等几何问题。
+
+菲尔兹奖得主蒂莫西·高尔斯 (Tim Gowers) 在配套论文中将这一成果称为“人工智能数学领域的一座里程碑”。顶尖数论学家阿鲁尔·尚卡尔 (Arul Shankar) 则表示：“在我看来，这篇论文表明当前的 AI 模型不仅仅是人类数学家的助手 – 它们有能力产生独创且精妙的见解，并能将其最终变为实际成果。”
+
+证明可在此处⁠（在新窗口中打开）查看。由外部顶尖数学家撰写的配套论文可点击此处⁠（在新窗口中打开）阅读。你可以在这里⁠（在新窗口中打开）找到模型思维链的节选版本。
+
+此前已知的构造：由缩放后的正方形网格产生大量单位距离。
+
+设u(n)u(n)u(n)为平面上nnn个点之间可能存在的单位距离点对的最大数量。达到线性增长率的示例很容易构建：将nnn个点排成一条直线可以得到n−1n-1n−1对，而正方形网格可以得到大约2n2n2n对。此前已知最优的结构源自缩放的正方形网格，结果表明它能提供更多对：对于常数CCC，其数量为n1+C/log⁡log⁡(n)n^{1 + C / \log \log(n)}n1+C/loglog(n)。由于log⁡log⁡(n)\log \log(n)loglog(n)随着nnn趋于无穷大，指数中的附加项趋于000，这意味着这些结构实现的增长率仅略快于线性。几十年来，学术界普遍认为这一速率基本上已达上限，没有任何结构能比正方形网格做出显著改善。用技术术语来说，埃尔德什猜想其上限为n1+o(1)n^{1+o(1)}n1+o(1)，其中附加的o(1)o(1)o(1)表示一个随着nnn趋于000的项。我们的新成果推翻了这一猜想。更准确地说，对于无数个nnn值，该证明构建了包含至少n1+δn^{1+\delta}n1+δ个单位距离点对的nnn点配置，其中δ>0\delta > 0δ>0为某个固定指数。（最初的 AI 证明并未给出明确的δ\deltaδ值，但普林斯顿大学数学教授威尔·萨温 (Will Sawin) 随后进行的细化推导表明δ=0.014\delta=0.014δ=0.014。）回顾该问题的历史有助于理解为什么这一结果如此令人震惊。自埃尔德什 1946 年最初的构建以来，已知最优的下限基本上没有改变。而最优的上限O(n4/3)O(n^{4/3})O(n4/3)则要追溯到 1984 年斯宾塞 (Spencer)、塞迈雷迪 (Szemerédi) 和特罗特 (Trotter) 的研究工作，尽管后来有塞凯伊 (Székely)、卡茨和西利尔 (Katz and Silier)、帕赫 (Pach)、拉兹 (Raz) 以及索利莫西 (Solymosi) 等人的进一步细化和相关结构研究，该上限也基本上停滞不前。作为支持该猜想的证据，马图谢克 (Matoušek) 以及阿隆、布齐奇和绍尔曼 (Alon-Bucić-Sauermann) 研究了平面中非欧几里得距离下的该问题，并证明了在某种意义上，“绝大多数”非欧几里得距离都符合该猜想。令人惊奇的是，该构建方法的核心要素来自于一个完全不同的数学分支：代数数论，该学科主要研究诸如代数数域（即整数集的扩张）中的因式分解等概念。
+
+在验证了最初的证明之后，我们研究了模型在调用不同规模的“测试阶段算力” (test-time compute) 时，攻克该难题的成功率。结果如图所示。
+
+从高层逻辑来看，该证明始于一个人们熟知的几何概念，并将其推向了一个意想不到的方向。
+
+埃尔德什最初的下限可以通过高斯整数 (Gaussian integers) 来理解：即形式为a+bia+bia+bi的数，其中aaa和bbb为整数，而iii是−1-1−1的平方根。高斯整数对普通整数进行了扩张，并且与普通整数一样，享有诸如唯一质因数分解等性质。这种对普通整数或有理数的扩张被称为代数数域。新的论证用代数数论中更复杂的推广形式取代了高斯整数，这些形式具备更丰富的对称性，从而能够产生多得多的单位长度差值。
+
+具体论证过程中，模型使用了诸如无限阶级域塔 (infinite class field towers) 和高洛德-沙法列维奇理论 (Golod–Shafarevich theory) 等工具，证明了该论证所需的数域确实存在。这些思想对于代数数论学家来说早已耳熟能详，但令人大为震惊的是，这些概念竟然会对欧几里得平面上的几何问题产生影响。
+
+这一成果标志着人工智能与数学互动过程中的一个重要时刻：AI 系统自主解决了一个在活跃领域核心位置上历史悠久的难题。它同时也让我们初次窥见人工智能与人类数学家之间一种全新的协作形式。在这项研究中，外部数学家团队开展的配套研究工作，勾勒出了一幅比单纯的原始解法要丰富得多的宏大图景。
+
+正如托马斯·布鲁姆 (Thomas Bloom) 在配套注解中所写：
+
+“在评估一个由 AI 生成的证明的重要性与影响力时，我会问自己一个问题：这是否让我们对该问题有了新的认识？我们现在对离散几何的理解更深刻了吗？我认为答案是有限度的肯定：这表明，数论结构在处理此类问题时，所发挥的作用远超我们在此前的预想；此外，所需的数论知识可能非常高深。毫无疑问，许多代数数论学家将在未来的几个月里，对离散几何中的其他开放性问题展开深入研究。”
+
+该解法揭示了代数数论与离散几何之间意想不到的联系，这正是此成果引人注目的原因之一。它不仅解决了一个特定的猜想，更可能为数学家们架起一座桥梁，以此开始探索更多相关课题。
+
+“人类知识的前沿往往是由参差不齐的突破点构成的。毫无疑问，在未来的几个月和几年里，数学的许多其他领域也将迎来类似的成功。随着 AI 揭示出意料之外的关联，并将现有的技术机制推向极限，那些由来已久的难题将迎刃而解。AI 正在帮助我们更全面地探索几个世纪以来人类共同构建的数学殿堂；在这座殿堂的侧幕中，还有多少未曾遇见的奇迹在静候出场？”
+
+该成果让我们看到这个方向的巨大潜力：AI 带来的不仅是一个答案，更是一项数学发现，而这项发现的重大意义在人类随后的理解与剖析下，变得愈发清晰和丰富。
+
+该事件的意义不止于具体结果。更强大的数学推理能力可以让 AI 成为更得力的科研伙伴：它能够梳理并维系复杂的思维脉络，将相距遥远的知识领域串联起来，发掘出专家此前可能并未优先考虑的潜在路径，并帮助研究人员在那些原本因过于复杂或极度耗时而难以解决的问题上取得进展。
+
+这些能力的重要性超越了数学。如果一个模型能够让复杂的论证保持严密连贯，跨越知识领域串联思想，并产出经得起专家严苛审阅的成果，那么这些能力在生物学、物理学、材料科学、工程学以及医学领域同样大有可为。同时，这也是迈向高度自动化研究的长远工作的一部分 — 即打造出能够协助科学家和工程师探索更多设想、攻克更艰难技术课题的系统。
+
+人工智能即将在科研的创造性环节（以及 AI 自身研究中）扮演举足轻重的角色。虽然这种进步完全在预料之中，但它进一步增强了我们的紧迫感，促使我们去深刻理解 AI 发展的下一阶段、对齐极度智能系统所面临的挑战，以及人类与 AI 协作的未来。
+
+然而，这一未来依然取决于人类的判断。人类的专业知识非但没有贬值，反而变得愈发宝贵。AI 可以协助搜索、提出建议并辅助验证；但选择核心课题、解读研究成果、指引下一步探索方向的工作，始终由人类主导。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Advancing voice intelligence with new models in the API</title>
@@ -1181,204 +1261,8 @@ Advance your public health and biodefense mission</div><hr style="margin:24px 0;
   <guid isPermaLink="false">https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/</guid>
   <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
-
-We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
-
-GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
-
-GPT‑Realti...</p><div style="font-size:16px;line-height:1.8;color:#333">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
-
-We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
-
-GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
-
-GPT‑Realtime‑Translate, a new live translation model that translates speech from 70+ input languages into 13 output languages while keeping pace with the speaker.
-
-GPT‑Realtime‑Whisper, a new streaming speech-to-text that transcribes speech live as the speaker talks.
-
-我今晚要临时办一场晚餐聚会。我只有 30 分钟，要招待两位素食朋友，其中一位不吃蘑菇，而且厨房很小。请帮我规划一份简单的菜单。
-
-我要在日本的一场现场活动中欢迎来宾。用日语说一段温暖、自然的欢迎词，就像主持人为一场特别活动开场那样。
-
-我的订单号是 Orbit-742Q。请清楚地复述一遍，这样我就能确认是否正确。
-
-请帮我练习如何告诉团队我们已达成发布里程碑。先用沉稳自信的语气说一遍，然后再用更兴奋的语气说一遍。
-
-我正在为一次公路旅行策划问答游戏。给我三个听起来很简单的陷阱问题，然后用一句话解释每个答案。
-
-此演示有时间限制。使用即表示你同意 OpenAI 的《条款》，并确认已知悉我们的《隐私政策》。
-
-Voice is becoming one of the most natural ways for people to use software. It lets someone ask for help while driving, change a travel plan while walking through an airport, get support in their preferred language, or move through a task without stopping to type.
-
-But building useful voice products takes more than fast turn-taking or a natural-sounding voice. A voice agent needs to understand what someone means, keep track of context, recover when a request changes, use tools while the conversation continues, and respond in a way that feels appropriate to the moment.
-
-Together, the models we are launching move realtime audio from simple call-and-response toward voice interfaces that can actually do work: listen, reason, translate, transcribe, and take action as a conversation unfolds.
-
-Voice as an interface between people and products
-
-As voice becomes a more natural way to use software, we’re seeing developers build around three emerging patterns in voice AI:
-
-Voice-to-action,where people can describe what they need and the system can reason through the request, use tools, and complete the task. For example, Zillow is building an assistant that can listen, reason, and act on requests like: “find me homes within my BuyAbility, avoid busy streets, and schedule a tour for Saturday.”
-
-Systems-to-voice,where software can turn context into live spoken guidance. For example, a travel app could proactively tell a traveler: “Your inbound flight is delayed, but you can still make your connection. I found the new gate, mapped the fastest route through the terminal, and your bag is still expected to transfer.”
-
-Voice-to-voice,where AI can help live conversations continue across languages, tasks, or changing context. For example, Deutsche Telekom is building voice support experiences where customers can speak in the language they’re most comfortable using, while the model translates the conversation in real time.
-
-These patterns can also work together. Priceline is working toward a future where travelers can manage entire trips by voice: searching for flights and hotels conversationally, handling changes like adjusting a hotel reservation after a flight delay or getting real-time updates on TSA wait times, and translating conversations once travelers are on the ground.
-
-Realtime voice: helping voice models reason and take action
-
-GPT‑Realtime‑2 is built for live voice interactions where the model keeps the conversation moving while it reasons through a request, calls tools, handles corrections or interruptions, and responds in a way that fits the moment.
-
-Preambles:Developers can enable short phrases before a main response, like “let me check that” or “one moment while I look into it,” so users know the agent is working on the request.
-
-Parallel tool calls and tool transparency:The model can call multiple tools at once and make those actions audible with phrases like “checking your calendar” or “looking that up now,” helping agents stay responsive while completing tasks.
-
-Stronger recovery behavior:The model can recover more gracefully by saying things like “I’m having trouble with that right now,” instead of failing silently or breaking the conversation.
-
-Longer context for agentic workflows:We’re increasing the context window from 32K to 128K to support longer, more coherent sessions and more complex task flows.
-
-Stronger domain understanding:The model better retains specialized terminology, proper nouns, healthcare terms, and other vocabulary that matters in production settings.
-
-More controllable tone and delivery:The model can better adjust its tone—speaking calmly while resolving an issue, empathetically when a user is frustrated, or upbeat when confirming a successful action.
-
-Adjustable reasoning effort:Developers can now select fromminimal, low, medium, high, and xhighreasoning levels, withlow as the default, balancing lower latency for straightforward interactions with more deliberate reasoning for complex requests.
-
-The gains show up on audio evals that map closely to production voice agents: GPT‑Realtime‑2 (high) scores 15.2% higher on Big Bench Audio for audio intelligence than GPT‑Realtime‑1.5. GPT‑Realtime‑2 (xhigh) scores 13.8% higher on Audio MultiChallenge for instruction following, improving over GPT‑Realtime‑1.5 and showing stronger reasoning, context management, and control in live conversations.
-
-Big Bench Audio⁠评估支持音频输入的语言模型在高难度推理能力方面的表现。Audio MultiChallenge⁠（在新窗口中打开）评估口语对话系统在多轮对话中的智能表现，包括指令遵循、上下文整合、自洽性以及处理自然语音修正的能力。
-
-The magic of GPT‑Realtime‑2 shows up across a variety of different use cases:
-
-During early testing, businesses used GPT‑Realtime‑2 to build voice agents that help customers and employees get things done through natural conversation:
-
-Realtime translation: build live multilingual voice experiences
-
-GPT‑Realtime‑Translate helps developers build live multilingual voice experiences where each person can speak in their preferred language and hear the conversation translated in real time and read the real time transcriptions. It supports more than 70 input languages and 13 output languages, making it useful for customer support, cross-border sales, education, events, media, and creator platforms serving global audiences.
-
-For developers, live translation needs to preserve meaning while keeping pace with the speaker, even when people speak naturally, switch context, or use regional pronunciation and domain-specific language. For example, Deutsche Telekom is testing the model for multilingual voice interactions, where lower latency and stronger fluency can make cross-language conversations feel more natural.
-
-In this video, Vimeo shows how GPT‑Realtime‑Translate can translate a product education video live as it plays, so global customers can hear updates in their preferred language without waiting for a separately produced version.
-
-Realtime transcription: build low-latency transcription experiences
-
-GPT‑Realtime‑Whisper is a new streaming transcription model built for low-latency speech-to-text. It transcribes audio as people speak, so live products can feel faster, more responsive, and more natural—from captions that appear in the moment, to meeting notes that keep up with the conversation.
-
-The model makes live speech usable inside business workflows as it happens. Teams can power captions for meetings, classrooms, broadcasts, and events; generate notes and summaries while conversations are still in progress; build voice agents that need to understand users continuously; and create faster follow-up workflows for customer support, healthcare, sales, recruiting, and other high-volume spoken interactions.
-
-The Realtime API incorporates multiple layers of safeguards and mitigations to help prevent misuse. We employ active classifiers over Realtime API sessions, meaning certain conversations can be halted if they are detected as violating our harmful content guidelines. Developers can also easily add their own additional safety guardrails using theAgents SDK⁠.⁠（在新窗口中打开）
-
-Ourusage policies⁠⁠prohibit repurposing or distributing outputs from our services for spam, deception, or other harmful purposes. Developers must also make it clear to end users when they’re interacting with AI, unless it’s already obvious from the context.
-
-The Realtime API fully supportsEU Data Residency⁠⁠（在新窗口中打开）for EU-based applications and is covered by ourenterprise privacy commitments⁠⁠.
-
-Pricing & availability
-
-GPT‑Realtime‑2, GPT‑Realtime‑Translate and GPT‑Realtime‑Whisper are available in the Realtime API. GPT‑Realtime‑2 is priced at $32 / 1M audio input tokens ($0.40 for cached input tokens) and $64 / 1M audio output tokens. GPT‑Realtime‑Translate is priced at $0.034 per minute. GPT‑Realtime‑Whisper is priced at $0.017 per minute.
-
-You can test the new realtime voice models in thePlayground⁠（在新窗口中打开）.
-
-To start building,open this prompt in Codex⁠to add GPT‑Realtime‑2 to an existing app or start a new one. If you don’t have Codex yet, download theCodex app⁠first.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
-
-We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
-
-GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
-
-GPT‑Realti...</p><div style="font-size:16px;line-height:1.8;color:#333">A new generation of realtime voice models that can reason, translate, and transcribe as people speak.
-
-We’re introducing three audio models in the API that unlock a new class of voice apps for developers. With these models, developers can build voice experiences that feel more natural, respond more intelligently, and take action in real time:
-
-GPT‑Realtime‑2, our first voice model with GPT‑5‑class reasoning that can handle harder requests and carry the conversation forward naturally.
-
-GPT‑Realtime‑Translate, a new live translation model that translates speech from 70+ input languages into 13 output languages while keeping pace with the speaker.
-
-GPT‑Realtime‑Whisper, a new streaming speech-to-text that transcribes speech live as the speaker talks.
-
-我今晚要临时办一场晚餐聚会。我只有 30 分钟，要招待两位素食朋友，其中一位不吃蘑菇，而且厨房很小。请帮我规划一份简单的菜单。
-
-我要在日本的一场现场活动中欢迎来宾。用日语说一段温暖、自然的欢迎词，就像主持人为一场特别活动开场那样。
-
-我的订单号是 Orbit-742Q。请清楚地复述一遍，这样我就能确认是否正确。
-
-请帮我练习如何告诉团队我们已达成发布里程碑。先用沉稳自信的语气说一遍，然后再用更兴奋的语气说一遍。
-
-我正在为一次公路旅行策划问答游戏。给我三个听起来很简单的陷阱问题，然后用一句话解释每个答案。
-
-此演示有时间限制。使用即表示你同意 OpenAI 的《条款》，并确认已知悉我们的《隐私政策》。
-
-Voice is becoming one of the most natural ways for people to use software. It lets someone ask for help while driving, change a travel plan while walking through an airport, get support in their preferred language, or move through a task without stopping to type.
-
-But building useful voice products takes more than fast turn-taking or a natural-sounding voice. A voice agent needs to understand what someone means, keep track of context, recover when a request changes, use tools while the conversation continues, and respond in a way that feels appropriate to the moment.
-
-Together, the models we are launching move realtime audio from simple call-and-response toward voice interfaces that can actually do work: listen, reason, translate, transcribe, and take action as a conversation unfolds.
-
-Voice as an interface between people and products
-
-As voice becomes a more natural way to use software, we’re seeing developers build around three emerging patterns in voice AI:
-
-Voice-to-action,where people can describe what they need and the system can reason through the request, use tools, and complete the task. For example, Zillow is building an assistant that can listen, reason, and act on requests like: “find me homes within my BuyAbility, avoid busy streets, and schedule a tour for Saturday.”
-
-Systems-to-voice,where software can turn context into live spoken guidance. For example, a travel app could proactively tell a traveler: “Your inbound flight is delayed, but you can still make your connection. I found the new gate, mapped the fastest route through the terminal, and your bag is still expected to transfer.”
-
-Voice-to-voice,where AI can help live conversations continue across languages, tasks, or changing context. For example, Deutsche Telekom is building voice support experiences where customers can speak in the language they’re most comfortable using, while the model translates the conversation in real time.
-
-These patterns can also work together. Priceline is working toward a future where travelers can manage entire trips by voice: searching for flights and hotels conversationally, handling changes like adjusting a hotel reservation after a flight delay or getting real-time updates on TSA wait times, and translating conversations once travelers are on the ground.
-
-Realtime voice: helping voice models reason and take action
-
-GPT‑Realtime‑2 is built for live voice interactions where the model keeps the conversation moving while it reasons through a request, calls tools, handles corrections or interruptions, and responds in a way that fits the moment.
-
-Preambles:Developers can enable short phrases before a main response, like “let me check that” or “one moment while I look into it,” so users know the agent is working on the request.
-
-Parallel tool calls and tool transparency:The model can call multiple tools at once and make those actions audible with phrases like “checking your calendar” or “looking that up now,” helping agents stay responsive while completing tasks.
-
-Stronger recovery behavior:The model can recover more gracefully by saying things like “I’m having trouble with that right now,” instead of failing silently or breaking the conversation.
-
-Longer context for agentic workflows:We’re increasing the context window from 32K to 128K to support longer, more coherent sessions and more complex task flows.
-
-Stronger domain understanding:The model better retains specialized terminology, proper nouns, healthcare terms, and other vocabulary that matters in production settings.
-
-More controllable tone and delivery:The model can better adjust its tone—speaking calmly while resolving an issue, empathetically when a user is frustrated, or upbeat when confirming a successful action.
-
-Adjustable reasoning effort:Developers can now select fromminimal, low, medium, high, and xhighreasoning levels, withlow as the default, balancing lower latency for straightforward interactions with more deliberate reasoning for complex requests.
-
-The gains show up on audio evals that map closely to production voice agents: GPT‑Realtime‑2 (high) scores 15.2% higher on Big Bench Audio for audio intelligence than GPT‑Realtime‑1.5. GPT‑Realtime‑2 (xhigh) scores 13.8% higher on Audio MultiChallenge for instruction following, improving over GPT‑Realtime‑1.5 and showing stronger reasoning, context management, and control in live conversations.
-
-Big Bench Audio⁠评估支持音频输入的语言模型在高难度推理能力方面的表现。Audio MultiChallenge⁠（在新窗口中打开）评估口语对话系统在多轮对话中的智能表现，包括指令遵循、上下文整合、自洽性以及处理自然语音修正的能力。
-
-The magic of GPT‑Realtime‑2 shows up across a variety of different use cases:
-
-During early testing, businesses used GPT‑Realtime‑2 to build voice agents that help customers and employees get things done through natural conversation:
-
-Realtime translation: build live multilingual voice experiences
-
-GPT‑Realtime‑Translate helps developers build live multilingual voice experiences where each person can speak in their preferred language and hear the conversation translated in real time and read the real time transcriptions. It supports more than 70 input languages and 13 output languages, making it useful for customer support, cross-border sales, education, events, media, and creator platforms serving global audiences.
-
-For developers, live translation needs to preserve meaning while keeping pace with the speaker, even when people speak naturally, switch context, or use regional pronunciation and domain-specific language. For example, Deutsche Telekom is testing the model for multilingual voice interactions, where lower latency and stronger fluency can make cross-language conversations feel more natural.
-
-In this video, Vimeo shows how GPT‑Realtime‑Translate can translate a product education video live as it plays, so global customers can hear updates in their preferred language without waiting for a separately produced version.
-
-Realtime transcription: build low-latency transcription experiences
-
-GPT‑Realtime‑Whisper is a new streaming transcription model built for low-latency speech-to-text. It transcribes audio as people speak, so live products can feel faster, more responsive, and more natural—from captions that appear in the moment, to meeting notes that keep up with the conversation.
-
-The model makes live speech usable inside business workflows as it happens. Teams can power captions for meetings, classrooms, broadcasts, and events; generate notes and summaries while conversations are still in progress; build voice agents that need to understand users continuously; and create faster follow-up workflows for customer support, healthcare, sales, recruiting, and other high-volume spoken interactions.
-
-The Realtime API incorporates multiple layers of safeguards and mitigations to help prevent misuse. We employ active classifiers over Realtime API sessions, meaning certain conversations can be halted if they are detected as violating our harmful content guidelines. Developers can also easily add their own additional safety guardrails using theAgents SDK⁠.⁠（在新窗口中打开）
-
-Ourusage policies⁠⁠prohibit repurposing or distributing outputs from our services for spam, deception, or other harmful purposes. Developers must also make it clear to end users when they’re interacting with AI, unless it’s already obvious from the context.
-
-The Realtime API fully supportsEU Data Residency⁠⁠（在新窗口中打开）for EU-based applications and is covered by ourenterprise privacy commitments⁠⁠.
-
-Pricing & availability
-
-GPT‑Realtime‑2, GPT‑Realtime‑Translate and GPT‑Realtime‑Whisper are available in the Realtime API. GPT‑Realtime‑2 is priced at $32 / 1M audio input tokens ($0.40 for cached input tokens) and $64 / 1M audio output tokens. GPT‑Realtime‑Translate is priced at $0.034 per minute. GPT‑Realtime‑Whisper is priced at $0.017 per minute.
-
-You can test the new realtime voice models in thePlayground⁠（在新窗口中打开）.
-
-To start building,open this prompt in Codex⁠to add GPT‑Realtime‑2 to an existing app or start a new one. If you don’t have Codex yet, download theCodex app⁠first.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing voice intelligence with new models in the API</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing voice intelligence with new models in the API</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5 Instant System CardSafety</title>
@@ -1407,23 +1291,21 @@ Global AffairsJun 2, 2026</div><hr style="margin:24px 0;border:none;border-top:1
   <guid isPermaLink="false">https://openai.com/index/gpt-5-5-instant/</guid>
   <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Yes - this is clean and correct.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+Smarter, more accurate answers with less to sort through
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
-
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
 Yes - this is clean and correct.
 
@@ -1499,9 +1381,11 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
+
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
 how do i tell my coworker to quit yapping all the time
 
@@ -1565,7 +1449,11 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
+
+More personalized responses and controls
+
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
 
 What new tea place should I try?
 
@@ -1611,32 +1499,34 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
 
-如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
 
-记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
 
-GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
 
-来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go &amp; Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-Yes - this is clean and correct.
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and mor...</p><div style="font-size:16px;line-height:1.8;color:#333">Update onJune 9, 2026:Personalization improvements are now rolling out to ChatGPT Go & Free. Responses on the Free tier will draw from a reduced set of past chats.
 
-You handled the key s...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正在更新面向所有人开放的 ChatGPT 默认模型，使其更智能、更准确，并提供更清晰、更简洁的回答，让体验感觉更贴合你。
+We’re updating ChatGPT’s default model, available to everyone, to besmarter and more accurate, withclearer, more concise answersthat feelbetter tailored to you.
 
-由于 Instant 是数亿人日常使用的核心模型，微小的改进也会带来巨大变化。这次更新让日常互动更有用、更愉悦：在各类主题上给出更强、更精炼的回答，采用更自然的对话语气，并在个性化确有帮助时，更好地利用你已分享的上下文。
+Because Instant is the daily driver for hundreds of millions of people, small improvements make a big difference. This update makes everyday interactions more useful and more enjoyable: stronger and tighter answers across subject areas, a more natural conversational tone, and better use of the context you’ve already shared when personalization can help.
 
-Instant 现在更加可靠，整体事实准确性显著提升，并且在准确性最关键的领域提升最大。在内部评估中，面对涵盖医学、法律和金融等领域的高风险提示词时，GPT‑5.5 Instant 产生的幻觉性陈述比 GPT‑5.3 Instant 少 52.5%。在用户标记为存在事实错误、尤其具有挑战性的对话中，它还将不准确陈述减少了 37.3%。
+Smarter, more accurate answers with less to sort through
 
-GPT‑5.5 Instant 整体上是一个更智能的模型，在日常任务中能力更强，包括在分析照片和图像上传内容、回答 STEM 相关问题，以及判断何时使用网络搜索来提供更有帮助的答案方面都有改进。
+Instant is now more dependable, withsignificant improvements in factuality across the boardand the largest gains in domains where accuracy matters most. In internal evaluations, GPT‑5.5 Instant produced 52.5% fewer hallucinated claims than GPT‑5.3 Instant on high-stakes prompts covering areas like medicine, law, and finance. It also reduced inaccurate claims by 37.3% on especially challenging conversations users had flagged for factual errors.
+
+GPT‑5.5 Instant is a generally smarter model that’smore capable across everyday tasks, including improvements in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search to provide a more useful answer.
 
 Yes - this is clean and correct.
 
@@ -1712,9 +1602,11 @@ Sincex≥1x \ge 1x≥1, the valid solution is:
 
 3+332\frac{3+\sqrt{33}}{2}23+33​​
 
-这些改进也体现在视觉推理、数学和科学等评测中的成绩提升：
+GPT‑5.5 Instant is the stronger answer because it recovers from its initial mistake: it first endorses the incorrect solution, but then catches thatx=3 fails when plugged back into the original equation. It identifies the actual algebra error (the user moved terms incorrectly) and then uses the quadratic formula to get the correct solution. GPT‑5.3 Instant also catches thatx=3 fails, but stops too early and incorrectly concludes there is no real solution instead of revisiting the algebra and solving the corrected quadratic.
 
-通过这次更新，模型的回答更精炼、更切中要点，同时不失内容深度，并保留了让 ChatGPT 用起来愉快的温度与个性。它能够传递相同的信息，而且通常比之前的模型更有用，同时减少冗余表达和过度格式化，使回答更加简洁。它也会减少不必要的追问，并避免让回答显得杂乱的元素，例如多余的表情符号。
+These improvements are reflected in gains on evaluations across visual reasoning, math, and science:
+
+With this update, the model’s responses aretighter and more to-the-point without losing substance,while keeping the warmth and personality that makes ChatGPT enjoyable to use. It can deliver the same information, often with more utility than previous models, while reducing the verbosity and overformatting that can make responses too long. It also asks fewer unnecessary follow-up questions and avoids things that can make responses feel cluttered, like gratuitous emojis.
 
 how do i tell my coworker to quit yapping all the time
 
@@ -1778,7 +1670,11 @@ be consistent — people learn your boundaries fast
 
 And honestly, a lot of chronic yappers are operating on momentum, not malice. One clean redirect usually works better than a dramatic confrontation.
 
-如果你已连接相关来源，Instant 现在能更有效地利用过去聊天、文件和 Gmail 中的上下文，让回答更贴近你的个人需求，同时始终由你掌控。它可以智能地判断何时可通过额外个性化改进回答，并且更快搜索过往对话以找到合适的上下文，因此你不必频繁重复自己说过的话。这对于获得量身定制的建议和计划，或在持续进行的工作中从上次中断处继续，尤其有帮助。
+GPT‑5.5 Instant uses 30.2% fewer words and 29.2% fewer lines. Its response is stronger because it gets the tone right: informal, practical, and workplace-safe without overexplaining. It gives usable scripts for different situations and frames the issue around boundaries rather than the coworker’s personality. GPT‑5.3 is more complete, especially with its “what not to do” section, but it feels slightly overbuilt for a casual advice prompt, with more structure and polish than the user likely needs.
+
+More personalized responses and controls
+
+Instant is now more effective at using context from past chats, files, and Gmail, if you have it connected, so answers feel more personally relevant while keeping you in control. It intelligently decides when a response can be improved with additional personalization and is faster at searching past conversations to find the right context, so you don’t have to repeat yourself as often. This is especially helpful for getting tailored suggestions and plans, or picking up where you left off for ongoing work.
 
 What new tea place should I try?
 
@@ -1824,21 +1720,34 @@ If I were picking one for tomorrow specifically:
 
 Ceré Tea if you want “new everyday spot.”Song Tea if you want “this is actually special.”
 
-我们还将在所有 ChatGPT 模型中推出记忆来源，让你能查看哪些上下文被用于个性化回答，并提供新的控制选项。当回答经过个性化处理时，你可以看到使用了哪些上下文，例如已保存的记忆或过往聊天；如果其中有内容已过时或不再相关，也可以删除或更正。
+The response in GPT 5.5 Instant is able to better reference past chats and relevant connected data to provide more refined, highly personalized suggestions including what the user would most likely enjoy.
 
-如果你选择分享聊天，记忆来源不会向他人显示。你始终掌控自己的记忆内容：可以删除不希望再被引用的聊天，在设置中删除或修改已保存记忆中的项目，或者使用不会读取或更新你记忆的临时聊天。
+While the response in 5.3 Instant takes into account the user being based in San Francisco, it provides higher level suggestions for places to try.
 
-记忆来源旨在让个性化更易于理解，但它们未必会显示塑造某条回答的所有因素。例如，它可能只在来源中显示部分最相关的过往聊天，而不是它搜索并参考过的全部历史聊天。我们会继续改进这一展示方式，使其随着时间推移变得更加全面。
+We’re also introducing memory sources across all ChatGPT models, which give you visibility over what context was used to personalize responses with new controls. When a response is personalized, you can see what context was used, such as saved memories or past chats, and delete or correct it if something is outdated or no longer relevant.
 
-GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取代 GPT‑5.3 Instant 成为默认模型，并在 API 中以chat-latest提供。对于付费用户，GPT‑5.3 Instant 在退役前仍将保留三个月，可通过模型配置设置访问。
+Memory sources aren't shown to others if you choose to share a chat. You remain in control of what's in your memory: you can delete chats you no longer want to be cited, delete or change items in saved memories in settings, or use temporary chats that don't use or update your memory.
 
-来自过往聊天、文件和已连接 Gmail 的增强个性化功能正在向网页版 Plus 和 Pro 用户推出，移动端也将很快上线，并计划在未来几周扩展到免费版、Go、Business 和 Enterprise。记忆来源正在向所有 ChatGPT 消费者套餐的网页版推出，移动端也将很快上线。具体个性化来源的可用性可能因地区而异。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Memory sources are designed to make personalization easier to understand, but they may not show every factor that shaped an answer. For example, it may show you some of the most relevant past chats in sources instead of all the past chats it searched and referenced. We’ll continue improving this view to make it more comprehensive over time.
+
+GPT‑5.5 Instant is rolling out starting today to all ChatGPT users, replacing GPT‑5.3 Instant as the default model, and in the API aschat-latest.For paid users, GPT‑5.3 Instant will remain available for three months, accessible through model configuration settings, before being retired.
+
+Enhanced personalization from past chats, files, and connected Gmail is rolling out to Plus and Pro users on the web and coming soon to mobile with plans to expand to Free, Go, Business, and Enterprise in the coming weeks. Memory sources are rolling out across all ChatGPT consumer plans on the web and soon on mobile. Availability of specific personalization sources may vary by region.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-5-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5</title>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.3 Instant</title>
   <link>https://openai.com/index/gpt-5-3-instant/</link>
   <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Wed, 14 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -1847,329 +1756,10 @@ GPT‑5.5 Instant 将从今天开始向所有 ChatGPT 用户逐步推出，取�
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Thu, 16 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
-
-GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
-...</p><div style="font-size:16px;line-height:1.8;color:#333">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
-
-GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
-
-在 Codex 与 API 中，GPT‑5.4 是我们发布的第一个具备原生且顶尖计算机使用能力的通用模型，让智能体能够操作计算机，并跨应用程序执行复杂的工作流程。该模型支持高达1M Token 的上下文，允许智能体在长周期内进行任务规划、执行与验证。此外，GPT‑5.4 通过工具搜索功能优化了模型在庞大的工具与连接器生态中的运作方式，帮助智能体在不牺牲智能的前提下，更高效地发现并使用正确工具。最后，GPT‑5.4 是我们迄今为止 Token 效率最高的推理模型，与 GPT‑5.2 相比，解决相同问题所需的 Token 数量显著减少 — 这直接转化为更低的 Token 消耗和更快的响应速度。
-
-GPT‑5.4 在通用推理、编程和专业知识工作方面都有全面提升，因此能支持更可靠的智能体、更高效的开发流程，并在 ChatGPT、API 和 Codex 中带来更高质量的输出。
-
-SWE-Bench Pro (Public)
-
-*此前报告的数据为 64.7%。GPT‑5.3‑Codex 现已达到 74.0% — 通过引入一个能够保留原始图像分辨率的新 API 参数。
-
-基于 GPT‑5.2 的通用推理能力，GPT‑5.4 在专业人士关注的实际任务中，能够提供更加稳定且精炼的输出。
-
-在GDPval⁠（一项评估智能体在 44 个职业中产出明确知识工作能力的测试）中，GPT‑5.4 刷新纪录。在与行业专业人士的横向评测中，GPT‑5.4 在83.0%的案例里达到了持平或更优的水准（GPT‑5.2 为71.0%）。
-
-在 GDPval 测试中，模型尝试完成定义明确的知识型工作，内容涵盖美国 GDP 贡献度最高的 9 个行业中的 44 种职业。任务要求生成真实的工作成果，例如销售演示文稿、会计表格、急诊排班表、制造业图表或短视频。GPT‑5.4 的推理强度设置为 xhigh，GPT‑5.2 的推理强度设置为 heavy（在 ChatGPT 中可用的较低强度）。
-
-我们重点提升了 GPT‑5.4 创建和编辑表格、演示文稿及文档的能力。在针对初级投行分析师水平的电子表格建模任务内部基准测试中，GPT‑5.4 的平均得分达到87.5%，而 GPT‑5.2 为68.4%。在演示文稿评估测试中，人工评分者在68.0%的情况下更偏好 GPT‑5.4 而非 GPT‑5.2 生成的作品，主要原因在于其更强的审美水平、更丰富的视觉元素，以及对图像生成功能更有效的运用。
-
-文档是在推理强度设置为 xhigh 的情况下生成的
-
-你可以在 ChatGPT 中使用 GPT‑5.4 Thinking 或 Pro 模型体验这些功能。如果你是 Enterprise 客户，建议使用我们新发布的ChatGPT Excel 和 Google Sheets 插件⁠（在新窗口中打开），该插件也于今天推出。同时，我们也更新了 Codex 和 API 中的电子表格⁠（在新窗口中打开）及演示文稿⁠（在新窗口中打开）技能。
-
-为了提升 GPT‑5.4 在实际工作中的表现，我们持续致力于降低幻觉与错误率。GPT‑5.4 是我们迄今为止准确率最高的模型：在用户标记了事实错误的一组去标识化提示词测试中，与 GPT‑5.2 相比，GPT‑5.4 的单项陈述错误率降低了 33%，完整回复包含错误的概率降低了 18%。
-
-GPT‑5.4 是我们首款原生支持计算机使用能力的通用模型，这标志着在开发与智能体领域向前迈出了重要一步。如果你正在构建跨网页和软件系统执行任务的智能体，GPT‑5.4 是目前市面上的最佳选择。
-
-我们设计 GPT‑5.4 的初衷，是让其在各种“计算机使用”负载中都能表现出色。它擅长通过 Playwright 等库编写代码来操作计算机，也能根据屏幕截图直接下达鼠标和键盘指令。开发者可以通过“开发者消息”引导模型行为，从而灵活调整其表现以适配特定场景。你甚至可以根据不同的风险承受能力，通过指定自定义确认策略来配置模型的安全行为。
-
-模型的性能与灵活性，在针对不同场景下“计算机使用”能力的基准测试中得到充分体现。在OSWorld-Verified测试（该测试通过屏幕截图以及键盘/鼠标操作，来评估模型导航桌面环境的能力）中，GPT‑5.4 达到了75.0%的成功率，刷新了纪录。这一成绩远超 GPT‑5.2 的47.3%，并超越了人类72.4%的表现。1
-
-在评估浏览器使用能力的WebArena-Verified基准测试中，GPT‑5.4 在同时结合 DOM 和屏幕截图驱动的交互方式下，达到了领先的67.3%成功率（GPT‑5.2 为65.4%）。而在同样评估浏览器使用能力的Online-Mind2Web测试中，仅凭基于屏幕截图的观察，GPT‑5.4 就能达到92.8%的成功率，远超 ChatGPT Atlas 智能体模式，后者的成功率为70.9%。
-
-一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
-
-GPT‑5.4 能够解析浏览器界面的截图，并通过基于坐标的点击与 UI 元素进行交互，从而完成发送电子邮件和安排日历日程的任务。
-
-GPT‑5.4 在“计算机使用”方面的提升，源于模型更强的通用视觉感知能力。在评估视觉理解与推理能力的MMMU-Pro测试中，GPT‑5.4 在不使用工具的情况下达到了81.2%的成功率（GPT‑5.2 为79.5%）。此外，视觉感知的提升也转化为更强的文档解析能力：在OmniDocBench测试中，GPT‑5.4 在不使用推理强度的情况下平均误差（通过模型预测值与标准答案之间的归一化编辑距离衡量）降至0.109，较 GPT‑5.2 的0.140有显著提升。
-
-MMMUPro 在测试时将推理强度设置为 xhigh。OmniDocBench 在测试时将推理强度设置为 none，以反映低成本、低延迟的性能表现。
-
-我们同时提升了对高细节、高分辨率图像的视觉理解能力，这对于要求全保真度的场景至关重要。从 GPT‑5.4 起，我们将引入“原始 (original)”图像输入细节⁠（在新窗口中打开）级别。该级别支持全保真感知，上限为 1024 万总像素或 6000 像素的最大长边（以较低者为准）；同时，“高 (high)”图像输入细节级别现在最高支持 256 万总像素或 2048 像素的最大长边。在与 API 用户进行的早期测试中，我们观察到在使用“原始”或“高”细节时，模型的定位能力、图像理解以及点击准确度均有显著提升。
-
-在 API 中，开发者可以通过更新后的计算机工具来使用这些功能。请参考我们更新后的文档⁠（在新窗口中打开），以获取最佳实践建议。
-
-GPT‑5.4 结合了 GPT‑5.3‑Codex 的编程优势，以及领先的知识型工作与“计算机使用”能力。这对于长时间运行的任务至关重要。在这些任务中，模型可以自主使用工具、进行迭代并推进工作，从而减少人工干预。在 SWE-Bench Pro 测试中，GPT‑5.4 的表现超越了 GPT‑5.3‑Codex 或与其持平，同时在各项推理任务中拥有更低的延迟。
-
-我们通过观察模型的生产环境行为并进行离线模拟来估算延迟。延迟估算涵盖了工具调用耗时（代码执行时间）、采样 Token 以及输入 Token。实际延迟可能会有显著差异，并取决于诸多我们的模拟中未涵盖的因素。推理强度已从 none 调整为 xhigh。
-
-开启 Codex 中的 /fast 模式后，可将 GPT‑5.4 的 Token 吐字速度提升至 1.5 倍。模型本身及其智能水平完全一致，只是速度更快。这意味着用户在处理编码任务、迭代和调试时，能够始终保持专注顺畅的状态。通过使用优先处理服务⁠（在新窗口中打开），开发者也可以在 API 中以同样的高速访问 GPT‑5.4。
-
-在评估和内部测试中，我们发现 GPT‑5.4 擅长处理复杂的垂直前端任务。与我们此前发布的任何模型相比，其产出的结果在审美水平和功能性上都有显著提升。
-
-为了展示模型在“计算机使用”与编程能力上的双重进化，我们还将发布一个名为“Playwright (Interactive)”的实验性Codex 技能⁠（在新窗口中打开）。它允许 Codex 对网页和 Electron 应用进行可视化调试；甚至在构建应用的过程中，它就能同步对该应用进行实时测试。
-
-由 GPT‑5.4 仅凭一条简单的模糊提示词生成的主题公园模拟游戏。该游戏利用 Playwright Interactive 进行浏览器端自动化测试，并使用图像生成技术制作了全套等轴测 (Isometric) 游戏资产。模拟系统涵盖了基于网格的路径铺设、设施与景观建设、游客寻路、排队机制以及设施运行周期。同时，公园的各项指标（如资金、游客数、满意度、清洁度及评分）会根据布局表现和游客反馈动态波动。我们利用 Playwright 实现了浏览器端的自动化游戏测试，包括公园的扩建、路径与景点的增删、相机导航检查，并跨多个游戏轮次验证了游客行为、排队状态、设施状态以及 UI 指标的更新准确性。
-
-提示:使用 $playwright-interactive 和 $imagegen 工具。创建一个可以在浏览器中构建并导航的交互式等轴测 (isometric ) 主题公园模拟游戏。利用 imagegen 确立整体视觉风格，并生成全套游戏资产，包括游乐设施、路径、地形、树木、水体、食品摊位、装饰物、建筑、图标以及 UI 插画。游戏世界必须具备高度的统一感、精致度以及丰富的视觉表现，艺术风格需高端且适配等轴测视角。允许平滑地铺设或拆除路径、添加景点、布置景观并环绕公园移动，同时能够监控游客活动、设施状态以及公园的发展情况。系统需包含可信的游客移动算法，以及简单的公园管理系统（如资金、清洁度、排队和满意度）。确保整体体验充满趣味、逻辑清晰且完整，而非粗糙的原型。在优先级上，趣味性、易读性以及出色的游戏手感高于写实度。
-
-在进行玩法测试时，务必通过多轮操作来构建并扩张公园。验证设施放置与导航是否顺畅，确认游客对公园布局及景点的反应，并确保视觉效果、UI 以及交互体验稳定且统一。
-
-在 GPT‑5.4 中，我们显著优化了模型与外部工具的协作方式。现在，智能体能够在更庞大的工具生态中进行操作，更可靠地筛选匹配工具，并以更低的成本和延迟完成多步骤的工作流程。
-
-在 API 层面，GPT‑5.4 引入了工具搜索⁠（在新窗口中打开）功能。这使得模型在面对海量工具选项时，依然能够保持高效运作。
-
-在此之前，当模型调用工具时，所有的工具定义都必须预先包含在提示词中。对于拥有大量工具的系统，这会导致每次请求都额外增加数千甚至数万个 Token，不仅推高了成本、减慢了响应速度，还让上下文中充斥着模型可能永远用不到的冗余信息。
-
-通过工具搜索，GPT‑5.4 不再需要预加载完整定义，而是接收一份精简的可选工具列表及工具搜索能力。当模型需要调用特定工具时，它会即时查找该工具的定义，并将其添加到当前的对话上下文。
-
-这种方法大幅减少了重度工具调用工作流程所需的 Token 数量，并有效保留了缓存，使请求变得更快、成本更低。它还让智能体能够可靠地与更庞大的工具生态协同工作。对于那些工具定义可能包含数万个 Token 的 MCP 服务器而言，效率提升尤为显著。
-
-为了展示效率提升的实际效果，我们对 ScaleMCP Atlas⁠（在新窗口中打开）基准测试中的 250 个任务进行了评估。在开启全部 36 个 MCP 服务器的情况下，我们对比了两种模式：(1) 将每个 MCP 函数直接暴露在模型上下文中；(2) 将所有 MCP 服务器置于“工具搜索”之后。结果显示，在保持同等准确率的前提下，“工具搜索”配置将总 Token 使用量降低了 47%。
-
-示例 Token 计数是基于 MCP-Atlas 公开数据集中 250 个任务的平均值得出的。
-
-GPT‑5.4 同样优化了工具调用能力，使其在推理过程中能更准确、更高效地判断调用工具的时机与方式，这在 API 环境下尤为突出。相比 GPT‑5.2，它在 Toolathlon 基准测试中能以更少的轮次达到更高的准确率。该测试旨在评估 AI 智能体利用真实世界工具和 API 完成多步任务的能力 — 例如，智能体需要读取邮件、提取作业附件、上传并评分，最后将结果记录到电子表格中。
-
-一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
-
-针对那些对延迟极度敏感、且倾向于将推理强度设为“无 (None)”的使用场景，GPT‑5.4 相比前代产品有显著提升。
-
-在τ2-bench⁠⁠（在新窗口中打开）测试中，模型必须利用工具来完成某项客服任务；该场景下可能包含一名模拟用户，此用户能够进行交流并针对环境状态执行操作。在测试中，推理强度设为 None。
-
-GPT‑5.4 在智能体联网搜索方面表现更佳。在 BrowseComp 基准测试（衡量 AI 智能体通过持续浏览网页获取难寻信息的能力）中，GPT‑5.4 相比 GPT‑5.2 提升了 17 个百分点；而 GPT‑5.4 Pro 更是创下了 89.3% 的纪录。
-
-在实际应用中，这意味着 GPT‑5.4 Thinking 能够更强有力地解答那些需要整合全网多方信息的复杂问题。它能以更强的持久性进行多轮搜索，从而锁定最相关的信源 — 尤其是在处理“大海捞针”式的问题时，它能高效提炼核心信息，并给出逻辑清晰、论证严密的回答。
-
-在 BrowseComp 测试中，我们使用了搜索黑名单，剔除了包含测试答案的网站，以防止数据污染并确保性能评估的公正性。由于 GPT‑5.4 的测试时间晚于 GPT‑5.2，其得分反映了模型能力、搜索系统优化以及互联网实时状态的综合变化。此外，GPT‑5.4 采用了范围更广、经过更新的黑名单进行测试。测试模型统一调用 ChatGPT 搜索工具，该工具与 API 搜索可能存在细微差异。
-
-与 Codex 开始工作时会概述思路类似，ChatGPT 中的 GPT‑5.4 Thinking 现在也会在处理更长、更复杂的查询时，通过“前言 (preamble)”来简述其工作方案。此外，你还可以在模型生成过程中实时添加指令或调整其方向。这让你能更轻松地引导模型达成预期的结果，而无需推倒重来，或通过多轮额外对话进行补救。该功能目前已在chatgpt.com⁠（在新窗口中打开）和 Android 应用上线，iOS 应用也将于近期推出。
-
-该模型在处理困难任务时能够进行更深入的思考，同时对会话早期的步骤保持更强的记忆。这使其能够应对更长的工作流和更复杂的提示词，并确保整个过程中给出的回答始终连贯且高度切题。
-
-在筹备 GPT‑5.4 部署的近几个月里，我们持续完善了自 GPT‑5.3‑Codex 以来引入的安全防护措施。与 GPT‑5.3‑Codex 类似，根据我们的《准备框架》(Preparedness Framework)，我们将 GPT‑5.4 评定为具有“高网络能力”级别，并按照系统卡⁠中的记录，为其配置了相应的安全防护进行部署。这些举措包括一套扩展版网络安全技术栈，涵盖了监控系统、可信访问控制，以及针对零数据留存 (ZDR) 层面高风险请求的异步拦截机制；与此同时，我们也对更广泛的安全生态系统持续投入资源。
-
-由于网络安全能力本质上具有“双重用途 (dual-use)”，我们在部署时保持审慎态度，并持续优化策略与分类器。针对 ZDR 界面上的特定客户，请求级拦截仍是我们网络风险缓解栈的一部分；鉴于分类器仍在迭代中，在我们持续完善这些防护措施的过程中，可能会出现一些误报。这些更新旨在优化防护措施的实际运行效果，包括减少不必要的拒答和过度生硬的免责声明，同时确保对滥用行为的强力防御。
-
-我们持续开展关于思维链 (CoT) 可监测性的安全研究，以更深入地理解模型的推理逻辑，并协助检测潜在的违规行为。作为该项工作的一部分，我们推出了全新的开源评估指标 —CoT 可控性⁠，用于衡量模型是否能故意混淆其推理过程以规避监控。研究发现，GPT‑5.4 Thinking 控制其 CoT 的能力较低。从安全性角度来看，这是一个积极的特性，表明该模型尚不具备隐藏其真实推理逻辑的能力，也证明了 CoT 监控依然是一项有效的安全手段。
-
-GPT‑5.4 自今日起将在 ChatGPT 和 Codex 中逐步推出。在 API 方面，GPT‑5.4 已正式上线，模型名称为gpt-5.4。此外，针对在极复杂任务中追求极致性能的开发者，GPT‑5.4 Pro 也已通过 API 提供，模型名称为gpt-5.4-pro。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 自即日起向 ChatGPT Plus、Team 及 Pro 用户开放，并取代 GPT‑5.2 Thinking。GPT‑5.2 Thinking 将在模型选择器的“传统模型 (Legacy Models)”栏目中为付费用户保留三个月，随后将于 2026 年 6 月 5 日正式停用。使用 Enterprise 和 Edu 套餐的用户可以通过管理员设置开启早期访问权限。此外，GPT‑5.4 Pro 版本将专门提供给 Pro 和 Enterprise 用户。ChatGPT 中 GPT‑5.4 Thinking 的上下文窗口⁠（在新窗口中打开）与 GPT‑5.2 Thinking 相比保持不变。
-
-GPT‑5.4 是我们首款融合了 GPT‑5.3‑codex 前沿编程能力的常规推理模型，目前正在 ChatGPT、API 及 Codex 平台同步推出。我们将其命名为 GPT‑5.4，旨在体现这一跨越式提升，并简化用户在使用 Codex 时对模型的选择。未来，我们的 Instant 模型和 Thinking 模型将以不同的迭代速度持续进化。
-
-Codex 中的 GPT‑5.4 包含对 1M 上下文窗口的实验性支持。开发者可以通过配置model_context_window和model_auto_compact_token_limit来试用此功能。超过标准 272K 上下文窗口的请求，将按正常费率的 2 倍计入用量限制。
-
-在 API 方面，为了体现能力的提升，GPT‑5.4 的单 Token 价格高于 GPT‑5.2；但凭借更出色的 Token 效率，它在处理许多任务时能显著减少所需的总 Token 数。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准 API 费率的两倍。
-
-SWE-Bench Pro (Public)
-
-Frontier Science Research
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-Graphwalks BFS 0K–128K
-
-Graphwalks BFS 256K–1M
-
-Graphwalks parents 0–128K（准确率）
-
-Graphwalks parents 256K–1M（准确率）
-
-OpenAI MRCR v2 8-needle 4K–8K
-
-OpenAI MRCR v2 8-needle 8K–16K
-
-OpenAI MRCR v2 8-needle 16K–32K
-
-OpenAI MRCR v2 8-needle 32K–64K
-
-OpenAI MRCR v2 8-needle 64K–128K
-
-OpenAI MRCR v2 8-needle 128K–256K
-
-OpenAI MRCR v2 8-needle 256K–512K
-
-OpenAI MRCR v2 8-needle 512K–1M
-
-OmniDocBench（归一化编辑距离）
-
-所有评估均在推理强度设为 xhigh 的情况下运行，除非另有说明。所有基准测试均在研究环境中完成，因此在某些情况下，结果可能会与正式上线的 ChatGPT 输出略有不同。
-
-1人类表现数据引用自OSWorld：在真实计算机环境中对开放式任务进行多模态智能体基准测试⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
-
-GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
-...</p><div style="font-size:16px;line-height:1.8;color:#333">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
-
-GPT‑5.4 将我们近期在推理、编程及智能体工作流领域的顶尖性能集于一身。它整合了GPT‑5.3‑Codex⁠行业领先的编程能力，同时优化了模型在各类工具、软件环境以及专业任务（电子表格、演示文稿和文档等）中的表现。因此，该模型能够准确高效地完成复杂的实际工作：无需大量往复沟通，即可交付你所要求的结果。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 现可预先提供其思考计划，让你能在模型运行的中途调整方向，从而无需额外轮次的沟通，即可获得更契合需求的结果。此外，GPT‑5.4 Thinking 还提升了深度网页搜索能力，尤其擅长处理极具针对性的查询，并能更好地维持长时思考任务中的上下文关联。综合来看，这些改进意味着回答质量更高、响应速度更快，且能始终紧扣当前任务。
-
-在 Codex 与 API 中，GPT‑5.4 是我们发布的第一个具备原生且顶尖计算机使用能力的通用模型，让智能体能够操作计算机，并跨应用程序执行复杂的工作流程。该模型支持高达1M Token 的上下文，允许智能体在长周期内进行任务规划、执行与验证。此外，GPT‑5.4 通过工具搜索功能优化了模型在庞大的工具与连接器生态中的运作方式，帮助智能体在不牺牲智能的前提下，更高效地发现并使用正确工具。最后，GPT‑5.4 是我们迄今为止 Token 效率最高的推理模型，与 GPT‑5.2 相比，解决相同问题所需的 Token 数量显著减少 — 这直接转化为更低的 Token 消耗和更快的响应速度。
-
-GPT‑5.4 在通用推理、编程和专业知识工作方面都有全面提升，因此能支持更可靠的智能体、更高效的开发流程，并在 ChatGPT、API 和 Codex 中带来更高质量的输出。
-
-SWE-Bench Pro (Public)
-
-*此前报告的数据为 64.7%。GPT‑5.3‑Codex 现已达到 74.0% — 通过引入一个能够保留原始图像分辨率的新 API 参数。
-
-基于 GPT‑5.2 的通用推理能力，GPT‑5.4 在专业人士关注的实际任务中，能够提供更加稳定且精炼的输出。
-
-在GDPval⁠（一项评估智能体在 44 个职业中产出明确知识工作能力的测试）中，GPT‑5.4 刷新纪录。在与行业专业人士的横向评测中，GPT‑5.4 在83.0%的案例里达到了持平或更优的水准（GPT‑5.2 为71.0%）。
-
-在 GDPval 测试中，模型尝试完成定义明确的知识型工作，内容涵盖美国 GDP 贡献度最高的 9 个行业中的 44 种职业。任务要求生成真实的工作成果，例如销售演示文稿、会计表格、急诊排班表、制造业图表或短视频。GPT‑5.4 的推理强度设置为 xhigh，GPT‑5.2 的推理强度设置为 heavy（在 ChatGPT 中可用的较低强度）。
-
-我们重点提升了 GPT‑5.4 创建和编辑表格、演示文稿及文档的能力。在针对初级投行分析师水平的电子表格建模任务内部基准测试中，GPT‑5.4 的平均得分达到87.5%，而 GPT‑5.2 为68.4%。在演示文稿评估测试中，人工评分者在68.0%的情况下更偏好 GPT‑5.4 而非 GPT‑5.2 生成的作品，主要原因在于其更强的审美水平、更丰富的视觉元素，以及对图像生成功能更有效的运用。
-
-文档是在推理强度设置为 xhigh 的情况下生成的
-
-你可以在 ChatGPT 中使用 GPT‑5.4 Thinking 或 Pro 模型体验这些功能。如果你是 Enterprise 客户，建议使用我们新发布的ChatGPT Excel 和 Google Sheets 插件⁠（在新窗口中打开），该插件也于今天推出。同时，我们也更新了 Codex 和 API 中的电子表格⁠（在新窗口中打开）及演示文稿⁠（在新窗口中打开）技能。
-
-为了提升 GPT‑5.4 在实际工作中的表现，我们持续致力于降低幻觉与错误率。GPT‑5.4 是我们迄今为止准确率最高的模型：在用户标记了事实错误的一组去标识化提示词测试中，与 GPT‑5.2 相比，GPT‑5.4 的单项陈述错误率降低了 33%，完整回复包含错误的概率降低了 18%。
-
-GPT‑5.4 是我们首款原生支持计算机使用能力的通用模型，这标志着在开发与智能体领域向前迈出了重要一步。如果你正在构建跨网页和软件系统执行任务的智能体，GPT‑5.4 是目前市面上的最佳选择。
-
-我们设计 GPT‑5.4 的初衷，是让其在各种“计算机使用”负载中都能表现出色。它擅长通过 Playwright 等库编写代码来操作计算机，也能根据屏幕截图直接下达鼠标和键盘指令。开发者可以通过“开发者消息”引导模型行为，从而灵活调整其表现以适配特定场景。你甚至可以根据不同的风险承受能力，通过指定自定义确认策略来配置模型的安全行为。
-
-模型的性能与灵活性，在针对不同场景下“计算机使用”能力的基准测试中得到充分体现。在OSWorld-Verified测试（该测试通过屏幕截图以及键盘/鼠标操作，来评估模型导航桌面环境的能力）中，GPT‑5.4 达到了75.0%的成功率，刷新了纪录。这一成绩远超 GPT‑5.2 的47.3%，并超越了人类72.4%的表现。1
-
-在评估浏览器使用能力的WebArena-Verified基准测试中，GPT‑5.4 在同时结合 DOM 和屏幕截图驱动的交互方式下，达到了领先的67.3%成功率（GPT‑5.2 为65.4%）。而在同样评估浏览器使用能力的Online-Mind2Web测试中，仅凭基于屏幕截图的观察，GPT‑5.4 就能达到92.8%的成功率，远超 ChatGPT Atlas 智能体模式，后者的成功率为70.9%。
-
-一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
-
-GPT‑5.4 能够解析浏览器界面的截图，并通过基于坐标的点击与 UI 元素进行交互，从而完成发送电子邮件和安排日历日程的任务。
-
-GPT‑5.4 在“计算机使用”方面的提升，源于模型更强的通用视觉感知能力。在评估视觉理解与推理能力的MMMU-Pro测试中，GPT‑5.4 在不使用工具的情况下达到了81.2%的成功率（GPT‑5.2 为79.5%）。此外，视觉感知的提升也转化为更强的文档解析能力：在OmniDocBench测试中，GPT‑5.4 在不使用推理强度的情况下平均误差（通过模型预测值与标准答案之间的归一化编辑距离衡量）降至0.109，较 GPT‑5.2 的0.140有显著提升。
-
-MMMUPro 在测试时将推理强度设置为 xhigh。OmniDocBench 在测试时将推理强度设置为 none，以反映低成本、低延迟的性能表现。
-
-我们同时提升了对高细节、高分辨率图像的视觉理解能力，这对于要求全保真度的场景至关重要。从 GPT‑5.4 起，我们将引入“原始 (original)”图像输入细节⁠（在新窗口中打开）级别。该级别支持全保真感知，上限为 1024 万总像素或 6000 像素的最大长边（以较低者为准）；同时，“高 (high)”图像输入细节级别现在最高支持 256 万总像素或 2048 像素的最大长边。在与 API 用户进行的早期测试中，我们观察到在使用“原始”或“高”细节时，模型的定位能力、图像理解以及点击准确度均有显著提升。
-
-在 API 中，开发者可以通过更新后的计算机工具来使用这些功能。请参考我们更新后的文档⁠（在新窗口中打开），以获取最佳实践建议。
-
-GPT‑5.4 结合了 GPT‑5.3‑Codex 的编程优势，以及领先的知识型工作与“计算机使用”能力。这对于长时间运行的任务至关重要。在这些任务中，模型可以自主使用工具、进行迭代并推进工作，从而减少人工干预。在 SWE-Bench Pro 测试中，GPT‑5.4 的表现超越了 GPT‑5.3‑Codex 或与其持平，同时在各项推理任务中拥有更低的延迟。
-
-我们通过观察模型的生产环境行为并进行离线模拟来估算延迟。延迟估算涵盖了工具调用耗时（代码执行时间）、采样 Token 以及输入 Token。实际延迟可能会有显著差异，并取决于诸多我们的模拟中未涵盖的因素。推理强度已从 none 调整为 xhigh。
-
-开启 Codex 中的 /fast 模式后，可将 GPT‑5.4 的 Token 吐字速度提升至 1.5 倍。模型本身及其智能水平完全一致，只是速度更快。这意味着用户在处理编码任务、迭代和调试时，能够始终保持专注顺畅的状态。通过使用优先处理服务⁠（在新窗口中打开），开发者也可以在 API 中以同样的高速访问 GPT‑5.4。
-
-在评估和内部测试中，我们发现 GPT‑5.4 擅长处理复杂的垂直前端任务。与我们此前发布的任何模型相比，其产出的结果在审美水平和功能性上都有显著提升。
-
-为了展示模型在“计算机使用”与编程能力上的双重进化，我们还将发布一个名为“Playwright (Interactive)”的实验性Codex 技能⁠（在新窗口中打开）。它允许 Codex 对网页和 Electron 应用进行可视化调试；甚至在构建应用的过程中，它就能同步对该应用进行实时测试。
-
-由 GPT‑5.4 仅凭一条简单的模糊提示词生成的主题公园模拟游戏。该游戏利用 Playwright Interactive 进行浏览器端自动化测试，并使用图像生成技术制作了全套等轴测 (Isometric) 游戏资产。模拟系统涵盖了基于网格的路径铺设、设施与景观建设、游客寻路、排队机制以及设施运行周期。同时，公园的各项指标（如资金、游客数、满意度、清洁度及评分）会根据布局表现和游客反馈动态波动。我们利用 Playwright 实现了浏览器端的自动化游戏测试，包括公园的扩建、路径与景点的增删、相机导航检查，并跨多个游戏轮次验证了游客行为、排队状态、设施状态以及 UI 指标的更新准确性。
-
-提示:使用 $playwright-interactive 和 $imagegen 工具。创建一个可以在浏览器中构建并导航的交互式等轴测 (isometric ) 主题公园模拟游戏。利用 imagegen 确立整体视觉风格，并生成全套游戏资产，包括游乐设施、路径、地形、树木、水体、食品摊位、装饰物、建筑、图标以及 UI 插画。游戏世界必须具备高度的统一感、精致度以及丰富的视觉表现，艺术风格需高端且适配等轴测视角。允许平滑地铺设或拆除路径、添加景点、布置景观并环绕公园移动，同时能够监控游客活动、设施状态以及公园的发展情况。系统需包含可信的游客移动算法，以及简单的公园管理系统（如资金、清洁度、排队和满意度）。确保整体体验充满趣味、逻辑清晰且完整，而非粗糙的原型。在优先级上，趣味性、易读性以及出色的游戏手感高于写实度。
-
-在进行玩法测试时，务必通过多轮操作来构建并扩张公园。验证设施放置与导航是否顺畅，确认游客对公园布局及景点的反应，并确保视觉效果、UI 以及交互体验稳定且统一。
-
-在 GPT‑5.4 中，我们显著优化了模型与外部工具的协作方式。现在，智能体能够在更庞大的工具生态中进行操作，更可靠地筛选匹配工具，并以更低的成本和延迟完成多步骤的工作流程。
-
-在 API 层面，GPT‑5.4 引入了工具搜索⁠（在新窗口中打开）功能。这使得模型在面对海量工具选项时，依然能够保持高效运作。
-
-在此之前，当模型调用工具时，所有的工具定义都必须预先包含在提示词中。对于拥有大量工具的系统，这会导致每次请求都额外增加数千甚至数万个 Token，不仅推高了成本、减慢了响应速度，还让上下文中充斥着模型可能永远用不到的冗余信息。
-
-通过工具搜索，GPT‑5.4 不再需要预加载完整定义，而是接收一份精简的可选工具列表及工具搜索能力。当模型需要调用特定工具时，它会即时查找该工具的定义，并将其添加到当前的对话上下文。
-
-这种方法大幅减少了重度工具调用工作流程所需的 Token 数量，并有效保留了缓存，使请求变得更快、成本更低。它还让智能体能够可靠地与更庞大的工具生态协同工作。对于那些工具定义可能包含数万个 Token 的 MCP 服务器而言，效率提升尤为显著。
-
-为了展示效率提升的实际效果，我们对 ScaleMCP Atlas⁠（在新窗口中打开）基准测试中的 250 个任务进行了评估。在开启全部 36 个 MCP 服务器的情况下，我们对比了两种模式：(1) 将每个 MCP 函数直接暴露在模型上下文中；(2) 将所有 MCP 服务器置于“工具搜索”之后。结果显示，在保持同等准确率的前提下，“工具搜索”配置将总 Token 使用量降低了 47%。
-
-示例 Token 计数是基于 MCP-Atlas 公开数据集中 250 个任务的平均值得出的。
-
-GPT‑5.4 同样优化了工具调用能力，使其在推理过程中能更准确、更高效地判断调用工具的时机与方式，这在 API 环境下尤为突出。相比 GPT‑5.2，它在 Toolathlon 基准测试中能以更少的轮次达到更高的准确率。该测试旨在评估 AI 智能体利用真实世界工具和 API 完成多步任务的能力 — 例如，智能体需要读取邮件、提取作业附件、上传并评分，最后将结果记录到电子表格中。
-
-一次工具产出 (Tool Yield) 是指助手等待工具响应的过程。例如，如果模型并行调用了 3 个工具，随后又并行调用了另外 3 个工具，则产出数计为 2 次。相比于工具调用数，工具产出数能更好地反映并行化的优势，因此是衡量延迟更准确的指标。
-
-针对那些对延迟极度敏感、且倾向于将推理强度设为“无 (None)”的使用场景，GPT‑5.4 相比前代产品有显著提升。
-
-在τ2-bench⁠⁠（在新窗口中打开）测试中，模型必须利用工具来完成某项客服任务；该场景下可能包含一名模拟用户，此用户能够进行交流并针对环境状态执行操作。在测试中，推理强度设为 None。
-
-GPT‑5.4 在智能体联网搜索方面表现更佳。在 BrowseComp 基准测试（衡量 AI 智能体通过持续浏览网页获取难寻信息的能力）中，GPT‑5.4 相比 GPT‑5.2 提升了 17 个百分点；而 GPT‑5.4 Pro 更是创下了 89.3% 的纪录。
-
-在实际应用中，这意味着 GPT‑5.4 Thinking 能够更强有力地解答那些需要整合全网多方信息的复杂问题。它能以更强的持久性进行多轮搜索，从而锁定最相关的信源 — 尤其是在处理“大海捞针”式的问题时，它能高效提炼核心信息，并给出逻辑清晰、论证严密的回答。
-
-在 BrowseComp 测试中，我们使用了搜索黑名单，剔除了包含测试答案的网站，以防止数据污染并确保性能评估的公正性。由于 GPT‑5.4 的测试时间晚于 GPT‑5.2，其得分反映了模型能力、搜索系统优化以及互联网实时状态的综合变化。此外，GPT‑5.4 采用了范围更广、经过更新的黑名单进行测试。测试模型统一调用 ChatGPT 搜索工具，该工具与 API 搜索可能存在细微差异。
-
-与 Codex 开始工作时会概述思路类似，ChatGPT 中的 GPT‑5.4 Thinking 现在也会在处理更长、更复杂的查询时，通过“前言 (preamble)”来简述其工作方案。此外，你还可以在模型生成过程中实时添加指令或调整其方向。这让你能更轻松地引导模型达成预期的结果，而无需推倒重来，或通过多轮额外对话进行补救。该功能目前已在chatgpt.com⁠（在新窗口中打开）和 Android 应用上线，iOS 应用也将于近期推出。
-
-该模型在处理困难任务时能够进行更深入的思考，同时对会话早期的步骤保持更强的记忆。这使其能够应对更长的工作流和更复杂的提示词，并确保整个过程中给出的回答始终连贯且高度切题。
-
-在筹备 GPT‑5.4 部署的近几个月里，我们持续完善了自 GPT‑5.3‑Codex 以来引入的安全防护措施。与 GPT‑5.3‑Codex 类似，根据我们的《准备框架》(Preparedness Framework)，我们将 GPT‑5.4 评定为具有“高网络能力”级别，并按照系统卡⁠中的记录，为其配置了相应的安全防护进行部署。这些举措包括一套扩展版网络安全技术栈，涵盖了监控系统、可信访问控制，以及针对零数据留存 (ZDR) 层面高风险请求的异步拦截机制；与此同时，我们也对更广泛的安全生态系统持续投入资源。
-
-由于网络安全能力本质上具有“双重用途 (dual-use)”，我们在部署时保持审慎态度，并持续优化策略与分类器。针对 ZDR 界面上的特定客户，请求级拦截仍是我们网络风险缓解栈的一部分；鉴于分类器仍在迭代中，在我们持续完善这些防护措施的过程中，可能会出现一些误报。这些更新旨在优化防护措施的实际运行效果，包括减少不必要的拒答和过度生硬的免责声明，同时确保对滥用行为的强力防御。
-
-我们持续开展关于思维链 (CoT) 可监测性的安全研究，以更深入地理解模型的推理逻辑，并协助检测潜在的违规行为。作为该项工作的一部分，我们推出了全新的开源评估指标 —CoT 可控性⁠，用于衡量模型是否能故意混淆其推理过程以规避监控。研究发现，GPT‑5.4 Thinking 控制其 CoT 的能力较低。从安全性角度来看，这是一个积极的特性，表明该模型尚不具备隐藏其真实推理逻辑的能力，也证明了 CoT 监控依然是一项有效的安全手段。
-
-GPT‑5.4 自今日起将在 ChatGPT 和 Codex 中逐步推出。在 API 方面，GPT‑5.4 已正式上线，模型名称为gpt-5.4。此外，针对在极复杂任务中追求极致性能的开发者，GPT‑5.4 Pro 也已通过 API 提供，模型名称为gpt-5.4-pro。
-
-在 ChatGPT 中，GPT‑5.4 Thinking 自即日起向 ChatGPT Plus、Team 及 Pro 用户开放，并取代 GPT‑5.2 Thinking。GPT‑5.2 Thinking 将在模型选择器的“传统模型 (Legacy Models)”栏目中为付费用户保留三个月，随后将于 2026 年 6 月 5 日正式停用。使用 Enterprise 和 Edu 套餐的用户可以通过管理员设置开启早期访问权限。此外，GPT‑5.4 Pro 版本将专门提供给 Pro 和 Enterprise 用户。ChatGPT 中 GPT‑5.4 Thinking 的上下文窗口⁠（在新窗口中打开）与 GPT‑5.2 Thinking 相比保持不变。
-
-GPT‑5.4 是我们首款融合了 GPT‑5.3‑codex 前沿编程能力的常规推理模型，目前正在 ChatGPT、API 及 Codex 平台同步推出。我们将其命名为 GPT‑5.4，旨在体现这一跨越式提升，并简化用户在使用 Codex 时对模型的选择。未来，我们的 Instant 模型和 Thinking 模型将以不同的迭代速度持续进化。
-
-Codex 中的 GPT‑5.4 包含对 1M 上下文窗口的实验性支持。开发者可以通过配置model_context_window和model_auto_compact_token_limit来试用此功能。超过标准 272K 上下文窗口的请求，将按正常费率的 2 倍计入用量限制。
-
-在 API 方面，为了体现能力的提升，GPT‑5.4 的单 Token 价格高于 GPT‑5.2；但凭借更出色的 Token 效率，它在处理许多任务时能显著减少所需的总 Token 数。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准 API 费率的两倍。
-
-SWE-Bench Pro (Public)
-
-Frontier Science Research
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-Graphwalks BFS 0K–128K
-
-Graphwalks BFS 256K–1M
-
-Graphwalks parents 0–128K（准确率）
-
-Graphwalks parents 256K–1M（准确率）
-
-OpenAI MRCR v2 8-needle 4K–8K
-
-OpenAI MRCR v2 8-needle 8K–16K
-
-OpenAI MRCR v2 8-needle 16K–32K
-
-OpenAI MRCR v2 8-needle 32K–64K
-
-OpenAI MRCR v2 8-needle 64K–128K
-
-OpenAI MRCR v2 8-needle 128K–256K
-
-OpenAI MRCR v2 8-needle 256K–512K
-
-OpenAI MRCR v2 8-needle 512K–1M
-
-OmniDocBench（归一化编辑距离）
-
-所有评估均在推理强度设为 xhigh 的情况下运行，除非另有说明。所有基准测试均在研究环境中完成，因此在某些情况下，结果可能会与正式上线的 ChatGPT 输出略有不同。
-
-1人类表现数据引用自OSWorld：在真实计算机环境中对开放式任务进行多模态智能体基准测试⁠（在新窗口中打开）。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.5</title>
-  <link>https://openai.com/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
