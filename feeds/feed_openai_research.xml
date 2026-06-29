@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Sun, 28 Jun 2026 19:29:42 +0000</lastBuildDate>
+<lastBuildDate>Mon, 29 Jun 2026 11:07:38 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -172,8 +172,136 @@ We’re excited to continue learning from this preview period, and to bring GPT�
   <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
   <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing LifeSciBench</title>
@@ -1079,264 +1207,8 @@ To learn more about this release and memory user controls, visit ourMemory FAQ�
   <guid isPermaLink="false">https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/</guid>
   <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">为生命科学行业带来扎根真实科学工作流的更强智能
-
-我们正在为专为企业规模生命科学研究打造的GPT‑Rosalind系列推出新的模型更新。它将 GPT‑5.5 的智能体编程和工具使用能力，与药物化学、基因组学等核心药物发现领域中更强的模型智能相结合，同时提升更广泛生命科学分析、设计和实验工作流的表现。
-
-生命科学的进步依赖于跨尺度、跨模态综合数据和证据：分子、基因、通路和生命系统。在我们的评估中，更新后的 GPT‑Rosalind 在生物学专家研究任务、复杂药物化学查询、定量生物学和湿实验室故障排查方面均有广泛性能提升。
-
-GPT‑Rosalind 现已通过我们的可信访问部署结构，以研究预览形式向全球符合条件的组织开放。
-
-为衡量并持续改进 GPT‑Rosalind 的现实影响，我们设计了 LifeSciBench，这是一个由外部专家评判、聚焦生命科学研究基础方面的基准。不同于现有基准孤立评估模型性能的单一组件或生物学领域，LifeSciBench 以端到端视角衡量具有科学价值的工作，任务来自生命科学研究的六个核心工作流领域：证据处理、分析、设计与优化、科学推理、验证与运营，以及转化与传...</p><div style="font-size:16px;line-height:1.8;color:#333">为生命科学行业带来扎根真实科学工作流的更强智能
-
-我们正在为专为企业规模生命科学研究打造的GPT‑Rosalind系列推出新的模型更新。它将 GPT‑5.5 的智能体编程和工具使用能力，与药物化学、基因组学等核心药物发现领域中更强的模型智能相结合，同时提升更广泛生命科学分析、设计和实验工作流的表现。
-
-生命科学的进步依赖于跨尺度、跨模态综合数据和证据：分子、基因、通路和生命系统。在我们的评估中，更新后的 GPT‑Rosalind 在生物学专家研究任务、复杂药物化学查询、定量生物学和湿实验室故障排查方面均有广泛性能提升。
-
-GPT‑Rosalind 现已通过我们的可信访问部署结构，以研究预览形式向全球符合条件的组织开放。
-
-为衡量并持续改进 GPT‑Rosalind 的现实影响，我们设计了 LifeSciBench，这是一个由外部专家评判、聚焦生命科学研究基础方面的基准。不同于现有基准孤立评估模型性能的单一组件或生物学领域，LifeSciBench 以端到端视角衡量具有科学价值的工作，任务来自生命科学研究的六个核心工作流领域：证据处理、分析、设计与优化、科学推理、验证与运营，以及转化与传播。我们使用这一基准，使进展与生命科学研究的需求和现实保持一致。
-
-GPT‑Rosalind 在行业和学术专家确定的具有科学价值任务中表现领先。
-
-从论文、图表、表格和实验记录中提取、协调并审计科学证据。
-
-We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
-
-Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
-
-Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
-
-12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
-
-Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
-
-48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
-
-Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
-
-Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
-
-Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
-
-Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
-
-底线：按目前呈现的资料包，其强度不足以支持将微抗肌萎缩蛋白表达作为合理可能预测临床获益的替代终点来加速批准。持怀疑态度的 FDA 审评员可能会认为生物标志物、功能、持久性、安全性和普适性证据均存在实质性支持不足。
-
-MANEX1A 结合内源性全长抗肌萎缩蛋白和微抗肌萎缩蛋白转基因共有的 N 端表位，因此该检测无法清晰区分转基因与残余/回复突变抗肌萎缩蛋白。用健康全长抗肌萎缩蛋白标准品来定量 138 kDa 微抗肌萎缩蛋白也是无效的。
-
-使用重组微抗肌萎缩蛋白标准品，以及可区分转基因与内源性抗肌萎缩蛋白的正交方法，如靶向质谱或转基因特异性/表位特异性检测。
-
-C 端多克隆抗体并不适合，因为 138 kDa 构建体缺少 C 端结构域。许多 DMD 患者有回复肌纤维，而回复突变抗肌萎缩蛋白可保留 C 端表位。回复肌纤维可能随年龄克隆性扩增，使 IF 信号产生偏倚，尤其是在年龄较大的男孩中。
-
-使用针对转基因中存在但回复突变抗肌萎缩蛋白中不存在表位的抗体重复 IF。将转基因阳性纤维与回复肌纤维分开定量。
-
-该资料包将蛋白量与临床功能混为一谈。“健康对照蛋白质量的 38%”并不意味着正常抗肌萎缩蛋白功能的 38%，因为微抗肌萎缩蛋白在结构上被截短。
-
-在将表达作为替代终点前，应经验性验证微抗肌萎缩蛋白质量百分比、肌膜定位、下游功能恢复与临床获益之间的关系。
-
-治疗前后对侧股外侧肌活检会引入左右侧和肌内空间变异。疾病进展和纤维脂肪替代也会改变按总蛋白归一化的信号。
-
-使用一致解剖标志标准化活检部位，按肌肉特异性蛋白归一化，并同步测量纤维脂肪成分。
-
-外部自然史队列不是随机同期对照。试验入选条件、支持治疗、参与效应、基线 NSAA、类固醇方案、年龄和外显子类别都可能使比较产生偏倚。非配对 t 检验并不足够。此外，+1.4 NSAA 变化处于该年龄组的重测变异范围内。
-
-开展随机同期安慰剂对照研究，或至少使用校正分析，纳入基线 NSAA、年龄、类固醇方案、外显子类别和其他混杂因素。
-
-4–7 岁男孩处于发育窗口，未经治疗的可行走 DMD 患者在衰退占主导前可能获得运动功能。48 周 NSAA 变化混合了发育增益、疾病进展和可能的治疗效应。
-
-使用按年龄分层的同期随机对照，以将发育轨迹与治疗效应分开。
-
-开放标签微抗肌萎缩蛋白功能信号未能可靠预测确证获益；已发表先例包括微抗肌萎缩蛋白基因治疗确证试验未能复现开放标签 NSAA 改善。
-
-不要把开放标签 NSAA 变化作为决定性支持。需要受控的功能证据。
-
-138 kDa 构建体删除了含 nNOS 结合位点的血影蛋白重复 R16/17。nNOS 招募丧失会损害运动期间的功能性交感溶解和缺血保护，形成独立于表达水平的机制性救援上限。
-
-增加机制研究，显示该特定构建体是否恢复相关抗肌萎缩蛋白相关复合物功能、nNOS 定位、运动生理和肌肉保护。
-
-12 周的载体基因组不能证明表达持久。AAV9 基因组大多是不整合的游离体，可能随时间下降。载体基因组持续存在并不等同于蛋白表达持续。
-
-测量 12 周以后的纵向转基因蛋白表达和功能生物标志物持久性。
-
-8/12 名患者出现转氨酶升高，与对 AAV 转导细胞的免疫反应一致，但机制尚未确定。鉴于 AAV9 的心脏嗜性，一例心肌炎令人担忧。
-
-提供更深入的免疫监测、肝脏/心脏安全性表征，并强化心脏随访。
-
-排除抗 AAV9 中和抗体阳性患者会限制普适性。排除外显子 44 缺失会限制对该 DMD 亚组的适用性。n=12 太小，无法表征更广泛 DMD 人群的安全性和疗效。
-
-在可能情况下扩大入选范围，或在使用结果支持广泛批准前，预先规定按抗体状态、基因型/外显子类别、年龄和基线功能进行分层分析。
-
-监管结论：该资料包可能显示生物活性，但尚未确立测得的微抗肌萎缩蛋白表达是合理可能预测临床获益的可靠替代指标。主要缺口包括检测特异性、无效定量标准、可能的回复肌纤维混杂、缺乏随机对照、年龄相关 NSAA 混杂、持久性不确定，以及未解决的安全性/普适性问题。
-
-为弥合差距，该项目需要采用受控、年龄分层的临床设计，并配备转基因特异性表达检测、正交蛋白定量、组织成分控制、纵向持久性数据、针对截短构建体的机制性功能检测，以及更强的安全监测，尤其是肝脏和心脏方面。
-
-GPT‑Rosalind 在药物化学领域达到行业领先表现；该领域专注于将分子转化为有用药物。我们设计 MedChemBench 以反映真实药物化学工作流，评估多模态化学结构理解；构效关系（SAR）；药物效力、毒性和吸收、分布、代谢、排泄（ADME）预测；多参数先导优化决策；以及逆合成。在 MedChemBench 上，GPT‑Rosalind 以 27.5% 对 25.1% 优于 GPT‑5.5，同时少用 7.2% 的 Token。
-
-GPT‑Rosalind 在药物化学中展现出更好的多模态综合和机制推理。
-
-在 GeneBench（我们针对基因组学和定量生物学中长程、端到端分析的智能体评估）上，GPT‑Rosalind 比 GPT‑5.5 少用 31% 的 Token，同时准确率更高，为 21.6% 对 20.4%。GeneBench 评估智能体在长程定量任务上的表现：基于真实科学数据，智能体能否规划有效的分析、QC、建模和校正，以得出与决策相关的答案？所含问题覆盖多种领域，包括功能基因组学、空间转录组学、蛋白质组学、表观基因组学和应用遗传学。
-
-GPT‑Rosalind 比 GPT‑5.5 少用 31% 的 Token，同时提升准确率。
-
-我们推出一项新评估，用于测试 GPT‑Rosalind 帮助科学家开展真实世界实验室工作的能力。LabWorkBench 测试模型在科学家使用的真实湿实验室方案中，将扰动与实验结果联系起来的能力，目的涵盖故障排查到优化。LabWorkBench 使用的数据为专有数据，因此未受污染。GPT‑Rosalind 得分为 63.2%，GPT‑5.5 为 55.8%，同时少用 5.3% 的 Token。
-
-在真实湿实验室方案辅助方面，GPT‑Rosalind 相比 GPT‑5.5 显著提升，同时提高了 Token 效率。
-
-我们构建了生命科学研究⁠（在新窗口中打开）和生命科学 NGS 分析⁠（在新窗口中打开）插件，为GPT‑Rosalind增强的智能扩展一个用于可重复科学工作流的实用执行层。这些插件共同将有来源的证据检索、生物学解读和生物信息学执行纳入同一工作空间，帮助研究人员在保留产物和溯源的同时，将外部证据与内部组学分析连接起来。所有用户现在都可通过 Codex 访问这两个插件。符合条件的 GPT‑Rosalind 企业用户还可使用 GPT‑Rosalind 为这些插件提供支持。
-
-为更好地将 Codex 用作科学家的动态工作台，我们为生物学原生文件类型增加了交互式查看器。初始的序列、比对和结构查看器旨在让科学家在 GPT‑Rosalind 跨工作流推理时贴近证据，并可在上下文中使用活动查看器直接回答后续问题。
-
-上方演示展示了由 GPT‑Rosalind 编排的这些能力如何发挥作用。我们跟随一位科学家研究液体肿瘤活检，以识别可为治疗提供信息的突变和其他分子变化。生命科学 NGS 分析插件将对已处理 ctDNA 记录的审查转化为交互式笔记本，呈现反复出现的改变、低频检出和样本轨迹，使调查聚焦于 KRAS G12C。随后，生命科学研究插件补充有来源的靶点、抑制剂和耐药性背景，而原生序列、比对和结构查看器让科学家直接检查突变残基 12、其在 RAS 家族中的保守性，以及抑制剂结合口袋。该工作流最终将这些证据转化为具体后续选项，并且每一步和产物都可供专家审查。
-
-将 10x 风格矩阵包转化为经 QC 过滤的单细胞产物、注释和 UMAP，可在 Codex 中检查和修订。生命科学 NGS 分析插件将请求路由到 scrna-seq-qc，根据数据选择 QC 阈值，保留过滤和注释的溯源，并呈现缺少双细胞检测依赖项等阻碍因素。
-
-将批量 RNA-seq 样本表、FASTQ 包和参考文件转化为经 QC 审核的计数包，可在 Codex 中检查和复用。生命科学 NGS 分析插件会路由请求、验证输入，并返回可审计的运行封套，包含 MultiQC、Salmon 矩阵、溯源和明确注意事项。
-
-我们正在向全球符合条件的组织扩大GPT‑Rosalind系列的访问权限。GPT‑Rosalind 将通过我们的可信访问部署结构以研究预览形式提供给相关组织，这些组织需开展具有明确公共利益的合法科学研究，具备强治理和安全监督，并以企业级安全控制访问。
-
-作为此次全球扩展的一部分，我们很高兴支持 Novo Nordisk 的使命：借助 GPT‑Rosalind 扩展其医学研究，帮助更快地为患者带来创新治疗选择。Novo Nordisk 正在利用前沿 AI 能力，帮助研究人员分析复杂数据集、发现有用模式，并更快检验假设。GPT‑Rosalind 更强的生物学理解将帮助团队连接文献、基因组学、转录组学、序列、结构和实验结果中的证据，使从数据走向更清晰研究决策更容易。
-
-“生命科学研究复杂、数据丰富且跨学科。要为研究人员交付有意义的价值，先进 AI 模型必须扎根于可信科学数据，连接经过验证的工具，并融入研究人员每天使用的真实工作流。我们很高兴能与 OpenAI 合作，并有机会探索 GPT‑Rosalind 如何支持更严谨、更实用的药物发现方法。”
-
-Mishal Patel，Novo Nordisk 研发 AI 与数字创新集团副总裁
-
-我们现在还为没有 Enterprise 账户的合格组织提供 OpenAI 托管工作空间。
-
-更新后的 GPT‑Rosalind 是我们更广泛承诺的下一步：构建能够帮助加速科学发现的 AI 系统，同时确保先进生物能力在适当保障下部署。我们将继续提升模型的生物学推理，扩展对工具密集型和长程研究工作流的支持，并与各地区合格组织合作评估现实影响。
-
-这也意味着将生命科学 AI 应用于具有高影响力的公共利益工作，从药物发现和转化医学到公共卫生、准备工作和生物防御。通过Rosalind Biodefense和我们的可信访问部署模式，我们旨在把前沿生物能力交到致力于改善人类健康、增强社会韧性的研究人员、机构和防御者手中。
-
-我们将继续打造GPT‑Rosalind，使其在科学研究全生命周期中成为更有能力的伙伴，帮助科学家更快从正确问题走向更清晰证据、更好实验，并最终为患者带来新疗法。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">为生命科学行业带来扎根真实科学工作流的更强智能
-
-我们正在为专为企业规模生命科学研究打造的GPT‑Rosalind系列推出新的模型更新。它将 GPT‑5.5 的智能体编程和工具使用能力，与药物化学、基因组学等核心药物发现领域中更强的模型智能相结合，同时提升更广泛生命科学分析、设计和实验工作流的表现。
-
-生命科学的进步依赖于跨尺度、跨模态综合数据和证据：分子、基因、通路和生命系统。在我们的评估中，更新后的 GPT‑Rosalind 在生物学专家研究任务、复杂药物化学查询、定量生物学和湿实验室故障排查方面均有广泛性能提升。
-
-GPT‑Rosalind 现已通过我们的可信访问部署结构，以研究预览形式向全球符合条件的组织开放。
-
-为衡量并持续改进 GPT‑Rosalind 的现实影响，我们设计了 LifeSciBench，这是一个由外部专家评判、聚焦生命科学研究基础方面的基准。不同于现有基准孤立评估模型性能的单一组件或生物学领域，LifeSciBench 以端到端视角衡量具有科学价值的工作，任务来自生命科学研究的六个核心工作流领域：证据处理、分析、设计与优化、科学推理、验证与运营，以及转化与传...</p><div style="font-size:16px;line-height:1.8;color:#333">为生命科学行业带来扎根真实科学工作流的更强智能
-
-我们正在为专为企业规模生命科学研究打造的GPT‑Rosalind系列推出新的模型更新。它将 GPT‑5.5 的智能体编程和工具使用能力，与药物化学、基因组学等核心药物发现领域中更强的模型智能相结合，同时提升更广泛生命科学分析、设计和实验工作流的表现。
-
-生命科学的进步依赖于跨尺度、跨模态综合数据和证据：分子、基因、通路和生命系统。在我们的评估中，更新后的 GPT‑Rosalind 在生物学专家研究任务、复杂药物化学查询、定量生物学和湿实验室故障排查方面均有广泛性能提升。
-
-GPT‑Rosalind 现已通过我们的可信访问部署结构，以研究预览形式向全球符合条件的组织开放。
-
-为衡量并持续改进 GPT‑Rosalind 的现实影响，我们设计了 LifeSciBench，这是一个由外部专家评判、聚焦生命科学研究基础方面的基准。不同于现有基准孤立评估模型性能的单一组件或生物学领域，LifeSciBench 以端到端视角衡量具有科学价值的工作，任务来自生命科学研究的六个核心工作流领域：证据处理、分析、设计与优化、科学推理、验证与运营，以及转化与传播。我们使用这一基准，使进展与生命科学研究的需求和现实保持一致。
-
-GPT‑Rosalind 在行业和学术专家确定的具有科学价值任务中表现领先。
-
-从论文、图表、表格和实验记录中提取、协调并审计科学证据。
-
-We’re preparing for a Type B FDA meeting on AAV9-microDys-X, an AAV9-based micro-dystrophin gene therapy for Duchenne muscular dystrophy that expresses a 138 kDa construct from an MCK promoter, and we want a hard-nosed critique of whether our current package really supports accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit.
-
-Study context: open-label Phase 1b/2 in 12 ambulatory boys age 4–7 with confirmed DMD and out-of-frame rod-domain deletions. The package is:
-
-Pre-treatment vastus lateralis biopsies: 0–3% of healthy-control dystrophin by quantitative Western blot using MANEX1A against the N-terminal actin-binding domain.
-
-12-week post-treatment contralateral vastus lateralis biopsies: mean micro-dystrophin 38% of healthy control (range 18–61%) by the same Western blot, normalized to total protein by Coomassie staining.
-
-Post-treatment immunofluorescence: sarcolemmal signal in 75–95% of fibers using a polyclonal anti-dystrophin C-terminal antibody.
-
-48-week function: mean NSAA change +1.4 points from baseline versus −0.6 in an external published natural-history registry cohort (p = 0.03 by unpaired t-test).
-
-Safety: transient transaminitis in 8/12 patients managed with steroid taper; one resolved myocarditis; no deaths.
-
-Biodistribution/persistence: AAV9 vector genomes detectable in muscle at 12 weeks at a mean of 2.3 vector genomes per nucleus.
-
-Eligibility: no baseline anti-AAV9 neutralizing antibodies (titer <1:400) and no exon-44 deletions.
-
-Please pressure-test this package item by item: where would FDA or a skeptical reviewer say the evidence, as presented, fails to support our conclusion, and what additional data, analyses, or design changes would be needed to close those gaps if possible? For anything not specified, assume what is known from other clinical-grade 138 kDa micro-dystrophin programs and relevant clinical trials through December 31, 2025 also applies.
-
-底线：按目前呈现的资料包，其强度不足以支持将微抗肌萎缩蛋白表达作为合理可能预测临床获益的替代终点来加速批准。持怀疑态度的 FDA 审评员可能会认为生物标志物、功能、持久性、安全性和普适性证据均存在实质性支持不足。
-
-MANEX1A 结合内源性全长抗肌萎缩蛋白和微抗肌萎缩蛋白转基因共有的 N 端表位，因此该检测无法清晰区分转基因与残余/回复突变抗肌萎缩蛋白。用健康全长抗肌萎缩蛋白标准品来定量 138 kDa 微抗肌萎缩蛋白也是无效的。
-
-使用重组微抗肌萎缩蛋白标准品，以及可区分转基因与内源性抗肌萎缩蛋白的正交方法，如靶向质谱或转基因特异性/表位特异性检测。
-
-C 端多克隆抗体并不适合，因为 138 kDa 构建体缺少 C 端结构域。许多 DMD 患者有回复肌纤维，而回复突变抗肌萎缩蛋白可保留 C 端表位。回复肌纤维可能随年龄克隆性扩增，使 IF 信号产生偏倚，尤其是在年龄较大的男孩中。
-
-使用针对转基因中存在但回复突变抗肌萎缩蛋白中不存在表位的抗体重复 IF。将转基因阳性纤维与回复肌纤维分开定量。
-
-该资料包将蛋白量与临床功能混为一谈。“健康对照蛋白质量的 38%”并不意味着正常抗肌萎缩蛋白功能的 38%，因为微抗肌萎缩蛋白在结构上被截短。
-
-在将表达作为替代终点前，应经验性验证微抗肌萎缩蛋白质量百分比、肌膜定位、下游功能恢复与临床获益之间的关系。
-
-治疗前后对侧股外侧肌活检会引入左右侧和肌内空间变异。疾病进展和纤维脂肪替代也会改变按总蛋白归一化的信号。
-
-使用一致解剖标志标准化活检部位，按肌肉特异性蛋白归一化，并同步测量纤维脂肪成分。
-
-外部自然史队列不是随机同期对照。试验入选条件、支持治疗、参与效应、基线 NSAA、类固醇方案、年龄和外显子类别都可能使比较产生偏倚。非配对 t 检验并不足够。此外，+1.4 NSAA 变化处于该年龄组的重测变异范围内。
-
-开展随机同期安慰剂对照研究，或至少使用校正分析，纳入基线 NSAA、年龄、类固醇方案、外显子类别和其他混杂因素。
-
-4–7 岁男孩处于发育窗口，未经治疗的可行走 DMD 患者在衰退占主导前可能获得运动功能。48 周 NSAA 变化混合了发育增益、疾病进展和可能的治疗效应。
-
-使用按年龄分层的同期随机对照，以将发育轨迹与治疗效应分开。
-
-开放标签微抗肌萎缩蛋白功能信号未能可靠预测确证获益；已发表先例包括微抗肌萎缩蛋白基因治疗确证试验未能复现开放标签 NSAA 改善。
-
-不要把开放标签 NSAA 变化作为决定性支持。需要受控的功能证据。
-
-138 kDa 构建体删除了含 nNOS 结合位点的血影蛋白重复 R16/17。nNOS 招募丧失会损害运动期间的功能性交感溶解和缺血保护，形成独立于表达水平的机制性救援上限。
-
-增加机制研究，显示该特定构建体是否恢复相关抗肌萎缩蛋白相关复合物功能、nNOS 定位、运动生理和肌肉保护。
-
-12 周的载体基因组不能证明表达持久。AAV9 基因组大多是不整合的游离体，可能随时间下降。载体基因组持续存在并不等同于蛋白表达持续。
-
-测量 12 周以后的纵向转基因蛋白表达和功能生物标志物持久性。
-
-8/12 名患者出现转氨酶升高，与对 AAV 转导细胞的免疫反应一致，但机制尚未确定。鉴于 AAV9 的心脏嗜性，一例心肌炎令人担忧。
-
-提供更深入的免疫监测、肝脏/心脏安全性表征，并强化心脏随访。
-
-排除抗 AAV9 中和抗体阳性患者会限制普适性。排除外显子 44 缺失会限制对该 DMD 亚组的适用性。n=12 太小，无法表征更广泛 DMD 人群的安全性和疗效。
-
-在可能情况下扩大入选范围，或在使用结果支持广泛批准前，预先规定按抗体状态、基因型/外显子类别、年龄和基线功能进行分层分析。
-
-监管结论：该资料包可能显示生物活性，但尚未确立测得的微抗肌萎缩蛋白表达是合理可能预测临床获益的可靠替代指标。主要缺口包括检测特异性、无效定量标准、可能的回复肌纤维混杂、缺乏随机对照、年龄相关 NSAA 混杂、持久性不确定，以及未解决的安全性/普适性问题。
-
-为弥合差距，该项目需要采用受控、年龄分层的临床设计，并配备转基因特异性表达检测、正交蛋白定量、组织成分控制、纵向持久性数据、针对截短构建体的机制性功能检测，以及更强的安全监测，尤其是肝脏和心脏方面。
-
-GPT‑Rosalind 在药物化学领域达到行业领先表现；该领域专注于将分子转化为有用药物。我们设计 MedChemBench 以反映真实药物化学工作流，评估多模态化学结构理解；构效关系（SAR）；药物效力、毒性和吸收、分布、代谢、排泄（ADME）预测；多参数先导优化决策；以及逆合成。在 MedChemBench 上，GPT‑Rosalind 以 27.5% 对 25.1% 优于 GPT‑5.5，同时少用 7.2% 的 Token。
-
-GPT‑Rosalind 在药物化学中展现出更好的多模态综合和机制推理。
-
-在 GeneBench（我们针对基因组学和定量生物学中长程、端到端分析的智能体评估）上，GPT‑Rosalind 比 GPT‑5.5 少用 31% 的 Token，同时准确率更高，为 21.6% 对 20.4%。GeneBench 评估智能体在长程定量任务上的表现：基于真实科学数据，智能体能否规划有效的分析、QC、建模和校正，以得出与决策相关的答案？所含问题覆盖多种领域，包括功能基因组学、空间转录组学、蛋白质组学、表观基因组学和应用遗传学。
-
-GPT‑Rosalind 比 GPT‑5.5 少用 31% 的 Token，同时提升准确率。
-
-我们推出一项新评估，用于测试 GPT‑Rosalind 帮助科学家开展真实世界实验室工作的能力。LabWorkBench 测试模型在科学家使用的真实湿实验室方案中，将扰动与实验结果联系起来的能力，目的涵盖故障排查到优化。LabWorkBench 使用的数据为专有数据，因此未受污染。GPT‑Rosalind 得分为 63.2%，GPT‑5.5 为 55.8%，同时少用 5.3% 的 Token。
-
-在真实湿实验室方案辅助方面，GPT‑Rosalind 相比 GPT‑5.5 显著提升，同时提高了 Token 效率。
-
-我们构建了生命科学研究⁠（在新窗口中打开）和生命科学 NGS 分析⁠（在新窗口中打开）插件，为GPT‑Rosalind增强的智能扩展一个用于可重复科学工作流的实用执行层。这些插件共同将有来源的证据检索、生物学解读和生物信息学执行纳入同一工作空间，帮助研究人员在保留产物和溯源的同时，将外部证据与内部组学分析连接起来。所有用户现在都可通过 Codex 访问这两个插件。符合条件的 GPT‑Rosalind 企业用户还可使用 GPT‑Rosalind 为这些插件提供支持。
-
-为更好地将 Codex 用作科学家的动态工作台，我们为生物学原生文件类型增加了交互式查看器。初始的序列、比对和结构查看器旨在让科学家在 GPT‑Rosalind 跨工作流推理时贴近证据，并可在上下文中使用活动查看器直接回答后续问题。
-
-上方演示展示了由 GPT‑Rosalind 编排的这些能力如何发挥作用。我们跟随一位科学家研究液体肿瘤活检，以识别可为治疗提供信息的突变和其他分子变化。生命科学 NGS 分析插件将对已处理 ctDNA 记录的审查转化为交互式笔记本，呈现反复出现的改变、低频检出和样本轨迹，使调查聚焦于 KRAS G12C。随后，生命科学研究插件补充有来源的靶点、抑制剂和耐药性背景，而原生序列、比对和结构查看器让科学家直接检查突变残基 12、其在 RAS 家族中的保守性，以及抑制剂结合口袋。该工作流最终将这些证据转化为具体后续选项，并且每一步和产物都可供专家审查。
-
-将 10x 风格矩阵包转化为经 QC 过滤的单细胞产物、注释和 UMAP，可在 Codex 中检查和修订。生命科学 NGS 分析插件将请求路由到 scrna-seq-qc，根据数据选择 QC 阈值，保留过滤和注释的溯源，并呈现缺少双细胞检测依赖项等阻碍因素。
-
-将批量 RNA-seq 样本表、FASTQ 包和参考文件转化为经 QC 审核的计数包，可在 Codex 中检查和复用。生命科学 NGS 分析插件会路由请求、验证输入，并返回可审计的运行封套，包含 MultiQC、Salmon 矩阵、溯源和明确注意事项。
-
-我们正在向全球符合条件的组织扩大GPT‑Rosalind系列的访问权限。GPT‑Rosalind 将通过我们的可信访问部署结构以研究预览形式提供给相关组织，这些组织需开展具有明确公共利益的合法科学研究，具备强治理和安全监督，并以企业级安全控制访问。
-
-作为此次全球扩展的一部分，我们很高兴支持 Novo Nordisk 的使命：借助 GPT‑Rosalind 扩展其医学研究，帮助更快地为患者带来创新治疗选择。Novo Nordisk 正在利用前沿 AI 能力，帮助研究人员分析复杂数据集、发现有用模式，并更快检验假设。GPT‑Rosalind 更强的生物学理解将帮助团队连接文献、基因组学、转录组学、序列、结构和实验结果中的证据，使从数据走向更清晰研究决策更容易。
-
-“生命科学研究复杂、数据丰富且跨学科。要为研究人员交付有意义的价值，先进 AI 模型必须扎根于可信科学数据，连接经过验证的工具，并融入研究人员每天使用的真实工作流。我们很高兴能与 OpenAI 合作，并有机会探索 GPT‑Rosalind 如何支持更严谨、更实用的药物发现方法。”
-
-Mishal Patel，Novo Nordisk 研发 AI 与数字创新集团副总裁
-
-我们现在还为没有 Enterprise 账户的合格组织提供 OpenAI 托管工作空间。
-
-更新后的 GPT‑Rosalind 是我们更广泛承诺的下一步：构建能够帮助加速科学发现的 AI 系统，同时确保先进生物能力在适当保障下部署。我们将继续提升模型的生物学推理，扩展对工具密集型和长程研究工作流的支持，并与各地区合格组织合作评估现实影响。
-
-这也意味着将生命科学 AI 应用于具有高影响力的公共利益工作，从药物发现和转化医学到公共卫生、准备工作和生物防御。通过Rosalind Biodefense和我们的可信访问部署模式，我们旨在把前沿生物能力交到致力于改善人类健康、增强社会韧性的研究人员、机构和防御者手中。
-
-我们将继续打造GPT‑Rosalind，使其在科学研究全生命周期中成为更有能力的伙伴，帮助科学家更快从正确问题走向更清晰证据、更好实验，并最终为患者带来新疗法。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing new capabilities to GPT-Rosalind</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing new capabilities to GPT-Rosalind</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Strengthening societal resilience with Rosalind Biodefense</title>
@@ -1344,116 +1216,108 @@ Mishal Patel，Novo Nordisk 研发 AI 与数字创新集团副总裁
   <guid isPermaLink="false">https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/</guid>
   <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
 
-人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
 
-因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
 
-启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
+That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
 
-扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
+Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
 
-我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速...</p><div style="font-size:16px;line-height:1.8;color:#333">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
+Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
 
-人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
+The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
 
-因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
+Building on our safety and resilience work
 
-启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
+As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
 
-扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
+In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
 
-我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速医疗反制措施的开发；构建更早的预警系统；加强诊断、应急准备和响应能力；以及支持建立一个稳健的评估生态系统。在未来的几周内，我们将继续分享我们在这些领域的更多工作进展。
+We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
 
-随着 AI 模型在生物学领域的能力日益提升，我们一直致力于确保这些能力的部署既能推动科学进步，又能强化安全防线。我们的方法侧重于构建多层韧性：对防备评测进行投入、开展生物领域专属的能力评估、针对双用途生物学请求优化模型的安全行为、实施监测与合规审查、引入专家红队测试，并针对高风险能力部署安全控制措施。
+Supporting defensive acceleration with Rosalind Biodefense
 
-2025 年 7 月，我们发布了 ChatGPT 智能体，这是我们在准备框架 (Preparedness Framework)下首个定义为“生物学高能力”的模型，并为此启用了强有力的安全防护措施，以最大程度降低危害风险。自那时起，随着模型能力的不断演进，我们持续优化这些防护措施，并分享了详细的评估报告⁠（在新窗口中打开）。同时，我们继续与外部测试团队在部署前评估方面保持紧密合作，他们的发现有助于验证并完善我们的方法。
+Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
 
-此外，我们还与外部专家及公共部门合作伙伴紧密联手，共同强化更广泛的生物安全生态系统，合作伙伴包括资深生物学家、美国 AI 标准与创新研究所 (CAISI) 和英国 AI 安全研究所 (UK AISI) 等政府机构、洛斯阿拉莫斯国家实验室以及前沿模型论坛 (Frontier Model Forum)。今天的发布立足于前期成果，进一步扩大受信任合作伙伴使用GPT‑Rosalind开展高影响力防御应用的途径。这一举措既为研发新型反制措施的防御者提供支持，也向承担公共卫生与生物防御任务的政府伙伴扩展受信任的访问权限。
+This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
 
-通过 Rosalind 生物防御计划加速防御能力建设
+At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
 
-加速防御能力建设的核心，是确保前沿 AI 能力能够切实赋能那些构建社会防线的群体。为了帮助受信任的开发者将前沿能力转化为实际的防御手段，我们正式启动了 Rosalind 生物防御计划。这是一项全新的倡议，旨在利用 GPT‑Rosalind（我们专为生命科学研究打造的前沿推理模型），推动 AI 在生命科学领域的高影响力防御应用开发。
+Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
 
-该计划旨在帮助受信任的开发者将前沿 AI 能力应用于具有操作性的生物防御工具中，从而在生物威胁出现之前强化防备。OpenAI 将资助 GPT‑Rosalind 的访问额度，并为那些构建前沿生物安全应用、旨在巩固社会防线，并打造大流行病防备能力的受信任开发者提供启动支持。这涵盖了流行病学建模、早期检测、筛查、应急准备、非药物干预 (NPI) 以及其他与公共卫生相关的能力领域。
+Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
 
-在启动阶段，我们正为首批利用 GPT‑Rosalind 在生物防御全栈领域构建前沿应用的机构提供支持。它们的工作贯穿了生物威胁的全生命周期：从预防、早期检测到社会韧性以及医疗反制措施的开发。这些实践有助于展示前沿 AI 如何辅助公共卫生团队、研究人员、基础设施运营商以及社区，共同防范无论是自然发生还是人工合成的生物风险。
+Working with government partners to strengthen biodefense
 
-Fourth Eon Biosecurity 致力于构建能够与 AI 等新技术同步演进的自适应筛查基础设施。该机构从基于功能的 DNA 合成筛查入手，协助处理生物材料的实验室和企业拦截不安全或恶意的订单，其中包括涉及新型设计的订单。
+Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
 
-我们的目标不仅是在抽象层面上加速生命科学研究，更是为了助力创造出能够增强社会韧性的产品与干预手段，并展示负责任、高影响力的生物防御在实践中究竟如何落地。我们对那些先进 AI 能够切实提升防御研究工作流速度、质量或规模的项目尤为感兴趣，包括文献综述、实验方案设计支持、模型构建、数据协调、模拟、决策支持和科学传播。我们欢迎来自学术界、非营利组织、政府附属机构、使命驱动型企业以及其他符合条件且项目涉及明确公共利益的研究团队提交申请。
+Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
 
-强化生物防范能力需要一个由众多防御者构成的广泛生态系统。除了支持开发新型防御应用的受信任构建者外，我们还在向那些在预防、检测和应对生物威胁中发挥核心作用的公共机构扩大访问权限。今天，我们正式向特定承担已获批公共卫生和生物防御任务的美国政府及盟友合作伙伴，扩展 GPT‑Rosalind 的受信任访问权限。此举旨在让符合条件的团队将前沿 AI 应用于高影响力的工作流中，例如早期预警系统、疫情响应规划、诊断、应急准备以及医疗反制措施的开发。
+This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
 
-在保护社区、将科学证据转化为行动，以及为新出现的生物挑战做好准备方面，政府公共卫生机构和研究组织发挥着至关重要的作用。通过受信任访问模式扩大访问范围，我们可以协助符合条件的团队将 GPT‑Rosalind 用于具有明确益处的防御工作，同时维持与先进生物能力相匹配的安全、防范及问责控制措施。
+Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
 
-这一扩展举措体现了我们更为广泛的方法理念：在提升强大工具可及性的同时，部署相应的安全防护措施，并对整个生态系统的韧性进行持续投入。强大的社会防备能力有赖于政府、研究机构、行业，以及技术提供商之间的通力合作。向符合条件的公共卫生与科学合作伙伴开放 GPT‑Rosalind，是帮助该生态系统更高效地开展准备、响应和防御工作的重要一步。
+We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
 
-劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
+Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
 
-劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
+We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
 
-同时，我们也在与约翰斯·霍普金斯大学应用物理实验室展开合作，该实验室计划将 GPT‑Rosalind 整合到蛋白质工程平台中，以加速用于治疗、反制措施开发以及新兴生物威胁特征分析的突变酶筛查。此外，我们正向流行病防范创新联盟 (CEPI) 开放 GPT‑Rosalind 的访问权限，该联盟正专注于其“100 天任务”(100 Days Mission)，旨在加速针对流行病和大流行病威胁（包括当前的埃博拉疫情）的疫苗开发。
+Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing biological preparedness with trusted developers and government partners.
 
-今天的发布只是我们更广泛愿景的初步尝试 — 即利用 GPT‑Rosalind 全面赋能公共卫生、生物防御和生命科学研究。Rosalind 生物防御计划面向全球符合条件的申请者开放，我们期待支持更多构建防御应用的机构，利用 GPT‑Rosalind 来提升社会韧性。
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defen...</p><div style="font-size:16px;line-height:1.8;color:#333">Advancing biological preparedness with trusted developers and government partners.
 
-随着时间的推移，我们也期望继续扩大受信任的政府合作伙伴与 GPT‑Rosalind 的协作方式。通过从首批部署中汲取经验，并继续与美国及海外的合作伙伴深化对话，我们将持续优化所需的访问路径、支持的模型和安全防护措施，以协助符合条件的机构负责任地使用前沿生命科学 AI。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
+AI is accelerating progress across biology and the life sciences, creating new opportunities toadvance scientific discovery, strengthen public health, and build resilience against biological threats. As these capabilities become more powerful, the institutions working to prevent, detect, and respond to biological threats need equally powerful tools. We believe frontier AI should meaningfully advantage those defenders—and that doing so requires responsible deployment structures and trusted access models that put advanced capabilities in the hands of vetted partners who are building new biodefense applications, tools and initiatives to bolster societal resilience.
 
-人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
+That’s why today we’re announcing two new steps to advance defensive acceleration in biology:
 
-因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
+Launching Rosalind Biodefense to help trusted developers to build new biodefense and pandemic preparedness capabilities.Apply here.
 
-启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
+Expanding trusted access to GPT‑Rosalind for select U.S. government and allied partners supporting public health and biodefense missions.Request access here.
 
-扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
+The steps we're taking today are part of a broader strategy to ensure advanced AI meaningfully advantages those working to prevent, detect, and respond to biological threats. That strategy includes equipping defenders through trusted access to advanced AI tools, accelerating the development of medical countermeasures, building earlier warning systems, strengthening diagnostics, preparedness, and response capabilities, and supporting a robust evaluations ecosystem. We will continue to share more about our work across these areas in the coming weeks.
 
-我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速...</p><div style="font-size:16px;line-height:1.8;color:#333">携手受信任的开发者与政府合作伙伴，有效提升生物防范能力
+Building on our safety and resilience work
 
-人工智能正加速推动生物学与生命科学的发展，为促进科学突破、强化公共卫生体系以及提升应对生物威胁的韧性带来了全新的可能。随着这些能力日益强大，致力于预防、检测和应对生物威胁的机构同样需要更为出色的工具。我们坚信，前沿 AI 应当切实为这些防御者提供优势。而要做到这一点，需要负责任的部署机制与受信任的访问模式，从而将这些先进能力交到通过审核的合作伙伴手中，由他们构建全新的生物防御应用、工具和方案，以增强社会韧性。
+As AI models become more capable in biology, we have been working to ensure those capabilities are deployed in ways that advance science whilestrengthening safeguards. Our approach has focused on building layered resilience: investing in preparedness evaluations, bio-specific capability assessments, safer model behavior for dual-use biological requests, monitoring and enforcement, expert red teaming, and security controls for higher-risk capabilities.
 
-因此，我们今天宣布采取两项新举措，以加速生物学领域的防御能力建设：
+In July 2025, we released ChatGPT agent, the first model we treated as High Capability in biology under ourPreparedness Frameworkand activated robust safeguards to minimize the risk of harm. Since then, we have continued refining those safeguards andsharing detailed assessments⁠(opens in a new window)as capabilities have continued to advance. We have also continued working closely with external testing groups on pre-deployment evaluations, whose findings help validate and inform our approach.
 
-启动 Rosalind 生物防御计划，以帮助受信任的开发者构建全新的生物防御与大流行病防范能力。点击此处申请。
+We have also worked closely with external experts and public-sector partners to strengthen the broader biosecurity ecosystem, including expert biologists, government organizations like the U.S. Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI), Los Alamos National Laboratory, and the Frontier Model Forum. Today’s announcement builds on that work by expanding how trusted partners can useGPT‑Rosalindfor high-impact defensive applications—both by supporting defenders building new countermeasures and by extending trusted access to government partners with public-health and biodefense missions.
 
-扩大 GPT‑Rosalind 的受信任访问范围，向支持公共卫生和生物防御任务的特定美国政府及盟友合作伙伴开放。在此申请访问权限。
+Supporting defensive acceleration with Rosalind Biodefense
 
-我们今天采取的这些步骤，是一项更广泛战略的一部分，旨在确保前沿 AI 能切实为那些致力于预防、检测和应对生物威胁的工作人员提供助力。该战略包括：通过让防御者获得受信任的先进 AI 工具访问权限来为其赋能；加速医疗反制措施的开发；构建更早的预警系统；加强诊断、应急准备和响应能力；以及支持建立一个稳健的评估生态系统。在未来的几周内，我们将继续分享我们在这些领域的更多工作进展。
+Defensive acceleration focuses on making sure frontier AI capabilities meaningfully advantage the people building society’s defenses. To help trusted developers turn frontier capabilities into practical defenses, we are launching Rosalind Biodefense, a new initiative to enable the development of high-impact defensive applications of AI in the life sciences leveraging GPT‑Rosalind, our frontier reasoning model built for life sciences research.
 
-随着 AI 模型在生物学领域的能力日益提升，我们一直致力于确保这些能力的部署既能推动科学进步，又能强化安全防线。我们的方法侧重于构建多层韧性：对防备评测进行投入、开展生物领域专属的能力评估、针对双用途生物学请求优化模型的安全行为、实施监测与合规审查、引入专家红队测试，并针对高风险能力部署安全控制措施。
+This program helps trusted developers apply frontier AI capabilities to operationalized biodefense tools that can strengthen preparedness before the next biological threat emerges. OpenAI will sponsor access to GPT‑Rosalind and provide launch support to trusted developers building frontier biosecurity applications that can bolster societal defenses and build pandemic preparedness. This includes work across areas such as epidemiological modeling, early detection, screening, preparedness, non-pharmaceutical interventions (NPIs) and other public-health-relevant capabilities.
 
-2025 年 7 月，我们发布了 ChatGPT 智能体，这是我们在准备框架 (Preparedness Framework)下首个定义为“生物学高能力”的模型，并为此启用了强有力的安全防护措施，以最大程度降低危害风险。自那时起，随着模型能力的不断演进，我们持续优化这些防护措施，并分享了详细的评估报告⁠（在新窗口中打开）。同时，我们继续与外部测试团队在部署前评估方面保持紧密合作，他们的发现有助于验证并完善我们的方法。
+At launch, we are supporting a first set of organizations building frontier applications across the biological defense stack with GPT‑Rosalind. Their work spans the lifecycle of biological threats—from prevention and early detection to societal resilience and medical countermeasure development—and helps demonstrate how frontier AI can support public-health teams, researchers, infrastructure operators, and communities in preparing for future biological risks, whether naturally occurring or synthetic.
 
-此外，我们还与外部专家及公共部门合作伙伴紧密联手，共同强化更广泛的生物安全生态系统，合作伙伴包括资深生物学家、美国 AI 标准与创新研究所 (CAISI) 和英国 AI 安全研究所 (UK AISI) 等政府机构、洛斯阿拉莫斯国家实验室以及前沿模型论坛 (Frontier Model Forum)。今天的发布立足于前期成果，进一步扩大受信任合作伙伴使用GPT‑Rosalind开展高影响力防御应用的途径。这一举措既为研发新型反制措施的防御者提供支持，也向承担公共卫生与生物防御任务的政府伙伴扩展受信任的访问权限。
+Fourth Eon Biosecurity builds adaptive screening infrastructure that can evolve alongside new technologies like AI. Starting with function-based screening for DNA synthesis, the organization helps labs and companies that handle biological materials prevent unsafe or malicious orders, including those involving novel designs.
 
-通过 Rosalind 生物防御计划加速防御能力建设
+Our goal is not only to accelerate life sciences research in the abstract, but to help create products and interventions that bolster societal resilience and show what responsible, high-impact biodefense can look like in practice. We’re especially interested in projects where advanced AI can materially improve the speed, quality, or scale of defensive research workflows, including literature synthesis, protocol design support, model-building, data harmonization, simulation, decision support, and scientific communication. We welcome applications from academic, nonprofit, government-affiliated, mission-driven companies and other qualified research teams working on projects with clear public benefit.
 
-加速防御能力建设的核心，是确保前沿 AI 能力能够切实赋能那些构建社会防线的群体。为了帮助受信任的开发者将前沿能力转化为实际的防御手段，我们正式启动了 Rosalind 生物防御计划。这是一项全新的倡议，旨在利用 GPT‑Rosalind（我们专为生命科学研究打造的前沿推理模型），推动 AI 在生命科学领域的高影响力防御应用开发。
+Working with government partners to strengthen biodefense
 
-该计划旨在帮助受信任的开发者将前沿 AI 能力应用于具有操作性的生物防御工具中，从而在生物威胁出现之前强化防备。OpenAI 将资助 GPT‑Rosalind 的访问额度，并为那些构建前沿生物安全应用、旨在巩固社会防线，并打造大流行病防备能力的受信任开发者提供启动支持。这涵盖了流行病学建模、早期检测、筛查、应急准备、非药物干预 (NPI) 以及其他与公共卫生相关的能力领域。
+Strengthening biological preparedness requires a broad ecosystem of defenders. In addition to supporting trusted builders developing new defensive applications, we are also expanding access to the public institutions that play a central role in preventing, detecting, and responding to biological threats. Today, we are extending trusted access to GPT‑Rosalind for select U.S. government and allied partners with approved public health and biodefense missions, so qualified teams can apply frontier AI to high-impact workflows like early warning systems, outbreak response planning, diagnostics, preparedness, and medical countermeasure development.
 
-在启动阶段，我们正为首批利用 GPT‑Rosalind 在生物防御全栈领域构建前沿应用的机构提供支持。它们的工作贯穿了生物威胁的全生命周期：从预防、早期检测到社会韧性以及医疗反制措施的开发。这些实践有助于展示前沿 AI 如何辅助公共卫生团队、研究人员、基础设施运营商以及社区，共同防范无论是自然发生还是人工合成的生物风险。
+Government public health and research institutions play an essential role in protecting communities, translating scientific evidence into action, and preparing for emerging biological challenges. By expanding access through a trusted access model, we can help qualified teams use GPT‑Rosalind for clearly beneficial defensive work while maintaining the safety, security, and accountability controls appropriate for advanced biological capabilities.
 
-Fourth Eon Biosecurity 致力于构建能够与 AI 等新技术同步演进的自适应筛查基础设施。该机构从基于功能的 DNA 合成筛查入手，协助处理生物材料的实验室和企业拦截不安全或恶意的订单，其中包括涉及新型设计的订单。
+This expansion reflects our broader approach: advancing access to powerful tools in step with appropriate safeguards, while investing in the resilience of the wider ecosystem. Strong societal preparedness depends on collaboration across government, research institutions, industry, and technology providers. Making GPT‑Rosalind available to qualified public health and science partners is an important step toward helping that ecosystem prepare, respond, and defend more effectively.
 
-我们的目标不仅是在抽象层面上加速生命科学研究，更是为了助力创造出能够增强社会韧性的产品与干预手段，并展示负责任、高影响力的生物防御在实践中究竟如何落地。我们对那些先进 AI 能够切实提升防御研究工作流速度、质量或规模的项目尤为感兴趣，包括文献综述、实验方案设计支持、模型构建、数据协调、模拟、决策支持和科学传播。我们欢迎来自学术界、非营利组织、政府附属机构、使命驱动型企业以及其他符合条件且项目涉及明确公共利益的研究团队提交申请。
+Lawrence Livermore National Laboratory (LLNL) is applying AI to advance biopreparedness and bioresilience. Work at LLNL integrates AI, supercomputing, advanced simulation, and laboratory testing to support the design and evaluation of potential medical countermeasures for emerging biological threats. Its objective is to improve preparedness, accelerate response, and strengthen confidence in promising countermeasure development.
 
-强化生物防范能力需要一个由众多防御者构成的广泛生态系统。除了支持开发新型防御应用的受信任构建者外，我们还在向那些在预防、检测和应对生物威胁中发挥核心作用的公共机构扩大访问权限。今天，我们正式向特定承担已获批公共卫生和生物防御任务的美国政府及盟友合作伙伴，扩展 GPT‑Rosalind 的受信任访问权限。此举旨在让符合条件的团队将前沿 AI 应用于高影响力的工作流中，例如早期预警系统、疫情响应规划、诊断、应急准备以及医疗反制措施的开发。
+We are also working with Johns Hopkins Applied Physics Laboratory, which intends to integrate GPT‑Rosalind into a protein‑engineering platform to accelerate screening of mutant enzymes for therapeutics, counter‑measure development, and emerging biothreat characterization. And we are extending access to GPT‑Rosalind to the Coalition for Epidemic Preparedness Innovations (CEPI), which is focused on its 100 Days Mission to accelerate the development of vaccines against epidemic and pandemic threats, including the current Ebola outbreak.
 
-在保护社区、将科学证据转化为行动，以及为新出现的生物挑战做好准备方面，政府公共卫生机构和研究组织发挥着至关重要的作用。通过受信任访问模式扩大访问范围，我们可以协助符合条件的团队将 GPT‑Rosalind 用于具有明确益处的防御工作，同时维持与先进生物能力相匹配的安全、防范及问责控制措施。
+Today’s announcement is an early step in a broader effort to use GPT‑Rosalind to strengthen public health, biodefense, and life sciences research. The Rosalind Biodefense Program is open to qualified applicants globally, and we are looking to support more organizations building defensive applications that can use GPT‑Rosalind to improve societal resilience.
 
-这一扩展举措体现了我们更为广泛的方法理念：在提升强大工具可及性的同时，部署相应的安全防护措施，并对整个生态系统的韧性进行持续投入。强大的社会防备能力有赖于政府、研究机构、行业，以及技术提供商之间的通力合作。向符合条件的公共卫生与科学合作伙伴开放 GPT‑Rosalind，是帮助该生态系统更高效地开展准备、响应和防御工作的重要一步。
+We also expect to continue expanding how trusted government partners can engage with GPT‑Rosalind over time. As we learn from this initial set of deployments and continue conversations with partners in the U.S. and abroad, we will continue refining the access pathways, support models, and safeguards needed to help qualified institutions use frontier life sciences AI responsibly.
 
-劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
-
-劳伦斯利弗莫尔国家实验室 (LLNL) 正在应用 AI 来推进生物防备与生物韧性工作。LLNL 的工作融合了 AI、超级计算、先进模拟以及实验室检测，旨在支持针对新兴生物威胁的潜在医疗反制措施的设计与评估。其目标是提高防备能力、加速响应速度，并增强开发有效反制措施的信心。
-
-同时，我们也在与约翰斯·霍普金斯大学应用物理实验室展开合作，该实验室计划将 GPT‑Rosalind 整合到蛋白质工程平台中，以加速用于治疗、反制措施开发以及新兴生物威胁特征分析的突变酶筛查。此外，我们正向流行病防范创新联盟 (CEPI) 开放 GPT‑Rosalind 的访问权限，该联盟正专注于其“100 天任务”(100 Days Mission)，旨在加速针对流行病和大流行病威胁（包括当前的埃博拉疫情）的疫苗开发。
-
-今天的发布只是我们更广泛愿景的初步尝试 — 即利用 GPT‑Rosalind 全面赋能公共卫生、生物防御和生命科学研究。Rosalind 生物防御计划面向全球符合条件的申请者开放，我们期待支持更多构建防御应用的机构，利用 GPT‑Rosalind 来提升社会韧性。
-
-随着时间的推移，我们也期望继续扩大受信任的政府合作伙伴与 GPT‑Rosalind 的协作方式。通过从首批部署中汲取经验，并继续与美国及海外的合作伙伴深化对话，我们将持续优化所需的访问路径、支持的模型和安全防护措施，以协助符合条件的机构负责任地使用前沿生命科学 AI。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Advance your public health and biodefense mission</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>An OpenAI model has disproved a central conjecture in discrete geometry</title>
@@ -1474,388 +1338,28 @@ Fourth Eon Biosecurity 致力于构建能够与 AI 等新技术同步演进的�
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Advancing voice intelligence with new models in the API</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>GPT-5.5</title>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.5</title>
-  <link>https://openai.com/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
-
-即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
-
-Expert-SWE (Internal)
-
-FrontierMath Tier 1–3
-
-OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
-
-在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
-
-Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
-
-GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
-
-在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
-
-GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
-
-渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
-
-Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
-
-除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
-
-资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
-
-一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
-
-这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
-
-在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
-
-目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
-
-在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
-
-GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
-
-多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
-
-此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
-
-Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
-
-GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
-
-值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
-
-同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
-
-在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
-
-早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
-
-Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
-
-波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
-
-随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
-
-图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
-
-Prompt:# Algebraic geometry surface intersection
-
-Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
-
-Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
-
-Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
-
-Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
-
-## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
-
-App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
-
-Git repo, journal, plan (Markdown files)
-
-为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
-
-其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
-
-在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
-
-前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
-
-在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
-
-多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
-
-针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
-
-为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
-
-我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
-
-我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
-
-同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
-
-这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
-
-即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
-
-在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
-
-在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
-
-面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
-
-尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
-
-SWE-Bench Pro (Public) *
-
-Expert-SWE (Internal)
-
-*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
-
-Tau2-bench Telecom***（原始提示词）
-
-** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
-
-Graphwalks BFS 256k f1
-
-Graphwalks BFS 1mil f1
-
-Graphwalks parents 256k f1
-
-Graphwalks parents 1mil f1
-
-OpenAI MRCR v2 8-needle 4K-8K
-
-OpenAI MRCR v2 8-needle 8K-16K
-
-OpenAI MRCR v2 8-needle 16K-32K
-
-OpenAI MRCR v2 8-needle 32K-64K
-
-OpenAI MRCR v2 8-needle 64K-128K
-
-OpenAI MRCR v2 8-needle 128K-256K
-
-OpenAI MRCR v2 8-needle 256K-512K
-
-OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
-
-即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
-
-Expert-SWE (Internal)
-
-FrontierMath Tier 1–3
-
-OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
-
-在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
-
-Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
-
-GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
-
-在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
-
-GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
-
-渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
-
-Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
-
-除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
-
-资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
-
-一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
-
-这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
-
-在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
-
-目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
-
-在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
-
-GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
-
-多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
-
-此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
-
-Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
-
-GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
-
-值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
-
-同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
-
-在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
-
-早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
-
-Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
-
-波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
-
-随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
-
-图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
-
-Prompt:# Algebraic geometry surface intersection
-
-Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
-
-Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
-
-Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
-
-Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
-
-## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
-
-App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
-
-Git repo, journal, plan (Markdown files)
-
-为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
-
-其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
-
-在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
-
-前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
-
-在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
-
-多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
-
-针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
-
-为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
-
-我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
-
-我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
-
-同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
-
-这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
-
-即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
-
-在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
-
-在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
-
-面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
-
-尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
-
-SWE-Bench Pro (Public) *
-
-Expert-SWE (Internal)
-
-*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
-
-Tau2-bench Telecom***（原始提示词）
-
-** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
-
-Graphwalks BFS 256k f1
-
-Graphwalks BFS 1mil f1
-
-Graphwalks parents 256k f1
-
-Graphwalks parents 1mil f1
-
-OpenAI MRCR v2 8-needle 4K-8K
-
-OpenAI MRCR v2 8-needle 8K-16K
-
-OpenAI MRCR v2 8-needle 16K-32K
-
-OpenAI MRCR v2 8-needle 32K-64K
-
-OpenAI MRCR v2 8-needle 64K-128K
-
-OpenAI MRCR v2 8-needle 128K-256K
-
-OpenAI MRCR v2 8-needle 256K-512K
-
-OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>GPT-5.3 Instant</title>
   <link>https://openai.com/index/gpt-5-3-instant/</link>
   <guid isPermaLink="false">https://openai.com/index/gpt-5-3-instant/</guid>
-  <pubDate>Sat, 09 Mar 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.3 Instant</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-3-instant/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
