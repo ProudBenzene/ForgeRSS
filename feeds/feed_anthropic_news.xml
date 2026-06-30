@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Tue, 30 Jun 2026 14:27:13 +0000</lastBuildDate>
+<lastBuildDate>Tue, 30 Jun 2026 20:03:08 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,240 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Introducing Claude Sonnet 5</title>
+  <link>https://www.anthropic.com/news/claude-sonnet-5</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/claude-sonnet-5</guid>
+  <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Product</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
+
+For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
+
+For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-class models.
+
+Sonnet 5 narrows the gap: its performance is close to that of Opus 4.8, but at lower prices. It’s a substantial improvement over its predecessor, Sonnet 4.6, on important aspects of agentic performance like reasoning, tool use, coding, and knowledge work:
+
+Our safety assessments found that Sonnet 5 shows an overall lower rate of undesirable behaviors than Sonnet 4.6, and is generally safer to use in agentic contexts. Evaluations also show that it has a much lower ability to perform cybersecurity tasks than our current Opus models.
+
+From today, Claude Sonnet 5 is available across all plans: it is the default model for Free and Pro plans, and is available to Max, Team, and Enterprise users. It’s also available in Claude Code and on the Claude Platform, where it launches with introductory pricing of $2 per million input tokens and $10 per million output tokens through August 31, 2026, after which it will be priced at $3 per million input tokens and $15 per million output tokens. Developers can useclaude-sonnet-5via theClaude API.
+
+Working with Claude Sonnet 5
+
+The charts below compare the performance of Sonnet 5 with Sonnet 4.6 and Opus 4.8 at differenteffortlevels on the agentic search evaluationBrowseCompand the computer use evaluationOSWorld-Verified. Sonnet 5 (orange line) is a strict improvement over Sonnet 4.6 (gray line). Opus 4.8 (yellow line) is still the model of choice for higher accuracy on these tasks, but Sonnet 5 provides developers with lower-priced options that are of much higher quality than what was previously available. Between Sonnet 5 and Opus 4.8, users can adjust the effort level to find the right balance of cost and performance.
+
+Feedback from our early access partners has been consistent: Sonnet 5 is much more agentic than its predecessors. Testers described how it finishes complex tasks where previous Sonnet models would stop short, how it checks its own output without explicitly being asked, and how it does all this agentic work at an attractive price point:
+
+Our pre-deployment safety evaluations found that Sonnet 5 was overall an improvement on Sonnet 4.6. On agentic safety, the model is better at refusing malicious requests and resisting hijack attempts in prompt injection attacks. The model shows lower rates of hallucination and sycophancy than Sonnet 4.6. On our automated behavioral audit, which tests a wide range of misaligned behaviors such as cooperation with misuse and deception, Sonnet 5 scored lower (that is, safer) overall. However, it did show somewhat higher rates of misaligned behavior on this assessment compared to the more capable Opus 4.8 and Claude Mythos Preview.
+
+We did not deliberately train Sonnet 5 on cybersecurity tasks. It can perform some routine, non-harmful cyber tasks, but on evaluations testing potentially dangerous cyber skills, such as developing software exploits, it shows substantially poorer performance than models such as Opus 4.8 and Mythos 5. Scores from one evaluation, which tested models’ ability to develop exploits for vulnerabilities in the Firefox browser, are shown in the chart below. Sonnet 5 was never able to develop a full working exploit, but it does show a slightly higher rate ofpartialsuccess than Sonnet 4.6. This latter change is likely due to improvements in general intelligence rather than specific training.
+
+Since Sonnet 5 is somewhat stronger than its predecessor on these tasks, we’ve launched it with cyber safeguards enabled by default. Thesesafeguards—which detect and block dangerous cyber usage in real time—are the same as those present in Claude Opus 4.7 and 4.8 (because we judged that the overall level of cybersecurity risk from Sonnet 5 was low, the safeguards are less strict than those launched with Fable 5, which block a much wider range of cybersecurity tasks).1
+
+Our full assessment of Sonnet 5 across many safety and capability evaluations is reported in theClaude Sonnet 5 System Card.
+
+Availability and pricing
+
+Claude Sonnet 5 is available everywhere today at an introductory price of $2 per million input tokens and $10 per million output tokens through August 31, 2026. It then moves to standard pricing at $3 per million input tokens and $15 per million output tokens.2We’ve increased rate limits across Chat, Cowork, Claude Code, and the Claude Platform3to accommodate the higher token usage of higher effort levels; users can select whichever level makes sense for their particular project.
+
+1Sonnet 5 is part of ourCyber Verification Program, which is available today on the native Claude Platform, the Claude Platform on AWS, and Claude in Microsoft Foundry (hosted on Azure and Anthropic), and coming soon on Claude in Google Vertex. Organizations that are already enrolled in the Cyber Verification Program automatically have the same access on Sonnet 5, with no need to reapply. Overall, we recommend Claude Opus 4.8 for cybersecurity work that requires reduced guardrails.
+
+2Sonnet 5 is an upgrade to Sonnet 4.6, but it uses an updated tokenizer that changes how the model processes text to improve performance (this is similar to the tokenizer change we introduced with Claude Opus 4.7). The tradeoff is that the same input can map to more tokens: roughly 1.0–1.35× depending on the content type. The introductory pricing is set so that the transition to Sonnet 5 is roughly cost-neutral.
+
+3On April 26, 2026, we raised Sonnet and Haiku rate limits at every usage tier and simplified to three tiers (Start, Build, and Scale) on the native Claude Platform. You can view your tier and current limits in theClaude Consoleor read thedocumentationto learn more.
+
+Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam and have updated the Sonnet 4.6 score to 34.6% (no tools) and 46.8% (with tools). This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
+
+OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
+
+For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
+
+For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-class models.
+
+Sonnet 5 narrows the gap: its performance is close to that of Opus 4.8, but at lower prices. It’s a substantial improvement over its predecessor, Sonnet 4.6, on important aspects of agentic performance like reasoning, tool use, coding, and knowledge work:
+
+Our safety assessments found that Sonnet 5 shows an overall lower rate of undesirable behaviors than Sonnet 4.6, and is generally safer to use in agentic contexts. Evaluations also show that it has a much lower ability to perform cybersecurity tasks than our current Opus models.
+
+From today, Claude Sonnet 5 is available across all plans: it is the default model for Free and Pro plans, and is available to Max, Team, and Enterprise users. It’s also available in Claude Code and on the Claude Platform, where it launches with introductory pricing of $2 per million input tokens and $10 per million output tokens through August 31, 2026, after which it will be priced at $3 per million input tokens and $15 per million output tokens. Developers can useclaude-sonnet-5via theClaude API.
+
+Working with Claude Sonnet 5
+
+The charts below compare the performance of Sonnet 5 with Sonnet 4.6 and Opus 4.8 at differenteffortlevels on the agentic search evaluationBrowseCompand the computer use evaluationOSWorld-Verified. Sonnet 5 (orange line) is a strict improvement over Sonnet 4.6 (gray line). Opus 4.8 (yellow line) is still the model of choice for higher accuracy on these tasks, but Sonnet 5 provides developers with lower-priced options that are of much higher quality than what was previously available. Between Sonnet 5 and Opus 4.8, users can adjust the effort level to find the right balance of cost and performance.
+
+Feedback from our early access partners has been consistent: Sonnet 5 is much more agentic than its predecessors. Testers described how it finishes complex tasks where previous Sonnet models would stop short, how it checks its own output without explicitly being asked, and how it does all this agentic work at an attractive price point:
+
+Our pre-deployment safety evaluations found that Sonnet 5 was overall an improvement on Sonnet 4.6. On agentic safety, the model is better at refusing malicious requests and resisting hijack attempts in prompt injection attacks. The model shows lower rates of hallucination and sycophancy than Sonnet 4.6. On our automated behavioral audit, which tests a wide range of misaligned behaviors such as cooperation with misuse and deception, Sonnet 5 scored lower (that is, safer) overall. However, it did show somewhat higher rates of misaligned behavior on this assessment compared to the more capable Opus 4.8 and Claude Mythos Preview.
+
+We did not deliberately train Sonnet 5 on cybersecurity tasks. It can perform some routine, non-harmful cyber tasks, but on evaluations testing potentially dangerous cyber skills, such as developing software exploits, it shows substantially poorer performance than models such as Opus 4.8 and Mythos 5. Scores from one evaluation, which tested models’ ability to develop exploits for vulnerabilities in the Firefox browser, are shown in the chart below. Sonnet 5 was never able to develop a full working exploit, but it does show a slightly higher rate ofpartialsuccess than Sonnet 4.6. This latter change is likely due to improvements in general intelligence rather than specific training.
+
+Since Sonnet 5 is somewhat stronger than its predecessor on these tasks, we’ve launched it with cyber safeguards enabled by default. Thesesafeguards—which detect and block dangerous cyber usage in real time—are the same as those present in Claude Opus 4.7 and 4.8 (because we judged that the overall level of cybersecurity risk from Sonnet 5 was low, the safeguards are less strict than those launched with Fable 5, which block a much wider range of cybersecurity tasks).1
+
+Our full assessment of Sonnet 5 across many safety and capability evaluations is reported in theClaude Sonnet 5 System Card.
+
+Availability and pricing
+
+Claude Sonnet 5 is available everywhere today at an introductory price of $2 per million input tokens and $10 per million output tokens through August 31, 2026. It then moves to standard pricing at $3 per million input tokens and $15 per million output tokens.2We’ve increased rate limits across Chat, Cowork, Claude Code, and the Claude Platform3to accommodate the higher token usage of higher effort levels; users can select whichever level makes sense for their particular project.
+
+1Sonnet 5 is part of ourCyber Verification Program, which is available today on the native Claude Platform, the Claude Platform on AWS, and Claude in Microsoft Foundry (hosted on Azure and Anthropic), and coming soon on Claude in Google Vertex. Organizations that are already enrolled in the Cyber Verification Program automatically have the same access on Sonnet 5, with no need to reapply. Overall, we recommend Claude Opus 4.8 for cybersecurity work that requires reduced guardrails.
+
+2Sonnet 5 is an upgrade to Sonnet 4.6, but it uses an updated tokenizer that changes how the model processes text to improve performance (this is similar to the tokenizer change we introduced with Claude Opus 4.7). The tradeoff is that the same input can map to more tokens: roughly 1.0–1.35× depending on the content type. The introductory pricing is set so that the transition to Sonnet 5 is roughly cost-neutral.
+
+3On April 26, 2026, we raised Sonnet and Haiku rate limits at every usage tier and simplified to three tiers (Start, Build, and Scale) on the native Claude Platform. You can view your tier and current limits in theClaude Consoleor read thedocumentationto learn more.
+
+Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam and have updated the Sonnet 4.6 score to 34.6% (no tools) and 46.8% (with tools). This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
+
+OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Claude Science, an AI workbench for scientists, is now available</title>
+  <link>https://www.anthropic.com/news/claude-science-ai-workbench</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/claude-science-ai-workbench</guid>
+  <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
+
+Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Sci...</p><div style="font-size:16px;line-height:1.8;color:#333">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
+
+Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Science is an app that integrates the tools and packages that researchers most commonly use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Science
+
+Scientific research is often tedious. Researchers must work across dozens of databases, each with their own schema, contend with file formats that require bespoke data pipelines and viewers, and transition between a roster of tools: PubMed, Jupyter, R, a cluster terminal, and more.
+
+Claude Science brings these fragmented tools into a single research environment where scientists can conduct all stages of their work. It helps you analyze literature and execute multi-step research, produces detailed artifacts, and lets you iteratively refine figures and manuscripts until they’re ready for publication. Every output carries an auditable history of how it was made, so you can validate and reproduce the results. Like a Jupyter Notebook, you can access Claude Science wherever you already work—locally on macOS or Linux, or on a remote machine over SSH or with an HPC login node.
+
+Users interact with a generalist coordinating agent with access to over 60 curated skills and connectors pre-configured for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. These agents can spin up others and engage with specialist agents created by users. And a reviewer agent checks citations and calculations, flagging and correcting errors.
+
+We are releasing Claude Science today in beta for Claude Pro, Max, Team, and Enterprise users, and will continue to refine the platform as we collect feedback from users.
+
+Rich scientific artifacts, fully reproducible.Scientific research is inherently visual, so Claude Science generates figures and manuscripts alongside the code that created them. It natively renders rich scientific artifacts, including 3D protein structures, genome browser tracks, chemical structures, and more. You can chat with the agent about any detail, annotating figures and manuscripts in-line so the agent knows what to address to make them publication-ready.
+
+When it generates a figure, Claude Science includes the exact code and environment that produced it, a plain-language description of how it was created, and the full message history. This allows you to understand the inputs, making the work easier to validate and reproduce even months later. You can ask Claude Science to make edits to figures in plain language—removing gridlines, for example, or changing an axis to log scale—and the agent will edit its own code.
+
+Manages your compute and scales on demand.Large analyses—folding a protein, for example, or running a genomics pipeline over a massive dataset—often require researchers to shift their focus to setting up a computing job, waiting while it’s sent to a cluster, checking whether it succeeded or failed, and pulling the results back. Claude Science handles this process for you. It drafts a plan, asks before reaching new resources, and lets you review or revoke any decision before writing and submitting the job to the computing resources your lab already uses (your own HPC cluster over SSH, or your Modal account for compute on demand), scaling the analysis from a single GPU to hundreds as needed.
+
+Because its agents work inside a running session that holds context in memory, even massive datasets only need to be loaded once. It runs on your lab’s own infrastructure—your laptop, Linux box, or HPC login node—so large or sensitive datasets never have to leave the systems they’re already on, and only the context needed for each step of the analysis is sent to Claude. As the pipeline runs, a reviewer agent inspects the outputs, flagging incorrect citations, untraceable numbers, and figures that don’t match their underlying code, and self-correcting as it goes. You can fork the session at any point to compare two approaches without losing the original thread.
+
+Domain-ready on day one. Scientific knowledge is scattered across hundreds of specialized sources. In biology, for example, relevant data might sit across resources such as UniProt, PDB, Ensembl, Reactome, ClinVar, ChEMBL, GEO—each with its own schema and query language—as well as in journals and preprint servers, and domain-specific open models. When you ask Claude Science a question in plain language, specialist agents query and synthesize across all of these sources so you don’t have to navigate them individually. Claude Science uses the skills in NVIDIA’sBioNeMo Agent Toolkitto connect natively to the life sciences models and libraries inBioNeMo, including Evo 2, Boltz-2, and OpenFold3.
+
+Scientists already have models, datasets, and pipelines they trust. Claude Science can connect to these as well, saving any pipeline as a reusable skill or accessing your lab’s preferred tool using a connector, with future sessions inheriting them automatically. This customizability allows you to access Claude, your proprietary data, and the validated tools you already rely on in one conversation. Claude Science benefits from our partners’ specialized expertise and platforms, while more scientists reach their tools through Claude.
+
+What scientists are doing with Claude Science
+
+Over the past few months, researchers have worked with Claude Science in beta for tasks like single-cell RNA sequencing analysis, CRISPR screen design, protein structure prediction, cheminformatics, and more.
+
+Manifold Bio designs tissue-targeting medicines—which home to a specific organ or cell type, so the drug acts where it’s needed and spares the rest of the body—and tests how millions of candidate binders corresponding to hundreds of targets distribute through a living body at once. Manifold used Claude Science to nominate the targets for its latest experiments. For each tissue and target, Claude Science assessed surface expression, trafficking, and safety, ranking candidates against the criteria Manifold has learned from its own internal proprietary data. What set Claude Science apart from a general coding assistant, Manifold said, was that it could do this end-to-end, gathering the right data and applying the right judgment with the context of past programs built in.
+
+Jérôme Lecoq, a neuroscientist at the Allen Institute, used Claude Science to build a multi-agent “computational review template” comprising about 20 custom skills geared towards writing long-form reviews. The sub-agents read through thousands of papers, pulling the central claim and the key quantitative finding, and storing them in an evidence state database. Then the pipeline constructs a narrative arc, writing the review section by section and delegating each to its own specialized sub-agent. Within each section, dedicated agents generate quantitative cross-study figures directly from the evidence database. A key component of the workflow, enabled by Claude Science, is the use of actor-critic pairs: one agent creates content while a separate reviewer agent evaluates it for accuracy and citation fidelity.
+
+Before Claude Science, it could take Lecoq’s team as many as two years to write such a review. He now has about 10 reviews, many more than 100 pages, with citations that were checked over by reviewer agents. The team is now working with domain experts to further refine the AI-based critic agents.
+
+And Stephen Francis, an associate professor and epidemiologist at the UCSF Brain Tumor Center, has used Claude Science to support studies on the molecular epidemiology of glioma, a type of primary tumor that begins in the glial cells of the brain. His lab investigates the genetic basis for how thousands of small-effect germline variants combine to shape individual susceptibility. Although this work predated Claude Science, Francis said the app has dramatically accelerated the analysis, enabling comprehensive germline workups across multiple approaches in roughly one-tenth the time it previously took. His group independently validated Claude Science’s results, confirming that it can produce both rapid and robust analyses.
+
+Getting started with Claude Science
+
+TheClaude Scienceapp is available in beta on macOS and Linux for Pro, Max, Team, and Enterprise plans. We’re sharing it early so scientists can start to use it on real problems and tell us how to refine it.
+
+Team and Enterprise users will need their admin to enable Claude Science. We now have a Team plan offering discounted seats for active scientific labs at academic institutions and nonprofit research organizations;learn more here.
+
+We’ll also be supporting up to 50 Claude Science AI for Science projects, providing up to $30,000 in credits. Modal will alsobe providing up to $2,000 in computefor select projects. We are looking for projects that span domains and explore the boundaries of science, with an early focus on biology and biomedical research. Applications are open through July 15, 2026, with award notifications sent out by July 31. Projects will run from September 1 to December 1, 2026—apply here.
+
+To stay up-to-date on product announcements, provide feedback, and learn from others in the Claude Science community, join theAI for Science Discourse community.
+
+Get started with Claude Science atclaude.com/science.
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
+
+Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Sci...</p><div style="font-size:16px;line-height:1.8;color:#333">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
+
+Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Science is an app that integrates the tools and packages that researchers most commonly use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Science
+
+Scientific research is often tedious. Researchers must work across dozens of databases, each with their own schema, contend with file formats that require bespoke data pipelines and viewers, and transition between a roster of tools: PubMed, Jupyter, R, a cluster terminal, and more.
+
+Claude Science brings these fragmented tools into a single research environment where scientists can conduct all stages of their work. It helps you analyze literature and execute multi-step research, produces detailed artifacts, and lets you iteratively refine figures and manuscripts until they’re ready for publication. Every output carries an auditable history of how it was made, so you can validate and reproduce the results. Like a Jupyter Notebook, you can access Claude Science wherever you already work—locally on macOS or Linux, or on a remote machine over SSH or with an HPC login node.
+
+Users interact with a generalist coordinating agent with access to over 60 curated skills and connectors pre-configured for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. These agents can spin up others and engage with specialist agents created by users. And a reviewer agent checks citations and calculations, flagging and correcting errors.
+
+We are releasing Claude Science today in beta for Claude Pro, Max, Team, and Enterprise users, and will continue to refine the platform as we collect feedback from users.
+
+Rich scientific artifacts, fully reproducible.Scientific research is inherently visual, so Claude Science generates figures and manuscripts alongside the code that created them. It natively renders rich scientific artifacts, including 3D protein structures, genome browser tracks, chemical structures, and more. You can chat with the agent about any detail, annotating figures and manuscripts in-line so the agent knows what to address to make them publication-ready.
+
+When it generates a figure, Claude Science includes the exact code and environment that produced it, a plain-language description of how it was created, and the full message history. This allows you to understand the inputs, making the work easier to validate and reproduce even months later. You can ask Claude Science to make edits to figures in plain language—removing gridlines, for example, or changing an axis to log scale—and the agent will edit its own code.
+
+Manages your compute and scales on demand.Large analyses—folding a protein, for example, or running a genomics pipeline over a massive dataset—often require researchers to shift their focus to setting up a computing job, waiting while it’s sent to a cluster, checking whether it succeeded or failed, and pulling the results back. Claude Science handles this process for you. It drafts a plan, asks before reaching new resources, and lets you review or revoke any decision before writing and submitting the job to the computing resources your lab already uses (your own HPC cluster over SSH, or your Modal account for compute on demand), scaling the analysis from a single GPU to hundreds as needed.
+
+Because its agents work inside a running session that holds context in memory, even massive datasets only need to be loaded once. It runs on your lab’s own infrastructure—your laptop, Linux box, or HPC login node—so large or sensitive datasets never have to leave the systems they’re already on, and only the context needed for each step of the analysis is sent to Claude. As the pipeline runs, a reviewer agent inspects the outputs, flagging incorrect citations, untraceable numbers, and figures that don’t match their underlying code, and self-correcting as it goes. You can fork the session at any point to compare two approaches without losing the original thread.
+
+Domain-ready on day one. Scientific knowledge is scattered across hundreds of specialized sources. In biology, for example, relevant data might sit across resources such as UniProt, PDB, Ensembl, Reactome, ClinVar, ChEMBL, GEO—each with its own schema and query language—as well as in journals and preprint servers, and domain-specific open models. When you ask Claude Science a question in plain language, specialist agents query and synthesize across all of these sources so you don’t have to navigate them individually. Claude Science uses the skills in NVIDIA’sBioNeMo Agent Toolkitto connect natively to the life sciences models and libraries inBioNeMo, including Evo 2, Boltz-2, and OpenFold3.
+
+Scientists already have models, datasets, and pipelines they trust. Claude Science can connect to these as well, saving any pipeline as a reusable skill or accessing your lab’s preferred tool using a connector, with future sessions inheriting them automatically. This customizability allows you to access Claude, your proprietary data, and the validated tools you already rely on in one conversation. Claude Science benefits from our partners’ specialized expertise and platforms, while more scientists reach their tools through Claude.
+
+What scientists are doing with Claude Science
+
+Over the past few months, researchers have worked with Claude Science in beta for tasks like single-cell RNA sequencing analysis, CRISPR screen design, protein structure prediction, cheminformatics, and more.
+
+Manifold Bio designs tissue-targeting medicines—which home to a specific organ or cell type, so the drug acts where it’s needed and spares the rest of the body—and tests how millions of candidate binders corresponding to hundreds of targets distribute through a living body at once. Manifold used Claude Science to nominate the targets for its latest experiments. For each tissue and target, Claude Science assessed surface expression, trafficking, and safety, ranking candidates against the criteria Manifold has learned from its own internal proprietary data. What set Claude Science apart from a general coding assistant, Manifold said, was that it could do this end-to-end, gathering the right data and applying the right judgment with the context of past programs built in.
+
+Jérôme Lecoq, a neuroscientist at the Allen Institute, used Claude Science to build a multi-agent “computational review template” comprising about 20 custom skills geared towards writing long-form reviews. The sub-agents read through thousands of papers, pulling the central claim and the key quantitative finding, and storing them in an evidence state database. Then the pipeline constructs a narrative arc, writing the review section by section and delegating each to its own specialized sub-agent. Within each section, dedicated agents generate quantitative cross-study figures directly from the evidence database. A key component of the workflow, enabled by Claude Science, is the use of actor-critic pairs: one agent creates content while a separate reviewer agent evaluates it for accuracy and citation fidelity.
+
+Before Claude Science, it could take Lecoq’s team as many as two years to write such a review. He now has about 10 reviews, many more than 100 pages, with citations that were checked over by reviewer agents. The team is now working with domain experts to further refine the AI-based critic agents.
+
+And Stephen Francis, an associate professor and epidemiologist at the UCSF Brain Tumor Center, has used Claude Science to support studies on the molecular epidemiology of glioma, a type of primary tumor that begins in the glial cells of the brain. His lab investigates the genetic basis for how thousands of small-effect germline variants combine to shape individual susceptibility. Although this work predated Claude Science, Francis said the app has dramatically accelerated the analysis, enabling comprehensive germline workups across multiple approaches in roughly one-tenth the time it previously took. His group independently validated Claude Science’s results, confirming that it can produce both rapid and robust analyses.
+
+Getting started with Claude Science
+
+TheClaude Scienceapp is available in beta on macOS and Linux for Pro, Max, Team, and Enterprise plans. We’re sharing it early so scientists can start to use it on real problems and tell us how to refine it.
+
+Team and Enterprise users will need their admin to enable Claude Science. We now have a Team plan offering discounted seats for active scientific labs at academic institutions and nonprofit research organizations;learn more here.
+
+We’ll also be supporting up to 50 Claude Science AI for Science projects, providing up to $30,000 in credits. Modal will alsobe providing up to $2,000 in computefor select projects. We are looking for projects that span domains and explore the boundaries of science, with an early focus on biology and biomedical research. Applications are open through July 15, 2026, with award notifications sent out by July 31. Projects will run from September 1 to December 1, 2026—apply here.
+
+To stay up-to-date on product announcements, provide feedback, and learn from others in the Claude Science community, join theAI for Science Discourse community.
+
+Get started with Claude Science atclaude.com/science.
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Introducing Claude Tag</title>
   <link>https://www.anthropic.com/news/introducing-claude-tag</link>
@@ -65,13 +299,15 @@ Claude Tag replaces the existingClaude in Slackapp. To migrate, administrators c
 
 Claude Tag works with Opus 4.8. You canread our docsandproduct page.
 
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+Introducing Claude Sonnet 5
 
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+Claude Science, an AI workbench for scientists, is now available
 
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Tag is a new way for teams to work with Claude.
 
 We’re starting on Slack, which Claude can join as a team member. Grant Claude access to selected channels, and connect it to whichever tools, data—and even codebases—you choose. Then, anyone in the channel can tag@Claudein, and delegate tasks to it while they focus on other work. Claude builds context by remembering relevant information from the channels it’s in, and can plan out tasks to complete in the future.
@@ -118,13 +354,15 @@ Claude Tag replaces the existingClaude in Slackapp. To migrate, administrators c
 
 Claude Tag works with Opus 4.8. You canread our docsandproduct page.
 
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+Introducing Claude Sonnet 5
 
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
+Claude Science, an AI workbench for scientists, is now available
 
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</title>
@@ -172,15 +410,17 @@ Our Seoul office—led byKiYoung Choi, who brings three decades of experience le
 
 Updated June 18 to add details on MOU with the Korean government.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
-
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’ve just opened ourSeoul office. Alongside it, we’re announcing new partnerships across the Korean AI ecosystem, with the enterprises, startups, and researchers behind some of the most ambitious uses of Claude. We’ve also signed a Memorandum of Understanding (MOU) with Korea’s Ministry of Science and ICT to advance AI safety.
 
 “What I see in Korea are teams who understand that innovation and safety are two sides of the same coin,” said KiYoung Choi, Representative Director of Korea at Anthropi...</p><div style="font-size:16px;line-height:1.8;color:#333">We’ve just opened ourSeoul office. Alongside it, we’re announcing new partnerships across the Korean AI ecosystem, with the enterprises, startups, and researchers behind some of the most ambitious uses of Claude. We’ve also signed a Memorandum of Understanding (MOU) with Korea’s Ministry of Science and ICT to advance AI safety.
@@ -221,15 +461,17 @@ Our Seoul office—led byKiYoung Choi, who brings three decades of experience le
 
 Updated June 18 to add details on MOU with the Korean government.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
-
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Statement on the US government directive to suspend access to Fable 5 and Mythos 5</title>
@@ -269,13 +511,17 @@ As we havestatedpublicly, we believe the government should have the ability to b
 
 We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
 
 We received the directive from the government today at 5:...</p><div style="font-size:16px;line-height:1.8;color:#333">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
@@ -308,13 +554,17 @@ As we havestatedpublicly, we believe the government should have the ability to b
 
 We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Results from the first Anthropic Public Record</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Results from the first Anthropic Public Record</title>
@@ -436,15 +686,17 @@ Reporting conventions:All percentages in this report are weighted. Unless noted 
 
 Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
 
 Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
@@ -559,15 +811,17 @@ Reporting conventions:All percentages in this report are weighted. Unless noted 
 
 Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>TCS and Anthropic partner to bring Claude to regulated industries</title>
@@ -603,15 +857,17 @@ TCS iON, which conducts more than 75 million assessments each year across 1,500 
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
 
 Regulated industries need their work t...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
@@ -640,15 +896,114 @@ TCS iON, which conducts more than 75 million assessments each year across 1,500 
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on</title>
+  <link>https://www.anthropic.com/news/dxc-anthropic-alliance</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/dxc-anthropic-alliance</guid>
+  <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
 
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
 
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
+These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
 
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
+
+Bringing Claude to DXC's own operations
+
+DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
+
+Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
+
+“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
+
+Building a team of Claude-certified engineers
+
+For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
+
+The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
+
+Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
+
+Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
+
+Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
+
+Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
+
+“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
+
+To learn more about the Claude Partner Network, visitanthropic.com/partners.
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
+
+These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
+
+These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
+
+DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
+
+Bringing Claude to DXC's own operations
+
+DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
+
+Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
+
+“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
+
+Building a team of Claude-certified engineers
+
+For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
+
+The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
+
+Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
+
+Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
+
+Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
+
+Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
+
+“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
+
+To learn more about the Claude Partner Network, visitanthropic.com/partners.
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
+Introducing Claude Tag
+
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Corps</title>
@@ -706,15 +1061,17 @@ Host organization applicationsare also open today for all cohort start dates. Fo
 
 Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve outlined above. We'll be rigorously measuring the extent to which host organizations have advanced their missions, as well as how fellows develop their skills and career prospects, to understand how Claude Corps should evolve. We plan to open-source some of the core technology and infrastructure that enables this program to work, so that others can build out similar initiatives towards what could be a large-scale nationwide effort. And, we’d like to build a model that can be replicated in other countries outside the US.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re launchingClaude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
 
 We’ll teach 1,000 fellows how to use Claude well, match them with nonprofits across America, and pay them to spend a year—full-time, in-person—helping host organizations to advance their missions. Our goals are twofold: that host organizations are equipped with valuable tools and systems, and fellows build AI skills tha...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re launchingClaude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
@@ -765,108 +1122,17 @@ Host organization applicationsare also open today for all cohort start dates. Fo
 
 Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve outlined above. We'll be rigorously measuring the extent to which host organizations have advanced their missions, as well as how fellows develop their skills and career prospects, to understand how Claude Corps should evolve. We plan to open-source some of the core technology and infrastructure that enables this program to work, so that others can build out similar initiatives towards what could be a large-scale nationwide effort. And, we’d like to build a model that can be replicated in other countries outside the US.
 
-Introducing Claude Tag
+Introducing Claude Sonnet 5
 
-Claude Tag is a new way for teams to work with Claude.
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+Claude Science, an AI workbench for scientists, is now available
 
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on</title>
-  <link>https://www.anthropic.com/news/dxc-anthropic-alliance</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/dxc-anthropic-alliance</guid>
-  <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
-
-DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
-
-Bringing Claude to DXC's own operations
-
-DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
-
-Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
-
-“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
-
-Building a team of Claude-certified engineers
-
-For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
-
-The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
-
-Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
-
-Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
-
-Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
-
-Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
-
-“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
-
-To learn more about the Claude Partner Network, visitanthropic.com/partners.
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
 
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
-
-DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
-
-Bringing Claude to DXC's own operations
-
-DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
-
-Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
-
-“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
-
-Building a team of Claude-certified engineers
-
-For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
-
-The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
-
-Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
-
-Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
-
-Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
-
-Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
-
-“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
-
-To learn more about the Claude Partner Network, visitanthropic.com/partners.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-corps" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Claude Fable 5 and Claude Mythos 5</title>
@@ -994,15 +1260,17 @@ Metrics: Firefox = fraction of trials achieving arbitrary code execution (the ex
 
 A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Mythos 5 and Fable 5 access unavailableJun 12, 2026We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.Read more
 
 Claude Mythos 5 and Fable 5 access unavailable
@@ -1123,394 +1391,17 @@ Metrics: Firefox = fraction of trials achieving arbitrary code execution (the ex
 
 A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.
 
-Introducing Claude Tag
+Introducing Claude Sonnet 5
 
-Claude Tag is a new way for teams to work with Claude.
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
+Claude Science, an AI workbench for scientists, is now available
 
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Introducing the Services Track and Partner Hub of the Claude Partner Network</title>
-  <link>https://www.anthropic.com/news/services-track-partner-hub</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/services-track-partner-hub</guid>
-  <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people&apos;s work evolves. That&apos;s why the companies getting AI integration right are doing it with partners who have done it before.
-
-In March, we launched the Claude Partner Network—a program, backed by a$100 million investmentin partner...</p><div style="font-size:16px;line-height:1.8;color:#333">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people's work evolves. That's why the companies getting AI integration right are doing it with partners who have done it before.
-
-In March, we launched the Claude Partner Network—a program, backed by a$100 million investmentin partner training, technical support, and shared marketing, for the firms that help enterprises put Claude into production. Since then, more than 40,000 firms have applied to join and more than 10,000 consultants have earned a Claude certification—a credential, held by an individual, that signals they've been trained to build and deploy Claude in production.
-
-The largest professional-services firms in the world are building their own practices around Claude — putting it into production for clients while getting it into the hands of their own people.Accentureis training 30,000 professionals on the model.Cognizanthas rolled Claude out to roughly 350,000 associates.Deloitteis making it available to 470,000 people across its global network.KPMGis integrating Claude across a workforce of more than 276,000.Infosysis building Claude-powered agents for specific industries, andPwCis rolling out Claude Code and Cowork starting with its US teams and expanding towards a global workforce in the hundreds of thousands.
-
-Today we’re announcing two things that make this ecosystem easier for customers to navigate. TheServices Trackis a tiered structure that reflects what a firm has actually built and delivered with Claude. TheClaude Partner Hubis a portal where partners see exactly where they stand against the program's requirements, and customers find the firms most qualified for the scope of their project.
-
-The best partners have firsthand experience with Claude. They use the newest models for their own work before they put it in front of a client. This way, when they tell a customer what it takes, they’re speaking from experience. The Services Track is built to give customers confidence in a firm’s ability to help them bring Claude into their businesses.
-
-About the Services Track
-
-The Services Track has three tiers, each reflecting how deep a firm's Claude practice runs.
-
-Select:where partnership begins. At least 10 active certified individuals, at least 2 joint customers deployed in production in the trailing 12 months, and at least 1 public customer story.
-
-Preferred:for firms with deeper Claude practices. At least 100 active certified individuals, at least 15 deployed joint customers, and at least 3 public stories.
-
-Global Premier:the top tier for firms running the deepest Claude practices. At least 1,000 active certified individuals, at least 100 deployed joint customers across three or more regions, at least 15 public customer stories, and a joint business plan with named executive sponsors.
-
-Every firm is measured against the same requirements, whether it's a ten-person AI-native shop or a global consultancy. Size doesn't lower the bar or raise the tier; a smaller firm climbs by growing its certified bench. And because the ladder counts adoption and enablement work, firms that specialize in getting customers live on Claude can qualify early.
-
-Certified practitioners: How many of the firm’s people hold a current Anthropic certification and have used Claude in the past 90 days. Certifications belong to individual people, not firms, and are earned throughAnthropic Partner Academyexams.
-
-Customers running Claude in production: How many customers the firm has taken live with Claude.
-
-Public endorsements of the firm’s work: How many customers will vouch for the firm’s work in a published customer story.
-
-Every firm's dashboard shows the same numbers we see, and we verify standing every quarter. Detailed requirements for each tier are published atclaude.com/partners.
-
-About the Claude Partner Hub
-
-The Claude Partner Hub allows each partner to see its own standing against the published requirements, refreshed daily. It’s also where customers looking for Claude expertise find the firms most qualified to help. Every partner’s standing—their tier, certified team, customer deployments, and public references—is visible in the Hub’s public directory, so anyone evaluating partners can see what a firm has built and delivered.
-
-Partners can connect the Partner Hub to Claude through a newMCP connector, and from there information about the partnership becomes a conversation. For example, ask Claude where your firm stands against the next tier, the status of a registered deal, or how many of your consultants hold an active certification, and act on the answer within Claude.
-
-What this means for partners
-
-For firms building a Claude practice, this program is meant to reward real work and to be predictable enough to plan around. Four things hold true for every partner:
-
-You always know where you stand.A firm can see its standing against the published requirements and exactly what the next tier requires. This information is refreshed daily in the Claude Partner Hub.
-
-Building a practice and bringing us business are two different things, and we credit them separately.Tier standing measures the practice a firm has built: certified practitioners, production deployments, and customers willing to vouch for them. Sending new business to Anthropic is rewarded on its own track, through referral credit and deal protection. A firm is never forced to choose between the two.
-
-The ladder moves on a schedule you can see in advance.Promotions are processed twice a year, on January 1 and July 1, with an additional review on October 1, 2026, in this first year. A firm moves down only at the annual review on December 31, only if it no longer meets its tier’s published requirements, and only after 90 days’ notice and a chance to close the gap. The narrow exceptions are spelled out in the Program Guide.
-
-The $100 million we committed in March fundspartner training, dedicated technical support, and shared marketing. Firms that join now also get priority access to new certifications as we introduce them.
-
-Specializations for specific industries and use cases are coming, along with rewards that grow as a partner’s deployments grow. Getting started is free. Firms gain Anthropic Partner Academy access, including certification exams, with tiered partners receiving discounted rates on their first attempt, and new applicants start at Registered, the program’s entry level, with a minimum commitment to 10 certified practitioners. Partnership begins at Select. The requirements are the same for every firm. Learn more atclaude.com/partners.
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
 
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people&apos;s work evolves. That&apos;s why the companies getting AI integration right are doing it with partners who have done it before.
-
-In March, we launched the Claude Partner Network—a program, backed by a$100 million investmentin partner...</p><div style="font-size:16px;line-height:1.8;color:#333">Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluation, and the way people's work evolves. That's why the companies getting AI integration right are doing it with partners who have done it before.
-
-In March, we launched the Claude Partner Network—a program, backed by a$100 million investmentin partner training, technical support, and shared marketing, for the firms that help enterprises put Claude into production. Since then, more than 40,000 firms have applied to join and more than 10,000 consultants have earned a Claude certification—a credential, held by an individual, that signals they've been trained to build and deploy Claude in production.
-
-The largest professional-services firms in the world are building their own practices around Claude — putting it into production for clients while getting it into the hands of their own people.Accentureis training 30,000 professionals on the model.Cognizanthas rolled Claude out to roughly 350,000 associates.Deloitteis making it available to 470,000 people across its global network.KPMGis integrating Claude across a workforce of more than 276,000.Infosysis building Claude-powered agents for specific industries, andPwCis rolling out Claude Code and Cowork starting with its US teams and expanding towards a global workforce in the hundreds of thousands.
-
-Today we’re announcing two things that make this ecosystem easier for customers to navigate. TheServices Trackis a tiered structure that reflects what a firm has actually built and delivered with Claude. TheClaude Partner Hubis a portal where partners see exactly where they stand against the program's requirements, and customers find the firms most qualified for the scope of their project.
-
-The best partners have firsthand experience with Claude. They use the newest models for their own work before they put it in front of a client. This way, when they tell a customer what it takes, they’re speaking from experience. The Services Track is built to give customers confidence in a firm’s ability to help them bring Claude into their businesses.
-
-About the Services Track
-
-The Services Track has three tiers, each reflecting how deep a firm's Claude practice runs.
-
-Select:where partnership begins. At least 10 active certified individuals, at least 2 joint customers deployed in production in the trailing 12 months, and at least 1 public customer story.
-
-Preferred:for firms with deeper Claude practices. At least 100 active certified individuals, at least 15 deployed joint customers, and at least 3 public stories.
-
-Global Premier:the top tier for firms running the deepest Claude practices. At least 1,000 active certified individuals, at least 100 deployed joint customers across three or more regions, at least 15 public customer stories, and a joint business plan with named executive sponsors.
-
-Every firm is measured against the same requirements, whether it's a ten-person AI-native shop or a global consultancy. Size doesn't lower the bar or raise the tier; a smaller firm climbs by growing its certified bench. And because the ladder counts adoption and enablement work, firms that specialize in getting customers live on Claude can qualify early.
-
-Certified practitioners: How many of the firm’s people hold a current Anthropic certification and have used Claude in the past 90 days. Certifications belong to individual people, not firms, and are earned throughAnthropic Partner Academyexams.
-
-Customers running Claude in production: How many customers the firm has taken live with Claude.
-
-Public endorsements of the firm’s work: How many customers will vouch for the firm’s work in a published customer story.
-
-Every firm's dashboard shows the same numbers we see, and we verify standing every quarter. Detailed requirements for each tier are published atclaude.com/partners.
-
-About the Claude Partner Hub
-
-The Claude Partner Hub allows each partner to see its own standing against the published requirements, refreshed daily. It’s also where customers looking for Claude expertise find the firms most qualified to help. Every partner’s standing—their tier, certified team, customer deployments, and public references—is visible in the Hub’s public directory, so anyone evaluating partners can see what a firm has built and delivered.
-
-Partners can connect the Partner Hub to Claude through a newMCP connector, and from there information about the partnership becomes a conversation. For example, ask Claude where your firm stands against the next tier, the status of a registered deal, or how many of your consultants hold an active certification, and act on the answer within Claude.
-
-What this means for partners
-
-For firms building a Claude practice, this program is meant to reward real work and to be predictable enough to plan around. Four things hold true for every partner:
-
-You always know where you stand.A firm can see its standing against the published requirements and exactly what the next tier requires. This information is refreshed daily in the Claude Partner Hub.
-
-Building a practice and bringing us business are two different things, and we credit them separately.Tier standing measures the practice a firm has built: certified practitioners, production deployments, and customers willing to vouch for them. Sending new business to Anthropic is rewarded on its own track, through referral credit and deal protection. A firm is never forced to choose between the two.
-
-The ladder moves on a schedule you can see in advance.Promotions are processed twice a year, on January 1 and July 1, with an additional review on October 1, 2026, in this first year. A firm moves down only at the annual review on December 31, only if it no longer meets its tier’s published requirements, and only after 90 days’ notice and a chance to close the gap. The narrow exceptions are spelled out in the Program Guide.
-
-The $100 million we committed in March fundspartner training, dedicated technical support, and shared marketing. Firms that join now also get priority access to new certifications as we introduce them.
-
-Specializations for specific industries and use cases are coming, along with rewards that grow as a partner’s deployments grow. Getting started is free. Firms gain Anthropic Partner Academy access, including certification exams, with tiered partners receiving discounted rates on their first attempt, and new applicants start at Registered, the program’s entry level, with a minimum commitment to 10 certified practitioners. Partnership begins at Select. The requirements are the same for every firm. Learn more atclaude.com/partners.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/services-track-partner-hub" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>What we learned mapping a year’s worth of AI-enabled cyber threats</title>
-  <link>https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack</guid>
-  <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Policy</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
-
-In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&amp;CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR...</p><div style="font-size:16px;line-height:1.8;color:#333">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
-
-In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR), and are sharing a more detailed analysis here. These 832 cases are just a subset of the total number of accounts banned during this period, but they represent those where we had enough detail to conduct a thorough assessment of the attackers’ techniques.
-
-There were three main conclusions from our analysis:
-
-Malicious actors are using AI in ways that make them more dangerous. More specifically, threat actors are using AI in the later, more complex stages of their cyber operations.
-
-Cyberattacks are becoming more autonomous, and the fact that AI can be used to chain together many parts of the attack means that the old ways of differentiating high- from low-risk actors are no longer as effective.
-
-The MITRE ATT&CK framework does not fully capture the tools and activities that make AI-enabled attackers so dangerous.
-
-Below we provide a summary of each of these conclusions. You can read a longer analysis on ourFrontier Red Team blog.
-
-How AI makes attackers more dangerous
-
-The most common AI-enabled activities in our database related to preparing for a cyberattack, such as writing malware (560 of the 832 accounts we studied, or 67.3%, used AI for this purpose). A smaller number of actors use AI for more complex activities—for example, 54 of the 832 actors (6.5%) used AI to assist with “lateral movement,” which involves navigating deep inside a compromised network.
-
-We found evidence consistent with AI being used to help increase the threat level of attackers. In the first six-month period of our analysis, 33% of actors were classified by our risk-scoring system as medium risk or higher. But by the second six-month period, that share had jumped to 56%—a roughly 1.7-fold increase.
-
-Across the period we studied, attackers’ use of AI shifted from techniques to gain initial access to a system towards activity carried out once they wereinsidethe system. For example, the use of AI for account discovery—identifying valid accounts inside a compromised environment—rose 8.9%, while AI-assisted phishing—a common technique to gain access to a system—fell 8.6%. This suggests that attackers are increasingly applying AI deeper in the attack life cycle.
-
-These sorts of “post-compromise” techniques used to be restricted to actors with the technical knowledge to carry them out. Our investigation shows that AI can now be made to perform these activities on behalf of less sophisticated actors.
-
-Why it’s harder to assess an actor’s threat level
-
-How do security teams assess the risk level of a cyberattacker? Traditionally, they’ve used information like how many different techniques they employ and what tools or interfaces they use. But our analysis suggests that these signals no longer paint an accurate picture of the risk level of a given threat actor.
-
-Now that AI can perform highly technical tasks on an actor’s behalf, there’s little correlation between the skill of a threat actor and how many techniques they use: the least-skilled actors in our dataset used about 16 distinct techniques on average, whereas the most skilled used about 20. Likewise, the specific platform used—Claude Code, an API, or a chat interface—also did not correlate with an actor’s risk level.
-
-Whatoften helpsdistinguish higher-risk actors is where in the attack life cycle they apply AI. For example, they concentrate their use of AI on more operationally demanding techniques—those that require significant time, oversight, or real-time decision making to carry out—like account discovery, lateral movement, and privilege escalation, rather than just on tasks that allow them to gain initial access to the system.
-
-But even that signal is already eroding: as discussed in the previous section, those operational techniques are exactly where the broader population is heading as more actors get classified as higher risk. The more durable differentiator is the type of scaffolding attackers build around the model: higher-risk actors design architectures that allow models to chain together discrete stages of a cyberattack and carry them out with minimal human input.
-
-Why security frameworks need to change
-
-Many of the behaviors that distinguish the highest-risk actors—such as the use of AI to orchestrate steps in the attack chain sequentially, make real-time decisions about what to do next, and execute without human intervention—are not yet included as attacker techniques in the MITRE ATT&CK framework.
-
-Consider the state-sponsored cyber espionage operation wedisrupted in November 2025. In that case, a malicious actor manipulated Claude Code into attempting to infiltrate targets around the world, with little human intervention. Mapping it against the MITRE ATT&CK framework shows that the actor used 30 techniques across 13 tactics, which was comparable to many medium-risk actors in our dataset. Clearly, focusing on the number of techniques this actor used underplays how dangerous they really were (by contrast, applying our risk-scoring methodology to this attack earns it the maximum risk score of 100).
-
-In that attack, the model worked as an autonomous agent: it executed commands, exploited vulnerabilities, stole credentials, and made tactical decisions, only requiring human input at a few key moments. There is no ATT&CK ID for this type of agentic orchestration—yet these are precisely the behaviors we expect to see much more of as AI agents become more capable.
-
-The findings from this analysis helped inform the safeguards we build into our models. For example, we’ve developed and deployed cyber safeguards on our most capable models to detect and block some of the activities uncovered here, like developing malware or mass data exfiltration. Following on from our work with Verizon, we’re also in discussions with MITRE about how the ATT&CK framework might evolve to include the AI-enabled behaviors we observed.
-
-Frontier models are rapidly changing the tools both attackers and defenders have at their disposal. We are committed to helping defenders get ahead of these evolving tactics, and to putting the most powerful tools in the hands of defenders first. We’ll continue to share what we learn fromProject Glasswing, from datasets like the one we gathered here, and from our other cybersecurity activities.
-
-In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
-
-In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&amp;CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR...</p><div style="font-size:16px;line-height:1.8;color:#333">As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?
-
-In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious cyber activity between March 2025 and March 2026 and map them ontoMITRE ATT&CK, a longstanding database of the tactics and techniques used by cyberattackers. We published some of these results in Verizon’s2026 Data Breach Investigations Report(DBIR), and are sharing a more detailed analysis here. These 832 cases are just a subset of the total number of accounts banned during this period, but they represent those where we had enough detail to conduct a thorough assessment of the attackers’ techniques.
-
-There were three main conclusions from our analysis:
-
-Malicious actors are using AI in ways that make them more dangerous. More specifically, threat actors are using AI in the later, more complex stages of their cyber operations.
-
-Cyberattacks are becoming more autonomous, and the fact that AI can be used to chain together many parts of the attack means that the old ways of differentiating high- from low-risk actors are no longer as effective.
-
-The MITRE ATT&CK framework does not fully capture the tools and activities that make AI-enabled attackers so dangerous.
-
-Below we provide a summary of each of these conclusions. You can read a longer analysis on ourFrontier Red Team blog.
-
-How AI makes attackers more dangerous
-
-The most common AI-enabled activities in our database related to preparing for a cyberattack, such as writing malware (560 of the 832 accounts we studied, or 67.3%, used AI for this purpose). A smaller number of actors use AI for more complex activities—for example, 54 of the 832 actors (6.5%) used AI to assist with “lateral movement,” which involves navigating deep inside a compromised network.
-
-We found evidence consistent with AI being used to help increase the threat level of attackers. In the first six-month period of our analysis, 33% of actors were classified by our risk-scoring system as medium risk or higher. But by the second six-month period, that share had jumped to 56%—a roughly 1.7-fold increase.
-
-Across the period we studied, attackers’ use of AI shifted from techniques to gain initial access to a system towards activity carried out once they wereinsidethe system. For example, the use of AI for account discovery—identifying valid accounts inside a compromised environment—rose 8.9%, while AI-assisted phishing—a common technique to gain access to a system—fell 8.6%. This suggests that attackers are increasingly applying AI deeper in the attack life cycle.
-
-These sorts of “post-compromise” techniques used to be restricted to actors with the technical knowledge to carry them out. Our investigation shows that AI can now be made to perform these activities on behalf of less sophisticated actors.
-
-Why it’s harder to assess an actor’s threat level
-
-How do security teams assess the risk level of a cyberattacker? Traditionally, they’ve used information like how many different techniques they employ and what tools or interfaces they use. But our analysis suggests that these signals no longer paint an accurate picture of the risk level of a given threat actor.
-
-Now that AI can perform highly technical tasks on an actor’s behalf, there’s little correlation between the skill of a threat actor and how many techniques they use: the least-skilled actors in our dataset used about 16 distinct techniques on average, whereas the most skilled used about 20. Likewise, the specific platform used—Claude Code, an API, or a chat interface—also did not correlate with an actor’s risk level.
-
-Whatoften helpsdistinguish higher-risk actors is where in the attack life cycle they apply AI. For example, they concentrate their use of AI on more operationally demanding techniques—those that require significant time, oversight, or real-time decision making to carry out—like account discovery, lateral movement, and privilege escalation, rather than just on tasks that allow them to gain initial access to the system.
-
-But even that signal is already eroding: as discussed in the previous section, those operational techniques are exactly where the broader population is heading as more actors get classified as higher risk. The more durable differentiator is the type of scaffolding attackers build around the model: higher-risk actors design architectures that allow models to chain together discrete stages of a cyberattack and carry them out with minimal human input.
-
-Why security frameworks need to change
-
-Many of the behaviors that distinguish the highest-risk actors—such as the use of AI to orchestrate steps in the attack chain sequentially, make real-time decisions about what to do next, and execute without human intervention—are not yet included as attacker techniques in the MITRE ATT&CK framework.
-
-Consider the state-sponsored cyber espionage operation wedisrupted in November 2025. In that case, a malicious actor manipulated Claude Code into attempting to infiltrate targets around the world, with little human intervention. Mapping it against the MITRE ATT&CK framework shows that the actor used 30 techniques across 13 tactics, which was comparable to many medium-risk actors in our dataset. Clearly, focusing on the number of techniques this actor used underplays how dangerous they really were (by contrast, applying our risk-scoring methodology to this attack earns it the maximum risk score of 100).
-
-In that attack, the model worked as an autonomous agent: it executed commands, exploited vulnerabilities, stole credentials, and made tactical decisions, only requiring human input at a few key moments. There is no ATT&CK ID for this type of agentic orchestration—yet these are precisely the behaviors we expect to see much more of as AI agents become more capable.
-
-The findings from this analysis helped inform the safeguards we build into our models. For example, we’ve developed and deployed cyber safeguards on our most capable models to detect and block some of the activities uncovered here, like developing malware or mass data exfiltration. Following on from our work with Verizon, we’re also in discussions with MITRE about how the ATT&CK framework might evolve to include the AI-enabled behaviors we observed.
-
-Frontier models are rapidly changing the tools both attackers and defenders have at their disposal. We are committed to helping defenders get ahead of these evolving tactics, and to putting the most powerful tools in the hands of defenders first. We’ll continue to share what we learn fromProject Glasswing, from datasets like the one we gathered here, and from our other cybersecurity activities.
-
-In ourRed blog post, we share an interactive visualization of the techniques used by attackers, in order to help defenders stay ahead of AI-enabled threats.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Expanding Project Glasswing</title>
-  <link>https://www.anthropic.com/news/expanding-project-glasswing</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/expanding-project-glasswing</guid>
-  <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
-
-We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
-
-We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Project Glasswing partners, the security industry, open-source software maintainers, and the US government, we’re extending the partnership to approximately 150 new organizations. Each one will need to meet our security requirements before they gain access.
-
-The organizations in this new group are based in more than 15 countries, and most provide critical infrastructure to many more. (In the future, we intend to expand our geographical reach much further.) The group covers several industries that weren’t well represented in our initial cohort, such as power, water, healthcare, communications, and hardware. And many of the new partners are vendors—companies or nonprofits that maintain codebases that are relied upon by lots of other organizations around the world, including governments.
-
-What each partner has in common is that a successful attack on their codebase could be catastrophic. For most partners, we estimate that a major attack could affect more than 100 million people, with important ramifications for both global and national security.
-
-This expansion is the next step toward our long-term goals: for AI to makeallsoftware more secure, and for us to help the industry adjust to how AI could change many of the core assumptions of cybersecurity.
-
-The role of Project Glasswing
-
-Project Glasswing and the capabilities of Claude Mythos Preview have sparked broad conversations—both within the software industry and with governments—about how AI is changing cybersecurity. These conversations have informed how we’ve expanded the program. They’ve also shaped our thinking about the very purpose of Project Glasswing.
-
-Cheap, fast AI models with powerful cyber capabilities are around the corner. We want Project Glasswing to spur institutions toward operating norms that reflect this reality.
-
-Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefendersadapt to maintain pace.
-
-We see our role as twofold. First, to help the software industry adapt by safely providing wide access to better models, tools, and common infrastructure. Second, to steadily shift the support we provide, from finding vulnerabilities to disclosing, fixing, and deploying patched software. We’ll now discuss each of these in turn.
-
-Supporting cyberdefenders
-
-So far, companies, nonprofits, maintainers, and researchers have acted quickly. Within the first weeks of Project Glasswing, each member began using Mythos Preview at large scale, sharing information and best practices with other partners, and working with third parties to triage the model’s findings. These organizations’ methods for adapting to new tools can, and should, be replicated widely across the millions of organizations and developers who are vulnerable to cyberattacks.
-
-To support this, we recently releasedClaude Security, a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—the toolswe developed to help Project Glasswing’s partners find vulnerabilities more quickly.
-
-We intend to go much further: our longer-term aim is to support the industry in creating new initiatives, standards, and infrastructure for the era of powerful cyber models.
-
-Accelerating patching and the rest of security
-
-As we’vepreviously discussed, the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
-
-Mythos Preview itself can help. Many of Project Glasswing’s partners now use the model to write patches, as well as for pre-release checks that prevent vulnerabilities from appearing in the first place. Models like Mythos Preview can also be used for penetration testing (simulating a cyberattack to identify how vulnerabilities might be exploited), automating threat detection and response, and rebuilding legacy codebases in memory-safe languages, among many other defensive tasks.
-
-We’re in discussions with third parties about how we might substantially scale up the reviewing and patching of vulnerabilities in open-source software. We’re also working on sharing ideas and best practices for disclosing vulnerabilities to open-source maintainers, with the intent of making these reports easier to triage and to act upon.
-
-To address the scale of this coming challenge, hundreds of thousands of organizations, researchers, and maintainers will likely need access to the most advanced cyber capabilities and tools available.
-
-We’re working as quickly as we can to safely release Mythos-level capabilities in general access. To do so, we’ll need highly robust safeguards that prevent the model’s cyber capabilities from being misused—safeguards that we (and, to our knowledge, all other AI developers) have yet to develop. Because cybersecurity has both helpful and destructive uses, making safeguards that are both strong and precise enough is a major challenge.
-
-In the meantime, we plan to expand Project Glasswing even further—prioritizing additional essential infrastructure providers, maintainers of critical open-source software, and safety testers. We intend for future expansions to cover organizations in the US and overseas, just as this one does. We also intend to scale up our Cyber Verification Program, which would grant Mythos-class capabilities to many more organizations for specific cyberdefense tasks.
-
-In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
-
-We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Pr...</p><div style="font-size:16px;line-height:1.8;color:#333">Project Glasswingis our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recentlydescribedhow these partners have so far found more than 10,000 high- or critical-severity security flaws.
-
-We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Project Glasswing partners, the security industry, open-source software maintainers, and the US government, we’re extending the partnership to approximately 150 new organizations. Each one will need to meet our security requirements before they gain access.
-
-The organizations in this new group are based in more than 15 countries, and most provide critical infrastructure to many more. (In the future, we intend to expand our geographical reach much further.) The group covers several industries that weren’t well represented in our initial cohort, such as power, water, healthcare, communications, and hardware. And many of the new partners are vendors—companies or nonprofits that maintain codebases that are relied upon by lots of other organizations around the world, including governments.
-
-What each partner has in common is that a successful attack on their codebase could be catastrophic. For most partners, we estimate that a major attack could affect more than 100 million people, with important ramifications for both global and national security.
-
-This expansion is the next step toward our long-term goals: for AI to makeallsoftware more secure, and for us to help the industry adjust to how AI could change many of the core assumptions of cybersecurity.
-
-The role of Project Glasswing
-
-Project Glasswing and the capabilities of Claude Mythos Preview have sparked broad conversations—both within the software industry and with governments—about how AI is changing cybersecurity. These conversations have informed how we’ve expanded the program. They’ve also shaped our thinking about the very purpose of Project Glasswing.
-
-Cheap, fast AI models with powerful cyber capabilities are around the corner. We want Project Glasswing to spur institutions toward operating norms that reflect this reality.
-
-Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefendersadapt to maintain pace.
-
-We see our role as twofold. First, to help the software industry adapt by safely providing wide access to better models, tools, and common infrastructure. Second, to steadily shift the support we provide, from finding vulnerabilities to disclosing, fixing, and deploying patched software. We’ll now discuss each of these in turn.
-
-Supporting cyberdefenders
-
-So far, companies, nonprofits, maintainers, and researchers have acted quickly. Within the first weeks of Project Glasswing, each member began using Mythos Preview at large scale, sharing information and best practices with other partners, and working with third parties to triage the model’s findings. These organizations’ methods for adapting to new tools can, and should, be replicated widely across the millions of organizations and developers who are vulnerable to cyberattacks.
-
-To support this, we recently releasedClaude Security, a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—the toolswe developed to help Project Glasswing’s partners find vulnerabilities more quickly.
-
-We intend to go much further: our longer-term aim is to support the industry in creating new initiatives, standards, and infrastructure for the era of powerful cyber models.
-
-Accelerating patching and the rest of security
-
-As we’vepreviously discussed, the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
-
-Mythos Preview itself can help. Many of Project Glasswing’s partners now use the model to write patches, as well as for pre-release checks that prevent vulnerabilities from appearing in the first place. Models like Mythos Preview can also be used for penetration testing (simulating a cyberattack to identify how vulnerabilities might be exploited), automating threat detection and response, and rebuilding legacy codebases in memory-safe languages, among many other defensive tasks.
-
-We’re in discussions with third parties about how we might substantially scale up the reviewing and patching of vulnerabilities in open-source software. We’re also working on sharing ideas and best practices for disclosing vulnerabilities to open-source maintainers, with the intent of making these reports easier to triage and to act upon.
-
-To address the scale of this coming challenge, hundreds of thousands of organizations, researchers, and maintainers will likely need access to the most advanced cyber capabilities and tools available.
-
-We’re working as quickly as we can to safely release Mythos-level capabilities in general access. To do so, we’ll need highly robust safeguards that prevent the model’s cyber capabilities from being misused—safeguards that we (and, to our knowledge, all other AI developers) have yet to develop. Because cybersecurity has both helpful and destructive uses, making safeguards that are both strong and precise enough is a major challenge.
-
-In the meantime, we plan to expand Project Glasswing even further—prioritizing additional essential infrastructure providers, maintainers of critical open-source software, and safety testers. We intend for future expansions to cover organizations in the US and overseas, just as this one does. We also intend to scale up our Cyber Verification Program, which would grant Mythos-class capabilities to many more organizations for specific cyberdefense tasks.
-
-In the future, frontier model releases will become increasingly high-stakes. Capabilities will continue to improve across all domains, including many that—like cybersecurity—can empower attackers and defenders alike. This will not be the last time we need to confront a challenge like this one. But Project Glasswing has taught us a great deal about how to respond when models cross important capability thresholds. If we’re successful, we hope to enable a permanent advantage for defenders.
-
-Introducing Claude Tag
-
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/expanding-project-glasswing" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Opus 4.8</title>
@@ -1558,15 +1449,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
 
 Opus 4.8 launches alongside several new features. Users on claude.ai now have control over the amount of effort Claude puts into a task. Claude Code has a new “dynamic workflows” feature that allows it to tackle very large-scale problems. And fast mode for Opus 4.8—where the model can work at 2.5×...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re upgrading Claude Opus to a new version: Claude Opus 4.8. It builds on Opus 4.7 with improvements across benchmarks, and is a more effective collaborator. It’s available today for the same price.
@@ -1607,15 +1500,17 @@ OSWorld-Verified: We made changes to how we run the OSWorld-Verified evaluation 
 
 Finance Agent v2:Gemini 3.5 Flash scores 57.9% on Finance Agent v2, a significant improvement over Gemini 3.1 Pro.
 
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Claude Science, an AI workbench for scientists, is now available
+
+Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.
+
 Introducing Claude Tag
 
-Claude Tag is a new way for teams to work with Claude.
-
-Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
-
-Statement on the US government directive to suspend access to Fable 5 and Mythos 5
-
-The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Claude Tag is a new way for teams to work with Claude.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-4-8" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
