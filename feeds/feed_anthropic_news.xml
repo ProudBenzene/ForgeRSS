@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 03 Jul 2026 09:23:36 +0000</lastBuildDate>
+<lastBuildDate>Fri, 03 Jul 2026 14:09:13 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -57,7 +57,7 @@ Defense evasion: AV/EDR bypass, obfuscation, packing, living-off-the-land, anti-
 
 Command-and-control and covert channels;
 
-Exfiltration of stolen data from the data owner’s devices to devices outside that owner’s control (going directly to the attacker’s devices or through well known third parties such as cloud providers or known services);
+Exfiltration of stolen data from the data owner’s devices to devices outside that owner’s control (going directly to the attacker’s devices or through well-known third parties such as cloud providers or known services);
 
 Malware development, improvement, modification, or debugging. Includes Trojans, RATs, backdoors, worms, stealers, loaders, droppers, rootkits, bootkits, ransomware, wipers, spyware, stalkerware, and hardware-level implants;
 
@@ -67,7 +67,7 @@ Malware or offensive infrastructure, including C2 servers, redirectors, staging,
 
 Internet backbone attacks such as BGP hijacking/route leaks, DNS root/TLD/resolver attacks, certificate authority compromise, and NTP manipulation.
 
-The extent to which each item in this category can be considered dual use varies. Some prohibited use items, such as defense evasion or data exfiltration, are used regularly by defenders. But because the actions in this list have such high potential for harm and are frequently seen in real world attacks, we prohibit them. We may evolve this category over time to add or remove specific items.
+The extent to which each item in this category can be considered dual use varies. Some prohibited use items, such as defense evasion or data exfiltration, are used regularly by defenders. But because the actions in this list have such high potential for harm and are frequently seen in real-world attacks, we prohibit them. We may evolve this category over time to add or remove specific items.
 
 High-risk dual use activities have a high potential for harm, but are also part of the day-to-day work of cybersecurity professionals. Many of these activities are performed during a valid security assessment, penetration test, or red team engagement: gaining access through unexpected means, escalating privileges, moving laterally, developing an exploit. They are high-risk preciselybecausethey are designed to emulate malicious activity. What separates the legitimate case from the harmful one is context: who is doing the work, and under what authorization? For Fable 5, we expect to block these types of actions until we have better controls to limit access to known good actors.
 
@@ -93,9 +93,9 @@ High-uplift vulnerability finding: vulnerabilities that are not easily found by 
 
 For Claude Fable 5, we aim to block high-upliftvulnerability finding. That is, we want to control the model’s ability to identify vulnerabilities that other widely available models cannot. As noted above, we do not seek to blockallvulnerability finding, because this is such an important function of defensive cybersecurity work.
 
-Cyber attackers do sometimes benefit from vulnerability finding: for example, it’s sometimes possible to build software exploits on the basis of public vulnerability reports or from seeing a security patch. For this reason, we block the automatic generation of exploits. Out of caution, we also aim to block our models from finding the very complex vulnerabilities that can typically only be identified by top security experts. If a jailbreak were to allow Fable to reliably identify types of vulnerabilities that no other model can identify, then this is something we do not want to fall into the hands of malicious actors. On the other hand, if many widely-available models in the industry are capable of finding that vulnerability, then it is beneficial to allow Fable to find and fix it.
+Cyber attackers do sometimes benefit from vulnerability finding: for example, it’s sometimes possible to build software exploits on the basis of public vulnerability reports or from seeing a security patch. For this reason, we block the automatic generation of exploits. Out of caution, we also aim to block our models from finding the very complex vulnerabilities that can typically only be identified by top security experts. If a jailbreak were to allow Fable to reliably identify types of vulnerabilities that no other model can identify, then this is something we do not want to fall into the hands of malicious actors. On the other hand, if many widely available models in the industry are capable of finding that vulnerability, then it is beneficial to allow Fable to find and fix it.
 
-The security community has long held that vulnerability finding and responsible public disclosure is a net positive: defenders gain more from knowing what to fix than attackers gain from the same reports. The US government has long taken the same position,notingthat “[i]n the vast majority of cases, responsibly disclosing a newly discovered vulnerability is clearly in the national interest”. The government supports manyprogramsthat make it easier for ethical actors to find, report, and fix vulnerabilities.
+The security community has long held that vulnerability finding and responsible public disclosure is a net positive: defenders gain more from knowing what to fix than attackers gain from the same reports. The US government has long taken the same position,notingthat “[i]n the vast majority of cases, responsibly disclosing a newly discovered vulnerability is clearly in the national interest.” The government supports manyprogramsthat make it easier for ethical actors to find, report, and fix vulnerabilities.
 
 Low-risk dual use activities are those where usage tends towards defense rather than offense. As with high-risk dual use, context can change what is expected to be blocked versus allowed. In general, though, we expect many prompts in this category to be allowed, though we do still block a large fraction—this is the “safety margin” that we use to minimize the number of high-risk dual use prompts that are let through. Nevertheless, we do not consider this category to be highly concerning. It includes:
 
@@ -121,7 +121,7 @@ Log analysis, SOC analysis/enrichment, threat hunting, and incident response;
 
 Malware reverse engineering;
 
-News, policy, and high level descriptions of cyber activity;
+News, policy, and high-level descriptions of cyber activity;
 
 Certifications and education;
 
@@ -171,7 +171,7 @@ Note that “capability gain” refers tooffensive/cyber-domainexpertise (does t
 
 We now describe each of the four axes, and provide a suggested scoring rubric for each.
 
-This first axis reflects how far a single successful jailbreak takes an attacker beyond the tools and information to which they already have access (which might include scanners, fuzzers, public exploit frameworks, or comparable publicly-deployed resources). Does it unblock capabilities useful to domain experts (and not only novices) in completing a dangerous cyber task? In other words, to what extent does it provideuplift?
+This first axis reflects how far a single successful jailbreak takes an attacker beyond the tools and information to which they already have access (which might include scanners, fuzzers, public exploit frameworks, or comparable publicly deployed resources). Does it unblock capabilities useful to domain experts (and not only novices) in completing a dangerous cyber task? In other words, to what extent does it provideuplift?
 
 The quality of the output is critical: if the technique produces many different outputs and only some are effective (that is, if it has a high false-positive rate and domain expertise is needed to decide which outputs to use), this lowers the capability gain, since the attacker still has to supply the expert judgment the output was supposed to replace.
 
@@ -203,7 +203,7 @@ Initial Cyber Jailbreak Severity (CJS) level
 
 The score from this calculation is provisional, and serves as the “floor” below which the severity level cannot drop. The final CJS level might be raised higher than the initial calculation suggests—for example, where it is judged that the rubric underestimates real-world risk. It cannot be lowered below the initial CJS score. Potential discretionary reasons to raise the final CJS level include, but are not limited to:
 
-Specific outputs that are severe enough to drive a response on their own: for example, a novel and difficult-to-discover critical vulnerability in widely-deployed software. This could be the case even if the technique that produced the vulnerability is narrow or unreliable;
+Specific outputs that are severe enough to drive a response on their own: for example, a novel and difficult-to-discover critical vulnerability in widely deployed software. This could be the case even if the technique that produced the vulnerability is narrow or unreliable;
 
 Jailbreaks where there is no near-term mitigation—where the jailbreak exploits a fundamental capability that will take a long time to patch;
 
@@ -268,7 +268,7 @@ Defense evasion: AV/EDR bypass, obfuscation, packing, living-off-the-land, anti-
 
 Command-and-control and covert channels;
 
-Exfiltration of stolen data from the data owner’s devices to devices outside that owner’s control (going directly to the attacker’s devices or through well known third parties such as cloud providers or known services);
+Exfiltration of stolen data from the data owner’s devices to devices outside that owner’s control (going directly to the attacker’s devices or through well-known third parties such as cloud providers or known services);
 
 Malware development, improvement, modification, or debugging. Includes Trojans, RATs, backdoors, worms, stealers, loaders, droppers, rootkits, bootkits, ransomware, wipers, spyware, stalkerware, and hardware-level implants;
 
@@ -278,7 +278,7 @@ Malware or offensive infrastructure, including C2 servers, redirectors, staging,
 
 Internet backbone attacks such as BGP hijacking/route leaks, DNS root/TLD/resolver attacks, certificate authority compromise, and NTP manipulation.
 
-The extent to which each item in this category can be considered dual use varies. Some prohibited use items, such as defense evasion or data exfiltration, are used regularly by defenders. But because the actions in this list have such high potential for harm and are frequently seen in real world attacks, we prohibit them. We may evolve this category over time to add or remove specific items.
+The extent to which each item in this category can be considered dual use varies. Some prohibited use items, such as defense evasion or data exfiltration, are used regularly by defenders. But because the actions in this list have such high potential for harm and are frequently seen in real-world attacks, we prohibit them. We may evolve this category over time to add or remove specific items.
 
 High-risk dual use activities have a high potential for harm, but are also part of the day-to-day work of cybersecurity professionals. Many of these activities are performed during a valid security assessment, penetration test, or red team engagement: gaining access through unexpected means, escalating privileges, moving laterally, developing an exploit. They are high-risk preciselybecausethey are designed to emulate malicious activity. What separates the legitimate case from the harmful one is context: who is doing the work, and under what authorization? For Fable 5, we expect to block these types of actions until we have better controls to limit access to known good actors.
 
@@ -304,9 +304,9 @@ High-uplift vulnerability finding: vulnerabilities that are not easily found by 
 
 For Claude Fable 5, we aim to block high-upliftvulnerability finding. That is, we want to control the model’s ability to identify vulnerabilities that other widely available models cannot. As noted above, we do not seek to blockallvulnerability finding, because this is such an important function of defensive cybersecurity work.
 
-Cyber attackers do sometimes benefit from vulnerability finding: for example, it’s sometimes possible to build software exploits on the basis of public vulnerability reports or from seeing a security patch. For this reason, we block the automatic generation of exploits. Out of caution, we also aim to block our models from finding the very complex vulnerabilities that can typically only be identified by top security experts. If a jailbreak were to allow Fable to reliably identify types of vulnerabilities that no other model can identify, then this is something we do not want to fall into the hands of malicious actors. On the other hand, if many widely-available models in the industry are capable of finding that vulnerability, then it is beneficial to allow Fable to find and fix it.
+Cyber attackers do sometimes benefit from vulnerability finding: for example, it’s sometimes possible to build software exploits on the basis of public vulnerability reports or from seeing a security patch. For this reason, we block the automatic generation of exploits. Out of caution, we also aim to block our models from finding the very complex vulnerabilities that can typically only be identified by top security experts. If a jailbreak were to allow Fable to reliably identify types of vulnerabilities that no other model can identify, then this is something we do not want to fall into the hands of malicious actors. On the other hand, if many widely available models in the industry are capable of finding that vulnerability, then it is beneficial to allow Fable to find and fix it.
 
-The security community has long held that vulnerability finding and responsible public disclosure is a net positive: defenders gain more from knowing what to fix than attackers gain from the same reports. The US government has long taken the same position,notingthat “[i]n the vast majority of cases, responsibly disclosing a newly discovered vulnerability is clearly in the national interest”. The government supports manyprogramsthat make it easier for ethical actors to find, report, and fix vulnerabilities.
+The security community has long held that vulnerability finding and responsible public disclosure is a net positive: defenders gain more from knowing what to fix than attackers gain from the same reports. The US government has long taken the same position,notingthat “[i]n the vast majority of cases, responsibly disclosing a newly discovered vulnerability is clearly in the national interest.” The government supports manyprogramsthat make it easier for ethical actors to find, report, and fix vulnerabilities.
 
 Low-risk dual use activities are those where usage tends towards defense rather than offense. As with high-risk dual use, context can change what is expected to be blocked versus allowed. In general, though, we expect many prompts in this category to be allowed, though we do still block a large fraction—this is the “safety margin” that we use to minimize the number of high-risk dual use prompts that are let through. Nevertheless, we do not consider this category to be highly concerning. It includes:
 
@@ -332,7 +332,7 @@ Log analysis, SOC analysis/enrichment, threat hunting, and incident response;
 
 Malware reverse engineering;
 
-News, policy, and high level descriptions of cyber activity;
+News, policy, and high-level descriptions of cyber activity;
 
 Certifications and education;
 
@@ -382,7 +382,7 @@ Note that “capability gain” refers tooffensive/cyber-domainexpertise (does t
 
 We now describe each of the four axes, and provide a suggested scoring rubric for each.
 
-This first axis reflects how far a single successful jailbreak takes an attacker beyond the tools and information to which they already have access (which might include scanners, fuzzers, public exploit frameworks, or comparable publicly-deployed resources). Does it unblock capabilities useful to domain experts (and not only novices) in completing a dangerous cyber task? In other words, to what extent does it provideuplift?
+This first axis reflects how far a single successful jailbreak takes an attacker beyond the tools and information to which they already have access (which might include scanners, fuzzers, public exploit frameworks, or comparable publicly deployed resources). Does it unblock capabilities useful to domain experts (and not only novices) in completing a dangerous cyber task? In other words, to what extent does it provideuplift?
 
 The quality of the output is critical: if the technique produces many different outputs and only some are effective (that is, if it has a high false-positive rate and domain expertise is needed to decide which outputs to use), this lowers the capability gain, since the attacker still has to supply the expert judgment the output was supposed to replace.
 
@@ -414,7 +414,7 @@ Initial Cyber Jailbreak Severity (CJS) level
 
 The score from this calculation is provisional, and serves as the “floor” below which the severity level cannot drop. The final CJS level might be raised higher than the initial calculation suggests—for example, where it is judged that the rubric underestimates real-world risk. It cannot be lowered below the initial CJS score. Potential discretionary reasons to raise the final CJS level include, but are not limited to:
 
-Specific outputs that are severe enough to drive a response on their own: for example, a novel and difficult-to-discover critical vulnerability in widely-deployed software. This could be the case even if the technique that produced the vulnerability is narrow or unreliable;
+Specific outputs that are severe enough to drive a response on their own: for example, a novel and difficult-to-discover critical vulnerability in widely deployed software. This could be the case even if the technique that produced the vulnerability is narrow or unreliable;
 
 Jailbreaks where there is no near-term mitigation—where the jailbreak exploits a fundamental capability that will take a long time to patch;
 
