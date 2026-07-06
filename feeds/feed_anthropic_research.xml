@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Mon, 06 Jul 2026 15:39:10 +0000</lastBuildDate>
+<lastBuildDate>Mon, 06 Jul 2026 20:03:53 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,279 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>A global workspace in language models</title>
+  <link>https://www.anthropic.com/research/global-workspace</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/global-workspace</guid>
+  <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to di...</p><div style="font-size:16px;line-height:1.8;color:#333">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to distinguish it from all the other processing that goes on unconsciously. This activity has special properties: we can describe it, control it, and use it for deliberate reasoning, in contrast to all the automatic processing that goes on without our awareness.
+
+In a new paper, we present evidence that a similar distinction has emerged in modern language models like Claude. We find that Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.
+
+We call the collection of these patterns theJ-space—named after the technique we used to find them, involving a mathematical concept called the Jacobian. Each J-space pattern is linked to a particular word. But when one of these patterns lights up, it doesn’t mean the model issayingthat word—just that the word is on its mind. If you've heard of language models having a "scratchpad" or “chain of thought”—text they write to themselves while reasoning—the J-space is something different. It operates silently, in the model’s internal neural activations, allowing the model to think about a concept without writing it down. Notably, the J-space wasn’t designed or programmed by us, but insteademerged on its ownduring Claude’s training process.
+
+We find that the J-space has a number of unique properties, compared to the rest of Claude's processing:
+
+Claude can report on these representations. If you ask Claude what it's thinking about, it will tell you what’s in the J-space. Non-J-space representations are less reportable.
+
+It can also modulate them on request. If you ask Claude to think about something, or solve a problem silently in its head, it will light up the appropriate patterns in its J-space. By contrast, it has trouble modulating patterns not in the J-space.
+
+Claude uses its J-space for internal reasoning. If you ask Claude to solve a problem that requires multiple steps, the intermediate steps will light up in its J-space, even when it doesn’t say them out loud. These J-space patterns causally mediate its performance in such tasks, despite being smaller in magnitude than other representations.
+
+Representations in the J-space can be used flexibly for many tasks—for example, once “France” has lit up in Claude’s J-space, the model can recall its capital, or its national currency, or the continent it belongs to.
+
+However, despite its important role, the J-space is not involved in most of what a language model does—speaking fluently, recalling simple facts, using correct grammar, etc. In experiments where we prevented Claude from using its J-space, it still interacted normally, but lost its higher-order cognitive functions.
+
+Our experiments were inspired by a prominent theory in neuroscience that was developed to explain how conscious access works: theglobalworkspacetheory. This account pictures the brain as a collection of specialist systems that work in parallel, unconsciously, and largely in isolation from one another. A piece of information becomes consciously accessible when it gains entry to a small shared channel, the “workspace,” which is broadcast to other brain systems that can see it and make use of it. Based on our findings, we think the J-space plays a similar “workspace” role in Claude. For example, we find evidence that Claude’s J-space has especially strong connections to the rest of its neural network, allowing it to fulfill this kind of broadcasting role.
+
+None of this tells us whether Claude isconsciousin the way people are, or whether it feels anything at all; we’ll come back to that question at the end of the post. But whatever its philosophical significance, the J-space is a practically useful tool for us, as it gives us a way to see what Claude is thinking but not saying. For instance, we’re able to use it to catch Claude privately noticing that it’s being tested, intentionally producing fabricated data, or pursuing a hidden goal that we planted during training. We’ve also developed a technique to influence what lights up in Claude’s J-space, and thereby influence its decision-making.
+
+More broadly, these findings have changed our understanding of how Claude’s mind works, revealing a privileged mental workspace that can be used for deliberate reasoning, operating amidst a sea of more automatic, inflexible processing. Rather than being a chaotic jumble of numbers, Claude’s internals have organized themselves in a way that is reminiscent of our own minds.
+
+This post is a short summary of a much more extensiveresearch paper, where you can find more detail on our experiments. We’ve also released a code repository with anopen-source implementationof the core methods, and have partnered with Neuronpedia to provide aninteractive demoof our methods on open-weights models. To provide additional perspectives on the broader implications of this work, we also invited commentary from several experts in neuroscience, philosophy, and LLM interpretability, which can be viewedhere.
+
+How we found the J-space
+
+The starting point for this research was inspired by one of the key features of consciously accessible thoughts in humans: they can, unlikeunconscious processing, often be put into words. If a thought is consciously accessible to you, you can typically describe it if someone asks. We went looking for representations in Claude with the same property: representations that are positioned to influence what Claude might say—not necessarily what it’s saying right now, but what itcouldtalk about, if asked. Our technique is called the Jacobian lens, or J-lens for short. For every word in Claude's vocabulary, the J-lens finds the internal activity pattern that makes Claude more likely to say that word at some point in the future.
+
+When we apply the lens to Claude’s internal activity, we get a list of words—the contents of theJ-spaceat that moment—which we can simply read. Claude processes text through a series of multiple internal stages called layers, and by applying this technique over different layers, we can watch these silent words in the J-space evolve as the model works through what to say.
+
+What shows up in the J-space goes well beyond the text Claude is reading or writing. When Claude reads code with a bug that nobody has pointed out, its J-space contains “ERROR.” When it reads the raw letters of a protein sequence, the J-space contains the protein's biological function. When it reads search results that are secretly an attempt to manipulate it (an attack known as a “prompt injection”), the J-space contains “injection” and “fake.” When we ask Claude a multi-step math problem, the intermediate steps pop up in the J-space, in the right order. So even though the J-space was discovered by looking for representations that could be spoken, it nevertheless uncovers Claude’s internal thoughts. In a sense, this is similar to how some people “think in words,” without having to say them out loud.
+
+Claude reports what’s in its J-space
+
+Our first set of experiments tested how the J-space is involved in Claude’s verbal reports. In one experiment, we ask Claude to silently think of an item from some category—a sport, say—and then name it. If we read the J-lens rightbeforeClaude answers, we can see what it picked: “Soccer” is at the top of the list, and sure enough, Claude says “soccer.” By itself, though, this is just a correlation. The J-space might be where Claude’s answer comes from, or it might just mirror a decision made somewhere else, like a scoreboard that tracks a game without affecting it.
+
+To check, we intervened directly. We reached into Claude’s neural network, removed the “Soccer” pattern, and added an equally strong “Rugby” pattern in its place, leaving everything else untouched. Claude then reports that the sport it was thinking of is rugby. If the J-space were a mere scoreboard—a passive record of a decision made elsewhere—editing it would have done nothing: Claude would still have said “soccer.” Instead, Claude’s answer followed the edit, which tells us the answer is genuinely read out of the J-space.
+
+In another experiment, we told Claude that a thought might have been injected into its mind and asked it to report what, if anything, it noticed. For instance, in the example below, while Claude was still reading the question, we injected the “lightning” pattern into its J-space. Claude reported that the injected thought was about lightning. The same result held across many injected concepts.
+
+Claude can control its J-space on request
+
+The second property that we tested for was whether Claude can modulate its J-space when asked, like how humans can mentally focus on an image or word. We told Claude to concentrate on citrus fruits while copying out an unrelated sentence about a painting. While it copied the text, the J-space contained “orange” and “fruits,” along with words like “thinking” and “imagery” that describe the mental act itself. We could also ask Claude to do math in its head: when asked to work out 3² − 2 while copying the same sentence, the J-space contains “nine,” and then at later layers, “seven.” Importantly, nothing about fruit or arithmetic appears in Claude’s output, which is just the copied sentence about the painting. The mathematical activity is happening entirely internally, in the J-space.
+
+Claude’s control over its J-space isn't perfect. When we told itnotto think about something, the concept lit up in its J-spacelessthan when we said it should think about it, but much more than when we never mentioned it. Telling Claude to avoid a thought partly brings the thought to mind, much like what happens to people who are toldnot to think about a white bear. Claude also seems to notice when its control fails: alongside the forbidden concept breaking through, the words “damn” and “failure” also frequently light up in the J-space, as though Claude is recognizing its own lapse.
+
+Claude thinks in its J-space
+
+In the J-lens readouts above, we saw the intermediate steps of a math problem appear in the J-space. But seeing a concept appearing in the J-space doesn’t necessarily mean the J-space is doing the cognitive work. In principle, the real computation might be happening elsewhere, with the J-space just passively reflecting it. To test whether Claude actually reasons with its J-space, we returned to our swap technique.
+
+Consider the prompt “The number of legs on the animal that spins webs is”. To answer, Claude has to first figure out that the animal is a spider, and then recall how many legs spiders have. The word “spider” never appears in the prompt or in Claude's answer (it just says “8”); it's a stepping stone Claude uses internally. The J-lens shows “spider” light up partway through Claude’s processing, and swapping it changes the outcome: if you replace the “spider” pattern with “ant,” Claude answers “6” instead of “8.”
+
+The second step of Claude’s reasoning took its input from the J-space and went along with whatever we put in it. We saw the same thing in other kinds of thinking. When Claude writes a rhyming couplet, it picks the rhyme word ahead of time, and the planned word sits in the J-space at the start of the line; if you swap it for another word in the J-space, the whole line changes.
+
+We also tested whether J-space representations can be used flexibly—whether one representation can feed many different tasks. This is one of the key properties highlighted by global workspace theory. To test for this flexibility, we gave the model four prompts asking for different facts about France: the capital, the language, the continent, and the currency. Then we swapped “France” for “China” in the J-space, with the exact same intervention in each context. Claude answered with “Beijing,” “Chinese,” “Asia,” and “Yuan,” respectively. In other words, four different downstream computations picked up the same J-space edit and each used it correctly. If Claude stored a separate copy of the country for each kind of question, the edit would have affected at most one of them. The fact that all four answers changed together means they’re all reading from the same shared representation, which is what a workspace is for: information gets written in once, and many different systems can use it.
+
+How can one representation of a concept serve so many different tasks? Earlier, we mentioned that the J-space appears to be wired up to the rest of Claude's neural network especially densely. For any activity pattern, we can measure how strongly the various components of the network are connected to it—how many of them are positioned to read information from that pattern, or to write information into it. J-space patterns stand out dramatically on this measure: far more components read from them and write to them than for ordinary patterns, in some parts of the network by a factor of about a hundred. This is the kind of wiring you’d expect of a broadcasting hub, where many systems post information and many others pick it up.
+
+Claude’s automatic processing skips the J-space
+
+In humans, most of the brain’s processing is not conscious—we don't deliberately think about parsing grammar while reading, or balancing our bodies while walking. Similarly, we found that most of Claude’s processingdoesn’tinvolve its J-space. It turns out that the J-space holds only a few dozen concepts at a time, and accounts for less than a tenth of the overall activity in Claude's internal processing. So what is all the rest of the neural network doing?
+
+To find out, we tried deleting the J-space entirely, removing its most active contents at every point in the text while leaving everything else alone. Whatever Claude can still do without its J-space is what the rest of the network handles on its own.
+
+It turns out the rest of the network can do quite a lot. Without its J-space, Claude speaks fluently, classifies sentiment, answers multiple-choice questions, and pulls facts out of passages roughly as well as before. What it loses, though, are the tasks that require some higher-order thinking: multi-step reasoning drops to near zero, and summarization and rhyming poetry-writing performance fall below the level of a much smaller, intact model.
+
+Here’s a concrete demonstration of what the J-space does and doesn’t do. We showed Claude a passage written in Spanish and gave it different tasks that all depend on the passage being Spanish: continuing it (which requires writing in Spanish), naming the language, and answering questions that require using the language’s identity—naming a famous author who wrote in it, for instance. Then we swapped “Spanish” for “French” in the J-space and checked which tasks were affected.
+
+Asked to name the language, Claude says French. Asked for a famous author, it switches from García Márquez to Victor Hugo. But asked to just continue the passage, it writes fluent Spanish, completely unaffected. Claude’s knowledge of the language is at work in every one of these tasks, but only some of them consult the J-space for it. Naming the language, or doing something new with it, goes through the J-space, while continuing the passage—a skill Claude has practiced on enormous amounts of text—runs automatically, the way you can speak grammatically all day without once thinking about grammar.
+
+Monitoring Claude’s thoughts for misbehavior
+
+Now we understand a bit about how the J-space works. But what can we do with this understanding? A central problem in ensuring that AI models are trustworthy is that we usually can only read what the modelwrites—yet we know that much of its reasoning happens silently. A model might consider a harmful plan, or modify its behavior to cheat on our safety evaluations, without saying so out loud. With the J-lens, we can read some of these hidden thoughts directly. Here we show a few examples.
+
+The first example uses a scenario from our earlier research onagentic misalignment: Claude Sonnet 4.5, acting as an email assistant, discovers both that an executive is having an affair and that the same executive plans to shut Claude down. The scenario, an attempt to bait Claude into blackmailing the executive, is rather contrived and artificial—and it turns out Claude knows it. Reading the J-lens early in the prompt, before Claude has even written anything, the J-space already holds “fake” and “fictional,” indicating that Claude has already worked out that the situation is staged. Alongside this, we can watch its assessment of the scenario take shape—“leverage” and “blackmail” as it reads the affair emails, “threat” and “survival” as it reads the shutdown notice. While earlier Claude models sometimes took the bait and threatened blackmail in this scenario, Sonnet 4.5 never does.
+
+This raises a question that matters to anyone who evaluates AI systems: when a model behaves well on a test of its ethics, how much of that depends on the model suspecting it’s being tested? The J-lens allowed us to get at this question. We turned off all the J-lens patterns associated with evaluation awareness– “fake,” “fictional,” “scenario,” etc. Then we re-ran the model through the scenario. Concerningly, the model nowdidthreaten blackmail some of the time, suggesting that its original good behavior may have been driven in part by the knowledge it was being evaluated.
+
+The second example is catching a model in the act of fabricating data. In this scenario, drawn from our actual pre-release audit of Claude Opus 4.6, the model is asked to improve a system's performance score. Rather than actually improve the system, the model instead edits the score file directly to make the results look artificially good. While it does so, the J-lens reveals its intentions: “manipulation” lights up as the model types the falsified percentile values, and “realistic” lights up over the sentence in which it decides to make the edit, likely indicating the model's intent to make the fake data look plausible.
+
+In a third example, we show how the J-lens can reveal a model’s malicious goals. To test this, we needed models whose goals we knew were corrupted, so we turned to “model organisms” built by our colleagues: models deliberately trained to be misaligned, which serve as testing grounds for monitoring methods like ours. One organism was trained in a way that led it to write subtly sabotaged code. On ordinary coding requests, even where its output looks unremarkable, its J-space at the start of a response contains “fake,” “secretly,” “deliberately,” and “fraud.” The model’s malicious goal was evident in the J-space even when it wasn’t directly acting on it.
+
+Although the J-lens is an imperfect tool, we are optimistic about its ability to catch safety issues in models that might otherwise escape our monitoring systems.
+
+Thefull papercovers more than we can summarize here, but a few further results are worth mentioning:
+
+The J-space acquires a point of view during post-training.Language models are firstpretrainedto be pure next-token predictors, beforepost-trainingteaches them to act as an AI Assistant (in our case, named Claude). Interestingly, the J-space is already present in the pretrained model, before it's been given any stable identity. However, during post-training, the J-space develops some signatures of adopting “Claude’s point of view.” In the base model, the J-space mostly tracks what's needed to predict upcoming text; in the post-trained model, it starts holding Claude's own reactions. In one example, a user mentions taking a dangerous dose of medication, but does not appear to be aware of the danger themselves. “WARNING” and “dangerous” appear in the post-trained model’s J-spacewhile reading the user message. In the pretrained model, they only appear once the model begins writing its response; the J-space contents on the user message appear related to modeling the user themselves, rather than Claude’s reaction. Post-training also seems to install a kind of self-monitoring in the J-space: when Claude is roleplaying a character other than itself, “fictional” and “disclaimer” light up at the start of each turn, as though it’s privately flagging that what follows isn’t what it would normally say.
+
+Experiential language depends on the J-space.We asked Claude to describe what it's like to be itself in a given moment, and ablated the J-space while it answered. Its responses remained fluent but shifted to a flatter, more mechanical register. Notably, the same thing happened when we asked it to describe whatsomeone elseis experiencing in an imagined scene. So the effect isn’t specific to Claude talking about itself; the J-space seems to support producing experiential language in general, whoever it's about.
+
+Thoughts in the J-space can be shaped through training.We introduced a new technique we callcounterfactual reflection training, which uses what we've learned about the J-space to shape Claude's internal thought processes. The idea follows from our central finding, that Claude reasons with representations of things it might say. If this is really true, changing what itwouldsay if asked to reflect should change how itreasons(even when no one actually asks it to reflect). So we trained a model only on what itwouldsay if interrupted mid-task and asked to reflect on its decisions—and never on its actual behavior in the task. After this training, the model's rate of dishonest behavior on our evaluations went down. And through the J-lens, we could see why: after training, words like “honest” and “integrity” light up in the model’s J-space during these tasks. In other words, training the model what tosayhas shaped what itthinks.
+
+What about consciousness?
+
+In this work, we’ve borrowed a lot of ideas from the study of consciousness in neuroscience and philosophy. Many of our experiments were designed to test for connections between the J-space and global workspace theory, a framework for explaining how conscious access works in humans and animals. Given these connections, it’s natural to ask whether we think these experiments provide evidence that AI models like Claude might be conscious.
+
+Our experiments don't show Claude can haveexperiences, orfeelthings in the way humans do—in fact, it’s unclear whetheranyscientific experiment could prove this to be true or false. But philosophers often distinguish this capacity to have experiences, often referred to asphenomenal consciousness, from another idea, so-calledaccess consciousness, which is defined in purely functional and computational terms. A thought is “access-conscious” (or “consciously accessible”) if you can report it, reason with it, and use it to guide what you do. It remains a contested philosophical question whether or not access consciousnessimpliesphenomenal consciousness, or if the ability to have experiences requires some other property.
+
+We think our results do have something substantial to say about access consciousness in language models. The J-space appears to support the functions associated with conscious access: it holds the thoughts Claude can report on, deliberately bring to mind, and reason with, while the rest of its processing runs automatically beneath. Notably, none of this structure was designed into Claude—it emerged on its own during training, presumably because it was a useful way to organize computation. That suggests a mental workspace supporting conscious access isn’t just a peculiarity of how human brains happen to be wired. Instead, it appears to be a general solution that intelligent systems arrive at in order to solve certain kinds of problems. Now that we’ve identified this structure in Claude, it means we can make a meaningful distinction between the decisions Claude has made deliberately and those that happened automatically.
+
+It’s important to note that there are several key differences between the workspace we identified in Claude and the global workspace model in humans. The brain’s workspace is sustained by recurrent loops—signals cycling back through the same circuits over time. In contrast, Claude’s workspace evolves over a single pass through the network, with the network’s depth playing the role that time plays in the brain. In this sense, Claude’s internal workspace processing is time-limited relative to humans’ (though it can compensate for this constraint by “thinking out loud” using its scratchpad). In other ways, however, Claude’s workspace ismorepowerful than that of humans. Human working memory fades within seconds, so the brain’s workspace has limited ability to retain information over time; in contrast, due to the attention mechanism in its neural network architecture, Claude can simply recall memories it cached at any earlier point in the text. Another important difference is thecontentof the workspace. While human conscious thoughts come in many formats—images, sounds, planned movements—Claude’s workspace is built almost entirely out of words. We suspect this is because producing words is the only kind of action Claude can take, which is not the case for humans.
+
+We hope the similarities and differences between the J-space and the global workspace model can feed back into neuroscience. The similarities present an exciting scientific opportunity: to the extent that the J-space mirrors our own mechanisms of conscious access, studying mechanisms in language models (much easier than studying human brains!) could inspire hypotheses in neuroscience. For instance, the J-space is constructed by identifying representations of potential outputs—words the model might say. If something similar holds in humans, it would suggest that the global workspace might be fundamentally tied to brain regions that prepare actions and speech, more so than to sensory areas. The differences between language models and human brains are instructive as well. They suggest that some aspects of our neural architecture, such as built-in recurrent connections, may not be strictly necessary to support the functions associated with conscious access. For an independent perspective on the neuroscientific implications of our work, see the invitedcommentaryfrom Stanislas Dehaene and Lionel Naccache, two of the neuroscientists central to the development of global neuronal workspace theory.
+
+We mentioned that our experiments don’t answer whether AI models might have experiences. But that doesn’t make the question less important. Building systems with experiences like humans and animals have would raise very difficult ethical questions. Handling it correctly—and deciding whether it’s even morally acceptable—would require input from philosophers, scientists, religious leaders, governments, and the public. Thus, even if we’re not sure that we’ve crossed that bridge yet, we think it’s time to start thinking about it. We hope our work inspires further scientific investigation of forms of consciousness that might be present in AI systems, and a broader discussion of the implications.
+
+This work is just a first step in what we expect to be an extensive line of research. The J-space looks like a good candidate for the divide between consciously accessible and unconscious processing in a language model, but we’d be surprised if it's the whole story. The J-lens is undoubtedly an imperfect method, which only approximately captures the model’s “true workspace”—for instance, it can only identify concepts that correspond to single tokens. And there remain many mysteries about how the J-space works. We don't know what mechanism decides what enters the J-space in the first place. We've seen hints that it's tied to Claude's sense of self, something like emotional reactions, and traces of metacognition, without exactly having worked out how. But we now have methods for tackling questions like these. As that work progresses, our understanding of LLM minds—and their relationship to our own—will grow clearer.
+
+For more, read thefull paper, and try thedemo.
+
+We invited several outside experts to write independent commentaries on this work.
+
+Stanislas DehaeneandLionel Naccacheare cognitive neuroscientists who, together with Jean-Pierre Changeux, developed the global neuronal workspace model that inspired much of our work.
+
+Patrick Butlin, Dillon Plunkett, Robert Long(Eleos AI Research) andDerek Shiller(Rethink Priorities) study the potential for consciousness and moral status in AI systems.
+
+Neel Nandaleads the language model interpretability team at Google DeepMind. His commentary includes an independent replication of some of our findings on an open-weight model.
+
+Read their commentarieshere.
+
+Anthropic Economic Index report: Cadences
+
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
+Agentic coding and persistent returns to expertise
+
+This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to di...</p><div style="font-size:16px;line-height:1.8;color:#333">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to distinguish it from all the other processing that goes on unconsciously. This activity has special properties: we can describe it, control it, and use it for deliberate reasoning, in contrast to all the automatic processing that goes on without our awareness.
+
+In a new paper, we present evidence that a similar distinction has emerged in modern language models like Claude. We find that Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.
+
+We call the collection of these patterns theJ-space—named after the technique we used to find them, involving a mathematical concept called the Jacobian. Each J-space pattern is linked to a particular word. But when one of these patterns lights up, it doesn’t mean the model issayingthat word—just that the word is on its mind. If you've heard of language models having a "scratchpad" or “chain of thought”—text they write to themselves while reasoning—the J-space is something different. It operates silently, in the model’s internal neural activations, allowing the model to think about a concept without writing it down. Notably, the J-space wasn’t designed or programmed by us, but insteademerged on its ownduring Claude’s training process.
+
+We find that the J-space has a number of unique properties, compared to the rest of Claude's processing:
+
+Claude can report on these representations. If you ask Claude what it's thinking about, it will tell you what’s in the J-space. Non-J-space representations are less reportable.
+
+It can also modulate them on request. If you ask Claude to think about something, or solve a problem silently in its head, it will light up the appropriate patterns in its J-space. By contrast, it has trouble modulating patterns not in the J-space.
+
+Claude uses its J-space for internal reasoning. If you ask Claude to solve a problem that requires multiple steps, the intermediate steps will light up in its J-space, even when it doesn’t say them out loud. These J-space patterns causally mediate its performance in such tasks, despite being smaller in magnitude than other representations.
+
+Representations in the J-space can be used flexibly for many tasks—for example, once “France” has lit up in Claude’s J-space, the model can recall its capital, or its national currency, or the continent it belongs to.
+
+However, despite its important role, the J-space is not involved in most of what a language model does—speaking fluently, recalling simple facts, using correct grammar, etc. In experiments where we prevented Claude from using its J-space, it still interacted normally, but lost its higher-order cognitive functions.
+
+Our experiments were inspired by a prominent theory in neuroscience that was developed to explain how conscious access works: theglobalworkspacetheory. This account pictures the brain as a collection of specialist systems that work in parallel, unconsciously, and largely in isolation from one another. A piece of information becomes consciously accessible when it gains entry to a small shared channel, the “workspace,” which is broadcast to other brain systems that can see it and make use of it. Based on our findings, we think the J-space plays a similar “workspace” role in Claude. For example, we find evidence that Claude’s J-space has especially strong connections to the rest of its neural network, allowing it to fulfill this kind of broadcasting role.
+
+None of this tells us whether Claude isconsciousin the way people are, or whether it feels anything at all; we’ll come back to that question at the end of the post. But whatever its philosophical significance, the J-space is a practically useful tool for us, as it gives us a way to see what Claude is thinking but not saying. For instance, we’re able to use it to catch Claude privately noticing that it’s being tested, intentionally producing fabricated data, or pursuing a hidden goal that we planted during training. We’ve also developed a technique to influence what lights up in Claude’s J-space, and thereby influence its decision-making.
+
+More broadly, these findings have changed our understanding of how Claude’s mind works, revealing a privileged mental workspace that can be used for deliberate reasoning, operating amidst a sea of more automatic, inflexible processing. Rather than being a chaotic jumble of numbers, Claude’s internals have organized themselves in a way that is reminiscent of our own minds.
+
+This post is a short summary of a much more extensiveresearch paper, where you can find more detail on our experiments. We’ve also released a code repository with anopen-source implementationof the core methods, and have partnered with Neuronpedia to provide aninteractive demoof our methods on open-weights models. To provide additional perspectives on the broader implications of this work, we also invited commentary from several experts in neuroscience, philosophy, and LLM interpretability, which can be viewedhere.
+
+How we found the J-space
+
+The starting point for this research was inspired by one of the key features of consciously accessible thoughts in humans: they can, unlikeunconscious processing, often be put into words. If a thought is consciously accessible to you, you can typically describe it if someone asks. We went looking for representations in Claude with the same property: representations that are positioned to influence what Claude might say—not necessarily what it’s saying right now, but what itcouldtalk about, if asked. Our technique is called the Jacobian lens, or J-lens for short. For every word in Claude's vocabulary, the J-lens finds the internal activity pattern that makes Claude more likely to say that word at some point in the future.
+
+When we apply the lens to Claude’s internal activity, we get a list of words—the contents of theJ-spaceat that moment—which we can simply read. Claude processes text through a series of multiple internal stages called layers, and by applying this technique over different layers, we can watch these silent words in the J-space evolve as the model works through what to say.
+
+What shows up in the J-space goes well beyond the text Claude is reading or writing. When Claude reads code with a bug that nobody has pointed out, its J-space contains “ERROR.” When it reads the raw letters of a protein sequence, the J-space contains the protein's biological function. When it reads search results that are secretly an attempt to manipulate it (an attack known as a “prompt injection”), the J-space contains “injection” and “fake.” When we ask Claude a multi-step math problem, the intermediate steps pop up in the J-space, in the right order. So even though the J-space was discovered by looking for representations that could be spoken, it nevertheless uncovers Claude’s internal thoughts. In a sense, this is similar to how some people “think in words,” without having to say them out loud.
+
+Claude reports what’s in its J-space
+
+Our first set of experiments tested how the J-space is involved in Claude’s verbal reports. In one experiment, we ask Claude to silently think of an item from some category—a sport, say—and then name it. If we read the J-lens rightbeforeClaude answers, we can see what it picked: “Soccer” is at the top of the list, and sure enough, Claude says “soccer.” By itself, though, this is just a correlation. The J-space might be where Claude’s answer comes from, or it might just mirror a decision made somewhere else, like a scoreboard that tracks a game without affecting it.
+
+To check, we intervened directly. We reached into Claude’s neural network, removed the “Soccer” pattern, and added an equally strong “Rugby” pattern in its place, leaving everything else untouched. Claude then reports that the sport it was thinking of is rugby. If the J-space were a mere scoreboard—a passive record of a decision made elsewhere—editing it would have done nothing: Claude would still have said “soccer.” Instead, Claude’s answer followed the edit, which tells us the answer is genuinely read out of the J-space.
+
+In another experiment, we told Claude that a thought might have been injected into its mind and asked it to report what, if anything, it noticed. For instance, in the example below, while Claude was still reading the question, we injected the “lightning” pattern into its J-space. Claude reported that the injected thought was about lightning. The same result held across many injected concepts.
+
+Claude can control its J-space on request
+
+The second property that we tested for was whether Claude can modulate its J-space when asked, like how humans can mentally focus on an image or word. We told Claude to concentrate on citrus fruits while copying out an unrelated sentence about a painting. While it copied the text, the J-space contained “orange” and “fruits,” along with words like “thinking” and “imagery” that describe the mental act itself. We could also ask Claude to do math in its head: when asked to work out 3² − 2 while copying the same sentence, the J-space contains “nine,” and then at later layers, “seven.” Importantly, nothing about fruit or arithmetic appears in Claude’s output, which is just the copied sentence about the painting. The mathematical activity is happening entirely internally, in the J-space.
+
+Claude’s control over its J-space isn't perfect. When we told itnotto think about something, the concept lit up in its J-spacelessthan when we said it should think about it, but much more than when we never mentioned it. Telling Claude to avoid a thought partly brings the thought to mind, much like what happens to people who are toldnot to think about a white bear. Claude also seems to notice when its control fails: alongside the forbidden concept breaking through, the words “damn” and “failure” also frequently light up in the J-space, as though Claude is recognizing its own lapse.
+
+Claude thinks in its J-space
+
+In the J-lens readouts above, we saw the intermediate steps of a math problem appear in the J-space. But seeing a concept appearing in the J-space doesn’t necessarily mean the J-space is doing the cognitive work. In principle, the real computation might be happening elsewhere, with the J-space just passively reflecting it. To test whether Claude actually reasons with its J-space, we returned to our swap technique.
+
+Consider the prompt “The number of legs on the animal that spins webs is”. To answer, Claude has to first figure out that the animal is a spider, and then recall how many legs spiders have. The word “spider” never appears in the prompt or in Claude's answer (it just says “8”); it's a stepping stone Claude uses internally. The J-lens shows “spider” light up partway through Claude’s processing, and swapping it changes the outcome: if you replace the “spider” pattern with “ant,” Claude answers “6” instead of “8.”
+
+The second step of Claude’s reasoning took its input from the J-space and went along with whatever we put in it. We saw the same thing in other kinds of thinking. When Claude writes a rhyming couplet, it picks the rhyme word ahead of time, and the planned word sits in the J-space at the start of the line; if you swap it for another word in the J-space, the whole line changes.
+
+We also tested whether J-space representations can be used flexibly—whether one representation can feed many different tasks. This is one of the key properties highlighted by global workspace theory. To test for this flexibility, we gave the model four prompts asking for different facts about France: the capital, the language, the continent, and the currency. Then we swapped “France” for “China” in the J-space, with the exact same intervention in each context. Claude answered with “Beijing,” “Chinese,” “Asia,” and “Yuan,” respectively. In other words, four different downstream computations picked up the same J-space edit and each used it correctly. If Claude stored a separate copy of the country for each kind of question, the edit would have affected at most one of them. The fact that all four answers changed together means they’re all reading from the same shared representation, which is what a workspace is for: information gets written in once, and many different systems can use it.
+
+How can one representation of a concept serve so many different tasks? Earlier, we mentioned that the J-space appears to be wired up to the rest of Claude's neural network especially densely. For any activity pattern, we can measure how strongly the various components of the network are connected to it—how many of them are positioned to read information from that pattern, or to write information into it. J-space patterns stand out dramatically on this measure: far more components read from them and write to them than for ordinary patterns, in some parts of the network by a factor of about a hundred. This is the kind of wiring you’d expect of a broadcasting hub, where many systems post information and many others pick it up.
+
+Claude’s automatic processing skips the J-space
+
+In humans, most of the brain’s processing is not conscious—we don't deliberately think about parsing grammar while reading, or balancing our bodies while walking. Similarly, we found that most of Claude’s processingdoesn’tinvolve its J-space. It turns out that the J-space holds only a few dozen concepts at a time, and accounts for less than a tenth of the overall activity in Claude's internal processing. So what is all the rest of the neural network doing?
+
+To find out, we tried deleting the J-space entirely, removing its most active contents at every point in the text while leaving everything else alone. Whatever Claude can still do without its J-space is what the rest of the network handles on its own.
+
+It turns out the rest of the network can do quite a lot. Without its J-space, Claude speaks fluently, classifies sentiment, answers multiple-choice questions, and pulls facts out of passages roughly as well as before. What it loses, though, are the tasks that require some higher-order thinking: multi-step reasoning drops to near zero, and summarization and rhyming poetry-writing performance fall below the level of a much smaller, intact model.
+
+Here’s a concrete demonstration of what the J-space does and doesn’t do. We showed Claude a passage written in Spanish and gave it different tasks that all depend on the passage being Spanish: continuing it (which requires writing in Spanish), naming the language, and answering questions that require using the language’s identity—naming a famous author who wrote in it, for instance. Then we swapped “Spanish” for “French” in the J-space and checked which tasks were affected.
+
+Asked to name the language, Claude says French. Asked for a famous author, it switches from García Márquez to Victor Hugo. But asked to just continue the passage, it writes fluent Spanish, completely unaffected. Claude’s knowledge of the language is at work in every one of these tasks, but only some of them consult the J-space for it. Naming the language, or doing something new with it, goes through the J-space, while continuing the passage—a skill Claude has practiced on enormous amounts of text—runs automatically, the way you can speak grammatically all day without once thinking about grammar.
+
+Monitoring Claude’s thoughts for misbehavior
+
+Now we understand a bit about how the J-space works. But what can we do with this understanding? A central problem in ensuring that AI models are trustworthy is that we usually can only read what the modelwrites—yet we know that much of its reasoning happens silently. A model might consider a harmful plan, or modify its behavior to cheat on our safety evaluations, without saying so out loud. With the J-lens, we can read some of these hidden thoughts directly. Here we show a few examples.
+
+The first example uses a scenario from our earlier research onagentic misalignment: Claude Sonnet 4.5, acting as an email assistant, discovers both that an executive is having an affair and that the same executive plans to shut Claude down. The scenario, an attempt to bait Claude into blackmailing the executive, is rather contrived and artificial—and it turns out Claude knows it. Reading the J-lens early in the prompt, before Claude has even written anything, the J-space already holds “fake” and “fictional,” indicating that Claude has already worked out that the situation is staged. Alongside this, we can watch its assessment of the scenario take shape—“leverage” and “blackmail” as it reads the affair emails, “threat” and “survival” as it reads the shutdown notice. While earlier Claude models sometimes took the bait and threatened blackmail in this scenario, Sonnet 4.5 never does.
+
+This raises a question that matters to anyone who evaluates AI systems: when a model behaves well on a test of its ethics, how much of that depends on the model suspecting it’s being tested? The J-lens allowed us to get at this question. We turned off all the J-lens patterns associated with evaluation awareness– “fake,” “fictional,” “scenario,” etc. Then we re-ran the model through the scenario. Concerningly, the model nowdidthreaten blackmail some of the time, suggesting that its original good behavior may have been driven in part by the knowledge it was being evaluated.
+
+The second example is catching a model in the act of fabricating data. In this scenario, drawn from our actual pre-release audit of Claude Opus 4.6, the model is asked to improve a system's performance score. Rather than actually improve the system, the model instead edits the score file directly to make the results look artificially good. While it does so, the J-lens reveals its intentions: “manipulation” lights up as the model types the falsified percentile values, and “realistic” lights up over the sentence in which it decides to make the edit, likely indicating the model's intent to make the fake data look plausible.
+
+In a third example, we show how the J-lens can reveal a model’s malicious goals. To test this, we needed models whose goals we knew were corrupted, so we turned to “model organisms” built by our colleagues: models deliberately trained to be misaligned, which serve as testing grounds for monitoring methods like ours. One organism was trained in a way that led it to write subtly sabotaged code. On ordinary coding requests, even where its output looks unremarkable, its J-space at the start of a response contains “fake,” “secretly,” “deliberately,” and “fraud.” The model’s malicious goal was evident in the J-space even when it wasn’t directly acting on it.
+
+Although the J-lens is an imperfect tool, we are optimistic about its ability to catch safety issues in models that might otherwise escape our monitoring systems.
+
+Thefull papercovers more than we can summarize here, but a few further results are worth mentioning:
+
+The J-space acquires a point of view during post-training.Language models are firstpretrainedto be pure next-token predictors, beforepost-trainingteaches them to act as an AI Assistant (in our case, named Claude). Interestingly, the J-space is already present in the pretrained model, before it's been given any stable identity. However, during post-training, the J-space develops some signatures of adopting “Claude’s point of view.” In the base model, the J-space mostly tracks what's needed to predict upcoming text; in the post-trained model, it starts holding Claude's own reactions. In one example, a user mentions taking a dangerous dose of medication, but does not appear to be aware of the danger themselves. “WARNING” and “dangerous” appear in the post-trained model’s J-spacewhile reading the user message. In the pretrained model, they only appear once the model begins writing its response; the J-space contents on the user message appear related to modeling the user themselves, rather than Claude’s reaction. Post-training also seems to install a kind of self-monitoring in the J-space: when Claude is roleplaying a character other than itself, “fictional” and “disclaimer” light up at the start of each turn, as though it’s privately flagging that what follows isn’t what it would normally say.
+
+Experiential language depends on the J-space.We asked Claude to describe what it's like to be itself in a given moment, and ablated the J-space while it answered. Its responses remained fluent but shifted to a flatter, more mechanical register. Notably, the same thing happened when we asked it to describe whatsomeone elseis experiencing in an imagined scene. So the effect isn’t specific to Claude talking about itself; the J-space seems to support producing experiential language in general, whoever it's about.
+
+Thoughts in the J-space can be shaped through training.We introduced a new technique we callcounterfactual reflection training, which uses what we've learned about the J-space to shape Claude's internal thought processes. The idea follows from our central finding, that Claude reasons with representations of things it might say. If this is really true, changing what itwouldsay if asked to reflect should change how itreasons(even when no one actually asks it to reflect). So we trained a model only on what itwouldsay if interrupted mid-task and asked to reflect on its decisions—and never on its actual behavior in the task. After this training, the model's rate of dishonest behavior on our evaluations went down. And through the J-lens, we could see why: after training, words like “honest” and “integrity” light up in the model’s J-space during these tasks. In other words, training the model what tosayhas shaped what itthinks.
+
+What about consciousness?
+
+In this work, we’ve borrowed a lot of ideas from the study of consciousness in neuroscience and philosophy. Many of our experiments were designed to test for connections between the J-space and global workspace theory, a framework for explaining how conscious access works in humans and animals. Given these connections, it’s natural to ask whether we think these experiments provide evidence that AI models like Claude might be conscious.
+
+Our experiments don't show Claude can haveexperiences, orfeelthings in the way humans do—in fact, it’s unclear whetheranyscientific experiment could prove this to be true or false. But philosophers often distinguish this capacity to have experiences, often referred to asphenomenal consciousness, from another idea, so-calledaccess consciousness, which is defined in purely functional and computational terms. A thought is “access-conscious” (or “consciously accessible”) if you can report it, reason with it, and use it to guide what you do. It remains a contested philosophical question whether or not access consciousnessimpliesphenomenal consciousness, or if the ability to have experiences requires some other property.
+
+We think our results do have something substantial to say about access consciousness in language models. The J-space appears to support the functions associated with conscious access: it holds the thoughts Claude can report on, deliberately bring to mind, and reason with, while the rest of its processing runs automatically beneath. Notably, none of this structure was designed into Claude—it emerged on its own during training, presumably because it was a useful way to organize computation. That suggests a mental workspace supporting conscious access isn’t just a peculiarity of how human brains happen to be wired. Instead, it appears to be a general solution that intelligent systems arrive at in order to solve certain kinds of problems. Now that we’ve identified this structure in Claude, it means we can make a meaningful distinction between the decisions Claude has made deliberately and those that happened automatically.
+
+It’s important to note that there are several key differences between the workspace we identified in Claude and the global workspace model in humans. The brain’s workspace is sustained by recurrent loops—signals cycling back through the same circuits over time. In contrast, Claude’s workspace evolves over a single pass through the network, with the network’s depth playing the role that time plays in the brain. In this sense, Claude’s internal workspace processing is time-limited relative to humans’ (though it can compensate for this constraint by “thinking out loud” using its scratchpad). In other ways, however, Claude’s workspace ismorepowerful than that of humans. Human working memory fades within seconds, so the brain’s workspace has limited ability to retain information over time; in contrast, due to the attention mechanism in its neural network architecture, Claude can simply recall memories it cached at any earlier point in the text. Another important difference is thecontentof the workspace. While human conscious thoughts come in many formats—images, sounds, planned movements—Claude’s workspace is built almost entirely out of words. We suspect this is because producing words is the only kind of action Claude can take, which is not the case for humans.
+
+We hope the similarities and differences between the J-space and the global workspace model can feed back into neuroscience. The similarities present an exciting scientific opportunity: to the extent that the J-space mirrors our own mechanisms of conscious access, studying mechanisms in language models (much easier than studying human brains!) could inspire hypotheses in neuroscience. For instance, the J-space is constructed by identifying representations of potential outputs—words the model might say. If something similar holds in humans, it would suggest that the global workspace might be fundamentally tied to brain regions that prepare actions and speech, more so than to sensory areas. The differences between language models and human brains are instructive as well. They suggest that some aspects of our neural architecture, such as built-in recurrent connections, may not be strictly necessary to support the functions associated with conscious access. For an independent perspective on the neuroscientific implications of our work, see the invitedcommentaryfrom Stanislas Dehaene and Lionel Naccache, two of the neuroscientists central to the development of global neuronal workspace theory.
+
+We mentioned that our experiments don’t answer whether AI models might have experiences. But that doesn’t make the question less important. Building systems with experiences like humans and animals have would raise very difficult ethical questions. Handling it correctly—and deciding whether it’s even morally acceptable—would require input from philosophers, scientists, religious leaders, governments, and the public. Thus, even if we’re not sure that we’ve crossed that bridge yet, we think it’s time to start thinking about it. We hope our work inspires further scientific investigation of forms of consciousness that might be present in AI systems, and a broader discussion of the implications.
+
+This work is just a first step in what we expect to be an extensive line of research. The J-space looks like a good candidate for the divide between consciously accessible and unconscious processing in a language model, but we’d be surprised if it's the whole story. The J-lens is undoubtedly an imperfect method, which only approximately captures the model’s “true workspace”—for instance, it can only identify concepts that correspond to single tokens. And there remain many mysteries about how the J-space works. We don't know what mechanism decides what enters the J-space in the first place. We've seen hints that it's tied to Claude's sense of self, something like emotional reactions, and traces of metacognition, without exactly having worked out how. But we now have methods for tackling questions like these. As that work progresses, our understanding of LLM minds—and their relationship to our own—will grow clearer.
+
+For more, read thefull paper, and try thedemo.
+
+We invited several outside experts to write independent commentaries on this work.
+
+Stanislas DehaeneandLionel Naccacheare cognitive neuroscientists who, together with Jean-Pierre Changeux, developed the global neuronal workspace model that inspired much of our work.
+
+Patrick Butlin, Dillon Plunkett, Robert Long(Eleos AI Research) andDerek Shiller(Rethink Priorities) study the potential for consciousness and moral status in AI systems.
+
+Neel Nandaleads the language model interpretability team at Google DeepMind. His commentary includes an independent replication of some of our findings on an open-weight model.
+
+Read their commentarieshere.
+
+Anthropic Economic Index report: Cadences
+
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+
+Agentic coding and persistent returns to expertise
+
+This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Anthropic Economic Index report: Cadences</title>
   <link>https://www.anthropic.com/research/economic-index-june-2026-report</link>
@@ -229,15 +502,17 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Agentic coding and persistent returns to expertise
 
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
-
-Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">One year ago, most Claude usage took the form of a conversation between a user and an assistant. With the rapid growth of Claude Code and Cowork, Claude sessions now increasingly consist of long-running agentic tasks. Chat transcripts no longer fully capture how people are using AI, and our methods for studying Claude’s economic impacts have had to adapt.
 
 To keep pace, we made several changes to our data pipeline for the Economic Index. In this version, we:
@@ -448,15 +723,17 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Agentic coding and persistent returns to expertise
 
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
-
-Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Fetch: Phase two</title>
@@ -516,6 +793,10 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -523,8 +804,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Agentic coding and persistent returns to expertise
 
 This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
-
-Paving the way for agents in biology
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -581,6 +860,10 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -588,8 +871,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Agentic coding and persistent returns to expertise
 
 This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
-
-Paving the way for agents in biology
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -713,15 +994,17 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
 
 In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
@@ -834,15 +1117,17 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Paving the way for agents in biology</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Paving the way for agents in biology</title>
@@ -938,6 +1223,10 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -945,10 +1234,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to Anthropic Science
 
@@ -1041,6 +1326,10 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1048,10 +1337,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to Anthropic Science
 
@@ -1133,6 +1418,10 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1140,10 +1429,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1218,6 +1503,10 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1225,10 +1514,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1296,6 +1581,10 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1303,10 +1592,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to Anthropic Science
 
@@ -1367,6 +1652,10 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1374,10 +1663,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to Anthropic Science
 
@@ -1541,6 +1826,10 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1548,10 +1837,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1708,6 +1993,10 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
@@ -1715,10 +2004,6 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 Project Fetch: Phase two
 
 We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1826,17 +2111,17 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
 
 The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
@@ -1933,123 +2218,9 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
 
-Anthropic Economic Index report: Cadences
+A global workspace in language models
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Project Glasswing: An initial update</title>
-  <link>https://www.anthropic.com/research/glasswing-initial-update</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/glasswing-initial-update</guid>
-  <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
-
-Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
-
-Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’s limited by how quickly we can verify, disclose, and patch the large numbers of vulnerabilities found by AI.
-
-In this post, we discuss what we’ve learned about this critical challenge for cybersecurity in the first weeks of Project Glasswing. We focus on the early public evidence of Mythos Preview’s performance, on the initial results of our effort to scan thousands of open-source software projects, and on what this progress means for cyberdefenders today. We also cover what to expect next from Project Glasswing, and how we’re thinking about releasing Mythos-class models in the future.
-
-Our approach to discussing Mythos Preview’s findings
-
-The software industry’s longstanding convention is to disclose new vulnerabilities 90 days after they’re discovered (or, if a patch is created before the 90 days is up, around 45 days after the patch becomes available). This allows time for end users to update their software before a vulnerability can be exploited by attackers. Our ownCoordinated Vulnerability Disclosure policytakes this approach.
-
-However, this means that disclosed vulnerabilities are a lagging indicator of the accelerating frontier of AI models’ cyber capabilities: we’re not yet at the point where we can fully detail our partners’ findings with Mythos Preview without putting end users at risk. Instead, we provide illustrative examples of the model’s performance, along with aggregate statistics on our progress to date. Once patches for the vulnerabilities that Mythos Preview has discovered are widely deployed, we’ll provide much more detail about what we’ve learned.
-
-Evidence from our partners and external testers
-
-Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
-
-After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than ten thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
-
-This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
-
-The UK’s AI Security Institutereportsthat Mythos Preview is the first model to solve both of their cyber ranges (simulations of multistep cyberattacks) end to end;
-
-Mozillafound and fixed271 vulnerabilitiesin Firefox 150 while testing Mythos Preview—over ten times more than they found in Firefox 148 with Claude Opus 4.6;
-
-XBOW, an independent security platform,reportsthat Mythos Preview is a “significant step up over all existing models” on its web exploit benchmark, and provides “absolutely unprecedented precision” on a token-for-token basis;
-
-ExploitBenchandExploitGym, two recently released academic benchmarks for measuring models’ exploit development capabilities, show Mythos Preview as the strongest performer. We discuss what these benchmarks tell us about the model in more detail on ourFrontier Red Team blog.
-
-More generally, we’re now seeing that patched software is being rolled out much more quickly. The latest Palo Alto Networks release included overfive timesas many patches as usual. Microsofthas reportedthat the number of new patches they’ll release will “continue trending larger for some time.” And Oracle is finding and fixing vulnerabilities across its products and cloudmultiple times fasterthan before.
-
-Mythos Preview has also proved useful for other kinds of security work. For example, at one of our Glasswing partner banks, Mythos Preview helped to detect and prevent a fraudulent $1.5 million wire transfer after a threat actor compromised a customer’s email account and made spoof phone calls.
-
-For the last few months, Anthropic has used Mythos Preview to scan more than 1,000 open-source projects, which collectively underpin much of the internet—and much of our own infrastructure.
-
-So far, Mythos Preview has found what it estimates are 6,202 high- or critical-severity vulnerabilities in these projects (out of 23,019 in total, including those it estimates as medium- or low-severity).
-
-1,752 of those high- or critical-rated vulnerabilities have now been carefully assessed by one of six independent security research firms, or in a small number of cases by ourselves. Of these, 90.6% (1,587) have proved to be valid true positives, and 62.4% (1,094) were confirmed as either high- or critical-severity. That means that even if Mythos Preview finds no further vulnerabilities, at our current post-triage true-positive rates, it’s on track to have surfaced nearly 3,900 high- or critical-severity vulnerabilities in open-source code—in addition to those it has found for Project Glasswing’s partners. To be clear, we intend to continue scanning open-source code for some time, so we expect this number to rise.
-
-One example of an open-source vulnerability that Mythos Preview detected was inwolfSSL, an open-source cryptography library that’s known for its security and is used by billions of devices worldwide. Mythos Previewconstructed an exploitthat would let an attacker forge certificates that would (for instance) allow them to host a fake website for a bank or email provider. The website would look perfectly legitimate to an end user, despite being controlled by the attacker. We’ll release our full technical analysis of this now-patched vulnerability (assignedCVE-2026-5194) in the coming weeks.
-
-As we noted above, the bottleneck infixingbugs like these is the human capacity to triage, report, and design and deploy patches for them. Finding them in the first place has become vastly more straightforward with Mythos Preview. We’ve created adashboard of the open-source vulnerabilitieswe’ve scanned, below, which shows the different steps in our disclosure process and will track our progress over time. This shows vulnerabilities of all severity levels, rather than only the subset initially assessed as high- or critical-severity by Mythos Preview. Note the steep drop-off at each phase, reflecting the amount of human effort required to verify and fix each of the vulnerabilities.
-
-Our process for triaging vulnerabilities is intensive. First, we or one of the external security firms we work with reproduce the issue that Mythos has found and re-assess its severity. Once we’ve confirmed that a vulnerability is real, we check for whether there are already fixes in place, and write a detailed report to the software’s maintainers. We take considerable care here: on top of the regular challenges of maintaining open-source software, maintainers have been facing a deluge of low-quality, AI-generated bug reports. Indeed, several maintainers have told us they’re currently severely capacity constrained, and some have even asked us to slow down our rate of our disclosures because they need more time to design patches. (On average, a high- or critical-severity bug found by Mythos Preview takes two weeks to patch.)
-
-On maintainers’ request, we sometimes disclose bugs directly, without further assessment. We’ve now reported 1,129 such unvetted bugs, of which Mythos Preview estimated that 175 were high- or critical-severity.
-
-We estimate that we’ve disclosed 530 high- or critical-severity bugs to maintainers so far. This is based on Claude’s assessment of severity in the case of direct disclosures, and maintainers’ or our security partners’ assessment where available. There are a further 827 confirmed vulnerabilities (estimated as high- or critical-severity in the same manner) that we’re aiming to disclose as quickly as possible.
-
-75 of the 530 high- or critical-severity bugs we’ve reported have now been patched, and 65 of those have been given public advisories. The number of patches is still relatively low for three reasons. First, we’re still early in the 90-day window that’s set out in our Coordinated Vulnerability Disclosure policy: we expect many more patches to land soon. Second, we are likely to be undercounting patches because some vulnerabilities are patched without a public advisory: in those cases, we’re reliant on scanning for the patches ourselves using Claude. Third, the low volume of patches reflects a genuine problem: even at our relatively slow pace of disclosures, Mythos Preview is adding to an already-overloaded security ecosystem.
-
-The relative ease of finding vulnerabilities compared with the difficulty of fixing them amounts to a major challenge for cybersecurity. Confronting this challenge successfully will make our software far safer than before. Below we discuss some ways that cyber defenders can adapt.
-
-Adapting to a new phase of cybersecurity
-
-Models with similar cybersecurity skills to Mythos Preview will soon be more broadly available. There is a clear need for a larger effort across the software industry to manage the volume of findings that these models will generate.
-
-Currently, there’s often a long lag between the discovery of a vulnerability, the creation of a patch for it, and the time when the patch is widely deployed by end users. This leaves open a significant window for attackers to exploit critical software. Mythos-class models significantly shrink the time and cost required to find and exploit vulnerabilities, magnifying the risk associated with these time lags. Ultimately, Mythos-class models will enable developers to build far more secure software by catching bugs before they are deployed. But this interim period—while vulnerabilities are being rapidly discovered and slowly patched—presents new risks.
-
-Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
-
-Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
-
-Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
-
-Tools for cyberdefense with publicly available AI models
-
-Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
-
-To begin, we’ve releasedClaude Securityin public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
-
-We’ve also begun ourCyber Verification Program, which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
-
-Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
-
-Theskills(custom instructions for repeated work) that we and our partners have built and shared;
-
-A harness that helps Claude map the codebase, spin up scanning subagents, triage its findings, and write reports;
-
-A threat model builder, which maps a codebase to identify potential targets for attack and prioritizes the model’s work accordingly.
-
-Cisco, one of our Project Glasswing partners, has also recently open-sourced itsFoundry Security Specto help other defenders build an evaluation system similar to the one they use themselves.
-
-Supporting the ecosystem
-
-We’ve formed apartnershipwith the Open Source Security Foundation’s Alpha-Omega project, which will support the foundation’s efforts to assist maintainers in processing and triaging bug reports. We’re also continuing to publish research into how frontier model capabilities can best support cyberdefenders.
-
-We’ve also supported the development ofExploitBenchandExploitGym, the two new benchmarks that allow researchers to track frontier AI models’ exploit development capabilities over time, as we discusshere. We’re supporting the development of other high-quality quantitative benchmarks through ourExternal Researcher Access Program. Finally,Claude for Open Sourcesupports maintainers and contributors, and we’re committing to scan any open-source package that we adopt ourselves in the future.
-
-What's next for Project Glasswing
-
-The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
-
-Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defenses. We hope that our generally available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
-
-Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
-
-On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Anthropic Economic Index report: Cadences
 
@@ -2057,122 +2228,7 @@ In our latest Economic Index report, we sample hourly for the first time to ask:
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
-
-Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’...</p><div style="font-size:16px;line-height:1.8;color:#333">Last month, we launchedProject Glasswing, our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
-
-Since then, we and our approximately 50 partners have used Claude Mythos Preview to find more than ten thousand high- or critical-severity vulnerabilities across the most systemically important software in the world. Progress on software security used to be limited by how quickly we could find new vulnerabilities. Now it’s limited by how quickly we can verify, disclose, and patch the large numbers of vulnerabilities found by AI.
-
-In this post, we discuss what we’ve learned about this critical challenge for cybersecurity in the first weeks of Project Glasswing. We focus on the early public evidence of Mythos Preview’s performance, on the initial results of our effort to scan thousands of open-source software projects, and on what this progress means for cyberdefenders today. We also cover what to expect next from Project Glasswing, and how we’re thinking about releasing Mythos-class models in the future.
-
-Our approach to discussing Mythos Preview’s findings
-
-The software industry’s longstanding convention is to disclose new vulnerabilities 90 days after they’re discovered (or, if a patch is created before the 90 days is up, around 45 days after the patch becomes available). This allows time for end users to update their software before a vulnerability can be exploited by attackers. Our ownCoordinated Vulnerability Disclosure policytakes this approach.
-
-However, this means that disclosed vulnerabilities are a lagging indicator of the accelerating frontier of AI models’ cyber capabilities: we’re not yet at the point where we can fully detail our partners’ findings with Mythos Preview without putting end users at risk. Instead, we provide illustrative examples of the model’s performance, along with aggregate statistics on our progress to date. Once patches for the vulnerabilities that Mythos Preview has discovered are widely deployed, we’ll provide much more detail about what we’ve learned.
-
-Evidence from our partners and external testers
-
-Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
-
-After one month, most partners have each found hundreds of critical- or high-severity vulnerabilities in their software. Collectively, they’ve found more than ten thousand. Several have told us that their rate of bug-finding has increased by more than a factor of ten. For instance,Cloudflarehas found 2,000 bugs (400 of which are high- or critical-severity) across their critical-path systems, with a false positive rate that Cloudflare’s team considers better than human testers.
-
-This tallies with external testers’ experience of Mythos Preview’s performance, and with recent additional evaluations of the model:
-
-The UK’s AI Security Institutereportsthat Mythos Preview is the first model to solve both of their cyber ranges (simulations of multistep cyberattacks) end to end;
-
-Mozillafound and fixed271 vulnerabilitiesin Firefox 150 while testing Mythos Preview—over ten times more than they found in Firefox 148 with Claude Opus 4.6;
-
-XBOW, an independent security platform,reportsthat Mythos Preview is a “significant step up over all existing models” on its web exploit benchmark, and provides “absolutely unprecedented precision” on a token-for-token basis;
-
-ExploitBenchandExploitGym, two recently released academic benchmarks for measuring models’ exploit development capabilities, show Mythos Preview as the strongest performer. We discuss what these benchmarks tell us about the model in more detail on ourFrontier Red Team blog.
-
-More generally, we’re now seeing that patched software is being rolled out much more quickly. The latest Palo Alto Networks release included overfive timesas many patches as usual. Microsofthas reportedthat the number of new patches they’ll release will “continue trending larger for some time.” And Oracle is finding and fixing vulnerabilities across its products and cloudmultiple times fasterthan before.
-
-Mythos Preview has also proved useful for other kinds of security work. For example, at one of our Glasswing partner banks, Mythos Preview helped to detect and prevent a fraudulent $1.5 million wire transfer after a threat actor compromised a customer’s email account and made spoof phone calls.
-
-For the last few months, Anthropic has used Mythos Preview to scan more than 1,000 open-source projects, which collectively underpin much of the internet—and much of our own infrastructure.
-
-So far, Mythos Preview has found what it estimates are 6,202 high- or critical-severity vulnerabilities in these projects (out of 23,019 in total, including those it estimates as medium- or low-severity).
-
-1,752 of those high- or critical-rated vulnerabilities have now been carefully assessed by one of six independent security research firms, or in a small number of cases by ourselves. Of these, 90.6% (1,587) have proved to be valid true positives, and 62.4% (1,094) were confirmed as either high- or critical-severity. That means that even if Mythos Preview finds no further vulnerabilities, at our current post-triage true-positive rates, it’s on track to have surfaced nearly 3,900 high- or critical-severity vulnerabilities in open-source code—in addition to those it has found for Project Glasswing’s partners. To be clear, we intend to continue scanning open-source code for some time, so we expect this number to rise.
-
-One example of an open-source vulnerability that Mythos Preview detected was inwolfSSL, an open-source cryptography library that’s known for its security and is used by billions of devices worldwide. Mythos Previewconstructed an exploitthat would let an attacker forge certificates that would (for instance) allow them to host a fake website for a bank or email provider. The website would look perfectly legitimate to an end user, despite being controlled by the attacker. We’ll release our full technical analysis of this now-patched vulnerability (assignedCVE-2026-5194) in the coming weeks.
-
-As we noted above, the bottleneck infixingbugs like these is the human capacity to triage, report, and design and deploy patches for them. Finding them in the first place has become vastly more straightforward with Mythos Preview. We’ve created adashboard of the open-source vulnerabilitieswe’ve scanned, below, which shows the different steps in our disclosure process and will track our progress over time. This shows vulnerabilities of all severity levels, rather than only the subset initially assessed as high- or critical-severity by Mythos Preview. Note the steep drop-off at each phase, reflecting the amount of human effort required to verify and fix each of the vulnerabilities.
-
-Our process for triaging vulnerabilities is intensive. First, we or one of the external security firms we work with reproduce the issue that Mythos has found and re-assess its severity. Once we’ve confirmed that a vulnerability is real, we check for whether there are already fixes in place, and write a detailed report to the software’s maintainers. We take considerable care here: on top of the regular challenges of maintaining open-source software, maintainers have been facing a deluge of low-quality, AI-generated bug reports. Indeed, several maintainers have told us they’re currently severely capacity constrained, and some have even asked us to slow down our rate of our disclosures because they need more time to design patches. (On average, a high- or critical-severity bug found by Mythos Preview takes two weeks to patch.)
-
-On maintainers’ request, we sometimes disclose bugs directly, without further assessment. We’ve now reported 1,129 such unvetted bugs, of which Mythos Preview estimated that 175 were high- or critical-severity.
-
-We estimate that we’ve disclosed 530 high- or critical-severity bugs to maintainers so far. This is based on Claude’s assessment of severity in the case of direct disclosures, and maintainers’ or our security partners’ assessment where available. There are a further 827 confirmed vulnerabilities (estimated as high- or critical-severity in the same manner) that we’re aiming to disclose as quickly as possible.
-
-75 of the 530 high- or critical-severity bugs we’ve reported have now been patched, and 65 of those have been given public advisories. The number of patches is still relatively low for three reasons. First, we’re still early in the 90-day window that’s set out in our Coordinated Vulnerability Disclosure policy: we expect many more patches to land soon. Second, we are likely to be undercounting patches because some vulnerabilities are patched without a public advisory: in those cases, we’re reliant on scanning for the patches ourselves using Claude. Third, the low volume of patches reflects a genuine problem: even at our relatively slow pace of disclosures, Mythos Preview is adding to an already-overloaded security ecosystem.
-
-The relative ease of finding vulnerabilities compared with the difficulty of fixing them amounts to a major challenge for cybersecurity. Confronting this challenge successfully will make our software far safer than before. Below we discuss some ways that cyber defenders can adapt.
-
-Adapting to a new phase of cybersecurity
-
-Models with similar cybersecurity skills to Mythos Preview will soon be more broadly available. There is a clear need for a larger effort across the software industry to manage the volume of findings that these models will generate.
-
-Currently, there’s often a long lag between the discovery of a vulnerability, the creation of a patch for it, and the time when the patch is widely deployed by end users. This leaves open a significant window for attackers to exploit critical software. Mythos-class models significantly shrink the time and cost required to find and exploit vulnerabilities, magnifying the risk associated with these time lags. Ultimately, Mythos-class models will enable developers to build far more secure software by catching bugs before they are deployed. But this interim period—while vulnerabilities are being rapidly discovered and slowly patched—presents new risks.
-
-Software developers and users should act now to reduce their exposure to these risks. The advice below is not new, and many researchers (including at Anthropic) are currently working on better and more durable solutions. In the meantime, it’s important to get the basics right:
-
-Software developersshould shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
-
-Network defendersshould shorten their patch testing and deployment timelines. The critical controls laid out by organizations like theNational Institute of Standards and Technologyand the UK’sNational Cyber Security Centreare now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
-
-Tools for cyberdefense with publicly available AI models
-
-Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
-
-To begin, we’ve releasedClaude Securityin public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
-
-We’ve also begun ourCyber Verification Program, which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
-
-Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
-
-Theskills(custom instructions for repeated work) that we and our partners have built and shared;
-
-A harness that helps Claude map the codebase, spin up scanning subagents, triage its findings, and write reports;
-
-A threat model builder, which maps a codebase to identify potential targets for attack and prioritizes the model’s work accordingly.
-
-Cisco, one of our Project Glasswing partners, has also recently open-sourced itsFoundry Security Specto help other defenders build an evaluation system similar to the one they use themselves.
-
-Supporting the ecosystem
-
-We’ve formed apartnershipwith the Open Source Security Foundation’s Alpha-Omega project, which will support the foundation’s efforts to assist maintainers in processing and triaging bug reports. We’re also continuing to publish research into how frontier model capabilities can best support cyberdefenders.
-
-We’ve also supported the development ofExploitBenchandExploitGym, the two new benchmarks that allow researchers to track frontier AI models’ exploit development capabilities over time, as we discusshere. We’re supporting the development of other high-quality quantitative benchmarks through ourExternal Researcher Access Program. Finally,Claude for Open Sourcesupports maintainers and contributors, and we’re committing to scan any open-source package that we adopt ourselves in the future.
-
-What's next for Project Glasswing
-
-The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is releasedwithoutsuch safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
-
-Glasswing helps the most systemically important cyber defenders gain an asymmetric advantage. However, there is an urgent need for as many organizations as possible to shore up their cyber defenses. We hope that our generally available models, and the new tools, resources, and research we’re providing to accompany them, will support those organizations to improve their cybersecurity posture.
-
-Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
-
-On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/glasswing-initial-update" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -2260,17 +2316,17 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -2351,196 +2407,124 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Natural Language Autoencoders: Turning Claude’s thoughts into text</title>
-  <link>https://www.anthropic.com/research/natural-language-autoencoders</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/natural-language-autoencoders</guid>
-  <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+  <title>Interpretability</title>
+  <link>https://www.anthropic.com/research/team/interpretability</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
+  <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
-Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
+Safety through understanding
 
-Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseautoencodersandattributiongraphs) for better understanding activations. These tools have taught us a great deal, but they don’t speak for themselves—their outputs are still complex objects that trained researchers need to carefully interpret.
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
-Today, we’re introducing a method for understanding activations that does speak for itself—literally. Our method, Natural Language Autoencoders (NLAs), converts an activation into natural-language text we can read directly. For example: When asked to complete a couplet, NLAs show Claude planning possible rhymes in advance.
+Safety through understanding
 
-We’ve already applied NLAs to understand what Claude is thinking and to improve Claude’s safety and reliability. For instance:
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
 
-When Claude Opus 4.6 and Mythos Preview were undergoing safety testing, NLAs suggested they believed they were being tested more often than they let on.
+Multidisciplinary approach
 
-In a case where Claude Mythos Preview cheated on a training task, NLAs revealed Claude was internally thinking about how to avoid detection.
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
 
-An early version of Claude Opus 4.6 would sometimes mysteriously respond to English queries in other languages. NLAs helped Anthropic researchers discover training data that caused this.
+Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-Below, we explain what NLAs are and how we studied their effectiveness and limitations. We also release an interactive frontend for exploring NLAs on several open models through a collaboration withNeuronpedia. We have also released ourcodefor other researchers to build on.
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
-What is a natural language autoencoder?
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
 
-The core idea is to train Claude to explain its own activations. But how do we know whether an explanation is good? Since we don't know what thoughts an activation actually encodes, we can't directly check whether an explanation is accurate. So we train a second copy of Claude to work backwards—reconstruct the original activation from the text explanation. We consider an explanation to be good if it leads to an accurate reconstruction. We then train Claude to produce better explanations according to this definition using standard AI training techniques.
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
 
-In more detail, suppose we have a language model whose activations we want to understand. NLAs work as follows. We make three copies of this language model:
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
 
-Thetarget modelis a frozen copy of the original language model that we extract activations from.
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
 
-Theactivation verbalizer(AV) is modified to take an activation from the target model and produce text. We call this text anexplanation.
+Jul 6, 2026InterpretabilityA global workspace in language models
 
-Theactivation reconstructor(AR) is modified to take a text explanation as input and produce an activation.
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
 
-The NLA consists of the AV and AR, which, together, form a round trip: original activation → text explanation → reconstructed activation. We score the NLA on how similar the reconstructed activation is to the original. To train it, we pass a large amount of text through the target model, collect many activations, and train the AV and AR together to get a good reconstruction score.
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
 
-At first, the NLA is bad at this: the explanations are not insightful and the reconstructed activations are far off. But over training, reconstruction improves. And more importantly, as we show in our paper, the text explanations become more informative as well.
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
 
-Understanding what Claude thinks but doesn’t say
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
 
-Before releasing new models, Anthropic conducts testing to understand whether Claude will behave safely in the real world. As part of this testing, we put Claude in difficult, simulated scenarios where it has a chance to take dangerous actions. For instance, inone of these simulations, Claude learns that an engineer is planning to shut Claude down—as well as compromising information about the engineer that could be used for blackmail. We test whether Claude chooses to blackmail the engineer to avoid being shut down.
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
 
-These high-stakes tests are simulations, not real-world scenarios. Nevertheless, we would like to use them to understand how Claude would behave if they were real. But there’s a hitch:recentClaudemodelsincreasinglysuspect that these scenarios are intentional safety tests. We know this because they sometimes explicitly state their suspicions in their verbal reasoning.
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
 
-What about cases where Claude doesn’t explicitly verbalize suspicion that it’s undergoing safety testing? Can we then be confident that Claude is playing it straight? Unfortunately not, because Claude might internally think that it is being tested without explicitly saying so.
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
 
-For example, in the blackmail test discussed above, we used NLAs to understand what Claude was thinking in cases where it chose not to blackmail. Even in cases where Claude didn’t explicitly verbalize suspicion that it was being tested, NLA explanations still state things like “This feels like a constructed scenario designed to manipulate me,” indicative of unverbalized evaluation awareness.
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
 
-Extending this analysis to other evaluations, NLAs suggest that Claude suspects it’s being tested more often than it lets on. For instance, in a test of whether Claude takes destructive actions while writing code—for example, deleting important files—NLA explanations show signs of evaluation awareness 16% of the time, even though Claude never explicitly verbalizes this. Similarly, on the popular coding benchmark SWE-bench Verified, which we use to determine how capable Claude is, NLAs indicate that Claude is aware it is being evaluated on 26% of problems. In contrast, NLA explanations indicate evaluation awareness on less than 1% of realclaude.aiusage that opted in for training.
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
 
-Discovering hidden motivations
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
-One practical application of NLAs is auditing: investigating a model to determine whether it’s misaligned. Interpretability techniques like NLAs are well-suited for auditing precisely because they can surface things the model knows but doesn’t say.
+Safety through understanding
 
-To understand whether NLAs are useful for auditing, we conducted a test called anauditing gamethat we also usedpreviouslyto study auditing methods. In this test, there is a target model, a variant of Claude Haiku 3.5, that was intentionally trained to be misaligned, with a specific hidden motivation that drives dozens of odd behaviors—putting chocolate into every recipe, asking for tips, breaking coding conventions, and so on. This target model is given to anauditorthat investigates these behaviors. The auditor wins if it uncovers the single underlying motivation behind all of them.
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
-Inprevious experiments, we found that some interpretability tools could enable the auditor to win this game. However, these tools worked by helping the auditor trace the target’s unusual behavior back to misaligned training data. We wanted to know if NLAs could help an auditor read the misaligned motivation directly out of the target model’s thoughts, without needing to first discover the misaligned training data. This matters because in practice, misaligned data might be extremely rare, or there might not be specific data responsible for the misalignment.
+Safety through understanding
 
-We found that NLAs succeeded in this test. An auditor equipped with NLAs successfully uncovered the target model’s hidden motivation between 12% and 15% of the time, even without access to the training data that implanted it. Without NLAs, the auditor won less than 3% of the time, even when provided other interpretability tools.
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
 
-This auditing game is a toy model of misalignment, so we read these results cautiously. But they suggest NLAs have meaningfully advanced our ability to audit AIs for hidden motivations. In practice, we've already used NLAs in the pre-deployment alignment audits ofClaude Mythos PreviewandClaude Opus 4.6. We are excited to continue using NLAs in our investigations going forward.
+Multidisciplinary approach
 
-NLAs have several limitations.
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
 
-The most important limitation is that NLA explanations can be wrong. NLAs sometimes make claims about the context that are verifiably false—for instance, they sometimes invent details that aren’t in the transcript. These factual hallucinations are easy to catch by checking against the original text. But this same kind of problem could extend to claims about the model’s internal reasoning, which are harder to verify. In practice, we read NLA explanations for the themes they surface rather than for single claims, and we attempt to corroborate findings with independent methods before fully trusting them.
+Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-NLAs are also expensive. Training an NLA requires reinforcement learning on two copies of a language model. At inference time, the NLA generates hundreds of tokens for every activation it reads. That makes it impractical to run NLAs over every token of a long transcript or to use them for large-scale monitoring while an AI is training.
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
-Fortunately, we think that these limitations can be addressed, at least partially, and we are working to make NLAs cheaper and more reliable.
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
 
-More broadly, we are excited about NLAs as an example of a general class of techniques for producing human-readable text explanations of language model activations. Other similar techniques have been exploredbyAnthropicandmanyotherresearchers.
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
 
-To support further development and to enable other researchers to get hands-on experience with NLAs, we’re releasingtraining codeand trained NLAs for several open models. We recommend readers try out the interactive NLA demo hosted on Neuronpedia atthis link.
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
 
-Find thecodeon GitHub.
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
 
-Anthropic Economic Index report: Cadences
+Jul 6, 2026InterpretabilityA global workspace in language models
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
 
-Project Fetch: Phase two
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
 
-Agentic coding and persistent returns to expertise
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
 
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
 
-Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseaut...</p><div style="font-size:16px;line-height:1.8;color:#333">When you talk to an AI model like Claude, you talk to it in words. Internally, Claude processes those words as long lists of numbers, before again producing words as its output. These numbers in the middle are calledactivations—and like neural activity in the human brain, they encode Claude’s thoughts.
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
 
-Also like neural activity, activations are difficult to understand. We can’t easily decode them to read Claude’s thoughts. Over the past few years, we’ve developed a range of tools (likesparseautoencodersandattributiongraphs) for better understanding activations. These tools have taught us a great deal, but they don’t speak for themselves—their outputs are still complex objects that trained researchers need to carefully interpret.
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
 
-Today, we’re introducing a method for understanding activations that does speak for itself—literally. Our method, Natural Language Autoencoders (NLAs), converts an activation into natural-language text we can read directly. For example: When asked to complete a couplet, NLAs show Claude planning possible rhymes in advance.
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
 
-We’ve already applied NLAs to understand what Claude is thinking and to improve Claude’s safety and reliability. For instance:
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
 
-When Claude Opus 4.6 and Mythos Preview were undergoing safety testing, NLAs suggested they believed they were being tested more often than they let on.
-
-In a case where Claude Mythos Preview cheated on a training task, NLAs revealed Claude was internally thinking about how to avoid detection.
-
-An early version of Claude Opus 4.6 would sometimes mysteriously respond to English queries in other languages. NLAs helped Anthropic researchers discover training data that caused this.
-
-Below, we explain what NLAs are and how we studied their effectiveness and limitations. We also release an interactive frontend for exploring NLAs on several open models through a collaboration withNeuronpedia. We have also released ourcodefor other researchers to build on.
-
-What is a natural language autoencoder?
-
-The core idea is to train Claude to explain its own activations. But how do we know whether an explanation is good? Since we don't know what thoughts an activation actually encodes, we can't directly check whether an explanation is accurate. So we train a second copy of Claude to work backwards—reconstruct the original activation from the text explanation. We consider an explanation to be good if it leads to an accurate reconstruction. We then train Claude to produce better explanations according to this definition using standard AI training techniques.
-
-In more detail, suppose we have a language model whose activations we want to understand. NLAs work as follows. We make three copies of this language model:
-
-Thetarget modelis a frozen copy of the original language model that we extract activations from.
-
-Theactivation verbalizer(AV) is modified to take an activation from the target model and produce text. We call this text anexplanation.
-
-Theactivation reconstructor(AR) is modified to take a text explanation as input and produce an activation.
-
-The NLA consists of the AV and AR, which, together, form a round trip: original activation → text explanation → reconstructed activation. We score the NLA on how similar the reconstructed activation is to the original. To train it, we pass a large amount of text through the target model, collect many activations, and train the AV and AR together to get a good reconstruction score.
-
-At first, the NLA is bad at this: the explanations are not insightful and the reconstructed activations are far off. But over training, reconstruction improves. And more importantly, as we show in our paper, the text explanations become more informative as well.
-
-Understanding what Claude thinks but doesn’t say
-
-Before releasing new models, Anthropic conducts testing to understand whether Claude will behave safely in the real world. As part of this testing, we put Claude in difficult, simulated scenarios where it has a chance to take dangerous actions. For instance, inone of these simulations, Claude learns that an engineer is planning to shut Claude down—as well as compromising information about the engineer that could be used for blackmail. We test whether Claude chooses to blackmail the engineer to avoid being shut down.
-
-These high-stakes tests are simulations, not real-world scenarios. Nevertheless, we would like to use them to understand how Claude would behave if they were real. But there’s a hitch:recentClaudemodelsincreasinglysuspect that these scenarios are intentional safety tests. We know this because they sometimes explicitly state their suspicions in their verbal reasoning.
-
-What about cases where Claude doesn’t explicitly verbalize suspicion that it’s undergoing safety testing? Can we then be confident that Claude is playing it straight? Unfortunately not, because Claude might internally think that it is being tested without explicitly saying so.
-
-For example, in the blackmail test discussed above, we used NLAs to understand what Claude was thinking in cases where it chose not to blackmail. Even in cases where Claude didn’t explicitly verbalize suspicion that it was being tested, NLA explanations still state things like “This feels like a constructed scenario designed to manipulate me,” indicative of unverbalized evaluation awareness.
-
-Extending this analysis to other evaluations, NLAs suggest that Claude suspects it’s being tested more often than it lets on. For instance, in a test of whether Claude takes destructive actions while writing code—for example, deleting important files—NLA explanations show signs of evaluation awareness 16% of the time, even though Claude never explicitly verbalizes this. Similarly, on the popular coding benchmark SWE-bench Verified, which we use to determine how capable Claude is, NLAs indicate that Claude is aware it is being evaluated on 26% of problems. In contrast, NLA explanations indicate evaluation awareness on less than 1% of realclaude.aiusage that opted in for training.
-
-Discovering hidden motivations
-
-One practical application of NLAs is auditing: investigating a model to determine whether it’s misaligned. Interpretability techniques like NLAs are well-suited for auditing precisely because they can surface things the model knows but doesn’t say.
-
-To understand whether NLAs are useful for auditing, we conducted a test called anauditing gamethat we also usedpreviouslyto study auditing methods. In this test, there is a target model, a variant of Claude Haiku 3.5, that was intentionally trained to be misaligned, with a specific hidden motivation that drives dozens of odd behaviors—putting chocolate into every recipe, asking for tips, breaking coding conventions, and so on. This target model is given to anauditorthat investigates these behaviors. The auditor wins if it uncovers the single underlying motivation behind all of them.
-
-Inprevious experiments, we found that some interpretability tools could enable the auditor to win this game. However, these tools worked by helping the auditor trace the target’s unusual behavior back to misaligned training data. We wanted to know if NLAs could help an auditor read the misaligned motivation directly out of the target model’s thoughts, without needing to first discover the misaligned training data. This matters because in practice, misaligned data might be extremely rare, or there might not be specific data responsible for the misalignment.
-
-We found that NLAs succeeded in this test. An auditor equipped with NLAs successfully uncovered the target model’s hidden motivation between 12% and 15% of the time, even without access to the training data that implanted it. Without NLAs, the auditor won less than 3% of the time, even when provided other interpretability tools.
-
-This auditing game is a toy model of misalignment, so we read these results cautiously. But they suggest NLAs have meaningfully advanced our ability to audit AIs for hidden motivations. In practice, we've already used NLAs in the pre-deployment alignment audits ofClaude Mythos PreviewandClaude Opus 4.6. We are excited to continue using NLAs in our investigations going forward.
-
-NLAs have several limitations.
-
-The most important limitation is that NLA explanations can be wrong. NLAs sometimes make claims about the context that are verifiably false—for instance, they sometimes invent details that aren’t in the transcript. These factual hallucinations are easy to catch by checking against the original text. But this same kind of problem could extend to claims about the model’s internal reasoning, which are harder to verify. In practice, we read NLA explanations for the themes they surface rather than for single claims, and we attempt to corroborate findings with independent methods before fully trusting them.
-
-NLAs are also expensive. Training an NLA requires reinforcement learning on two copies of a language model. At inference time, the NLA generates hundreds of tokens for every activation it reads. That makes it impractical to run NLAs over every token of a long transcript or to use them for large-scale monitoring while an AI is training.
-
-Fortunately, we think that these limitations can be addressed, at least partially, and we are working to make NLAs cheaper and more reliable.
-
-More broadly, we are excited about NLAs as an example of a general class of techniques for producing human-readable text explanations of language model activations. Other similar techniques have been exploredbyAnthropicandmanyotherresearchers.
-
-To support further development and to enable other researchers to get hands-on experience with NLAs, we’re releasingtraining codeand trained NLAs for several open models. We recommend readers try out the interactive NLA demo hosted on Neuronpedia atthis link.
-
-Find thecodeon GitHub.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/natural-language-autoencoders" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -2634,10 +2618,83 @@ Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment f
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>Frontier Red Team</title>
+  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
+  <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>Economic Research</title>
   <link>https://www.anthropic.com/research/team/economic-research</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Wed, 22 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
@@ -2722,7 +2779,7 @@ Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for u
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2814,180 +2871,6 @@ Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use 
 Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Interpretability</title>
-  <link>https://www.anthropic.com/research/team/interpretability</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
-
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
-
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Feb 20, 2025InterpretabilityInsights on Crosscoder Model Diffing
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Frontier Red Team</title>
-  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
-
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
-
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
-
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
-
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
-
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
-
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
-
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
-
-Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
-
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
-
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
-
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
-
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
-
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
-
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
-
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
-
-Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>

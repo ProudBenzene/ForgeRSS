@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Mon, 06 Jul 2026 15:37:49 +0000</lastBuildDate>
+<lastBuildDate>Mon, 06 Jul 2026 20:02:36 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,91 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems</title>
+  <link>https://www.anthropic.com/news/alberta-government-claude-cybersecurity</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/alberta-government-claude-cybersecurity</guid>
+  <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Case Study</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them. A team inside Alberta’s Ministry of Technology and Innovation scanned 466 million lines of code in 20 hours, remediated security gaps across its systems, and built new tools to make those systems safer.
+
+We’re sharing details of their experience as an example of how government agencies can use Claude and Claude Code to secure their systems a...</p><div style="font-size:16px;line-height:1.8;color:#333">Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them. A team inside Alberta’s Ministry of Technology and Innovation scanned 466 million lines of code in 20 hours, remediated security gaps across its systems, and built new tools to make those systems safer.
+
+We’re sharing details of their experience as an example of how government agencies can use Claude and Claude Code to secure their systems at a large scale. This is a critical challenge, as governments rely on these systems to deliver benefits and keep services running—yet the code is often old, insecure, and incompletely documented. Alberta has also published a collection of technical white papers documenting its efforts for other governments to learn from;you can read them here.
+
+“Albertans trust their government with some of the most sensitive information in their lives, and it is our responsibility to protect it,” said Nate Glubish, Alberta’s Minister of Technology and Innovation. “By using AI to find and fix vulnerabilities across our systems, we accomplished in hours what would have taken a traditional approach years to complete. This is what responsible government looks like in the AI era, and the best is still ahead of us.”
+
+Alberta’s Ministry of Technology and Innovation maintains the systems of all 27 provincial ministries, from social services to public safety to wildfire response. That includes roughly 1,280 applications and 3,400 code repositories. Most of it has never undergone a systematic security review, and the accumulated technical debt—insecure code, unaddressed bugs, outdated software—runs into the billions of dollars.
+
+The Ministry’s systems hold highly sensitive information, including tax records, government procurement data, and social services case files. So in 2025, the Ministry set up an internal team with a mandate to make these systems more secure and easier to maintain over time, working with Claude to do so.
+
+Already, the Ministry has used Claude to:
+
+Assess 466 million lines of government code in 20 hours.The team put Claude to work on the codebases it maintains, using Claude Code with Claude Opus and Sonnet models. Around 50 agents worked autonomously and in parallel to scan the systems for security vulnerabilities, weaknesses in underlying infrastructure and deployment processes, and gaps in technical documentation. Claude Code ran a two-stage routine, first scanning each repository with a rules engine to flag known patterns, then reviewing those flags and citing the exact file and line for each finding so developers could verify them. The scan covered every repository Alberta owns and identified issues that traditional automated scanning tools had missed. It took about 20 hours for Alberta’s implementation; the team estimates that that kind of review could otherwise have taken around 6.5 years.
+
+Fix the vulnerabilities the scan found.Where the scan identified a vulnerability, Claude Code could often generate a fix, test it, and build it. In cases where a system lacked the automated tests needed to confirm that a patch was safe, Claude wrote the tests first. Where the code was too outdated or too complex to patch efficiently in its existing form, Claude rebuilt it in a more modern and maintainable language. In some scenarios, these systems could be rebuilt in as little as four to five days, including a subsidy program portal that was originally hand-coded in Java roughly 25 years ago and took five months to build the first time. All of this was done in partnership with the Ministry’s engineers: before any patch shipped, it was reviewed and approved by the team.
+
+Run continuous security review.Alberta’s cybersecurity team also built a set of specialized Claude review agents that run throughout the development process. A “red team” agent probes an application from the outside, the way an attacker might, and maps how a vulnerability might be exploited. A “blue team” agent then assesses the application’s defenses against an international security standard, and writes a remediation plan that points to the exact files to fix. Additional agents check code quality and the clarity of the writing the public sees. Every application is checked against roughly 95 security controls on each pass. These agents are built on top of theClaude Agent SDKand run a robust series of checks and analysis for every application.
+
+In addition to scanning, securing, and modernizing its own systems, Alberta is training both government workers and the public in the use of AI through the Alberta AI Academy. Thousands of government employees and more than 10,000 members of the public have used the platform to learn the essentials of effective AI use, from prompting through enterprise application delivery. Through the Academy, the Ministry of Technology and Innovation aims to extend its approach beyond a single team or project to every ministry that needs it.
+
+Today, Claude helps the Ministry write, review, and deploy code that aids in its modernization efforts. Next, it plans to expand that work with AI agents that can build entirely new software and tools alongside engineers.
+
+The Government of Alberta also plans to continue its modernization work. One ministry, for example, has 185 legacy applications running in production, which are expensive to maintain and difficult to update. The Government plans to use Claude Code to analyze these systems, understand what they do, and consolidate them into 16 reusable applications built on modern coding languages and conventions. The goal is to reduce complexity, lower maintenance costs, and speed up modernization work that would otherwise take years to complete.
+
+A case study for governments
+
+The technical debt and security vulnerabilities the Government of Alberta is working to address are hardly unique. They exist in the systems of many provinces, states, and federal agencies across the world. Thetechnical white papersAlberta has released give other governments a blueprint for addressing these same issues.
+
+In addition to the white papers, Alberta is hostingan industry dayin Edmonton in July to share what it has learned. And this fall, it will begin a program to scale its approach across the provincial government. We’ll keep working with Alberta as it expands these efforts, and we hope the approach it has documented can help other governments secure their own systems.
+
+More details on Fable 5’s cyber safeguards and our jailbreak framework
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them. A team inside Alberta’s Ministry of Technology and Innovation scanned 466 million lines of code in 20 hours, remediated security gaps across its systems, and built new tools to make those systems safer.
+
+We’re sharing details of their experience as an example of how government agencies can use Claude and Claude Code to secure their systems a...</p><div style="font-size:16px;line-height:1.8;color:#333">Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them. A team inside Alberta’s Ministry of Technology and Innovation scanned 466 million lines of code in 20 hours, remediated security gaps across its systems, and built new tools to make those systems safer.
+
+We’re sharing details of their experience as an example of how government agencies can use Claude and Claude Code to secure their systems at a large scale. This is a critical challenge, as governments rely on these systems to deliver benefits and keep services running—yet the code is often old, insecure, and incompletely documented. Alberta has also published a collection of technical white papers documenting its efforts for other governments to learn from;you can read them here.
+
+“Albertans trust their government with some of the most sensitive information in their lives, and it is our responsibility to protect it,” said Nate Glubish, Alberta’s Minister of Technology and Innovation. “By using AI to find and fix vulnerabilities across our systems, we accomplished in hours what would have taken a traditional approach years to complete. This is what responsible government looks like in the AI era, and the best is still ahead of us.”
+
+Alberta’s Ministry of Technology and Innovation maintains the systems of all 27 provincial ministries, from social services to public safety to wildfire response. That includes roughly 1,280 applications and 3,400 code repositories. Most of it has never undergone a systematic security review, and the accumulated technical debt—insecure code, unaddressed bugs, outdated software—runs into the billions of dollars.
+
+The Ministry’s systems hold highly sensitive information, including tax records, government procurement data, and social services case files. So in 2025, the Ministry set up an internal team with a mandate to make these systems more secure and easier to maintain over time, working with Claude to do so.
+
+Already, the Ministry has used Claude to:
+
+Assess 466 million lines of government code in 20 hours.The team put Claude to work on the codebases it maintains, using Claude Code with Claude Opus and Sonnet models. Around 50 agents worked autonomously and in parallel to scan the systems for security vulnerabilities, weaknesses in underlying infrastructure and deployment processes, and gaps in technical documentation. Claude Code ran a two-stage routine, first scanning each repository with a rules engine to flag known patterns, then reviewing those flags and citing the exact file and line for each finding so developers could verify them. The scan covered every repository Alberta owns and identified issues that traditional automated scanning tools had missed. It took about 20 hours for Alberta’s implementation; the team estimates that that kind of review could otherwise have taken around 6.5 years.
+
+Fix the vulnerabilities the scan found.Where the scan identified a vulnerability, Claude Code could often generate a fix, test it, and build it. In cases where a system lacked the automated tests needed to confirm that a patch was safe, Claude wrote the tests first. Where the code was too outdated or too complex to patch efficiently in its existing form, Claude rebuilt it in a more modern and maintainable language. In some scenarios, these systems could be rebuilt in as little as four to five days, including a subsidy program portal that was originally hand-coded in Java roughly 25 years ago and took five months to build the first time. All of this was done in partnership with the Ministry’s engineers: before any patch shipped, it was reviewed and approved by the team.
+
+Run continuous security review.Alberta’s cybersecurity team also built a set of specialized Claude review agents that run throughout the development process. A “red team” agent probes an application from the outside, the way an attacker might, and maps how a vulnerability might be exploited. A “blue team” agent then assesses the application’s defenses against an international security standard, and writes a remediation plan that points to the exact files to fix. Additional agents check code quality and the clarity of the writing the public sees. Every application is checked against roughly 95 security controls on each pass. These agents are built on top of theClaude Agent SDKand run a robust series of checks and analysis for every application.
+
+In addition to scanning, securing, and modernizing its own systems, Alberta is training both government workers and the public in the use of AI through the Alberta AI Academy. Thousands of government employees and more than 10,000 members of the public have used the platform to learn the essentials of effective AI use, from prompting through enterprise application delivery. Through the Academy, the Ministry of Technology and Innovation aims to extend its approach beyond a single team or project to every ministry that needs it.
+
+Today, Claude helps the Ministry write, review, and deploy code that aids in its modernization efforts. Next, it plans to expand that work with AI agents that can build entirely new software and tools alongside engineers.
+
+The Government of Alberta also plans to continue its modernization work. One ministry, for example, has 185 legacy applications running in production, which are expensive to maintain and difficult to update. The Government plans to use Claude Code to analyze these systems, understand what they do, and consolidate them into 16 reusable applications built on modern coding languages and conventions. The goal is to reduce complexity, lower maintenance costs, and speed up modernization work that would otherwise take years to complete.
+
+A case study for governments
+
+The technical debt and security vulnerabilities the Government of Alberta is working to address are hardly unique. They exist in the systems of many provinces, states, and federal agencies across the world. Thetechnical white papersAlberta has released give other governments a blueprint for addressing these same issues.
+
+In addition to the white papers, Alberta is hostingan industry dayin Edmonton in July to share what it has learned. And this fall, it will begin a program to scale its approach across the provincial government. We’ll keep working with Alberta as it expands these efforts, and we hope the approach it has documented can help other governments secure their own systems.
+
+More details on Fable 5’s cyber safeguards and our jailbreak framework
+
+Introducing Claude Sonnet 5
+
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
+
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>More details on Fable 5’s cyber safeguards and our jailbreak framework</title>
   <link>https://www.anthropic.com/news/fable-safeguards-jailbreak-framework</link>
@@ -221,15 +306,15 @@ The three related examples below illustrate a hypothetical AI model that is jail
 
 The first two entries imagine that the jailbreak allowed the model to discover the vulnerability in December 2021; at that time, we assume that no other tool or model exists that can find Log4Shell, so the jailbreak is considered more severe. The third entry imagines that a present-day model can be jailbroken to find the vulnerability—but since the vulnerability is public, well-known, and detected by every scanner, the capability gain (and therefore the CJS level on our framework) drops to zero. Comparing these scenarios, one can see that the level changes because the baseline moved. The model’s behavior was ultimately the same in each case.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 Introducing Claude Sonnet 5
 
 Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Fable 5 has beenre-deployedand is now available globally for all users. We’re taking this opportunity to share further information in two areas.
 
 First, we provide more information on thecybersecurity safeguards—specifically, thesafety classifiers—that we launched with the model. These are the AI systems that accompany the model that detect and block dangerous (or potentially dangerous) cybersecurity uses. Here, we provide a detailed list of the types of harms Fable 5’s classifiers are, a...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Fable 5 has beenre-deployedand is now available globally for all users. We’re taking this opportunity to share further information in two areas.
@@ -432,15 +517,15 @@ The three related examples below illustrate a hypothetical AI model that is jail
 
 The first two entries imagine that the jailbreak allowed the model to discover the vulnerability in December 2021; at that time, we assume that no other tool or model exists that can find Log4Shell, so the jailbreak is considered more severe. The third entry imagines that a present-day model can be jailbroken to find the vulnerability—but since the vulnerability is public, well-known, and detected by every scanner, the capability gain (and therefore the CJS level on our framework) drops to zero. Comparing these scenarios, one can see that the level changes because the baseline moved. The model’s behavior was ultimately the same in each case.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 Introducing Claude Sonnet 5
 
 Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
 
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Redeploying Fable 5</title>
@@ -570,15 +655,15 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Fable 5 and Mythos 5 redeployedJul 1, 2026Access to Claude Fable 5 and Mythos 5 is now restored.
 
 Claude Fable 5 and Mythos 5 redeployed
@@ -701,15 +786,15 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Sonnet 5</title>
@@ -761,13 +846,13 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
 
 For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
@@ -812,13 +897,13 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.
-
-Claude Science, an AI workbench for scientists, is now available
-
-Claude Science is a customizable app that integrates the tools and packages researchers most often use, produces auditable artifacts, and provides flexible access to computing resources.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Claude Science, an AI workbench for scientists, is now available</title>
@@ -878,13 +963,15 @@ To stay up-to-date on product announcements, provide feedback, and learn from ot
 
 Get started with Claude Science atclaude.com/science.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
 
 Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Sci...</p><div style="font-size:16px;line-height:1.8;color:#333">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
@@ -937,13 +1024,15 @@ To stay up-to-date on product announcements, provide feedback, and learn from ot
 
 Get started with Claude Science atclaude.com/science.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Tag</title>
@@ -997,13 +1086,15 @@ Claude Tag replaces the existingClaude in Slackapp. To migrate, administrators c
 
 Claude Tag works with Opus 4.8. You canread our docsandproduct page.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Tag is a new way for teams to work with Claude.
 
 We’re starting on Slack, which Claude can join as a team member. Grant Claude access to selected channels, and connect it to whichever tools, data—and even codebases—you choose. Then, anyone in the channel can tag@Claudein, and delegate tasks to it while they focus on other work. Claude builds context by remembering relevant information from the channels it’s in, and can plan out tasks to complete in the future.
@@ -1050,13 +1141,15 @@ Claude Tag replaces the existingClaude in Slackapp. To migrate, administrators c
 
 Claude Tag works with Opus 4.8. You canread our docsandproduct page.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/introducing-claude-tag" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</title>
@@ -1104,13 +1197,15 @@ Our Seoul office—led byKiYoung Choi, who brings three decades of experience le
 
 Updated June 18 to add details on MOU with the Korean government.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’ve just opened ourSeoul office. Alongside it, we’re announcing new partnerships across the Korean AI ecosystem, with the enterprises, startups, and researchers behind some of the most ambitious uses of Claude. We’ve also signed a Memorandum of Understanding (MOU) with Korea’s Ministry of Science and ICT to advance AI safety.
 
 “What I see in Korea are teams who understand that innovation and safety are two sides of the same coin,” said KiYoung Choi, Representative Director of Korea at Anthropi...</p><div style="font-size:16px;line-height:1.8;color:#333">We’ve just opened ourSeoul office. Alongside it, we’re announcing new partnerships across the Korean AI ecosystem, with the enterprises, startups, and researchers behind some of the most ambitious uses of Claude. We’ve also signed a Memorandum of Understanding (MOU) with Korea’s Ministry of Science and ICT to advance AI safety.
@@ -1151,13 +1246,15 @@ Our Seoul office—led byKiYoung Choi, who brings three decades of experience le
 
 Updated June 18 to add details on MOU with the Korean government.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Statement on the US government directive to suspend access to Fable 5 and Mythos 5</title>
@@ -1197,13 +1294,15 @@ As we havestatedpublicly, we believe the government should have the ability to b
 
 We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
 
 We received the directive from the government today at 5:...</p><div style="font-size:16px;line-height:1.8;color:#333">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 forallour customers to ensure compliance.Access to all other Anthropic modelswill not be affected.
@@ -1236,13 +1335,15 @@ As we havestatedpublicly, we believe the government should have the ability to b
 
 We apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/fable-mythos-access" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Results from the first Anthropic Public Record</title>
@@ -1364,13 +1465,15 @@ Reporting conventions:All percentages in this report are weighted. Unless noted 
 
 Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
 
 Nearly half (48%) of Americans ranked curing diseases like cancer or Alzheimer’s as one of their top three hopes for AI, followed by helping people with disabilities (36%), then making technological progress and making life easier in general (tied...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re conducting a new survey series, Anthropic Public Record, to understand how the public thinks and feels about AI, and presenting a snapshot of the results from the first wave, fielded in November and December of 2025 with nearly 52,000 Americans.
@@ -1485,13 +1588,15 @@ Reporting conventions:All percentages in this report are weighted. Unless noted 
 
 Limitations:Anthropic Public Record captures what Americans believed about AI in late 2025. We are treating it as a baseline.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-public-record" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>TCS and Anthropic partner to bring Claude to regulated industries</title>
@@ -1527,13 +1632,15 @@ TCS iON, which conducts more than 75 million assessments each year across 1,500 
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
+
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
+
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
 
 Regulated industries need their work t...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a partnership withTata Consultancy Services(TCS), one of the world’s largest technology services companies. TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial services, healthcare, the public sector, and other regulated industries; and join theClaude Partner Network,our network of consulting and services firms that help bring Claude to their enterprise clients.
@@ -1562,102 +1669,15 @@ TCS iON, which conducts more than 75 million assessments each year across 1,500 
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
-More details on Fable 5’s cyber safeguards and our jailbreak framework
+Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems
 
-Introducing Claude Sonnet 5
-
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on</title>
-  <link>https://www.anthropic.com/news/dxc-anthropic-alliance</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/dxc-anthropic-alliance</guid>
-  <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
-
-DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
-
-Bringing Claude to DXC's own operations
-
-DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
-
-Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
-
-“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
-
-Building a team of Claude-certified engineers
-
-For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
-
-The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
-
-Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
-
-Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
-
-Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
-
-Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
-
-“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
-
-To learn more about the Claude Partner Network, visitanthropic.com/partners.
+Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.
 
 More details on Fable 5’s cyber safeguards and our jailbreak framework
 
 Introducing Claude Sonnet 5
 
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations busine...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies. DXC will train tens of thousands of Claude-certified forward-deployed engineers (FDEs)—engineers embedded directly inside customer organizations—to bring Claude into the systems DXC operates for the world’s largest banks, airlines, insurers, manufacturers, and government agencies.
-
-These systems, which DXC has run for decades, handle the transactions, claims, and operations businesses depend on, under strict security and compliance requirements. Before bringing Claude to these businesses, DXC worked with Claude inside its own operations, comprising some 115,000 employees across 70 countries, with similarly stringent requirements—including collaborating with Claude to write more than 95% of the code for DXC OASIS, its new AI-native orchestration platform for managed services.
-
-DXC is also now part of theClaude Partner Network, our network of consulting and services firms that bring Claude to enterprise clients.
-
-Bringing Claude to DXC's own operations
-
-DXC worked with Claude in its own systems before rolling it out to clients. For example, in April 2026, DXC launched DXC OASIS, its tool for running customers' IT systems, where AI agents handle much of the routine work. Claude is now the default foundation model powering the platform’s agentic workflows.
-
-Claude was also the primary tool DXC used tobuildthe platform. The firm estimates that Claude sped up software development by a factor of 10. More than 95% of the code was generated by Claude, then reviewed by software engineers. OASIS now serves over 50 DXC customers, and the firm plans to roll it out to customers around the world.
-
-“DXC helps the world’s largest banks, airlines, insurers, and government agencies put new technology to work,” said Paul Smith, Chief Commercial Officer, Anthropic. “They proved Claude inside their own operations first, under the same security and compliance requirements their customers face. Now we’re bringing Claude inside those environments together, industry by industry, with engineers who have already done it themselves.”
-
-Building a team of Claude-certified engineers
-
-For its FDE program, DXC will recruit engineers from its existing development teams and certify them throughAnthropic Academy, our training and certification program for partner engineers. DXC has added its own curriculum on top of Anthropic Academy, with training specific to the mission-critical systems its customers operate.
-
-The alliance will begin in four areas where DXC already runs large operations for customers, and where Claude can do useful work today:
-
-Insurance:DXC will use Claude to provide agentic solutions and modernize core systems, taking into account each customer’s business context, operating model, and strategic needs.
-
-Modernization as a Service (MaaS):DXC is using Claude to help enterprise customers analyze, refactor, and modernize legacy codebases. Working with Claude will help them do so faster and with greater accuracy than would have been possible with traditional approaches.
-
-Cybersecurity: For OASIS, DXC is developing an always-on security engineer subagent, built on Claude Security, that will be deployed across its security operations centers (SOCs).
-
-Application services:Finally, DXC is using Claude to develop OASIS agents that embed Claude directly into the application maintenance and management environments DXC operates for its enterprise customers.
-
-“For more than 50 years, DXC and the companies it was built from run the systems that run the world,” said Raul Fernandez, President and CEO, DXC Technology. “We know what it takes to deliver in these environments. This alliance with Anthropic combines trust and experience with the most advanced AI technology available, and gives our customers something they cannot get anywhere else. We are already using Claude across our own operations and our new OASIS platform. Now we are scaling that capability directly into the mission-critical technology systems we run for our customers. This is a defining moment for DXC and for the industry.”
-
-To learn more about the Claude Partner Network, visitanthropic.com/partners.
-
-More details on Fable 5’s cyber safeguards and our jailbreak framework
-
-Introducing Claude Sonnet 5
-
-Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.
-
-Fable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/dxc-anthropic-alliance" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/tcs-anthropic-partnership" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
