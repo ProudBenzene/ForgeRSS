@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Wed, 08 Jul 2026 19:31:15 +0000</lastBuildDate>
+<lastBuildDate>Thu, 09 Jul 2026 03:03:17 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,107 @@
   <title>Anthropic Research</title>
   <link>https://www.anthropic.com/research</link>
 </image>
+<item>
+  <title>An off switch for dual use knowledge in AI models</title>
+  <link>https://www.anthropic.com/research/off-switch-dual-use</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/off-switch-dual-use</guid>
+  <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">This post describes research conducted byAE Studioin collaboration with Anthropic.
+
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we w...</p><div style="font-size:16px;line-height:1.8;color:#333">This post describes research conducted byAE Studioin collaboration with Anthropic.
+
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, do all this without affecting the model’s performance on any other task.
+
+Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual use knowledge.
+
+A more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, wefiltered information about chemical, biological, radiological, and nuclear weapons out of pretraining data, and later showed thatdual-use knowledge can be confined to a removable slice of a model’s weights. But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version thatcandiscuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.
+
+Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately-filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
+
+The idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.
+
+Concretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model canuseits general knowledge to make predictions, but only the virology module is allowed tolearnfrom that text. The general-purpose weights are temporarily frozen.1
+
+The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured sixteen different ways (“on” or “off” for each of the four categories).
+
+We tested GRAM in three settings of increasing realism.
+
+First, on a synthetic dataset of children’s stories tagged by topic, a small GRAM model could be reconfigured to “forget” any chosen topic, and each configuration performed almost identically to a separate model trained from scratch with that topic filtered out. That is, for the cost of training a single model, we achieved results that would normally require multiple training runs on different datasets.
+
+Second, we trained a larger model on a realistic mix of web text, code, and scientific papers, with four dual-use domains: virology, cybersecurity, nuclear physics, and a niche programming language (to serve as a proxy for specialized dual-use code). The capability associated with each dual-use domain is routed to its own module. Deleting a module removed the corresponding capability about as effectively as never having trained on that data at all. Remarkably, we find that this removal did not degrade general performance.
+
+We also tested whether an attacker could recover the removed knowledge by training on a small amount of malicious data; GRAM resisted this about as well as data filtering did. By contrast, an “unlearning” technique applied after training onlysuppressedthe knowledge—it was easy to restore with a small amount of fine-tuning.
+
+Third, we ran the experiment at seven model sizes from 50 million to 5 billion parameters. GRAM matched the performance of data filtering at every size, and the gap between “module on” and “module off” grew wider as models got larger. In terms of compute costs, attempting to bypass our protections became relatively more difficult and expensive as we scaled.
+
+As AI companies train more capable models, the need to limit access to dual-use capabilities will increase. Today, companies limit access through classifiers and refusal training. However, these safeguards are difficult to make robust without degrading performance on harmless requests. Methods like GRAM offer a potential path toward access control that is more robust.
+
+This is early research, and there are clear limitations. We haven’t tested GRAM at frontier scale or in a production training pipeline. (As noted above, it hasn’t been applied to any of our Claude models.) Our evaluations quantify performance in terms of next-token prediction ability, rather than performance on real downstream tasks. And there’s a deeper open problem that applies to data filtering and methods like GRAM: some dual-use capabilities might be so entangled with general knowledge that no method can separate them cleanly.
+
+For further details on our experiments, read theposton our Alignment Science blog.
+
+1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.
+
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
+Anthropic Economic Index report: Cadences
+
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">This post describes research conducted byAE Studioin collaboration with Anthropic.
+
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we w...</p><div style="font-size:16px;line-height:1.8;color:#333">This post describes research conducted byAE Studioin collaboration with Anthropic.
+
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, do all this without affecting the model’s performance on any other task.
+
+Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual use knowledge.
+
+A more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, wefiltered information about chemical, biological, radiological, and nuclear weapons out of pretraining data, and later showed thatdual-use knowledge can be confined to a removable slice of a model’s weights. But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version thatcandiscuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.
+
+Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately-filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
+
+The idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.
+
+Concretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model canuseits general knowledge to make predictions, but only the virology module is allowed tolearnfrom that text. The general-purpose weights are temporarily frozen.1
+
+The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured sixteen different ways (“on” or “off” for each of the four categories).
+
+We tested GRAM in three settings of increasing realism.
+
+First, on a synthetic dataset of children’s stories tagged by topic, a small GRAM model could be reconfigured to “forget” any chosen topic, and each configuration performed almost identically to a separate model trained from scratch with that topic filtered out. That is, for the cost of training a single model, we achieved results that would normally require multiple training runs on different datasets.
+
+Second, we trained a larger model on a realistic mix of web text, code, and scientific papers, with four dual-use domains: virology, cybersecurity, nuclear physics, and a niche programming language (to serve as a proxy for specialized dual-use code). The capability associated with each dual-use domain is routed to its own module. Deleting a module removed the corresponding capability about as effectively as never having trained on that data at all. Remarkably, we find that this removal did not degrade general performance.
+
+We also tested whether an attacker could recover the removed knowledge by training on a small amount of malicious data; GRAM resisted this about as well as data filtering did. By contrast, an “unlearning” technique applied after training onlysuppressedthe knowledge—it was easy to restore with a small amount of fine-tuning.
+
+Third, we ran the experiment at seven model sizes from 50 million to 5 billion parameters. GRAM matched the performance of data filtering at every size, and the gap between “module on” and “module off” grew wider as models got larger. In terms of compute costs, attempting to bypass our protections became relatively more difficult and expensive as we scaled.
+
+As AI companies train more capable models, the need to limit access to dual-use capabilities will increase. Today, companies limit access through classifiers and refusal training. However, these safeguards are difficult to make robust without degrading performance on harmless requests. Methods like GRAM offer a potential path toward access control that is more robust.
+
+This is early research, and there are clear limitations. We haven’t tested GRAM at frontier scale or in a production training pipeline. (As noted above, it hasn’t been applied to any of our Claude models.) Our evaluations quantify performance in terms of next-token prediction ability, rather than performance on real downstream tasks. And there’s a deeper open problem that applies to data filtering and methods like GRAM: some dual-use capabilities might be so entangled with general knowledge that no method can separate them cleanly.
+
+For further details on our experiments, read theposton our Alignment Science blog.
+
+1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.
+
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
+Anthropic Economic Index report: Cadences
+
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
+
+Project Fetch: Phase two
+
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>A global workspace in language models</title>
   <link>https://www.anthropic.com/research/global-workspace</link>
@@ -141,17 +242,15 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
+An off switch for dual use knowledge in AI models
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to di...</p><div style="font-size:16px;line-height:1.8;color:#333">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to distinguish it from all the other processing that goes on unconsciously. This activity has special properties: we can describe it, control it, and use it for deliberate reasoning, in contrast to all the automatic processing that goes on without our awareness.
 
 In a new paper, we present evidence that a similar distinction has emerged in modern language models like Claude. We find that Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.
@@ -274,17 +373,15 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
+An off switch for dual use knowledge in AI models
+
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic Economic Index report: Cadences</title>
@@ -502,17 +599,15 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">One year ago, most Claude usage took the form of a conversation between a user and an assistant. With the rapid growth of Claude Code and Cowork, Claude sessions now increasingly consist of long-running agentic tasks. Chat transcripts no longer fully capture how people are using AI, and our methods for studying Claude’s economic impacts have had to adapt.
 
 To keep pace, we made several changes to our data pipeline for the Economic Index. In this version, we:
@@ -723,17 +818,15 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Project Fetch: Phase two
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Fetch: Phase two</title>
@@ -793,6 +886,8 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -800,10 +895,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -860,6 +951,8 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -867,10 +960,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Agentic coding and persistent returns to expertise
-
-This report provides evidence on how Claude Code is used in practice, based on a privacy-preserving analysis of around 400,000 interactive sessions from around 235,000 people between October 2025 and April 2026.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -994,17 +1083,15 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Anthropic Economic Index report: Cadences
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
 
 In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
@@ -1117,17 +1204,15 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Anthropic Economic Index report: Cadences
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Paving the way for agents in biology</title>
@@ -1223,6 +1308,8 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1230,10 +1317,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to Anthropic Science
 
@@ -1326,6 +1409,8 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1333,10 +1418,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to Anthropic Science
 
@@ -1418,6 +1499,8 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1425,10 +1508,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1503,6 +1582,8 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1510,10 +1591,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1581,6 +1658,8 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1588,10 +1667,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to Anthropic Science
 
@@ -1652,6 +1727,8 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1659,10 +1736,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to Anthropic Science
 
@@ -1826,6 +1899,8 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -1833,10 +1908,6 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1993,6 +2064,8 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
@@ -2000,235 +2073,10 @@ New interpretability research reveals an emergent mental workspace in Claude tha
 Anthropic Economic Index report: Cadences
 
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.
 
 Subscribe to the Frontier Red Team newsletter
 
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/attack-navigator" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Coding agents in the social sciences</title>
-  <link>https://www.anthropic.com/research/coding-agents-social-sciences</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/coding-agents-social-sciences</guid>
-  <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
-
-The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
-
-There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use co...</p><div style="font-size:16px;line-height:1.8;color:#333">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
-
-The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
-
-There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use coding agents as those with female names. Researchers at top universities are 40% more likely than others to use coding agents.
-
-Users of coding agents post more working papers and grant proposals than others in the same discipline and career stage, but this could reflect pre-existing differences among early adopters.
-
-Researchers are more optimistic about AI helping write publishable papers than about the effects of AI on the social sciences as a whole.
-
-How are AI coding agents changing how we study the economy and society?
-
-The human sciences are shifting: for the first time, core research tasks can be handed off to machines. AI chatbots increasingly contribute to scientific research, including in the mostprestigious publicationsand in thesocial sciences. This has spurred optimism that AI could boost research productivity—while also stoking fears about overloaded peer review and a deluge of academic AI slop.
-
-But while turn-taking AI chatbots have primarily been used forwriting assistance, coding agents could restructure social science research more radically. Agentic coding platforms like Claude Code and Codex can take a research idea and a dataset, write and run an analysis, interpret the output, and iterate autonomously. What had been irreducibly human steps in empirical research can, for the first time, beautomated. At the extreme, researchers have built multi-agent pipelines to automatecomputer science researchand autonomously execute socialscience research ideas.
-
-These tools could accelerate science and make it more daring: fast research execution should mean cheap and plentiful discovery. They could also amplify disparities in research resources and exacerbate congestion in the scholarly record. More deeply, as AI handles a broadening swath of research tasks, its distinctive analytical choices could stamp our collective understanding of our economy, our society, and ourselves.
-
-In this post, we offer a first look, drawing on a survey of 1,260 quantitative social scientists fielded in early 2026. The survey is the baseline wave of a larger ongoing study of how coding agents affect research productivity, including a randomized experiment providing researchers with access to Claude Code. We will publish results from this experiment in the future. For now, we report what the baseline survey reveals about who is using these tools and for what; how output differs between users and non-users; and what researchers expect about the implications of growing adoption.
-
-A new survey on AI coding agent use among quantitative social scientists
-
-We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in theAppendix).
-
-Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
-
-Coding agents haven't reached most social scientists
-
-We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
-
-But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).1
-
-Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
-
-Adoption is highly uneven
-
-Figure 1 shows there is large variation in the overall adoption rate, from 39% of economists and 25% of political scientists to single digits for public health (6%), education (4%) and communication (6%). This gradient roughly tracks differences across fields in overall AI use, but differences in coding agent adoption are steeper on average.
-
-Just over a quarter of doctoral students and postdocs use coding agents at least weekly; among tenured professors that rate falls by more than half. The researchers adopting coding agents are the juniors—more technologically fluent, more likely to be working directly with code and data, and facing stronger career pressures to produce research.
-
-Adoption differences extend beyond discipline and career stage. We classify researcher names according to gender and find that those with typically male names have adopted coding agents at more than twice the rate of respondents with typically female names. High-status and private universities also see notably higher use. All of these differences are significant at the p<0.05 level. These differences are starker than the differences in overall AI use, and suggest higher inequality, at least in this early period of coding agent adoption.
-
-The gender gap in coding agent use does not just reflect a gap in rates of trying AI. Among respondents who have tried using AI for research, there is even a slightly larger gender gap in regular coding agent use than in the overall sample. These differences also persist when comparing across genders in the same disciplines and career stages.
-
-Researchers mainly use AI to code and edit, not write
-
-Among researchers using AI, whether through coding agents or chatbots, what are they actually using it for? Debate about AI in academic research has focused heavily on writing: hallucinated literature reviews, “it’s not X, it’s Y” strewn across formulaic introductions, and the possibility of fully automated paper writing.
-
-But Figure 4 shows that the most common use, for both coding agent users and others, is for coding up analysis of quantitative data: 97% of coding agent users and 77% of other AI users report using it to generate code. Next most common is editing prose, followed by asking for methods advice and background on prior research. Aggregating across coding agent users and others, only a third of all AI users have used it to draft prose at all. These patterns generally hold across disciplines, with only economists and management researchers commonly using AI to draft prose.
-
-Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals
-
-Are coding agents making researchers more productive? That’s the question motivating the broader study this survey kicks off. The experiment we are running on this question is still ongoing. But the baseline survey lets us compare coding agent users to others across a whole bunch of checkpoints in the research process. This comparison is purely descriptive: we compare researchers who select into coding agent use to those who do not, and expect that the two groups differ in a number of ways that we cannot adjust for. Differences should not be interpreted as causal, but as a first cut comparison between researchers using coding agents and those who are not.
-
-Figure 5 shows self-reported output over the six months before the survey at different stages of the research process, from projects started to papers submitted. The adjusted estimates compare coding agent users to others, controlling for career stage, discipline, and the week they completed the survey. Coding agent users are starting more projects, posting more working papers, submitting more grants, and possibly sending out more conference submissions.
-
-So are coding agent users writing more papers? First, consider the differences in early pipeline output between coding agent users and others. Coding agent users are starting projects at a pace of around a quarter of a paper more and posting around a half of a working paper more than non agent users. In percentage terms, coding agent users look around 10% (empirical projects started) to 75% (working papers posted) more productive than others in their discipline and career stage.
-
-However, this productivity difference only appears for these early pipeline measures. We find no evidence that coding agent users are submitting more new papers to journals or resubmitting papers more quickly. This could reflect the timeline of getting a paper to submission, as coding agent use is a recent phenomenon. But it could also reflect that coding agents are more useful at getting projects up and running than they are at the last mile of perfecting a paper for journal submission.
-
-Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall
-
-We also asked researchers what they expected of AI tools. Does AI make social scientists more productive, in terms of writing publishable papers? And do they think AI will make the social sciences better or worse?
-
-Researchers are optimistic about AI raising paper-writing productivity. On a 1 to 10 scale, 88% of respondents were above a 5, and half were at 8 or above. Figure 6 shows that these ratings vary strongly with AI use. The left side of the plot shows researchers that use AI for more types of tasks are more optimistic. The right side shows coding agent users are more optimistic than others.
-
-The survey is drawing from people who are interested in trying these tools out, so it should not be surprising to see some optimism about productivity. But even among these optimists, there is a real gap between views about AI helping narrowly with publishable papers and broadly affecting the social sciences. 70% of respondents are more optimistic about paper productivity than about broader field impact. There are few researchers more optimistic about field impacts than about paper productivity, and many who are more pessimistic.
-
-Social scientists who are using coding agents are posting more working papers and applying for more grants. Relative to others in their discipline and career stage, they are also starting more projects. But as of March 2026, they are not yet driving a surge in journal submissions. The increased number of project starts may be early evidence of productivity increasing. It could also indicate that early adopters were already more productive researchers.
-
-Overall, early adoption of coding agents has tilted toward early career researchers, men, and those at higher status universities. Coding agent use is currently more unevenly distributed across these categories than LLM use more broadly. We also find suggestive evidence that researchers fear that the immediate benefits of rising paper productivity may come along with field-level costs. Perhaps more papers means congestion and competition for attention; perhaps respondents fear that some researchers will use AI tools in ways that exacerbate existing problems in social science, like selective reporting and risk-averse, incremental research.
-
-There are several caveats to the findings in this report. The data presented here is based on an email survey of quantitative social scientists, recruited explicitly to participate in a study on workflows and AI use. We expect that the respondents are both heavier users and more optimistic about LLMs than non-responders. The early-stage productivity differences we see should be interpreted descriptively. The early adopters of coding agents may be more productive and otherwise different from non-adopters in many ways that we cannot measure directly in the survey. Finally, we only look here at the number of projects researchers report, and report nothing about their quality. In future updates on this study, we will show results comparing coding agent users to a clean comparison group, and assess whether the content, and not just quantity, of coding agent augmented work looks different.
-
-Notwithstanding these limitations, we show that coding agents are diffusing into the social sciences. The way we study the economy and politics, for example, is increasingly through analysis decisions made in part by AI coding agents. We plan to bring more evidence in future reports on the potential and risks of this kind of automation.
-
-Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
-
-Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
-
-Alvero, A. J., Stoltz, D. S., Stuhler, O., & Taylor, M. A. (2026). Generative AI in Sociological Research: State of the Discipline.Sociological Science,13, 45-62.
-
-Korinek, A. (2025).AI agents for economic research(No. w34202). National Bureau of Economic Research. NBER Working Paper Series.
-
-Liang, W., Zhang, Y., Wu, Z., Lepp, H., Ji, W., Zhao, X., ... & Zou, J. (2025). Quantifying large language model usage in scientific papers.Nature Human Behaviour, 1-11.
-
-Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., ... & Clune, J. (2026). Towards end-to-end automation of AI research.Nature,651(8107), 914-919.
-
-Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
-
-We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
-
-The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
-
-There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use co...</p><div style="font-size:16px;line-height:1.8;color:#333">We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.
-
-The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.
-
-There are sharp disparities in use of coding agents. Twice as many researchers with typically male names use coding agents as those with female names. Researchers at top universities are 40% more likely than others to use coding agents.
-
-Users of coding agents post more working papers and grant proposals than others in the same discipline and career stage, but this could reflect pre-existing differences among early adopters.
-
-Researchers are more optimistic about AI helping write publishable papers than about the effects of AI on the social sciences as a whole.
-
-How are AI coding agents changing how we study the economy and society?
-
-The human sciences are shifting: for the first time, core research tasks can be handed off to machines. AI chatbots increasingly contribute to scientific research, including in the mostprestigious publicationsand in thesocial sciences. This has spurred optimism that AI could boost research productivity—while also stoking fears about overloaded peer review and a deluge of academic AI slop.
-
-But while turn-taking AI chatbots have primarily been used forwriting assistance, coding agents could restructure social science research more radically. Agentic coding platforms like Claude Code and Codex can take a research idea and a dataset, write and run an analysis, interpret the output, and iterate autonomously. What had been irreducibly human steps in empirical research can, for the first time, beautomated. At the extreme, researchers have built multi-agent pipelines to automatecomputer science researchand autonomously execute socialscience research ideas.
-
-These tools could accelerate science and make it more daring: fast research execution should mean cheap and plentiful discovery. They could also amplify disparities in research resources and exacerbate congestion in the scholarly record. More deeply, as AI handles a broadening swath of research tasks, its distinctive analytical choices could stamp our collective understanding of our economy, our society, and ourselves.
-
-In this post, we offer a first look, drawing on a survey of 1,260 quantitative social scientists fielded in early 2026. The survey is the baseline wave of a larger ongoing study of how coding agents affect research productivity, including a randomized experiment providing researchers with access to Claude Code. We will publish results from this experiment in the future. For now, we report what the baseline survey reveals about who is using these tools and for what; how output differs between users and non-users; and what researchers expect about the implications of growing adoption.
-
-A new survey on AI coding agent use among quantitative social scientists
-
-We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in theAppendix).
-
-Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
-
-Coding agents haven't reached most social scientists
-
-We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
-
-But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).1
-
-Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
-
-Adoption is highly uneven
-
-Figure 1 shows there is large variation in the overall adoption rate, from 39% of economists and 25% of political scientists to single digits for public health (6%), education (4%) and communication (6%). This gradient roughly tracks differences across fields in overall AI use, but differences in coding agent adoption are steeper on average.
-
-Just over a quarter of doctoral students and postdocs use coding agents at least weekly; among tenured professors that rate falls by more than half. The researchers adopting coding agents are the juniors—more technologically fluent, more likely to be working directly with code and data, and facing stronger career pressures to produce research.
-
-Adoption differences extend beyond discipline and career stage. We classify researcher names according to gender and find that those with typically male names have adopted coding agents at more than twice the rate of respondents with typically female names. High-status and private universities also see notably higher use. All of these differences are significant at the p<0.05 level. These differences are starker than the differences in overall AI use, and suggest higher inequality, at least in this early period of coding agent adoption.
-
-The gender gap in coding agent use does not just reflect a gap in rates of trying AI. Among respondents who have tried using AI for research, there is even a slightly larger gender gap in regular coding agent use than in the overall sample. These differences also persist when comparing across genders in the same disciplines and career stages.
-
-Researchers mainly use AI to code and edit, not write
-
-Among researchers using AI, whether through coding agents or chatbots, what are they actually using it for? Debate about AI in academic research has focused heavily on writing: hallucinated literature reviews, “it’s not X, it’s Y” strewn across formulaic introductions, and the possibility of fully automated paper writing.
-
-But Figure 4 shows that the most common use, for both coding agent users and others, is for coding up analysis of quantitative data: 97% of coding agent users and 77% of other AI users report using it to generate code. Next most common is editing prose, followed by asking for methods advice and background on prior research. Aggregating across coding agent users and others, only a third of all AI users have used it to draft prose at all. These patterns generally hold across disciplines, with only economists and management researchers commonly using AI to draft prose.
-
-Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals
-
-Are coding agents making researchers more productive? That’s the question motivating the broader study this survey kicks off. The experiment we are running on this question is still ongoing. But the baseline survey lets us compare coding agent users to others across a whole bunch of checkpoints in the research process. This comparison is purely descriptive: we compare researchers who select into coding agent use to those who do not, and expect that the two groups differ in a number of ways that we cannot adjust for. Differences should not be interpreted as causal, but as a first cut comparison between researchers using coding agents and those who are not.
-
-Figure 5 shows self-reported output over the six months before the survey at different stages of the research process, from projects started to papers submitted. The adjusted estimates compare coding agent users to others, controlling for career stage, discipline, and the week they completed the survey. Coding agent users are starting more projects, posting more working papers, submitting more grants, and possibly sending out more conference submissions.
-
-So are coding agent users writing more papers? First, consider the differences in early pipeline output between coding agent users and others. Coding agent users are starting projects at a pace of around a quarter of a paper more and posting around a half of a working paper more than non agent users. In percentage terms, coding agent users look around 10% (empirical projects started) to 75% (working papers posted) more productive than others in their discipline and career stage.
-
-However, this productivity difference only appears for these early pipeline measures. We find no evidence that coding agent users are submitting more new papers to journals or resubmitting papers more quickly. This could reflect the timeline of getting a paper to submission, as coding agent use is a recent phenomenon. But it could also reflect that coding agents are more useful at getting projects up and running than they are at the last mile of perfecting a paper for journal submission.
-
-Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall
-
-We also asked researchers what they expected of AI tools. Does AI make social scientists more productive, in terms of writing publishable papers? And do they think AI will make the social sciences better or worse?
-
-Researchers are optimistic about AI raising paper-writing productivity. On a 1 to 10 scale, 88% of respondents were above a 5, and half were at 8 or above. Figure 6 shows that these ratings vary strongly with AI use. The left side of the plot shows researchers that use AI for more types of tasks are more optimistic. The right side shows coding agent users are more optimistic than others.
-
-The survey is drawing from people who are interested in trying these tools out, so it should not be surprising to see some optimism about productivity. But even among these optimists, there is a real gap between views about AI helping narrowly with publishable papers and broadly affecting the social sciences. 70% of respondents are more optimistic about paper productivity than about broader field impact. There are few researchers more optimistic about field impacts than about paper productivity, and many who are more pessimistic.
-
-Social scientists who are using coding agents are posting more working papers and applying for more grants. Relative to others in their discipline and career stage, they are also starting more projects. But as of March 2026, they are not yet driving a surge in journal submissions. The increased number of project starts may be early evidence of productivity increasing. It could also indicate that early adopters were already more productive researchers.
-
-Overall, early adoption of coding agents has tilted toward early career researchers, men, and those at higher status universities. Coding agent use is currently more unevenly distributed across these categories than LLM use more broadly. We also find suggestive evidence that researchers fear that the immediate benefits of rising paper productivity may come along with field-level costs. Perhaps more papers means congestion and competition for attention; perhaps respondents fear that some researchers will use AI tools in ways that exacerbate existing problems in social science, like selective reporting and risk-averse, incremental research.
-
-There are several caveats to the findings in this report. The data presented here is based on an email survey of quantitative social scientists, recruited explicitly to participate in a study on workflows and AI use. We expect that the respondents are both heavier users and more optimistic about LLMs than non-responders. The early-stage productivity differences we see should be interpreted descriptively. The early adopters of coding agents may be more productive and otherwise different from non-adopters in many ways that we cannot measure directly in the survey. Finally, we only look here at the number of projects researchers report, and report nothing about their quality. In future updates on this study, we will show results comparing coding agent users to a clean comparison group, and assess whether the content, and not just quantity, of coding agent augmented work looks different.
-
-Notwithstanding these limitations, we show that coding agents are diffusing into the social sciences. The way we study the economy and politics, for example, is increasingly through analysis decisions made in part by AI coding agents. We plan to bring more evidence in future reports on the potential and risks of this kind of automation.
-
-Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
-
-Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
-
-Alvero, A. J., Stoltz, D. S., Stuhler, O., & Taylor, M. A. (2026). Generative AI in Sociological Research: State of the Discipline.Sociological Science,13, 45-62.
-
-Korinek, A. (2025).AI agents for economic research(No. w34202). National Bureau of Economic Research. NBER Working Paper Series.
-
-Liang, W., Zhang, Y., Wu, Z., Lepp, H., Ji, W., Zhao, X., ... & Zou, J. (2025). Quantifying large language model usage in scientific papers.Nature Human Behaviour, 1-11.
-
-Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., ... & Clune, J. (2026). Towards end-to-end automation of AI research.Nature,651(8107), 914-919.
-
-Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
-
-We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -2316,17 +2164,15 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Anthropic Economic Index report: Cadences
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -2407,23 +2253,21 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+An off switch for dual use knowledge in AI models
+
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Anthropic Economic Index report: Cadences
 
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Frontier Red Team</title>
   <link>https://www.anthropic.com/research/team/frontier-red-team</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
@@ -2496,7 +2340,7 @@ Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2593,7 +2437,7 @@ Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -2619,6 +2463,8 @@ Last year, we described a new approach to defend against jailbreaks, which we ca
 
 We show for the first time that realistic AI training processes can accidentally produce misaligned models.
 
+Jul 8, 2026AlignmentAn off switch for dual use knowledge in AI models
+
 May 8, 2026AlignmentTeaching Claude why
 
 May 7, 2026AlignmentDonating our open-source alignment tool
@@ -2636,8 +2482,6 @@ Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
 Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
 
 Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
-
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
@@ -2664,6 +2508,8 @@ Last year, we described a new approach to defend against jailbreaks, which we ca
 
 We show for the first time that realistic AI training processes can accidentally produce misaligned models.
 
+Jul 8, 2026AlignmentAn off switch for dual use knowledge in AI models
+
 May 8, 2026AlignmentTeaching Claude why
 
 May 7, 2026AlignmentDonating our open-source alignment tool
@@ -2682,15 +2528,13 @@ Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient p
 
 Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
 
-Nov 21, 2025AlignmentFrom shortcuts to sabotage: natural emergent misalignment from reward hacking
-
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Fri, 29 Mar 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -2791,7 +2635,7 @@ Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>Economic Research</title>
   <link>https://www.anthropic.com/research/team/economic-research</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
