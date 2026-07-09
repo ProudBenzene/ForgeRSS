@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Thu, 09 Jul 2026 03:03:17 +0000</lastBuildDate>
+<lastBuildDate>Thu, 09 Jul 2026 15:03:56 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -14,7 +14,7 @@
   <link>https://www.anthropic.com/research</link>
 </image>
 <item>
-  <title>An off switch for dual use knowledge in AI models</title>
+  <title>An off switch for dual-use knowledge in AI models</title>
   <link>https://www.anthropic.com/research/off-switch-dual-use</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/off-switch-dual-use</guid>
   <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
@@ -23,19 +23,19 @@
 
 A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we w...</p><div style="font-size:16px;line-height:1.8;color:#333">This post describes research conducted byAE Studioin collaboration with Anthropic.
 
-A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, do all this without affecting the model’s performance on any other task.
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual-use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, doing all this without affecting the model’s performance on any other task.
 
-Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual use knowledge.
+Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual-use knowledge.
 
 A more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, wefiltered information about chemical, biological, radiological, and nuclear weapons out of pretraining data, and later showed thatdual-use knowledge can be confined to a removable slice of a model’s weights. But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version thatcandiscuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.
 
-Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately-filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
+Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
 
 The idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.
 
 Concretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model canuseits general knowledge to make predictions, but only the virology module is allowed tolearnfrom that text. The general-purpose weights are temporarily frozen.1
 
-The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured sixteen different ways (“on” or “off” for each of the four categories).
+The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured 16 different ways (“on” or “off” for each of the four categories).
 
 We tested GRAM in three settings of increasing realism.
 
@@ -70,19 +70,19 @@ We report results from our latest test of whether Claude can help Anthropic empl
 
 A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we w...</p><div style="font-size:16px;line-height:1.8;color:#333">This post describes research conducted byAE Studioin collaboration with Anthropic.
 
-A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, do all this without affecting the model’s performance on any other task.
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual-use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, doing all this without affecting the model’s performance on any other task.
 
-Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual use knowledge.
+Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try tojailbreakthe model, working past its defenses to access the dual-use knowledge.
 
 A more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, wefiltered information about chemical, biological, radiological, and nuclear weapons out of pretraining data, and later showed thatdual-use knowledge can be confined to a removable slice of a model’s weights. But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version thatcandiscuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.
 
-Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately-filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
+Innew researchcarried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
 
 The idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.
 
 Concretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model canuseits general knowledge to make predictions, but only the virology module is allowed tolearnfrom that text. The general-purpose weights are temporarily frozen.1
 
-The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured sixteen different ways (“on” or “off” for each of the four categories).
+The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured 16 different ways (“on” or “off” for each of the four categories).
 
 We tested GRAM in three settings of increasing realism.
 
@@ -242,7 +242,7 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 Anthropic Economic Index report: Cadences
 
@@ -373,7 +373,7 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 Anthropic Economic Index report: Cadences
 
@@ -599,7 +599,7 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -818,7 +818,7 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -886,7 +886,7 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -951,7 +951,7 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1083,7 +1083,7 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1204,7 +1204,7 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1308,7 +1308,7 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1409,7 +1409,7 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1499,7 +1499,7 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1582,7 +1582,7 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1658,7 +1658,7 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1727,7 +1727,7 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -1899,7 +1899,7 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -2064,7 +2064,7 @@ At the same time, it is clear that defenders will need to use AI with the same s
 
 [2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -2164,7 +2164,7 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -2253,7 +2253,7 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
-An off switch for dual use knowledge in AI models
+An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
@@ -2264,83 +2264,107 @@ Anthropic Economic Index report: Cadences
 In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Frontier Red Team</title>
-  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+  <title>Alignment</title>
+  <link>https://www.anthropic.com/research/team/alignment</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
+  <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Project Fetch: Phase two
+Evaluation and oversight
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+Evaluation and oversight
 
-Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
 
-Project Fetch: Phase two
+Stress-testing safeguards
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
 
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+New research on how we've reduced agentic misalignment.
 
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
 
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
 
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
 
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+We show for the first time that realistic AI training processes can accidentally produce misaligned models.
 
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+Jul 8, 2026AlignmentAn off switch for dual-use knowledge in AI models
 
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+May 8, 2026AlignmentTeaching Claude why
 
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+May 7, 2026AlignmentDonating our open-source alignment tool
 
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
 
-Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
 
-Project Fetch: Phase two
+Feb 23, 2026AlignmentThe persona selection model
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
 
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
 
-Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
 
-Project Fetch: Phase two
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
 
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
+Evaluation and oversight
 
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
+Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+Evaluation and oversight
 
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
+Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
 
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
+Stress-testing safeguards
 
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
+Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
 
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
+New research on how we've reduced agentic misalignment.
 
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
+Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
 
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
+Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
 
-Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
+
+We show for the first time that realistic AI training processes can accidentally produce misaligned models.
+
+Jul 8, 2026AlignmentAn off switch for dual-use knowledge in AI models
+
+May 8, 2026AlignmentTeaching Claude why
+
+May 7, 2026AlignmentDonating our open-source alignment tool
+
+Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+
+Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+
+Feb 23, 2026AlignmentThe persona selection model
+
+Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+
+Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+
+Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+
+Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -2434,107 +2458,168 @@ Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 S
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Alignment</title>
-  <link>https://www.anthropic.com/research/team/alignment</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+  <title>Frontier Red Team</title>
+  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
+  <pubDate>Fri, 23 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Evaluation and oversight
+Project Fetch: Phase two
 
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Evaluation and oversight
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Stress-testing safeguards
+Project Fetch: Phase two
 
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-New research on how we've reduced agentic misalignment.
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
 
-Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
 
-Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
 
-We show for the first time that realistic AI training processes can accidentally produce misaligned models.
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
 
-Jul 8, 2026AlignmentAn off switch for dual use knowledge in AI models
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
 
-May 8, 2026AlignmentTeaching Claude why
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
 
-May 7, 2026AlignmentDonating our open-source alignment tool
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
 
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
 
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Feb 23, 2026AlignmentThe persona selection model
+Project Fetch: Phase two
 
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Jun 8, 2026Frontier ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Project Fetch: Phase two
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Evaluation and oversight
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-Alignment researchers validate that models are harmless and honest even under ...</p><div style="font-size:16px;line-height:1.8;color:#333">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
 
-Evaluation and oversight
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
 
-Alignment researchers validate that models are harmless and honest even under very different circumstances than those under which they were trained. They also develop methods to allow humans to collaborate with language models to verify claims that humans might not be able to on their own.
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
 
-Stress-testing safeguards
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
 
-Alignment researchers also systematically look for situations in which models might behave badly, and check whether our existing safeguards are sufficient to deal with risks that human-level capabilities may bring.
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
 
-New research on how we've reduced agentic misalignment.
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
 
-Can Claude develop, test, and analyze alignment ideas of its own? We ran an experiment to find out.
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
 
-Why do AI assistants like Claude sometimes seem surprisingly human. We advance a theory.
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days
 
-Last year, we described a new approach to defend against jailbreaks, which we called Constitutional Classifiers. We’ve now developed the next generation.
+Jan 16, 2026Frontier Red TeamAI models are showing a greater ability to find and exploit vulnerabilities on realistic cyber ranges</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Economic Research</title>
+  <link>https://www.anthropic.com/research/team/economic-research</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
+  <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-We show for the first time that realistic AI training processes can accidentally produce misaligned models.
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Jul 8, 2026AlignmentAn off switch for dual use knowledge in AI models
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-May 8, 2026AlignmentTeaching Claude why
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-May 7, 2026AlignmentDonating our open-source alignment tool
+Anthropic Economic Index report: Learning curves
 
-Apr 14, 2026AlignmentAutomated Alignment Researchers: Using large language models to scale scalable oversight
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-Feb 25, 2026AlignmentAn update on our model deprecation commitments for Claude Opus 3
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
 
-Feb 23, 2026AlignmentThe persona selection model
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-Jan 29, 2026AlignmentHow AI assistance impacts the formation of coding skills
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-Jan 28, 2026AlignmentDisempowerment patterns in real-world AI usage
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
 
-Jan 9, 2026AlignmentNext-generation Constitutional Classifiers: More efficient protection against universal jailbreaks
+Jun 26, 2026Economic ResearchAnthropic Economic Index report: Cadences
 
-Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavioral evaluations
+Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+
+Anthropic Economic Index report: Learning curves
+
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
+
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
+
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
+
+Jun 26, 2026Economic ResearchAnthropic Economic Index report: Cadences
+
+Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise
+
+May 27, 2026Economic ResearchCoding agents in the social sciences
+
+Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
+
+Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
+
+Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
+
+Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
+
+Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
+
+Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
+
+Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -2630,91 +2715,6 @@ Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
 Mar 13, 2025AlignmentAuditing language models for hidden objectives
 
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Economic Research</title>
-  <link>https://www.anthropic.com/research/team/economic-research</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-Jun 26, 2026Economic ResearchAnthropic Economic Index report: Cadences
-
-Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise
-
-May 27, 2026Economic ResearchCoding agents in the social sciences
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the ...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-Jun 26, 2026Economic ResearchAnthropic Economic Index report: Cadences
-
-Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise
-
-May 27, 2026Economic ResearchCoding agents in the social sciences
-
-Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence
-
-Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
-
-Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
