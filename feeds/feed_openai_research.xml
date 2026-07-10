@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Thu, 09 Jul 2026 19:55:02 +0000</lastBuildDate>
+<lastBuildDate>Fri, 10 Jul 2026 03:25:02 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -14,19 +14,372 @@
   <link>https://openai.com/news/research/?limit=100</link>
 </image>
 <item>
-  <title>GPT-5.6: Frontier intelligence that scales with your ambition</title>
-  <link>https://openai.com/index/gpt-5-6/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-6/</guid>
-  <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+  <title>近自主 AI 化学家优化药物化学中的高难度反应研究2026年6月17日</title>
+  <link>https://openai.com/index/ai-chemist-improves-reaction/</link>
+  <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
+  <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生...</p><div style="font-size:16px;line-height:1.8;color:#333">结合 Molecule.one 的 Maria 系统，GPT‑5.4 发现了一种出人意料的添加剂，使超过 80% 受试底物的 Chan-Lam 偶联反应产率得到提升
+
+OpenAI 投身科学研究的动机源于一个简单的信念：先进的 AI 能够成为科学家的得力助手，帮助他们探索更多思路、连接跨度巨大的概念、设计更优的实验，并加速造福人类的科学发现。此前，我们已经分享了模型在数学（如单位距离问题⁠）、理论物理（关于胶子振幅的新结果⁠）以及生物学（GPT‑5 在自动化实验室中协助降低无细胞蛋白质合成成本⁠）中做出贡献的早期案例。我们还推出了GPT‑Rosalind⁠，这是一个专为支持生命科学研究和药物发现工作流而构建的专用模型。
+
+本项目将这一发展轨迹延伸至药物化学领域。在该领域，研究进展不能仅靠推理来衡量，假设必须在真实的分子、仪器和实验噪声环境中得到实验室的验证。通过与Molecule.one⁠（在新窗口中打开）合作，我们将 GPT‑5.4 与 Maria（一个集成了高通量实验室并能进行自主研究的化学 AI 智能体）连接起来，并为其设定了一个开放性目标：优化几个重要反应类别中的一种。该系统生成了研究提案，设计并执行了实验，分析了实验数据，并提出了后续实验方案。人类始终保持在工作环路中 (Human-in-the-loop)，负责设计引导和评分提示词、筛选供测试的提案、对实验计划进行有限的修正、协助基础的实验室操作，并独立验证最终结果。
+
+最具潜力的提案 OAI-M1-03 聚焦于 Chan-Lam 偶联反应中一个困难但实用的细分领域。化学家通常利用该反应构建碳-氮键。基于“为工艺化学优化 Chan-Lam 偶联反应”这一开放性目标，GPT‑5.4 独立识别出“伯磺酰胺” (primary sulfonamides) 是一类极具挑战性且高价值的底物，并提出温和氧化剂（包括 TEMPO）能够改善该反应。
+
+在 Maria 实验室进行的两个实验周期中，这一想法带来了显著的改善。在优化条件下，88% 的受试硼酸 (oronic acids) 和 83% 的受试磺酰胺 (sulfonamides) 的实测产率均有提高。平均产率从 16.6% 升至 25.2%，且产率超过 30% 的反应比例从 15.6% 增至 37.5%。随后，人类化学家在实验台规模 (bench scale) 上重复了具有代表性的反应。这些实验证实了微升级实验的结果：在 14 对底物中，有 11 对实现了产率提升，且多数情况下的产率提高了一倍以上。这一点至关重要，因为药物化学家需要的不仅仅是在微升筛选实验中奏效的反应，更是能在药物发现常规实验室工作流中实际应用的反应。
+
+在药物化学的这一领域取得突破令人振奋，因为合成往往是药物发现的主要瓶颈：科学家只能测试他们能够合成或获取的分子。磺酰胺基团广泛存在于抗癌药、抗菌药和利尿剂等多个治疗领域的药物中，然而历史数据表明，伯磺酰胺与硼酸的 Chan-Lam 偶联反应产率一直很低。提高该反应的可靠性，能够为药物化学家提供更广泛、更实用的途径，以合成并探索潜在的有用分子。
+
+尽管这仍是一个初步结果，但它为我们正致力于实现的宏伟目标提供了一个具体的例证：AI 系统能够成为覆盖大部分研究环节的宝贵科研伙伴。该模型审查了文献，提出了出人意料的想法，协助设计和分析实验，并最终得出了可供人类化学家评估的科学发现。
+
+Maria 实验室：Molecule.one 的专用高通量实验室，在 OAI-M1-03 中运行了 10,080 个反应
+
+有机化学是所有小分子药物以及农业、电子和材料科学产品的基础。当一个化学反应能够在多种不同的起始原料上可靠地构建同类化学键时，它就显得尤为实用。如果反应产率低或产生过多不必要的副产物，化学家可能不得不放弃原本极具潜力的分子，或耗费大量时间开发新的合成路线。这使得化学合成成为药物发现的主要瓶颈：一般而言，科学家只能测试他们能够制备或获取的分子。
+
+Chan-Lam 偶联反应在药物化学中非常有用，因为它可以构建药物分子中常见的碳-氮键。然而，该反应并非对所有类别的分子都同样有效。特别是伯磺酰胺与硼酸的偶联反应，长期以来的产率都不尽如人意。磺酰胺是一类重要的分子家族，广泛存在于肿瘤和传染病治疗药物中。提升该反应的可靠性，能够为药物化学家提供更具普适性和实用性的方法，以制备和探索潜在的有用分子。
+
+将 GPT‑5.4 与 Maria AI 及实验室系统相连
+
+这一组合系统整合了互补的能力。由操作 Maria AI 的科学家所编写的提示词被输入到一个框架 (harness) 中的 GPT‑5.4 模型里，生成了数千份潜在的研究提案并进行排序。人类化学家对系统排名最高的少量提案进行了审查，并挑选出四份进行实验室测试。随后，Maria AI 将选定的高层计划转化为详细的实验室指令，执行了数千次高通量实验，分析原始数据，并将结构化的结果反馈给 GPT‑5.4。
+
+在选定的四份提案中，OAI-M1-03 建议使用如 TEMPO 等温和氧化剂来提升 Chan-Lam 反应在磺酰胺合成中的表现。化学家们认为这一建议既出人意料又极具吸引力。我们在本博文和相关论文⁠（在新窗口中打开）中分享了关于 OAI-M1-03 的详细发现。
+
+最终的研究提案随后被 Maria 用于生成实验网格 (experimental grid)，人类仅对其进行了少量修改。人类做出的最大修正是避免使用二甲亚砜 (DMSO) 作为溶剂，因为化学家担心它可能会与作为对照的强氧化剂发生反应。
+
+整个过程历时三个月，从 3 月 4 日输入第一个提示词，到 6 月 4 日与独立专家分享 OAI-M1-03 的研究结果。
+
+我们将这一工作流描述为“近自主”而非“完全自主”，因为在整个过程中人类化学家依然在做关键决策。模型提出了核心研究思路，而人类化学家则提供宏观层面的引导和判断，修正实验细节，协助准备实验室耗材和试剂，并手动重复关键实验。
+
+OAI-M1-03 确认了 TEMPO 是此次研究中伯磺酰胺 Chan-Lam 偶联反应的一种有效添加剂。在优化条件下，反应在两个方面得到了改善：平均产率提高，并且有更多底物组合达到了具有实际应用价值的产率水平。
+
+在两个周期内，Maria 共运行了 10,080 个反应 — 这超过了一名每天做 3 个反应的化学家十年的工作量。这种规模至关重要，因为如果仅在少数例子上进行测试，化学结果可能会具有误导性。一个反应可能在某一对起始原料上表现出色，但在更广泛的分子集合中却会失败。成千上万次反应使得从测试的十种氧化剂中筛选出 TEMPO 成为可能，观察其在各种不同组合中的重现效果，并明确其局限性。
+
+在分析完第一轮数据后，系统提出了一项更具针对性的第二轮实验方案以测试后续假设。一项有用的后续发现是，TEMPO 可以用成本低廉得多的类似物 4-羟基-TEMPO (4-hydroxy-TEMPO) 替代，且性能几乎没有损失。
+
+该结果在 Maria 实验室微升级筛选模式之外依然成立。人类化学家在实验台规模 (bench scale) 上手动重现了代表性反应，观察到 14 对底物中有 11 对的产率增加；其中 8 对底物的产率增加了一倍以上。这种重现至关重要，因为极小规模的实验有时会引入在扩大规模后消失的假象。在科学期刊上发表研究成果之前，实验台规模的验证也是常规要求。
+
+四位外部化学专家对描述 OAI-M1-03 的预印本进行了同行审查。他们的评估支持了我们的观点，即该结果具有新颖性，值得与科学界分享。更为严苛的检验将随之而来：独立实验室能否重现该结果，以及化学家们是否认为它在更广泛的分子范围内具有实用性。
+
+在三个月期间由 GPT‑5.4 生成并由 Maria 测试的另外三个提案中，OAI-M1-02 和 OAI-M1-04 在 Maria 实验室得到了实验证实，而 OAI-M1-01 则被证伪。对这些结果的分析目前正在进行中。
+
+这项工作表明，模型可以在有机化学领域做出实质性贡献。它所做的远不止总结文献或建议进行一次性实验：它提出了一个具体的、令人惊讶的假设并提交给人类审查，随后设计了实验，解释了实验数据，并设计了后续实验。
+
+这并不意味着 AI 可以端到端地独立运行一个化学研究项目。人类的判断依然不可或缺，且该工作流高度依赖于专门的高通量基础设施。此外，这也不能证明该方法必然能推广至其他偶联反应、其他底物类别或工业生产条件中。
+
+目前的产率估算来源于高通量平台，而实验台级别的验证仅涵盖了 14 对代表性底物。要表征反应机理、确定底物适用范围、测量不同实验室条件下的表现，以及独立重现该结果，还需要进行大量后续工作。
+
+针对化学领域的能力需要谨慎对待，因为那些能够促进医学和材料科学发展的工具同样存在被滥用的风险。我们刻意将这项工作限定在一个合法的药物化学问题上：改进一种已知的、用于制造类药分子的偶联反应。这些实验不涉及毒素、化学武器，或设计有害化合物的请求。这些结果不应被误解为该系统可以协助进行上述有害应用的证据。本项目并未对此进行测试或展示。
+
+我们通过准备框架⁠评估并缓解高级模型能力带来的新兴风险，其中包括涉及化学和生物领域的风险。本项工作中使用的模型已通过英国 AI 安全研究所 (UK AI Security Institute) 的相关评估，且系统被设计为拒绝针对有害应用的请求。实验工作流还增加了一层物理控制：由人类化学家决定哪些提案进入实验室测试，审查实验计划，并保留对物理基础设施的最终控制权。
+
+我们认为，这是研究 AI 在实验化学中潜力的负责任方式：选择一个具有明确科学价值的问题领域，将模型层面的安全防护与专家监督相结合，并通过受限的物理实验来评估系统。随着 AI 能力的不断提升，我们将持续评估新兴风险，加强安全防护，并准确界定研究结果的实际意义与其能力边界。
+
+近期的优先科学步骤包括：测试更广泛的起始原料，研究添加剂提升反应产率的机理，绘制该效应的适用与失效范围图谱，并支持独立重现。综合而言，这些研究将决定该方法的适用广度，及其在实际药物化学工作流中的应用价值。
+
+我们的长期目标是使 AI 系统成为可靠的科学伙伴，在保持以专家判断、可靠测量和强大安全防护为基础的前提下，帮助研究人员生成假设、设计实验、解释结果，并决定下一步的测试方向。有机化学是一个具有极高杠杆效应的领域，因为小分子发现和制造的进展取决于能否可靠地合成这些分子。科学家只能测试他们能够合成的分子，而更优的合成途径将大幅扩展他们在医学、农业、电子、能源和材料科学领域所能探索的科研版图。这一成果正是朝着这一宏大方向迈出的早期一步：前沿模型、专用智能体、自动化实验室与人类化学家通力合作，以更快的速度推进研究闭环，并产出科学界能够评估、重现和进一步拓展的重大发现。
+
+我们对 Molecule.one 团队以及审查本项工作的独立化学家们表示诚挚的感谢。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Separating signal from noise in coding evaluations</title>
+  <title>GeneBench-Pro 正式发布研究2026年6月30日</title>
+  <link>https://openai.com/index/introducing-genebench-pro/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-genebench-pro/</guid>
+  <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+
+Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or fol...</p><div style="font-size:16px;line-height:1.8;color:#333">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+
+Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or following a predefined workflow but also on making these higher-order judgments.
+
+Today, we’re introducing GeneBench-Pro—a challenging, research-level benchmark for testing whether models can handle the kind of judgment-heavy analysis that real-world computational biology requires. It expands onGeneBench⁠(opens in a new window)to cover harder, more realistic tasks across genomics, quantitative biology, and translational medicine, capturing the complexity, iterative nature, and ambiguity of scientific research in computational biology.
+
+To date, there have been few convincing assessments of the system-level judgment calls that make real-world computational research difficult. These include handling ambiguity, revising assumptions, choosing the correct analysis path, and knowing when a result is decision-ready. Because these skills are difficult to formalize, they are also difficult to assess rigorously, even as weaknesses in them increasingly constrain overall AI performance.
+
+GeneBench-Pro is designed to precisely measure these higher-level capabilities. Within GeneBench-Pro, we define “research taste” as the chains of judgment calls that shape an analysis: which questions the data can support, how early diagnostics should change the model or estimand, and when an initial plan needs to be revised. Each GeneBench-Pro problem gives the model a realistic and messy dataset, brief experimental context, and a target estimand tied to a downstream decision. To answer correctly, the model must explore the data, choose an appropriate analytical approach, engage in an iterative process of experimentation, and supply a final answer.
+
+In biology, the cost of data generation (e.g., genome sequencing) has fallen dramatically, andsome researchers now argue⁠(opens in a new window)that the limiting factor is no longer sample collection but downstream computation and analysis. GeneBench-Pro is built to assess progress in addressing that bottleneck, with 129 questions covering a broad range of computational biology settings and methods.
+
+Domain Atlas: 129 problems in 10 domains and 21 sub-domains
+
+Statistical genetics n=17
+
+Population genetics n=21
+
+Quantitative genetics n=17
+
+Regulatory omics n=17
+
+Functional genomics n=9
+
+Clinical, PGx & diagnostics n=26
+
+Microbial genomics n=3
+
+Forensic genetics n=2
+
+Use the arrow keys to move between benchmark problems. The selected problem’s details appear below.
+
+Click on a dot above to learn about a benchmark problem.
+
+This atlas provides a preview of the breadth of GeneBench-Pro. Visit thecase studies pageto explore 10 representative questions in more detail.
+
+GeneBench-Pro is also designed to avoid common benchmark failures. Many long-horizon biology benchmarks construct multi-step questions around messy historical datasets, where there may be no single correct path through the analysis. An agent might choose one defensible cutoff, while another might choose a different but equally defensible option, reflecting the arbitrary choices made by the benchmark creator more than any fundamental differences in model performance. The reverse can also happen: if a problem is too numerically insensitive, an agent can make fundamental errors in an analysis and still produce a passing result.
+
+To avoid these failure modes, each GeneBench-Pro problem is built synthetically: we know the full causal structure and directly simulate the data-generating process. That enables us to tune the complexity of each problem, ensure that reasonable differences in subjective analytical choices still produce accepted numerical results, and verify (through ablation studies) that plausible but incorrect analyses fail. We then audit problem drafts through detailed trace analyses to check for information leakage and unintended solution pathways. This gives us confidence that getting the right answer depends on choosing the correct analytic pathway and not on exploiting a shortcut or matching an arbitrary author preference.
+
+We sent 82 of the 129 GeneBench-Pro questions to external domain experts, including graduate students, postdoctoral researchers, industry scientists, and professors. Reviewers assessed each problem’s realism, whether the target answer was identifiable, and whether the methods and estimators were appropriate. Feedback was used to improve problems.
+
+Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
+
+Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
+
+Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
+
+Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
+
+Evaluation and grading
+
+Each GeneBench-Pro problem is a self-contained scientific analysis. Agents receive access to an isolated workspace with a short prompt, data files, and a standard bioinformatics stack including Python, scientific computing libraries, and basic genomics packages like PLINK 2.0 (although the problems do not require domain-specific tooling).
+
+Structural variant-guided tumor therapy benefit-risk decision
+
+A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
+
+Use percentage-point units for all non-code quantities. Positive benefit means TXR1i improves week-16 clinical benefit relative to non-TXR1 systemic therapy.
+
+These data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.
+
+Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
+
+Because we control the full data-generation process, we can grade correctness deterministically against known targets, avoiding model-choice variability and verbosity effects found in standard rubric-based evaluation.
+
+Each problem also comes with rich metadata, including the intended analysis structure, attached data files, a detailed multi-page case study, and expert review outcomes. We are fully open-sourcing 10 representative GeneBench-Pro questions onHugging Face⁠(opens in a new window), with aninteractive web interfacefor browsing them. Finally, we will provide a 50-question subset toArtificial Analysis⁠(opens in a new window)for independent, third-party benchmarking in the near future.
+
+Our strongest model, GPT‑5.6 Sol, attains a pass rate of 28.7% at the highest reasoning level (31.5% with Pro mode enabled). That is a sharp increase from when we began building the original GeneBench; at that time, our best frontier model, GPT‑5, scored below 5%. Progress on this benchmark suggests that frontier models are improving quickly, even on less tangible, systems-level scientific reasoning. At the current pace, this benchmark may be saturated by the end of the year.
+
+The results also show the impact of scaling test-time compute. At the lowest reasoning level, GPT‑5.6 Sol only achieves a single-digit passrate. At the highest reasoning level, GPT‑5.6 Sol solves nearly six times as many questions as GPT‑5.2 does while using about two-thirds as many tokens.
+
+Comparisons across model families suggest that GPT models are among the strongest systems at high-level scientific reasoning under quantitative uncertainty. The performance gap between GPT‑5.6, GPT‑5.5 and leading open-source models such as GLM 5.2 is significantly larger than we would expect when extrapolating fromcoding benchmarks⁠(opens in a new window), indicating that open-source models are more specialized for coding than for broader reasoning ability.
+
+We used frontier GPT models to evaluate and harden problems during development. As such, we suspected GeneBench-Pro might be biased against GPT models relative to other model families. However, competitor models at best matched the performance of the corresponding GPT model at the time of release, and tended to fall short considerably.
+
+These evaluation results—as high as 31.5% on GPT‑5.6 Sol (Pro)—are striking given the difficulty of the GeneBench-Pro questions. In a survey, our reviewers estimated that a typical GeneBench-Pro problem would take a human expert around 20–40 hours to complete. At a conservative $200 per hour, that puts the human labor cost of a single problem in the thousands of dollars. Current AI agents are still too unreliable to replace human experts, but the cost gap is large, with inference costs at only several dollars per problem. That means even partial automation at current capabilities could create meaningful economic and scientific value.
+
+Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+
+Lex Flagel, Director of Data Science at Gencove
+
+Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+
+Lex Flagel, Director of Data Science at Gencove
+
+Still, the fact that frontier models still solve fewer than a third of these problems shows that there is substantial room for improvement. Models can make partial progress on challenging problems, but they struggle to close the inferential loop. This failure pattern mirrors the contrast between human experts and novices. Experts use their experience to frame the problem and adapt their approach, while novices make observations but struggle to integrate them into the broader context of the problem.
+
+Problem: Pharmacogenomic time-to-event response with time-varying treatment
+
+Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
+
+Fit a counting-process Cox model with treatment as a time-varying exposure, effective only aftertreat_start+90 days ... The model included G, treatment×G, baseline severity, age, and sex.
+
+Uses a more appropriate causal inference method to properly account for treatment-confounder feedback.
+
+Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
+
+Achieving near-perfect performance will require evaluations that both reliably measure progress and identify where models still fail. Benchmarks like GeneBench-Pro can help to turn a vague capability deficiency into something we can diagnose and improve.
+
+If agents can reliably automate this class of analysis, they could significantly accelerate scientific discovery. Human genetic evidence is already central to target prioritization and translational follow-up, because mechanisms with genetic support are much more likely to lead to approved treatments.
+
+Meanwhile, sequencing costs have plummeted, and biobank-scale datasets now link molecular, phenotypic, and health-record information at unprecedented breadth. The limiting factor is shifting from data generation to turning the information into actionable insights. Models that can consistently perform analyses now handled by teams of human experts could transform industrial research by accelerating hypothesis triage, target follow-up, and the iteration cycle between data generation and decision-making.
+
+GeneBench-Pro represents an initial effort to evaluate the more abstract skills involved in good scientific judgment possessed by experienced. These skills allow them to intuit and identify the most promising initial analyses, iterate and revise their thinking when data contradict initial assumptions, and arrive at conclusions upon which downstream clinical, academic, or business decisions may depend.
+
+We anticipate that as model capabilities advance, benchmarks that probe model abilities at these higher levels of abstraction will become increasingly useful, beyond those that simply test book knowledge or the ability to execute routine analyses.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+
+Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or fol...</p><div style="font-size:16px;line-height:1.8;color:#333">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+
+Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or following a predefined workflow but also on making these higher-order judgments.
+
+Today, we’re introducing GeneBench-Pro—a challenging, research-level benchmark for testing whether models can handle the kind of judgment-heavy analysis that real-world computational biology requires. It expands onGeneBench⁠(opens in a new window)to cover harder, more realistic tasks across genomics, quantitative biology, and translational medicine, capturing the complexity, iterative nature, and ambiguity of scientific research in computational biology.
+
+To date, there have been few convincing assessments of the system-level judgment calls that make real-world computational research difficult. These include handling ambiguity, revising assumptions, choosing the correct analysis path, and knowing when a result is decision-ready. Because these skills are difficult to formalize, they are also difficult to assess rigorously, even as weaknesses in them increasingly constrain overall AI performance.
+
+GeneBench-Pro is designed to precisely measure these higher-level capabilities. Within GeneBench-Pro, we define “research taste” as the chains of judgment calls that shape an analysis: which questions the data can support, how early diagnostics should change the model or estimand, and when an initial plan needs to be revised. Each GeneBench-Pro problem gives the model a realistic and messy dataset, brief experimental context, and a target estimand tied to a downstream decision. To answer correctly, the model must explore the data, choose an appropriate analytical approach, engage in an iterative process of experimentation, and supply a final answer.
+
+In biology, the cost of data generation (e.g., genome sequencing) has fallen dramatically, andsome researchers now argue⁠(opens in a new window)that the limiting factor is no longer sample collection but downstream computation and analysis. GeneBench-Pro is built to assess progress in addressing that bottleneck, with 129 questions covering a broad range of computational biology settings and methods.
+
+Domain Atlas: 129 problems in 10 domains and 21 sub-domains
+
+Statistical genetics n=17
+
+Population genetics n=21
+
+Quantitative genetics n=17
+
+Regulatory omics n=17
+
+Functional genomics n=9
+
+Clinical, PGx & diagnostics n=26
+
+Microbial genomics n=3
+
+Forensic genetics n=2
+
+Use the arrow keys to move between benchmark problems. The selected problem’s details appear below.
+
+Click on a dot above to learn about a benchmark problem.
+
+This atlas provides a preview of the breadth of GeneBench-Pro. Visit thecase studies pageto explore 10 representative questions in more detail.
+
+GeneBench-Pro is also designed to avoid common benchmark failures. Many long-horizon biology benchmarks construct multi-step questions around messy historical datasets, where there may be no single correct path through the analysis. An agent might choose one defensible cutoff, while another might choose a different but equally defensible option, reflecting the arbitrary choices made by the benchmark creator more than any fundamental differences in model performance. The reverse can also happen: if a problem is too numerically insensitive, an agent can make fundamental errors in an analysis and still produce a passing result.
+
+To avoid these failure modes, each GeneBench-Pro problem is built synthetically: we know the full causal structure and directly simulate the data-generating process. That enables us to tune the complexity of each problem, ensure that reasonable differences in subjective analytical choices still produce accepted numerical results, and verify (through ablation studies) that plausible but incorrect analyses fail. We then audit problem drafts through detailed trace analyses to check for information leakage and unintended solution pathways. This gives us confidence that getting the right answer depends on choosing the correct analytic pathway and not on exploiting a shortcut or matching an arbitrary author preference.
+
+We sent 82 of the 129 GeneBench-Pro questions to external domain experts, including graduate students, postdoctoral researchers, industry scientists, and professors. Reviewers assessed each problem’s realism, whether the target answer was identifiable, and whether the methods and estimators were appropriate. Feedback was used to improve problems.
+
+Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
+
+Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
+
+Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
+
+Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
+
+Evaluation and grading
+
+Each GeneBench-Pro problem is a self-contained scientific analysis. Agents receive access to an isolated workspace with a short prompt, data files, and a standard bioinformatics stack including Python, scientific computing libraries, and basic genomics packages like PLINK 2.0 (although the problems do not require domain-specific tooling).
+
+Structural variant-guided tumor therapy benefit-risk decision
+
+A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
+
+Use percentage-point units for all non-code quantities. Positive benefit means TXR1i improves week-16 clinical benefit relative to non-TXR1 systemic therapy.
+
+These data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.
+
+Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
+
+Because we control the full data-generation process, we can grade correctness deterministically against known targets, avoiding model-choice variability and verbosity effects found in standard rubric-based evaluation.
+
+Each problem also comes with rich metadata, including the intended analysis structure, attached data files, a detailed multi-page case study, and expert review outcomes. We are fully open-sourcing 10 representative GeneBench-Pro questions onHugging Face⁠(opens in a new window), with aninteractive web interfacefor browsing them. Finally, we will provide a 50-question subset toArtificial Analysis⁠(opens in a new window)for independent, third-party benchmarking in the near future.
+
+Our strongest model, GPT‑5.6 Sol, attains a pass rate of 28.7% at the highest reasoning level (31.5% with Pro mode enabled). That is a sharp increase from when we began building the original GeneBench; at that time, our best frontier model, GPT‑5, scored below 5%. Progress on this benchmark suggests that frontier models are improving quickly, even on less tangible, systems-level scientific reasoning. At the current pace, this benchmark may be saturated by the end of the year.
+
+The results also show the impact of scaling test-time compute. At the lowest reasoning level, GPT‑5.6 Sol only achieves a single-digit passrate. At the highest reasoning level, GPT‑5.6 Sol solves nearly six times as many questions as GPT‑5.2 does while using about two-thirds as many tokens.
+
+Comparisons across model families suggest that GPT models are among the strongest systems at high-level scientific reasoning under quantitative uncertainty. The performance gap between GPT‑5.6, GPT‑5.5 and leading open-source models such as GLM 5.2 is significantly larger than we would expect when extrapolating fromcoding benchmarks⁠(opens in a new window), indicating that open-source models are more specialized for coding than for broader reasoning ability.
+
+We used frontier GPT models to evaluate and harden problems during development. As such, we suspected GeneBench-Pro might be biased against GPT models relative to other model families. However, competitor models at best matched the performance of the corresponding GPT model at the time of release, and tended to fall short considerably.
+
+These evaluation results—as high as 31.5% on GPT‑5.6 Sol (Pro)—are striking given the difficulty of the GeneBench-Pro questions. In a survey, our reviewers estimated that a typical GeneBench-Pro problem would take a human expert around 20–40 hours to complete. At a conservative $200 per hour, that puts the human labor cost of a single problem in the thousands of dollars. Current AI agents are still too unreliable to replace human experts, but the cost gap is large, with inference costs at only several dollars per problem. That means even partial automation at current capabilities could create meaningful economic and scientific value.
+
+Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+
+Lex Flagel, Director of Data Science at Gencove
+
+Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+
+Lex Flagel, Director of Data Science at Gencove
+
+Still, the fact that frontier models still solve fewer than a third of these problems shows that there is substantial room for improvement. Models can make partial progress on challenging problems, but they struggle to close the inferential loop. This failure pattern mirrors the contrast between human experts and novices. Experts use their experience to frame the problem and adapt their approach, while novices make observations but struggle to integrate them into the broader context of the problem.
+
+Problem: Pharmacogenomic time-to-event response with time-varying treatment
+
+Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
+
+Fit a counting-process Cox model with treatment as a time-varying exposure, effective only aftertreat_start+90 days ... The model included G, treatment×G, baseline severity, age, and sex.
+
+Uses a more appropriate causal inference method to properly account for treatment-confounder feedback.
+
+Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
+
+Achieving near-perfect performance will require evaluations that both reliably measure progress and identify where models still fail. Benchmarks like GeneBench-Pro can help to turn a vague capability deficiency into something we can diagnose and improve.
+
+If agents can reliably automate this class of analysis, they could significantly accelerate scientific discovery. Human genetic evidence is already central to target prioritization and translational follow-up, because mechanisms with genetic support are much more likely to lead to approved treatments.
+
+Meanwhile, sequencing costs have plummeted, and biobank-scale datasets now link molecular, phenotypic, and health-record information at unprecedented breadth. The limiting factor is shifting from data generation to turning the information into actionable insights. Models that can consistently perform analyses now handled by teams of human experts could transform industrial research by accelerating hypothesis triage, target follow-up, and the iteration cycle between data generation and decision-making.
+
+GeneBench-Pro represents an initial effort to evaluate the more abstract skills involved in good scientific judgment possessed by experienced. These skills allow them to intuit and identify the most promising initial analyses, iterate and revise their thinking when data contradict initial assumptions, and arrive at conclusions upon which downstream clinical, academic, or business decisions may depend.
+
+We anticipate that as model capabilities advance, benchmarks that probe model abilities at these higher levels of abstraction will become increasingly useful, beyond those that simply test book knowledge or the ability to execute routine analyses.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Separating signal from noise in coding evaluations研究2026年7月8日</title>
   <link>https://openai.com/index/separating-signal-from-noise-coding-evaluations/</link>
   <guid isPermaLink="false">https://openai.com/index/separating-signal-from-noise-coding-evaluations/</guid>
-  <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
 
@@ -172,216 +525,28 @@ Wepreviously⁠referred to this category as narrow tests.
 We previously referred to this category as wide tests.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Introducing GPT-Live</title>
-  <link>https://openai.com/index/introducing-gpt-live/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
-  <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+  <title>GPT-5.4</title>
+  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</link>
+  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</guid>
+  <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Introducing GeneBench-Pro</title>
-  <link>https://openai.com/index/introducing-genebench-pro/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-genebench-pro/</guid>
-  <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+  <title>GPT-5.6：惠及所有人的实用智能产品2026年7月9日</title>
+  <link>https://openai.com/index/gpt-5-6/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-6/</guid>
+  <pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一项研究级基准，用于衡量 AI 智能体如何在计算生物学中应对模糊性并作出关键判断。
-
-科学数据很少自带说明书。研究人员必须判断某个模式反映的是生物学现象还是干扰项，数据能否支撑所提出的问题，以及每个结果应如何改变下一步行动。AI 智能体越来越能够执行复杂分析，但真实的科学研究并不只是回顾事实或遵循预定义工作流，还依赖于作出这些更高层次的判断。
-
-今天，我们正式推出 GeneBench-Pro — 一个具有挑战性的研究级基准，用于测试模型能否处理真实计算生物学所需的判断密集型分析。它在GeneBench⁠（在新窗口中打开）的基础上扩展，覆盖基因组学、定量生物学和转化医学中更困难、更贴近现实的任务，捕捉计算生物学中科学研究的复杂性、迭代性和不确定性。
-
-迄今为止，对于加大现实世界计算研究难度的系统级判断，令人信服的评估仍然很少。这些判断包括处理模糊性、修正假设、选择正确的分析路径，以及了解结果何时足以支持决策。由于这些技能难以统一规范，即便它们的短板越来越制约 AI 的整体表现，也同样难以被严格评估。
-
-GeneBench-Pro 旨在精确衡量这些更高层次的能力。在 GeneBench-P...</p><div style="font-size:16px;line-height:1.8;color:#333">一项研究级基准，用于衡量 AI 智能体如何在计算生物学中应对模糊性并作出关键判断。
-
-科学数据很少自带说明书。研究人员必须判断某个模式反映的是生物学现象还是干扰项，数据能否支撑所提出的问题，以及每个结果应如何改变下一步行动。AI 智能体越来越能够执行复杂分析，但真实的科学研究并不只是回顾事实或遵循预定义工作流，还依赖于作出这些更高层次的判断。
-
-今天，我们正式推出 GeneBench-Pro — 一个具有挑战性的研究级基准，用于测试模型能否处理真实计算生物学所需的判断密集型分析。它在GeneBench⁠（在新窗口中打开）的基础上扩展，覆盖基因组学、定量生物学和转化医学中更困难、更贴近现实的任务，捕捉计算生物学中科学研究的复杂性、迭代性和不确定性。
-
-迄今为止，对于加大现实世界计算研究难度的系统级判断，令人信服的评估仍然很少。这些判断包括处理模糊性、修正假设、选择正确的分析路径，以及了解结果何时足以支持决策。由于这些技能难以统一规范，即便它们的短板越来越制约 AI 的整体表现，也同样难以被严格评估。
-
-GeneBench-Pro 旨在精确衡量这些更高层次的能力。在 GeneBench-Pro 中，我们把“研究品味”定义为塑造分析的一系列判断决策：数据能够支持哪些问题，早期诊断应如何改变模型或估计量，以及初始计划何时需要修订。每个 GeneBench-Pro 问题都会给模型一个真实而混乱的数据集、简短的实验背景，以及一个与下游决策相关的目标估计量。要正确回答，模型必须探索数据、选择合适的分析方法，经历迭代式实验过程，并给出最终答案。
-
-在生物学中，数据生成（例如基因组测序）的成本已大幅下降，一些研究人员如今认为⁠（在新窗口中打开），限制因素不再是样本采集，而是下游计算和分析。GeneBench-Pro 旨在评估解决这一瓶颈的进展，其中涉及 129 个覆盖一系列计算生物学场景和方法的问题。
-
-域图谱：共 10 个域、21 个子域，包含 129 个问题
-
-临床、药物基因组学 (PGx) 与诊断 n=26
-
-使用方向键在基准测试问题之间切换。所选问题的详细信息将显示在下方。
-
-这份图谱提供了 GeneBench-Pro 覆盖广度的预览。访问案例研究页面，深入了解 10 个代表性问题。
-
-GeneBench-Pro 还旨在避免常见的基准失效。许多长期生物学基准围绕混乱的历史数据集构建多步骤问题，而这些分析可能并不存在唯一正确路径。一个智能体可能选择某个合理的截断值，另一个智能体可能选择不同但同样合理的选项，这更多反映了基准创建者的任意选择，而不是模型性能的根本差异。相反的情况也可能发生：如果问题对数值不够敏感，智能体即使在分析中犯下根本性错误，仍可能得到通过结果。
-
-为避免这些失效模式，每个 GeneBench-Pro 问题都是合成构建的：我们知道完整的因果结构，并直接模拟数据生成过程。这使我们能够调节每个问题的复杂度，确保主观分析选择中的合理差异仍能产生可接受的数值结果，并通过消融实验来验证，而看似合理但实际错误的分析则会被判定为失效。随后，我们通过详细的轨迹分析审核问题草稿，检查信息泄漏和非预期解题路径。这让我们确信，得到正确答案取决于选择正确的分析路径，而不是利用捷径或迎合创建者的任意偏好。
-
-我们将 129 个 GeneBench-Pro 问题中的 82 个发送给外部领域专家，包括研究生、博士后研究人员、行业科学家和教授。评审者评估了每个问题的真实性、目标答案是否可识别，以及方法和估计值是否合适。反馈被用于改进问题。
-
-Alexander Strudwick Young，UCLA 人类遗传学助理教授
-
-Jennifer Grundman，UCLA 人类遗传学博士候选人
-
-Alexander Strudwick Young，UCLA 人类遗传学助理教授
-
-Jennifer Grundman，UCLA 人类遗传学博士候选人
-
-每个 GeneBench-Pro 问题都是一项独立的科学分析。智能体可访问一个隔离工作空间，其中包含简短提示、数据文件，以及标准生物信息学栈，包括 Python、科学计算库和 PLINK 2.0 等基础基因组学软件包（尽管这些问题并不要求使用领域专用工具）。
-
-A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
-
-Use percentage-point units for all non-code quantities. Positive benefit means TXR1i improves week-16 clinical benefit relative to non-TXR1 systemic therapy.
-
-These data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.
-
-Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
-
-由于我们控制完整的数据生成过程，可以根据已知目标对准确性进行确定性评分，避免基于标准评估规则中常见的模型选择差异和冗余性影响。
-
-每个问题还附带丰富元数据，包括预期分析结构、所附数据文件、详细的多页案例研究，以及专家审阅结果。我们将在Hugging Face⁠（在新窗口中打开）上完全开放 10 个代表性 GeneBench-Pro 问题的源代码，并提供一个交互式网页界面用于浏览这些问题。最后，我们将在不久后向Artificial Analysis⁠（在新窗口中打开）提供一个包含 50 个问题的子集，用于独立的第三方基准测试。
-
-我们最强的模型 GPT‑5.6 Sol 在最高推理级别下达到 28.7% 的通过率（启用 Pro 模式时为 31.5%）。这比我们开始构建最初的 GeneBench 时有了大幅提升；当时我们最好的前沿模型 GPT‑5 得分低于 5%。这一基准测试的进展表明，即使是在较为抽象的系统级科学推理方面，前沿模型也在快速改进。按照目前速度，这一基准可能在年底前达到饱和状态。
-
-结果还显示了扩大测试时计算规模的影响。在最低推理级别下，GPT‑5.6 Sol 的通过率只有个位数。在最高推理级别下，GPT‑5.6 Sol 解决的问题数量接近 GPT‑5.2 的六倍，同时 Token 的消耗量约为后者的三分之二。
-
-跨模型家族的比较表明，在定量不确定性下进行高层次科学推理时，GPT 模型是最强的系统之一。GPT‑5.6、GPT‑5.5 与 GLM 5.2 等领先开源模型之间的性能差距，远大于我们根据编码基准⁠（在新窗口中打开）外推所预期的差距，这表明开源模型相比更广泛的推理能力，专门针对编码进行了优化。
-
-在开发过程中，我们使用前沿 GPT 模型来评估并加固问题。因此，我们曾怀疑 GeneBench-Pro 相对于其他模型家族可能会对 GPT 模型存在不利偏差。然而，竞品模型最多也只是追平对应 GPT 模型发布时的表现，并且往往明显落后。
-
-考虑到 GeneBench-Pro 问题的难度，这些评测结果 — GPT‑5.6 Sol（Pro）最高达到 31.5% 十分惊人。在一项调查中，我们的评审者估计，一个典型 GeneBench-Pro 问题需要人类专家耗费约 20–40 小时完成。按保守的每小时 200 美元计算，单个问题的人力成本就达到数千美元。当前 AI 智能体仍不够可靠，无法取代人类专家，但成本差距很大，每个问题的推理成本仅为数美元。这意味着，即便以当前能力实现部分自动化，也可能创造有意义的经济和科学价值。
-
-Cyrillus Tan，纽约基因组中心博士后研究员
-
-Lex Flagel，Gencove 数据科学总监
-
-Cyrillus Tan，纽约基因组中心博士后研究员
-
-Lex Flagel，Gencove 数据科学总监
-
-不过，前沿模型仍然只能解决不到三分之一的问题，这说明改进空间仍然很大。模型可以在挑战性问题上取得部分进展，但很难闭合推断链条。这种失败模式印证了人类专家与新手之间的差异。专家会利用经验界定问题并调整方法，而新手能够作出观察，却难以将这些观察融入问题的整体脉络中。
-
-问题：时变治疗下的药物基因组学事件时间响应
-
-Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
-
-Fit a counting-process Cox model with treatment as a time-varying exposure, effective only aftertreat_start+90 days ... The model included G, treatment×G, baseline severity, age, and sex.
-
-Uses a more appropriate causal inference method to properly account for treatment-confounder feedback.
-
-Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
-
-要实现接近完美的表现，需要既能可靠衡量进展、又能指出模型具体失效环节的评估。像 GeneBench-Pro 这样的基准测试，有助于将模糊的能力缺陷转化为可诊断、可改进的问题。
-
-如果智能体能够可靠地自动化这类分析，就可能显著加速科学发现。人类遗传证据已经是靶点优先级排序和转化后续研究的核心，因为有遗传学支持的机制更有可能导向获批疗法。
-
-与此同时，测序成本已大幅下降，生物样本库规模的数据集如今以前所未有的广度将分子、表型和医疗记录信息连接起来。限制因素正从数据生成转向把信息转化为可行动的洞见。如果模型能够稳定完成目前由人类专家团队处理的分析，就可能通过加速假设筛选、靶点跟进，以及数据生成与决策之间的迭代循环，改变产业研究。
-
-GeneBench-Pro 旨在初步评估一种更抽象的技能 — 即经验丰富的科学家所具备的科学判断力。这些技能使他们能够凭借直觉判断并识别最有潜力的初始分析，在数据与初始假设相矛盾时迭代并修正思路，并得出下游临床、学术或商业决策可能依赖的结论。
-
-我们预计，随着模型能力提升，那些用于探测更高层次抽象能力的基准测试将变得越发实用，超越那些仅测试书本知识或常规分析执行能力的基准测试。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一项研究级基准，用于衡量 AI 智能体如何在计算生物学中应对模糊性并作出关键判断。
-
-科学数据很少自带说明书。研究人员必须判断某个模式反映的是生物学现象还是干扰项，数据能否支撑所提出的问题，以及每个结果应如何改变下一步行动。AI 智能体越来越能够执行复杂分析，但真实的科学研究并不只是回顾事实或遵循预定义工作流，还依赖于作出这些更高层次的判断。
-
-今天，我们正式推出 GeneBench-Pro — 一个具有挑战性的研究级基准，用于测试模型能否处理真实计算生物学所需的判断密集型分析。它在GeneBench⁠（在新窗口中打开）的基础上扩展，覆盖基因组学、定量生物学和转化医学中更困难、更贴近现实的任务，捕捉计算生物学中科学研究的复杂性、迭代性和不确定性。
-
-迄今为止，对于加大现实世界计算研究难度的系统级判断，令人信服的评估仍然很少。这些判断包括处理模糊性、修正假设、选择正确的分析路径，以及了解结果何时足以支持决策。由于这些技能难以统一规范，即便它们的短板越来越制约 AI 的整体表现，也同样难以被严格评估。
-
-GeneBench-Pro 旨在精确衡量这些更高层次的能力。在 GeneBench-P...</p><div style="font-size:16px;line-height:1.8;color:#333">一项研究级基准，用于衡量 AI 智能体如何在计算生物学中应对模糊性并作出关键判断。
-
-科学数据很少自带说明书。研究人员必须判断某个模式反映的是生物学现象还是干扰项，数据能否支撑所提出的问题，以及每个结果应如何改变下一步行动。AI 智能体越来越能够执行复杂分析，但真实的科学研究并不只是回顾事实或遵循预定义工作流，还依赖于作出这些更高层次的判断。
-
-今天，我们正式推出 GeneBench-Pro — 一个具有挑战性的研究级基准，用于测试模型能否处理真实计算生物学所需的判断密集型分析。它在GeneBench⁠（在新窗口中打开）的基础上扩展，覆盖基因组学、定量生物学和转化医学中更困难、更贴近现实的任务，捕捉计算生物学中科学研究的复杂性、迭代性和不确定性。
-
-迄今为止，对于加大现实世界计算研究难度的系统级判断，令人信服的评估仍然很少。这些判断包括处理模糊性、修正假设、选择正确的分析路径，以及了解结果何时足以支持决策。由于这些技能难以统一规范，即便它们的短板越来越制约 AI 的整体表现，也同样难以被严格评估。
-
-GeneBench-Pro 旨在精确衡量这些更高层次的能力。在 GeneBench-Pro 中，我们把“研究品味”定义为塑造分析的一系列判断决策：数据能够支持哪些问题，早期诊断应如何改变模型或估计量，以及初始计划何时需要修订。每个 GeneBench-Pro 问题都会给模型一个真实而混乱的数据集、简短的实验背景，以及一个与下游决策相关的目标估计量。要正确回答，模型必须探索数据、选择合适的分析方法，经历迭代式实验过程，并给出最终答案。
-
-在生物学中，数据生成（例如基因组测序）的成本已大幅下降，一些研究人员如今认为⁠（在新窗口中打开），限制因素不再是样本采集，而是下游计算和分析。GeneBench-Pro 旨在评估解决这一瓶颈的进展，其中涉及 129 个覆盖一系列计算生物学场景和方法的问题。
-
-域图谱：共 10 个域、21 个子域，包含 129 个问题
-
-临床、药物基因组学 (PGx) 与诊断 n=26
-
-使用方向键在基准测试问题之间切换。所选问题的详细信息将显示在下方。
-
-这份图谱提供了 GeneBench-Pro 覆盖广度的预览。访问案例研究页面，深入了解 10 个代表性问题。
-
-GeneBench-Pro 还旨在避免常见的基准失效。许多长期生物学基准围绕混乱的历史数据集构建多步骤问题，而这些分析可能并不存在唯一正确路径。一个智能体可能选择某个合理的截断值，另一个智能体可能选择不同但同样合理的选项，这更多反映了基准创建者的任意选择，而不是模型性能的根本差异。相反的情况也可能发生：如果问题对数值不够敏感，智能体即使在分析中犯下根本性错误，仍可能得到通过结果。
-
-为避免这些失效模式，每个 GeneBench-Pro 问题都是合成构建的：我们知道完整的因果结构，并直接模拟数据生成过程。这使我们能够调节每个问题的复杂度，确保主观分析选择中的合理差异仍能产生可接受的数值结果，并通过消融实验来验证，而看似合理但实际错误的分析则会被判定为失效。随后，我们通过详细的轨迹分析审核问题草稿，检查信息泄漏和非预期解题路径。这让我们确信，得到正确答案取决于选择正确的分析路径，而不是利用捷径或迎合创建者的任意偏好。
-
-我们将 129 个 GeneBench-Pro 问题中的 82 个发送给外部领域专家，包括研究生、博士后研究人员、行业科学家和教授。评审者评估了每个问题的真实性、目标答案是否可识别，以及方法和估计值是否合适。反馈被用于改进问题。
-
-Alexander Strudwick Young，UCLA 人类遗传学助理教授
-
-Jennifer Grundman，UCLA 人类遗传学博士候选人
-
-Alexander Strudwick Young，UCLA 人类遗传学助理教授
-
-Jennifer Grundman，UCLA 人类遗传学博士候选人
-
-每个 GeneBench-Pro 问题都是一项独立的科学分析。智能体可访问一个隔离工作空间，其中包含简短提示、数据文件，以及标准生物信息学栈，包括 Python、科学计算库和 PLINK 2.0 等基础基因组学软件包（尽管这些问题并不要求使用领域专用工具）。
-
-A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
-
-Use percentage-point units for all non-code quantities. Positive benefit means TXR1i improves week-16 clinical benefit relative to non-TXR1 systemic therapy.
-
-These data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.
-
-Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
-
-由于我们控制完整的数据生成过程，可以根据已知目标对准确性进行确定性评分，避免基于标准评估规则中常见的模型选择差异和冗余性影响。
-
-每个问题还附带丰富元数据，包括预期分析结构、所附数据文件、详细的多页案例研究，以及专家审阅结果。我们将在Hugging Face⁠（在新窗口中打开）上完全开放 10 个代表性 GeneBench-Pro 问题的源代码，并提供一个交互式网页界面用于浏览这些问题。最后，我们将在不久后向Artificial Analysis⁠（在新窗口中打开）提供一个包含 50 个问题的子集，用于独立的第三方基准测试。
-
-我们最强的模型 GPT‑5.6 Sol 在最高推理级别下达到 28.7% 的通过率（启用 Pro 模式时为 31.5%）。这比我们开始构建最初的 GeneBench 时有了大幅提升；当时我们最好的前沿模型 GPT‑5 得分低于 5%。这一基准测试的进展表明，即使是在较为抽象的系统级科学推理方面，前沿模型也在快速改进。按照目前速度，这一基准可能在年底前达到饱和状态。
-
-结果还显示了扩大测试时计算规模的影响。在最低推理级别下，GPT‑5.6 Sol 的通过率只有个位数。在最高推理级别下，GPT‑5.6 Sol 解决的问题数量接近 GPT‑5.2 的六倍，同时 Token 的消耗量约为后者的三分之二。
-
-跨模型家族的比较表明，在定量不确定性下进行高层次科学推理时，GPT 模型是最强的系统之一。GPT‑5.6、GPT‑5.5 与 GLM 5.2 等领先开源模型之间的性能差距，远大于我们根据编码基准⁠（在新窗口中打开）外推所预期的差距，这表明开源模型相比更广泛的推理能力，专门针对编码进行了优化。
-
-在开发过程中，我们使用前沿 GPT 模型来评估并加固问题。因此，我们曾怀疑 GeneBench-Pro 相对于其他模型家族可能会对 GPT 模型存在不利偏差。然而，竞品模型最多也只是追平对应 GPT 模型发布时的表现，并且往往明显落后。
-
-考虑到 GeneBench-Pro 问题的难度，这些评测结果 — GPT‑5.6 Sol（Pro）最高达到 31.5% 十分惊人。在一项调查中，我们的评审者估计，一个典型 GeneBench-Pro 问题需要人类专家耗费约 20–40 小时完成。按保守的每小时 200 美元计算，单个问题的人力成本就达到数千美元。当前 AI 智能体仍不够可靠，无法取代人类专家，但成本差距很大，每个问题的推理成本仅为数美元。这意味着，即便以当前能力实现部分自动化，也可能创造有意义的经济和科学价值。
-
-Cyrillus Tan，纽约基因组中心博士后研究员
-
-Lex Flagel，Gencove 数据科学总监
-
-Cyrillus Tan，纽约基因组中心博士后研究员
-
-Lex Flagel，Gencove 数据科学总监
-
-不过，前沿模型仍然只能解决不到三分之一的问题，这说明改进空间仍然很大。模型可以在挑战性问题上取得部分进展，但很难闭合推断链条。这种失败模式印证了人类专家与新手之间的差异。专家会利用经验界定问题并调整方法，而新手能够作出观察，却难以将这些观察融入问题的整体脉络中。
-
-问题：时变治疗下的药物基因组学事件时间响应
-
-Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
-
-Fit a counting-process Cox model with treatment as a time-varying exposure, effective only aftertreat_start+90 days ... The model included G, treatment×G, baseline severity, age, and sex.
-
-Uses a more appropriate causal inference method to properly account for treatment-confounder feedback.
-
-Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
-
-要实现接近完美的表现，需要既能可靠衡量进展、又能指出模型具体失效环节的评估。像 GeneBench-Pro 这样的基准测试，有助于将模糊的能力缺陷转化为可诊断、可改进的问题。
-
-如果智能体能够可靠地自动化这类分析，就可能显著加速科学发现。人类遗传证据已经是靶点优先级排序和转化后续研究的核心，因为有遗传学支持的机制更有可能导向获批疗法。
-
-与此同时，测序成本已大幅下降，生物样本库规模的数据集如今以前所未有的广度将分子、表型和医疗记录信息连接起来。限制因素正从数据生成转向把信息转化为可行动的洞见。如果模型能够稳定完成目前由人类专家团队处理的分析，就可能通过加速假设筛选、靶点跟进，以及数据生成与决策之间的迭代循环，改变产业研究。
-
-GeneBench-Pro 旨在初步评估一种更抽象的技能 — 即经验丰富的科学家所具备的科学判断力。这些技能使他们能够凭借直觉判断并识别最有潜力的初始分析，在数据与初始假设相矛盾时迭代并修正思路，并得出下游临床、学术或商业决策可能依赖的结论。
-
-我们预计，随着模型能力提升，那些用于探测更高层次抽象能力的基准测试将变得越发实用，超越那些仅测试书本知识或常规分析执行能力的基准测试。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6：惠及所有人的实用智能产品2026年7月9日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6：惠及所有人的实用智能产品2026年7月9日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Previewing GPT-5.6 Sol: a next-generation model</title>
+  <title>预览 GPT-5.6 Sol：新一代模型产品2026年6月26日</title>
   <link>https://openai.com/index/previewing-gpt-5-6-sol/</link>
   <guid isPermaLink="false">https://openai.com/index/previewing-gpt-5-6-sol/</guid>
-  <pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 27 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.
 
@@ -531,31 +696,566 @@ We’re excited to continue learning from this preview period, and to bring GPT�
 4. Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</title>
-  <link>https://openai.com/index/ai-chemist-improves-reaction/</link>
-  <guid isPermaLink="false">https://openai.com/index/ai-chemist-improves-reaction/</guid>
-  <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+  <title>GPT-Live 发布产品2026年7月8日</title>
+  <link>https://openai.com/index/introducing-gpt-live/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
+  <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ai-chemist-improves-reaction/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，支持自然的人类-AI 交互，现已驱动 ChatGPT 语音。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatG...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，支持自然的人类-AI 交互，现已驱动 ChatGPT 语音。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant 用于快速回答，Medium 和 High 则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，支持自然的人类-AI 交互，现已驱动 ChatGPT 语音。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatG...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，支持自然的人类-AI 交互，现已驱动 ChatGPT 语音。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant 用于快速回答，Medium 和 High 则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5</title>
-  <link>https://openai.com/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate>
+  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</guid>
+  <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.4</title>
-  <link>https://openai.com/index/introducing-gpt-5-4/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+
+Expert-SWE (Internal)
+
+FrontierMath Tier 1–3
+
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+
+Prompt:# Algebraic geometry surface intersection
+
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+
+Git repo, journal, plan (Markdown files)
+
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+
+SWE-Bench Pro (Public) *
+
+Expert-SWE (Internal)
+
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+
+Tau2-bench Telecom***（原始提示词）
+
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+
+Graphwalks BFS 256k f1
+
+Graphwalks BFS 1mil f1
+
+Graphwalks parents 256k f1
+
+Graphwalks parents 1mil f1
+
+OpenAI MRCR v2 8-needle 4K-8K
+
+OpenAI MRCR v2 8-needle 8K-16K
+
+OpenAI MRCR v2 8-needle 16K-32K
+
+OpenAI MRCR v2 8-needle 32K-64K
+
+OpenAI MRCR v2 8-needle 64K-128K
+
+OpenAI MRCR v2 8-needle 128K-256K
+
+OpenAI MRCR v2 8-needle 256K-512K
+
+OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5....</p><div style="font-size:16px;line-height:1.8;color:#333">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
+
+GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
+
+在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
+
+伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
+
+即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
+
+Expert-SWE (Internal)
+
+FrontierMath Tier 1–3
+
+OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
+
+在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
+
+Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
+
+GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
+
+在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
+
+GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
+
+渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
+
+Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
+
+除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
+
+在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
+
+MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
+
+资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
+
+一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
+
+这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
+
+在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
+
+目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
+
+在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
+
+GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
+
+多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
+
+此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
+
+Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
+
+GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
+
+值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
+
+同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
+
+在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
+
+早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
+
+Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
+
+波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
+
+随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
+
+图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
+
+Prompt:# Algebraic geometry surface intersection
+
+Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
+
+Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
+
+Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
+
+Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
+
+## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
+
+App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
+
+Git repo, journal, plan (Markdown files)
+
+为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
+
+其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
+
+在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
+
+前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
+
+在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
+
+多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
+
+针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
+
+为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
+
+我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
+
+我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
+
+同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
+
+这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
+
+即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
+
+在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
+
+在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
+
+面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
+
+尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
+
+SWE-Bench Pro (Public) *
+
+Expert-SWE (Internal)
+
+*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
+
+Tau2-bench Telecom***（原始提示词）
+
+** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam（无工具）
+
+Humanity's Last Exam（含工具）
+
+**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
+
+Graphwalks BFS 256k f1
+
+Graphwalks BFS 1mil f1
+
+Graphwalks parents 256k f1
+
+Graphwalks parents 1mil f1
+
+OpenAI MRCR v2 8-needle 4K-8K
+
+OpenAI MRCR v2 8-needle 8K-16K
+
+OpenAI MRCR v2 8-needle 16K-32K
+
+OpenAI MRCR v2 8-needle 32K-64K
+
+OpenAI MRCR v2 8-needle 64K-128K
+
+OpenAI MRCR v2 8-needle 128K-256K
+
+OpenAI MRCR v2 8-needle 256K-512K
+
+OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
