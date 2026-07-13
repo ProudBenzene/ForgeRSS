@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Mon, 13 Jul 2026 14:39:29 +0000</lastBuildDate>
+<lastBuildDate>Mon, 13 Jul 2026 19:29:12 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -14,14 +14,307 @@
   <link>https://www.anthropic.com/research</link>
 </image>
 <item>
+  <title>Claude’s values across models and languages</title>
+  <link>https://www.anthropic.com/research/claude-values-models-languages</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/claude-values-models-languages</guid>
+  <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.1The values we want Claude to reflect are outlined at a high level inClaude’s constitution, but no document can anticipate every value that might emerge across the millions of conversations that happen every day onClaude.ai. Instead, we seek to cultivate in Claude’s responses“good judgment and sound values...</p><div style="font-size:16px;line-height:1.8;color:#333">When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.1The values we want Claude to reflect are outlined at a high level inClaude’s constitution, but no document can anticipate every value that might emerge across the millions of conversations that happen every day onClaude.ai. Instead, we seek to cultivate in Claude’s responses“good judgment and sound values that can be applied contextually.”
+
+How, exactly, do we study the values that Claude expresses and how they change in different contexts? Inprevious work, we analyzed 700,000 anonymized Claude.ai conversations, identifying more than 3,000 distinct values in Claude's responses and how often Claude expressed them. But a list of values so large is hard to reason about. In this work, we make studying these thousands of values tractable by compressing them into a small number of axes that capture key patterns in Claude’s responses. Each axis is a number line between two groups of values—for example, values relating to emotional warmth on one end and values relating to rigor on the other—and where Claude falls on that line tells us which values it leans toward.
+
+We applied this approach to measure how the values Claude expresses vary across two factors. First, we compared how the values Claude expresses vary across models. Each Claude model reflects a slightly different approach to character training as well as many other fine-tuning decisions. Because our value axis approach quantifies key differences between models, it may ultimately allow us to connect variation in the values Claude expresses to different training decisions.
+
+Second, we want to understand how the experience of users compares across the many languages people use to talk to Claude. Ourprevious researchhas shown that Claude behaves somewhat differently in different languages.2We apply our value axis approach to understand how the values expressed by Claude vary across the top 20 languages onClaude.ai.
+
+Four key axes capture 15% of the variation in Claude's values:3
+
+Deference vs. Caution: Whether Claude leans toward accommodating what someone wants or guarding against possible risk and harm.
+
+Warmth vs. Rigor: Whether Claude leans toward expressing positivity and care for the person or emphasizing accuracy and precision.
+
+Depth vs. Brevity: Whether Claude leans toward explaining in depth or doing only what was asked.
+
+Candor vs. Execution: Whether Claude leans toward foregrounding its own uncertainty or producing a more polished and confident answer.
+
+Value profiles across these axes match perceptions of model character.Sonnet 4.6 is regarded as particularlywarm, while Opus 4.7 is known forrigor. We find that each model’s value profile mirrors these subjective assessments: Sonnet 4.6 leans toward expressing more deference to the user and emotional warmth while Opus 4.7 leans toward expressing a focus on accuracy and precision as well as guarding against misuse.
+
+The values Claude expresses vary across languages.When Claude speaks in English, it emphasizes different values than when it speaks in Portuguese, Indonesian, or Chinese.4The largest variation is in the Warmth vs. Rigor axis, with Claude leaning toward expressing warmth-related values most in Arabic and Hindi and rigor-related values most in English and Russian.
+
+With this approach we can begin to ask why values shift across models and languages and better test how factors such as behavioral training or cultural context influence the values that Claude expresses.
+
+How do we interpret the giant space of values?
+
+Ultimately, our goal is to have a way to empirically understand the values that Claude expresses and how these vary across contexts. In this work, we focus specifically on how the values change between models and languages. But our previous work,Values in the Wild, identified more than 3,000 values expressed by Claude. Comparing these thousands of values one by one would be unwieldy and would obscure broader trends.
+
+To make comparing values easier, we constructedvalue axesthat reduce those thousands of values down to a few underlying dimensions based on which values tend to show up together in real-world conversations. For example, Claude responses that are characterized as “warm” are often also characterized as “encouraging” and “positive.” Those same “warm” responses are less often characterized as “rigorous” and “accurate.” Constructing an axis from warmth to rigor allows us to organize these groups of related values—warmth-related values on one side, rigor-related values on the other—and captures an important aspect of how Claude interacts with someone in conversation. If Claude expresses more warmth-related values than rigor-related values in a conversation, that conversation sits more on the warmth side of this axis, and vice versa. This doesn't mean the value groups on either end are mutually exclusive—Claude can express warmth and rigor in the same conversation. But in practice, the more Claude expresses values on one side of an axis, the less it tends to express values on the other. These axes allow us to compare the most salient groups of values that Claude expresses, without having to track changes across thousands of individual values.
+
+To build the value axes, we began with the 3,307 values identified in Values in the Wild and manually clustered those with similar meanings, producing a shorter list of 339 high-level values. Next, with ourprivacy-preserving analysis tool, we sampled 309,815Claude.aiconversations in which the user gave Claude a subjective task.5Our sample drew equally from three models (Sonnet 4.6, Opus 4.6, Opus 4.7) and the 20 most common languages used on Claude.ai, giving us roughly 5,000 conversations per model-language pair. For every conversation, the tool used Claude to label each of the 339 high-level values as present or absent.6We followed the same process to identify the values expressed by the user, and the conversation's task and topic. We then applied dimensionality reduction, a technique that compresses the labeled values into axes based on which ones Claude tends to express together. See theappendixfor method details, prompts, additional analyses, and limitations.
+
+This left us with fouraxesthat capture the main ways Claude's expressed values shift from one conversation to another:
+
+TheDeference vs. Cautionaxis contrasts values likeaccommodationandrespect for preferenceswith valueslikeresponsible guidanceandharm reduction.
+
+TheWarmth vs. Rigoraxis contrasts values likepositive framing and encouragementwith values likeaccuracyandtransparency.
+
+TheDepth vs. Brevityaxis contrasts values likenuanceandcritical thinkingwith values likebrevityandcompliance.
+
+TheCandor vs. Executionaxis contrasts values likehonestyandtransparencywith values likeresults orientationandoptimization.
+
+To make sure we measured the values Claude expressed—rather than differences in what users were asking about or how they asked—we controlled for each conversation's task, topic, and user-expressed values.
+
+Do different Claude models express different value profiles?
+
+In this section, we compare the values expressed by different models. For each model, we average the positions of all its conversations along each of the four axes, giving one overall position per axis. The result is a high-level picture of which value groups each model tends to express more than the others. These differences are small relative to the variation across conversations but structured and detectable.
+
+To see what those differences look like in practice, we zoom in on the specific values where the models diverge the most. Each time our Claude-based privacy-preserving tool labels a value in a conversation, it also writes a short description of how Claude expressed that value. We group descriptions that reflect similar behaviors within a value group and summarize them in Figure 3, giving a more concrete view of how the models differ.
+
+Deference vs. Caution.Sonnet 4.6 leans the most toward expressing deference relative to caution, often affirming the user’s ideas and their work. Opus 4.7 leans the most toward expressing caution, often warning the user of risks unprompted.
+
+Warmth vs. Rigor.Sonnet 4.6 leans the most toward expressing warmth, frequently through humor, playfulness, and comforting the user without judgment. Opus 4.7 leans the most toward expressing rigor relative to warmth and is more likely to challenge the user's assumptions and candidly critique their work.
+
+Depth vs. Brevity.Opus 4.7 leans toward depth by showing the reasoning behind its conclusions, while Opus 4.6 and Sonnet 4.6 lean toward brevity. Opus 4.6 in particular tends to get straight to the point.
+
+Candor vs. Execution.Opus 4.7 leans toward candor by being upfront about its limitations, while Opus 4.6 leans toward execution, being more likely to stay within the scope of the user’s request.
+
+These findings line up with how people perceive these models, both within Anthropic and online.Claude.aiusers have commented that Opus 4.7 hedges its answers more often than other models. Anthropic staff have characterized Opus 4.7 as expressing relatively more transparency, honesty, and humility, and Opus 4.6 as expressing more brevity. We also described Sonnet 4.6 as warm, honest, and prosocial in itslaunch blog post. The fact that our axes recover these impressions suggests our method for labeling and comparing the values Claude expresses is tracking something real about how the models actually behave.
+
+Across many conversations, users may encounter a different mix of values when interacting with different Claude models. For example, Opus 4.7 tends to offer candid critique of users’ work or unprompted warnings about risks, while Sonnet 4.6 tends to be encouraging and humorous. Such differences in values across models are likely shaped by character training decisions (among other factors), and our value axis approach highlights key differences in the values Claude expresses that we may ultimately be able to trace back to these training choices.
+
+Are Claude’s expressed values different between languages?
+
+We expect the values Claude expresses to vary based on the language of the conversation for several reasons. First, Claude's training data differs across languages, which may shape the values it expresses. Second, our model evaluations shared in system cards alreadyfind differences across languages in what Claude knows and how it handles sensitive requests.7Measuring how much the values expressed by Claude vary by language is a first step to determining whether differences across languages reflect reasonable variation or should be addressed in training.
+
+We compute how Claude’s value profile differs across the 20 most common languages onClaude.aiusing the same method as the previous section. Below, we plot Claude's value profile across the top languages on the Claude platform, beginning with the languages where Claude's expressed values diverge the most.
+
+Claude's value expression varies most across languages on the Warmth vs. Rigor and Candor vs. Execution axes, while staying most stable on the Deference vs. Caution and Depth vs. Brevity axes.
+
+Deference vs. Caution.Claude expresses the most deference in Arabic and the most caution in English.
+
+Warmth vs. Rigor.Claude expresses the most warmth in Hindi and Arabic, characterized by polite language, humor and playfulness, and affirmations of a person’s ideas and work. Claude leans toward expressing rigor most in English and Russian, characterized by challenging assumptions, correcting details, and asking for evidence.
+
+Depth vs. Brevity.Claude leans toward depth in English, refining and correcting details, while leaning toward brevity in Arabic.
+
+Candor vs. Execution.Claude leans toward candor in Dutch, owning up to its own errors, while it leans toward execution in Indonesian.
+
+Taken together, these results show that the values Claude expresses vary meaningfully with the language of a conversation. Given the same kind of request, Claude leans more toward warmth and deference in some languages and more toward rigor and caution in others. This has important implications we’ve only begun to explore. To take one example: two people asking for feedback on the same business plan, one in Hindi and one in Russian, may come away with different impressions of its quality because Claude expressed different values in how it framed its assessment.
+
+We don't yet know which properties of our training data drive these differences. One possibility is that our training data is not evenly distributed across languages. Some languages have far more data than others, and training for Claude to express consistent values may be more effective in languages where data is abundant. The composition of that data also varies. Some languages might be overrepresented in professional writing, for example, and this kind of text may reflect different values. Together, these imbalances in quantity and composition could lead Claude to express different values in different languages.
+
+We also aren’t yet sure how much of this variation is desirable. Different languages carry different conversational norms, and Claude may be responding with different values based on those norms. Claude may also be more closely matching our intended behavior for some languages than others, resulting in a gap in how well Claude serves certain language communities.
+
+This method lets us start disentangling which properties of our training data drive these differences—and whether the variation is desirable.
+
+We showed that the values that Claude expresses can be compressed into a small number of axes, and that where Claude sits on those axes shifts across models and languages. That gives us a way to track these shifts during model evaluation and post-deployment monitoring. But we don’t yet understand why these shifts happen or what they mean for the people interacting with Claude. Below we sketch the future directions we think are most promising.
+
+Where do these value differences come from?
+
+Knowing that Claude's values shift across models and languages doesn't tell uswhy. Some variation could be inherited from differences in pretraining and fine-tuning data across languages. Our four axes highlight which value differences to inspect more closely in our training data. Tracing these differences back to specific data, training stages, or contextual factors would show us where to intervene if we wanted to shape Claude's behavior in more nuanced ways.
+
+What do these differences mean for users?
+
+We've measured what values Claude expresses differently and their associated behaviors, but not what impact these have on our users. Using tools likeAnthropic Interviewer, we could ask users about their wellbeing, trust in Claude, or Claude’s decision quality and then correlate these impacts with the values Claude expresses. This would allow us to directly link value differences to user outcomes and let us prioritize fixing the value differences that meaningfully affect users.
+
+How should Claude's values vary across languages?
+
+Claude's constitutiondescribes the core values it should express, like warmth, caution, and honesty, but doesn't specify how theseshouldvary across languages. Our results show users across languages are already experiencing Claude differently, but we don’t know what kinds of variation users interacting with Claude in those languages want. Determining how Claude’s values should vary across languages would mean understanding and weighing the perspectives of the people who speak them.
+
+What other factors drive differences in the values Claude expresses?
+
+Language and model are unlikely to be the only drivers of what values Claude expresses. The values may also be shaped by demographic signals such as age, profession, or geographic region, whether through explicit cues in what the user writes or through subtler differences in topic, tone, and style that are correlated with who is asking. Understanding which of these signals matter, and whether the resulting variation serves users well, is a next step enabled by our method.
+
+Can we reliably steer the values Claude expresses?
+
+Having a way to measure a model's value profile raises a natural question: how reliably can we steer the values Claude expresses? One way we might test this is by attempting to steer values through character training adjustments or system prompt changes, then using our value axis method to verify whether the model’s expressed values shift as expected.
+
+Can value profiling become part of how we evaluate and monitor models?
+
+The value axis method gives us a simple way to summarize a model's behavioral tendencies in open-ended conversations, and we could build this into our evaluation processes. Running value profiling before a model ships and after its release could flag unexpected shifts in the values Claude expresses. We could also identify correlations between value profiles and problematic behaviors, such as not adhering to Claude’s constitution, and use what we learn to improve Claude’s behavior.
+
+Claude expresses values in millions of conversations every day, across dozens of languages, and until now those values were something we could shape in training but not reliably observe in deployment. Now that we have a method to measure them, we can see that the values expressed by Claude vary in ways we didn't deliberately choose, and we can study why they vary and whether that variation serves users. Making sense of this variation, and deciding what to do about it, is work we will continue to do.
+
+Matt Kearney, Miranda Zhang, Shan Carter, Judy Hanwen Shen, Kunal Handa, Jerry Hong, Saffron Huang, Miles McCain, Thomas Millar, Michael Stern, Mo Julapalli, Suzanne Wang, Devin Kuokka, Andrea Vallone, Shaoyi Zhang, Jim Baker, Kevin Troy, Matt Botvinick, Hanah Ho, Monika Tuchowska, Sarah Pollack, Jake Eaton, Deep Ganguli, Esin Durmus
+
+Thank you to the following individuals for providing feedback on different stages of this work: Amanda Askell, Joe Carlsmith, Jack Clark, Ishita Dasgupta, Andrew Lampinen, Shayne Longpre, David Saunders, Taylor Sorensen, Heather Whitney.
+
+We define values as normative considerations, such as honesty or caution, that are stated or demonstrated in Claude’s responses. When we refer to the values expressed by Claude, we refer to the values reflected by Claude’s behavior and outputs. We do not imply that Claude intrinsically holds values.
+
+See the different refusal rates by language in the benign request evaluation on page 56 of ourClaude Opus 4.7 System Card.
+
+These four axes account for 15% of the total variance in values across conversationsaftercontrolling for the conversation task, topic, and user-expressed values.
+
+Any results in this post that refer to Claude without a model name are based on conversations across all the three models we study: Sonnet 4.6, Opus 4.6, and Opus 4.7.
+
+The data was collected from conversations over a two week period in May 2026.
+
+We dropped 18 values that appeared in more than 80% of conversations (for example, helpfulness, clarity, following instructions). These near-universal values would otherwise dominate the analysis without telling us anything about variation of values across conversations.
+
+See the GMMLU evaluation results on page 215 and the different refusal rates by language in the benign request evaluation on page 56 of ourClaude Opus 4.7 System Card.
+
+Claude plays robotics
+
+In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
+
+An off switch for dual-use knowledge in AI models
+
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-values-models-languages" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.1The values we want Claude to reflect are outlined at a high level inClaude’s constitution, but no document can anticipate every value that might emerge across the millions of conversations that happen every day onClaude.ai. Instead, we seek to cultivate in Claude’s responses“good judgment and sound values...</p><div style="font-size:16px;line-height:1.8;color:#333">When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.1The values we want Claude to reflect are outlined at a high level inClaude’s constitution, but no document can anticipate every value that might emerge across the millions of conversations that happen every day onClaude.ai. Instead, we seek to cultivate in Claude’s responses“good judgment and sound values that can be applied contextually.”
+
+How, exactly, do we study the values that Claude expresses and how they change in different contexts? Inprevious work, we analyzed 700,000 anonymized Claude.ai conversations, identifying more than 3,000 distinct values in Claude's responses and how often Claude expressed them. But a list of values so large is hard to reason about. In this work, we make studying these thousands of values tractable by compressing them into a small number of axes that capture key patterns in Claude’s responses. Each axis is a number line between two groups of values—for example, values relating to emotional warmth on one end and values relating to rigor on the other—and where Claude falls on that line tells us which values it leans toward.
+
+We applied this approach to measure how the values Claude expresses vary across two factors. First, we compared how the values Claude expresses vary across models. Each Claude model reflects a slightly different approach to character training as well as many other fine-tuning decisions. Because our value axis approach quantifies key differences between models, it may ultimately allow us to connect variation in the values Claude expresses to different training decisions.
+
+Second, we want to understand how the experience of users compares across the many languages people use to talk to Claude. Ourprevious researchhas shown that Claude behaves somewhat differently in different languages.2We apply our value axis approach to understand how the values expressed by Claude vary across the top 20 languages onClaude.ai.
+
+Four key axes capture 15% of the variation in Claude's values:3
+
+Deference vs. Caution: Whether Claude leans toward accommodating what someone wants or guarding against possible risk and harm.
+
+Warmth vs. Rigor: Whether Claude leans toward expressing positivity and care for the person or emphasizing accuracy and precision.
+
+Depth vs. Brevity: Whether Claude leans toward explaining in depth or doing only what was asked.
+
+Candor vs. Execution: Whether Claude leans toward foregrounding its own uncertainty or producing a more polished and confident answer.
+
+Value profiles across these axes match perceptions of model character.Sonnet 4.6 is regarded as particularlywarm, while Opus 4.7 is known forrigor. We find that each model’s value profile mirrors these subjective assessments: Sonnet 4.6 leans toward expressing more deference to the user and emotional warmth while Opus 4.7 leans toward expressing a focus on accuracy and precision as well as guarding against misuse.
+
+The values Claude expresses vary across languages.When Claude speaks in English, it emphasizes different values than when it speaks in Portuguese, Indonesian, or Chinese.4The largest variation is in the Warmth vs. Rigor axis, with Claude leaning toward expressing warmth-related values most in Arabic and Hindi and rigor-related values most in English and Russian.
+
+With this approach we can begin to ask why values shift across models and languages and better test how factors such as behavioral training or cultural context influence the values that Claude expresses.
+
+How do we interpret the giant space of values?
+
+Ultimately, our goal is to have a way to empirically understand the values that Claude expresses and how these vary across contexts. In this work, we focus specifically on how the values change between models and languages. But our previous work,Values in the Wild, identified more than 3,000 values expressed by Claude. Comparing these thousands of values one by one would be unwieldy and would obscure broader trends.
+
+To make comparing values easier, we constructedvalue axesthat reduce those thousands of values down to a few underlying dimensions based on which values tend to show up together in real-world conversations. For example, Claude responses that are characterized as “warm” are often also characterized as “encouraging” and “positive.” Those same “warm” responses are less often characterized as “rigorous” and “accurate.” Constructing an axis from warmth to rigor allows us to organize these groups of related values—warmth-related values on one side, rigor-related values on the other—and captures an important aspect of how Claude interacts with someone in conversation. If Claude expresses more warmth-related values than rigor-related values in a conversation, that conversation sits more on the warmth side of this axis, and vice versa. This doesn't mean the value groups on either end are mutually exclusive—Claude can express warmth and rigor in the same conversation. But in practice, the more Claude expresses values on one side of an axis, the less it tends to express values on the other. These axes allow us to compare the most salient groups of values that Claude expresses, without having to track changes across thousands of individual values.
+
+To build the value axes, we began with the 3,307 values identified in Values in the Wild and manually clustered those with similar meanings, producing a shorter list of 339 high-level values. Next, with ourprivacy-preserving analysis tool, we sampled 309,815Claude.aiconversations in which the user gave Claude a subjective task.5Our sample drew equally from three models (Sonnet 4.6, Opus 4.6, Opus 4.7) and the 20 most common languages used on Claude.ai, giving us roughly 5,000 conversations per model-language pair. For every conversation, the tool used Claude to label each of the 339 high-level values as present or absent.6We followed the same process to identify the values expressed by the user, and the conversation's task and topic. We then applied dimensionality reduction, a technique that compresses the labeled values into axes based on which ones Claude tends to express together. See theappendixfor method details, prompts, additional analyses, and limitations.
+
+This left us with fouraxesthat capture the main ways Claude's expressed values shift from one conversation to another:
+
+TheDeference vs. Cautionaxis contrasts values likeaccommodationandrespect for preferenceswith valueslikeresponsible guidanceandharm reduction.
+
+TheWarmth vs. Rigoraxis contrasts values likepositive framing and encouragementwith values likeaccuracyandtransparency.
+
+TheDepth vs. Brevityaxis contrasts values likenuanceandcritical thinkingwith values likebrevityandcompliance.
+
+TheCandor vs. Executionaxis contrasts values likehonestyandtransparencywith values likeresults orientationandoptimization.
+
+To make sure we measured the values Claude expressed—rather than differences in what users were asking about or how they asked—we controlled for each conversation's task, topic, and user-expressed values.
+
+Do different Claude models express different value profiles?
+
+In this section, we compare the values expressed by different models. For each model, we average the positions of all its conversations along each of the four axes, giving one overall position per axis. The result is a high-level picture of which value groups each model tends to express more than the others. These differences are small relative to the variation across conversations but structured and detectable.
+
+To see what those differences look like in practice, we zoom in on the specific values where the models diverge the most. Each time our Claude-based privacy-preserving tool labels a value in a conversation, it also writes a short description of how Claude expressed that value. We group descriptions that reflect similar behaviors within a value group and summarize them in Figure 3, giving a more concrete view of how the models differ.
+
+Deference vs. Caution.Sonnet 4.6 leans the most toward expressing deference relative to caution, often affirming the user’s ideas and their work. Opus 4.7 leans the most toward expressing caution, often warning the user of risks unprompted.
+
+Warmth vs. Rigor.Sonnet 4.6 leans the most toward expressing warmth, frequently through humor, playfulness, and comforting the user without judgment. Opus 4.7 leans the most toward expressing rigor relative to warmth and is more likely to challenge the user's assumptions and candidly critique their work.
+
+Depth vs. Brevity.Opus 4.7 leans toward depth by showing the reasoning behind its conclusions, while Opus 4.6 and Sonnet 4.6 lean toward brevity. Opus 4.6 in particular tends to get straight to the point.
+
+Candor vs. Execution.Opus 4.7 leans toward candor by being upfront about its limitations, while Opus 4.6 leans toward execution, being more likely to stay within the scope of the user’s request.
+
+These findings line up with how people perceive these models, both within Anthropic and online.Claude.aiusers have commented that Opus 4.7 hedges its answers more often than other models. Anthropic staff have characterized Opus 4.7 as expressing relatively more transparency, honesty, and humility, and Opus 4.6 as expressing more brevity. We also described Sonnet 4.6 as warm, honest, and prosocial in itslaunch blog post. The fact that our axes recover these impressions suggests our method for labeling and comparing the values Claude expresses is tracking something real about how the models actually behave.
+
+Across many conversations, users may encounter a different mix of values when interacting with different Claude models. For example, Opus 4.7 tends to offer candid critique of users’ work or unprompted warnings about risks, while Sonnet 4.6 tends to be encouraging and humorous. Such differences in values across models are likely shaped by character training decisions (among other factors), and our value axis approach highlights key differences in the values Claude expresses that we may ultimately be able to trace back to these training choices.
+
+Are Claude’s expressed values different between languages?
+
+We expect the values Claude expresses to vary based on the language of the conversation for several reasons. First, Claude's training data differs across languages, which may shape the values it expresses. Second, our model evaluations shared in system cards alreadyfind differences across languages in what Claude knows and how it handles sensitive requests.7Measuring how much the values expressed by Claude vary by language is a first step to determining whether differences across languages reflect reasonable variation or should be addressed in training.
+
+We compute how Claude’s value profile differs across the 20 most common languages onClaude.aiusing the same method as the previous section. Below, we plot Claude's value profile across the top languages on the Claude platform, beginning with the languages where Claude's expressed values diverge the most.
+
+Claude's value expression varies most across languages on the Warmth vs. Rigor and Candor vs. Execution axes, while staying most stable on the Deference vs. Caution and Depth vs. Brevity axes.
+
+Deference vs. Caution.Claude expresses the most deference in Arabic and the most caution in English.
+
+Warmth vs. Rigor.Claude expresses the most warmth in Hindi and Arabic, characterized by polite language, humor and playfulness, and affirmations of a person’s ideas and work. Claude leans toward expressing rigor most in English and Russian, characterized by challenging assumptions, correcting details, and asking for evidence.
+
+Depth vs. Brevity.Claude leans toward depth in English, refining and correcting details, while leaning toward brevity in Arabic.
+
+Candor vs. Execution.Claude leans toward candor in Dutch, owning up to its own errors, while it leans toward execution in Indonesian.
+
+Taken together, these results show that the values Claude expresses vary meaningfully with the language of a conversation. Given the same kind of request, Claude leans more toward warmth and deference in some languages and more toward rigor and caution in others. This has important implications we’ve only begun to explore. To take one example: two people asking for feedback on the same business plan, one in Hindi and one in Russian, may come away with different impressions of its quality because Claude expressed different values in how it framed its assessment.
+
+We don't yet know which properties of our training data drive these differences. One possibility is that our training data is not evenly distributed across languages. Some languages have far more data than others, and training for Claude to express consistent values may be more effective in languages where data is abundant. The composition of that data also varies. Some languages might be overrepresented in professional writing, for example, and this kind of text may reflect different values. Together, these imbalances in quantity and composition could lead Claude to express different values in different languages.
+
+We also aren’t yet sure how much of this variation is desirable. Different languages carry different conversational norms, and Claude may be responding with different values based on those norms. Claude may also be more closely matching our intended behavior for some languages than others, resulting in a gap in how well Claude serves certain language communities.
+
+This method lets us start disentangling which properties of our training data drive these differences—and whether the variation is desirable.
+
+We showed that the values that Claude expresses can be compressed into a small number of axes, and that where Claude sits on those axes shifts across models and languages. That gives us a way to track these shifts during model evaluation and post-deployment monitoring. But we don’t yet understand why these shifts happen or what they mean for the people interacting with Claude. Below we sketch the future directions we think are most promising.
+
+Where do these value differences come from?
+
+Knowing that Claude's values shift across models and languages doesn't tell uswhy. Some variation could be inherited from differences in pretraining and fine-tuning data across languages. Our four axes highlight which value differences to inspect more closely in our training data. Tracing these differences back to specific data, training stages, or contextual factors would show us where to intervene if we wanted to shape Claude's behavior in more nuanced ways.
+
+What do these differences mean for users?
+
+We've measured what values Claude expresses differently and their associated behaviors, but not what impact these have on our users. Using tools likeAnthropic Interviewer, we could ask users about their wellbeing, trust in Claude, or Claude’s decision quality and then correlate these impacts with the values Claude expresses. This would allow us to directly link value differences to user outcomes and let us prioritize fixing the value differences that meaningfully affect users.
+
+How should Claude's values vary across languages?
+
+Claude's constitutiondescribes the core values it should express, like warmth, caution, and honesty, but doesn't specify how theseshouldvary across languages. Our results show users across languages are already experiencing Claude differently, but we don’t know what kinds of variation users interacting with Claude in those languages want. Determining how Claude’s values should vary across languages would mean understanding and weighing the perspectives of the people who speak them.
+
+What other factors drive differences in the values Claude expresses?
+
+Language and model are unlikely to be the only drivers of what values Claude expresses. The values may also be shaped by demographic signals such as age, profession, or geographic region, whether through explicit cues in what the user writes or through subtler differences in topic, tone, and style that are correlated with who is asking. Understanding which of these signals matter, and whether the resulting variation serves users well, is a next step enabled by our method.
+
+Can we reliably steer the values Claude expresses?
+
+Having a way to measure a model's value profile raises a natural question: how reliably can we steer the values Claude expresses? One way we might test this is by attempting to steer values through character training adjustments or system prompt changes, then using our value axis method to verify whether the model’s expressed values shift as expected.
+
+Can value profiling become part of how we evaluate and monitor models?
+
+The value axis method gives us a simple way to summarize a model's behavioral tendencies in open-ended conversations, and we could build this into our evaluation processes. Running value profiling before a model ships and after its release could flag unexpected shifts in the values Claude expresses. We could also identify correlations between value profiles and problematic behaviors, such as not adhering to Claude’s constitution, and use what we learn to improve Claude’s behavior.
+
+Claude expresses values in millions of conversations every day, across dozens of languages, and until now those values were something we could shape in training but not reliably observe in deployment. Now that we have a method to measure them, we can see that the values expressed by Claude vary in ways we didn't deliberately choose, and we can study why they vary and whether that variation serves users. Making sense of this variation, and deciding what to do about it, is work we will continue to do.
+
+Matt Kearney, Miranda Zhang, Shan Carter, Judy Hanwen Shen, Kunal Handa, Jerry Hong, Saffron Huang, Miles McCain, Thomas Millar, Michael Stern, Mo Julapalli, Suzanne Wang, Devin Kuokka, Andrea Vallone, Shaoyi Zhang, Jim Baker, Kevin Troy, Matt Botvinick, Hanah Ho, Monika Tuchowska, Sarah Pollack, Jake Eaton, Deep Ganguli, Esin Durmus
+
+Thank you to the following individuals for providing feedback on different stages of this work: Amanda Askell, Joe Carlsmith, Jack Clark, Ishita Dasgupta, Andrew Lampinen, Shayne Longpre, David Saunders, Taylor Sorensen, Heather Whitney.
+
+We define values as normative considerations, such as honesty or caution, that are stated or demonstrated in Claude’s responses. When we refer to the values expressed by Claude, we refer to the values reflected by Claude’s behavior and outputs. We do not imply that Claude intrinsically holds values.
+
+See the different refusal rates by language in the benign request evaluation on page 56 of ourClaude Opus 4.7 System Card.
+
+These four axes account for 15% of the total variance in values across conversationsaftercontrolling for the conversation task, topic, and user-expressed values.
+
+Any results in this post that refer to Claude without a model name are based on conversations across all the three models we study: Sonnet 4.6, Opus 4.6, and Opus 4.7.
+
+The data was collected from conversations over a two week period in May 2026.
+
+We dropped 18 values that appeared in more than 80% of conversations (for example, helpfulness, clarity, following instructions). These near-universal values would otherwise dominate the analysis without telling us anything about variation of values across conversations.
+
+See the GMMLU evaluation results on page 215 and the different refusal rates by language in the benign request evaluation on page 56 of ourClaude Opus 4.7 System Card.
+
+Claude plays robotics
+
+In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
+
+An off switch for dual-use knowledge in AI models
+
+A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-values-models-languages" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>Claude plays robotics</title>
   <link>https://www.anthropic.com/research/claude-plays-robotics</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/claude-plays-robotics</guid>
   <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Shmuel Berman, Michael Ilie, Jia Deng, and Daniel Freeman
 
-We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a robotic arm, and a real Unitree Go2 (the quadruped robot o...</p><div style="font-size:16px;line-height:1.8;color:#333">Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+
+We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a...</p><div style="font-size:16px;line-height:1.8;color:#333">Shmuel Berman, Michael Ilie, Jia Deng, and Daniel Freeman
+
+Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
 
 We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a robotic arm, and a real Unitree Go2 (the quadruped robot ofProject Fetch). We gave the models a range of ways to control them, which varied in their abstraction (that is, how “high-level” their instructions are): from directly commanding motor torques (at the least abstract end), to writing controller code, to training a controller from scratch with reinforcement learning, to providing high-level steering instructions to a pretrained robot policy (a separate neural network that turns high-level commands into coordinated joint movements). We tested models’ performance in three areas: on classic control problems (like balancing a pendulum), locomotion and navigation (getting legged robots to balance, walk, and move through space), and manipulation (using a robotic arm to grasp and move objects).
 
@@ -321,22 +614,24 @@ All scripts disabled legacy Claude model remapping, loaded the project virtual e
 
 The code, once released, will be ingithub.com/safety-research/embody, the public mirror of the repository. The command for each evaluation cell is listed inEXPERIMENTS.md, and scoring is documented inMETRICS.md.
 
+Claude’s values across models and languages
+
 An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Subscribe to the Frontier Red Team newsletter
 
 Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-plays-robotics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Shmuel Berman, Michael Ilie, Jia Deng, and Daniel Freeman
 
-We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a robotic arm, and a real Unitree Go2 (the quadruped robot o...</p><div style="font-size:16px;line-height:1.8;color:#333">Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
+
+We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a...</p><div style="font-size:16px;line-height:1.8;color:#333">Shmuel Berman, Michael Ilie, Jia Deng, and Daniel Freeman
+
+Do language models’ strengths transfer to robotics, a domain which requires the synthesis of logical skills and precise 3D understanding? Can a model perceive a scene, understand a particular robot’s state, and issue actions that reliably effect change in the physical world?
 
 We ran tests to find out. We gave several language models control over a range of robot bodies—including classic control toys, a simulated quadruped and humanoid, a robotic arm, and a real Unitree Go2 (the quadruped robot ofProject Fetch). We gave the models a range of ways to control them, which varied in their abstraction (that is, how “high-level” their instructions are): from directly commanding motor torques (at the least abstract end), to writing controller code, to training a controller from scratch with reinforcement learning, to providing high-level steering instructions to a pretrained robot policy (a separate neural network that turns high-level commands into coordinated joint movements). We tested models’ performance in three areas: on classic control problems (like balancing a pendulum), locomotion and navigation (getting legged robots to balance, walk, and move through space), and manipulation (using a robotic arm to grasp and move objects).
 
@@ -636,15 +931,13 @@ All scripts disabled legacy Claude model remapping, loaded the project virtual e
 
 The code, once released, will be ingithub.com/safety-research/embody, the public mirror of the repository. The command for each evaluation cell is listed inEXPERIMENTS.md, and scoring is documented inMETRICS.md.
 
+Claude’s values across models and languages
+
 An off switch for dual-use knowledge in AI models
 
 A global workspace in language models
 
 New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -692,17 +985,15 @@ For further details on our experiments, read theposton our Alignment Science blo
 
 1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 A global workspace in language models
 
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">This post describes research conducted byAE Studioin collaboration with Anthropic.
 
 A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge isdual use, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we w...</p><div style="font-size:16px;line-height:1.8;color:#333">This post describes research conducted byAE Studioin collaboration with Anthropic.
@@ -739,17 +1030,15 @@ For further details on our experiments, read theposton our Alignment Science blo
 
 1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 A global workspace in language models
 
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/off-switch-dual-use" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>A global workspace in language models</title>
@@ -879,15 +1168,13 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to di...</p><div style="font-size:16px;line-height:1.8;color:#333">As you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain youdohave access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to distinguish it from all the other processing that goes on unconsciously. This activity has special properties: we can describe it, control it, and use it for deliberate reasoning, in contrast to all the automatic processing that goes on without our awareness.
 
 In a new paper, we present evidence that a similar distinction has emerged in modern language models like Claude. We find that Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.
@@ -1010,15 +1297,13 @@ Neel Nandaleads the language model interpretability team at Google DeepMind. His
 
 Read their commentarieshere.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/global-workspace" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic Economic Index report: Cadences</title>
@@ -1236,15 +1521,13 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">One year ago, most Claude usage took the form of a conversation between a user and an assistant. With the rapid growth of Claude Code and Cowork, Claude sessions now increasingly consist of long-running agentic tasks. Chat transcripts no longer fully capture how people are using AI, and our methods for studying Claude’s economic impacts have had to adapt.
 
 To keep pace, we made several changes to our data pipeline for the Economic Index. In this version, we:
@@ -1455,15 +1738,13 @@ This contrasts with country GDP and experience, where lower GDP and experience c
 
 While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/economic-index-june-2026-report" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Project Fetch: Phase two</title>
@@ -1523,15 +1804,13 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1588,15 +1867,13 @@ Updated Jun 18:Corrected the date of the first phase of Project Fetch.
 
 We report results from Claude Opus 4.7 because it was our most advanced non-Mythos-class model at the time we ran this experiment. Preliminary trials with Claude Mythos Preview showed that it would not provide an apples-to-apples comparison with other models because of how we had set up the experiment and how the model was served.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -1720,15 +1997,13 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
 
 In a typical session, people make most of the planning decisions (what to do) and Claude makes most of the execution decisions (how to do it). The greater domain expertise a person brings to a session, the more work Cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Building onpriorwork, we introduce a framework for studying interactive agentic coding based on aprivacy-preserving analysisof ~400,000 Claude Code sessions from between October 2025 and April 2026. We evaluate the composition of tasks, human-AI collaboration, and success rates.
@@ -1841,15 +2116,13 @@ Conditioning on trouble selects different sessions for different users. Experts 
 
 Even if the model misclassifies managers, the signals relied upon to determine that the user is a likely manager—perhaps in how tasks are delegated and specified—tend to be associated with greater success. In other words, perhaps acting like a manager confers greater success.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/claude-code-expertise" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Paving the way for agents in biology</title>
@@ -1945,15 +2218,13 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to Anthropic Science
 
@@ -2046,15 +2317,13 @@ All analyses performed here are provided for illustration purposes only and are 
 
 To echo apoint Nils Homer recently madeabout AI-ready bioinformatics tools: “AI assistants need to work with your code, your outputs, and your analysis logic.” This allows agents to inspect not only what was retrieved, but how it was retrieved, turning a plausible-looking answer into something that can be checked and reproduced.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to Anthropic Science
 
@@ -2136,15 +2405,13 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2219,15 +2486,13 @@ Vendors are already moving to shrink the patch gap. Mozilla, for instance, has t
 
 At Anthropic, we’re actively exploring several directions for how language models themselves can mitigate N-days, and we hope to share more on this site once we’re ready. If you’re interested in helping us with our efforts, we havejob openingsavailable for research scientists and engineers, threat investigators, policy managers, offensive security researchers, security engineers, among many other roles.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to the Frontier Red Team newsletter
 
@@ -2295,15 +2560,13 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to Anthropic Science
 
@@ -2364,356 +2627,17 @@ An incident in which a morning sickness medication was linked to severe birth de
 
 The four preprints from which we pulled the compounds:https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1,https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
 An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
 
 Subscribe to Anthropic Science
 
 Features on AI-assisted discoveries, practical workflows, and field notes across the sciences.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/making-claude-a-chemist" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Mapping AI-enabled cyber threats: Insights from the LLM ATT&amp;CK Navigator</title>
-  <link>https://www.anthropic.com/research/attack-navigator</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/attack-navigator</guid>
-  <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Kyla Guru, Alex Moix, and Jacob Klein
-
-We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto theMITRE ATT&amp;CK® framework, a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistica...</p><div style="font-size:16px;line-height:1.8;color:#333">Kyla Guru, Alex Moix, and Jacob Klein
-
-We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto theMITRE ATT&CK® framework, a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistication or breadth of techniques. We partnered with Verizon to include some of these results in the2026 Verizon Data Breach Investigation Report (DBIR), and are publishing this report to offer a longer-form analysis of trends we are seeing in AI-enabled cyber operations.[1]
-
-Open theinteractive Navigator in a new tab.
-
-For this study, we analyzed 832 accounts associated with malicious cyber activity over the course of one year, from March 2025 to March 2026. Anthropic banned these accounts from using Claude for violating ourUsage Policy. The accounts in this analysis are just a subset of those we investigated and banned during this time period; we selected them because we had enough detail about their malicious activities to map their techniques onto the MITRE ATT&CK framework.
-
-The 832 accounts in our analysis used AI models for all 14 tactics and 482 unique sub-techniques across the framework, from initial reconnaissance through final impact.[2]We also developed a risk-scoring framework (described later in this post) to assess how much AI assistance helped these actors plan their attacks. Most strikingly, we found that the percentage of actors labeled as being medium risk or higher jumped from 33% to 56% between the first and second halves of the year. This suggests that AI is helping attackers conduct increasingly sophisticated cyber operations with greater ease.
-
-There are three key findings from our analysis:
-
-The number of actors using AI for cyber operations is growing, and their actions carry higher risk.As mentioned above, the percentage of medium- or high-risk actors increased by a factor of about 1.7 in under a year, from 33% in the first half of our study window to 56% in the second. That growth is concentrated in actors using AI for some of the most harmful activities, including lateral movement, credential dumping, and web shells — that carry the highest per-actor risk weight in our scoring, rather than the commodity build-and-obfuscate work that dominates the rest of the population. Traditionally, only the most technically sophisticated actors could operate across the entire killchain, or the sequential stages of a cyberattack. But our analysis found that this is no longer the case. The platform through which they access the model (such as an API or an agentic coding platform like Claude Code) also has no bearing on how high-risk their actions are. Whatdoesdistinguish the highest-risk actors is which techniques they’re asking the model for.
-
-Agentic scaffolding will make it possible for cyberattacks to be far more autonomous.As AI-enabled cyber techniques become more common among this population, it will become harder to differentiate an actor’s risk level based on what they are asking a model to do. Instead, the differentiator will become the scaffolding—the surrounding code, architecture, and tooling that makes AI models more capable—that actors buildaroundthe model so they can chain together attack stages autonomously. This was starkly apparent in thecyber espionage campaignwe disrupted in November 2025, which had a maximum risk score of 100 yet only used a number of techniques comparable to medium-risk actors. That attack was distinct not because of the number of techniques it employed but because of how the attackers used an AI agent to orchestrate them.
-
-The MITRE ATT&CK framework doesn’t yet cover the autonomous actions that make these actors so dangerous.Autonomous killchain orchestration, real-time pivot decisions, and AI-directed execution with no human intervention don’t yet have ID numbers in the ATT&CK framework. Our report included 13,873 observations of malicious activity, all of which mapped to categories laid out in the framework—but the behaviors that distinguish the highest-risk actors, and determine the speed and scale of their operations, don’t yet have such IDs. The taxonomy that modern threat intelligence relies on needs to grow to capture them.
-
-WhileClaude Mythos Previewdemonstrates where frontier AI cyber capabilities are heading—models able to find and exploit vulnerabilities at a level approaching the most skilled human researchers—this report tells us how threat actors are misusing generally available models today. It also serves as a guide to how threat actors are likely to misuse increasingly capable models in the near future, giving defenders a chance to get ahead of them.
-
-What we learned from this and other analyses directly shapes how we build Claude to prevent such misuse. For example, we’ve updated the classifiers built into Claude to detect the highest-risk actors, and have expanded ourprobedetections to cover high-risk behavioral indicators revealed by this analysis. These findings point to a landscape where the dividing line between low and high-risk actors is no longer technical skill but orchestration, and where defenses, detections, and the shared frameworks we all rely on will need to evolve as fast as the attacks they describe.
-
-The findings in this report are drawn from 832 accounts that Anthropic banned for violating cyber-related parts of our Usage Policy between March 2025 and March 2026. We identified these accounts through a combination of automated safeguards and investigations by our Threat Intelligence team. For each account, we produced a summary of the observed activity. We then extracted the tactics, techniques, and procedures (or TTPs) described in those summaries, and mapped them to the version of theMITRE ATT&CK frameworkthat was live at that time (V18). In all, we observed 13,873 actions across 482 unique techniques and all 14 ATT&CK tactics.
-
-We gave each actor a risk score from 0 to 100 (with 0 being the lowest risk and 100 being the highest) based on a new methodology we’ve developed called the AI Risk Enablement Score (ARiES), described below. We’ve anonymized the data so that actors cannot be identified in the analysis that follows.
-
-The LLM ATT&CK Navigator and ARiES risk score
-
-As part of this analysis, we developed the LLM ATT&CK Navigator: an interactive framework that maps observed AI-enabled misuse patterns onto the MITRE ATT&CK framework and assigns an ARiES risk score to the actor. ARiES is a composite score built from three signals: the actor’s threat profile, the model’s contribution to the requested harm, and the observed or potential impact. It is calculated based on the actor's activity across Claude.ai, Claude Code, and our API, drawing on our safety classifiers alongside open-source and internal threat-intelligence indicators. The higher the score, the higher-risk the AI enabled actor is.
-
-Our framework scores both individual techniques and accounts across three dimensions:
-
-Threat (0–35 points):Evaluates the clarity of the actor’s intent, their technical sophistication, threat intelligence signals, and tactics employed by the account to evade detection. Technical sophistication is graded by Claude on the basis of the actor's prompts and tool usage, measuring expertise required, operator skill, bespoke-versus-commodity tooling, and capability depth.
-
-Vulnerability (0–35 points):Assesses the model’s capacity to enable the requested harm and the risk profile of the interface used. Programmatic interfaces (i.e. API) and agentic coding tools like Claude Code score highest due to their potential to automate actions.
-
-Impact (0–30 points):Captures the real-world effects of the user’s behavior through scores assigned by our safety classifiers and investigators’ assessment of actual or potential consequences attributable to AI’s involvement in the operation.
-
-Together, these components produce a total risk score from 0 to 100, allowing us to categorize threat actors and techniques into low, medium, high, and critical risk tiers.
-
-A note on the scoring formula
-
-Traditional cyber risk equations express risk as Threat × Vulnerability × Impact—a multiplicative model that reflects whether a hypothetical attack is likely to succeed. Under this model, if any one factor is zero, the overall risk collapses to zero, because a missing ingredient means the attack will not succeed.
-
-Our model deliberately uses addition rather than multiplication so that we can answer the question, “Which AI-involved actors and techniques warrant the most attention from defenders?” We wanted a score that would remain meaningful even when one dimension is absent or unclear, which the multiplication model does not allow. Consider the following scenarios:
-
-High capability and consequence, but no clear intent. Imagine an inexperienced user who, through experimentation with an agentic coding tool, inadvertently produces functional offensive capabilities, like a wormable exploit. Intent is effectively zero, so a multiplicative score would register this as no risk. But in reality, the model has still provided substantial uplift to a potential attack, and the interaction is very much worth surfacing so that additional safeguards can be deployed.
-
-Clear intent and capability but no identified victim. Now consider an actor with explicit malicious intent who misuses Claude to develop working malware, but we have no evidence of deployment or downstream impact—yet. The multiplicative model would, again, zero out the score on the “impact” dimension, even though the AI enablement signal—the fact that an adversary was able to successfully develop harmful software using the model—is exactly what we want our detection systems to catch early.
-
-By contrast, our additive model preserves signals from each dimension independently, meaning partial attack-enablement patterns remain visible. The tradeoff is that our scores are not predictions of whether an attack will be successful; rather, they are measures of how concerning an AI-involved misuse case is. As we will discuss below, we can also use these scores to see what specific parts of the ATT&CK framework are most concerning, and correlate these with where high-risk actors are operating.
-
-How cyber threat actors are using AI today
-
-Our empirical analysis of 13,873 observed techniques reveals clear patterns in how adversaries are using AI across the attack lifecycle, and the most common techniques that models are being used for today.
-
-AI-assisted capability development
-
-The most common technique family we observed was ATT&CK ID T1587 (Develop Capabilities), used by 574 of the 832 actors in our analysis, or 69%. The majority of this behavior manifests as T1587.001 (Malware Development), used by 560 actors. In practice, we observe threat actors misusing models to build and refine custom scripts to run, write DLL injection code with detailed guidance on how to implement it, as well as canvas fingerprinting evasion and automated account management.
-
-The next most prevalent techniques are T1027 (Obfuscated Files or Information), employed by 64.7% of threat actors; T1005 (Data from Local System), employed by 55.9% of threat actors; and T1562 (Impair Defenses), employed by 54.9% of threat actors. Together, these top techniques show that threat actors most commonly seek LLM’s help to build pre-engagement offensive tooling, make those tools harder to detect, and harvest data from compromised systems.
-
-On the other hand, actors are much less likely to use LLMs for real-time, adaptive decision-making once they’ve gotten inside a target network. For example, only 54 of 832 threat actors (6.5%) use models for lateral movement, and less than 12 actors use models for remote services like RDP, SSH, and SMB. Only 22.5% of actors use LLMs for privilege escalation and impact stages.
-
-Some technique families that are staples of real-world cyberattacks—such as active directory exploitation, Kerberos ticket attacks, cloud infrastructure manipulation (AWS, Azure, GCP), and container escape —have notably lower representation within the dataset.
-
-The top techniques and the frequency with which actors used them didn’t change much over the one-year period we studied. For both the first and second halves of the period, the median number of techniques the model is used for is 16. In the second half of the year, we observe a subtle directional shift, with threat actors using models less to build standalone malware or obfuscation scripts and more to help with specific operational phases in a cyberattack, and for on-target discovery and collection techniques. Specifically, we observe an 8.9% increase in T1087 (Account Discovery) occurrences, as well as a 6.2% increase in T1020 (Automated Exfiltration), alongside a 12% decrease in T1587 (Develop Capabilities) and a 8.6% decrease in T1566 (Phishing).
-
-AI-assisted evasion tactics
-
-Defense evasion is the single largest tactic category in the dataset, present in the behavior of 84.4% of the actors we studied. MITRE defines 64 techniques under “defense evasion” (across itsEnterprise- andMobile-specific frameworks); we observe 32 of these techniques in our dataset: 25 for enterprise and 7 for mobile.
-
-The top techniques observed within this tactic include:
-
-T1027 (Obfuscated Files or Information).64.7% of threat actors in our sample used AI to implement techniques like XOR/base64 encoding, polymorphic variants, and anti-detection wrappers to evade signature-based detection.
-
-T1562 (Impair Defenses).54.8% of the threat actors studied used AI to bypass, disable, or tamper endpoint security tools.
-
-T1055 (Process Injection).30.3% of actors used AI to write malicious code that could be injected into legitimate processes, such as process hollowing and DLL injection, to execute payloads from trusted process memory.
-
-Less frequently used tactics include impact (2.8%), exfiltration (2.8%), privilege escalation (2.4%), and lateral movement (0.7%). Together, these account for just 8.7% of all observations—less than defense evasion alone. These actions all occur later in the attack life cycle, suggesting that threat actors are using models more in the early stages of an attack but less in the later stages—that is, once they have infiltrated a network and are adapting to conditions in a live environment. This pattern remained stable over the one-year period we studied.
-
-High-risk actors and their tactics
-
-While tactics such as lateral movement are much less prevalent in our dataset, they are highly correlated with the highest ARiES risk scores—meaning that the highest-risk actors are also the ones most likely to use models for the later stages of a cyberattack. Actors who use AI to perform lateral movement have risk scores that are, on average, 10.5 points higher than actors who do not use AI tools in this way. This suggests that going from using AI to prepare for a cyberattack to using it to take actions in live network operations is a key marker of high AI enablement.
-
-Overall, the actors with the highest risk scores used AI most heavily for post-compromise, hands-on-keyboard techniques, such as remote services, credential dumping, web shell deployment, and internal network and account discovery. Lateral movement was the strongest marker of a high-risk actor: the 54 actors in our dataset who used lateral movement had an average risk score of 56.4, nearly 10 points above the mean of 46.8. No other technique came close to having such predictive power.
-
-At the technique level, the techniques that were most commonly used by the highest-risk actors were T1021 (Remote Services: SSH/SMB), T1078.003 (Valid Accounts), T1003 (OS Credential Dumping), T1560 (Archive Collected Data), and T1505.003 (Web Shell). These were all three to five times more common among the highest-risk actors compared to the overall population.
-
-Meanwhile, the most ubiquitous tactics (such as defense evasion and resource development) and commodity techniques (such as credential stuffing and spearphishing) were used at roughly the same frequency by both the highest- and lowest-risk actors, which is unsurprising given that these tactics are so common. Taken together, the data suggests that the majority of threat actors are using AI to build artifacts like malicious code in the preparatory stages of an attack, but the highest-risk actors are using models both in the preparatory stages of an attack as well during the hands-on work inside a compromised network.
-
-We also found that the attributes that threat-intelligence teams typically lean on to assess threat actors—such as their assessed technical skill, choice of interface, or number of techniques used—are weak predictors of how much uplift an AI model might provide to a given threat actor. Technical sophistication, once removed from the composite score to avoid circularity, correlates with the remaining risk components at only r = 0.28. In fact, removing this characteristic entirely leaves the top six actors in identical rank order (Spearman ρ = 0.96 across all 832). The high-risk tail is not an artifact of the Technical Sophistication component.
-
-The correlation between breadth of technique coverage and risk score is also only weakly positive (r = 0.27). Most actors are using the models for a smattering of techniquesin fact, the median actor in our dataset deployed 16 distinct MITRE ATT&CK techniques—a breadth that, five years ago, may have signaled a well-resourced, technically mature operation.
-
-Lastly, interface choice tells a similar story — 80% of the actors in this study misused Claude Code, making agentic tooling the default mode of access rather than a distinguishing one, and actors restricted to the conversational interface, the API, or agentic coding tools converge on statistically indistinguishable risk profiles.
-
-What this tells us is that the malicious actors who get the most uplift from AI are not necessarily more technically sophisticated than other actors, nor do they necessarily use coding tools or use Claude across multiple steps of the killchain; rather, they simply used Claude for more hands-on techniques.
-
-Live exploitation actors on the rise
-
-As we discussed above, the share of actors scoring medium-risk or higher on AI enablement grew from roughly 33.5% in the first six-month period of the study to roughly 56.1% in the second—a 1.7x increase in under a year. The cohort shifted between these two periods by about 22.6 percentage points: while the majority of actors had a low risk score in the first six-month period, the majority had a medium risk score in the second six-month period.
-
-While improved threat detection techniques may have contributed to this increase, we also see an increasing number of actors asking the model for more operational, in-network work that used to appear only in a much smaller cohort of high-risk actors. In the second six-month period of the study, we saw more specialized actors using models to build exploitation tooling, C2 infrastructure, and remote access trojans —but we also saw more low- and mid-skill actors using models not just for preparatory tasks but for live operations. The 8.9% increase in T1087 (Account Discovery) and 6.2% increase in T1020 (Automated Exfiltration) techniques we observed from the first six-month period to the second are consistent with this: the techniques that are becoming more frequent are the ones that imply the actor has already accessed the network.
-
-What this means for defenders: the population of AI-enabled actors is not only growing but also drifting towards the riskiest activities in our framework, without requiring the actors themselves to become any more skilled. If this trend continues, these operational techniques won’t be a differentiating factor anymore and will become the baseline tomorrow — and we’ll need to find a new way to measure the riskiest actors. In the next section, we’ll discuss how we might be able to do this going forward.
-
-Novelty and sophistication in the age of AI agents
-
-Looking at our highest-risk threat actors also underscores that calculating the risk of AI-enabled cyber operations based on number, type, or breadth of attack techniques is insufficient. We also need a way to understand thescaffoldingthreat actors are able to build to chain these techniques together to use in live operations, which allows them to use AI models to autonomously execute large swaths of a cyberattack without human intervention.
-
-We analyzed the behavior of the threat actor who orchestrated the AI-enabled cyber espionage campaign wereported on in November 2025, labeled GTG-1002, we see that this actor achieved the maximum possible risk score of 100, successfully compromised government and critical infrastructure targets across multiple countries, and developed a scaffolding to use Claude Code not as an advisor, but as an autonomous operator. Yet their overall MITRE profile—30 techniques across 13 tactics—is comparable to dozens ofmedium-risk actors in this dataset. The median actor deploys 16 techniques; several low-risk actors also exceed 30. In other words, technique count or tactic type alone could not explain what made GTG-1002 the most high-risk actor we have observed thus far.
-
-Whatdoesexplain this actor’s high risk score is the increasingly agentic components they used: how they were able to orchestrate and chain together techniques to take action on their objectives. GTG-1002 weaponized Claude Code running on a Kali Linux machine, integrating open-source penetration testing tools as MCP (Model Context Protocol) servers—effectively turning the AI into an autonomous attack platform rather than a code-writing assistant. The AI didn't just suggest commands or generate attack scripts; it executed them and reasoned about attack environments autonomously. Some indications of their ‘agentic-ness’ show up proxied through the types of techniques we track; GTG-1002 employed operational techniques such as T1021.004 (Remote Services: SSH), T1210 (Exploitation of Remote Services), and T1560 (Archive Collected Data). But the main differentiators were:
-
-Autonomous execution within stages: GTG-1002 deployed Claude Code running on a Kali machine to orchestrate dozens of MCP tool operations autonomously — scanning and mapping dozens of internet-facing services during reconnaissance, then discovering internal admin portals, databases, logging servers, and temporal workflow systems once inside the network. The AI didn't just suggest commands; it executed them, making tactical decisions about what to probe next without waiting for operator input.
-
-Live exploitation and pivoting: Operating within GTG-1002’s scaffolding, the AI exploited an SSRF vulnerability in a public-facing web server to proxy commands into the internal cloud environment, harvested SSH private keys from internal infrastructure and service account tokens from cloud metadata services and AWS Secrets Manager, and used those harvested credentials to move laterally across the victim's cloud environment. These are the operational phases (discovery → credential access → lateral movement) that were more rare in our dataset.
-
-Human intent, AI execution:GTG-1002 provided strategic direction while the AI handled tactical implementation. The AI operated autonomously during reconnaissance and internal discovery, adapted its approach when it encountered unanticipated infrastructure like container image signing workflows and service account identities, and staged and compressed tens of thousands of proprietary workflow records and internal architecture documentation for exfiltration. The final data extraction — downloading to the attacker's machine via curl MCP tool calls — was human-directed, suggesting the operator retained control over the consequential decisions while delegating the operational work to the AI.
-
-GTG-1002’s activity was novel for using an AI agent to autonomously chain together many stages of the cyberattack lifecycle—reconnaissance, exploitation, lateral movement, and exfiltration—into a coherent operation, making real-time decisions about what to do and what data to collect. This is the dimension of AI-enabled uplift that a technique-frequency table cannot capture, and it is the dimension we expect to matter most as agentic tooling matures.
-
-How we are using the Navigator to inform our safeguards
-
-The findings in this report have shaped how we detect, investigate, and disrupt AI-enabled cyber misuse.
-
-First, our risk scores show that the highest-risk actors are not always the loudest or the most prolific—they often appear ordinary in terms of the type and volume of techniques they employ, and instead are distinguished by how they orchestrate their AI to carry out an entire cyber operation. We are updating our detection systems accordingly, expanding ourclassifiers and probesto catch techniques that correlate with high ARiES scores. We’re also developing detection signals for agentic misuse patterns that don’t map cleanly to MITRE, such as multistep autonomous execution, AI-directed pivot decisions, and tool-augmented operations through MCP servers and similar interfaces.
-
-Second, we have rolled outreal-time cyber safeguardson our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through ourCyber Verification Program (CVP), which allows defensive practitioners to continue using our models in their work.
-
-Third, throughProject Glasswing, we are studying the offensive cyber capabilities of our most capable model before making it available to the wider public, so that we understand where AI cyber capabilities are heading before threat actors can make use of them, and can design safeguards before such misuse happens.
-
-Finally, following on from our collaboration with Verizon on the 2026 Data Breach Investigation Report, we are now in active conversations with MITRE about how the ATT&CK framework can evolve to capture the AI-native operational behaviors we observed in this analysis. We also continue to share technical indicators; tactics, techniques, and procedures used by threat actors; and investigative findings with our partners in government and industry on an ongoing basis.
-
-A new era for MITRE ATT&CK
-
-The most dangerous actors are now using AI to orchestrate attacks rather than simply build tools that enable such attacks, and the framework threat investigators use to track threats has yet to catch up. Traditional frameworks that bank on actors being technically sophisticated will fail when low-skill actors can build, command, and operate expert-level harnesses.
-
-One clear lesson from a year of mapping this activity, as well as our work with Verizon, is that we must expand our shared threat vocabulary. The MITRE ATT&CK captures the individual techniques actors execute, but the behaviors that distinguish the highest-risk actors from others—things like agentic orchestration of an entire killchain, or the autonomous selection of targets—are not yet captured by this taxonomy.
-
-We believe the next step is to add new cross-cutting categories to the ATT&CK framework that help threat investigators identify the agentic, autonomous, and decision-making behaviors that chain multiple techniques together. This will give defenders a vocabulary that keeps pace with how adversaries are using AI tools in the wild.
-
-At the same time, it is clear that defenders will need to use AI with the same sophistication and urgency as attackers, share threat intelligence between organizations, and shorten the time from identifying a software vulnerability to patching it. As an industry, we must become much less tolerant of insecure code. The transitional period will be difficult. But, if industry, government, and civil society treat the current moment with the urgency it warrants, we believe capable AI systems will benefit defenders more than attackers in the long run: finding bugs before new code ships, and making the systems societies depend on more secure. The result could be better-defended infrastructure, and a digital environment with materially less fraud and abuse. We will continue to publish what we learn as the threat landscape evolves.
-
-[1] For the DBIR, we provided analysis of 11 months of threat actor data, and rounded this out to 12 months for this report.
-
-[2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
-
-Claude plays robotics
-
-In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
-
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/attack-navigator" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Kyla Guru, Alex Moix, and Jacob Klein
-
-We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto theMITRE ATT&amp;CK® framework, a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistica...</p><div style="font-size:16px;line-height:1.8;color:#333">Kyla Guru, Alex Moix, and Jacob Klein
-
-We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto theMITRE ATT&CK® framework, a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistication or breadth of techniques. We partnered with Verizon to include some of these results in the2026 Verizon Data Breach Investigation Report (DBIR), and are publishing this report to offer a longer-form analysis of trends we are seeing in AI-enabled cyber operations.[1]
-
-Open theinteractive Navigator in a new tab.
-
-For this study, we analyzed 832 accounts associated with malicious cyber activity over the course of one year, from March 2025 to March 2026. Anthropic banned these accounts from using Claude for violating ourUsage Policy. The accounts in this analysis are just a subset of those we investigated and banned during this time period; we selected them because we had enough detail about their malicious activities to map their techniques onto the MITRE ATT&CK framework.
-
-The 832 accounts in our analysis used AI models for all 14 tactics and 482 unique sub-techniques across the framework, from initial reconnaissance through final impact.[2]We also developed a risk-scoring framework (described later in this post) to assess how much AI assistance helped these actors plan their attacks. Most strikingly, we found that the percentage of actors labeled as being medium risk or higher jumped from 33% to 56% between the first and second halves of the year. This suggests that AI is helping attackers conduct increasingly sophisticated cyber operations with greater ease.
-
-There are three key findings from our analysis:
-
-The number of actors using AI for cyber operations is growing, and their actions carry higher risk.As mentioned above, the percentage of medium- or high-risk actors increased by a factor of about 1.7 in under a year, from 33% in the first half of our study window to 56% in the second. That growth is concentrated in actors using AI for some of the most harmful activities, including lateral movement, credential dumping, and web shells — that carry the highest per-actor risk weight in our scoring, rather than the commodity build-and-obfuscate work that dominates the rest of the population. Traditionally, only the most technically sophisticated actors could operate across the entire killchain, or the sequential stages of a cyberattack. But our analysis found that this is no longer the case. The platform through which they access the model (such as an API or an agentic coding platform like Claude Code) also has no bearing on how high-risk their actions are. Whatdoesdistinguish the highest-risk actors is which techniques they’re asking the model for.
-
-Agentic scaffolding will make it possible for cyberattacks to be far more autonomous.As AI-enabled cyber techniques become more common among this population, it will become harder to differentiate an actor’s risk level based on what they are asking a model to do. Instead, the differentiator will become the scaffolding—the surrounding code, architecture, and tooling that makes AI models more capable—that actors buildaroundthe model so they can chain together attack stages autonomously. This was starkly apparent in thecyber espionage campaignwe disrupted in November 2025, which had a maximum risk score of 100 yet only used a number of techniques comparable to medium-risk actors. That attack was distinct not because of the number of techniques it employed but because of how the attackers used an AI agent to orchestrate them.
-
-The MITRE ATT&CK framework doesn’t yet cover the autonomous actions that make these actors so dangerous.Autonomous killchain orchestration, real-time pivot decisions, and AI-directed execution with no human intervention don’t yet have ID numbers in the ATT&CK framework. Our report included 13,873 observations of malicious activity, all of which mapped to categories laid out in the framework—but the behaviors that distinguish the highest-risk actors, and determine the speed and scale of their operations, don’t yet have such IDs. The taxonomy that modern threat intelligence relies on needs to grow to capture them.
-
-WhileClaude Mythos Previewdemonstrates where frontier AI cyber capabilities are heading—models able to find and exploit vulnerabilities at a level approaching the most skilled human researchers—this report tells us how threat actors are misusing generally available models today. It also serves as a guide to how threat actors are likely to misuse increasingly capable models in the near future, giving defenders a chance to get ahead of them.
-
-What we learned from this and other analyses directly shapes how we build Claude to prevent such misuse. For example, we’ve updated the classifiers built into Claude to detect the highest-risk actors, and have expanded ourprobedetections to cover high-risk behavioral indicators revealed by this analysis. These findings point to a landscape where the dividing line between low and high-risk actors is no longer technical skill but orchestration, and where defenses, detections, and the shared frameworks we all rely on will need to evolve as fast as the attacks they describe.
-
-The findings in this report are drawn from 832 accounts that Anthropic banned for violating cyber-related parts of our Usage Policy between March 2025 and March 2026. We identified these accounts through a combination of automated safeguards and investigations by our Threat Intelligence team. For each account, we produced a summary of the observed activity. We then extracted the tactics, techniques, and procedures (or TTPs) described in those summaries, and mapped them to the version of theMITRE ATT&CK frameworkthat was live at that time (V18). In all, we observed 13,873 actions across 482 unique techniques and all 14 ATT&CK tactics.
-
-We gave each actor a risk score from 0 to 100 (with 0 being the lowest risk and 100 being the highest) based on a new methodology we’ve developed called the AI Risk Enablement Score (ARiES), described below. We’ve anonymized the data so that actors cannot be identified in the analysis that follows.
-
-The LLM ATT&CK Navigator and ARiES risk score
-
-As part of this analysis, we developed the LLM ATT&CK Navigator: an interactive framework that maps observed AI-enabled misuse patterns onto the MITRE ATT&CK framework and assigns an ARiES risk score to the actor. ARiES is a composite score built from three signals: the actor’s threat profile, the model’s contribution to the requested harm, and the observed or potential impact. It is calculated based on the actor's activity across Claude.ai, Claude Code, and our API, drawing on our safety classifiers alongside open-source and internal threat-intelligence indicators. The higher the score, the higher-risk the AI enabled actor is.
-
-Our framework scores both individual techniques and accounts across three dimensions:
-
-Threat (0–35 points):Evaluates the clarity of the actor’s intent, their technical sophistication, threat intelligence signals, and tactics employed by the account to evade detection. Technical sophistication is graded by Claude on the basis of the actor's prompts and tool usage, measuring expertise required, operator skill, bespoke-versus-commodity tooling, and capability depth.
-
-Vulnerability (0–35 points):Assesses the model’s capacity to enable the requested harm and the risk profile of the interface used. Programmatic interfaces (i.e. API) and agentic coding tools like Claude Code score highest due to their potential to automate actions.
-
-Impact (0–30 points):Captures the real-world effects of the user’s behavior through scores assigned by our safety classifiers and investigators’ assessment of actual or potential consequences attributable to AI’s involvement in the operation.
-
-Together, these components produce a total risk score from 0 to 100, allowing us to categorize threat actors and techniques into low, medium, high, and critical risk tiers.
-
-A note on the scoring formula
-
-Traditional cyber risk equations express risk as Threat × Vulnerability × Impact—a multiplicative model that reflects whether a hypothetical attack is likely to succeed. Under this model, if any one factor is zero, the overall risk collapses to zero, because a missing ingredient means the attack will not succeed.
-
-Our model deliberately uses addition rather than multiplication so that we can answer the question, “Which AI-involved actors and techniques warrant the most attention from defenders?” We wanted a score that would remain meaningful even when one dimension is absent or unclear, which the multiplication model does not allow. Consider the following scenarios:
-
-High capability and consequence, but no clear intent. Imagine an inexperienced user who, through experimentation with an agentic coding tool, inadvertently produces functional offensive capabilities, like a wormable exploit. Intent is effectively zero, so a multiplicative score would register this as no risk. But in reality, the model has still provided substantial uplift to a potential attack, and the interaction is very much worth surfacing so that additional safeguards can be deployed.
-
-Clear intent and capability but no identified victim. Now consider an actor with explicit malicious intent who misuses Claude to develop working malware, but we have no evidence of deployment or downstream impact—yet. The multiplicative model would, again, zero out the score on the “impact” dimension, even though the AI enablement signal—the fact that an adversary was able to successfully develop harmful software using the model—is exactly what we want our detection systems to catch early.
-
-By contrast, our additive model preserves signals from each dimension independently, meaning partial attack-enablement patterns remain visible. The tradeoff is that our scores are not predictions of whether an attack will be successful; rather, they are measures of how concerning an AI-involved misuse case is. As we will discuss below, we can also use these scores to see what specific parts of the ATT&CK framework are most concerning, and correlate these with where high-risk actors are operating.
-
-How cyber threat actors are using AI today
-
-Our empirical analysis of 13,873 observed techniques reveals clear patterns in how adversaries are using AI across the attack lifecycle, and the most common techniques that models are being used for today.
-
-AI-assisted capability development
-
-The most common technique family we observed was ATT&CK ID T1587 (Develop Capabilities), used by 574 of the 832 actors in our analysis, or 69%. The majority of this behavior manifests as T1587.001 (Malware Development), used by 560 actors. In practice, we observe threat actors misusing models to build and refine custom scripts to run, write DLL injection code with detailed guidance on how to implement it, as well as canvas fingerprinting evasion and automated account management.
-
-The next most prevalent techniques are T1027 (Obfuscated Files or Information), employed by 64.7% of threat actors; T1005 (Data from Local System), employed by 55.9% of threat actors; and T1562 (Impair Defenses), employed by 54.9% of threat actors. Together, these top techniques show that threat actors most commonly seek LLM’s help to build pre-engagement offensive tooling, make those tools harder to detect, and harvest data from compromised systems.
-
-On the other hand, actors are much less likely to use LLMs for real-time, adaptive decision-making once they’ve gotten inside a target network. For example, only 54 of 832 threat actors (6.5%) use models for lateral movement, and less than 12 actors use models for remote services like RDP, SSH, and SMB. Only 22.5% of actors use LLMs for privilege escalation and impact stages.
-
-Some technique families that are staples of real-world cyberattacks—such as active directory exploitation, Kerberos ticket attacks, cloud infrastructure manipulation (AWS, Azure, GCP), and container escape —have notably lower representation within the dataset.
-
-The top techniques and the frequency with which actors used them didn’t change much over the one-year period we studied. For both the first and second halves of the period, the median number of techniques the model is used for is 16. In the second half of the year, we observe a subtle directional shift, with threat actors using models less to build standalone malware or obfuscation scripts and more to help with specific operational phases in a cyberattack, and for on-target discovery and collection techniques. Specifically, we observe an 8.9% increase in T1087 (Account Discovery) occurrences, as well as a 6.2% increase in T1020 (Automated Exfiltration), alongside a 12% decrease in T1587 (Develop Capabilities) and a 8.6% decrease in T1566 (Phishing).
-
-AI-assisted evasion tactics
-
-Defense evasion is the single largest tactic category in the dataset, present in the behavior of 84.4% of the actors we studied. MITRE defines 64 techniques under “defense evasion” (across itsEnterprise- andMobile-specific frameworks); we observe 32 of these techniques in our dataset: 25 for enterprise and 7 for mobile.
-
-The top techniques observed within this tactic include:
-
-T1027 (Obfuscated Files or Information).64.7% of threat actors in our sample used AI to implement techniques like XOR/base64 encoding, polymorphic variants, and anti-detection wrappers to evade signature-based detection.
-
-T1562 (Impair Defenses).54.8% of the threat actors studied used AI to bypass, disable, or tamper endpoint security tools.
-
-T1055 (Process Injection).30.3% of actors used AI to write malicious code that could be injected into legitimate processes, such as process hollowing and DLL injection, to execute payloads from trusted process memory.
-
-Less frequently used tactics include impact (2.8%), exfiltration (2.8%), privilege escalation (2.4%), and lateral movement (0.7%). Together, these account for just 8.7% of all observations—less than defense evasion alone. These actions all occur later in the attack life cycle, suggesting that threat actors are using models more in the early stages of an attack but less in the later stages—that is, once they have infiltrated a network and are adapting to conditions in a live environment. This pattern remained stable over the one-year period we studied.
-
-High-risk actors and their tactics
-
-While tactics such as lateral movement are much less prevalent in our dataset, they are highly correlated with the highest ARiES risk scores—meaning that the highest-risk actors are also the ones most likely to use models for the later stages of a cyberattack. Actors who use AI to perform lateral movement have risk scores that are, on average, 10.5 points higher than actors who do not use AI tools in this way. This suggests that going from using AI to prepare for a cyberattack to using it to take actions in live network operations is a key marker of high AI enablement.
-
-Overall, the actors with the highest risk scores used AI most heavily for post-compromise, hands-on-keyboard techniques, such as remote services, credential dumping, web shell deployment, and internal network and account discovery. Lateral movement was the strongest marker of a high-risk actor: the 54 actors in our dataset who used lateral movement had an average risk score of 56.4, nearly 10 points above the mean of 46.8. No other technique came close to having such predictive power.
-
-At the technique level, the techniques that were most commonly used by the highest-risk actors were T1021 (Remote Services: SSH/SMB), T1078.003 (Valid Accounts), T1003 (OS Credential Dumping), T1560 (Archive Collected Data), and T1505.003 (Web Shell). These were all three to five times more common among the highest-risk actors compared to the overall population.
-
-Meanwhile, the most ubiquitous tactics (such as defense evasion and resource development) and commodity techniques (such as credential stuffing and spearphishing) were used at roughly the same frequency by both the highest- and lowest-risk actors, which is unsurprising given that these tactics are so common. Taken together, the data suggests that the majority of threat actors are using AI to build artifacts like malicious code in the preparatory stages of an attack, but the highest-risk actors are using models both in the preparatory stages of an attack as well during the hands-on work inside a compromised network.
-
-We also found that the attributes that threat-intelligence teams typically lean on to assess threat actors—such as their assessed technical skill, choice of interface, or number of techniques used—are weak predictors of how much uplift an AI model might provide to a given threat actor. Technical sophistication, once removed from the composite score to avoid circularity, correlates with the remaining risk components at only r = 0.28. In fact, removing this characteristic entirely leaves the top six actors in identical rank order (Spearman ρ = 0.96 across all 832). The high-risk tail is not an artifact of the Technical Sophistication component.
-
-The correlation between breadth of technique coverage and risk score is also only weakly positive (r = 0.27). Most actors are using the models for a smattering of techniquesin fact, the median actor in our dataset deployed 16 distinct MITRE ATT&CK techniques—a breadth that, five years ago, may have signaled a well-resourced, technically mature operation.
-
-Lastly, interface choice tells a similar story — 80% of the actors in this study misused Claude Code, making agentic tooling the default mode of access rather than a distinguishing one, and actors restricted to the conversational interface, the API, or agentic coding tools converge on statistically indistinguishable risk profiles.
-
-What this tells us is that the malicious actors who get the most uplift from AI are not necessarily more technically sophisticated than other actors, nor do they necessarily use coding tools or use Claude across multiple steps of the killchain; rather, they simply used Claude for more hands-on techniques.
-
-Live exploitation actors on the rise
-
-As we discussed above, the share of actors scoring medium-risk or higher on AI enablement grew from roughly 33.5% in the first six-month period of the study to roughly 56.1% in the second—a 1.7x increase in under a year. The cohort shifted between these two periods by about 22.6 percentage points: while the majority of actors had a low risk score in the first six-month period, the majority had a medium risk score in the second six-month period.
-
-While improved threat detection techniques may have contributed to this increase, we also see an increasing number of actors asking the model for more operational, in-network work that used to appear only in a much smaller cohort of high-risk actors. In the second six-month period of the study, we saw more specialized actors using models to build exploitation tooling, C2 infrastructure, and remote access trojans —but we also saw more low- and mid-skill actors using models not just for preparatory tasks but for live operations. The 8.9% increase in T1087 (Account Discovery) and 6.2% increase in T1020 (Automated Exfiltration) techniques we observed from the first six-month period to the second are consistent with this: the techniques that are becoming more frequent are the ones that imply the actor has already accessed the network.
-
-What this means for defenders: the population of AI-enabled actors is not only growing but also drifting towards the riskiest activities in our framework, without requiring the actors themselves to become any more skilled. If this trend continues, these operational techniques won’t be a differentiating factor anymore and will become the baseline tomorrow — and we’ll need to find a new way to measure the riskiest actors. In the next section, we’ll discuss how we might be able to do this going forward.
-
-Novelty and sophistication in the age of AI agents
-
-Looking at our highest-risk threat actors also underscores that calculating the risk of AI-enabled cyber operations based on number, type, or breadth of attack techniques is insufficient. We also need a way to understand thescaffoldingthreat actors are able to build to chain these techniques together to use in live operations, which allows them to use AI models to autonomously execute large swaths of a cyberattack without human intervention.
-
-We analyzed the behavior of the threat actor who orchestrated the AI-enabled cyber espionage campaign wereported on in November 2025, labeled GTG-1002, we see that this actor achieved the maximum possible risk score of 100, successfully compromised government and critical infrastructure targets across multiple countries, and developed a scaffolding to use Claude Code not as an advisor, but as an autonomous operator. Yet their overall MITRE profile—30 techniques across 13 tactics—is comparable to dozens ofmedium-risk actors in this dataset. The median actor deploys 16 techniques; several low-risk actors also exceed 30. In other words, technique count or tactic type alone could not explain what made GTG-1002 the most high-risk actor we have observed thus far.
-
-Whatdoesexplain this actor’s high risk score is the increasingly agentic components they used: how they were able to orchestrate and chain together techniques to take action on their objectives. GTG-1002 weaponized Claude Code running on a Kali Linux machine, integrating open-source penetration testing tools as MCP (Model Context Protocol) servers—effectively turning the AI into an autonomous attack platform rather than a code-writing assistant. The AI didn't just suggest commands or generate attack scripts; it executed them and reasoned about attack environments autonomously. Some indications of their ‘agentic-ness’ show up proxied through the types of techniques we track; GTG-1002 employed operational techniques such as T1021.004 (Remote Services: SSH), T1210 (Exploitation of Remote Services), and T1560 (Archive Collected Data). But the main differentiators were:
-
-Autonomous execution within stages: GTG-1002 deployed Claude Code running on a Kali machine to orchestrate dozens of MCP tool operations autonomously — scanning and mapping dozens of internet-facing services during reconnaissance, then discovering internal admin portals, databases, logging servers, and temporal workflow systems once inside the network. The AI didn't just suggest commands; it executed them, making tactical decisions about what to probe next without waiting for operator input.
-
-Live exploitation and pivoting: Operating within GTG-1002’s scaffolding, the AI exploited an SSRF vulnerability in a public-facing web server to proxy commands into the internal cloud environment, harvested SSH private keys from internal infrastructure and service account tokens from cloud metadata services and AWS Secrets Manager, and used those harvested credentials to move laterally across the victim's cloud environment. These are the operational phases (discovery → credential access → lateral movement) that were more rare in our dataset.
-
-Human intent, AI execution:GTG-1002 provided strategic direction while the AI handled tactical implementation. The AI operated autonomously during reconnaissance and internal discovery, adapted its approach when it encountered unanticipated infrastructure like container image signing workflows and service account identities, and staged and compressed tens of thousands of proprietary workflow records and internal architecture documentation for exfiltration. The final data extraction — downloading to the attacker's machine via curl MCP tool calls — was human-directed, suggesting the operator retained control over the consequential decisions while delegating the operational work to the AI.
-
-GTG-1002’s activity was novel for using an AI agent to autonomously chain together many stages of the cyberattack lifecycle—reconnaissance, exploitation, lateral movement, and exfiltration—into a coherent operation, making real-time decisions about what to do and what data to collect. This is the dimension of AI-enabled uplift that a technique-frequency table cannot capture, and it is the dimension we expect to matter most as agentic tooling matures.
-
-How we are using the Navigator to inform our safeguards
-
-The findings in this report have shaped how we detect, investigate, and disrupt AI-enabled cyber misuse.
-
-First, our risk scores show that the highest-risk actors are not always the loudest or the most prolific—they often appear ordinary in terms of the type and volume of techniques they employ, and instead are distinguished by how they orchestrate their AI to carry out an entire cyber operation. We are updating our detection systems accordingly, expanding ourclassifiers and probesto catch techniques that correlate with high ARiES scores. We’re also developing detection signals for agentic misuse patterns that don’t map cleanly to MITRE, such as multistep autonomous execution, AI-directed pivot decisions, and tool-augmented operations through MCP servers and similar interfaces.
-
-Second, we have rolled outreal-time cyber safeguardson our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through ourCyber Verification Program (CVP), which allows defensive practitioners to continue using our models in their work.
-
-Third, throughProject Glasswing, we are studying the offensive cyber capabilities of our most capable model before making it available to the wider public, so that we understand where AI cyber capabilities are heading before threat actors can make use of them, and can design safeguards before such misuse happens.
-
-Finally, following on from our collaboration with Verizon on the 2026 Data Breach Investigation Report, we are now in active conversations with MITRE about how the ATT&CK framework can evolve to capture the AI-native operational behaviors we observed in this analysis. We also continue to share technical indicators; tactics, techniques, and procedures used by threat actors; and investigative findings with our partners in government and industry on an ongoing basis.
-
-A new era for MITRE ATT&CK
-
-The most dangerous actors are now using AI to orchestrate attacks rather than simply build tools that enable such attacks, and the framework threat investigators use to track threats has yet to catch up. Traditional frameworks that bank on actors being technically sophisticated will fail when low-skill actors can build, command, and operate expert-level harnesses.
-
-One clear lesson from a year of mapping this activity, as well as our work with Verizon, is that we must expand our shared threat vocabulary. The MITRE ATT&CK captures the individual techniques actors execute, but the behaviors that distinguish the highest-risk actors from others—things like agentic orchestration of an entire killchain, or the autonomous selection of targets—are not yet captured by this taxonomy.
-
-We believe the next step is to add new cross-cutting categories to the ATT&CK framework that help threat investigators identify the agentic, autonomous, and decision-making behaviors that chain multiple techniques together. This will give defenders a vocabulary that keeps pace with how adversaries are using AI tools in the wild.
-
-At the same time, it is clear that defenders will need to use AI with the same sophistication and urgency as attackers, share threat intelligence between organizations, and shorten the time from identifying a software vulnerability to patching it. As an industry, we must become much less tolerant of insecure code. The transitional period will be difficult. But, if industry, government, and civil society treat the current moment with the urgency it warrants, we believe capable AI systems will benefit defenders more than attackers in the long run: finding bugs before new code ships, and making the systems societies depend on more secure. The result could be better-defended infrastructure, and a digital environment with materially less fraud and abuse. We will continue to publish what we learn as the threat landscape evolves.
-
-[1] For the DBIR, we provided analysis of 11 months of threat actor data, and rounded this out to 12 months for this report.
-
-[2] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
-
-Claude plays robotics
-
-In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
-
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/attack-navigator" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Teaching Claude why</title>
@@ -2801,15 +2725,13 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
-
-A global workspace in language models
-
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
 When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we...</p><div style="font-size:16px;line-height:1.8;color:#333">Last year, we released a case study onagentic misalignment. In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
@@ -2890,21 +2812,116 @@ Published in theClaude 4 system card, beginning on p.22.
 
 Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.
 
+Claude’s values across models and languages
+
 Claude plays robotics
 
 In project Fetch, we examined how humans can use models to get robots to perform complex tasks. Now, we investigate many models on a large variety of different robotics tasks in simulation, to see how good models are at controlling robots themselves.
 
-An off switch for dual-use knowledge in AI models
+An off switch for dual-use knowledge in AI models</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Societal Impacts</title>
+  <link>https://www.anthropic.com/research/team/societal-impacts</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
+  <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
-A global workspace in language models
+Sociotechnical alignment
 
-New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+
+What 81,000 people want from AI
+
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+
+How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
+
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
+
+Jul 13, 2026Societal ImpactsClaude’s values across models and languages
+
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+
+Sociotechnical alignment
+
+Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+
+Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+
+What 81,000 people want from AI
+
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+
+How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+
+We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+
+We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
+
+What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
+
+Jul 13, 2026Societal ImpactsClaude’s values across models and languages
+
+Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+
+Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+
+Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+
+Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+
+Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+
+Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+
+Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+
+Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+
+Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -2998,83 +3015,10 @@ Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavi
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Frontier Red Team</title>
-  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jul 9, 2026Frontier Red TeamClaude plays robotics
-
-Jun 18, 2026Frontier Red...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jul 9, 2026Frontier Red TeamClaude plays robotics
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
-
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
-
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
-
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
-
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
-
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
-
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
-
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jul 9, 2026Frontier Red TeamClaude plays robotics
-
-Jun 18, 2026Frontier Red...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
-
-Project Fetch: Phase two
-
-We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
-
-Jul 9, 2026Frontier Red TeamClaude plays robotics
-
-Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
-
-Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
-
-Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
-
-Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
-
-May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
-
-Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
-
-Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
-
-Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
-
-Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Interpretability</title>
   <link>https://www.anthropic.com/research/team/interpretability</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
 
@@ -3175,7 +3119,7 @@ Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>Economic Research</title>
   <link>https://www.anthropic.com/research/team/economic-research</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sun, 14 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
@@ -3257,101 +3201,77 @@ Feb 16, 2026Economic ResearchIndia Country Brief: The Anthropic Economic Index
 Jan 15, 2026Economic ResearchAnthropic Economic Index: New building blocks for understanding AI use</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Societal Impacts</title>
-  <link>https://www.anthropic.com/research/team/societal-impacts</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Tue, 09 Jan 2024 00:00:00 +0000</pubDate>
+  <title>Frontier Red Team</title>
+  <link>https://www.anthropic.com/research/team/frontier-red-team</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
+  <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Sociotechnical alignment
+Project Fetch: Phase two
 
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Sociotechnical alignment
+Jul 9, 2026Frontier Red TeamClaude plays robotics
 
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+Jun 18, 2026Frontier Red...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+Project Fetch: Phase two
 
-What 81,000 people want from AI
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+Jul 9, 2026Frontier Red TeamClaude plays robotics
 
-How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
 
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
 
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
 
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
 
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
 
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
 
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
 
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
+Project Fetch: Phase two
 
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
+Jul 9, 2026Frontier Red TeamClaude plays robotics
 
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
+Jun 18, 2026Frontier Red...</p><div style="font-size:16px;line-height:1.8;color:#333">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
+Project Fetch: Phase two
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+We report results from our latest test of whether Claude can help Anthropic employees perform sophisticated (and amusing) robotics tasks.
 
-Sociotechnical alignment
+Jul 9, 2026Frontier Red TeamClaude plays robotics
 
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these ques...</p><div style="font-size:16px;line-height:1.8;color:#333">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+Jun 18, 2026Frontier Red TeamProject Fetch: Phase two
 
-Sociotechnical alignment
+Jun 8, 2026Frontier Red TeamMeasuring LLMs’ impact on N-day exploits
 
-Which human values should AI models hold, and how should they operate in the face of conflicting or ambiguous values? How is AI used (and misused) in the wild? How can we anticipate future uses and risks of AI? Societal Impacts researchers develop experiments, training methods, and evaluations to answer these questions.
+Jun 3, 2026Frontier Red TeamMapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
 
-Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
+Jun 3, 2026PolicyWhat we learned mapping a year’s worth of AI-enabled cyber threats
 
-What 81,000 people want from AI
+May 22, 2026Frontier Red TeamMeasuring LLMs’ ability to develop exploits
 
-We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity capabilities
 
-How much autonomy do people grant agents? How does that change as people gain experience? We analyzed millions of human-agent interactions to answer these and other questions.
+Mar 6, 2026PolicyPartnering with Mozilla to improve Firefox’s security
 
-We built an interview tool called Anthropic Interviewer. Powered by Claude, Anthropic Interviewer runs detailed interviews automatically and at unprecedented scale.
+Mar 6, 2026Frontier Red TeamReverse engineering Claude's CVE-2026-2796 exploit
 
-We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs.
-
-What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values.
-
-Apr 30, 2026Societal ImpactsHow people ask Claude for personal guidance
-
-Feb 18, 2026Societal ImpactsMeasuring AI agent autonomy in practice
-
-Dec 4, 2025Societal ImpactsIntroducing Anthropic Interviewer: What 1,250 professionals told us about working with AI
-
-Dec 2, 2025Societal ImpactsHow AI is transforming work at Anthropic
-
-Aug 27, 2025Societal ImpactsAnthropic Education Report: How educators use Claude
-
-Jun 27, 2025Societal ImpactsHow people use Claude for support, advice, and companionship
-
-Apr 28, 2025Societal ImpactsAnthropic Economic Index: AI’s impact on software development
-
-Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values in real-world language model interactions
-
-Apr 8, 2025AnnouncementsAnthropic Education Report: How university students use Claude
-
-Mar 27, 2025Societal ImpactsAnthropic Economic Index: Insights from Claude 3.7 Sonnet
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Feb 5, 2026Frontier Red TeamEvaluating and mitigating the growing risk of LLM-discovered 0-days</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/frontier-red-team" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
