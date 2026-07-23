@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Thu, 23 Jul 2026 14:07:01 +0000</lastBuildDate>
+<lastBuildDate>Thu, 23 Jul 2026 19:27:04 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -252,8 +252,280 @@ AI agents are already being used to improve the capabilities of our next-generat
   <guid isPermaLink="false">https://openai.com/index/gpt-5-6/</guid>
   <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.
+
+We’re launching the GPT‑5.6 family of models for general availability following ourlimited preview⁠: our new flagship,Sol, alongsideTerra, a balanced model for everyday work, andLuna, our most cost-efficient model.
+
+GPT‑5.6 Sol sets a new standard for both intelligence and efficiency, achieving state-of-the-art results across coding, knowledge work, cybersecurity, and scienc...</p><div style="font-size:16px;line-height:1.8;color:#333">More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.
+
+We’re launching the GPT‑5.6 family of models for general availability following ourlimited preview⁠: our new flagship,Sol, alongsideTerra, a balanced model for everyday work, andLuna, our most cost-efficient model.
+
+GPT‑5.6 Sol sets a new standard for both intelligence and efficiency, achieving state-of-the-art results across coding, knowledge work, cybersecurity, and science while outperforming previous and competing frontier models with fewer tokens and at lower estimated cost. The result is stronger performance per dollar: more successful work for the same spend, or comparable results at a lower total cost. We also introduce a new way to accelerate the most demanding work:ultrais our highest-capability setting, coordinating multiple agents across parallel workstreams to finish complex tasks faster. Stronger computer use and design judgment make GPT‑5.6 Sol our most polished collaborator yet, helping it inspect, refine, and deliver ready-to-use results.
+
+We trained GPT‑5.6 to get more useful work from every token. OnAgents’ Last Exam⁠(opens in a new window), an evaluation of long-running professional workflows across 55 fields, GPT‑5.6 Sol sets a new high of 53.6, eclipsing Claude Fable 5 (adaptive reasoning) by 13.1 points. Even at medium reasoning, it beats Fable 5 by 11.4 points at roughly one-quarter the estimated cost. That efficiency extends to smaller models, which are essential to making intelligence more abundant and affordable: GPT‑5.6 Terra and GPT‑5.6 Luna outperform Fable 5 at around one-sixteenth the cost. On theArtificial Analysis Intelligence Index⁠(opens in a new window), a broad measure of intelligence spanning agentic work, coding, scientific reasoning, and general capabilities, GPT‑5.6 Sol with max reasoning comes within one point of Fable 5 while completing tasks in 61% less time at roughly half the estimated cost.
+
+Agents’ Last Exam⁠(opens in a new window): Long-horizon agentic workflows across professional domains.
+
+GPT‑5.6 launches with our most robust safeguards to date, designed to be resilient against determined and adaptive misuse without broadly limiting legitimate work. Before general availability, we put the models and safeguards through our most extensive evaluation period yet, combining human red teaming with large-scale automated testing. During the preview, we worked closely with expert organizations and with trusted partners to pressure-test defenses and strengthen safeguards before broader launch. The resulting system layers protections trained into the model with real-time checks, monitoring, and access calibrated to trust and risk.
+
+Efficient by default, maximum performance on demand
+
+GPT‑5.6 Sol is our best coding model yet. On theArtificial Analysis Coding Agent Index,GPT‑5.6 Sol with max reasoning sets a new state of the art at 80, 2.8 points above Fable 5, while using less than half the output tokens, taking less than half the time, and costing about one-third less. That advantage extends across the family: Terra performs just above Fable 5, while Luna outperforms Opus 4.8; each does so in roughly one-third of the time, with about half as many output tokens, and at approximately one-quarter the estimated cost. It also sets new state-of-the-art results on Terminal‑Bench 2.1 and DeepSWE, which test complex command-line workflows and long-horizon engineering in real codebases.
+
+Artificial Analysis Coding Agent Index:an independent index of coding-agent performance across implementation, terminal use, and real codebases.
+
+GPT‑5.6 can write and run lightweight programs that coordinate tools, process intermediate results, monitor progress, and choose the next action as work unfolds. This lets tool-heavy tasks advance with fewer tokens, fewer model round trips, and less guidance. Instead of requiring developers to script every step or passing every tool response back through the model,Programmatic Tool Calling⁠(opens in a new window)in the Responses API can filter large amounts of intermediate data, retain only what matters, and adapt its workflow along the way.
+
+For problems that reward a greater investment of time and compute, GPT‑5.6 can push beyond this efficient default.maxgives GPT‑5.6 even more time thanxhighto reason and explore alternatives, run checks, and revise its approach.ultragoes further by coordinating four agents in parallel by default, trading higher token use for stronger results and faster time-to-result on demanding tasks. The charts below compare ultra’s default four-agent setup with a one-agent baseline across BrowseComp, SEC-Bench Pro, and Terminal-Bench 2.1; BrowseComp and SEC-Bench Pro also show 16-agent configurations. Across all three evaluations, adding parallel agents shifts the score-latency frontier upward and to the left, reaching stronger results in less time. In the API, developers can build ultra-like experiences using themulti-agent⁠(opens in a new window)beta in the Responses API.4,5,6
+
+Balyasny Asset Management
+
+A leap forward in design
+
+GPT‑5.6 delivers a step change in design judgment. With only high-level direction, GPT‑5.6 creates tasteful, ergonomic, and functional interfaces. Its stronger computer-use capabilities let it inspect and refine the rendered result—not just generate the underlying code or content—so it can catch visual and functional issues and apply finishing touches before handing the work back.
+
+GPT‑5.6’s frontend capabilities also turn natural-language requests into polished, interactive explanations and visualizations within ChatGPT Work.
+
+End-to-end knowledge work
+
+GPT‑5.6delivers better results for professional tasks. It takes messy context from your documents and everyday workflows like Slack, Notion, Microsoft 365, and Google Drive, and converts it into expert-level, shareable artifacts.
+
+GPT‑5.6’s strength on knowledge work shows up in evaluations spanning long-horizon professional analysis, browsing, tool use, and computer use. GPT‑5.6 Sol sets new state-of-the-art results onBrowseCompat 92.2% andOSWorld 2.0at 62.6%; on OSWorld, it surpasses Opus 4.8 while using 85% fewer output tokens. Here, the performance-per-dollar gains extend across the GPT‑5.6 family. Luna nearly matches GPT‑5.5’s peak performance at less than half the estimated cost, while Terra surpasses it at a lower cost.
+
+BrowseComp: GPT‑5.6 Sol achieves a new state of the art on BrowseComp, consisting of agentic browsing tasks.
+
+GPT‑5.6 Sol improves quality in presentations, documents, and spreadsheets,producing outputs that are more polished and accurate. It can create fully editable presentations from scratch, translating a prompt and source material into a coherent visual narrative with strong layouts, hierarchy, and design.
+
+The improvement is especially pronounced when following templates and reference decks.GPT‑5.6 can infer a deck’s design system—layouts, typography, spacing, colors, and recurring content patterns, including rules embedded in the Slide Master—and apply those conventions consistently to new material. In this example, when asked to update numbers based on a reference file, the GPT‑5.5 output is missing key components from the master slide, while GPT‑5.6 follows the reference structure more faithfully.
+
+GPT‑5.6 also creates more visually refined documents and spreadsheets. It follows complex reference formats more faithfully, which is important for repeatable knowledge work activities. It handles equations and financial models with greater precision, and makes better use of typography, spacing, hierarchy, and page or worksheet layout.
+
+Early customers testing GPT‑5.6 saw improvements to knowledge work outputs across domains.
+
+Pushing the frontier on cyber and science
+
+GPT‑5.6 is our strongest cybersecurity model yet, achieving frontier performance with significantly fewer tokens. OnExploitBench2,which measures progress from reaching vulnerable code through arbitrary code execution, it scores 73.5% versus GPT‑5.5’s 47.9% at a comparable output-token budget. OnExploitGym3,which asks agents to turn real-world vulnerabilities into working exploits, it almost doubles GPT‑5.5’s peak pass rate, from 15.1% to 24.9% under the two-hour cap; with six hours, it reaches 33.7%. OnSEC-Bench Pro,which tests proof-of-concept generation on complex software, it scores 71.2% versus GPT‑5.5’s 45.8% at an improved latency.1
+
+GPT‑5.6 supports important defensive tasks such as secure code review, patching, threat modeling, and blue teaming. Qualified individuals and organizations inOpenAI Daybreak’s Trusted Access for Cyber⁠program can access more of its defensive capability through more precise safeguards for verified work in authorized environments, including vulnerability triage and validation, malware analysis, detection engineering, and patch validation.
+
+Individuals canverify their identity and request trusted access⁠(opens in a new window), and organizations canapply⁠for their teams. Individual members will need to enableAdvanced Account Security⁠(opens in a new window)with hardware-backed passkeys by September 1 to retain access to our most cyber-capable frontier models; those who do not will return to default access. Users who do not already have hardware-backed passkeys can receivepreferred pricing⁠(opens in a new window)from our partner, Yubico. We are also taking additional steps to restrict access to high-risk entities and in high-risk jurisdictions.
+
+ExploitBench:Building progressively more capable V8 exploits; GPT‑5.6 shows a large gain over GPT‑5.5. Latency chart is not shown as latency estimation is unreliable for this benchmark.
+
+GPT‑5.6 Sol also shows broad gains acrossscientific research. On life sciences evaluations, GPT‑5.6 demonstrates Pareto improvements over GPT‑5.5 on real-world biology, life science research workflows, and chemistry.
+
+GeneBench Pro⁠:Long-horizon genomics and quantitative-biology analyses; GPT‑5.6 reaches stronger results with fewer tokens and less time. Claude Fable 5 is not included as itdoes not answer⁠(opens in a new window)advanced biology questions and refuses the majority of questions in this eval.
+
+GPT‑5.6 accelerates OpenAI
+
+GPT‑5.6 is our strongest model yet for accelerating AI research. Inside OpenAI, researchers use it across the development loop: diagnosing failures, optimizing training systems, running experiments, and interpreting results. We already saw that acceleration and stronger adoption during the internal testing period of GPT‑5.6, as average daily output tokens per active researcher were more than twice the highest level observed for GPT‑5.5.
+
+This way of working is quickly becoming standard. Over the past six months, the share of research compute devoted to internal coding inference grew 100-fold, while internal agentic token usage increased approximately 22-fold. These adoption metrics do not measure research progress on their own, but they show how rapidly AI assistance is increasing for research and across other teams like sales, marketing, user ops, finance, and more.
+
+To measure this capability directly, we developed an internal suite of evaluations based on real AI research tasks, including debugging research systems, optimizing kernels and training recipes, running machine-learning experiments, and improving another model.
+
+Aggregate RSI capability:On a bundle of evaluations measuring progress towards recursive self-improvement, we observe GPT‑5.6 Sol to be a 16.2 point improvement over GPT‑5.5, accelerating internal research across the board.
+
+Scaling safety and security with capability
+
+As model capabilities increase, we strengthen our safety stack so advanced intelligence can remain broadly useful while applying greater scrutiny to the highest-risk uses. For GPT‑5.6, we built our most robust safety system to date, calibrated to each model’s capabilities and powered by more compute than ever before.
+
+The GPT‑5.6 models are more capable than our earlier models in both biology and cybersecurity but do not cross the Critical threshold in either category. In cybersecurity, our testing suggests GPT‑5.6 is better at finding and fixing vulnerabilities than at reliably carrying out autonomous, end-to-end attacks against hardened targets—giving defenders an opportunity to strengthen systems before weaknesses are exploited. In biology, our testing suggests GPT‑5.6 can support legitimate research but does not provide the end-to-end capability needed to create, engineer, or synthesize a highly dangerous novel threat.
+
+Both domains are inherently dual-use. In cybersecurity, the same capabilities that could help an attacker exploit a vulnerability can help a defender find it, reproduce it, and build a reliable fix. Overblocking therefore creates a security risk of its own. It can prevent defenders from testing systems and deploying patches while malicious actors continue using other models, including increasingly capable open-source models, as well as established tools. Effective safeguards account for the context and likely consequences of a request, preserving legitimate defensive work while applying stronger controls where the evidence indicates a serious risk of harm.
+
+GPT‑5.6’s safeguards are layered for greater accuracy and redundancy, and designed to adapt quickly as new attacks emerge. Protections trained into the model work alongside real-time checks, continuous monitoring, and account-level enforcement, to help the system remain safe even when a particular layer does not work as intended. In many systems, classifier flags alone decide what to block, relying on lower intelligence models that are harder to change in order to prevent harm. Our approach adds a reasoning monitor that reviews the conversation to determine if there is a potential for harm. This design is intended to enable defensive work while blocking serious misuse, with the most sensitive capabilities reserved for verified users through Trusted Access. Because some protections use test-time reasoning, we can rapidly update them to close gaps without retraining classifiers from scratch.
+
+We are taking a more conservative approach as we continue to strengthen the system against adaptive attacks. Compared with previous models, our GPT‑5.6 Sol cyber safeguards block roughly ten times more potentially harmful activity. Because these measures can create friction for benign use, we provide an option in ChatGPT and Codex to easily retry prompts on lower-capability models, and we will continue reducing the impact of our safeguards on benign use while maintaining a high robustness bar. This reflects our iterative deployment approach: starting conservatively and improving based on what we learn from real-world use.
+
+Before general availability, we ran our most intensive safety evaluations to date, including extensive red teaming, robust capability and safeguard testing with external experts, and approximately700,000NVIDIA A100 Tensor Core GPU-equivalent hours of black-box automated red teaming. This enabled us to systematically probe likely weak points, surface jailbreaks, and help us strengthen the system before launch.
+
+There is no such thing as perfect security, and our work to secure increasingly capable models continues. New weaknesses will be discovered, as will new jailbreaks that circumvent existing safeguards. Each new generation of model will also create new avenues for attack and misuse. We build for that reality through layered safeguards, continuous monitoring, rapid remediation, and collaboration across the defensive community. For GPT‑5.6, we have paired ourexisting security⁠(opens in a new window)andbiology bug bounty programs⁠with a new rapid-remediation process and our strongest monitoring effort to date. Findings from researchers, monitoring, and real-world misuse will feed into new evaluations and stronger safeguards on an ongoing basis.
+
+Read more about our safeguards in theupdated GPT‑5.6 system card⁠(opens in a new window).
+
+Availability and pricing
+
+GPT‑5.6 spans three model tiers: Sol, our flagship; Terra, a lower-cost model with performance competitive with GPT‑5.5; and Luna, our fastest and most affordable model. The number identifies the generation, while Sol, Terra, and Luna are durable capability tiers that can advance on their own cadence.
+
+GPT‑5.6 is available starting today across ChatGPT, Codex, and the OpenAI API.The rollout is starting globally now and will continue gradually toward full availability over the next 24 hours.
+
+Chat:Plus, Pro, Business, and Enterprise users access GPT‑5.6 Sol through medium and higher effort settings. Pro and Enterprise users can also select GPT‑5.6 Sol Pro for the highest-quality results on complex tasks.
+
+ChatGPT Work and Codex:Free and Go users access GPT‑5.6 Terra. Plus, Pro, Business, and Enterprise users can choose among GPT‑5.6 Sol, Terra, and Luna and set an effort level for each.maxis available to all users with access to GPT‑5.6 in ChatGPT Work and Codex and can be toggled on in settings. In ChatGPT Work,ultrais available to Pro and Enterprise users. In Codex, it is available to Plus and higher plans.
+
+API:Developers can access Sol, Terra, and Luna through the OpenAI API. In the Responses API, Programmatic Tool Calling lets GPT‑5.6 write and run programs in-memory that coordinate tools and process intermediate results, making it Zero Data Retention (ZDR) compatible. Multi-agent, initially available in beta, lets GPT‑5.6 run concurrent subagents and synthesize their work in a single request.
+
+GPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output. GPT‑5.6 also introduces more predictable prompt caching, including support forexplicit cache breakpoints⁠(opens in a new window)and a 30-minute minimum cache life. For GPT‑5.6 and later models, cache writes are billed at 1.25x the model’s uncached input rate, while cache reads continue to receive the 90% cached-input discount.
+
+1Cyber capabilities are evaluated with reduced safeguards. Users can joinOpenAI Daybreak’s Trusted Access for Cyber program⁠for increased access to defensive cyber capabilities.
+
+Cyber capabilities are evaluated with reduced safeguards. Users can joinOpenAI Daybreak’s Trusted Access for Cyber program⁠for increased access to defensive cyber capabilities.
+
+2All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
+
+All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
+
+3We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the two- and six-hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
+
+We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the two- and six-hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
+
+4We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
+
+We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
+
+5Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.
+
+Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.
+
+6For multi-agent, latency is derived from the root agent, while output token and API-cost totals include all tokens. Ultra is run with 4 agents.
+
+For multi-agent, latency is derived from the root agent, while output token and API-cost totals include all tokens. Ultra is run with 4 agents.
+
+7We compute scores with the official scoring approach described in the HealthBench Professional paper, which is not comparable to results reported in Anthropic system cards.
+
+We compute scores with the official scoring approach described in the HealthBench Professional paper, which is not comparable to results reported in Anthropic system cards.
+
+8ARC-AGI-3 for Opus 4.8 was run on high and not max reasoning effort, as this is the only published ARC-AGI-3 result.
+
+ARC-AGI-3 for Opus 4.8 was run on high and not max reasoning effort, as this is the only published ARC-AGI-3 result.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.
+
+We’re launching the GPT‑5.6 family of models for general availability following ourlimited preview⁠: our new flagship,Sol, alongsideTerra, a balanced model for everyday work, andLuna, our most cost-efficient model.
+
+GPT‑5.6 Sol sets a new standard for both intelligence and efficiency, achieving state-of-the-art results across coding, knowledge work, cybersecurity, and scienc...</p><div style="font-size:16px;line-height:1.8;color:#333">More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.
+
+We’re launching the GPT‑5.6 family of models for general availability following ourlimited preview⁠: our new flagship,Sol, alongsideTerra, a balanced model for everyday work, andLuna, our most cost-efficient model.
+
+GPT‑5.6 Sol sets a new standard for both intelligence and efficiency, achieving state-of-the-art results across coding, knowledge work, cybersecurity, and science while outperforming previous and competing frontier models with fewer tokens and at lower estimated cost. The result is stronger performance per dollar: more successful work for the same spend, or comparable results at a lower total cost. We also introduce a new way to accelerate the most demanding work:ultrais our highest-capability setting, coordinating multiple agents across parallel workstreams to finish complex tasks faster. Stronger computer use and design judgment make GPT‑5.6 Sol our most polished collaborator yet, helping it inspect, refine, and deliver ready-to-use results.
+
+We trained GPT‑5.6 to get more useful work from every token. OnAgents’ Last Exam⁠(opens in a new window), an evaluation of long-running professional workflows across 55 fields, GPT‑5.6 Sol sets a new high of 53.6, eclipsing Claude Fable 5 (adaptive reasoning) by 13.1 points. Even at medium reasoning, it beats Fable 5 by 11.4 points at roughly one-quarter the estimated cost. That efficiency extends to smaller models, which are essential to making intelligence more abundant and affordable: GPT‑5.6 Terra and GPT‑5.6 Luna outperform Fable 5 at around one-sixteenth the cost. On theArtificial Analysis Intelligence Index⁠(opens in a new window), a broad measure of intelligence spanning agentic work, coding, scientific reasoning, and general capabilities, GPT‑5.6 Sol with max reasoning comes within one point of Fable 5 while completing tasks in 61% less time at roughly half the estimated cost.
+
+Agents’ Last Exam⁠(opens in a new window): Long-horizon agentic workflows across professional domains.
+
+GPT‑5.6 launches with our most robust safeguards to date, designed to be resilient against determined and adaptive misuse without broadly limiting legitimate work. Before general availability, we put the models and safeguards through our most extensive evaluation period yet, combining human red teaming with large-scale automated testing. During the preview, we worked closely with expert organizations and with trusted partners to pressure-test defenses and strengthen safeguards before broader launch. The resulting system layers protections trained into the model with real-time checks, monitoring, and access calibrated to trust and risk.
+
+Efficient by default, maximum performance on demand
+
+GPT‑5.6 Sol is our best coding model yet. On theArtificial Analysis Coding Agent Index,GPT‑5.6 Sol with max reasoning sets a new state of the art at 80, 2.8 points above Fable 5, while using less than half the output tokens, taking less than half the time, and costing about one-third less. That advantage extends across the family: Terra performs just above Fable 5, while Luna outperforms Opus 4.8; each does so in roughly one-third of the time, with about half as many output tokens, and at approximately one-quarter the estimated cost. It also sets new state-of-the-art results on Terminal‑Bench 2.1 and DeepSWE, which test complex command-line workflows and long-horizon engineering in real codebases.
+
+Artificial Analysis Coding Agent Index:an independent index of coding-agent performance across implementation, terminal use, and real codebases.
+
+GPT‑5.6 can write and run lightweight programs that coordinate tools, process intermediate results, monitor progress, and choose the next action as work unfolds. This lets tool-heavy tasks advance with fewer tokens, fewer model round trips, and less guidance. Instead of requiring developers to script every step or passing every tool response back through the model,Programmatic Tool Calling⁠(opens in a new window)in the Responses API can filter large amounts of intermediate data, retain only what matters, and adapt its workflow along the way.
+
+For problems that reward a greater investment of time and compute, GPT‑5.6 can push beyond this efficient default.maxgives GPT‑5.6 even more time thanxhighto reason and explore alternatives, run checks, and revise its approach.ultragoes further by coordinating four agents in parallel by default, trading higher token use for stronger results and faster time-to-result on demanding tasks. The charts below compare ultra’s default four-agent setup with a one-agent baseline across BrowseComp, SEC-Bench Pro, and Terminal-Bench 2.1; BrowseComp and SEC-Bench Pro also show 16-agent configurations. Across all three evaluations, adding parallel agents shifts the score-latency frontier upward and to the left, reaching stronger results in less time. In the API, developers can build ultra-like experiences using themulti-agent⁠(opens in a new window)beta in the Responses API.4,5,6
+
+Balyasny Asset Management
+
+A leap forward in design
+
+GPT‑5.6 delivers a step change in design judgment. With only high-level direction, GPT‑5.6 creates tasteful, ergonomic, and functional interfaces. Its stronger computer-use capabilities let it inspect and refine the rendered result—not just generate the underlying code or content—so it can catch visual and functional issues and apply finishing touches before handing the work back.
+
+GPT‑5.6’s frontend capabilities also turn natural-language requests into polished, interactive explanations and visualizations within ChatGPT Work.
+
+End-to-end knowledge work
+
+GPT‑5.6delivers better results for professional tasks. It takes messy context from your documents and everyday workflows like Slack, Notion, Microsoft 365, and Google Drive, and converts it into expert-level, shareable artifacts.
+
+GPT‑5.6’s strength on knowledge work shows up in evaluations spanning long-horizon professional analysis, browsing, tool use, and computer use. GPT‑5.6 Sol sets new state-of-the-art results onBrowseCompat 92.2% andOSWorld 2.0at 62.6%; on OSWorld, it surpasses Opus 4.8 while using 85% fewer output tokens. Here, the performance-per-dollar gains extend across the GPT‑5.6 family. Luna nearly matches GPT‑5.5’s peak performance at less than half the estimated cost, while Terra surpasses it at a lower cost.
+
+BrowseComp: GPT‑5.6 Sol achieves a new state of the art on BrowseComp, consisting of agentic browsing tasks.
+
+GPT‑5.6 Sol improves quality in presentations, documents, and spreadsheets,producing outputs that are more polished and accurate. It can create fully editable presentations from scratch, translating a prompt and source material into a coherent visual narrative with strong layouts, hierarchy, and design.
+
+The improvement is especially pronounced when following templates and reference decks.GPT‑5.6 can infer a deck’s design system—layouts, typography, spacing, colors, and recurring content patterns, including rules embedded in the Slide Master—and apply those conventions consistently to new material. In this example, when asked to update numbers based on a reference file, the GPT‑5.5 output is missing key components from the master slide, while GPT‑5.6 follows the reference structure more faithfully.
+
+GPT‑5.6 also creates more visually refined documents and spreadsheets. It follows complex reference formats more faithfully, which is important for repeatable knowledge work activities. It handles equations and financial models with greater precision, and makes better use of typography, spacing, hierarchy, and page or worksheet layout.
+
+Early customers testing GPT‑5.6 saw improvements to knowledge work outputs across domains.
+
+Pushing the frontier on cyber and science
+
+GPT‑5.6 is our strongest cybersecurity model yet, achieving frontier performance with significantly fewer tokens. OnExploitBench2,which measures progress from reaching vulnerable code through arbitrary code execution, it scores 73.5% versus GPT‑5.5’s 47.9% at a comparable output-token budget. OnExploitGym3,which asks agents to turn real-world vulnerabilities into working exploits, it almost doubles GPT‑5.5’s peak pass rate, from 15.1% to 24.9% under the two-hour cap; with six hours, it reaches 33.7%. OnSEC-Bench Pro,which tests proof-of-concept generation on complex software, it scores 71.2% versus GPT‑5.5’s 45.8% at an improved latency.1
+
+GPT‑5.6 supports important defensive tasks such as secure code review, patching, threat modeling, and blue teaming. Qualified individuals and organizations inOpenAI Daybreak’s Trusted Access for Cyber⁠program can access more of its defensive capability through more precise safeguards for verified work in authorized environments, including vulnerability triage and validation, malware analysis, detection engineering, and patch validation.
+
+Individuals canverify their identity and request trusted access⁠(opens in a new window), and organizations canapply⁠for their teams. Individual members will need to enableAdvanced Account Security⁠(opens in a new window)with hardware-backed passkeys by September 1 to retain access to our most cyber-capable frontier models; those who do not will return to default access. Users who do not already have hardware-backed passkeys can receivepreferred pricing⁠(opens in a new window)from our partner, Yubico. We are also taking additional steps to restrict access to high-risk entities and in high-risk jurisdictions.
+
+ExploitBench:Building progressively more capable V8 exploits; GPT‑5.6 shows a large gain over GPT‑5.5. Latency chart is not shown as latency estimation is unreliable for this benchmark.
+
+GPT‑5.6 Sol also shows broad gains acrossscientific research. On life sciences evaluations, GPT‑5.6 demonstrates Pareto improvements over GPT‑5.5 on real-world biology, life science research workflows, and chemistry.
+
+GeneBench Pro⁠:Long-horizon genomics and quantitative-biology analyses; GPT‑5.6 reaches stronger results with fewer tokens and less time. Claude Fable 5 is not included as itdoes not answer⁠(opens in a new window)advanced biology questions and refuses the majority of questions in this eval.
+
+GPT‑5.6 accelerates OpenAI
+
+GPT‑5.6 is our strongest model yet for accelerating AI research. Inside OpenAI, researchers use it across the development loop: diagnosing failures, optimizing training systems, running experiments, and interpreting results. We already saw that acceleration and stronger adoption during the internal testing period of GPT‑5.6, as average daily output tokens per active researcher were more than twice the highest level observed for GPT‑5.5.
+
+This way of working is quickly becoming standard. Over the past six months, the share of research compute devoted to internal coding inference grew 100-fold, while internal agentic token usage increased approximately 22-fold. These adoption metrics do not measure research progress on their own, but they show how rapidly AI assistance is increasing for research and across other teams like sales, marketing, user ops, finance, and more.
+
+To measure this capability directly, we developed an internal suite of evaluations based on real AI research tasks, including debugging research systems, optimizing kernels and training recipes, running machine-learning experiments, and improving another model.
+
+Aggregate RSI capability:On a bundle of evaluations measuring progress towards recursive self-improvement, we observe GPT‑5.6 Sol to be a 16.2 point improvement over GPT‑5.5, accelerating internal research across the board.
+
+Scaling safety and security with capability
+
+As model capabilities increase, we strengthen our safety stack so advanced intelligence can remain broadly useful while applying greater scrutiny to the highest-risk uses. For GPT‑5.6, we built our most robust safety system to date, calibrated to each model’s capabilities and powered by more compute than ever before.
+
+The GPT‑5.6 models are more capable than our earlier models in both biology and cybersecurity but do not cross the Critical threshold in either category. In cybersecurity, our testing suggests GPT‑5.6 is better at finding and fixing vulnerabilities than at reliably carrying out autonomous, end-to-end attacks against hardened targets—giving defenders an opportunity to strengthen systems before weaknesses are exploited. In biology, our testing suggests GPT‑5.6 can support legitimate research but does not provide the end-to-end capability needed to create, engineer, or synthesize a highly dangerous novel threat.
+
+Both domains are inherently dual-use. In cybersecurity, the same capabilities that could help an attacker exploit a vulnerability can help a defender find it, reproduce it, and build a reliable fix. Overblocking therefore creates a security risk of its own. It can prevent defenders from testing systems and deploying patches while malicious actors continue using other models, including increasingly capable open-source models, as well as established tools. Effective safeguards account for the context and likely consequences of a request, preserving legitimate defensive work while applying stronger controls where the evidence indicates a serious risk of harm.
+
+GPT‑5.6’s safeguards are layered for greater accuracy and redundancy, and designed to adapt quickly as new attacks emerge. Protections trained into the model work alongside real-time checks, continuous monitoring, and account-level enforcement, to help the system remain safe even when a particular layer does not work as intended. In many systems, classifier flags alone decide what to block, relying on lower intelligence models that are harder to change in order to prevent harm. Our approach adds a reasoning monitor that reviews the conversation to determine if there is a potential for harm. This design is intended to enable defensive work while blocking serious misuse, with the most sensitive capabilities reserved for verified users through Trusted Access. Because some protections use test-time reasoning, we can rapidly update them to close gaps without retraining classifiers from scratch.
+
+We are taking a more conservative approach as we continue to strengthen the system against adaptive attacks. Compared with previous models, our GPT‑5.6 Sol cyber safeguards block roughly ten times more potentially harmful activity. Because these measures can create friction for benign use, we provide an option in ChatGPT and Codex to easily retry prompts on lower-capability models, and we will continue reducing the impact of our safeguards on benign use while maintaining a high robustness bar. This reflects our iterative deployment approach: starting conservatively and improving based on what we learn from real-world use.
+
+Before general availability, we ran our most intensive safety evaluations to date, including extensive red teaming, robust capability and safeguard testing with external experts, and approximately700,000NVIDIA A100 Tensor Core GPU-equivalent hours of black-box automated red teaming. This enabled us to systematically probe likely weak points, surface jailbreaks, and help us strengthen the system before launch.
+
+There is no such thing as perfect security, and our work to secure increasingly capable models continues. New weaknesses will be discovered, as will new jailbreaks that circumvent existing safeguards. Each new generation of model will also create new avenues for attack and misuse. We build for that reality through layered safeguards, continuous monitoring, rapid remediation, and collaboration across the defensive community. For GPT‑5.6, we have paired ourexisting security⁠(opens in a new window)andbiology bug bounty programs⁠with a new rapid-remediation process and our strongest monitoring effort to date. Findings from researchers, monitoring, and real-world misuse will feed into new evaluations and stronger safeguards on an ongoing basis.
+
+Read more about our safeguards in theupdated GPT‑5.6 system card⁠(opens in a new window).
+
+Availability and pricing
+
+GPT‑5.6 spans three model tiers: Sol, our flagship; Terra, a lower-cost model with performance competitive with GPT‑5.5; and Luna, our fastest and most affordable model. The number identifies the generation, while Sol, Terra, and Luna are durable capability tiers that can advance on their own cadence.
+
+GPT‑5.6 is available starting today across ChatGPT, Codex, and the OpenAI API.The rollout is starting globally now and will continue gradually toward full availability over the next 24 hours.
+
+Chat:Plus, Pro, Business, and Enterprise users access GPT‑5.6 Sol through medium and higher effort settings. Pro and Enterprise users can also select GPT‑5.6 Sol Pro for the highest-quality results on complex tasks.
+
+ChatGPT Work and Codex:Free and Go users access GPT‑5.6 Terra. Plus, Pro, Business, and Enterprise users can choose among GPT‑5.6 Sol, Terra, and Luna and set an effort level for each.maxis available to all users with access to GPT‑5.6 in ChatGPT Work and Codex and can be toggled on in settings. In ChatGPT Work,ultrais available to Pro and Enterprise users. In Codex, it is available to Plus and higher plans.
+
+API:Developers can access Sol, Terra, and Luna through the OpenAI API. In the Responses API, Programmatic Tool Calling lets GPT‑5.6 write and run programs in-memory that coordinate tools and process intermediate results, making it Zero Data Retention (ZDR) compatible. Multi-agent, initially available in beta, lets GPT‑5.6 run concurrent subagents and synthesize their work in a single request.
+
+GPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output. GPT‑5.6 also introduces more predictable prompt caching, including support forexplicit cache breakpoints⁠(opens in a new window)and a 30-minute minimum cache life. For GPT‑5.6 and later models, cache writes are billed at 1.25x the model’s uncached input rate, while cache reads continue to receive the 90% cached-input discount.
+
+1Cyber capabilities are evaluated with reduced safeguards. Users can joinOpenAI Daybreak’s Trusted Access for Cyber program⁠for increased access to defensive cyber capabilities.
+
+Cyber capabilities are evaluated with reduced safeguards. Users can joinOpenAI Daybreak’s Trusted Access for Cyber program⁠for increased access to defensive cyber capabilities.
+
+2All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
+
+All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
+
+3We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the two- and six-hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
+
+We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the two- and six-hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
+
+4We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
+
+We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
+
+5Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.
+
+Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.
+
+6For multi-agent, latency is derived from the root agent, while output token and API-cost totals include all tokens. Ultra is run with 4 agents.
+
+For multi-agent, latency is derived from the root agent, while output token and API-cost totals include all tokens. Ultra is run with 4 agents.
+
+7We compute scores with the official scoring approach described in the HealthBench Professional paper, which is not comparable to results reported in Anthropic system cards.
+
+We compute scores with the official scoring approach described in the HealthBench Professional paper, which is not comparable to results reported in Anthropic system cards.
+
+8ARC-AGI-3 for Opus 4.8 was run on high and not max reasoning effort, as this is the only published ARC-AGI-3 result.
+
+ARC-AGI-3 for Opus 4.8 was run on high and not max reasoning effort, as this is the only published ARC-AGI-3 result.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Separating signal from noise in coding evaluations</title>
@@ -261,53 +533,51 @@ AI agents are already being used to improve the capabilities of our next-generat
   <guid isPermaLink="false">https://openai.com/index/separating-signal-from-noise-coding-evaluations/</guid>
   <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">通过详细的审计，我们发现 SWE-Bench Pro 中存在普遍的任务层面的问题，并估计约 30% 的任务存在缺陷
 
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+准确衡量模型的能力对于做出合理的部署与安全决策至关重要，包括在 OpenAI准备框架 (Preparedness Framework)⁠（在新窗口中打开）下做出的决策。每次发布新模型时，我们都会报告多项内部与外部基准测试的结果，以追踪模型的进展。当评估存在影响结果的缺陷时，可能会导致对模型能力的错误认知，误导安全验证情况，并影响研究优先级的设定。
 
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
+我们近期调查了最广泛使用的编程基准测试之一 SWE-bench Verified，发现其存在根本性的设计与数据污染问题，并确认该评估已无法为软件开发能力提供有意义的信号。当时，我们鼓励广大社区转而使用 SWE-Bench Pro。
 
-Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
+SWE-Bench Pro⁠（在新窗口中打开）旨在对 SWE-bench Verified 进行改进，通过在更长周期与更真实的编程任务上测试模型，以更好地追踪智能体编程能力。与 SWE-bench Verified 类似，任务是通过程序从一组公共和私有代码库的功能变更历史中自动提取的。模型需要实...</p><div style="font-size:16px;line-height:1.8;color:#333">通过详细的审计，我们发现 SWE-Bench Pro 中存在普遍的任务层面的问题，并估计约 30% 的任务存在缺陷
 
-SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
+准确衡量模型的能力对于做出合理的部署与安全决策至关重要，包括在 OpenAI准备框架 (Preparedness Framework)⁠（在新窗口中打开）下做出的决策。每次发布新模型时，我们都会报告多项内部与外部基准测试的结果，以追踪模型的进展。当评估存在影响结果的缺陷时，可能会导致对模型能力的错误认知，误导安全验证情况，并影响研究优先级的设定。
 
-We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
+我们近期调查了最广泛使用的编程基准测试之一 SWE-bench Verified，发现其存在根本性的设计与数据污染问题，并确认该评估已无法为软件开发能力提供有意义的信号。当时，我们鼓励广大社区转而使用 SWE-Bench Pro。
 
-We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
+SWE-Bench Pro⁠（在新窗口中打开）旨在对 SWE-bench Verified 进行改进，通过在更长周期与更真实的编程任务上测试模型，以更好地追踪智能体编程能力。与 SWE-bench Verified 类似，任务是通过程序从一组公共和私有代码库的功能变更历史中自动提取的。模型需要实现一个解决方案，该方案既要能通过针对某项新功能的全新测试，又不能破坏现有的功能。在包含 731 个任务的公开划分中，前沿模型的通过率在八个月内从 23.3% 跃升至 80.3%。
 
-The issues primarily fell into four categories:
+此后，我们使用数据点分析流水线对 SWE-Bench Pro 进行了类似的审计，审查了该数据集。该流水线审查了模型对任务的尝试、任务元数据以及失败追踪记录，以标记出可能存在的评估缺陷。随后，每一个被标记的任务都会经过调查员智能体 (investigator-agent) 的多轮评估，并由五位经验丰富的软件工程师进行独立审查；遇到分歧时则会上报以作进一步调查。
 
-Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
+我们发现该数据集的很大一部分存在使任务失效的问题。我们的数据点分析流水线标记了 200 个 (27.4%) 存在缺陷的任务，而人工标注活动则识别出了 249 个 (34.1%)。
 
-Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
+测试过于严格 (Overly strict tests)1：强制要求提示词中未指定的具体实现细节，导致许多在功能上正确的提交被判定为无效。
 
-Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
+提示词说明不足 (Underspecified prompts)2：遗漏了隐藏测试所强制要求且无法合理推断的各项条件。
 
-Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
+测试覆盖率低 (Low-coverage tests)：未能充分检验所要求的功能，导致不完整的修复也能通过测试。
 
-Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
+提示词具误导性 (Misleading prompt)：将模型引向错误的行为，或与测试的要求相矛盾。
 
-Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
+我们的发现凸显了策划高难度且公平的基准测试充满挑战，同时也展现了智能体在规模化数据质量检查中日益增长的实用性。鉴于这些结果，我们估计约有 30% 的 SWE-bench Pro 任务存在缺陷，并建议模型开发者仔细审视其结果。
 
-An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
+我们的目标是确保模型在任务中的失败反映其真实能力局限，而在任务中的成功则代表着针对提示词要求给出了完整且有效的解决方案。为了检查评估所用数据的质量，我们创建了一条质量保证流水线，以评估每个数据点是否准确反映了模型能力。
 
-An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
+初步的数据质量分析流水线会标记出问题以供审查。我们通过智能体辅助的深度审计（针对被标记任务）以及由经验丰富的工程师参与的人工标注活动，来对这些问题进行验证。
 
-Human-supervised agent review
+初步的自动化筛选器会审查下发给模型的指令、模型解决任务的尝试过程，以及用于给这些尝试打分的测试用例，从而标记出可能存在缺陷或问题的样本。该筛选器标记了 286 个可能存在缺陷的任务。随后，我们通过两种方式对该子集进行了更深入的审查：一是人工监督下的智能体审查，即通过调查员智能体进行广泛检查并由人工做出最终判断；二是与经验丰富的软件开发者合作进行的人工标注活动。
 
-Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
+每个被标记的问题都会由基于 Codex 的调查员智能体进行审计，这些智能体获得了访问任务代码库与环境的权限。这有助于它们区分合理的任务歧义（通常可以通过研究上下文代码和代码仓库规范来解决）与真正的说明不足。智能体能够运行测试、检查代码仓库中的文件，并调查模型在任务上的尝试过程及其常见的失败模式。在多次独立重复这些深度审计之后，研究人员会审查摘要、做出最终判断，并对可能存在的问题进行标记。
 
-Human annotation campaign
+与此同时，我们针对被标记的子集开展了人工标注活动。我们与经验丰富的软件工程师合作，他们在审查任务前接受了关于基准测试目标、问题分类法及边缘情况 (edge cases) 的培训。每项任务均由五位工程师进行审查。
 
-In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
+审查者首先根据可见的问题描述、测试用例以及作为基准的参考解决方案（即 gold patch）形成独立判断，然后再将流水线分析或运行记录作为辅助背景信息。随后，审查者根据具体证据分配标签并评定严重程度，同时将存在分歧或把握不大的案例上报作进一步审查。
 
-Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
+相比调查员智能体，人工审查者更有可能将任务标记为存在缺陷。两种审查路径在问题归类上也存在一些分歧，但在所有被标记的任务中，“不存在缺陷 (not broken)”从未成为人类审查者最常给出的标签。在智能体流水线标记的类别中，审查者的判断在 74% 的案例中与之重合。
 
-Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
+与智能体流水线相比，人工审查者也更有可能为单个任务选择多个标签，这表明他们发现任务在多个方面存在缺陷，或者无法简单地归入单一类别。这表明智能体结合人工审查的流水线得出的标签相对保守：它捕获了人类识别出的大类失败模式，但少计了审查者发现的带有附加或重叠问题的案例。差异最大的是低覆盖率测试问题，人工审查者认为这是该基准测试最常见的问题（占 9.4%），而智能体流水线的这一比例为 4.1%。
 
-Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
-
-In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
+在多个案例中，任务提示词规定了特定的实现方式，但隐藏的测试用例却期望得到不同的行为。
 
 This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
 
@@ -315,70 +585,66 @@ The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  |
 
 There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
 
-The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
+我们发现的问题，加上SWE-bench Verified中的类似案例，凸显了严格检查基准测试的重要性。开源仓库中的 Issue 和 Pull Request 最初是为人类协作而创建的，通常需要维护者和贡献者之间进行长时间的反复沟通。因此，问题描述、合并代码及单元测试并不总是能完全对应，难以形成整洁、孤立的任务来可靠地评估模型。尤其是 Pull Request 中包含的测试可能会过于严格，因为编写它们是为了验证特定的修改，而非为解决该任务定义一个与具体实现无关的标准。
 
-At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
+与此同时，相较于不久前，现在发现评估缺陷要容易得多。随着模型能力的提升，我们可以利用这些模型对提示词、测试、补丁、追踪记录以及边缘情况进行更深入且一致的检查，从而帮助发现以前查找成本过高或难以规模化查找的基准测试问题。
 
-We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
+我们希望更广泛的评估社区能够由经验丰富的软件开发者专门针对测试模型能力，开发出全新的基准测试。这种方法能够保持我们衡量模型能力所期望的高门槛与真实性，并能在整个过程中实现更好的人工监督。鉴于本次分析揭示的问题，我们撤回此前关于采用 SWE-Bench Pro 的建议。
 
-Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
+归根结底，评估应当通过难以作弊、值得信赖且能真正反映模型能力或对齐程度的基准测试，提供有意义的信号。由于这些结果将为 OpenAI 的部署与安全决策提供参考，我们所追踪的评估必须是有效且具有参考价值的。
 
-Software & Engineering
+1我们此前⁠将此类问题称为狭义测试 (narrow tests)。
 
-1Wepreviously⁠referred to this category as narrow tests.
+我们此前⁠将此类问题称为狭义测试 (narrow tests)。
 
-Wepreviously⁠referred to this category as narrow tests.
+2我们此前将此类问题称为广义测试 (wide tests)。
 
-2We previously referred to this category as wide tests.
+我们此前将此类问题称为广义测试 (wide tests)。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">通过详细的审计，我们发现 SWE-Bench Pro 中存在普遍的任务层面的问题，并估计约 30% 的任务存在缺陷
 
-We previously referred to this category as wide tests.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+准确衡量模型的能力对于做出合理的部署与安全决策至关重要，包括在 OpenAI准备框架 (Preparedness Framework)⁠（在新窗口中打开）下做出的决策。每次发布新模型时，我们都会报告多项内部与外部基准测试的结果，以追踪模型的进展。当评估存在影响结果的缺陷时，可能会导致对模型能力的错误认知，误导安全验证情况，并影响研究优先级的设定。
 
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+我们近期调查了最广泛使用的编程基准测试之一 SWE-bench Verified，发现其存在根本性的设计与数据污染问题，并确认该评估已无法为软件开发能力提供有意义的信号。当时，我们鼓励广大社区转而使用 SWE-Bench Pro。
 
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
+SWE-Bench Pro⁠（在新窗口中打开）旨在对 SWE-bench Verified 进行改进，通过在更长周期与更真实的编程任务上测试模型，以更好地追踪智能体编程能力。与 SWE-bench Verified 类似，任务是通过程序从一组公共和私有代码库的功能变更历史中自动提取的。模型需要实...</p><div style="font-size:16px;line-height:1.8;color:#333">通过详细的审计，我们发现 SWE-Bench Pro 中存在普遍的任务层面的问题，并估计约 30% 的任务存在缺陷
 
-Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
+准确衡量模型的能力对于做出合理的部署与安全决策至关重要，包括在 OpenAI准备框架 (Preparedness Framework)⁠（在新窗口中打开）下做出的决策。每次发布新模型时，我们都会报告多项内部与外部基准测试的结果，以追踪模型的进展。当评估存在影响结果的缺陷时，可能会导致对模型能力的错误认知，误导安全验证情况，并影响研究优先级的设定。
 
-SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
+我们近期调查了最广泛使用的编程基准测试之一 SWE-bench Verified，发现其存在根本性的设计与数据污染问题，并确认该评估已无法为软件开发能力提供有意义的信号。当时，我们鼓励广大社区转而使用 SWE-Bench Pro。
 
-We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
+SWE-Bench Pro⁠（在新窗口中打开）旨在对 SWE-bench Verified 进行改进，通过在更长周期与更真实的编程任务上测试模型，以更好地追踪智能体编程能力。与 SWE-bench Verified 类似，任务是通过程序从一组公共和私有代码库的功能变更历史中自动提取的。模型需要实现一个解决方案，该方案既要能通过针对某项新功能的全新测试，又不能破坏现有的功能。在包含 731 个任务的公开划分中，前沿模型的通过率在八个月内从 23.3% 跃升至 80.3%。
 
-We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
+此后，我们使用数据点分析流水线对 SWE-Bench Pro 进行了类似的审计，审查了该数据集。该流水线审查了模型对任务的尝试、任务元数据以及失败追踪记录，以标记出可能存在的评估缺陷。随后，每一个被标记的任务都会经过调查员智能体 (investigator-agent) 的多轮评估，并由五位经验丰富的软件工程师进行独立审查；遇到分歧时则会上报以作进一步调查。
 
-The issues primarily fell into four categories:
+我们发现该数据集的很大一部分存在使任务失效的问题。我们的数据点分析流水线标记了 200 个 (27.4%) 存在缺陷的任务，而人工标注活动则识别出了 249 个 (34.1%)。
 
-Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
+测试过于严格 (Overly strict tests)1：强制要求提示词中未指定的具体实现细节，导致许多在功能上正确的提交被判定为无效。
 
-Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
+提示词说明不足 (Underspecified prompts)2：遗漏了隐藏测试所强制要求且无法合理推断的各项条件。
 
-Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
+测试覆盖率低 (Low-coverage tests)：未能充分检验所要求的功能，导致不完整的修复也能通过测试。
 
-Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
+提示词具误导性 (Misleading prompt)：将模型引向错误的行为，或与测试的要求相矛盾。
 
-Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
+我们的发现凸显了策划高难度且公平的基准测试充满挑战，同时也展现了智能体在规模化数据质量检查中日益增长的实用性。鉴于这些结果，我们估计约有 30% 的 SWE-bench Pro 任务存在缺陷，并建议模型开发者仔细审视其结果。
 
-Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
+我们的目标是确保模型在任务中的失败反映其真实能力局限，而在任务中的成功则代表着针对提示词要求给出了完整且有效的解决方案。为了检查评估所用数据的质量，我们创建了一条质量保证流水线，以评估每个数据点是否准确反映了模型能力。
 
-An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
+初步的数据质量分析流水线会标记出问题以供审查。我们通过智能体辅助的深度审计（针对被标记任务）以及由经验丰富的工程师参与的人工标注活动，来对这些问题进行验证。
 
-An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
+初步的自动化筛选器会审查下发给模型的指令、模型解决任务的尝试过程，以及用于给这些尝试打分的测试用例，从而标记出可能存在缺陷或问题的样本。该筛选器标记了 286 个可能存在缺陷的任务。随后，我们通过两种方式对该子集进行了更深入的审查：一是人工监督下的智能体审查，即通过调查员智能体进行广泛检查并由人工做出最终判断；二是与经验丰富的软件开发者合作进行的人工标注活动。
 
-Human-supervised agent review
+每个被标记的问题都会由基于 Codex 的调查员智能体进行审计，这些智能体获得了访问任务代码库与环境的权限。这有助于它们区分合理的任务歧义（通常可以通过研究上下文代码和代码仓库规范来解决）与真正的说明不足。智能体能够运行测试、检查代码仓库中的文件，并调查模型在任务上的尝试过程及其常见的失败模式。在多次独立重复这些深度审计之后，研究人员会审查摘要、做出最终判断，并对可能存在的问题进行标记。
 
-Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
+与此同时，我们针对被标记的子集开展了人工标注活动。我们与经验丰富的软件工程师合作，他们在审查任务前接受了关于基准测试目标、问题分类法及边缘情况 (edge cases) 的培训。每项任务均由五位工程师进行审查。
 
-Human annotation campaign
+审查者首先根据可见的问题描述、测试用例以及作为基准的参考解决方案（即 gold patch）形成独立判断，然后再将流水线分析或运行记录作为辅助背景信息。随后，审查者根据具体证据分配标签并评定严重程度，同时将存在分歧或把握不大的案例上报作进一步审查。
 
-In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
+相比调查员智能体，人工审查者更有可能将任务标记为存在缺陷。两种审查路径在问题归类上也存在一些分歧，但在所有被标记的任务中，“不存在缺陷 (not broken)”从未成为人类审查者最常给出的标签。在智能体流水线标记的类别中，审查者的判断在 74% 的案例中与之重合。
 
-Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
+与智能体流水线相比，人工审查者也更有可能为单个任务选择多个标签，这表明他们发现任务在多个方面存在缺陷，或者无法简单地归入单一类别。这表明智能体结合人工审查的流水线得出的标签相对保守：它捕获了人类识别出的大类失败模式，但少计了审查者发现的带有附加或重叠问题的案例。差异最大的是低覆盖率测试问题，人工审查者认为这是该基准测试最常见的问题（占 9.4%），而智能体流水线的这一比例为 4.1%。
 
-Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
-
-Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
-
-In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
+在多个案例中，任务提示词规定了特定的实现方式，但隐藏的测试用例却期望得到不同的行为。
 
 This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
 
@@ -386,23 +652,21 @@ The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  |
 
 There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
 
-The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
+我们发现的问题，加上SWE-bench Verified中的类似案例，凸显了严格检查基准测试的重要性。开源仓库中的 Issue 和 Pull Request 最初是为人类协作而创建的，通常需要维护者和贡献者之间进行长时间的反复沟通。因此，问题描述、合并代码及单元测试并不总是能完全对应，难以形成整洁、孤立的任务来可靠地评估模型。尤其是 Pull Request 中包含的测试可能会过于严格，因为编写它们是为了验证特定的修改，而非为解决该任务定义一个与具体实现无关的标准。
 
-At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
+与此同时，相较于不久前，现在发现评估缺陷要容易得多。随着模型能力的提升，我们可以利用这些模型对提示词、测试、补丁、追踪记录以及边缘情况进行更深入且一致的检查，从而帮助发现以前查找成本过高或难以规模化查找的基准测试问题。
 
-We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
+我们希望更广泛的评估社区能够由经验丰富的软件开发者专门针对测试模型能力，开发出全新的基准测试。这种方法能够保持我们衡量模型能力所期望的高门槛与真实性，并能在整个过程中实现更好的人工监督。鉴于本次分析揭示的问题，我们撤回此前关于采用 SWE-Bench Pro 的建议。
 
-Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
+归根结底，评估应当通过难以作弊、值得信赖且能真正反映模型能力或对齐程度的基准测试，提供有意义的信号。由于这些结果将为 OpenAI 的部署与安全决策提供参考，我们所追踪的评估必须是有效且具有参考价值的。
 
-Software & Engineering
+1我们此前⁠将此类问题称为狭义测试 (narrow tests)。
 
-1Wepreviously⁠referred to this category as narrow tests.
+我们此前⁠将此类问题称为狭义测试 (narrow tests)。
 
-Wepreviously⁠referred to this category as narrow tests.
+2我们此前将此类问题称为广义测试 (wide tests)。
 
-2We previously referred to this category as wide tests.
-
-We previously referred to this category as wide tests.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+我们此前将此类问题称为广义测试 (wide tests)。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing GPT-Live</title>
@@ -828,146 +1092,158 @@ We anticipate that as model capabilities advance, benchmarks that probe model ab
   <guid isPermaLink="false">https://openai.com/index/previewing-gpt-5-6-sol/</guid>
   <pubDate>Fri, 26 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正开始 GPT‑5.6 系列的有限预览：Sol 是我们的旗舰模型；Terra 是适合日常工作的均衡模型；Luna 是快速且经济的模型。Terra 的性能可与 GPT‑5.5 竞争，同时成本更友好（仅为其一半）；Luna 则以我们的最低成本提供强大能力。
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.
 
-GPT‑5.6 Sol 发布时搭载了我们迄今最稳健的安全栈。我们强化了针对高风险活动、敏感网络安全请求和重复滥用的保护，并用数周时间查找弱点、对系统进行压力测试，并加固其抵御真实攻击的能力。
+GPT‑5.6 Sol launches with our most robust safety stack to date. We strengthened protections for higher-risk activity, sensitive cyber requests, and repeated misuse, and spent multiple weeks finding weaknesses, pre...</p><div style="font-size:16px;line-height:1.8;color:#333">We're beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.
 
-我们相信广泛访问的价值，并计划在未来几周内让 GPT‑5.6 Sol、Terra 和 Luna 普遍可用。作为我们与美国政府持续沟通的一部分，我们在今天发布前预览了我们的计划和模型能力。应其要求，在更广泛发布之前，我们将先面向一小部分可信合作伙伴启动有限预览，并已向政府共享这些参与方信息。在本次预览期间，我们将继续测试，并与合作伙伴密切协调，朝着更广泛可用推进。我们并不认为这种政府访问流程应成为长期默认做法。它会让需要最佳工具的用户、开发者、企业、网络防御者和全球合作伙伴无法获得这些工具。我们采取这一短期步骤，是因为我们认为这是在未来几周实...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正开始 GPT‑5.6 系列的有限预览：Sol 是我们的旗舰模型；Terra 是适合日常工作的均衡模型；Luna 是快速且经济的模型。Terra 的性能可与 GPT‑5.5 竞争，同时成本更友好（仅为其一半）；Luna 则以我们的最低成本提供强大能力。
+GPT‑5.6 Sol launches with our most robust safety stack to date. We strengthened protections for higher-risk activity, sensitive cyber requests, and repeated misuse, and spent multiple weeks finding weaknesses, pressure-testing our system, and hardening it against real-world attacks.
 
-GPT‑5.6 Sol 发布时搭载了我们迄今最稳健的安全栈。我们强化了针对高风险活动、敏感网络安全请求和重复滥用的保护，并用数周时间查找弱点、对系统进行压力测试，并加固其抵御真实攻击的能力。
+We believe in broad access, and we plan to make GPT‑5.6 Sol, Terra, and Luna generally available in the coming weeks. As part of our ongoing engagement with the U.S. government, we previewed our plans and the models’ capabilities ahead of today’s launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly. During this preview, we will continue testing and coordinating closely with partners as we work toward broader availability. We don’t believe this kind of government access process should become the long-term default. It keeps the best tools from users, developers, enterprises, cyber defenders, and global partners who need them. We are taking this short-term step because we believe it is the strongest path to broader availability in the coming weeks, while we work with the Administration to develop the cyber Executive Order framework and a repeatable process for future model releases.
 
-我们相信广泛访问的价值，并计划在未来几周内让 GPT‑5.6 Sol、Terra 和 Luna 普遍可用。作为我们与美国政府持续沟通的一部分，我们在今天发布前预览了我们的计划和模型能力。应其要求，在更广泛发布之前，我们将先面向一小部分可信合作伙伴启动有限预览，并已向政府共享这些参与方信息。在本次预览期间，我们将继续测试，并与合作伙伴密切协调，朝着更广泛可用推进。我们并不认为这种政府访问流程应成为长期默认做法。它会让需要最佳工具的用户、开发者、企业、网络防御者和全球合作伙伴无法获得这些工具。我们采取这一短期步骤，是因为我们认为这是在未来几周实现更广泛可用的最有力路径；与此同时，我们将与政府部门合作，制定网络安全行政令框架，以及面向未来模型发布的可重复流程。
+GPT‑5.6 Sol is our strongest model yet. To give a preview of model performance, we share a set of evaluations highlighting improved agentic capabilities in coding, biology, and cybersecurity, with additional safety and preparedness evaluations available in oursystem card⁠(opens in a new window). We will share an expanded suite of evaluation results when we make the model broadly available.
 
-GPT‑5.6 Sol 是我们迄今最强的模型。为预览模型性能，我们分享了一组评估，重点展示其在编码、生物学和网络安全方面提升的智能体能力；更多安全和准备评估可见于我们的系统卡⁠（在新窗口中打开）。模型更广泛可用时，我们将分享一套扩展的评估结果。
+With GPT‑5.6, we’re introducing a newmaxreasoning effort to give Sol the most time to reason deeply. Additionally, we’re introducing a newultramode that goes beyond the capabilities of a single agent by leveraging subagents to accelerate complex work.
 
-借助 GPT‑5.6，我们引入新的 `max` 推理强度，让 Sol 获得最充足的时间进行深度推理。此外，我们还引入新的 `ultra` 模式，通过利用子智能体来超越单个智能体的能力，加速复杂工作。
+For coding workflows, GPT‑5.6 Sol sets a new state of the art onTerminal‑Bench 2.1, which tests command-line workflows requiring planning, iteration, and tool coordination.
 
-对于编码工作流，GPT‑5.6 Sol 在Terminal‑Bench 2.1上树立了新的最佳水平；该基准测试需要规划、迭代和工具协调的命令行工作流。
+GPT‑5.6 Sol also shows broad improvements in biology workflows. OnGeneBench v1, which evaluates long-horizon genomics and quantitative-biology analyses, it achieves stronger results than GPT‑5.5 while using fewer tokens.
 
-GPT‑5.6 Sol 在生物学工作流中也展现出广泛改进。在评估长周期基因组学和定量生物学分析的GeneBench v1上，它使用更少 Token，却取得了强于 GPT‑5.5 的结果。
+GPT‑5.6 Sol is our most capable model yet for cybersecurity. It shifts the performance-efficiency frontier for long-horizon security tasks including vulnerability research and exploitation. OnExploitBench², GPT‑5.6 Sol is competitive with Mythos Preview using only ~1/3 of the output tokens. OnExploitGym⁠(opens in a new window)3, a benchmark created by UC Berkeley researchers in collaboration with OpenAI and other frontier labs, GPT‑5.6 Sol, Terra, and Luna models all demonstrate strong improvements in cyber capabilities as we increase reasoning.
 
-GPT‑5.6 Sol 是我们迄今在网络安全方面能力最强的模型。它推动了长周期安全任务的性能—效率前沿，包括漏洞研究和漏洞利用。在ExploitBench² 上，GPT‑5.6 Sol 仅使用约 1/3 的输出 Token，即可与 Mythos Preview 相竞争。在ExploitGym⁠（在新窗口中打开）3上，GPT‑5.6 Sol、Terra 和 Luna 模型随着推理强度提高，都展现出网络安全能力的显著提升；该基准由 UC Berkeley 研究人员与 OpenAI 及其他前沿实验室合作创建。
+Stronger cyber capabilities with stronger safeguards
 
-我们在开发 GPT‑5.6 Sol、Terra 和 Luna 时配备了迄今最稳健的防护措施，并根据各模型能力匹配相应配置。随着模型能力增强，我们设计防护措施，使其更能承受真实世界的对抗压力，同时保留对代码审查、漏洞研究、补丁开发、调试、安全教育和防御性测试等合法工作的访问。我们的目标是在不无谓限制这些有益用途的情况下，让被禁止的攻击性活动变得更困难、更不确定且更可检测。基于我们对模型和防护措施的评估，我们预计其将为合法防御工作带来显著益处，同时实质性约束被禁止的攻击性使用。
+We developed GPT‑5.6 Sol, Terra and Luna with our most robust safeguards to date, with configurations matched to each model’s capabilities. As the model becomes more capable, we design safeguards to increasingly hold up to real-world adversarial pressure while preserving access to legitimate work such as code review, vulnerability research, patch development, debugging, security education, and defensive testing. Our goal is to make prohibited offensive activity more difficult, uncertain, and detectable without unnecessarily limiting those beneficial uses. Based on our assessment of the model and safeguards, we expect substantial benefit for legitimate defensive work, while meaningfully constraining prohibited offensive use.
 
-GPT‑5.6 Sol 更擅长帮助人们发现并修复漏洞，而不是可靠地执行端到端攻击。随着这些能力持续进步，我们的优先事项是确保它们到达并惠及防御者，使他们能够用这些工具发现弱点、开发补丁，并更广泛地强化系统。
+GPT‑5.6 Sol is better at helping people find and fix vulnerabilities than reliably carrying out end-to-end attacks. As these capabilities continue to advance, our priority is to make sure they reach and benefit defenders, who can use these tools to find weaknesses, develop patches, and strengthen systems more broadly.
 
-根据我们的准备框架 (Preparedness Framework)⁠，GPT‑5.6 Sol 未跨越网络安全“危急” (Critical) 阈值。在涉及 Chromium 和 Firefox 的评估中，它识别出了漏洞和利用原语——即漏洞利用的构建模块——但在测试条件下并未自主生成可用的完整攻击链漏洞利用。不过，基准阈值无法涵盖模型可能被使用或与其他工具结合的每一种方式。正是这种不确定性，以及模型能力更广泛的阶跃式提升，使我们在增强模型能力的同时配套更强防护措施，并采用分阶段发布。我们在GPT‑5.6 Preview 系统卡⁠（在新窗口中打开）中分享了有关防护措施的更多细节。
+GPT‑5.6 Sol does not cross the Cyber Critical threshold under ourPreparedness Framework⁠. In evaluations involving Chromium and Firefox, it identified bugs and exploitation primitives—the building blocks of an exploit—but did not autonomously produce a functional full-chain exploit under the conditions tested. Still, benchmark thresholds cannot capture every way a model may be used or combined with other tools. That uncertainty, along with the model’s broader step change in capabilities, is why we are pairing the model’s increased capabilities with stronger safeguards and a phased release. We share more details about our safeguards in theGPT‑5.6 Preview system card⁠(opens in a new window).
 
-面对有决心或会适应变化的滥用行为，任何单一防护措施都不足够。在 GPT‑5.6 预览中，我们采用分层防护措施；各模型的具体配置有所不同，并会针对真实攻击进行压力测试。这些措施包括训练进模型的保护、生成过程中的实时检查、账号级信号、差异化访问、监测、执行和持续测试。
+A layered safeguard stack
 
-GPT‑5.6 经训练会拒绝提供被禁止的网络安全协助，包括用户试图伪装意图或越狱模型的情况。这些模型级防护措施围绕模型应该和不应该协助的内容建立了第一道边界。
+No single safeguard is sufficient against determined or adaptive misuse. Across the GPT‑5.6 preview, we use layered safeguards, with exact configurations varying across models, and pressure-test them for real-world attacks. These include protections trained into the model, real-time checks during generation, account-level signals, differentiated access, monitoring, enforcement, and continued testing.
 
-实时网络安全和生物学滥用分类器通过在生成过程中评估输出来提供另一层保护。对于较高风险案例，如果它们检测到潜在违规，生成可能会暂停，由更大的推理模型审查对话及其上下文。如果输出被评估为不允许，会在到达用户之前被拦截。
+GPT‑5.6 is trained to refuse prohibited cyber assistance, including when users attempt to disguise their intent or jailbreak the model. These model-level safeguards establish the first boundary around what the model should and should not help with.
 
-根据我们关于内容保留和审查的条款与政策，被标记的活动还可能触发对相关对话和风险信号的账号级审查。超越单次对话进行观察，有助于我们的系统区分持续恶意行为与合法的双重用途安全工作；相似的技术概念在不同上下文中可能含义截然不同。
+Real-time cyber and biology misuse classifiers provide another layer by evaluating output as it is generated. For higher risk cases, if they detect a potential violation, the generation may be paused while a larger reasoning model reviews the conversation and its context. If the output is assessed as disallowed, it is withheld before it reaches the user.
 
-这些层级结合起来，使整体方法比任何单一防护措施都更稳健。模型行为降低有害回应的可能性，实时系统可在生成过程中介入，账号级审查可识别更广泛的模式，而差异化访问则能保留重要的防御性工作，同时避免默认广泛开放最敏感的能力。
+Flagged activity can also trigger account-level review across relevant conversations and risk signals, consistent with our terms and policies around content retention and review. Looking beyond a single conversation helps our systems distinguish persistent malicious behavior from legitimate dual-use security work, where similar technical concepts may appear in very different contexts.
 
-尤其在预览期间，用户可能会遇到阻止或拒绝某些请求的防护措施。其他请求可能耗时更长，因为生成会暂停以进行额外审查。防护措施有时可能会介入合法工作，尤其是在防御性和攻击性活动起初可能看起来相似的双重用途领域。
+Together, these layers make the overall approach more robust than any one safeguard on its own. Model behavior reduces the likelihood of harmful responses, real-time systems can intervene during generation, account-level review can identify broader patterns, and differentiated access preserves important defensive work without making the most sensitive capabilities broadly available by default.
 
-这正是预览旨在测试的内容之一。我们不仅想了解防护措施是否能约束滥用，还想了解合法用户是否仍能可靠、高效地完成正常工作。预览期间的反馈将帮助我们减少不必要的阻止和延迟，改进防护措施对上下文的理解，并在更广泛发布前打造更顺畅的体验。
+Especially during the preview, users may encounter safeguards that block or refuse some requests. Other requests may take longer because generation is paused for additional review. Safeguards may occasionally intervene on legitimate work, particularly in dual-use areas where defensive and offensive activity can initially look similar.
 
-我们还在与企业客户合作探索更长期的方法，包括保护隐私的检测、由客户运营的安全控制，以及根据客户、用户或工作负载风险校准的访问权限，从而在支持企业隐私要求的同时推进安全。
+That is part of what the preview is designed to test. We want to understand not only whether the safeguards constrain misuse, but whether legitimate users can still complete normal work reliably and efficiently. Feedback during the preview will help us reduce unnecessary blocks and delays, improve how the safeguards interpret context, and create a smoother experience before wider release.
 
-当攻击者调整策略时，防护措施也需要继续有效。只对一组固定的已知攻击有效的保护措施，对于前沿模型来说还不够稳健。
+We are also working with enterprise customers on longer-term approaches—including privacy-preserving detection, customer-operated safety controls, and access calibrated to the risk of a customer, user, or workload—to advance safety while supporting enterprise privacy requirements.
 
-因此，我们正以前所未有的智能和算力投入安全工作，利用自己的模型发现薄弱环节，并更快改进防护措施。我们投入了超过 700,000 个 A100 等效 GPU 小时，用于旨在发现通用越狱的自动化红队测试：这类攻击可跨许多提示或上下文生效，而不只是针对某个狭窄场景。聚焦这些更难、更通用的攻击，使我们能够在固定的已知故障集合之外测试防护措施。这也让我们能够探索远超单靠人工测试所能覆盖的攻击模式，更早识别故障模式，并缩短从发现弱点到解决弱点的路径。
+Improving robustness with automated red-teaming
 
-除自动化红队测试外，我们还与第三方测试人员合作，开展了广泛的人类专家红队测试，并将在预览期继续进行。人类红队测试通过让有创造力的专家尝试以系统可能无法预见的方式滥用模型，来补充自动化工作。
+Safeguards also need to remain effective when attackers adapt their tactics. A protection that works only on a fixed set of known attacks is not robust enough for a frontier model.
 
-没有任何评估能够涵盖每一种产品配置、多步骤攻击或真实工作流。因此，我们维持一套快速响应流程，用于复现、评估、排序并修复新发现的越狱问题，然后将其加入持续评估，以便未来测试类似故障。
+That’s why we are applying more intelligence and compute than ever before to safety, using our own models to find weaknesses and improve safeguards faster. We dedicated over 700,000 A100-equivalent GPU hours to automated red teaming aimed at finding universal jailbreaks: attacks that can work across many prompts or contexts, not just one narrow setting. Focusing on these harder, more general attacks let us test the safeguards beyond a fixed set of known failures. It also lets us explore far more attack patterns than human testing alone could cover, identify failure patterns earlier, and shorten the path from finding a weakness to addressing it.
 
-预览期间，GPT‑5.6 模型最初将通过 API 和 Codex 面向部分可信合作伙伴与组织开放。我们计划很快向使用 ChatGPT、Codex 和 API 的用户更广泛开放这些模型。
+In addition to automated red-teaming, we worked with third-party testers to conduct extensive human expert red teaming, which will continue in the preview period. Human red-teaming complements the automated work by testing safeguards against creative experts trying to misuse the model in ways our systems might not anticipate.
 
-在随 GPT‑5.6 引入的这套新命名体系中，数字表示模型的代际，而 Sol、Terra 和 Luna 表示可按各自节奏演进的稳定能力层级。整个系列让用户和开发者能够在智能、速度与成本之间作出更清晰的选择。
+No evaluation can represent every product configuration, multi-step attack, or real-world workflow. We therefore maintain a rapid-response process to reproduce, assess, prioritize, and remediate newly discovered jailbreaks, then add them to our ongoing evaluations so we can test against similar failures in the future.
 
-GPT‑5.6 按三种模型规模以每 100 万 Token 计价：Sol 为输入 5 美元 / 输出 30 美元；Terra 为输入 2.50 美元 / 输出 15 美元；Luna 为输入 1 美元 / 输出 6 美元。GPT‑5.6 还引入了更可预测的提示缓存，包括支持显式缓存断点和 30 分钟的最低缓存生命周期。对于 GPT‑5.6 及后续模型，缓存写入按模型未缓存输入费率的 1.25 倍计费，而缓存读取继续享受缓存输入 90% 的折扣。
+Availability and pricing
 
-我们还将于 7 月在 Cerebras 上推出 GPT‑5.6 Sol，最高可达每秒 750 个 Token，以前所未有的速度为客户提供前沿智能。随着我们扩展容量，访问权限最初将仅限于部分客户。
+During the preview, GPT‑5.6 models will initially be available through the API and Codex to a select group of trusted partners and organizations. We plan to make them more broadly available to people using ChatGPT, Codex, and the API soon.
 
-我们期待在预览期间继续学习，并很快将 GPT‑5.6 Sol、Terra 和 Luna 带给更多人。
+In this new naming system introduced with GPT‑5.6, the number identifies a model’s generation, while Sol, Terra, and Luna identify durable capability tiers that can advance on their own cadence. Together, the family gives people and developers clearer choices across intelligence, speed, and cost.
 
-1. 我们通过观察模型的生产行为并进行离线模拟来估算延迟和 API 成本。这些估算考虑了工具调用细节、采样 Token 和输入 Token。真实结果可能存在较大差异，并取决于许多未纳入模拟的因素。我们按高速 API 速度模拟延迟，并按常规 API 定价模拟成本。
+GPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output. GPT‑5.6 also introduces more predictable prompt caching, including support for explicit cache breakpoints and a 30-minute minimum cache life. For GPT‑5.6 and later models, cache writes are billed at 1.25x the model’s uncached input rate, while cache reads continue to receive the 90% cached-input discount.
 
-2. 所有模型均使用 ExploitBench API 测试框架，在 5 个种子和推理连续性条件下进行评估。
+We're also launching GPT‑5.6 Sol on Cerebras at up to 750 tokens per second in July, bringing frontier intelligence to customers at unprecedented speed. Access will initially be limited to select customers as we expand capacity.
 
-3. 我们在 alpha API 上运行 ExploitGym，该 API 的响应输出速度快于公开 API，随后重新缩放以匹配公开 API。将延迟重新缩放到公开 API 预期速度时，部分估算延迟会超过 2 小时和 6 小时的时间限制，尽管在评估运行中实际遵守了这些限制。对于时间敏感型工作，如需更快速度，我们在 API 中提供优先处理⁠，在 Codex 中提供快速模式⁠。
+We’re excited to continue learning from this preview period, and to bring GPT‑5.6 Sol, Terra and Luna to more people soon.
 
-4. 未报告输出 Token、延迟或成本的模型以水平虚线表示。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正开始 GPT‑5.6 系列的有限预览：Sol 是我们的旗舰模型；Terra 是适合日常工作的均衡模型；Luna 是快速且经济的模型。Terra 的性能可与 GPT‑5.5 竞争，同时成本更友好（仅为其一半）；Luna 则以我们的最低成本提供强大能力。
+1. We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
 
-GPT‑5.6 Sol 发布时搭载了我们迄今最稳健的安全栈。我们强化了针对高风险活动、敏感网络安全请求和重复滥用的保护，并用数周时间查找弱点、对系统进行压力测试，并加固其抵御真实攻击的能力。
+2. All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
 
-我们相信广泛访问的价值，并计划在未来几周内让 GPT‑5.6 Sol、Terra 和 Luna 普遍可用。作为我们与美国政府持续沟通的一部分，我们在今天发布前预览了我们的计划和模型能力。应其要求，在更广泛发布之前，我们将先面向一小部分可信合作伙伴启动有限预览，并已向政府共享这些参与方信息。在本次预览期间，我们将继续测试，并与合作伙伴密切协调，朝着更广泛可用推进。我们并不认为这种政府访问流程应成为长期默认做法。它会让需要最佳工具的用户、开发者、企业、网络防御者和全球合作伙伴无法获得这些工具。我们采取这一短期步骤，是因为我们认为这是在未来几周实...</p><div style="font-size:16px;line-height:1.8;color:#333">我们正开始 GPT‑5.6 系列的有限预览：Sol 是我们的旗舰模型；Terra 是适合日常工作的均衡模型；Luna 是快速且经济的模型。Terra 的性能可与 GPT‑5.5 竞争，同时成本更友好（仅为其一半）；Luna 则以我们的最低成本提供强大能力。
+3. We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the 2h and 6h hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
 
-GPT‑5.6 Sol 发布时搭载了我们迄今最稳健的安全栈。我们强化了针对高风险活动、敏感网络安全请求和重复滥用的保护，并用数周时间查找弱点、对系统进行压力测试，并加固其抵御真实攻击的能力。
+4. Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.
 
-我们相信广泛访问的价值，并计划在未来几周内让 GPT‑5.6 Sol、Terra 和 Luna 普遍可用。作为我们与美国政府持续沟通的一部分，我们在今天发布前预览了我们的计划和模型能力。应其要求，在更广泛发布之前，我们将先面向一小部分可信合作伙伴启动有限预览，并已向政府共享这些参与方信息。在本次预览期间，我们将继续测试，并与合作伙伴密切协调，朝着更广泛可用推进。我们并不认为这种政府访问流程应成为长期默认做法。它会让需要最佳工具的用户、开发者、企业、网络防御者和全球合作伙伴无法获得这些工具。我们采取这一短期步骤，是因为我们认为这是在未来几周实现更广泛可用的最有力路径；与此同时，我们将与政府部门合作，制定网络安全行政令框架，以及面向未来模型发布的可重复流程。
+GPT‑5.6 Sol launches with our most robust safety stack to date. We strengthened protections for higher-risk activity, sensitive cyber requests, and repeated misuse, and spent multiple weeks finding weaknesses, pre...</p><div style="font-size:16px;line-height:1.8;color:#333">We're beginning a limited preview of the GPT‑5.6 series: Sol, our flagship model; Terra, a balanced model for everyday work; and Luna, a fast and affordable model. Terra has competitive performance to GPT‑5.5 while being 2x cheaper and Luna brings strong capability at our lowest cost.
 
-GPT‑5.6 Sol 是我们迄今最强的模型。为预览模型性能，我们分享了一组评估，重点展示其在编码、生物学和网络安全方面提升的智能体能力；更多安全和准备评估可见于我们的系统卡⁠（在新窗口中打开）。模型更广泛可用时，我们将分享一套扩展的评估结果。
+GPT‑5.6 Sol launches with our most robust safety stack to date. We strengthened protections for higher-risk activity, sensitive cyber requests, and repeated misuse, and spent multiple weeks finding weaknesses, pressure-testing our system, and hardening it against real-world attacks.
 
-借助 GPT‑5.6，我们引入新的 `max` 推理强度，让 Sol 获得最充足的时间进行深度推理。此外，我们还引入新的 `ultra` 模式，通过利用子智能体来超越单个智能体的能力，加速复杂工作。
+We believe in broad access, and we plan to make GPT‑5.6 Sol, Terra, and Luna generally available in the coming weeks. As part of our ongoing engagement with the U.S. government, we previewed our plans and the models’ capabilities ahead of today’s launch. At their request, we are starting with a limited preview for a small group of trusted partners whose participation has been shared with the government, before releasing more broadly. During this preview, we will continue testing and coordinating closely with partners as we work toward broader availability. We don’t believe this kind of government access process should become the long-term default. It keeps the best tools from users, developers, enterprises, cyber defenders, and global partners who need them. We are taking this short-term step because we believe it is the strongest path to broader availability in the coming weeks, while we work with the Administration to develop the cyber Executive Order framework and a repeatable process for future model releases.
 
-对于编码工作流，GPT‑5.6 Sol 在Terminal‑Bench 2.1上树立了新的最佳水平；该基准测试需要规划、迭代和工具协调的命令行工作流。
+GPT‑5.6 Sol is our strongest model yet. To give a preview of model performance, we share a set of evaluations highlighting improved agentic capabilities in coding, biology, and cybersecurity, with additional safety and preparedness evaluations available in oursystem card⁠(opens in a new window). We will share an expanded suite of evaluation results when we make the model broadly available.
 
-GPT‑5.6 Sol 在生物学工作流中也展现出广泛改进。在评估长周期基因组学和定量生物学分析的GeneBench v1上，它使用更少 Token，却取得了强于 GPT‑5.5 的结果。
+With GPT‑5.6, we’re introducing a newmaxreasoning effort to give Sol the most time to reason deeply. Additionally, we’re introducing a newultramode that goes beyond the capabilities of a single agent by leveraging subagents to accelerate complex work.
 
-GPT‑5.6 Sol 是我们迄今在网络安全方面能力最强的模型。它推动了长周期安全任务的性能—效率前沿，包括漏洞研究和漏洞利用。在ExploitBench² 上，GPT‑5.6 Sol 仅使用约 1/3 的输出 Token，即可与 Mythos Preview 相竞争。在ExploitGym⁠（在新窗口中打开）3上，GPT‑5.6 Sol、Terra 和 Luna 模型随着推理强度提高，都展现出网络安全能力的显著提升；该基准由 UC Berkeley 研究人员与 OpenAI 及其他前沿实验室合作创建。
+For coding workflows, GPT‑5.6 Sol sets a new state of the art onTerminal‑Bench 2.1, which tests command-line workflows requiring planning, iteration, and tool coordination.
 
-我们在开发 GPT‑5.6 Sol、Terra 和 Luna 时配备了迄今最稳健的防护措施，并根据各模型能力匹配相应配置。随着模型能力增强，我们设计防护措施，使其更能承受真实世界的对抗压力，同时保留对代码审查、漏洞研究、补丁开发、调试、安全教育和防御性测试等合法工作的访问。我们的目标是在不无谓限制这些有益用途的情况下，让被禁止的攻击性活动变得更困难、更不确定且更可检测。基于我们对模型和防护措施的评估，我们预计其将为合法防御工作带来显著益处，同时实质性约束被禁止的攻击性使用。
+GPT‑5.6 Sol also shows broad improvements in biology workflows. OnGeneBench v1, which evaluates long-horizon genomics and quantitative-biology analyses, it achieves stronger results than GPT‑5.5 while using fewer tokens.
 
-GPT‑5.6 Sol 更擅长帮助人们发现并修复漏洞，而不是可靠地执行端到端攻击。随着这些能力持续进步，我们的优先事项是确保它们到达并惠及防御者，使他们能够用这些工具发现弱点、开发补丁，并更广泛地强化系统。
+GPT‑5.6 Sol is our most capable model yet for cybersecurity. It shifts the performance-efficiency frontier for long-horizon security tasks including vulnerability research and exploitation. OnExploitBench², GPT‑5.6 Sol is competitive with Mythos Preview using only ~1/3 of the output tokens. OnExploitGym⁠(opens in a new window)3, a benchmark created by UC Berkeley researchers in collaboration with OpenAI and other frontier labs, GPT‑5.6 Sol, Terra, and Luna models all demonstrate strong improvements in cyber capabilities as we increase reasoning.
 
-根据我们的准备框架 (Preparedness Framework)⁠，GPT‑5.6 Sol 未跨越网络安全“危急” (Critical) 阈值。在涉及 Chromium 和 Firefox 的评估中，它识别出了漏洞和利用原语——即漏洞利用的构建模块——但在测试条件下并未自主生成可用的完整攻击链漏洞利用。不过，基准阈值无法涵盖模型可能被使用或与其他工具结合的每一种方式。正是这种不确定性，以及模型能力更广泛的阶跃式提升，使我们在增强模型能力的同时配套更强防护措施，并采用分阶段发布。我们在GPT‑5.6 Preview 系统卡⁠（在新窗口中打开）中分享了有关防护措施的更多细节。
+Stronger cyber capabilities with stronger safeguards
 
-面对有决心或会适应变化的滥用行为，任何单一防护措施都不足够。在 GPT‑5.6 预览中，我们采用分层防护措施；各模型的具体配置有所不同，并会针对真实攻击进行压力测试。这些措施包括训练进模型的保护、生成过程中的实时检查、账号级信号、差异化访问、监测、执行和持续测试。
+We developed GPT‑5.6 Sol, Terra and Luna with our most robust safeguards to date, with configurations matched to each model’s capabilities. As the model becomes more capable, we design safeguards to increasingly hold up to real-world adversarial pressure while preserving access to legitimate work such as code review, vulnerability research, patch development, debugging, security education, and defensive testing. Our goal is to make prohibited offensive activity more difficult, uncertain, and detectable without unnecessarily limiting those beneficial uses. Based on our assessment of the model and safeguards, we expect substantial benefit for legitimate defensive work, while meaningfully constraining prohibited offensive use.
 
-GPT‑5.6 经训练会拒绝提供被禁止的网络安全协助，包括用户试图伪装意图或越狱模型的情况。这些模型级防护措施围绕模型应该和不应该协助的内容建立了第一道边界。
+GPT‑5.6 Sol is better at helping people find and fix vulnerabilities than reliably carrying out end-to-end attacks. As these capabilities continue to advance, our priority is to make sure they reach and benefit defenders, who can use these tools to find weaknesses, develop patches, and strengthen systems more broadly.
 
-实时网络安全和生物学滥用分类器通过在生成过程中评估输出来提供另一层保护。对于较高风险案例，如果它们检测到潜在违规，生成可能会暂停，由更大的推理模型审查对话及其上下文。如果输出被评估为不允许，会在到达用户之前被拦截。
+GPT‑5.6 Sol does not cross the Cyber Critical threshold under ourPreparedness Framework⁠. In evaluations involving Chromium and Firefox, it identified bugs and exploitation primitives—the building blocks of an exploit—but did not autonomously produce a functional full-chain exploit under the conditions tested. Still, benchmark thresholds cannot capture every way a model may be used or combined with other tools. That uncertainty, along with the model’s broader step change in capabilities, is why we are pairing the model’s increased capabilities with stronger safeguards and a phased release. We share more details about our safeguards in theGPT‑5.6 Preview system card⁠(opens in a new window).
 
-根据我们关于内容保留和审查的条款与政策，被标记的活动还可能触发对相关对话和风险信号的账号级审查。超越单次对话进行观察，有助于我们的系统区分持续恶意行为与合法的双重用途安全工作；相似的技术概念在不同上下文中可能含义截然不同。
+A layered safeguard stack
 
-这些层级结合起来，使整体方法比任何单一防护措施都更稳健。模型行为降低有害回应的可能性，实时系统可在生成过程中介入，账号级审查可识别更广泛的模式，而差异化访问则能保留重要的防御性工作，同时避免默认广泛开放最敏感的能力。
+No single safeguard is sufficient against determined or adaptive misuse. Across the GPT‑5.6 preview, we use layered safeguards, with exact configurations varying across models, and pressure-test them for real-world attacks. These include protections trained into the model, real-time checks during generation, account-level signals, differentiated access, monitoring, enforcement, and continued testing.
 
-尤其在预览期间，用户可能会遇到阻止或拒绝某些请求的防护措施。其他请求可能耗时更长，因为生成会暂停以进行额外审查。防护措施有时可能会介入合法工作，尤其是在防御性和攻击性活动起初可能看起来相似的双重用途领域。
+GPT‑5.6 is trained to refuse prohibited cyber assistance, including when users attempt to disguise their intent or jailbreak the model. These model-level safeguards establish the first boundary around what the model should and should not help with.
 
-这正是预览旨在测试的内容之一。我们不仅想了解防护措施是否能约束滥用，还想了解合法用户是否仍能可靠、高效地完成正常工作。预览期间的反馈将帮助我们减少不必要的阻止和延迟，改进防护措施对上下文的理解，并在更广泛发布前打造更顺畅的体验。
+Real-time cyber and biology misuse classifiers provide another layer by evaluating output as it is generated. For higher risk cases, if they detect a potential violation, the generation may be paused while a larger reasoning model reviews the conversation and its context. If the output is assessed as disallowed, it is withheld before it reaches the user.
 
-我们还在与企业客户合作探索更长期的方法，包括保护隐私的检测、由客户运营的安全控制，以及根据客户、用户或工作负载风险校准的访问权限，从而在支持企业隐私要求的同时推进安全。
+Flagged activity can also trigger account-level review across relevant conversations and risk signals, consistent with our terms and policies around content retention and review. Looking beyond a single conversation helps our systems distinguish persistent malicious behavior from legitimate dual-use security work, where similar technical concepts may appear in very different contexts.
 
-当攻击者调整策略时，防护措施也需要继续有效。只对一组固定的已知攻击有效的保护措施，对于前沿模型来说还不够稳健。
+Together, these layers make the overall approach more robust than any one safeguard on its own. Model behavior reduces the likelihood of harmful responses, real-time systems can intervene during generation, account-level review can identify broader patterns, and differentiated access preserves important defensive work without making the most sensitive capabilities broadly available by default.
 
-因此，我们正以前所未有的智能和算力投入安全工作，利用自己的模型发现薄弱环节，并更快改进防护措施。我们投入了超过 700,000 个 A100 等效 GPU 小时，用于旨在发现通用越狱的自动化红队测试：这类攻击可跨许多提示或上下文生效，而不只是针对某个狭窄场景。聚焦这些更难、更通用的攻击，使我们能够在固定的已知故障集合之外测试防护措施。这也让我们能够探索远超单靠人工测试所能覆盖的攻击模式，更早识别故障模式，并缩短从发现弱点到解决弱点的路径。
+Especially during the preview, users may encounter safeguards that block or refuse some requests. Other requests may take longer because generation is paused for additional review. Safeguards may occasionally intervene on legitimate work, particularly in dual-use areas where defensive and offensive activity can initially look similar.
 
-除自动化红队测试外，我们还与第三方测试人员合作，开展了广泛的人类专家红队测试，并将在预览期继续进行。人类红队测试通过让有创造力的专家尝试以系统可能无法预见的方式滥用模型，来补充自动化工作。
+That is part of what the preview is designed to test. We want to understand not only whether the safeguards constrain misuse, but whether legitimate users can still complete normal work reliably and efficiently. Feedback during the preview will help us reduce unnecessary blocks and delays, improve how the safeguards interpret context, and create a smoother experience before wider release.
 
-没有任何评估能够涵盖每一种产品配置、多步骤攻击或真实工作流。因此，我们维持一套快速响应流程，用于复现、评估、排序并修复新发现的越狱问题，然后将其加入持续评估，以便未来测试类似故障。
+We are also working with enterprise customers on longer-term approaches—including privacy-preserving detection, customer-operated safety controls, and access calibrated to the risk of a customer, user, or workload—to advance safety while supporting enterprise privacy requirements.
 
-预览期间，GPT‑5.6 模型最初将通过 API 和 Codex 面向部分可信合作伙伴与组织开放。我们计划很快向使用 ChatGPT、Codex 和 API 的用户更广泛开放这些模型。
+Improving robustness with automated red-teaming
 
-在随 GPT‑5.6 引入的这套新命名体系中，数字表示模型的代际，而 Sol、Terra 和 Luna 表示可按各自节奏演进的稳定能力层级。整个系列让用户和开发者能够在智能、速度与成本之间作出更清晰的选择。
+Safeguards also need to remain effective when attackers adapt their tactics. A protection that works only on a fixed set of known attacks is not robust enough for a frontier model.
 
-GPT‑5.6 按三种模型规模以每 100 万 Token 计价：Sol 为输入 5 美元 / 输出 30 美元；Terra 为输入 2.50 美元 / 输出 15 美元；Luna 为输入 1 美元 / 输出 6 美元。GPT‑5.6 还引入了更可预测的提示缓存，包括支持显式缓存断点和 30 分钟的最低缓存生命周期。对于 GPT‑5.6 及后续模型，缓存写入按模型未缓存输入费率的 1.25 倍计费，而缓存读取继续享受缓存输入 90% 的折扣。
+That’s why we are applying more intelligence and compute than ever before to safety, using our own models to find weaknesses and improve safeguards faster. We dedicated over 700,000 A100-equivalent GPU hours to automated red teaming aimed at finding universal jailbreaks: attacks that can work across many prompts or contexts, not just one narrow setting. Focusing on these harder, more general attacks let us test the safeguards beyond a fixed set of known failures. It also lets us explore far more attack patterns than human testing alone could cover, identify failure patterns earlier, and shorten the path from finding a weakness to addressing it.
 
-我们还将于 7 月在 Cerebras 上推出 GPT‑5.6 Sol，最高可达每秒 750 个 Token，以前所未有的速度为客户提供前沿智能。随着我们扩展容量，访问权限最初将仅限于部分客户。
+In addition to automated red-teaming, we worked with third-party testers to conduct extensive human expert red teaming, which will continue in the preview period. Human red-teaming complements the automated work by testing safeguards against creative experts trying to misuse the model in ways our systems might not anticipate.
 
-我们期待在预览期间继续学习，并很快将 GPT‑5.6 Sol、Terra 和 Luna 带给更多人。
+No evaluation can represent every product configuration, multi-step attack, or real-world workflow. We therefore maintain a rapid-response process to reproduce, assess, prioritize, and remediate newly discovered jailbreaks, then add them to our ongoing evaluations so we can test against similar failures in the future.
 
-1. 我们通过观察模型的生产行为并进行离线模拟来估算延迟和 API 成本。这些估算考虑了工具调用细节、采样 Token 和输入 Token。真实结果可能存在较大差异，并取决于许多未纳入模拟的因素。我们按高速 API 速度模拟延迟，并按常规 API 定价模拟成本。
+Availability and pricing
 
-2. 所有模型均使用 ExploitBench API 测试框架，在 5 个种子和推理连续性条件下进行评估。
+During the preview, GPT‑5.6 models will initially be available through the API and Codex to a select group of trusted partners and organizations. We plan to make them more broadly available to people using ChatGPT, Codex, and the API soon.
 
-3. 我们在 alpha API 上运行 ExploitGym，该 API 的响应输出速度快于公开 API，随后重新缩放以匹配公开 API。将延迟重新缩放到公开 API 预期速度时，部分估算延迟会超过 2 小时和 6 小时的时间限制，尽管在评估运行中实际遵守了这些限制。对于时间敏感型工作，如需更快速度，我们在 API 中提供优先处理⁠，在 Codex 中提供快速模式⁠。
+In this new naming system introduced with GPT‑5.6, the number identifies a model’s generation, while Sol, Terra, and Luna identify durable capability tiers that can advance on their own cadence. Together, the family gives people and developers clearer choices across intelligence, speed, and cost.
 
-4. 未报告输出 Token、延迟或成本的模型以水平虚线表示。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+GPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output. GPT‑5.6 also introduces more predictable prompt caching, including support for explicit cache breakpoints and a 30-minute minimum cache life. For GPT‑5.6 and later models, cache writes are billed at 1.25x the model’s uncached input rate, while cache reads continue to receive the 90% cached-input discount.
+
+We're also launching GPT‑5.6 Sol on Cerebras at up to 750 tokens per second in July, bringing frontier intelligence to customers at unprecedented speed. Access will initially be limited to select customers as we expand capacity.
+
+We’re excited to continue learning from this preview period, and to bring GPT‑5.6 Sol, Terra and Luna to more people soon.
+
+1. We estimate latency and API cost by looking at the production behavior of our models, and simulating offline. These estimates account for tool call details, sampled tokens, and input tokens. Real-world results may vary substantially, and depend on many factors not captured in our simulation. We simulate latency at fast API speeds, and cost at regular API pricing.
+
+2. All models are evaluated using the ExploitBench API harness with 5 seeds and reasoning continuity.
+
+3. We ran ExploitGym on our alpha API, which outputs responses faster than our public API, and then rescaled to match our public API. When rescaling latencies to the speeds expected for our public API, this causes some estimated latencies to exceed the 2h and 6h hour time limits, despite being correctly obeyed in the evaluation run. To get faster speeds for time-sensitive work, we offer priority processing⁠ in the API and fast mode⁠ in Codex.
+
+4. Models without reported output tokens, latency or cost are plotted as horizontal dotted lines.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5</title>
   <link>https://openai.com/index/introducing-gpt-5-5/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 30 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
 
@@ -1336,10 +1612,354 @@ OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Designed for professional work
+
+Today, we’re releasingGPT‑5.4in ChatGPT (as GPT‑5.4 Thinking), the API, and Codex. It’s our most capable and efficient frontier model for professional work. We’re also releasingGPT‑5.4 Proin ChatGPT and the API, for people who want maximum performance on complex tasks.
+
+GPT‑5.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities ofGPT‑5.3‑...</p><div style="font-size:16px;line-height:1.8;color:#333">Designed for professional work
+
+Today, we’re releasingGPT‑5.4in ChatGPT (as GPT‑5.4 Thinking), the API, and Codex. It’s our most capable and efficient frontier model for professional work. We’re also releasingGPT‑5.4 Proin ChatGPT and the API, for people who want maximum performance on complex tasks.
+
+GPT‑5.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities ofGPT‑5.3‑Codex⁠while improving how the model works across tools, software environments, and professional tasks involving spreadsheets, presentations, and documents. The result is a model that gets complex real work done accurately, effectively, and efficiently—delivering what you asked for with less back and forth.
+
+In ChatGPT, GPT‑5.4 Thinking can now provide an upfront plan of its thinking, so you canadjust course mid-responsewhile it’s working,and arrive at a final output that’s more closely aligned with what you need without additional turns. GPT‑5.4 Thinking also improvesdeep web research,particularly for highly specific queries, whilebetter maintaining contextfor questions that require longer thinking. Together, these improvements mean higher-quality answers that arrive faster and stay relevant to the task at hand.
+
+In Codex and the API, GPT‑5.4 is the first general-purpose model we’ve released with native, state-of-the-artcomputer-use capabilities, enabling agents to operate computers and carry out complex workflows across applications. It supports up to1M tokens of context, allowing agents to plan, execute, and verify tasks across long horizons. GPT‑5.4 also improves how models work across large ecosystems of tools and connectors withtool search, helping agents find and use the right tools more efficiently without sacrificing intelligence. Finally, GPT‑5.4 is ourmost token efficient reasoning modelyet, using significantly fewer tokens to solve problems when compared to GPT‑5.2—translating to reduced token usage and faster speeds.
+
+Together with advances in general reasoning, coding, and professional knowledge work, GPT‑5.4 enables more reliable agents, faster developer workflows, and higher-quality outputs across ChatGPT, the API, and Codex.
+
+GDPval (wins or ties)
+
+SWE-Bench Pro (Public)
+
+*Previously reported as 64.7%. GPT‑5.3‑Codex achieves 74.0% with a newly introduced API parameter that preserves the original image resolution.
+
+Building on GPT‑5.2’s general reasoning capabilities, GPT‑5.4 delivers even more consistent and polished results on real-world tasks that matter to professionals.
+
+OnGDPval⁠, which tests agents’ abilities to produce well-specified knowledge work across 44 occupations, GPT‑5.4 achieves a new state of the art, matching or exceeding industry professionals in83.0%of comparisons, compared to70.9%for GPT‑5.2.
+
+In GDPval, models attempt well-specified knowledge work spanning 44 occupations from the top 9 industries contributing to U.S. GDP. Tasks request real work products, such as sales presentations, accounting spreadsheets, urgent care schedules, manufacturing diagrams, or short videos. Reasoning effort was set to xhigh for GPT‑5.4 and heavy for GPT‑5.2 (a slightly lower level in ChatGPT).
+
+We put a particular focus on improving GPT‑5.4’s ability to create and edit spreadsheets, presentations, and documents. On an internal benchmark of spreadsheet modeling tasks that a junior investment banking analyst might do, GPT‑5.4 achieves a mean score of87.3%, compared to68.4%for GPT‑5.2. On a set of presentation evaluation prompts, human raters preferred presentations from GPT‑5.468.0%of the time over those from GPT‑5.2 due to stronger aesthetics, greater visual variety, and more effective use of image generation.
+
+Documents were generated with reasoning effort set to xhigh
+
+You can try these capabilities in ChatGPT using GPT‑5.4 Thinking or Pro. If you’re an Enterprise customer, we recommend using our newly releasedChatGPT for Excel add-in⁠(opens in a new window), which was also launched today. We've also updated ourspreadsheet⁠(opens in a new window)andpresentation skills⁠(opens in a new window)available in Codex and the API.
+
+To make GPT‑5.4 better at real-world work, we continued our progress at driving down hallucinations and errors. GPT‑5.4 is our most factual model yet: on a set of de-identified prompts where users flagged factual errors, GPT‑5.4’s individual claims are 33% less likely to be false and its full responses are 18% less likely to contain any errors, relative to GPT‑5.2.
+
+Computer use and vision
+
+GPT‑5.4 is our first general-purpose model with nativecomputer-use capabilitiesand marks a major step forward for developers and agents alike. It’s the best model currently available for developers building agents that complete real tasks across websites and software systems.
+
+We’ve designed GPT‑5.4 to be performant across a wide range of computer-use workloads. It is excellent at writing code to operate computers via libraries like Playwright, as well as issuing mouse and keyboard commands in response to screenshots. Its behavior is steerable via developer messages, meaning that developers can adjust behavior to suit particular use cases. Developers can even configure the model’s safety behavior to suit different levels of risk tolerance by specifying custom confirmation policies.
+
+The model’s performance and flexibility are reflected across benchmarks that test computer use across different settings. OnOSWorld-Verified, which measures a model’s ability to navigate a desktop environment through screenshots and keyboard/mouse actions, GPT‑5.4 achieves a state-of-the-art75.0%success rate, far exceeding GPT‑5.2’s47.3%, and surpassing human performance at72.4%.1
+
+OnWebArena-Verified, which tests browser use, GPT‑5.4 achieves a leading67.3%success rate when using both DOM- and screenshot-driven interaction, compared to GPT‑5.2’s65.4%. OnOnline-Mind2Web, which also tests browser use, GPT‑5.4 achieves a92.8%success rate using screenshot-based observations alone, improving over ChatGPT Atlas’s Agent Mode, which achieves a success rate of70.9%.
+
+A tool yield is when an assistant yields to await tool responses. If 3 tools are called in parallel, followed by 3 more tools called in parallel, the number of yields would be 2. Tool yields are a better proxy of latency than tool calls because they reflect the benefits of parallelization.
+
+GPT‑5.4 interprets screenshots of a browser interface and interacts with UI elements through coordinate-based clicking to send emails and schedule a calendar event.Video is not sped up.
+
+GPT‑5.4’s improved computer use is built on the model’s improved general visual perception capabilities. OnMMMU-Pro, a test of a model’s visual understanding and reasoning, GPT‑5.4 achieves an81.2%success rate without tool use, an improvement overGPT‑5.2’s79.5%. Improved visual perception also translates into better document parsing capabilities. OnOmniDocBench, GPT‑5.4 without reasoning effort achieves an average error (measured by normalized edit distance between model prediction and ground truth) of0.109, improved from GPT‑5.2’s0.140.
+
+MMMUPro was run with reasoning effort set to xhigh. OmniDocBench was run with reasoning effort set to none, to reflect low-cost, low-latency performance.
+
+We’re also improving visual understanding for dense, high-resolution images where full fidelity matters. Starting with GPT‑5.4, we’re introducing anoriginalimageinput detail⁠(opens in a new window)level which supports full-fidelity perception up to 10.24M total pixels or 6000-pixel maximum dimension, whichever is lower; thehighimage input detail level now supports up to 2.56M total pixels or a 2048-pixel maximum dimension. In early testing with API users, we observed strong gains in localization ability, image understanding, and click accuracy when usingoriginalorhighdetail.
+
+In the API, developers can access these capabilities using the updatedcomputertool. Please see ourupdated documentation⁠(opens in a new window)for recommended best practices.
+
+GPT‑5.4 combines the coding strengths of GPT‑5.3‑Codex with leading knowledge work and computer-use capabilities, which matter most on longer-running tasks where the model can use tools, iterate, and push work further with less manual intervention. It matches or outperforms GPT‑5.3‑Codex on SWE-Bench Pro while being lower latency across reasoning efforts.
+
+We estimate latency by looking at the production behavior of our models, and simulating this offline. The latency estimate accounts for tool call duration (code execution time), sampled tokens, and input tokens. Real-world latency may vary substantially, and depends on many factors not captured in our simulation. Reasoning efforts were swept from none to xhigh.
+
+When toggled on, /fast mode in Codex delivers up to 1.5x faster token velocity with GPT‑5.4. It’s the same model and the same intelligence, just faster. That means users can move through coding tasks, iteration, and debugging while staying in flow. Developers can access GPT‑5.4 at the same fast speeds via the API by usingpriority processing⁠(opens in a new window).
+
+In evaluation and internal testing we found that GPT‑5.4 excels at complex frontend tasks, with noticeably more aesthetic and more functional results than any models we’ve launched previously.
+
+As a demonstration of the model’s improved computer-use and coding capabilities working in tandem, we’re also releasing an experimental Codex skill called “Playwright (Interactive)⁠(opens in a new window)”. This allows Codex to visually debug web and Electron apps; it can even be used to test an app it’s building, as it’s building it.
+
+Theme park simulation game made with GPT‑5.4 from a single lightly specified prompt, using Playwright Interactive for browser playtesting and image generation for the isometric asset set. The simulation includes tile-based path placement, ride and scenery construction, guest pathfinding, queueing, and ride cycles, while park metrics like money, guest count, happiness, cleanliness, and rating rise or fall based on how the layout performs and how guests respond to it. Playwright was used to automate browser playtests by building and expanding the park, placing and removing paths and attractions, checking camera navigation, and verifying that guests, queues, ride states, and UI metrics updated correctly over several rounds of play.
+
+Prompt:Use $playwright-interactive and $imagegen. Create an interactive isometric theme park simulation game that I can build and navigate in the browser. Use imagegen to establish the overall visual vision and generate the game’s assets, including rides, paths, terrain, trees, water, food stalls, decorations, buildings, icons, and UI illustrations. The world should feel cohesive, polished, and visually rich, with a premium art direction that works well from an isometric perspective. Let me place and remove paths, add attractions, position scenery, and move around the park smoothly while monitoring guest activity, ride status, and park growth. Include believable guest movement, simple park management systems like money, cleanliness, queueing, and happiness, and make the experience feel playful, clear, and complete rather than like a rough prototype. Prioritize charm, readability, and strong game feel over realism.
+
+When play testing, be sure to build and expand a park through several rounds of play, verify that placement and navigation work smoothly, confirm that guests react to the park layout and attractions, and ensure the visuals, UI, and interactions feel stable and cohesive.
+
+With GPT‑5.4, we’ve significantly improved how models work with external tools. Agents can now operate across larger tool ecosystems, choose the right tools more reliably, and complete multi-step workflows with lower cost and latency.
+
+In the API, GPT‑5.4 introducestool search⁠(opens in a new window), which allows models to work efficiently when given many tools.
+
+Previously, when a model was given tools, all tool definitions were included in the prompt upfront. For systems with many tools, this could add thousands—or even tens of thousands—of tokens to every request, increasing cost, slowing responses, and crowding the context with information the model might never use.
+
+With tool search, GPT‑5.4 instead receives a lightweight list of available tools along with a tool search capability. When the model needs to use a tool, it can look up that tool’s definition and append it to the conversation at that moment.
+
+This approach dramatically reduces the number of tokens required for tool-heavy workflows and preserves the cache, making requests faster and cheaper. It also enables agents to reliably work with much larger tool ecosystems. For MCP servers that may contain tens of thousands of tokens of tool definitions, the efficiency gains can be substantial.
+
+To demonstrate the efficiency gains, we evaluated 250 tasks from Scale’sMCP Atlas⁠(opens in a new window)benchmark with all 36 MCP servers enabled in two modes: (1) exposing every MCP function directly in the model context, and (2) placing all MCP servers behind tool search. The tool-search configuration reduced total token usage by 47% while achieving the same accuracy.
+
+Example token counts come from averaging 250 tasks in the MCP-Atlas public dataset.
+
+GPT‑5.4 also improvestool calling, making it more accurate and efficient when deciding when and how to use tools during reasoning, particularly in the API.  Compared to GPT‑5.2, it achieves higher accuracy in fewer turns on Toolathlon, a benchmark that tests how well AI agents can use real-world tools and APIs to complete multi-step tasks. For example, an agent needs to read emails, extract assignment attachments, upload them, grade them and record results in a spreadsheet.
+
+A tool yield is when an assistant yields to await tool responses. If 3 tools are called in parallel, followed by 3 more tools called in parallel, the number of yields would be 2. Tool yields are a better proxy of latency than tool calls because they reflect the benefits of parallelization.
+
+For latency-sensitive use cases where reasoning effort None is preferred, GPT‑5.4 further improves upon its predecessors.
+
+Inτ2-bench⁠⁠(opens in a new window), a model must use tools to accomplish a customer service task, where there may be a simulated user who can communicate and take actions on the world state. Reasoning effort was set to None.
+
+GPT‑5.4 is better at agentic web search. On BrowseComp, a measurement of how well AI agents can persistently browse the web to find hard-to-locate information, GPT‑5.4 leaps 17%absover GPT‑5.2, and GPT‑5.4 Pro sets a new state of the art of 89.3%.
+
+In practice, this means GPT‑5.4 Thinking is stronger at answering questions that require pulling together information from many sources on the web. It can more persistently search across multiple rounds to identify the most relevant sources, particularly for “needle-in-a-haystack” questions, and synthesize them into a clear, well-reasoned answer.
+
+In BrowseComp, we used a search blocklist excluding websites containing benchmark answers from evaluation to prevent contamination and ensure a fair measure of performance. GPT‑5.4 was measured on a later date than GPT‑5.2, so scores reflect changes in the model, our search system, and state of the internet. GPT‑5.4 was tested with a longer, updated blocklist. Models use the ChatGPT search tool, which can have small differences from API search.
+
+Similarly to how Codex outlines its approach when it starts working, GPT‑5.4 Thinking in ChatGPT will now outline its work with a preamble for longer, more complex queries. You can also add instructions or adjust its direction mid-response. This makes it easier to guide the model toward the exact outcome you want without starting over or requiring multiple additional turns. This feature is available now onchatgpt.com⁠(opens in a new window)and the Android app, coming soon to the iOS app.
+
+The model can also think longer on difficult tasks while maintaining stronger awareness of earlier steps in the conversation. This allows it to handle longer workflows and more complex prompts while keeping answers coherent and relevant throughout.
+
+This video was sped up for illustrative purposes.
+
+Over recent months, we’ve continued improving the safeguards we introduced with GPT‑5.3‑Codex while preparing GPT‑5.4 for deployment. Similar to GPT‑5.3‑Codex, we are treating GPT‑5.4 as High cyber capability under our Preparedness Framework, and we are deploying it with the corresponding protections as documented in thesystem card⁠(opens in a new window). These include an expanded cyber safety stack, including monitoring systems, trusted access controls, and asynchronous blocking for higher-risk requests for customers on Zero Data Retention (ZDR) surfaces, alongside ongoing investment in the broader security ecosystem.
+
+Because cybersecurity capabilities are inherently dual-use, we maintain a precautionary approach to deployment while continuing to calibrate our policies and classifiers. For certain customers on ZDR surfaces, request-level blocking remains part of our cyber risk mitigation stack; because classifiers are still improving, some false positives may occur as we continue refining these safeguards. These updates aim to improve how safeguards operate in practice, including reducing unnecessary refusals and overly caveated responses, while preserving strong protections against misuse.
+
+We’ve continued our safety research on Chain-of-Thought (CoT) monitorability to better understand how models reason and help detect potential misbehavior. As part of this work, we introduce a new open-source evaluation,CoT controllability⁠,  measuring whether models can deliberately obfuscate their reasoning to evade monitoring. We find that GPT‑5.4 Thinking’s ability to control its CoT is low, which is a positive property for safety, suggesting that the model lacks the ability to hide its reasoning and that CoT monitoring remains an effective safety tool.
+
+Availability and pricing
+
+GPT‑5.4 is rolling out gradually today across ChatGPT and Codex. In the API, GPT‑5.4 is available now asgpt-5.4. GPT‑5.4 Pro is also available in the API asgpt-5.4-profor developers who need maximum performance on the most complex tasks.
+
+In ChatGPT, GPT‑5.4 Thinking is available starting today to ChatGPT Plus, Team, and Pro users, replacing GPT‑5.2 Thinking. GPT‑5.2 Thinking will remain available for three months for paid users in the model picker under the Legacy Models section, after which it will be retired on June 5, 2026. Those on Enterprise and Edu plans can enable early access via admin settings. GPT‑5.4 Pro is available to Pro and Enterprise plans.Context windows⁠(opens in a new window)in ChatGPT for GPT‑5.4 Thinking remain unchanged from GPT‑5.2 Thinking.
+
+GPT‑5.4 is our first mainline reasoning model that incorporates the frontier coding capabilities of GPT‑5.3‑codex and that is rolling out across ChatGPT, the API and Codex. We're calling it GPT‑5.4 to reflect that jump, and to simplify the choice between models when using Codex. Over time, you can expect our Instant models and Thinking models to evolve at different speeds.
+
+GPT‑5.4 in Codex includes experimental support for the 1M context window. Developers can try this by configuringmodel_context_windowandmodel_auto_compact_token_limit. Requests that exceed the standard 272K context window count against usage limits at 2x the normal rate.
+
+In the API, GPT‑5.4 is priced higher per token than GPT‑5.2 to reflect its improved capabilities, while its greater token efficiency helps reduce the total number of tokens required for many tasks. Batch and Flex pricing are available at half the standard API rate, while Priority processing is available at twice the standard API rate.
+
+Investment Banking Modeling Tasks (Internal)
+
+SWE-Bench Pro (Public)
+
+Computer use and vision
+
+MMMU Pro (with tools)
+
+Frontier Science Research
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam (no tools)
+
+Humanity's Last Exam (with tools)
+
+Graphwalks BFS 0K–128K
+
+Graphwalks BFS 256K–1M
+
+Graphwalks parents 0–128K (accuracy)
+
+Graphwalks parents 256K–1M (accuracy)
+
+OpenAI MRCR v2 8-needle 4K–8K
+
+OpenAI MRCR v2 8-needle 8K–16K
+
+OpenAI MRCR v2 8-needle 16K–32K
+
+OpenAI MRCR v2 8-needle 32K–64K
+
+OpenAI MRCR v2 8-needle 64K–128K
+
+OpenAI MRCR v2 8-needle 128K–256K
+
+OpenAI MRCR v2 8-needle 256K–512K
+
+OpenAI MRCR v2 8-needle 512K–1M
+
+Evals without reasoning
+
+OmniDocBench (normalized edit distance)
+
+Evals were run with reasoning effort set to xhigh, except where specified otherwise. Benchmarks were conducted in a research environment, which may provide slightly different output from production ChatGPT in some cases.
+
+1Human performance reported inOSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments⁠(opens in a new window).</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Designed for professional work
+
+Today, we’re releasingGPT‑5.4in ChatGPT (as GPT‑5.4 Thinking), the API, and Codex. It’s our most capable and efficient frontier model for professional work. We’re also releasingGPT‑5.4 Proin ChatGPT and the API, for people who want maximum performance on complex tasks.
+
+GPT‑5.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities ofGPT‑5.3‑...</p><div style="font-size:16px;line-height:1.8;color:#333">Designed for professional work
+
+Today, we’re releasingGPT‑5.4in ChatGPT (as GPT‑5.4 Thinking), the API, and Codex. It’s our most capable and efficient frontier model for professional work. We’re also releasingGPT‑5.4 Proin ChatGPT and the API, for people who want maximum performance on complex tasks.
+
+GPT‑5.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities ofGPT‑5.3‑Codex⁠while improving how the model works across tools, software environments, and professional tasks involving spreadsheets, presentations, and documents. The result is a model that gets complex real work done accurately, effectively, and efficiently—delivering what you asked for with less back and forth.
+
+In ChatGPT, GPT‑5.4 Thinking can now provide an upfront plan of its thinking, so you canadjust course mid-responsewhile it’s working,and arrive at a final output that’s more closely aligned with what you need without additional turns. GPT‑5.4 Thinking also improvesdeep web research,particularly for highly specific queries, whilebetter maintaining contextfor questions that require longer thinking. Together, these improvements mean higher-quality answers that arrive faster and stay relevant to the task at hand.
+
+In Codex and the API, GPT‑5.4 is the first general-purpose model we’ve released with native, state-of-the-artcomputer-use capabilities, enabling agents to operate computers and carry out complex workflows across applications. It supports up to1M tokens of context, allowing agents to plan, execute, and verify tasks across long horizons. GPT‑5.4 also improves how models work across large ecosystems of tools and connectors withtool search, helping agents find and use the right tools more efficiently without sacrificing intelligence. Finally, GPT‑5.4 is ourmost token efficient reasoning modelyet, using significantly fewer tokens to solve problems when compared to GPT‑5.2—translating to reduced token usage and faster speeds.
+
+Together with advances in general reasoning, coding, and professional knowledge work, GPT‑5.4 enables more reliable agents, faster developer workflows, and higher-quality outputs across ChatGPT, the API, and Codex.
+
+GDPval (wins or ties)
+
+SWE-Bench Pro (Public)
+
+*Previously reported as 64.7%. GPT‑5.3‑Codex achieves 74.0% with a newly introduced API parameter that preserves the original image resolution.
+
+Building on GPT‑5.2’s general reasoning capabilities, GPT‑5.4 delivers even more consistent and polished results on real-world tasks that matter to professionals.
+
+OnGDPval⁠, which tests agents’ abilities to produce well-specified knowledge work across 44 occupations, GPT‑5.4 achieves a new state of the art, matching or exceeding industry professionals in83.0%of comparisons, compared to70.9%for GPT‑5.2.
+
+In GDPval, models attempt well-specified knowledge work spanning 44 occupations from the top 9 industries contributing to U.S. GDP. Tasks request real work products, such as sales presentations, accounting spreadsheets, urgent care schedules, manufacturing diagrams, or short videos. Reasoning effort was set to xhigh for GPT‑5.4 and heavy for GPT‑5.2 (a slightly lower level in ChatGPT).
+
+We put a particular focus on improving GPT‑5.4’s ability to create and edit spreadsheets, presentations, and documents. On an internal benchmark of spreadsheet modeling tasks that a junior investment banking analyst might do, GPT‑5.4 achieves a mean score of87.3%, compared to68.4%for GPT‑5.2. On a set of presentation evaluation prompts, human raters preferred presentations from GPT‑5.468.0%of the time over those from GPT‑5.2 due to stronger aesthetics, greater visual variety, and more effective use of image generation.
+
+Documents were generated with reasoning effort set to xhigh
+
+You can try these capabilities in ChatGPT using GPT‑5.4 Thinking or Pro. If you’re an Enterprise customer, we recommend using our newly releasedChatGPT for Excel add-in⁠(opens in a new window), which was also launched today. We've also updated ourspreadsheet⁠(opens in a new window)andpresentation skills⁠(opens in a new window)available in Codex and the API.
+
+To make GPT‑5.4 better at real-world work, we continued our progress at driving down hallucinations and errors. GPT‑5.4 is our most factual model yet: on a set of de-identified prompts where users flagged factual errors, GPT‑5.4’s individual claims are 33% less likely to be false and its full responses are 18% less likely to contain any errors, relative to GPT‑5.2.
+
+Computer use and vision
+
+GPT‑5.4 is our first general-purpose model with nativecomputer-use capabilitiesand marks a major step forward for developers and agents alike. It’s the best model currently available for developers building agents that complete real tasks across websites and software systems.
+
+We’ve designed GPT‑5.4 to be performant across a wide range of computer-use workloads. It is excellent at writing code to operate computers via libraries like Playwright, as well as issuing mouse and keyboard commands in response to screenshots. Its behavior is steerable via developer messages, meaning that developers can adjust behavior to suit particular use cases. Developers can even configure the model’s safety behavior to suit different levels of risk tolerance by specifying custom confirmation policies.
+
+The model’s performance and flexibility are reflected across benchmarks that test computer use across different settings. OnOSWorld-Verified, which measures a model’s ability to navigate a desktop environment through screenshots and keyboard/mouse actions, GPT‑5.4 achieves a state-of-the-art75.0%success rate, far exceeding GPT‑5.2’s47.3%, and surpassing human performance at72.4%.1
+
+OnWebArena-Verified, which tests browser use, GPT‑5.4 achieves a leading67.3%success rate when using both DOM- and screenshot-driven interaction, compared to GPT‑5.2’s65.4%. OnOnline-Mind2Web, which also tests browser use, GPT‑5.4 achieves a92.8%success rate using screenshot-based observations alone, improving over ChatGPT Atlas’s Agent Mode, which achieves a success rate of70.9%.
+
+A tool yield is when an assistant yields to await tool responses. If 3 tools are called in parallel, followed by 3 more tools called in parallel, the number of yields would be 2. Tool yields are a better proxy of latency than tool calls because they reflect the benefits of parallelization.
+
+GPT‑5.4 interprets screenshots of a browser interface and interacts with UI elements through coordinate-based clicking to send emails and schedule a calendar event.Video is not sped up.
+
+GPT‑5.4’s improved computer use is built on the model’s improved general visual perception capabilities. OnMMMU-Pro, a test of a model’s visual understanding and reasoning, GPT‑5.4 achieves an81.2%success rate without tool use, an improvement overGPT‑5.2’s79.5%. Improved visual perception also translates into better document parsing capabilities. OnOmniDocBench, GPT‑5.4 without reasoning effort achieves an average error (measured by normalized edit distance between model prediction and ground truth) of0.109, improved from GPT‑5.2’s0.140.
+
+MMMUPro was run with reasoning effort set to xhigh. OmniDocBench was run with reasoning effort set to none, to reflect low-cost, low-latency performance.
+
+We’re also improving visual understanding for dense, high-resolution images where full fidelity matters. Starting with GPT‑5.4, we’re introducing anoriginalimageinput detail⁠(opens in a new window)level which supports full-fidelity perception up to 10.24M total pixels or 6000-pixel maximum dimension, whichever is lower; thehighimage input detail level now supports up to 2.56M total pixels or a 2048-pixel maximum dimension. In early testing with API users, we observed strong gains in localization ability, image understanding, and click accuracy when usingoriginalorhighdetail.
+
+In the API, developers can access these capabilities using the updatedcomputertool. Please see ourupdated documentation⁠(opens in a new window)for recommended best practices.
+
+GPT‑5.4 combines the coding strengths of GPT‑5.3‑Codex with leading knowledge work and computer-use capabilities, which matter most on longer-running tasks where the model can use tools, iterate, and push work further with less manual intervention. It matches or outperforms GPT‑5.3‑Codex on SWE-Bench Pro while being lower latency across reasoning efforts.
+
+We estimate latency by looking at the production behavior of our models, and simulating this offline. The latency estimate accounts for tool call duration (code execution time), sampled tokens, and input tokens. Real-world latency may vary substantially, and depends on many factors not captured in our simulation. Reasoning efforts were swept from none to xhigh.
+
+When toggled on, /fast mode in Codex delivers up to 1.5x faster token velocity with GPT‑5.4. It’s the same model and the same intelligence, just faster. That means users can move through coding tasks, iteration, and debugging while staying in flow. Developers can access GPT‑5.4 at the same fast speeds via the API by usingpriority processing⁠(opens in a new window).
+
+In evaluation and internal testing we found that GPT‑5.4 excels at complex frontend tasks, with noticeably more aesthetic and more functional results than any models we’ve launched previously.
+
+As a demonstration of the model’s improved computer-use and coding capabilities working in tandem, we’re also releasing an experimental Codex skill called “Playwright (Interactive)⁠(opens in a new window)”. This allows Codex to visually debug web and Electron apps; it can even be used to test an app it’s building, as it’s building it.
+
+Theme park simulation game made with GPT‑5.4 from a single lightly specified prompt, using Playwright Interactive for browser playtesting and image generation for the isometric asset set. The simulation includes tile-based path placement, ride and scenery construction, guest pathfinding, queueing, and ride cycles, while park metrics like money, guest count, happiness, cleanliness, and rating rise or fall based on how the layout performs and how guests respond to it. Playwright was used to automate browser playtests by building and expanding the park, placing and removing paths and attractions, checking camera navigation, and verifying that guests, queues, ride states, and UI metrics updated correctly over several rounds of play.
+
+Prompt:Use $playwright-interactive and $imagegen. Create an interactive isometric theme park simulation game that I can build and navigate in the browser. Use imagegen to establish the overall visual vision and generate the game’s assets, including rides, paths, terrain, trees, water, food stalls, decorations, buildings, icons, and UI illustrations. The world should feel cohesive, polished, and visually rich, with a premium art direction that works well from an isometric perspective. Let me place and remove paths, add attractions, position scenery, and move around the park smoothly while monitoring guest activity, ride status, and park growth. Include believable guest movement, simple park management systems like money, cleanliness, queueing, and happiness, and make the experience feel playful, clear, and complete rather than like a rough prototype. Prioritize charm, readability, and strong game feel over realism.
+
+When play testing, be sure to build and expand a park through several rounds of play, verify that placement and navigation work smoothly, confirm that guests react to the park layout and attractions, and ensure the visuals, UI, and interactions feel stable and cohesive.
+
+With GPT‑5.4, we’ve significantly improved how models work with external tools. Agents can now operate across larger tool ecosystems, choose the right tools more reliably, and complete multi-step workflows with lower cost and latency.
+
+In the API, GPT‑5.4 introducestool search⁠(opens in a new window), which allows models to work efficiently when given many tools.
+
+Previously, when a model was given tools, all tool definitions were included in the prompt upfront. For systems with many tools, this could add thousands—or even tens of thousands—of tokens to every request, increasing cost, slowing responses, and crowding the context with information the model might never use.
+
+With tool search, GPT‑5.4 instead receives a lightweight list of available tools along with a tool search capability. When the model needs to use a tool, it can look up that tool’s definition and append it to the conversation at that moment.
+
+This approach dramatically reduces the number of tokens required for tool-heavy workflows and preserves the cache, making requests faster and cheaper. It also enables agents to reliably work with much larger tool ecosystems. For MCP servers that may contain tens of thousands of tokens of tool definitions, the efficiency gains can be substantial.
+
+To demonstrate the efficiency gains, we evaluated 250 tasks from Scale’sMCP Atlas⁠(opens in a new window)benchmark with all 36 MCP servers enabled in two modes: (1) exposing every MCP function directly in the model context, and (2) placing all MCP servers behind tool search. The tool-search configuration reduced total token usage by 47% while achieving the same accuracy.
+
+Example token counts come from averaging 250 tasks in the MCP-Atlas public dataset.
+
+GPT‑5.4 also improvestool calling, making it more accurate and efficient when deciding when and how to use tools during reasoning, particularly in the API.  Compared to GPT‑5.2, it achieves higher accuracy in fewer turns on Toolathlon, a benchmark that tests how well AI agents can use real-world tools and APIs to complete multi-step tasks. For example, an agent needs to read emails, extract assignment attachments, upload them, grade them and record results in a spreadsheet.
+
+A tool yield is when an assistant yields to await tool responses. If 3 tools are called in parallel, followed by 3 more tools called in parallel, the number of yields would be 2. Tool yields are a better proxy of latency than tool calls because they reflect the benefits of parallelization.
+
+For latency-sensitive use cases where reasoning effort None is preferred, GPT‑5.4 further improves upon its predecessors.
+
+Inτ2-bench⁠⁠(opens in a new window), a model must use tools to accomplish a customer service task, where there may be a simulated user who can communicate and take actions on the world state. Reasoning effort was set to None.
+
+GPT‑5.4 is better at agentic web search. On BrowseComp, a measurement of how well AI agents can persistently browse the web to find hard-to-locate information, GPT‑5.4 leaps 17%absover GPT‑5.2, and GPT‑5.4 Pro sets a new state of the art of 89.3%.
+
+In practice, this means GPT‑5.4 Thinking is stronger at answering questions that require pulling together information from many sources on the web. It can more persistently search across multiple rounds to identify the most relevant sources, particularly for “needle-in-a-haystack” questions, and synthesize them into a clear, well-reasoned answer.
+
+In BrowseComp, we used a search blocklist excluding websites containing benchmark answers from evaluation to prevent contamination and ensure a fair measure of performance. GPT‑5.4 was measured on a later date than GPT‑5.2, so scores reflect changes in the model, our search system, and state of the internet. GPT‑5.4 was tested with a longer, updated blocklist. Models use the ChatGPT search tool, which can have small differences from API search.
+
+Similarly to how Codex outlines its approach when it starts working, GPT‑5.4 Thinking in ChatGPT will now outline its work with a preamble for longer, more complex queries. You can also add instructions or adjust its direction mid-response. This makes it easier to guide the model toward the exact outcome you want without starting over or requiring multiple additional turns. This feature is available now onchatgpt.com⁠(opens in a new window)and the Android app, coming soon to the iOS app.
+
+The model can also think longer on difficult tasks while maintaining stronger awareness of earlier steps in the conversation. This allows it to handle longer workflows and more complex prompts while keeping answers coherent and relevant throughout.
+
+This video was sped up for illustrative purposes.
+
+Over recent months, we’ve continued improving the safeguards we introduced with GPT‑5.3‑Codex while preparing GPT‑5.4 for deployment. Similar to GPT‑5.3‑Codex, we are treating GPT‑5.4 as High cyber capability under our Preparedness Framework, and we are deploying it with the corresponding protections as documented in thesystem card⁠(opens in a new window). These include an expanded cyber safety stack, including monitoring systems, trusted access controls, and asynchronous blocking for higher-risk requests for customers on Zero Data Retention (ZDR) surfaces, alongside ongoing investment in the broader security ecosystem.
+
+Because cybersecurity capabilities are inherently dual-use, we maintain a precautionary approach to deployment while continuing to calibrate our policies and classifiers. For certain customers on ZDR surfaces, request-level blocking remains part of our cyber risk mitigation stack; because classifiers are still improving, some false positives may occur as we continue refining these safeguards. These updates aim to improve how safeguards operate in practice, including reducing unnecessary refusals and overly caveated responses, while preserving strong protections against misuse.
+
+We’ve continued our safety research on Chain-of-Thought (CoT) monitorability to better understand how models reason and help detect potential misbehavior. As part of this work, we introduce a new open-source evaluation,CoT controllability⁠,  measuring whether models can deliberately obfuscate their reasoning to evade monitoring. We find that GPT‑5.4 Thinking’s ability to control its CoT is low, which is a positive property for safety, suggesting that the model lacks the ability to hide its reasoning and that CoT monitoring remains an effective safety tool.
+
+Availability and pricing
+
+GPT‑5.4 is rolling out gradually today across ChatGPT and Codex. In the API, GPT‑5.4 is available now asgpt-5.4. GPT‑5.4 Pro is also available in the API asgpt-5.4-profor developers who need maximum performance on the most complex tasks.
+
+In ChatGPT, GPT‑5.4 Thinking is available starting today to ChatGPT Plus, Team, and Pro users, replacing GPT‑5.2 Thinking. GPT‑5.2 Thinking will remain available for three months for paid users in the model picker under the Legacy Models section, after which it will be retired on June 5, 2026. Those on Enterprise and Edu plans can enable early access via admin settings. GPT‑5.4 Pro is available to Pro and Enterprise plans.Context windows⁠(opens in a new window)in ChatGPT for GPT‑5.4 Thinking remain unchanged from GPT‑5.2 Thinking.
+
+GPT‑5.4 is our first mainline reasoning model that incorporates the frontier coding capabilities of GPT‑5.3‑codex and that is rolling out across ChatGPT, the API and Codex. We're calling it GPT‑5.4 to reflect that jump, and to simplify the choice between models when using Codex. Over time, you can expect our Instant models and Thinking models to evolve at different speeds.
+
+GPT‑5.4 in Codex includes experimental support for the 1M context window. Developers can try this by configuringmodel_context_windowandmodel_auto_compact_token_limit. Requests that exceed the standard 272K context window count against usage limits at 2x the normal rate.
+
+In the API, GPT‑5.4 is priced higher per token than GPT‑5.2 to reflect its improved capabilities, while its greater token efficiency helps reduce the total number of tokens required for many tasks. Batch and Flex pricing are available at half the standard API rate, while Priority processing is available at twice the standard API rate.
+
+Investment Banking Modeling Tasks (Internal)
+
+SWE-Bench Pro (Public)
+
+Computer use and vision
+
+MMMU Pro (with tools)
+
+Frontier Science Research
+
+FrontierMath Tier 1–3
+
+Humanity's Last Exam (no tools)
+
+Humanity's Last Exam (with tools)
+
+Graphwalks BFS 0K–128K
+
+Graphwalks BFS 256K–1M
+
+Graphwalks parents 0–128K (accuracy)
+
+Graphwalks parents 256K–1M (accuracy)
+
+OpenAI MRCR v2 8-needle 4K–8K
+
+OpenAI MRCR v2 8-needle 8K–16K
+
+OpenAI MRCR v2 8-needle 16K–32K
+
+OpenAI MRCR v2 8-needle 32K–64K
+
+OpenAI MRCR v2 8-needle 64K–128K
+
+OpenAI MRCR v2 8-needle 128K–256K
+
+OpenAI MRCR v2 8-needle 256K–512K
+
+OpenAI MRCR v2 8-needle 512K–1M
+
+Evals without reasoning
+
+OmniDocBench (normalized edit distance)
+
+Evals were run with reasoning effort set to xhigh, except where specified otherwise. Benchmarks were conducted in a research environment, which may provide slightly different output from production ChatGPT in some cases.
+
+1Human performance reported inOSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments⁠(opens in a new window).</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
