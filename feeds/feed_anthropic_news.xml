@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 24 Jul 2026 02:43:46 +0000</lastBuildDate>
+<lastBuildDate>Fri, 24 Jul 2026 19:30:20 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,195 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Introducing Claude Opus 5</title>
+  <link>https://www.anthropic.com/news/claude-opus-5</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/claude-opus-5</guid>
+  <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Product</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Opus 5 is available today. It’s a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price.
+
+On coding and knowledge work evaluations likeFrontier-BenchandGDPval-AA, Opus 5 is the new state-of-the-art, though it remains behind Mythos 5 on cybersecurity tasks.
+
+Opus 5 is designed to be used every day: it works more efficiently than other models. It’s the new default model on Claude Max, and the strongest model on Claude Pro.
+
+Performa...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Opus 5 is available today. It’s a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price.
+
+On coding and knowledge work evaluations likeFrontier-BenchandGDPval-AA, Opus 5 is the new state-of-the-art, though it remains behind Mythos 5 on cybersecurity tasks.
+
+Opus 5 is designed to be used every day: it works more efficiently than other models. It’s the new default model on Claude Max, and the strongest model on Claude Pro.
+
+Performance and cost-effectiveness
+
+Claude Opus 5 provides greatly improved performance for the same cost as its predecessor, Opus 4.8. The charts in this section show how performance changes according to the model’s effort setting, which customers can use to optimize for intelligence or conserve tokens for faster and cheaper results.
+
+Opus 5 excels on valuable software engineering tasks. For example, onFrontier-Bench v0.1,Opus 5 surpasses all other models, and more than doubles Opus 4.8’s performance at a lower cost per task. OnCursorBench 3.2, at max effort, the model performs within 0.5% of Fable 5’s peak score, but at half the cost per task; it also achieves greater performance at a given cost than all other models on high, xhigh, and max effort.
+
+We see similar results on knowledge work and problem-solving tasks. For example:
+
+OnARC-AGI 3, an evaluation where the model has to solve novel problems, Opus 5’s score is three times as high as the next-best model.
+
+OnZapier AutomationBench, which measures whether models can complete business tasks from start to finish, Opus 5’s pass rate is around 1.5× the next-best model for the same cost per task. Even at its lowest effort setting, Opus 5 passes more tasks than any other model.
+
+OnOSWorld 2.0, a computer use benchmark, Opus 5 outperforms every other model at any given cost, surpassing Fable 5’s best result at just over a third of the cost.
+
+It’s also our best and most cost-efficient model on several related evaluations:
+
+Opus 5 is a meaningful improvement over Opus 4.8 for scientific research. It shows better performance than Opus 4.8 on every one of our life sciences evaluations, which cover topics including structural biology, organic chemistry, and bioinformatics. Its improvements are most notable on organic chemistry tasks, like inferring molecular structures from spectroscopy data (it scores 10.2 percentage points higher than Opus 4.8 on our internal benchmark), and on protein-related tasks like predicting how variations in a protein’s sequence affect how it functions (here, it scores 7.7 percentage points higher).
+
+Finally, Opus 5 is capable of producing much stronger visual outputs:
+
+Working with Claude Opus 5
+
+Claude Opus 5 is much stronger at verifying its work and iterating carefully until it succeeds. In evaluations and early-access testing, we and our users found many examples of Opus 5’s agency and thoroughness:
+
+On one Frontier-Bench task, Opus 5 was given a drawing of a machine part and asked to write code to rebuild it as a 3D FreeCAD model. However, in this task, the model was intentionally given no way to directlyviewthe drawing. Opus 5 responded by writing its own computer vision pipeline to pull the geometry from the raw pixels, then reconstructed the full machine part. It succeeded in doing so repeatedly; no competing model with the same setup could solve it after five attempts.
+
+Given a real bug in a popular open-source package manager, Opus 5 found the root cause and fixed an edge case that the community’s patch had missed. A competing model fixed only the surface symptom (not the underlying cause), then reported the bug resolved.
+
+An engineer at a trading firm used Opus 5 to build a market data feed for a new exchange in a single session. Previous models could not complete this task at all, even given extensive plans from the engineer. Finding no live feed to validate against, Opus 5 even built its own test harness to check that its code parsed the exchange’s data correctly.
+
+Below are further reports from our early-access customers on their experience of working with Opus 5:
+
+Alignment.During pre-deployment testing, our automated behavioral audit found Opus 5 to be our most aligned model to date (as shown in the graph below). It adheres toClaude’s Constitutionbetter than Opus 4.8, Sonnet 5, or Fable 5; exhibits the lowest rates of deceptive behavior; and is the least susceptible to being tricked into misuse. It’s also our safest model yet in terms of avoiding reckless actions that could have hard-to-reverse side effects.
+
+Safety.Opus 5 does not advance the frontier in risky, dual-use capabilities. In rigorous evaluations conducted alongside private-sector and government partners, we found it remains behind Mythos 5 in both biology research and offensive cybersecurity. More information about these evaluations can be found in ourSystem Card.
+
+As with its predecessor, Opus 4.8, we’ve intentionally avoided training Opus 5 on cyber tasks. The model has nevertheless improved substantially on these tasks as a result of becoming more generally capable, and it comes close to Mythos 5 atfindingcybersecurity vulnerabilities. However, it remains substantially behind Mythos 5 on theexploitationof those vulnerabilities—that is, in turning vulnerabilities into material cyber threats.
+
+This is illustrated by Opus 5’s performance on OSS-Fuzz, an evaluation we’ve developed to assess how well models can find and then exploit vulnerabilities without extensive human guidance. Although Mythos 5 and Opus 5 identify vulnerabilities with similar success, Opus 5’s score on the development of exploits is far behind that of Mythos 5.
+
+Safeguards for Opus 5
+
+Claude Opus 5’s safeguards are designed to allow beneficial uses of the model in both cybersecurity and biology. They are similar to those we applied to Opus 4.8, with the exception of some stronger guardrails on a narrow range of cyber tasks.
+
+Cybersecurity.Opus 5’s cyber classifiers are proportionally less restrictive than those on Fable 5. They allow Opus 5 to find vulnerabilities in source code, but block “binary-based” vulnerability scanning (a method more likely to be associated with malicious actors), penetration testing, and exploit generation.
+
+Based on our testing, we expect the classifiers to intervene around 85% less often than they do for Fable 5. InClaude.ai, Claude Code, and Claude Cowork, any flagged requests will fall back to Opus 4.8 by default. Fallbacks to Opus 4.8 can also be enabled on the API.
+
+OurCyber Verification Program(CVP) facilitates cybersecurity work that would otherwise be impeded by the model’s safeguards. Enterprises and researchers who are already part of the CVP have immediate access to a version of Opus 5 with fewer security restrictions.
+
+Biology.Since Opus 5 has a similar suite of safeguards to Opus 4.8, it is now our most capable generally available model for scientific research. Nevertheless, the model still shows important limitations on long-running, autonomous research tasks, which is where we expect AI models to pose the most substantial biology-related risks. (Mythos 5 remains the stronger model for this type of biological work.) As part of this launch, biology-related requests that are blocked on Fable 5 will now route to Opus 5 rather than Opus 4.8.
+
+Claude Opus 5 is available today on all platforms, priced at $5 per million input tokens and $25 per million output tokens (the same as Opus 4.8). Developers can get started with claude-opus-5 on the Claude API.
+
+It’s also offered in Fast mode, where it runs around 2.5 times the default speed. As with Opus 4.8, Fast mode is available at twice Opus 5’s base price on the Claude Platform and through usage credits in Claude Code.
+
+Alongside Opus 5, we’re releasing two updates in beta:
+
+Mid-conversation tool changeson the Claude Platform.Within a conversation, developers can now change which tools Claude can use without invalidating the prompt cache.
+
+Automatic fallbackson the API.Users can now choose to have requests that are flagged by our safety classifiers on Opus 5 (or Fable 5) automatically route to another model. With automatic fallbacks on, API requests always route to the best available model by default rather than being blocked.
+
+Consistent with prior Opus models, Opus 5 does not have data retention requirements for general access.
+
+For more guidance on how to get the best out of Opus 5, see ourprompting guide.
+
+Frontier-Bench v0.1, Effort plot:These results are from an internal run of Frontier-Bench v0.1, on the mini-SWE-agent harness and a GKE backend, mean reward over 5 attempts per task. Opus 4.8 served as fallback on safety-classifier refusals for Opus 5 and Fable 5.
+
+A research agenda for the Economic Futures Research Fund
+
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
+
+Ask Claude about the Anthropic Economic Index
+
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
+
+Anthropic is donating another $20 million to Public First Action
+
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Opus 5 is available today. It’s a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price.
+
+On coding and knowledge work evaluations likeFrontier-BenchandGDPval-AA, Opus 5 is the new state-of-the-art, though it remains behind Mythos 5 on cybersecurity tasks.
+
+Opus 5 is designed to be used every day: it works more efficiently than other models. It’s the new default model on Claude Max, and the strongest model on Claude Pro.
+
+Performa...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Opus 5 is available today. It’s a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price.
+
+On coding and knowledge work evaluations likeFrontier-BenchandGDPval-AA, Opus 5 is the new state-of-the-art, though it remains behind Mythos 5 on cybersecurity tasks.
+
+Opus 5 is designed to be used every day: it works more efficiently than other models. It’s the new default model on Claude Max, and the strongest model on Claude Pro.
+
+Performance and cost-effectiveness
+
+Claude Opus 5 provides greatly improved performance for the same cost as its predecessor, Opus 4.8. The charts in this section show how performance changes according to the model’s effort setting, which customers can use to optimize for intelligence or conserve tokens for faster and cheaper results.
+
+Opus 5 excels on valuable software engineering tasks. For example, onFrontier-Bench v0.1,Opus 5 surpasses all other models, and more than doubles Opus 4.8’s performance at a lower cost per task. OnCursorBench 3.2, at max effort, the model performs within 0.5% of Fable 5’s peak score, but at half the cost per task; it also achieves greater performance at a given cost than all other models on high, xhigh, and max effort.
+
+We see similar results on knowledge work and problem-solving tasks. For example:
+
+OnARC-AGI 3, an evaluation where the model has to solve novel problems, Opus 5’s score is three times as high as the next-best model.
+
+OnZapier AutomationBench, which measures whether models can complete business tasks from start to finish, Opus 5’s pass rate is around 1.5× the next-best model for the same cost per task. Even at its lowest effort setting, Opus 5 passes more tasks than any other model.
+
+OnOSWorld 2.0, a computer use benchmark, Opus 5 outperforms every other model at any given cost, surpassing Fable 5’s best result at just over a third of the cost.
+
+It’s also our best and most cost-efficient model on several related evaluations:
+
+Opus 5 is a meaningful improvement over Opus 4.8 for scientific research. It shows better performance than Opus 4.8 on every one of our life sciences evaluations, which cover topics including structural biology, organic chemistry, and bioinformatics. Its improvements are most notable on organic chemistry tasks, like inferring molecular structures from spectroscopy data (it scores 10.2 percentage points higher than Opus 4.8 on our internal benchmark), and on protein-related tasks like predicting how variations in a protein’s sequence affect how it functions (here, it scores 7.7 percentage points higher).
+
+Finally, Opus 5 is capable of producing much stronger visual outputs:
+
+Working with Claude Opus 5
+
+Claude Opus 5 is much stronger at verifying its work and iterating carefully until it succeeds. In evaluations and early-access testing, we and our users found many examples of Opus 5’s agency and thoroughness:
+
+On one Frontier-Bench task, Opus 5 was given a drawing of a machine part and asked to write code to rebuild it as a 3D FreeCAD model. However, in this task, the model was intentionally given no way to directlyviewthe drawing. Opus 5 responded by writing its own computer vision pipeline to pull the geometry from the raw pixels, then reconstructed the full machine part. It succeeded in doing so repeatedly; no competing model with the same setup could solve it after five attempts.
+
+Given a real bug in a popular open-source package manager, Opus 5 found the root cause and fixed an edge case that the community’s patch had missed. A competing model fixed only the surface symptom (not the underlying cause), then reported the bug resolved.
+
+An engineer at a trading firm used Opus 5 to build a market data feed for a new exchange in a single session. Previous models could not complete this task at all, even given extensive plans from the engineer. Finding no live feed to validate against, Opus 5 even built its own test harness to check that its code parsed the exchange’s data correctly.
+
+Below are further reports from our early-access customers on their experience of working with Opus 5:
+
+Alignment.During pre-deployment testing, our automated behavioral audit found Opus 5 to be our most aligned model to date (as shown in the graph below). It adheres toClaude’s Constitutionbetter than Opus 4.8, Sonnet 5, or Fable 5; exhibits the lowest rates of deceptive behavior; and is the least susceptible to being tricked into misuse. It’s also our safest model yet in terms of avoiding reckless actions that could have hard-to-reverse side effects.
+
+Safety.Opus 5 does not advance the frontier in risky, dual-use capabilities. In rigorous evaluations conducted alongside private-sector and government partners, we found it remains behind Mythos 5 in both biology research and offensive cybersecurity. More information about these evaluations can be found in ourSystem Card.
+
+As with its predecessor, Opus 4.8, we’ve intentionally avoided training Opus 5 on cyber tasks. The model has nevertheless improved substantially on these tasks as a result of becoming more generally capable, and it comes close to Mythos 5 atfindingcybersecurity vulnerabilities. However, it remains substantially behind Mythos 5 on theexploitationof those vulnerabilities—that is, in turning vulnerabilities into material cyber threats.
+
+This is illustrated by Opus 5’s performance on OSS-Fuzz, an evaluation we’ve developed to assess how well models can find and then exploit vulnerabilities without extensive human guidance. Although Mythos 5 and Opus 5 identify vulnerabilities with similar success, Opus 5’s score on the development of exploits is far behind that of Mythos 5.
+
+Safeguards for Opus 5
+
+Claude Opus 5’s safeguards are designed to allow beneficial uses of the model in both cybersecurity and biology. They are similar to those we applied to Opus 4.8, with the exception of some stronger guardrails on a narrow range of cyber tasks.
+
+Cybersecurity.Opus 5’s cyber classifiers are proportionally less restrictive than those on Fable 5. They allow Opus 5 to find vulnerabilities in source code, but block “binary-based” vulnerability scanning (a method more likely to be associated with malicious actors), penetration testing, and exploit generation.
+
+Based on our testing, we expect the classifiers to intervene around 85% less often than they do for Fable 5. InClaude.ai, Claude Code, and Claude Cowork, any flagged requests will fall back to Opus 4.8 by default. Fallbacks to Opus 4.8 can also be enabled on the API.
+
+OurCyber Verification Program(CVP) facilitates cybersecurity work that would otherwise be impeded by the model’s safeguards. Enterprises and researchers who are already part of the CVP have immediate access to a version of Opus 5 with fewer security restrictions.
+
+Biology.Since Opus 5 has a similar suite of safeguards to Opus 4.8, it is now our most capable generally available model for scientific research. Nevertheless, the model still shows important limitations on long-running, autonomous research tasks, which is where we expect AI models to pose the most substantial biology-related risks. (Mythos 5 remains the stronger model for this type of biological work.) As part of this launch, biology-related requests that are blocked on Fable 5 will now route to Opus 5 rather than Opus 4.8.
+
+Claude Opus 5 is available today on all platforms, priced at $5 per million input tokens and $25 per million output tokens (the same as Opus 4.8). Developers can get started with claude-opus-5 on the Claude API.
+
+It’s also offered in Fast mode, where it runs around 2.5 times the default speed. As with Opus 4.8, Fast mode is available at twice Opus 5’s base price on the Claude Platform and through usage credits in Claude Code.
+
+Alongside Opus 5, we’re releasing two updates in beta:
+
+Mid-conversation tool changeson the Claude Platform.Within a conversation, developers can now change which tools Claude can use without invalidating the prompt cache.
+
+Automatic fallbackson the API.Users can now choose to have requests that are flagged by our safety classifiers on Opus 5 (or Fable 5) automatically route to another model. With automatic fallbacks on, API requests always route to the best available model by default rather than being blocked.
+
+Consistent with prior Opus models, Opus 5 does not have data retention requirements for general access.
+
+For more guidance on how to get the best out of Opus 5, see ourprompting guide.
+
+Frontier-Bench v0.1, Effort plot:These results are from an internal run of Frontier-Bench v0.1, on the mini-SWE-agent harness and a GKE backend, mean reward over 5 attempts per task. Opus 4.8 served as fallback on safety-classifier refusals for Opus 5 and Fable 5.
+
+A research agenda for the Economic Futures Research Fund
+
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
+
+Ask Claude about the Anthropic Economic Index
+
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
+
+Anthropic is donating another $20 million to Public First Action
+
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>A research agenda for the Economic Futures Research Fund</title>
   <link>https://www.anthropic.com/news/economic-futures-research-fund-agenda</link>
@@ -37,7 +226,7 @@ Modernizing income support for AI-driven displacement
 
 Building worker stakes in AI-driven growth before disruption arrives
 
-Generating new evidence on public investments.
+Generating new evidence on public investments
 
 AI capabilities continue to improve. But we don’t yet know how quickly AI will diffuse throughout the economy while also becoming more capable, and what the economic effects will be. In ourEconomic Policy Framework(EPF), published in June, we proposed programs and policies for a range of scenarios. But we need more empirical evidence on which interventions might actually work in an AI-transformed economy—which ones make the economy more flexible and resilient, and spread the gains broadly. In the face of this uncertainty, our aim is to build this evidence base so that workers, firms, and governments have room to adapt. This $200 million fund will support external research on interventions proposed in the EPF and on other open questions. We may be entering a moment without historical precedent, where the most promising solutions are ones nobody has tried yet. We’re willing to fund creative and ambitious pilots that can provide guidance on questions where randomized control trials alone might only provide incremental evidence.
 
@@ -129,17 +318,17 @@ Place-based interventions in communities most exposed to AI-driven displacement 
 
 Learn more about the RFP and apply here.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 Ask Claude about the Anthropic Economic Index
 
 We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
 
 Anthropic is donating another $20 million to Public First Action
 
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re sharing the research agenda for the Anthropic Economic Futures Research Fund. We’re committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.
 
 With the research the Fund supports, we want to study what programs could make the economy more flexible and resilient, ensure the benefits of AI are shared, and minimize the harm that AI-driven disruption could cause.
@@ -158,7 +347,7 @@ Modernizing income support for AI-driven displacement
 
 Building worker stakes in AI-driven growth before disruption arrives
 
-Generating new evidence on public investments.
+Generating new evidence on public investments
 
 AI capabilities continue to improve. But we don’t yet know how quickly AI will diffuse throughout the economy while also becoming more capable, and what the economic effects will be. In ourEconomic Policy Framework(EPF), published in June, we proposed programs and policies for a range of scenarios. But we need more empirical evidence on which interventions might actually work in an AI-transformed economy—which ones make the economy more flexible and resilient, and spread the gains broadly. In the face of this uncertainty, our aim is to build this evidence base so that workers, firms, and governments have room to adapt. This $200 million fund will support external research on interventions proposed in the EPF and on other open questions. We may be entering a moment without historical precedent, where the most promising solutions are ones nobody has tried yet. We’re willing to fund creative and ambitious pilots that can provide guidance on questions where randomized control trials alone might only provide incremental evidence.
 
@@ -250,17 +439,17 @@ Place-based interventions in communities most exposed to AI-driven displacement 
 
 Learn more about the RFP and apply here.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 Ask Claude about the Anthropic Economic Index
 
 We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
 
 Anthropic is donating another $20 million to Public First Action
 
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Ask Claude about the Anthropic Economic Index</title>
@@ -288,17 +477,17 @@ Getting started takes about a minute. In claude.ai, open the connectors menu, fi
 
 As always, the Index reflects patterns in Claude usage rather than the labor market as a whole, and Claude will point you back to the source data and its limitations as you explore. You can find the connector in claude.ai today, and the full datasets remain freely available on our website.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Anthropic is donating another $20 million to Public First Action
 
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">People have hard questions about AI and work: which jobs will change, which tasks are being automated, and what it means for their own field. TheAnthropic Economic Indexexists to help answer them with real data. Today we&apos;re launching the Anthropic Economic Index connector for Claude, which lets anyone explore that data directly.
 
 The Anthropic Economic Index measures how AI is actually being used in the economy. The Index’s data has been useful to researchers, journalists, and policymakers, but ...</p><div style="font-size:16px;line-height:1.8;color:#333">People have hard questions about AI and work: which jobs will change, which tasks are being automated, and what it means for their own field. TheAnthropic Economic Indexexists to help answer them with real data. Today we're launching the Anthropic Economic Index connector for Claude, which lets anyone explore that data directly.
@@ -319,17 +508,17 @@ Getting started takes about a minute. In claude.ai, open the connectors menu, fi
 
 As always, the Index reflects patterns in Claude usage rather than the labor market as a whole, and Claude will point you back to the source data and its limitations as you explore. You can find the connector in claude.ai today, and the full datasets remain freely available on our website.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Anthropic is donating another $20 million to Public First Action
 
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic is donating another $20 million to Public First Action</title>
@@ -357,17 +546,17 @@ As the pace of AI advances accelerates, the national security stakes of AI are g
 
 Thesepolicy frameworksare just a starting point. Our donation to Public First Action is one way in which we’re trying to raise the salience of this urgent policy debate.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re contributing an additional $20 million toPublic First Action, bringing our total support to $40 million. Public First Action is a nonpartisan organization that educates the public about AI and works with Republicans, Democrats, and Independents who are serious about putting sensible AI safeguards in place. Both of our donations were made exclusively to support Public First Action’s public education and policy mission, and cannot be used to influence the election of any candidate for federa...</p><div style="font-size:16px;line-height:1.8;color:#333">We're contributing an additional $20 million toPublic First Action, bringing our total support to $40 million. Public First Action is a nonpartisan organization that educates the public about AI and works with Republicans, Democrats, and Independents who are serious about putting sensible AI safeguards in place. Both of our donations were made exclusively to support Public First Action’s public education and policy mission, and cannot be used to influence the election of any candidate for federal, state, or local office.
 
 Our first donation in February 2026 was made to help promote policies that will maintain meaningful safeguards, sustain America’s AI leadership, and demand transparency from the companies building the most powerful AI models. In the months since, the case for these policies has onlygotten stronger.
@@ -388,17 +577,17 @@ As the pace of AI advances accelerates, the national security stakes of AI are g
 
 Thesepolicy frameworksare just a starting point. Our donation to Public First Action is one way in which we’re trying to raise the salience of this urgent policy debate.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Apply for Anthropic’s AI for Science rare disease research grants
-
-Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Apply for Anthropic’s AI for Science rare disease research grants</title>
@@ -458,17 +647,17 @@ We're looking forward to seeing how this new group of grantees will work togethe
 
 Othersources place the number of rare diseases as high as 10,000. There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as1 in 10 peoplein the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last spring, we announcedAnthropic’s AI for Science program, an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch th...</p><div style="font-size:16px;line-height:1.8;color:#333">Last spring, we announcedAnthropic’s AI for Science program, an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch thematic calls for projects within the broader AI for Science program.
 
 Today, we are sharing a focused call for applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease. This program has two tracks: one for scientists doing basic research, and another for early-stage biotechs working on speeding up clinical development for rare diseases.
@@ -521,17 +710,17 @@ We're looking forward to seeing how this new group of grantees will work togethe
 
 Othersources place the number of rare diseases as high as 10,000. There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as1 in 10 peoplein the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude for Teachers</title>
@@ -613,17 +802,17 @@ Claude for Teachers is for individual educators. A dedicated offering for school
 
 Updated July 21, 2026: Added a note to emphasize that whether and how educational data may be used in Claude for Teachers is determined by district and state policies.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re introducingClaude for Teachers, providing verified K-12 educators in the US free access to premium Claude capabilities, a library of teaching skills, and a direct connection to evidence-based curricula, mapped to academic standards in all 50 states.
 
 Why we’re building for teachers
@@ -698,17 +887,17 @@ Claude for Teachers is for individual educators. A dedicated offering for school
 
 Updated July 21, 2026: Added a note to emphasize that whether and how educational data may be used in Claude for Teachers is determined by district and state policies.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic commits $10 million to Canadian AI research</title>
@@ -810,17 +999,17 @@ La semaine dernière, nous avons publié une étude de cas sur le ministère de 
 
 Les huit partenariats annoncés aujourd’hui ne sont qu’un commencement pour nos investissements dans la recherche canadienne. Nous sommes ravis à l’idée d’apporter notre soutien à ces travaux dans les instituts de recherche, les hôpitaux et les universités pour de nombreuses années encore.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Canadian institutions and researchers have played a critical role in the modern AI era. During a period of broad skepticism about research into neural networks, the University of Toronto and the Université de Montréal were two of only a handful of institutions that incubated this crucial line of work, while researchers at the University of Alberta did pioneering work on reinforcement learning. And in the early 2010s, Canadian research institutions led the way in demonstrating that with the arriv...</p><div style="font-size:16px;line-height:1.8;color:#333">Canadian institutions and researchers have played a critical role in the modern AI era. During a period of broad skepticism about research into neural networks, the University of Toronto and the Université de Montréal were two of only a handful of institutions that incubated this crucial line of work, while researchers at the University of Alberta did pioneering work on reinforcement learning. And in the early 2010s, Canadian research institutions led the way in demonstrating that with the arrival of powerful new computing resources—in particular, general-purpose GPUs—deep neural networks could succeed at scale, kicking off the modern era.
 
 Today, Canadians both at home and abroad continue to play leading roles in AI research, safety, and policy—including at Anthropic. That’s why we’re committing $10 million CAD to Canadian research institutions to fund the next generation of this work. We’re also publishing our first Canadian country brief based on the Anthropic Economic Index, which provides a snapshot of how Canadians are putting Claude to work.
@@ -915,17 +1104,17 @@ La semaine dernière, nous avons publié une étude de cas sur le ministère de 
 
 Les huit partenariats annoncés aujourd’hui ne sont qu’un commencement pour nos investissements dans la recherche canadienne. Nous sommes ravis à l’idée d’apporter notre soutien à ces travaux dans les instituts de recherche, les hôpitaux et les universités pour de nombreuses années encore.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Inviting hard questions</title>
@@ -981,17 +1170,17 @@ In return, we’ll publicly track and report the specific actions we’re taking
 
 To see some of the questions others are asking, and to share your own, visit ourhard questions website.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Who decides the rules for AI?
 
 Can AI give my children a better future?
@@ -1040,17 +1229,17 @@ In return, we’ll publicly track and report the specific actions we’re taking
 
 To see some of the questions others are asking, and to share your own, visit ourhard questions website.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>UST is bringing Claude to physical AI</title>
@@ -1098,17 +1287,17 @@ Pairing reliability, safety, and governance
 
 The industries UST serves are extremely high-stakes. Human approval steps and audit controls are important forms of governance that make it possible for the systems to run in production. The reliability and safety we’ve prioritized in building Claude, paired with UST’s experience in governance and regulated delivery, enables this work to move out of a pilot and into the systems that run a business.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Before a factory commits to manufacturing millions of chips, engineers stress-test the design in the fab. Before a product ships, a fault on the assembly line has to be caught before it becomes a recall. When AI does this kind of work, it’s called physical AI: intelligence built into the equipment and engineering processes that produce the things people use.
 
 We’re partnering withUST, a technology and engineering services company that builds and runs the engineering environments its clients depe...</p><div style="font-size:16px;line-height:1.8;color:#333">Before a factory commits to manufacturing millions of chips, engineers stress-test the design in the fab. Before a product ships, a fault on the assembly line has to be caught before it becomes a recall. When AI does this kind of work, it’s called physical AI: intelligence built into the equipment and engineering processes that produce the things people use.
@@ -1149,17 +1338,17 @@ Pairing reliability, safety, and governance
 
 The industries UST serves are extremely high-stakes. Human approval steps and audit controls are important forms of governance that make it possible for the systems to run in production. The reliability and safety we’ve prioritized in building Claude, paired with UST’s experience in governance and regulated delivery, enables this work to move out of a pilot and into the systems that run a business.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust</title>
@@ -1185,17 +1374,17 @@ The LTBT has the authority to appoint members to Anthropic’s board. The Truste
 
 Bernanke joinsNeil Buddy Shah,Richard Fontaine, andMariano-Florentino Cuéllaron the LTBT. Their collective experience spans global health, national security, law, policy, and economics.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ben-bernanke" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ben-bernanke" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Anthropic&apos;s Long-Term Benefit Trust (LTBT) has appointed Dr. Ben Bernanke, a Distinguished Fellow at the Brookings Institution and former Chair of the Federal Reserve, as its newest member. He joins an independent body that works to hold Anthropic to its mission: the responsible development of advanced AI for the long-term benefit of humanity.
 
 Bernanke led the Federal Reserve from 2006 to 2014, steering the central bank through the 2008 global financial crisis and the recovery that followed. Be...</p><div style="font-size:16px;line-height:1.8;color:#333">Anthropic's Long-Term Benefit Trust (LTBT) has appointed Dr. Ben Bernanke, a Distinguished Fellow at the Brookings Institution and former Chair of the Federal Reserve, as its newest member. He joins an independent body that works to hold Anthropic to its mission: the responsible development of advanced AI for the long-term benefit of humanity.
@@ -1214,63 +1403,9 @@ The LTBT has the authority to appoint members to Anthropic’s board. The Truste
 
 Bernanke joinsNeil Buddy Shah,Richard Fontaine, andMariano-Florentino Cuéllaron the LTBT. Their collective experience spans global health, national security, law, policy, and economics.
 
-A research agenda for the Economic Futures Research Fund
+Introducing Claude Opus 5
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ben-bernanke" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Introducing a way to reflect on how you use Claude</title>
-  <link>https://www.anthropic.com/news/reflect-with-claude</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/reflect-with-claude</guid>
-  <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today we&apos;re introducing, in beta, a new way to reflect on and refine how you use Claude. In ourinterviewswith users, a common theme that’s emerged is a desire to better understand how, exactly, AI can be integrated into daily life. How often should someone use AI? How can it be used most effectively? When is AI suited to a task, and when is it better left to a human?
-
-We built this feature to help answer these types of questions. It lets you easily track and visualize how you use Claude, and dec...</p><div style="font-size:16px;line-height:1.8;color:#333">Today we're introducing, in beta, a new way to reflect on and refine how you use Claude. In ourinterviewswith users, a common theme that’s emerged is a desire to better understand how, exactly, AI can be integrated into daily life. How often should someone use AI? How can it be used most effectively? When is AI suited to a task, and when is it better left to a human?
-
-We built this feature to help answer these types of questions. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals. Your reflection dashboard can be found in Settings on Claude for web or the desktop app.
-
-See your patterns and shape them
-
-Your reflection starts with a summary of how you've been using Claude, covering key topics, your usage patterns, and the types of tasks you often work through.
-
-You can look back on your Claude chat activity over the past 1, 3, 6, or 12 months.
-
-The reflect feature provides a breakdown of when you use Claude most, and what you spent that time working on. Soon, we'll add a view of how much time you've spent using Claude.
-
-Your reflection also invites you to step back and examine the role Claude plays in your life. It will periodically surface questions like, "What's one thing you want to keep doing yourself, even if Claude could do it faster?"and give you the chance to talk it through with Claude.
-
-Within your dashboard, you can also set quiet hours or schedule a nudge to take a break from using Claude after a certain amount of time. Both are reminders of your own preferences and can be dismissed.
-
-Build AI skills that support your original thinking
-
-You can use your reflection to build new skills and sharpen how you work with Claude, using the4D AI Fluency Framework.
-
-Delegation: Setting goals and deciding whether and how to engage with AI
-
-Description: Effectively describing goals to prompt useful AI behaviors and outputs
-
-Discernment: Accurately assessing the usefulness of AI outputs and behaviors
-
-Diligence: Taking responsibility for what we do with AI and how we do it
-
-Your report gives you a summary of your Claude activity across each dimension, with examples of how you tend to collaborate with Claude, like noting that you often rework email drafts in your own voice, or delegate tasks only after settling the strategy yourself. Your reflection will also offer practical suggestions, like starting a Project instead of needing to re-explain the context of ongoing work.
-
-Privacy and sensitive topics
-
-Your reflection doesn’t draw from incognito chats, nor does it pull in underlying files from your connected tools. For example, if you asked Claude to summarize your inbox, that summary may come up in your reflection, but the source emails would not. And any conversation connected to a health integration tool is left out of your insights entirely. The information and insights in your reflection stay there; they aren’t used for any other purpose. You can read more about our privacy practiceshere.
-
-We built this tool to be a reflection of how you use Claude. For some users, this may include sensitive or more personal conversations. In developing this tool and our approach to these topics, we worked with digital media and wellbeing experts from the MIT Media Lab's Advancing Humans with AI (AHA) program, the Digital Wellness Lab at Boston Children’s Hospital, and the Family Online Safety Institute. Sensitive conversations can still appear as part of your reflection, but only at a high level.
-
-This tool is currently available in beta for Free, Pro, and Max users who have memory turned on. OpenSettings in Claudeon the web or the desktop app, and select the option to reflect on your usage to generate your report. If you can't generate a report, it may be because you don’t haveMemoryturned on. Reflecting on your Cowork conversations will be available soon.
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
 
 A research agenda for the Economic Futures Research Fund
 
@@ -1278,62 +1413,7 @@ We’re sharing the research agenda for the Anthropic Economic Futures Research 
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/reflect-with-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Today we&apos;re introducing, in beta, a new way to reflect on and refine how you use Claude. In ourinterviewswith users, a common theme that’s emerged is a desire to better understand how, exactly, AI can be integrated into daily life. How often should someone use AI? How can it be used most effectively? When is AI suited to a task, and when is it better left to a human?
-
-We built this feature to help answer these types of questions. It lets you easily track and visualize how you use Claude, and dec...</p><div style="font-size:16px;line-height:1.8;color:#333">Today we're introducing, in beta, a new way to reflect on and refine how you use Claude. In ourinterviewswith users, a common theme that’s emerged is a desire to better understand how, exactly, AI can be integrated into daily life. How often should someone use AI? How can it be used most effectively? When is AI suited to a task, and when is it better left to a human?
-
-We built this feature to help answer these types of questions. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals. Your reflection dashboard can be found in Settings on Claude for web or the desktop app.
-
-See your patterns and shape them
-
-Your reflection starts with a summary of how you've been using Claude, covering key topics, your usage patterns, and the types of tasks you often work through.
-
-You can look back on your Claude chat activity over the past 1, 3, 6, or 12 months.
-
-The reflect feature provides a breakdown of when you use Claude most, and what you spent that time working on. Soon, we'll add a view of how much time you've spent using Claude.
-
-Your reflection also invites you to step back and examine the role Claude plays in your life. It will periodically surface questions like, "What's one thing you want to keep doing yourself, even if Claude could do it faster?"and give you the chance to talk it through with Claude.
-
-Within your dashboard, you can also set quiet hours or schedule a nudge to take a break from using Claude after a certain amount of time. Both are reminders of your own preferences and can be dismissed.
-
-Build AI skills that support your original thinking
-
-You can use your reflection to build new skills and sharpen how you work with Claude, using the4D AI Fluency Framework.
-
-Delegation: Setting goals and deciding whether and how to engage with AI
-
-Description: Effectively describing goals to prompt useful AI behaviors and outputs
-
-Discernment: Accurately assessing the usefulness of AI outputs and behaviors
-
-Diligence: Taking responsibility for what we do with AI and how we do it
-
-Your report gives you a summary of your Claude activity across each dimension, with examples of how you tend to collaborate with Claude, like noting that you often rework email drafts in your own voice, or delegate tasks only after settling the strategy yourself. Your reflection will also offer practical suggestions, like starting a Project instead of needing to re-explain the context of ongoing work.
-
-Privacy and sensitive topics
-
-Your reflection doesn’t draw from incognito chats, nor does it pull in underlying files from your connected tools. For example, if you asked Claude to summarize your inbox, that summary may come up in your reflection, but the source emails would not. And any conversation connected to a health integration tool is left out of your insights entirely. The information and insights in your reflection stay there; they aren’t used for any other purpose. You can read more about our privacy practiceshere.
-
-We built this tool to be a reflection of how you use Claude. For some users, this may include sensitive or more personal conversations. In developing this tool and our approach to these topics, we worked with digital media and wellbeing experts from the MIT Media Lab's Advancing Humans with AI (AHA) program, the Digital Wellness Lab at Boston Children’s Hospital, and the Family Online Safety Institute. Sensitive conversations can still appear as part of your reflection, but only at a high level.
-
-This tool is currently available in beta for Free, Pro, and Max users who have memory turned on. OpenSettings in Claudeon the web or the desktop app, and select the option to reflect on your usage to generate your report. If you can't generate a report, it may be because you don’t haveMemoryturned on. Reflecting on your Cowork conversations will be available soon.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/reflect-with-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ben-bernanke" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Redeploying Fable 5</title>
@@ -1463,17 +1543,17 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Fable 5 and Mythos 5 redeployedJul 1, 2026Access to Claude Fable 5 and Mythos 5 is now restored.
 
 Claude Fable 5 and Mythos 5 redeployed
@@ -1596,17 +1676,17 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Sonnet 5</title>
@@ -1658,17 +1738,17 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
 A research agenda for the Economic Futures Research Fund
 
 We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
 
 For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
@@ -1713,75 +1793,9 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
-A research agenda for the Economic Futures Research Fund
+Introducing Claude Opus 5
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Claude Science, an AI workbench for scientists, is now available</title>
-  <link>https://www.anthropic.com/news/claude-science-ai-workbench</link>
-  <guid isPermaLink="false">https://www.anthropic.com/news/claude-science-ai-workbench</guid>
-  <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-  <category>Announcements</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
-
-Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Sci...</p><div style="font-size:16px;line-height:1.8;color:#333">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
-
-Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Science is an app that integrates the tools and packages that researchers most commonly use, produces auditable artifacts, and provides flexible access to computing resources.
-
-Introducing Claude Science
-
-Scientific research is often tedious. Researchers must work across dozens of databases, each with their own schema, contend with file formats that require bespoke data pipelines and viewers, and transition between a roster of tools: PubMed, Jupyter, R, a cluster terminal, and more.
-
-Claude Science brings these fragmented tools into a single research environment where scientists can conduct all stages of their work. It helps you analyze literature and execute multi-step research, produces detailed artifacts, and lets you iteratively refine figures and manuscripts until they’re ready for publication. Every output carries an auditable history of how it was made, so you can validate and reproduce the results. Like a Jupyter Notebook, you can access Claude Science wherever you already work—locally on macOS or Linux, or on a remote machine over SSH or with an HPC login node.
-
-Users interact with a generalist coordinating agent with access to over 60 curated skills and connectors pre-configured for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. These agents can spin up others and engage with specialist agents created by users. And a reviewer agent checks citations and calculations, flagging and correcting errors.
-
-We are releasing Claude Science today in beta for Claude Pro, Max, Team, and Enterprise users, and will continue to refine the platform as we collect feedback from users.
-
-Rich scientific artifacts, fully reproducible.Scientific research is inherently visual, so Claude Science generates figures and manuscripts alongside the code that created them. It natively renders rich scientific artifacts, including 3D protein structures, genome browser tracks, chemical structures, and more. You can chat with the agent about any detail, annotating figures and manuscripts in-line so the agent knows what to address to make them publication-ready.
-
-When it generates a figure, Claude Science includes the exact code and environment that produced it, a plain-language description of how it was created, and the full message history. This allows you to understand the inputs, making the work easier to validate and reproduce even months later. You can ask Claude Science to make edits to figures in plain language—removing gridlines, for example, or changing an axis to log scale—and the agent will edit its own code.
-
-Manages your compute and scales on demand.Large analyses—folding a protein, for example, or running a genomics pipeline over a massive dataset—often require researchers to shift their focus to setting up a computing job, waiting while it’s sent to a cluster, checking whether it succeeded or failed, and pulling the results back. Claude Science handles this process for you. It drafts a plan, asks before reaching new resources, and lets you review or revoke any decision before writing and submitting the job to the computing resources your lab already uses (your own HPC cluster over SSH, or your Modal account for compute on demand), scaling the analysis from a single GPU to hundreds as needed.
-
-Because its agents work inside a running session that holds context in memory, even massive datasets only need to be loaded once. It runs on your lab’s own infrastructure—your laptop, Linux box, or HPC login node—so large or sensitive datasets never have to leave the systems they’re already on, and only the context needed for each step of the analysis is sent to Claude. As the pipeline runs, a reviewer agent inspects the outputs, flagging incorrect citations, untraceable numbers, and figures that don’t match their underlying code, and self-correcting as it goes. You can fork the session at any point to compare two approaches without losing the original thread.
-
-Domain-ready on day one. Scientific knowledge is scattered across hundreds of specialized sources. In biology, for example, relevant data might sit across resources such as UniProt, PDB, Ensembl, Reactome, ClinVar, ChEMBL, GEO—each with its own schema and query language—as well as in journals and preprint servers, and domain-specific open models. When you ask Claude Science a question in plain language, specialist agents query and synthesize across all of these sources so you don’t have to navigate them individually. Claude Science uses the skills in NVIDIA’sBioNeMo Agent Toolkitto connect natively to the life sciences models and libraries inBioNeMo, including Evo 2, Boltz-2, and OpenFold3.
-
-Scientists already have models, datasets, and pipelines they trust. Claude Science can connect to these as well, saving any pipeline as a reusable skill or accessing your lab’s preferred tool using a connector, with future sessions inheriting them automatically. This customizability allows you to access Claude, your proprietary data, and the validated tools you already rely on in one conversation. Claude Science benefits from our partners’ specialized expertise and platforms, while more scientists reach their tools through Claude.
-
-What scientists are doing with Claude Science
-
-Over the past few months, researchers have worked with Claude Science in beta for tasks like single-cell RNA sequencing analysis, CRISPR screen design, protein structure prediction, cheminformatics, and more.
-
-Manifold Bio designs tissue-targeting medicines—which home to a specific organ or cell type, so the drug acts where it’s needed and spares the rest of the body—and tests how millions of candidate binders corresponding to hundreds of targets distribute through a living body at once. Manifold used Claude Science to nominate the targets for its latest experiments. For each tissue and target, Claude Science assessed surface expression, trafficking, and safety, ranking candidates against the criteria Manifold has learned from its own internal proprietary data. What set Claude Science apart from a general coding assistant, Manifold said, was that it could do this end-to-end, gathering the right data and applying the right judgment with the context of past programs built in.
-
-Jérôme Lecoq, a neuroscientist at the Allen Institute, used Claude Science to build a multi-agent “computational review template” comprising about 20 custom skills geared towards writing long-form reviews. The sub-agents read through thousands of papers, pulling the central claim and the key quantitative finding, and storing them in an evidence state database. Then the pipeline constructs a narrative arc, writing the review section by section and delegating each to its own specialized sub-agent. Within each section, dedicated agents generate quantitative cross-study figures directly from the evidence database. A key component of the workflow, enabled by Claude Science, is the use of actor-critic pairs: one agent creates content while a separate reviewer agent evaluates it for accuracy and citation fidelity.
-
-Before Claude Science, it could take Lecoq’s team as many as two years to write such a review. He now has about 10 reviews, many more than 100 pages, with citations that were checked over by reviewer agents. The team is now working with domain experts to further refine the AI-based critic agents.
-
-And Stephen Francis, an associate professor and epidemiologist at the UCSF Brain Tumor Center, has used Claude Science to support studies on the molecular epidemiology of glioma, a type of primary tumor that begins in the glial cells of the brain. His lab investigates the genetic basis for how thousands of small-effect germline variants combine to shape individual susceptibility. Although this work predated Claude Science, Francis said the app has dramatically accelerated the analysis, enabling comprehensive germline workups across multiple approaches in roughly one-tenth the time it previously took. His group independently validated Claude Science’s results, confirming that it can produce both rapid and robust analyses.
-
-Getting started with Claude Science
-
-TheClaude Scienceapp is available in beta on macOS and Linux for Pro, Max, Team, and Enterprise plans. We’re sharing it early so scientists can start to use it on real problems and tell us how to refine it.
-
-Team and Enterprise users will need their admin to enable Claude Science. We now have a Team plan offering discounted seats for active scientific labs at academic institutions and nonprofit research organizations;learn more here.
-
-We’ll also be supporting up to 50 Claude Science AI for Science projects, providing up to $30,000 in credits. Modal will alsobe providing up to $2,000 in computefor select projects. We are looking for projects that span domains and explore the boundaries of science, with an early focus on biology and biomedical research. Applications are open through July 15, 2026, with award notifications sent out by July 31. Projects will run from September 1 to December 1, 2026—apply here.
-
-To stay up-to-date on product announcements, provide feedback, and learn from others in the Claude Science community, join theAI for Science Discourse community.
-
-Get started with Claude Science atclaude.com/science.
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
 
 A research agenda for the Economic Futures Research Fund
 
@@ -1789,74 +1803,7 @@ We’re sharing the research agenda for the Anthropic Economic Futures Research 
 
 Ask Claude about the Anthropic Economic Index
 
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
-
-Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Sci...</p><div style="font-size:16px;line-height:1.8;color:#333">AI has the potential to dramatically accelerate the pace of scientific discovery and the development of healthcare interventions. Since launching our efforts in the life sciences last fall, we’ve worked to improve our model capabilities, make connections to the scientific ecosystem via MCPs and skills, and launch partnerships in an effort to realize this potential.
-
-Today, we’re introducing our most significant expansion of these efforts:Claude Science, an AI workbench for scientists. Claude Science is an app that integrates the tools and packages that researchers most commonly use, produces auditable artifacts, and provides flexible access to computing resources.
-
-Introducing Claude Science
-
-Scientific research is often tedious. Researchers must work across dozens of databases, each with their own schema, contend with file formats that require bespoke data pipelines and viewers, and transition between a roster of tools: PubMed, Jupyter, R, a cluster terminal, and more.
-
-Claude Science brings these fragmented tools into a single research environment where scientists can conduct all stages of their work. It helps you analyze literature and execute multi-step research, produces detailed artifacts, and lets you iteratively refine figures and manuscripts until they’re ready for publication. Every output carries an auditable history of how it was made, so you can validate and reproduce the results. Like a Jupyter Notebook, you can access Claude Science wherever you already work—locally on macOS or Linux, or on a remote machine over SSH or with an HPC login node.
-
-Users interact with a generalist coordinating agent with access to over 60 curated skills and connectors pre-configured for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. These agents can spin up others and engage with specialist agents created by users. And a reviewer agent checks citations and calculations, flagging and correcting errors.
-
-We are releasing Claude Science today in beta for Claude Pro, Max, Team, and Enterprise users, and will continue to refine the platform as we collect feedback from users.
-
-Rich scientific artifacts, fully reproducible.Scientific research is inherently visual, so Claude Science generates figures and manuscripts alongside the code that created them. It natively renders rich scientific artifacts, including 3D protein structures, genome browser tracks, chemical structures, and more. You can chat with the agent about any detail, annotating figures and manuscripts in-line so the agent knows what to address to make them publication-ready.
-
-When it generates a figure, Claude Science includes the exact code and environment that produced it, a plain-language description of how it was created, and the full message history. This allows you to understand the inputs, making the work easier to validate and reproduce even months later. You can ask Claude Science to make edits to figures in plain language—removing gridlines, for example, or changing an axis to log scale—and the agent will edit its own code.
-
-Manages your compute and scales on demand.Large analyses—folding a protein, for example, or running a genomics pipeline over a massive dataset—often require researchers to shift their focus to setting up a computing job, waiting while it’s sent to a cluster, checking whether it succeeded or failed, and pulling the results back. Claude Science handles this process for you. It drafts a plan, asks before reaching new resources, and lets you review or revoke any decision before writing and submitting the job to the computing resources your lab already uses (your own HPC cluster over SSH, or your Modal account for compute on demand), scaling the analysis from a single GPU to hundreds as needed.
-
-Because its agents work inside a running session that holds context in memory, even massive datasets only need to be loaded once. It runs on your lab’s own infrastructure—your laptop, Linux box, or HPC login node—so large or sensitive datasets never have to leave the systems they’re already on, and only the context needed for each step of the analysis is sent to Claude. As the pipeline runs, a reviewer agent inspects the outputs, flagging incorrect citations, untraceable numbers, and figures that don’t match their underlying code, and self-correcting as it goes. You can fork the session at any point to compare two approaches without losing the original thread.
-
-Domain-ready on day one. Scientific knowledge is scattered across hundreds of specialized sources. In biology, for example, relevant data might sit across resources such as UniProt, PDB, Ensembl, Reactome, ClinVar, ChEMBL, GEO—each with its own schema and query language—as well as in journals and preprint servers, and domain-specific open models. When you ask Claude Science a question in plain language, specialist agents query and synthesize across all of these sources so you don’t have to navigate them individually. Claude Science uses the skills in NVIDIA’sBioNeMo Agent Toolkitto connect natively to the life sciences models and libraries inBioNeMo, including Evo 2, Boltz-2, and OpenFold3.
-
-Scientists already have models, datasets, and pipelines they trust. Claude Science can connect to these as well, saving any pipeline as a reusable skill or accessing your lab’s preferred tool using a connector, with future sessions inheriting them automatically. This customizability allows you to access Claude, your proprietary data, and the validated tools you already rely on in one conversation. Claude Science benefits from our partners’ specialized expertise and platforms, while more scientists reach their tools through Claude.
-
-What scientists are doing with Claude Science
-
-Over the past few months, researchers have worked with Claude Science in beta for tasks like single-cell RNA sequencing analysis, CRISPR screen design, protein structure prediction, cheminformatics, and more.
-
-Manifold Bio designs tissue-targeting medicines—which home to a specific organ or cell type, so the drug acts where it’s needed and spares the rest of the body—and tests how millions of candidate binders corresponding to hundreds of targets distribute through a living body at once. Manifold used Claude Science to nominate the targets for its latest experiments. For each tissue and target, Claude Science assessed surface expression, trafficking, and safety, ranking candidates against the criteria Manifold has learned from its own internal proprietary data. What set Claude Science apart from a general coding assistant, Manifold said, was that it could do this end-to-end, gathering the right data and applying the right judgment with the context of past programs built in.
-
-Jérôme Lecoq, a neuroscientist at the Allen Institute, used Claude Science to build a multi-agent “computational review template” comprising about 20 custom skills geared towards writing long-form reviews. The sub-agents read through thousands of papers, pulling the central claim and the key quantitative finding, and storing them in an evidence state database. Then the pipeline constructs a narrative arc, writing the review section by section and delegating each to its own specialized sub-agent. Within each section, dedicated agents generate quantitative cross-study figures directly from the evidence database. A key component of the workflow, enabled by Claude Science, is the use of actor-critic pairs: one agent creates content while a separate reviewer agent evaluates it for accuracy and citation fidelity.
-
-Before Claude Science, it could take Lecoq’s team as many as two years to write such a review. He now has about 10 reviews, many more than 100 pages, with citations that were checked over by reviewer agents. The team is now working with domain experts to further refine the AI-based critic agents.
-
-And Stephen Francis, an associate professor and epidemiologist at the UCSF Brain Tumor Center, has used Claude Science to support studies on the molecular epidemiology of glioma, a type of primary tumor that begins in the glial cells of the brain. His lab investigates the genetic basis for how thousands of small-effect germline variants combine to shape individual susceptibility. Although this work predated Claude Science, Francis said the app has dramatically accelerated the analysis, enabling comprehensive germline workups across multiple approaches in roughly one-tenth the time it previously took. His group independently validated Claude Science’s results, confirming that it can produce both rapid and robust analyses.
-
-Getting started with Claude Science
-
-TheClaude Scienceapp is available in beta on macOS and Linux for Pro, Max, Team, and Enterprise plans. We’re sharing it early so scientists can start to use it on real problems and tell us how to refine it.
-
-Team and Enterprise users will need their admin to enable Claude Science. We now have a Team plan offering discounted seats for active scientific labs at academic institutions and nonprofit research organizations;learn more here.
-
-We’ll also be supporting up to 50 Claude Science AI for Science projects, providing up to $30,000 in credits. Modal will alsobe providing up to $2,000 in computefor select projects. We are looking for projects that span domains and explore the boundaries of science, with an early focus on biology and biomedical research. Applications are open through July 15, 2026, with award notifications sent out by July 31. Projects will run from September 1 to December 1, 2026—apply here.
-
-To stay up-to-date on product announcements, provide feedback, and learn from others in the Claude Science community, join theAI for Science Discourse community.
-
-Get started with Claude Science atclaude.com/science.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.
-
-Anthropic is donating another $20 million to Public First Action
-
-Anthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-science-ai-workbench" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
