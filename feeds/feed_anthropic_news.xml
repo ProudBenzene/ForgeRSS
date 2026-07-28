@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Mon, 27 Jul 2026 19:31:29 +0000</lastBuildDate>
+<lastBuildDate>Tue, 28 Jul 2026 02:35:26 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -13,6 +13,103 @@
   <title>Anthropic News</title>
   <link>https://www.anthropic.com/news</link>
 </image>
+<item>
+  <title>Our position on open-weights models</title>
+  <link>https://www.anthropic.com/news/position-open-weights-models</link>
+  <guid isPermaLink="false">https://www.anthropic.com/news/position-open-weights-models</guid>
+  <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Announcements</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A post by Dario Amodei, Anthropic CEO
+
+Over the last few days there has been a lot of discussion about open-weights models, especially those from China. Reports suggest that some US officials areconsidering banningthe use of Chinese open-weights models by US companies. In response, many tech companies have signeda lettersupporting open-weights models, and some people have even accused Anthropic of wanting to ban open-weights models as a means of protecting our business. Anyone who has read my pa...</p><div style="font-size:16px;line-height:1.8;color:#333">A post by Dario Amodei, Anthropic CEO
+
+Over the last few days there has been a lot of discussion about open-weights models, especially those from China. Reports suggest that some US officials areconsidering banningthe use of Chinese open-weights models by US companies. In response, many tech companies have signeda lettersupporting open-weights models, and some people have even accused Anthropic of wanting to ban open-weights models as a means of protecting our business. Anyone who has read my past writing should know that I don’t regard such bans as a useful measure, but let me state it clearly so that there is no doubt:Anthropic has never advocated for a ban on open-weights models.
+
+Open-weights models that don’t have dangerous capabilities are a public good: they don’t cost anything besides the compute needed to run them, and they provide value to businesses, developers, and researchers.
+
+Protectionist bans would not address my most serious national security concerns. Specifically, I am worried about two nightmare scenarios. I laid these out in my essayThe Adolescence of Technologysix months ago1, and have held these positions consistently for many years:
+
+My primary concern is the risk that authoritarian governments—not solely the Chinese Communist Party (CCP), although the CCP is clearly the most capable threat—build AI models that are more powerful than those built by the US, and use them to achieve permanent military superiority or perpetrate incredibly deep repression of their own people. This concern is widely shared within the US government: Vice President Vancewarnedin Paris last year that “authoritarian regimes have stolen and used AI to strengthen their military, intelligence, and surveillance capabilities,” and the Intelligence Community’s2026 Annual Threat Assessmentfound that “other global powers’ robust progress in AI is challenging US economic competitiveness and national security advantages.” It is irrelevant whether these models are released with open weights, and certainly irrelevant whether they are used by US businesses. In fact, the most dangerous model may be one that is trained in secret and handed only to the People’s Liberation Army for use in drones and the Ministry of State Security for surveillance and repression.
+
+My secondary concern is the risk that powerful AI models may be misused to carry out cyberattacks or biological attacks, and may haveserious alignment problems. Open-weights models—it does not matter whether they come from China or anywhere else—do potentially present a higher risk than closed models, because it is very difficult to apply guardrails to them or monitor their usage, and once weights are released they cannot be withdrawn2. But banning the use of these models by US businesses does nothing to address this risk, because bad actors are unlikely to be legitimate US businesses. Itwouldprotect US AI companies from competition, but that has never been my goal.
+
+To address these concerns, Idosupport the following three measures, which I and Anthropic have consistently advocated for:
+
+We should not sell powerful chips or chipmaking equipment to China, and we should crack down on the rampantsmuggling3and workarounds used to obtain access to such chips. China has limited domestic production capacity, and therefore, due to thescaling laws, cannot build more powerful models than the US without US chips. This is the most efficient and direct way to block threat #1, and by hampering the training of models that are out of reach of US law, it also indirectly helps with threat #2.
+
+We should crack down on industrial-scaledistillation operations.Distillation is a much more compute-efficient process than training models from scratch. It allows China to build much better models than its number of chips would ordinarily enable, and thus partially evade chip bans. Distillation does not allow the CCP to obtain equivalent or superior AI capabilities to the US, but it can bring the Chinese frontier to within afew monthsof the US frontier. It is true that many of the companies carrying out these operations release open-weights models—but the open weights are far less relevant than the fact that the operations are backed by an authoritarian state seeking to overtake the US at the frontier. We should have policy interventions to deter this behavior. A blanket ban on open-weights models is neither the correct remedy nor something we have called for4.
+
+All sufficiently capable models, open and closed, should go through mandatory safety testing.The best way to address threat #2 is to just directly test models for cyber, biological, and alignment risks before release. I think this idea is actually close to a consensus: I have been heartened both that the Trump administration has moved in this direction in recent months, and byrecent industry proposalsthat would apply such testing to the most capable models regardless of their country of origin or whether they are open or closed (while exempting less capable models, such as those from startups and academia, entirely). Whether open models do or don’t pose an increased risk, and whether that risk can be mitigated, is something that should emerge from testing, rather than be decided in advance—and there may be promising methods for improving the safety of open-weights models, including recent research from Anthropic onmodular training strategies. Note that to be effective, testing would need to be global, which means even the CCP would need to be on board. I think this may actually be possible: as I wrote inThe Adolescence of Technology, limited cooperation around preventing AI biological weapons may be possible because it is in China’s interest too.
+
+This brings me to theopen letter. I agree with much of it: open weights expand access to the AI economy, they strengthen competition at least for some use cases, and they give customers greater control. Concerns about distillation should be addressed through targeted legal and commercial frameworks—the same measure I described above. But I don’t agree with the letter’s assertions that open-weights models necessarily make it easier to develop safeguards or that broad access to capabilities necessarily helps defenders more than attackers. It seems at least as likely to me that the opposite will be true. For example, I worry that biology will have a strong attacker-defender asymmetry, where sufficiently capable models may be able to quickly weaponize pandemic-level viruses with widely available materials, whereas defense against these agents is a multi-year operational task in the best case (as we saw with Operation Warp Speed)5. Questions like this should be empirically answered by rigorous pre-release testing, not assumed in advance.
+
+To summarize my and Anthropic’s position, we have not and are not advocating for a ban on open-weights models as a category. We should instead focus on keeping powerful chips out of authoritarian hands, stopping industrial-scale distillation, and requiring safety testing of all sufficiently capable models, open and closed.
+
+See Sections 3 and 2 of that essay for discussion of misuse for seizing power and discussion of biological risks, respectively.
+
+Seethis reportfrom the UK AI Security Institute, specifically: “The same openness underpinning these benefits precludes many of the safety measures that closed model developers can use to detect and disrupt misuse, iterate on safeguards as vulnerabilities emerge, control user access and withdraw models. Once open-weight models are released, these options are lost permanently: safeguards can be removed, and copies can be downloaded, redistributed, and run on private systems beyond monitoring. For models with dangerous capabilities – including highly cyber-capable models – open weight release therefore creates a persistent and irreversible risk of misuse.”
+
+See alsohere,here, andherefor more reports from the US Department of Justice.
+
+At Anthropic we’re committed to cracking down on industrial-scale distillation through our own practices, including identifying and banning accounts that use our models in this way. This is challenging—for instance, the relevant accounts can often only be identifiedaftersubstantial distillation has occurred, and distillation often involves creating large numbers of fake accounts that form a moving target. The practices of any individual company cannot entirely solve the problem, which is why we have called for policy on this issue.
+
+SeeSection 2 ofThe Adolescence of Technologyfor a more detailed discussion of biological threats and the offense-defense balance. To summarize, what I believe currently keeps us safe in biology is not “defenders”, or even the availability of materials, but a negative correlation between intellectual capability and desire to commit catastrophic harm. Previous technologies like internet search or even DNA synthesis were nowhere near powerful enough to break this correlation, but I worry that at its current rate of progress, AI will do so very soon. Another way to say it is that a sufficiently powerful technology removes all barriers and exposes whether the attacker or defender has an inherent structural advantage, and I worry in biology it is the attacker.
+
+Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
+A research agenda for the Economic Futures Research Fund
+
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/position-open-weights-models" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A post by Dario Amodei, Anthropic CEO
+
+Over the last few days there has been a lot of discussion about open-weights models, especially those from China. Reports suggest that some US officials areconsidering banningthe use of Chinese open-weights models by US companies. In response, many tech companies have signeda lettersupporting open-weights models, and some people have even accused Anthropic of wanting to ban open-weights models as a means of protecting our business. Anyone who has read my pa...</p><div style="font-size:16px;line-height:1.8;color:#333">A post by Dario Amodei, Anthropic CEO
+
+Over the last few days there has been a lot of discussion about open-weights models, especially those from China. Reports suggest that some US officials areconsidering banningthe use of Chinese open-weights models by US companies. In response, many tech companies have signeda lettersupporting open-weights models, and some people have even accused Anthropic of wanting to ban open-weights models as a means of protecting our business. Anyone who has read my past writing should know that I don’t regard such bans as a useful measure, but let me state it clearly so that there is no doubt:Anthropic has never advocated for a ban on open-weights models.
+
+Open-weights models that don’t have dangerous capabilities are a public good: they don’t cost anything besides the compute needed to run them, and they provide value to businesses, developers, and researchers.
+
+Protectionist bans would not address my most serious national security concerns. Specifically, I am worried about two nightmare scenarios. I laid these out in my essayThe Adolescence of Technologysix months ago1, and have held these positions consistently for many years:
+
+My primary concern is the risk that authoritarian governments—not solely the Chinese Communist Party (CCP), although the CCP is clearly the most capable threat—build AI models that are more powerful than those built by the US, and use them to achieve permanent military superiority or perpetrate incredibly deep repression of their own people. This concern is widely shared within the US government: Vice President Vancewarnedin Paris last year that “authoritarian regimes have stolen and used AI to strengthen their military, intelligence, and surveillance capabilities,” and the Intelligence Community’s2026 Annual Threat Assessmentfound that “other global powers’ robust progress in AI is challenging US economic competitiveness and national security advantages.” It is irrelevant whether these models are released with open weights, and certainly irrelevant whether they are used by US businesses. In fact, the most dangerous model may be one that is trained in secret and handed only to the People’s Liberation Army for use in drones and the Ministry of State Security for surveillance and repression.
+
+My secondary concern is the risk that powerful AI models may be misused to carry out cyberattacks or biological attacks, and may haveserious alignment problems. Open-weights models—it does not matter whether they come from China or anywhere else—do potentially present a higher risk than closed models, because it is very difficult to apply guardrails to them or monitor their usage, and once weights are released they cannot be withdrawn2. But banning the use of these models by US businesses does nothing to address this risk, because bad actors are unlikely to be legitimate US businesses. Itwouldprotect US AI companies from competition, but that has never been my goal.
+
+To address these concerns, Idosupport the following three measures, which I and Anthropic have consistently advocated for:
+
+We should not sell powerful chips or chipmaking equipment to China, and we should crack down on the rampantsmuggling3and workarounds used to obtain access to such chips. China has limited domestic production capacity, and therefore, due to thescaling laws, cannot build more powerful models than the US without US chips. This is the most efficient and direct way to block threat #1, and by hampering the training of models that are out of reach of US law, it also indirectly helps with threat #2.
+
+We should crack down on industrial-scaledistillation operations.Distillation is a much more compute-efficient process than training models from scratch. It allows China to build much better models than its number of chips would ordinarily enable, and thus partially evade chip bans. Distillation does not allow the CCP to obtain equivalent or superior AI capabilities to the US, but it can bring the Chinese frontier to within afew monthsof the US frontier. It is true that many of the companies carrying out these operations release open-weights models—but the open weights are far less relevant than the fact that the operations are backed by an authoritarian state seeking to overtake the US at the frontier. We should have policy interventions to deter this behavior. A blanket ban on open-weights models is neither the correct remedy nor something we have called for4.
+
+All sufficiently capable models, open and closed, should go through mandatory safety testing.The best way to address threat #2 is to just directly test models for cyber, biological, and alignment risks before release. I think this idea is actually close to a consensus: I have been heartened both that the Trump administration has moved in this direction in recent months, and byrecent industry proposalsthat would apply such testing to the most capable models regardless of their country of origin or whether they are open or closed (while exempting less capable models, such as those from startups and academia, entirely). Whether open models do or don’t pose an increased risk, and whether that risk can be mitigated, is something that should emerge from testing, rather than be decided in advance—and there may be promising methods for improving the safety of open-weights models, including recent research from Anthropic onmodular training strategies. Note that to be effective, testing would need to be global, which means even the CCP would need to be on board. I think this may actually be possible: as I wrote inThe Adolescence of Technology, limited cooperation around preventing AI biological weapons may be possible because it is in China’s interest too.
+
+This brings me to theopen letter. I agree with much of it: open weights expand access to the AI economy, they strengthen competition at least for some use cases, and they give customers greater control. Concerns about distillation should be addressed through targeted legal and commercial frameworks—the same measure I described above. But I don’t agree with the letter’s assertions that open-weights models necessarily make it easier to develop safeguards or that broad access to capabilities necessarily helps defenders more than attackers. It seems at least as likely to me that the opposite will be true. For example, I worry that biology will have a strong attacker-defender asymmetry, where sufficiently capable models may be able to quickly weaponize pandemic-level viruses with widely available materials, whereas defense against these agents is a multi-year operational task in the best case (as we saw with Operation Warp Speed)5. Questions like this should be empirically answered by rigorous pre-release testing, not assumed in advance.
+
+To summarize my and Anthropic’s position, we have not and are not advocating for a ban on open-weights models as a category. We should instead focus on keeping powerful chips out of authoritarian hands, stopping industrial-scale distillation, and requiring safety testing of all sufficiently capable models, open and closed.
+
+See Sections 3 and 2 of that essay for discussion of misuse for seizing power and discussion of biological risks, respectively.
+
+Seethis reportfrom the UK AI Security Institute, specifically: “The same openness underpinning these benefits precludes many of the safety measures that closed model developers can use to detect and disrupt misuse, iterate on safeguards as vulnerabilities emerge, control user access and withdraw models. Once open-weight models are released, these options are lost permanently: safeguards can be removed, and copies can be downloaded, redistributed, and run on private systems beyond monitoring. For models with dangerous capabilities – including highly cyber-capable models – open weight release therefore creates a persistent and irreversible risk of misuse.”
+
+See alsohere,here, andherefor more reports from the US Department of Justice.
+
+At Anthropic we’re committed to cracking down on industrial-scale distillation through our own practices, including identifying and banning accounts that use our models in this way. This is challenging—for instance, the relevant accounts can often only be identifiedaftersubstantial distillation has occurred, and distillation often involves creating large numbers of fake accounts that form a moving target. The practices of any individual company cannot entirely solve the problem, which is why we have called for policy on this issue.
+
+SeeSection 2 ofThe Adolescence of Technologyfor a more detailed discussion of biological threats and the offense-defense balance. To summarize, what I believe currently keeps us safe in biology is not “defenders”, or even the availability of materials, but a negative correlation between intellectual capability and desire to commit catastrophic harm. Previous technologies like internet search or even DNA synthesis were nowhere near powerful enough to break this correlation, but I worry that at its current rate of progress, AI will do so very soon. Another way to say it is that a sufficiently powerful technology removes all barriers and exposes whether the attacker or defender has an inherent structural advantage, and I worry in biology it is the attacker.
+
+Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+
+Introducing Claude Opus 5
+
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+
+A research agenda for the Economic Futures Research Fund
+
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/position-open-weights-models" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
 <item>
   <title>Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients</title>
   <link>https://www.anthropic.com/news/cognizant-anthropic</link>
@@ -49,17 +146,15 @@ A risk-navigation tool that has helped underwriters evaluate accounts, which onc
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
+Our position on open-weights models
+
 Introducing Claude Opus 5
 
 Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
 
 A research agenda for the Economic Futures Research Fund
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/cognizant-anthropic" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/cognizant-anthropic" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re expanding ourpartnershipwithCognizant, one of the world&apos;s largest technology services companies.
 
 Cognizant uses Claude in the systems it builds and runs for clients across manufacturing, life sciences, insurance, and other industries. With the expansion of our partnership, it’s embedding Claude across its own business and engineering platforms, scaling a Claude-certified workforce as part of its new Frontier Certified workforce model, and becoming a Global Premier Partner in theClaude Par...</p><div style="font-size:16px;line-height:1.8;color:#333">We're expanding ourpartnershipwithCognizant, one of the world's largest technology services companies.
@@ -90,17 +185,15 @@ A risk-navigation tool that has helped underwriters evaluate accounts, which onc
 
 To learn more about the Claude Partner Network, visitanthropic.com/partners.
 
+Our position on open-weights models
+
 Introducing Claude Opus 5
 
 Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
 
 A research agenda for the Economic Futures Research Fund
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/cognizant-anthropic" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/cognizant-anthropic" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Opus 5</title>
@@ -188,15 +281,13 @@ For more guidance on how to get the best out of Opus 5, see ourprompting guide.
 
 Frontier-Bench v0.1, Effort plot:These results are from an internal run of Frontier-Bench v0.1, on the mini-SWE-agent harness and a GKE backend, mean reward over 5 attempts per task. Opus 4.8 served as fallback on safety-classifier refusals for Opus 5 and Fable 5.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 A research agenda for the Economic Futures Research Fund
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Opus 5 is available today. It’s a thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price.
 
 On coding and knowledge work evaluations likeFrontier-BenchandGDPval-AA, Opus 5 is the new state-of-the-art, though it remains behind Mythos 5 on cybersecurity tasks.
@@ -277,15 +368,13 @@ For more guidance on how to get the best out of Opus 5, see ourprompting guide.
 
 Frontier-Bench v0.1, Effort plot:These results are from an internal run of Frontier-Bench v0.1, on the mini-SWE-agent harness and a GKE backend, mean reward over 5 attempts per task. Opus 4.8 served as fallback on safety-classifier refusals for Opus 5 and Fable 5.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 A research agenda for the Economic Futures Research Fund
 
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-opus-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>A research agenda for the Economic Futures Research Fund</title>
@@ -403,15 +492,13 @@ Place-based interventions in communities most exposed to AI-driven displacement 
 
 Learn more about the RFP and apply here.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re sharing the research agenda for the Anthropic Economic Futures Research Fund. We’re committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.
 
 With the research the Fund supports, we want to study what programs could make the economy more flexible and resilient, ensure the benefits of AI are shared, and minimize the harm that AI-driven disruption could cause.
@@ -522,15 +609,13 @@ Place-based interventions in communities most exposed to AI-driven displacement 
 
 Learn more about the RFP and apply here.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-Ask Claude about the Anthropic Economic Index
-
-We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Ask Claude about the Anthropic Economic Index</title>
@@ -558,15 +643,13 @@ Getting started takes about a minute. In claude.ai, open the connectors menu, fi
 
 As always, the Index reflects patterns in Claude usage rather than the labor market as a whole, and Claude will point you back to the source data and its limitations as you explore. You can find the connector in claude.ai today, and the full datasets remain freely available on our website.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">People have hard questions about AI and work: which jobs will change, which tasks are being automated, and what it means for their own field. TheAnthropic Economic Indexexists to help answer them with real data. Today we&apos;re launching the Anthropic Economic Index connector for Claude, which lets anyone explore that data directly.
 
 The Anthropic Economic Index measures how AI is actually being used in the economy. The Index’s data has been useful to researchers, journalists, and policymakers, but ...</p><div style="font-size:16px;line-height:1.8;color:#333">People have hard questions about AI and work: which jobs will change, which tasks are being automated, and what it means for their own field. TheAnthropic Economic Indexexists to help answer them with real data. Today we're launching the Anthropic Economic Index connector for Claude, which lets anyone explore that data directly.
@@ -587,15 +670,13 @@ Getting started takes about a minute. In claude.ai, open the connectors menu, fi
 
 As always, the Index reflects patterns in Claude usage rather than the labor market as a whole, and Claude will point you back to the source data and its limitations as you explore. You can find the connector in claude.ai today, and the full datasets remain freely available on our website.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic is donating another $20 million to Public First Action</title>
@@ -623,15 +704,13 @@ As the pace of AI advances accelerates, the national security stakes of AI are g
 
 Thesepolicy frameworksare just a starting point. Our donation to Public First Action is one way in which we’re trying to raise the salience of this urgent policy debate.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re contributing an additional $20 million toPublic First Action, bringing our total support to $40 million. Public First Action is a nonpartisan organization that educates the public about AI and works with Republicans, Democrats, and Independents who are serious about putting sensible AI safeguards in place. Both of our donations were made exclusively to support Public First Action’s public education and policy mission, and cannot be used to influence the election of any candidate for federa...</p><div style="font-size:16px;line-height:1.8;color:#333">We're contributing an additional $20 million toPublic First Action, bringing our total support to $40 million. Public First Action is a nonpartisan organization that educates the public about AI and works with Republicans, Democrats, and Independents who are serious about putting sensible AI safeguards in place. Both of our donations were made exclusively to support Public First Action’s public education and policy mission, and cannot be used to influence the election of any candidate for federal, state, or local office.
 
 Our first donation in February 2026 was made to help promote policies that will maintain meaningful safeguards, sustain America’s AI leadership, and demand transparency from the companies building the most powerful AI models. In the months since, the case for these policies has onlygotten stronger.
@@ -652,15 +731,13 @@ As the pace of AI advances accelerates, the national security stakes of AI are g
 
 Thesepolicy frameworksare just a starting point. Our donation to Public First Action is one way in which we’re trying to raise the salience of this urgent policy debate.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/donation-public-first-action" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Apply for Anthropic’s AI for Science rare disease research grants</title>
@@ -720,15 +797,13 @@ We're looking forward to seeing how this new group of grantees will work togethe
 
 Othersources place the number of rare diseases as high as 10,000. There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as1 in 10 peoplein the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Last spring, we announcedAnthropic’s AI for Science program, an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch th...</p><div style="font-size:16px;line-height:1.8;color:#333">Last spring, we announcedAnthropic’s AI for Science program, an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch thematic calls for projects within the broader AI for Science program.
 
 Today, we are sharing a focused call for applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease. This program has two tracks: one for scientists doing basic research, and another for early-stage biotechs working on speeding up clinical development for rare diseases.
@@ -781,15 +856,13 @@ We're looking forward to seeing how this new group of grantees will work togethe
 
 Othersources place the number of rare diseases as high as 10,000. There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as1 in 10 peoplein the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/rare-disease-research-grants" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude for Teachers</title>
@@ -871,15 +944,13 @@ Claude for Teachers is for individual educators. A dedicated offering for school
 
 Updated July 21, 2026: Added a note to emphasize that whether and how educational data may be used in Claude for Teachers is determined by district and state policies.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We&apos;re introducingClaude for Teachers, providing verified K-12 educators in the US free access to premium Claude capabilities, a library of teaching skills, and a direct connection to evidence-based curricula, mapped to academic standards in all 50 states.
 
 Why we’re building for teachers
@@ -954,15 +1025,13 @@ Claude for Teachers is for individual educators. A dedicated offering for school
 
 Updated July 21, 2026: Added a note to emphasize that whether and how educational data may be used in Claude for Teachers is determined by district and state policies.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-for-teachers" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Anthropic commits $10 million to Canadian AI research</title>
@@ -1064,15 +1133,13 @@ La semaine dernière, nous avons publié une étude de cas sur le ministère de 
 
 Les huit partenariats annoncés aujourd’hui ne sont qu’un commencement pour nos investissements dans la recherche canadienne. Nous sommes ravis à l’idée d’apporter notre soutien à ces travaux dans les instituts de recherche, les hôpitaux et les universités pour de nombreuses années encore.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Canadian institutions and researchers have played a critical role in the modern AI era. During a period of broad skepticism about research into neural networks, the University of Toronto and the Université de Montréal were two of only a handful of institutions that incubated this crucial line of work, while researchers at the University of Alberta did pioneering work on reinforcement learning. And in the early 2010s, Canadian research institutions led the way in demonstrating that with the arriv...</p><div style="font-size:16px;line-height:1.8;color:#333">Canadian institutions and researchers have played a critical role in the modern AI era. During a period of broad skepticism about research into neural networks, the University of Toronto and the Université de Montréal were two of only a handful of institutions that incubated this crucial line of work, while researchers at the University of Alberta did pioneering work on reinforcement learning. And in the early 2010s, Canadian research institutions led the way in demonstrating that with the arrival of powerful new computing resources—in particular, general-purpose GPUs—deep neural networks could succeed at scale, kicking off the modern era.
 
 Today, Canadians both at home and abroad continue to play leading roles in AI research, safety, and policy—including at Anthropic. That’s why we’re committing $10 million CAD to Canadian research institutions to fund the next generation of this work. We’re also publishing our first Canadian country brief based on the Anthropic Economic Index, which provides a snapshot of how Canadians are putting Claude to work.
@@ -1167,15 +1234,13 @@ La semaine dernière, nous avons publié une étude de cas sur le ministère de 
 
 Les huit partenariats annoncés aujourd’hui ne sont qu’un commencement pour nos investissements dans la recherche canadienne. Nous sommes ravis à l’idée d’apporter notre soutien à ces travaux dans les instituts de recherche, les hôpitaux et les universités pour de nombreuses années encore.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/canadian-ai-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Inviting hard questions</title>
@@ -1231,15 +1296,13 @@ In return, we’ll publicly track and report the specific actions we’re taking
 
 To see some of the questions others are asking, and to share your own, visit ourhard questions website.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Who decides the rules for AI?
 
 Can AI give my children a better future?
@@ -1288,15 +1351,13 @@ In return, we’ll publicly track and report the specific actions we’re taking
 
 To see some of the questions others are asking, and to share your own, visit ourhard questions website.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/hard-questions" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>UST is bringing Claude to physical AI</title>
@@ -1344,15 +1405,13 @@ Pairing reliability, safety, and governance
 
 The industries UST serves are extremely high-stakes. Human approval steps and audit controls are important forms of governance that make it possible for the systems to run in production. The reliability and safety we’ve prioritized in building Claude, paired with UST’s experience in governance and regulated delivery, enables this work to move out of a pilot and into the systems that run a business.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Before a factory commits to manufacturing millions of chips, engineers stress-test the design in the fab. Before a product ships, a fault on the assembly line has to be caught before it becomes a recall. When AI does this kind of work, it’s called physical AI: intelligence built into the equipment and engineering processes that produce the things people use.
 
 We’re partnering withUST, a technology and engineering services company that builds and runs the engineering environments its clients depe...</p><div style="font-size:16px;line-height:1.8;color:#333">Before a factory commits to manufacturing millions of chips, engineers stress-test the design in the fab. Before a product ships, a fault on the assembly line has to be caught before it becomes a recall. When AI does this kind of work, it’s called physical AI: intelligence built into the equipment and engineering processes that produce the things people use.
@@ -1393,15 +1452,13 @@ Pairing reliability, safety, and governance
 
 The industries UST serves are extremely high-stakes. Human approval steps and audit controls are important forms of governance that make it possible for the systems to run in production. The reliability and safety we’ve prioritized in building Claude, paired with UST’s experience in governance and regulated delivery, enables this work to move out of a pilot and into the systems that run a business.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/ust-claude" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Redeploying Fable 5</title>
@@ -1531,15 +1588,13 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">UpdateClaude Fable 5 and Mythos 5 redeployedJul 1, 2026Access to Claude Fable 5 and Mythos 5 is now restored.
 
 Claude Fable 5 and Mythos 5 redeployed
@@ -1662,15 +1717,13 @@ Analogously, no piece of software is immune to vulnerabilities (though in genera
 
 In other areas of security research, thereareagreed-upon standards: for example, theCommon Vulnerability Scoring System(CVSS) is a common way of assessing the severity of a given software vulnerability.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/redeploying-fable-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Introducing Claude Sonnet 5</title>
@@ -1722,15 +1775,13 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
 
 For many developers, the agentic AI era began with Sonnet-class models: Claude Sonnet 3.5, 3.6, and 3.7 were the first models that showed impressive skills in coding and tool use. More recently, though, the clearest gains in agentic capabilities have been in our Opus-cla...</p><div style="font-size:16px;line-height:1.8;color:#333">Claude Sonnet 5 is built to be the most agentic Sonnet model yet. It can make plans, use tools like browsers and terminals, and run autonomously at a level that, just a few months ago, required larger and more expensive models.
@@ -1775,15 +1826,13 @@ Humanity’s Last Exam:We updated the grader model for Humanity’s Last Exam an
 
 OSWorld-Verified:We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in theSonnet 4.6 launch blog.
 
+Our position on open-weights models
+
 Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-A research agenda for the Economic Futures Research Fund
-
-We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/claude-sonnet-5" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>

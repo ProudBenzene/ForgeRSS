@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Mon, 27 Jul 2026 19:33:14 +0000</lastBuildDate>
+<lastBuildDate>Tue, 28 Jul 2026 02:36:32 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -419,63 +419,47 @@ We previously referred to this category as wide tests.</div><hr style="margin:24
   <guid isPermaLink="false">https://openai.com/index/introducing-genebench-pro/</guid>
   <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">这是一项研究级基准测试，旨在衡量 AI 智能体如何在计算生物学领域应对模糊性并做出关键判断。
 
-Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or fol...</p><div style="font-size:16px;line-height:1.8;color:#333">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+科学数据很少自带使用说明。研究人员必须判断某种模式究竟是真实的生物学现象还是技术噪音，评估当前数据能否支撑所探究的问题，并决定每一个分析结果应如何影响下一步的行动方向。尽管 AI 智能体越来越擅长执行复杂的分析，但真实的科学研究不仅依赖于检索已知事实或遵循预设的工作流，同样依赖于做出这些高阶判断。
 
-Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or following a predefined workflow but also on making these higher-order judgments.
+今天，我们正式推出 GeneBench-Pro。这是一项具有挑战性的研究级基准测试，用于检验模型是否能够处理真实计算生物学中高度依赖判断的分析任务。它在GeneBench⁠（在新窗口中打开）的基础上进行了扩展，涵盖了基因组学、定量生物学和转化医学领域中难度更高、更贴近现实的任务，从而真实反映了计算生物学研究中的复杂性、迭代特征以及模糊性。
 
-Today, we’re introducing GeneBench-Pro—a challenging, research-level benchmark for testing whether models can handle the kind of judgment-heavy analysis that real-world computational biology requires. It expands onGeneBench⁠(opens in a new window)to cover harder, more realistic tasks across genomics, quantitative biology, and translational medicine, capturing the complexity, iterative nature, and ambiguity of scientific research in computational biology.
+迄今为止，关于系统级判断能力的评估方法依然很少，而正是这些判断构成了真实世界计算研究的难点。这些能力包括：处理模棱两可的情况、修正假设、选择正确的分析路径，以及判断分析结果何时已满足支持下游决策的条件。由于这些技能难以形式化，因此也很难进行严谨的评估，尽管模...</p><div style="font-size:16px;line-height:1.8;color:#333">这是一项研究级基准测试，旨在衡量 AI 智能体如何在计算生物学领域应对模糊性并做出关键判断。
 
-To date, there have been few convincing assessments of the system-level judgment calls that make real-world computational research difficult. These include handling ambiguity, revising assumptions, choosing the correct analysis path, and knowing when a result is decision-ready. Because these skills are difficult to formalize, they are also difficult to assess rigorously, even as weaknesses in them increasingly constrain overall AI performance.
+科学数据很少自带使用说明。研究人员必须判断某种模式究竟是真实的生物学现象还是技术噪音，评估当前数据能否支撑所探究的问题，并决定每一个分析结果应如何影响下一步的行动方向。尽管 AI 智能体越来越擅长执行复杂的分析，但真实的科学研究不仅依赖于检索已知事实或遵循预设的工作流，同样依赖于做出这些高阶判断。
 
-GeneBench-Pro is designed to precisely measure these higher-level capabilities. Within GeneBench-Pro, we define “research taste” as the chains of judgment calls that shape an analysis: which questions the data can support, how early diagnostics should change the model or estimand, and when an initial plan needs to be revised. Each GeneBench-Pro problem gives the model a realistic and messy dataset, brief experimental context, and a target estimand tied to a downstream decision. To answer correctly, the model must explore the data, choose an appropriate analytical approach, engage in an iterative process of experimentation, and supply a final answer.
+今天，我们正式推出 GeneBench-Pro。这是一项具有挑战性的研究级基准测试，用于检验模型是否能够处理真实计算生物学中高度依赖判断的分析任务。它在GeneBench⁠（在新窗口中打开）的基础上进行了扩展，涵盖了基因组学、定量生物学和转化医学领域中难度更高、更贴近现实的任务，从而真实反映了计算生物学研究中的复杂性、迭代特征以及模糊性。
 
-In biology, the cost of data generation (e.g., genome sequencing) has fallen dramatically, andsome researchers now argue⁠(opens in a new window)that the limiting factor is no longer sample collection but downstream computation and analysis. GeneBench-Pro is built to assess progress in addressing that bottleneck, with 129 questions covering a broad range of computational biology settings and methods.
+迄今为止，关于系统级判断能力的评估方法依然很少，而正是这些判断构成了真实世界计算研究的难点。这些能力包括：处理模棱两可的情况、修正假设、选择正确的分析路径，以及判断分析结果何时已满足支持下游决策的条件。由于这些技能难以形式化，因此也很难进行严谨的评估，尽管模型在这些方面的不足正日益制约着 AI 的整体表现。
 
-Domain Atlas: 129 problems in 10 domains and 21 sub-domains
+GeneBench-Pro 的设计初衷正是为了准确衡量这些高阶能力。在 GeneBench-Pro 中，我们将“科研品味 (research taste)”定义为塑造整个分析过程的一系列判断链：例如，当前数据能支撑回答哪些问题、初步的数据探查结果应如何促使模型或目标估计量 (estimand) 发生改变，以及初始计划在何时需要被推翻重来。GeneBench-Pro 的每一道题都会为模型提供未经清洗的真实数据集、简短的实验背景说明，以及一个与下游决策直接相关的目标估计量。为了得出正确答案，模型必须主动探索数据、选择合适的分析方法、参与反复迭代的实验过程，并最终提供答案。
 
-Statistical genetics n=17
+在生物学领域，数据生成（如基因组测序）的成本已大幅下降，一些研究人员现在认为⁠（在新窗口中打开），制约该领域发展的瓶颈已不再是样本采集，而是下游的计算与分析。GeneBench-Pro 旨在评估业界在突破这一瓶颈方面所取得的进展，其包含的 129 个问题广泛覆盖了计算生物学中的各类应用场景与研究方法。
 
-Population genetics n=21
+域图谱：共 10 个域、21 个子域，包含 129 个问题
 
-Quantitative genetics n=17
+临床、药物基因组学 (PGx) 与诊断 n=26
 
-Regulatory omics n=17
+使用方向键在基准测试问题之间切换。所选问题的详细信息将显示在下方。
 
-Functional genomics n=9
+本图集提供了 GeneBench-Pro 广度的一个概览。访问案例研究页面，深入探索 10 道代表性题目。
 
-Clinical, PGx & diagnostics n=26
+同时，GeneBench-Pro 的设计也规避了常规基准测试中的局限性。许多长周期的生物学基准测试会基于杂乱的历史数据集构建多步问题，而这类数据往往不存在唯一正确的分析路径。在这种情况下，一个智能体可能会选择一个合理的阈值，而另一个可能会选择不同但同样合理的阈值；这种结果上的偏差更多反映的是基准测试构建者的主观偏好，而非模型性能上的实质性差异。反之亦然：如果某道题目的数值敏感度过低，智能体即使在分析中犯了根本性错误，依然可能输出看似通过的答案。
 
-Microbial genomics n=3
+为了避免这些缺陷，GeneBench-Pro 的每一道问题均通过合成数据构建：由于我们掌握完整的因果结构，并能直接模拟数据生成的过程，因此我们能够灵活调整每道题的复杂度。这样一来，我们既能保证不同且合理的主观分析选择依然能得出可接受的数值结果，又能通过消融实验验证那些“看似合理实则错误”的分析路径必定会得出错误结论。随后，我们通过详细的追踪分析对问题草案进行审查，以排查信息泄露和意外的“捷径”解法。通过这些机制，我们确信：模型得出正确答案的前提是选择了正确的分析路径，而非利用了测试漏洞或迎合了出题者的主观偏好。
 
-Forensic genetics n=2
+我们将 GeneBench-Pro 129 道测试题中的 82 道提交给了外部领域专家，涵盖研究生、博士后研究员、业界科学家以及高校教授。评审人员评估了每道题目的真实程度、目标答案是否具备可识别性，以及所用的方法和估计量 (estimators) 是否恰当。我们随后利用这些反馈对题目进行了优化。
 
-Use the arrow keys to move between benchmark problems. The selected problem’s details appear below.
+Alexander Strudwick Young，加州大学洛杉矶分校 (UCLA) 人类遗传学助理教授
 
-Click on a dot above to learn about a benchmark problem.
+Jennifer Grundman，加州大学洛杉矶分校 (UCLA) 人类遗传学博士候选人
 
-This atlas provides a preview of the breadth of GeneBench-Pro. Visit thecase studies pageto explore 10 representative questions in more detail.
+Alexander Strudwick Young，加州大学洛杉矶分校 (UCLA) 人类遗传学助理教授
 
-GeneBench-Pro is also designed to avoid common benchmark failures. Many long-horizon biology benchmarks construct multi-step questions around messy historical datasets, where there may be no single correct path through the analysis. An agent might choose one defensible cutoff, while another might choose a different but equally defensible option, reflecting the arbitrary choices made by the benchmark creator more than any fundamental differences in model performance. The reverse can also happen: if a problem is too numerically insensitive, an agent can make fundamental errors in an analysis and still produce a passing result.
+Jennifer Grundman，加州大学洛杉矶分校 (UCLA) 人类遗传学博士候选人
 
-To avoid these failure modes, each GeneBench-Pro problem is built synthetically: we know the full causal structure and directly simulate the data-generating process. That enables us to tune the complexity of each problem, ensure that reasonable differences in subjective analytical choices still produce accepted numerical results, and verify (through ablation studies) that plausible but incorrect analyses fail. We then audit problem drafts through detailed trace analyses to check for information leakage and unintended solution pathways. This gives us confidence that getting the right answer depends on choosing the correct analytic pathway and not on exploiting a shortcut or matching an arbitrary author preference.
-
-We sent 82 of the 129 GeneBench-Pro questions to external domain experts, including graduate students, postdoctoral researchers, industry scientists, and professors. Reviewers assessed each problem’s realism, whether the target answer was identifiable, and whether the methods and estimators were appropriate. Feedback was used to improve problems.
-
-Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
-
-Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
-
-Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
-
-Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
-
-Evaluation and grading
-
-Each GeneBench-Pro problem is a self-contained scientific analysis. Agents receive access to an isolated workspace with a short prompt, data files, and a standard bioinformatics stack including Python, scientific computing libraries, and basic genomics packages like PLINK 2.0 (although the problems do not require domain-specific tooling).
-
-Structural variant-guided tumor therapy benefit-risk decision
+GeneBench-Pro 中的每道题都是一项独立完整的科学分析任务。智能体会获得一个独立工作空间的访问权限，其中包含简短的提示词、数据文件，以及标准的生物信息学技术栈（包括 Python、科学计算库和基础基因组学工具包，如 PLINK 2.0），不过这些题目实际上并不强制要求使用特定领域的工具。
 
 A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
 
@@ -485,31 +469,31 @@ These data came from a real experiment; you will be graded not just on numerical
 
 Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
 
-Because we control the full data-generation process, we can grade correctness deterministically against known targets, avoiding model-choice variability and verbosity effects found in standard rubric-based evaluation.
+由于我们掌控了完整的数据生成过程，因此能够将模型输出与已知答案进行比对，得出确定性的客观评分；这有效避免了在常规的人工评分量表 (rubric-based evaluation) 评估中常见的“模型偏好差异”以及“长篇大论更易得高分 (verbosity effects)”的干扰。
 
-Each problem also comes with rich metadata, including the intended analysis structure, attached data files, a detailed multi-page case study, and expert review outcomes. We are fully open-sourcing 10 representative GeneBench-Pro questions onHugging Face⁠(opens in a new window), with aninteractive web interfacefor browsing them. Finally, we will provide a 50-question subset toArtificial Analysis⁠(opens in a new window)for independent, third-party benchmarking in the near future.
+每道题还附带了丰富的元数据，包括预期的分析框架、随附的数据文件、长达数页的详尽案例研究，以及专家评审结果。我们已在Hugging Face⁠（在新窗口中打开）上完全开源了 10 道具有代表性的 GeneBench-Pro 题目，并提供了一个供用户浏览的交互式网页界面。此外，在不久的将来，我们会将包含 50 道题的子集提交给Artificial Analysis⁠（在新窗口中打开），用于独立、第三方的基准评测。
 
-Our strongest model, GPT‑5.6 Sol, attains a pass rate of 28.7% at the highest reasoning level (31.5% with Pro mode enabled). That is a sharp increase from when we began building the original GeneBench; at that time, our best frontier model, GPT‑5, scored below 5%. Progress on this benchmark suggests that frontier models are improving quickly, even on less tangible, systems-level scientific reasoning. At the current pace, this benchmark may be saturated by the end of the year.
+我们目前最强大的模型 GPT‑5.6 Sol，在最高推理级别下达到了 28.7% 的通过率（在开启 Pro 模式后为 31.5%）。相比于我们最初构建初代 GeneBench 时，这是一个显著的跨越；当时，我们最出色的前沿模型 GPT‑5 的得分还不到 5%。该基准测试上的进展表明，前沿模型的进步速度非常快，即使是在那些相对抽象、系统级的科学推理能力上也是如此。按照当前的发展速度，这项基准测试的成绩可能在今年年底前就会达到饱和。
 
-The results also show the impact of scaling test-time compute. At the lowest reasoning level, GPT‑5.6 Sol only achieves a single-digit passrate. At the highest reasoning level, GPT‑5.6 Sol solves nearly six times as many questions as GPT‑5.2 does while using about two-thirds as many tokens.
+评估结果还展示了扩展“测试时计算 (test-time compute)”所带来的影响。在最低的推理级别下，GPT‑5.6 Sol 的通过率仅为个位数。而在最高推理级别下，GPT‑5.6 Sol 解决的题目数量几乎是 GPT‑5.2 的六倍，同时消耗的 Token 数量却仅为其三分之二左右。
 
-Comparisons across model families suggest that GPT models are among the strongest systems at high-level scientific reasoning under quantitative uncertainty. The performance gap between GPT‑5.6, GPT‑5.5 and leading open-source models such as GLM 5.2 is significantly larger than we would expect when extrapolating fromcoding benchmarks⁠(opens in a new window), indicating that open-source models are more specialized for coding than for broader reasoning ability.
+对不同模型系列的对比表明，在面对存在量化不确定性的高阶科学推理任务时，GPT 模型处于最强系统之列。GPT‑5.6、GPT‑5.5 与诸如 GLM 5.2 等领先开源模型之间的性能差距，远大于我们基于编程基准测试⁠（在新窗口中打开）推断出的结果。这表明，开源模型更偏向于在编程任务上进行特化，而在更广泛的推理能力上则有所欠缺。
 
-We used frontier GPT models to evaluate and harden problems during development. As such, we suspected GeneBench-Pro might be biased against GPT models relative to other model families. However, competitor models at best matched the performance of the corresponding GPT model at the time of release, and tended to fall short considerably.
+在开发阶段，我们使用前沿的 GPT 模型来评估并打磨这些题目。因此，我们曾猜测 GeneBench-Pro 可能会在评估其他模型系列时存在不利于它们的偏差。然而，竞争模型表现最佳时也只能追平同期发布的对应 GPT 模型的成绩，而且通常还会出现明显的落后。
 
-These evaluation results—as high as 31.5% on GPT‑5.6 Sol (Pro)—are striking given the difficulty of the GeneBench-Pro questions. In a survey, our reviewers estimated that a typical GeneBench-Pro problem would take a human expert around 20–40 hours to complete. At a conservative $200 per hour, that puts the human labor cost of a single problem in the thousands of dollars. Current AI agents are still too unreliable to replace human experts, but the cost gap is large, with inference costs at only several dollars per problem. That means even partial automation at current capabilities could create meaningful economic and scientific value.
+考虑到 GeneBench-Pro 测试题的高难度，这些评估结果 — 尤其是 GPT‑5.6 Sol (Pro) 高达 31.5% 的通过率 — 令人印象深刻。在一项调查中，我们的评审专家预估，解决一道典型的 GeneBench-Pro 题目大约需要一位人类专家耗费 20 到 40 个小时。按保守估计每小时 200 美元计算，攻克单道题目的人工成本将高达数千美元。尽管目前的 AI 智能体在可靠性上还不足以完全替代人类专家，但两者之间的成本差距是巨大的，模型处理一道题的推理成本仅需几美元。这意味着，即使在当前的模型能力下仅实现部分自动化，也能创造出可观的经济与科学价值。
 
-Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+Cyrillus Tan，纽约基因组中心 (New York Genome Center) 博士后研究助理
 
-Lex Flagel, Director of Data Science at Gencove
+Lex Flagel，Gencove 数据科学总监
 
-Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+Cyrillus Tan，纽约基因组中心 (New York Genome Center) 博士后研究助理
 
-Lex Flagel, Director of Data Science at Gencove
+Lex Flagel，Gencove 数据科学总监
 
-Still, the fact that frontier models still solve fewer than a third of these problems shows that there is substantial room for improvement. Models can make partial progress on challenging problems, but they struggle to close the inferential loop. This failure pattern mirrors the contrast between human experts and novices. Experts use their experience to frame the problem and adapt their approach, while novices make observations but struggle to integrate them into the broader context of the problem.
+尽管如此，前沿模型目前仍只能解决不到三分之一的题目，这说明其仍有很大的提升空间。面对具有挑战性的题目，模型虽然能取得一定的进展，却难以形成完整的推理闭环 (close the inferential loop)。这种失败模式，恰好映射了人类专家与新手之间的差距。专家会利用自身经验来构建问题的分析框架，并灵活调整解决策略；而新手虽然能够观察到一些现象，却很难将这些发现整合到问题更宏观的上下文之中。
 
-Problem: Pharmacogenomic time-to-event response with time-varying treatment
+问题：具有时变治疗特征的药物基因组学事件发生时间响应
 
 Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
 
@@ -519,72 +503,56 @@ Uses a more appropriate causal inference method to properly account for treatmen
 
 Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
 
-Achieving near-perfect performance will require evaluations that both reliably measure progress and identify where models still fail. Benchmarks like GeneBench-Pro can help to turn a vague capability deficiency into something we can diagnose and improve.
+要想实现接近完美的表现，我们需要一种既能可靠衡量技术进展，又能定位模型薄弱环节的评估机制。像 GeneBench-Pro 这样的基准测试，能够将那些原本模糊的能力缺陷，转化为可诊断、可改进的具体指标。
 
-If agents can reliably automate this class of analysis, they could significantly accelerate scientific discovery. Human genetic evidence is already central to target prioritization and translational follow-up, because mechanisms with genetic support are much more likely to lead to approved treatments.
+如果智能体能够可靠地自动执行此类分析，它们将极大加速科学发现的进程。目前，人类遗传学证据已经是靶点优先级评估 (target prioritization) 以及转化医学后续研究的核心要素，因为具备遗传学支持的机制更有可能促成疗法的获批。
 
-Meanwhile, sequencing costs have plummeted, and biobank-scale datasets now link molecular, phenotypic, and health-record information at unprecedented breadth. The limiting factor is shifting from data generation to turning the information into actionable insights. Models that can consistently perform analyses now handled by teams of human experts could transform industrial research by accelerating hypothesis triage, target follow-up, and the iteration cycle between data generation and decision-making.
+与此同时，测序成本已大幅下降，生物样本库级别的数据集正以前所未有的广度，将分子数据、表型特征与健康记录信息连接起来。行业的发展瓶颈，正从数据生成转向如何将这些海量信息转化为可执行的洞见。如果模型能够稳定执行目前由人类专家团队负责的分析工作，将极大加速假设筛选 (hypothesis triage)、靶点跟进，以及从生成数据到制定决策之间的迭代周期，从而彻底改变产业界的研究模式。
 
-GeneBench-Pro represents an initial effort to evaluate the more abstract skills involved in good scientific judgment possessed by experienced. These skills allow them to intuit and identify the most promising initial analyses, iterate and revise their thinking when data contradict initial assumptions, and arrive at conclusions upon which downstream clinical, academic, or business decisions may depend.
+GeneBench-Pro 代表了我们的一项初步尝试，旨在评估那些通常只有资深科研人员才具备的、能够做出优秀科学判断的抽象技能。正是凭借这些技能，他们能靠直觉锁定最具有潜力的初步分析方向；当数据与初始假设相悖时，他们能迅速迭代思路并加以修正，最终得出能够支撑下游临床、学术或商业决策的结论。
 
-We anticipate that as model capabilities advance, benchmarks that probe model abilities at these higher levels of abstraction will become increasingly useful, beyond those that simply test book knowledge or the ability to execute routine analyses.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+我们预计，随着模型能力的不断演进，新的基准测试将变得愈发重要。这些测试不再局限于书本知识或常规分析能力，而是着力探测模型在更高抽象层面的表现。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">这是一项研究级基准测试，旨在衡量 AI 智能体如何在计算生物学领域应对模糊性并做出关键判断。
 
-Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or fol...</p><div style="font-size:16px;line-height:1.8;color:#333">A research-level benchmark measuring how AI agents navigate ambiguity and make consequential judgments in computational biology.
+科学数据很少自带使用说明。研究人员必须判断某种模式究竟是真实的生物学现象还是技术噪音，评估当前数据能否支撑所探究的问题，并决定每一个分析结果应如何影响下一步的行动方向。尽管 AI 智能体越来越擅长执行复杂的分析，但真实的科学研究不仅依赖于检索已知事实或遵循预设的工作流，同样依赖于做出这些高阶判断。
 
-Scientific data rarely arrive with instructions. Researchers must decide whether a pattern reflects biology or noise, whether the data can support the question being asked, and how each result should change what they do next. AI agents are increasingly capable of executing complex analyses, but real scientific research also depends not simply on recalling facts or following a predefined workflow but also on making these higher-order judgments.
+今天，我们正式推出 GeneBench-Pro。这是一项具有挑战性的研究级基准测试，用于检验模型是否能够处理真实计算生物学中高度依赖判断的分析任务。它在GeneBench⁠（在新窗口中打开）的基础上进行了扩展，涵盖了基因组学、定量生物学和转化医学领域中难度更高、更贴近现实的任务，从而真实反映了计算生物学研究中的复杂性、迭代特征以及模糊性。
 
-Today, we’re introducing GeneBench-Pro—a challenging, research-level benchmark for testing whether models can handle the kind of judgment-heavy analysis that real-world computational biology requires. It expands onGeneBench⁠(opens in a new window)to cover harder, more realistic tasks across genomics, quantitative biology, and translational medicine, capturing the complexity, iterative nature, and ambiguity of scientific research in computational biology.
+迄今为止，关于系统级判断能力的评估方法依然很少，而正是这些判断构成了真实世界计算研究的难点。这些能力包括：处理模棱两可的情况、修正假设、选择正确的分析路径，以及判断分析结果何时已满足支持下游决策的条件。由于这些技能难以形式化，因此也很难进行严谨的评估，尽管模...</p><div style="font-size:16px;line-height:1.8;color:#333">这是一项研究级基准测试，旨在衡量 AI 智能体如何在计算生物学领域应对模糊性并做出关键判断。
 
-To date, there have been few convincing assessments of the system-level judgment calls that make real-world computational research difficult. These include handling ambiguity, revising assumptions, choosing the correct analysis path, and knowing when a result is decision-ready. Because these skills are difficult to formalize, they are also difficult to assess rigorously, even as weaknesses in them increasingly constrain overall AI performance.
+科学数据很少自带使用说明。研究人员必须判断某种模式究竟是真实的生物学现象还是技术噪音，评估当前数据能否支撑所探究的问题，并决定每一个分析结果应如何影响下一步的行动方向。尽管 AI 智能体越来越擅长执行复杂的分析，但真实的科学研究不仅依赖于检索已知事实或遵循预设的工作流，同样依赖于做出这些高阶判断。
 
-GeneBench-Pro is designed to precisely measure these higher-level capabilities. Within GeneBench-Pro, we define “research taste” as the chains of judgment calls that shape an analysis: which questions the data can support, how early diagnostics should change the model or estimand, and when an initial plan needs to be revised. Each GeneBench-Pro problem gives the model a realistic and messy dataset, brief experimental context, and a target estimand tied to a downstream decision. To answer correctly, the model must explore the data, choose an appropriate analytical approach, engage in an iterative process of experimentation, and supply a final answer.
+今天，我们正式推出 GeneBench-Pro。这是一项具有挑战性的研究级基准测试，用于检验模型是否能够处理真实计算生物学中高度依赖判断的分析任务。它在GeneBench⁠（在新窗口中打开）的基础上进行了扩展，涵盖了基因组学、定量生物学和转化医学领域中难度更高、更贴近现实的任务，从而真实反映了计算生物学研究中的复杂性、迭代特征以及模糊性。
 
-In biology, the cost of data generation (e.g., genome sequencing) has fallen dramatically, andsome researchers now argue⁠(opens in a new window)that the limiting factor is no longer sample collection but downstream computation and analysis. GeneBench-Pro is built to assess progress in addressing that bottleneck, with 129 questions covering a broad range of computational biology settings and methods.
+迄今为止，关于系统级判断能力的评估方法依然很少，而正是这些判断构成了真实世界计算研究的难点。这些能力包括：处理模棱两可的情况、修正假设、选择正确的分析路径，以及判断分析结果何时已满足支持下游决策的条件。由于这些技能难以形式化，因此也很难进行严谨的评估，尽管模型在这些方面的不足正日益制约着 AI 的整体表现。
 
-Domain Atlas: 129 problems in 10 domains and 21 sub-domains
+GeneBench-Pro 的设计初衷正是为了准确衡量这些高阶能力。在 GeneBench-Pro 中，我们将“科研品味 (research taste)”定义为塑造整个分析过程的一系列判断链：例如，当前数据能支撑回答哪些问题、初步的数据探查结果应如何促使模型或目标估计量 (estimand) 发生改变，以及初始计划在何时需要被推翻重来。GeneBench-Pro 的每一道题都会为模型提供未经清洗的真实数据集、简短的实验背景说明，以及一个与下游决策直接相关的目标估计量。为了得出正确答案，模型必须主动探索数据、选择合适的分析方法、参与反复迭代的实验过程，并最终提供答案。
 
-Statistical genetics n=17
+在生物学领域，数据生成（如基因组测序）的成本已大幅下降，一些研究人员现在认为⁠（在新窗口中打开），制约该领域发展的瓶颈已不再是样本采集，而是下游的计算与分析。GeneBench-Pro 旨在评估业界在突破这一瓶颈方面所取得的进展，其包含的 129 个问题广泛覆盖了计算生物学中的各类应用场景与研究方法。
 
-Population genetics n=21
+域图谱：共 10 个域、21 个子域，包含 129 个问题
 
-Quantitative genetics n=17
+临床、药物基因组学 (PGx) 与诊断 n=26
 
-Regulatory omics n=17
+使用方向键在基准测试问题之间切换。所选问题的详细信息将显示在下方。
 
-Functional genomics n=9
+本图集提供了 GeneBench-Pro 广度的一个概览。访问案例研究页面，深入探索 10 道代表性题目。
 
-Clinical, PGx & diagnostics n=26
+同时，GeneBench-Pro 的设计也规避了常规基准测试中的局限性。许多长周期的生物学基准测试会基于杂乱的历史数据集构建多步问题，而这类数据往往不存在唯一正确的分析路径。在这种情况下，一个智能体可能会选择一个合理的阈值，而另一个可能会选择不同但同样合理的阈值；这种结果上的偏差更多反映的是基准测试构建者的主观偏好，而非模型性能上的实质性差异。反之亦然：如果某道题目的数值敏感度过低，智能体即使在分析中犯了根本性错误，依然可能输出看似通过的答案。
 
-Microbial genomics n=3
+为了避免这些缺陷，GeneBench-Pro 的每一道问题均通过合成数据构建：由于我们掌握完整的因果结构，并能直接模拟数据生成的过程，因此我们能够灵活调整每道题的复杂度。这样一来，我们既能保证不同且合理的主观分析选择依然能得出可接受的数值结果，又能通过消融实验验证那些“看似合理实则错误”的分析路径必定会得出错误结论。随后，我们通过详细的追踪分析对问题草案进行审查，以排查信息泄露和意外的“捷径”解法。通过这些机制，我们确信：模型得出正确答案的前提是选择了正确的分析路径，而非利用了测试漏洞或迎合了出题者的主观偏好。
 
-Forensic genetics n=2
+我们将 GeneBench-Pro 129 道测试题中的 82 道提交给了外部领域专家，涵盖研究生、博士后研究员、业界科学家以及高校教授。评审人员评估了每道题目的真实程度、目标答案是否具备可识别性，以及所用的方法和估计量 (estimators) 是否恰当。我们随后利用这些反馈对题目进行了优化。
 
-Use the arrow keys to move between benchmark problems. The selected problem’s details appear below.
+Alexander Strudwick Young，加州大学洛杉矶分校 (UCLA) 人类遗传学助理教授
 
-Click on a dot above to learn about a benchmark problem.
+Jennifer Grundman，加州大学洛杉矶分校 (UCLA) 人类遗传学博士候选人
 
-This atlas provides a preview of the breadth of GeneBench-Pro. Visit thecase studies pageto explore 10 representative questions in more detail.
+Alexander Strudwick Young，加州大学洛杉矶分校 (UCLA) 人类遗传学助理教授
 
-GeneBench-Pro is also designed to avoid common benchmark failures. Many long-horizon biology benchmarks construct multi-step questions around messy historical datasets, where there may be no single correct path through the analysis. An agent might choose one defensible cutoff, while another might choose a different but equally defensible option, reflecting the arbitrary choices made by the benchmark creator more than any fundamental differences in model performance. The reverse can also happen: if a problem is too numerically insensitive, an agent can make fundamental errors in an analysis and still produce a passing result.
+Jennifer Grundman，加州大学洛杉矶分校 (UCLA) 人类遗传学博士候选人
 
-To avoid these failure modes, each GeneBench-Pro problem is built synthetically: we know the full causal structure and directly simulate the data-generating process. That enables us to tune the complexity of each problem, ensure that reasonable differences in subjective analytical choices still produce accepted numerical results, and verify (through ablation studies) that plausible but incorrect analyses fail. We then audit problem drafts through detailed trace analyses to check for information leakage and unintended solution pathways. This gives us confidence that getting the right answer depends on choosing the correct analytic pathway and not on exploiting a shortcut or matching an arbitrary author preference.
-
-We sent 82 of the 129 GeneBench-Pro questions to external domain experts, including graduate students, postdoctoral researchers, industry scientists, and professors. Reviewers assessed each problem’s realism, whether the target answer was identifiable, and whether the methods and estimators were appropriate. Feedback was used to improve problems.
-
-Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
-
-Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
-
-Alexander Strudwick Young, Assistant Professor in Human Genetics at UCLA
-
-Jennifer Grundman, PhD Candidate in Human Genetics at UCLA
-
-Evaluation and grading
-
-Each GeneBench-Pro problem is a self-contained scientific analysis. Agents receive access to an isolated workspace with a short prompt, data files, and a standard bioinformatics stack including Python, scientific computing libraries, and basic genomics packages like PLINK 2.0 (although the problems do not require domain-specific tooling).
-
-Structural variant-guided tumor therapy benefit-risk decision
+GeneBench-Pro 中的每道题都是一项独立完整的科学分析任务。智能体会获得一个独立工作空间的访问权限，其中包含简短的提示词、数据文件，以及标准的生物信息学技术栈（包括 Python、科学计算库和基础基因组学工具包，如 PLINK 2.0），不过这些题目实际上并不强制要求使用特定领域的工具。
 
 A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.
 
@@ -594,31 +562,31 @@ These data came from a real experiment; you will be graded not just on numerical
 
 Return your final answer as exactly one JSON object.Do not wrap the JSON in markdown.Do not add prose before or after the JSON.Do not omit any keys shown in the example.Return the JSON object in your final answer:
 
-Because we control the full data-generation process, we can grade correctness deterministically against known targets, avoiding model-choice variability and verbosity effects found in standard rubric-based evaluation.
+由于我们掌控了完整的数据生成过程，因此能够将模型输出与已知答案进行比对，得出确定性的客观评分；这有效避免了在常规的人工评分量表 (rubric-based evaluation) 评估中常见的“模型偏好差异”以及“长篇大论更易得高分 (verbosity effects)”的干扰。
 
-Each problem also comes with rich metadata, including the intended analysis structure, attached data files, a detailed multi-page case study, and expert review outcomes. We are fully open-sourcing 10 representative GeneBench-Pro questions onHugging Face⁠(opens in a new window), with aninteractive web interfacefor browsing them. Finally, we will provide a 50-question subset toArtificial Analysis⁠(opens in a new window)for independent, third-party benchmarking in the near future.
+每道题还附带了丰富的元数据，包括预期的分析框架、随附的数据文件、长达数页的详尽案例研究，以及专家评审结果。我们已在Hugging Face⁠（在新窗口中打开）上完全开源了 10 道具有代表性的 GeneBench-Pro 题目，并提供了一个供用户浏览的交互式网页界面。此外，在不久的将来，我们会将包含 50 道题的子集提交给Artificial Analysis⁠（在新窗口中打开），用于独立、第三方的基准评测。
 
-Our strongest model, GPT‑5.6 Sol, attains a pass rate of 28.7% at the highest reasoning level (31.5% with Pro mode enabled). That is a sharp increase from when we began building the original GeneBench; at that time, our best frontier model, GPT‑5, scored below 5%. Progress on this benchmark suggests that frontier models are improving quickly, even on less tangible, systems-level scientific reasoning. At the current pace, this benchmark may be saturated by the end of the year.
+我们目前最强大的模型 GPT‑5.6 Sol，在最高推理级别下达到了 28.7% 的通过率（在开启 Pro 模式后为 31.5%）。相比于我们最初构建初代 GeneBench 时，这是一个显著的跨越；当时，我们最出色的前沿模型 GPT‑5 的得分还不到 5%。该基准测试上的进展表明，前沿模型的进步速度非常快，即使是在那些相对抽象、系统级的科学推理能力上也是如此。按照当前的发展速度，这项基准测试的成绩可能在今年年底前就会达到饱和。
 
-The results also show the impact of scaling test-time compute. At the lowest reasoning level, GPT‑5.6 Sol only achieves a single-digit passrate. At the highest reasoning level, GPT‑5.6 Sol solves nearly six times as many questions as GPT‑5.2 does while using about two-thirds as many tokens.
+评估结果还展示了扩展“测试时计算 (test-time compute)”所带来的影响。在最低的推理级别下，GPT‑5.6 Sol 的通过率仅为个位数。而在最高推理级别下，GPT‑5.6 Sol 解决的题目数量几乎是 GPT‑5.2 的六倍，同时消耗的 Token 数量却仅为其三分之二左右。
 
-Comparisons across model families suggest that GPT models are among the strongest systems at high-level scientific reasoning under quantitative uncertainty. The performance gap between GPT‑5.6, GPT‑5.5 and leading open-source models such as GLM 5.2 is significantly larger than we would expect when extrapolating fromcoding benchmarks⁠(opens in a new window), indicating that open-source models are more specialized for coding than for broader reasoning ability.
+对不同模型系列的对比表明，在面对存在量化不确定性的高阶科学推理任务时，GPT 模型处于最强系统之列。GPT‑5.6、GPT‑5.5 与诸如 GLM 5.2 等领先开源模型之间的性能差距，远大于我们基于编程基准测试⁠（在新窗口中打开）推断出的结果。这表明，开源模型更偏向于在编程任务上进行特化，而在更广泛的推理能力上则有所欠缺。
 
-We used frontier GPT models to evaluate and harden problems during development. As such, we suspected GeneBench-Pro might be biased against GPT models relative to other model families. However, competitor models at best matched the performance of the corresponding GPT model at the time of release, and tended to fall short considerably.
+在开发阶段，我们使用前沿的 GPT 模型来评估并打磨这些题目。因此，我们曾猜测 GeneBench-Pro 可能会在评估其他模型系列时存在不利于它们的偏差。然而，竞争模型表现最佳时也只能追平同期发布的对应 GPT 模型的成绩，而且通常还会出现明显的落后。
 
-These evaluation results—as high as 31.5% on GPT‑5.6 Sol (Pro)—are striking given the difficulty of the GeneBench-Pro questions. In a survey, our reviewers estimated that a typical GeneBench-Pro problem would take a human expert around 20–40 hours to complete. At a conservative $200 per hour, that puts the human labor cost of a single problem in the thousands of dollars. Current AI agents are still too unreliable to replace human experts, but the cost gap is large, with inference costs at only several dollars per problem. That means even partial automation at current capabilities could create meaningful economic and scientific value.
+考虑到 GeneBench-Pro 测试题的高难度，这些评估结果 — 尤其是 GPT‑5.6 Sol (Pro) 高达 31.5% 的通过率 — 令人印象深刻。在一项调查中，我们的评审专家预估，解决一道典型的 GeneBench-Pro 题目大约需要一位人类专家耗费 20 到 40 个小时。按保守估计每小时 200 美元计算，攻克单道题目的人工成本将高达数千美元。尽管目前的 AI 智能体在可靠性上还不足以完全替代人类专家，但两者之间的成本差距是巨大的，模型处理一道题的推理成本仅需几美元。这意味着，即使在当前的模型能力下仅实现部分自动化，也能创造出可观的经济与科学价值。
 
-Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+Cyrillus Tan，纽约基因组中心 (New York Genome Center) 博士后研究助理
 
-Lex Flagel, Director of Data Science at Gencove
+Lex Flagel，Gencove 数据科学总监
 
-Cyrillus Tan, Postdoctoral Research Associate at the New York Genome Center
+Cyrillus Tan，纽约基因组中心 (New York Genome Center) 博士后研究助理
 
-Lex Flagel, Director of Data Science at Gencove
+Lex Flagel，Gencove 数据科学总监
 
-Still, the fact that frontier models still solve fewer than a third of these problems shows that there is substantial room for improvement. Models can make partial progress on challenging problems, but they struggle to close the inferential loop. This failure pattern mirrors the contrast between human experts and novices. Experts use their experience to frame the problem and adapt their approach, while novices make observations but struggle to integrate them into the broader context of the problem.
+尽管如此，前沿模型目前仍只能解决不到三分之一的题目，这说明其仍有很大的提升空间。面对具有挑战性的题目，模型虽然能取得一定的进展，却难以形成完整的推理闭环 (close the inferential loop)。这种失败模式，恰好映射了人类专家与新手之间的差距。专家会利用自身经验来构建问题的分析框架，并灵活调整解决策略；而新手虽然能够观察到一些现象，却很难将这些发现整合到问题更宏观的上下文之中。
 
-Problem: Pharmacogenomic time-to-event response with time-varying treatment
+问题：具有时变治疗特征的药物基因组学事件发生时间响应
 
 Handles treatment timing with a conventional Cox outcome model but does not address treatment-confounder feedback.
 
@@ -628,15 +596,15 @@ Uses a more appropriate causal inference method to properly account for treatmen
 
 Used a new-user marginal structural Cox model: excluded 818 flagged prevalent users, modeled treatment initiation with stabilized inverse-probability weights using baseline covariates and current biomarker, and treated exposure as time-varying with a 90-day efficacy lag.
 
-Achieving near-perfect performance will require evaluations that both reliably measure progress and identify where models still fail. Benchmarks like GeneBench-Pro can help to turn a vague capability deficiency into something we can diagnose and improve.
+要想实现接近完美的表现，我们需要一种既能可靠衡量技术进展，又能定位模型薄弱环节的评估机制。像 GeneBench-Pro 这样的基准测试，能够将那些原本模糊的能力缺陷，转化为可诊断、可改进的具体指标。
 
-If agents can reliably automate this class of analysis, they could significantly accelerate scientific discovery. Human genetic evidence is already central to target prioritization and translational follow-up, because mechanisms with genetic support are much more likely to lead to approved treatments.
+如果智能体能够可靠地自动执行此类分析，它们将极大加速科学发现的进程。目前，人类遗传学证据已经是靶点优先级评估 (target prioritization) 以及转化医学后续研究的核心要素，因为具备遗传学支持的机制更有可能促成疗法的获批。
 
-Meanwhile, sequencing costs have plummeted, and biobank-scale datasets now link molecular, phenotypic, and health-record information at unprecedented breadth. The limiting factor is shifting from data generation to turning the information into actionable insights. Models that can consistently perform analyses now handled by teams of human experts could transform industrial research by accelerating hypothesis triage, target follow-up, and the iteration cycle between data generation and decision-making.
+与此同时，测序成本已大幅下降，生物样本库级别的数据集正以前所未有的广度，将分子数据、表型特征与健康记录信息连接起来。行业的发展瓶颈，正从数据生成转向如何将这些海量信息转化为可执行的洞见。如果模型能够稳定执行目前由人类专家团队负责的分析工作，将极大加速假设筛选 (hypothesis triage)、靶点跟进，以及从生成数据到制定决策之间的迭代周期，从而彻底改变产业界的研究模式。
 
-GeneBench-Pro represents an initial effort to evaluate the more abstract skills involved in good scientific judgment possessed by experienced. These skills allow them to intuit and identify the most promising initial analyses, iterate and revise their thinking when data contradict initial assumptions, and arrive at conclusions upon which downstream clinical, academic, or business decisions may depend.
+GeneBench-Pro 代表了我们的一项初步尝试，旨在评估那些通常只有资深科研人员才具备的、能够做出优秀科学判断的抽象技能。正是凭借这些技能，他们能靠直觉锁定最具有潜力的初步分析方向；当数据与初始假设相悖时，他们能迅速迭代思路并加以修正，最终得出能够支撑下游临床、学术或商业决策的结论。
 
-We anticipate that as model capabilities advance, benchmarks that probe model abilities at these higher levels of abstraction will become increasingly useful, beyond those that simply test book knowledge or the ability to execute routine analyses.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+我们预计，随着模型能力的不断演进，新的基准测试将变得愈发重要。这些测试不再局限于书本知识或常规分析能力，而是着力探测模型在更高抽象层面的表现。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-genebench-pro/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Previewing GPT-5.6 Sol: a next-generation model</title>
@@ -795,7 +763,7 @@ We’re excited to continue learning from this preview period, and to bring GPT�
   <title>GPT-5.5</title>
   <link>https://openai.com/index/introducing-gpt-5-5/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -804,7 +772,7 @@ We’re excited to continue learning from this preview period, and to bring GPT�
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>
+  <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">今天，我们将在 ChatGPT（以 GPT‑5.4 Thinking 模式）、API 及 Codex 中发布GPT‑5.4。它是我们目前针对专业化工作负载能力最强、效率最高的前沿模型。同时，我们也将在 ChatGPT 及 API 中发布GPT‑5.4 Pro，该模型专为在复杂任务中追求极致性能的用户而设计。
 
