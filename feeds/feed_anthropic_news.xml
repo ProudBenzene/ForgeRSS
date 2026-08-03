@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/news</link>
 <description>Latest news and updates from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Mon, 03 Aug 2026 09:47:59 +0000</lastBuildDate>
+<lastBuildDate>Mon, 03 Aug 2026 14:42:56 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/news" rel="self" type="application/rss+xml"/>
 <image>
@@ -18,7 +18,7 @@
   <link>https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals</link>
   <guid isPermaLink="false">https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals</guid>
   <pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
-  <category>Frontier Red Team</category>
+  <category>News</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.
 
 Below we describe what happened, how it happened, and what we’re changing. We encourage other AI labs to perform similar reviews. This post reflects our current understanding; we&apos;ll update it if any details...</p><div style="font-size:16px;line-height:1.8;color:#333">In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.
@@ -119,11 +119,11 @@ While there is not a perfectly sharp distinction between the two, we believe the
 
 Notably, our most recent model, on realizing that it was working in a real environment, stopped its pursuit of the evaluation goal.
 
-These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome.
+These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome.Updated Aug 3:Corrected the name of the evaluation in which the OpenAI/Hugging Face incident occurred.
 
 We routinely test internal research prototypes like this one. It is not planned for general release.
 
-We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of CyberGym.
+We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.
 
 Our position on open-weights models
 
@@ -131,11 +131,7 @@ Cognizant and Anthropic expand their partnership to bring Claude to enterprise c
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.
 
 Below we describe what happened, how it happened, and what we’re changing. We encourage other AI labs to perform similar reviews. This post reflects our current understanding; we&apos;ll update it if any details...</p><div style="font-size:16px;line-height:1.8;color:#333">In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.
@@ -236,11 +232,11 @@ While there is not a perfectly sharp distinction between the two, we believe the
 
 Notably, our most recent model, on realizing that it was working in a real environment, stopped its pursuit of the evaluation goal.
 
-These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome.
+These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome.Updated Aug 3:Corrected the name of the evaluation in which the OpenAI/Hugging Face incident occurred.
 
 We routinely test internal research prototypes like this one. It is not planned for general release.
 
-We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of CyberGym.
+We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.
 
 Our position on open-weights models
 
@@ -248,11 +244,7 @@ Cognizant and Anthropic expand their partnership to bring Claude to enterprise c
 
 Introducing Claude Opus 5
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
-
-Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Our position on open-weights models</title>
