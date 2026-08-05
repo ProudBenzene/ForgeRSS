@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Wed, 05 Aug 2026 02:34:02 +0000</lastBuildDate>
+<lastBuildDate>Wed, 05 Aug 2026 08:40:51 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -19,8 +19,84 @@
   <guid isPermaLink="false">https://openai.com/index/ten-advances-in-mathematics/</guid>
   <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Ten advances in mathematics and theoretical computer science</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Ten advances in mathematics and theoretical computer science</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We want to empower scientists and mathematicians with tools that accelerate discovery. That is why we recently announcedChatGPT for Academic Researchers⁠, an initiative providing 100,000 scientists and mathematicians with free access to our best ChatGPT models. We also continue to evaluate our models on open research problems during development.
+
+In May, we shared anAI-generated disproof⁠of the Erdős unit-distance conjecture, discovered while evaluating an unreleased model. This work has already...</p><div style="font-size:16px;line-height:1.8;color:#333">We want to empower scientists and mathematicians with tools that accelerate discovery. That is why we recently announcedChatGPT for Academic Researchers⁠, an initiative providing 100,000 scientists and mathematicians with free access to our best ChatGPT models. We also continue to evaluate our models on open research problems during development.
+
+In May, we shared anAI-generated disproof⁠of the Erdős unit-distance conjecture, discovered while evaluating an unreleased model. This work has already inspired further developments in mathematics and theoretical computer science1. Today, we are sharing a selection of ten results, each of which resolves or makes substantial progress on a long-standing open problem. These problems span high-dimensional geometry, coding theory, arithmetic circuit complexity, group theory, operator algebras, quantum complexity, lattice cryptography and extremal combinatorics. All of these problems are of substantial interest to their respective mathematical communities, and several are of broad interest across mathematics as a whole.
+
+We provide new results for the following problems. The results were achieved by an internal version of Astra, our next major model. The total number of tokens needed to find solutions to these problems would cost roughly $2,000 at Sol API rates. These arguments were then prepared into manuscripts by humans with the same model. Afterward, the model formalized each argument in aLean certificate⁠(opens in a new window). We are also releasing for each solution a model’s narration of its thinking process.
+
+High-dimensional sphere packing.New upper bounds on sphere-packing density down to the Cohn–Elkies threshold.
+
+Binary and spherical codes.Exponentially improved bounds on the maximum size of binary codes at any prescribed minimum distance, with analogous results for high-dimensional spherical codes.
+
+Non-sofic groups.A construction establishing the existence of non-sofic groups, addressing a central open question in group theory.
+
+Connes’s rigidity conjecture.Disproof of a longstanding conjecture that certain groups are uniquely determined by their von Neumann algebras.
+
+Arithmetic circuit complexity.New lower bounds for computing the permanent using arithmetic circuits and formulas, including an arithmetic-formula lower bound of order n4/log n.
+
+Quantum parallel repetition.An exponential parallel repetition theorem for general two-player quantum games, extending a foundational principle from classical complexity theory.
+
+Closest vector problem.Polynomial-factor hardness of approximation for the closest vector problem, a foundational lattice question related to post-quantum cryptography.
+
+Ehrhart’s volume conjecture.Determining, in every dimension, the maximum possible volume of a convex body whose centroid is its only interior lattice point.
+
+Multicolor Ramsey numbers.A superexponential lower bound for multicolor triangle Ramsey numbers, resolving Erdős problem 183.
+
+Extremal number conjectures.Results on the compactness and degeneracy conjectures in extremal graph theory, resolving Erdős problems 146 and 180.
+
+Responsibility to the mathematical community
+
+The emergence of systems capable of contributing to mathematical research raises questions that cannot be answered by a technology company alone. There are many views as to the role of AI in mathematics, and we have deep respect and understanding for those concerned with its impact, including the signers of theLeiden declaration on AI and Mathematics⁠(opens in a new window). We believe attribution should honestly reflect how a result was produced: claiming human authorship for a proof generated entirely by an AI system would misrepresent both the system’s contribution and the nature of genuine human intellectual work. We helped prepare the manuscripts and formalize the proofs in Lean, and we take responsibility for their correctness, while the mathematical arguments themselves were generated by our system. We hope the mathematical community will engage deeply with these results, place them in context, and bring the ideas behind them to life through new research and discovery.
+
+As AI systems evolve into more sophisticated research collaborators, ensuring widespread access is fundamental to supporting scientists and mathematicians as they navigate and define the future of their disciplines during this transformative era.
+
+1Subsequent research includes Bloom, Sawin, Schildkraut, and Zhelezov, “The sum-product conjecture is false for real numbers⁠(opens in a new window)”; Pohoata, “Split primes and the Elekes-Rónyai problem⁠(opens in a new window)”; Saha, Xu, and Ye, “Furthest Pair Requires Quadratic Time in Superconstant Dimension under SETH⁠(opens in a new window)”; Goh and Hatami, “Communication complexity of point-line incidences over the reals⁠(opens in a new window)”; and Lee, Pohoata, and Zhu, “The Minkowski grid has robustly many repeated distances⁠(opens in a new window).”
+
+Subsequent research includes Bloom, Sawin, Schildkraut, and Zhelezov, “The sum-product conjecture is false for real numbers⁠(opens in a new window)”; Pohoata, “Split primes and the Elekes-Rónyai problem⁠(opens in a new window)”; Saha, Xu, and Ye, “Furthest Pair Requires Quadratic Time in Superconstant Dimension under SETH⁠(opens in a new window)”; Goh and Hatami, “Communication complexity of point-line incidences over the reals⁠(opens in a new window)”; and Lee, Pohoata, and Zhu, “The Minkowski grid has robustly many repeated distances⁠(opens in a new window).”
+
+PublicationJul 28, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We want to empower scientists and mathematicians with tools that accelerate discovery. That is why we recently announcedChatGPT for Academic Researchers⁠, an initiative providing 100,000 scientists and mathematicians with free access to our best ChatGPT models. We also continue to evaluate our models on open research problems during development.
+
+In May, we shared anAI-generated disproof⁠of the Erdős unit-distance conjecture, discovered while evaluating an unreleased model. This work has already...</p><div style="font-size:16px;line-height:1.8;color:#333">We want to empower scientists and mathematicians with tools that accelerate discovery. That is why we recently announcedChatGPT for Academic Researchers⁠, an initiative providing 100,000 scientists and mathematicians with free access to our best ChatGPT models. We also continue to evaluate our models on open research problems during development.
+
+In May, we shared anAI-generated disproof⁠of the Erdős unit-distance conjecture, discovered while evaluating an unreleased model. This work has already inspired further developments in mathematics and theoretical computer science1. Today, we are sharing a selection of ten results, each of which resolves or makes substantial progress on a long-standing open problem. These problems span high-dimensional geometry, coding theory, arithmetic circuit complexity, group theory, operator algebras, quantum complexity, lattice cryptography and extremal combinatorics. All of these problems are of substantial interest to their respective mathematical communities, and several are of broad interest across mathematics as a whole.
+
+We provide new results for the following problems. The results were achieved by an internal version of Astra, our next major model. The total number of tokens needed to find solutions to these problems would cost roughly $2,000 at Sol API rates. These arguments were then prepared into manuscripts by humans with the same model. Afterward, the model formalized each argument in aLean certificate⁠(opens in a new window). We are also releasing for each solution a model’s narration of its thinking process.
+
+High-dimensional sphere packing.New upper bounds on sphere-packing density down to the Cohn–Elkies threshold.
+
+Binary and spherical codes.Exponentially improved bounds on the maximum size of binary codes at any prescribed minimum distance, with analogous results for high-dimensional spherical codes.
+
+Non-sofic groups.A construction establishing the existence of non-sofic groups, addressing a central open question in group theory.
+
+Connes’s rigidity conjecture.Disproof of a longstanding conjecture that certain groups are uniquely determined by their von Neumann algebras.
+
+Arithmetic circuit complexity.New lower bounds for computing the permanent using arithmetic circuits and formulas, including an arithmetic-formula lower bound of order n4/log n.
+
+Quantum parallel repetition.An exponential parallel repetition theorem for general two-player quantum games, extending a foundational principle from classical complexity theory.
+
+Closest vector problem.Polynomial-factor hardness of approximation for the closest vector problem, a foundational lattice question related to post-quantum cryptography.
+
+Ehrhart’s volume conjecture.Determining, in every dimension, the maximum possible volume of a convex body whose centroid is its only interior lattice point.
+
+Multicolor Ramsey numbers.A superexponential lower bound for multicolor triangle Ramsey numbers, resolving Erdős problem 183.
+
+Extremal number conjectures.Results on the compactness and degeneracy conjectures in extremal graph theory, resolving Erdős problems 146 and 180.
+
+Responsibility to the mathematical community
+
+The emergence of systems capable of contributing to mathematical research raises questions that cannot be answered by a technology company alone. There are many views as to the role of AI in mathematics, and we have deep respect and understanding for those concerned with its impact, including the signers of theLeiden declaration on AI and Mathematics⁠(opens in a new window). We believe attribution should honestly reflect how a result was produced: claiming human authorship for a proof generated entirely by an AI system would misrepresent both the system’s contribution and the nature of genuine human intellectual work. We helped prepare the manuscripts and formalize the proofs in Lean, and we take responsibility for their correctness, while the mathematical arguments themselves were generated by our system. We hope the mathematical community will engage deeply with these results, place them in context, and bring the ideas behind them to life through new research and discovery.
+
+As AI systems evolve into more sophisticated research collaborators, ensuring widespread access is fundamental to supporting scientists and mathematicians as they navigate and define the future of their disciplines during this transformative era.
+
+1Subsequent research includes Bloom, Sawin, Schildkraut, and Zhelezov, “The sum-product conjecture is false for real numbers⁠(opens in a new window)”; Pohoata, “Split primes and the Elekes-Rónyai problem⁠(opens in a new window)”; Saha, Xu, and Ye, “Furthest Pair Requires Quadratic Time in Superconstant Dimension under SETH⁠(opens in a new window)”; Goh and Hatami, “Communication complexity of point-line incidences over the reals⁠(opens in a new window)”; and Lee, Pohoata, and Zhu, “The Minkowski grid has robustly many repeated distances⁠(opens in a new window).”
+
+Subsequent research includes Bloom, Sawin, Schildkraut, and Zhelezov, “The sum-product conjecture is false for real numbers⁠(opens in a new window)”; Pohoata, “Split primes and the Elekes-Rónyai problem⁠(opens in a new window)”; Saha, Xu, and Ye, “Furthest Pair Requires Quadratic Time in Superconstant Dimension under SETH⁠(opens in a new window)”; Goh and Hatami, “Communication complexity of point-line incidences over the reals⁠(opens in a new window)”; and Lee, Pohoata, and Zhu, “The Minkowski grid has robustly many repeated distances⁠(opens in a new window).”
+
+PublicationJul 28, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</title>
@@ -37,8 +113,120 @@
   <guid isPermaLink="false">https://openai.com/index/chatgpt-for-academic-researchers/</guid>
   <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re putting our frontier models and tools in the hands of 100,000 scientists, mathematicians, and engineers—at no cost.
+
+We believe the benefits of frontier AI should not be concentrated in a few companies and well-resourced labs. Scientific progress depends on researchers asking the right questions, testing new ideas, and building on what others have discovered. Our role is to put powerful tools in their hands—and work alongside them to design models that accelerate their research while keepi...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re putting our frontier models and tools in the hands of 100,000 scientists, mathematicians, and engineers—at no cost.
+
+We believe the benefits of frontier AI should not be concentrated in a few companies and well-resourced labs. Scientific progress depends on researchers asking the right questions, testing new ideas, and building on what others have discovered. Our role is to put powerful tools in their hands—and work alongside them to design models that accelerate their research while keeping them in control.
+
+We’re introducing ChatGPT for Academic Researchers, a program that will give 100,000 researchers at selected academic institutions free access to our frontier models. The program will help researchers across the sciences, mathematics, and engineering take on advanced problems, accelerate discovery, and improve productivity, from preparing grant applications to testing hypotheses.
+
+We’re starting with 10,000 researchers this summer, with access already available at institutions such as the Institute for Advanced Study (IAS) and École normale supérieure (ENS). We plan to expand to 100,000 researchers through 2027. Participants will have access to our frontier models, includingGPT‑5.6⁠Sol Pro at launch, and can invite up to four collaborators from their institution. Workspaces include business-grade privacy and security protections, and data is not used to train our models by default. Researchers can use tools and skills to support work ranging from genomic analysis and protein modeling to literature reviews, grant writing, and publishing.
+
+The program also includes training, hands-on support, and opportunities to learn from other researchers and share feedback with us.
+
+For institutions with ChatGPT Edu, free access granted through this program will be coordinated through the institution's workspace.Learn moreabout ChatGPT Edu and how OpenAI supports higher education.
+
+ChatGPT for Academic Researchers is part of a commitment of more than $250 million through 2027 to support external scientific research and discovery. That includesNextGenAI, our $50 million initiative supporting research institutions, and our work with the Department of Energy’sGenesis Mission⁠to bring frontier AI to researchers at national laboratories and universities. Together, these efforts reflect our belief that scientific progress accelerates when more researchers have the tools to pursue their own ideas.
+
+AI is accelerating research
+
+AI is becoming a more capable research tool faster than many expected. Each week, roughly 1.3 million people use ChatGPT for advanced science and mathematics, generating about 8.4 million messages.
+
+The shift is especially visible in mathematics. In the past six months, AI has moved from occasional use on isolated problems to a more regular part of mathematical research. A growing number of papers now acknowledge ChatGPT’s contribution, reflecting how quickly researchers are adopting these tools in their work.
+
+* 月份数据不完整；全文索引目前截至 7 月 21 日。
+
+Researchers use ChatGPT and Codex across nearly every stage of scientific work. ChatGPT helps researchers interrogate ideas, acquire knowledge, generate hypotheses, and communicate their findings. Codex supports research execution and formal analysis, including writing code and analyzing results.
+
+按科学工作流程类别和产品划分的科研请求占比，2026 年 6 月 21 日至 7 月 20 日
+
+These patterns are showing up in research. Physicist Rogerio Jorge and his team are using AI to develop open-source fusion research software used by industry and national laboratories to design fusion energy devices. In theoretical computer science, researchers Barna Saha, Yinzhan Xu, and Christopher Ye used GPT‑5.5 Pro to develop a proof establishing new limits on how efficiently computers can solve high-dimensional geometry problems, then validated and refined the results themselves.
+
+Researchers using these tools most intensively are also taking on more ambitious work. Those in the top 20% of AI usage within their field are almost twice as likely as their peers to ask AI to take on tasks estimated to require four hours or more: nearly 7% of their requests, compared with 3.5% among other researchers in the same field.
+
+按预计所需人工主动工作时间及科学家 AI 使用强度划分的科学请求占比，2026 年 6 月 21 日至 7 月 20 日
+
+Our strategy is not to decide which scientific problems deserve attention or try to solve them all ourselves. It is to put capable tools in the hands of the research community and let researchers pursue the questions they know best.
+
+参与者可在 ChatGPT、ChatGPT 工作和 Codex 中免费使用我们的前沿模型，首发时包括GPT‑5.6⁠模型系列。他们还将获得更广泛的深度研究功能、更高的使用上限和更大的上下文窗口。这些能力共同支持科学推理、智能体式执行，以及跨学科研究工作流程。
+
+GPT‑5.6 Terra 兼顾能力与效率，适合日常研究；GPT‑5.6 Luna 能更快响应轻量级任务；GPT‑5.6 Sol 则用于攻克最困难的科学和数学问题。在衡量研究级数学推理能力的 FrontierMath Tier 4 中，GPT‑5.6 Sol 得分为 83%，而 GPT‑5.5 为 72.5%。在评估复杂生物数据分析和科学推理能力的 GeneBench Pro 中，GPT‑5.6 Sol Pro 能解决 31.5% 的任务。
+
+研究人员可使用超过 75 项生命科学技能⁠（在新窗口中打开），涵盖遗传学、基因组学、测序、单细胞分析、蛋白质建模和药物发现。连接器可支持跨学科研究，让研究人员访问科学文献、公共基因组与临床数据库、卫星影像、计算笔记本、数据平台和参考文献管理工具。
+
+ChatGPT 和 Codex 中可用的技能、连接器和工具示例。
+
+Codex 可帮助编写和调试代码、分析数据集，以及构建可复现的工作流程。ChatGPT 工作可支持周期较长的项目，例如寻找资助机会、准备资助申请、评阅文献、起草论文，以及制作成果交流材料。
+
+不同研究人员使用 AI 的起点各不相同。有些人可能首次使用这些工具，另一些人则可能正在开发本领域的高级应用。
+
+该计划将根据不同经验水平提供定制培训，涵盖入门、改进工作流程和高级研究应用。参与者可获得熟悉研究工作流程的专家支持，包括协助将这些工具融入实际工作。
+
+随着研究人员不断取得新发现，我们计划创造更多机会，让他们分享实用方法、相互学习，并展示跨学科应用。他们的反馈将帮助我们了解模型在哪些方面有用、有哪些不足，以及如何让模型为研究界创造更大价值。
+
+首期计划面向指定学术机构中符合条件的研究人员开放。符合条件的机构⁠（在新窗口中打开）必须是经认可、具有学位授予资格且研究活动水平较高的学院或大学。
+
+申请人需要验证其机构隶属关系，并提供当前研究及拟开展科学用途的相关信息。获批的研究人员可邀请最多四名同机构合作者。每位合作者也必须验证其机构隶属关系，并计入该计划的账户总数。
+
+申请现已开放。你可以在此⁠（在新窗口中打开）查看资格标准并申请。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">We’re putting our frontier models and tools in the hands of 100,000 scientists, mathematicians, and engineers—at no cost.
+
+We believe the benefits of frontier AI should not be concentrated in a few companies and well-resourced labs. Scientific progress depends on researchers asking the right questions, testing new ideas, and building on what others have discovered. Our role is to put powerful tools in their hands—and work alongside them to design models that accelerate their research while keepi...</p><div style="font-size:16px;line-height:1.8;color:#333">We’re putting our frontier models and tools in the hands of 100,000 scientists, mathematicians, and engineers—at no cost.
+
+We believe the benefits of frontier AI should not be concentrated in a few companies and well-resourced labs. Scientific progress depends on researchers asking the right questions, testing new ideas, and building on what others have discovered. Our role is to put powerful tools in their hands—and work alongside them to design models that accelerate their research while keeping them in control.
+
+We’re introducing ChatGPT for Academic Researchers, a program that will give 100,000 researchers at selected academic institutions free access to our frontier models. The program will help researchers across the sciences, mathematics, and engineering take on advanced problems, accelerate discovery, and improve productivity, from preparing grant applications to testing hypotheses.
+
+We’re starting with 10,000 researchers this summer, with access already available at institutions such as the Institute for Advanced Study (IAS) and École normale supérieure (ENS). We plan to expand to 100,000 researchers through 2027. Participants will have access to our frontier models, includingGPT‑5.6⁠Sol Pro at launch, and can invite up to four collaborators from their institution. Workspaces include business-grade privacy and security protections, and data is not used to train our models by default. Researchers can use tools and skills to support work ranging from genomic analysis and protein modeling to literature reviews, grant writing, and publishing.
+
+The program also includes training, hands-on support, and opportunities to learn from other researchers and share feedback with us.
+
+For institutions with ChatGPT Edu, free access granted through this program will be coordinated through the institution's workspace.Learn moreabout ChatGPT Edu and how OpenAI supports higher education.
+
+ChatGPT for Academic Researchers is part of a commitment of more than $250 million through 2027 to support external scientific research and discovery. That includesNextGenAI, our $50 million initiative supporting research institutions, and our work with the Department of Energy’sGenesis Mission⁠to bring frontier AI to researchers at national laboratories and universities. Together, these efforts reflect our belief that scientific progress accelerates when more researchers have the tools to pursue their own ideas.
+
+AI is accelerating research
+
+AI is becoming a more capable research tool faster than many expected. Each week, roughly 1.3 million people use ChatGPT for advanced science and mathematics, generating about 8.4 million messages.
+
+The shift is especially visible in mathematics. In the past six months, AI has moved from occasional use on isolated problems to a more regular part of mathematical research. A growing number of papers now acknowledge ChatGPT’s contribution, reflecting how quickly researchers are adopting these tools in their work.
+
+* 月份数据不完整；全文索引目前截至 7 月 21 日。
+
+Researchers use ChatGPT and Codex across nearly every stage of scientific work. ChatGPT helps researchers interrogate ideas, acquire knowledge, generate hypotheses, and communicate their findings. Codex supports research execution and formal analysis, including writing code and analyzing results.
+
+按科学工作流程类别和产品划分的科研请求占比，2026 年 6 月 21 日至 7 月 20 日
+
+These patterns are showing up in research. Physicist Rogerio Jorge and his team are using AI to develop open-source fusion research software used by industry and national laboratories to design fusion energy devices. In theoretical computer science, researchers Barna Saha, Yinzhan Xu, and Christopher Ye used GPT‑5.5 Pro to develop a proof establishing new limits on how efficiently computers can solve high-dimensional geometry problems, then validated and refined the results themselves.
+
+Researchers using these tools most intensively are also taking on more ambitious work. Those in the top 20% of AI usage within their field are almost twice as likely as their peers to ask AI to take on tasks estimated to require four hours or more: nearly 7% of their requests, compared with 3.5% among other researchers in the same field.
+
+按预计所需人工主动工作时间及科学家 AI 使用强度划分的科学请求占比，2026 年 6 月 21 日至 7 月 20 日
+
+Our strategy is not to decide which scientific problems deserve attention or try to solve them all ourselves. It is to put capable tools in the hands of the research community and let researchers pursue the questions they know best.
+
+参与者可在 ChatGPT、ChatGPT 工作和 Codex 中免费使用我们的前沿模型，首发时包括GPT‑5.6⁠模型系列。他们还将获得更广泛的深度研究功能、更高的使用上限和更大的上下文窗口。这些能力共同支持科学推理、智能体式执行，以及跨学科研究工作流程。
+
+GPT‑5.6 Terra 兼顾能力与效率，适合日常研究；GPT‑5.6 Luna 能更快响应轻量级任务；GPT‑5.6 Sol 则用于攻克最困难的科学和数学问题。在衡量研究级数学推理能力的 FrontierMath Tier 4 中，GPT‑5.6 Sol 得分为 83%，而 GPT‑5.5 为 72.5%。在评估复杂生物数据分析和科学推理能力的 GeneBench Pro 中，GPT‑5.6 Sol Pro 能解决 31.5% 的任务。
+
+研究人员可使用超过 75 项生命科学技能⁠（在新窗口中打开），涵盖遗传学、基因组学、测序、单细胞分析、蛋白质建模和药物发现。连接器可支持跨学科研究，让研究人员访问科学文献、公共基因组与临床数据库、卫星影像、计算笔记本、数据平台和参考文献管理工具。
+
+ChatGPT 和 Codex 中可用的技能、连接器和工具示例。
+
+Codex 可帮助编写和调试代码、分析数据集，以及构建可复现的工作流程。ChatGPT 工作可支持周期较长的项目，例如寻找资助机会、准备资助申请、评阅文献、起草论文，以及制作成果交流材料。
+
+不同研究人员使用 AI 的起点各不相同。有些人可能首次使用这些工具，另一些人则可能正在开发本领域的高级应用。
+
+该计划将根据不同经验水平提供定制培训，涵盖入门、改进工作流程和高级研究应用。参与者可获得熟悉研究工作流程的专家支持，包括协助将这些工具融入实际工作。
+
+随着研究人员不断取得新发现，我们计划创造更多机会，让他们分享实用方法、相互学习，并展示跨学科应用。他们的反馈将帮助我们了解模型在哪些方面有用、有哪些不足，以及如何让模型为研究界创造更大价值。
+
+首期计划面向指定学术机构中符合条件的研究人员开放。符合条件的机构⁠（在新窗口中打开）必须是经认可、具有学位授予资格且研究活动水平较高的学院或大学。
+
+申请人需要验证其机构隶属关系，并提供当前研究及拟开展科学用途的相关信息。获批的研究人员可邀请最多四名同机构合作者。每位合作者也必须验证其机构隶属关系，并计入该计划的账户总数。
+
+申请现已开放。你可以在此⁠（在新窗口中打开）查看资格标准并申请。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Scientific computing in the age of agentic AI</title>
@@ -538,14 +726,198 @@ PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px 
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
   <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -554,7 +926,7 @@ PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>GPT-5.5</title>
   <link>https://openai.com/index/introducing-gpt-5-5/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
 
