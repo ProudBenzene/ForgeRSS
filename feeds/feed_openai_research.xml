@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Sat, 08 Aug 2026 06:58:09 +0000</lastBuildDate>
+<lastBuildDate>Sat, 08 Aug 2026 18:42:55 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -14,392 +14,126 @@
   <link>https://openai.com/news/research/?limit=100</link>
 </image>
 <item>
-  <title>GPT-5.6：随宏大目标灵活扩展的前沿智能产品2026年7月9日</title>
-  <link>https://openai.com/index/gpt-5-6/</link>
-  <guid isPermaLink="false">https://openai.com/index/gpt-5-6/</guid>
-  <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+  <title>Ten advances in mathematics and theoretical computer science</title>
+  <link>https://openai.com/index/ten-advances-in-mathematics/</link>
+  <guid isPermaLink="false">https://openai.com/index/ten-advances-in-mathematics/</guid>
+  <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6：随宏大目标灵活扩展的前沿智能产品2026年7月9日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6：随宏大目标灵活扩展的前沿智能产品2026年7月9日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Ten advances in mathematics and theoretical computer science</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Ten advances in mathematics and theoretical computer science</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>剥离编程评估中的噪音，提取真实信号研究2026年7月8日</title>
-  <link>https://openai.com/index/separating-signal-from-noise-coding-evaluations/</link>
-  <guid isPermaLink="false">https://openai.com/index/separating-signal-from-noise-coding-evaluations/</guid>
-  <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
-
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
-
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
-
-Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
-
-SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
-
-We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
-
-We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
-
-The issues primarily fell into four categories:
-
-Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
-
-Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
-
-Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
-
-Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
-
-Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
-
-Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
-
-An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
-
-An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
-
-Human-supervised agent review
-
-Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
-
-Human annotation campaign
-
-In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
-
-Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
-
-Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
-
-Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
-
-In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
-
-This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
-
-The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  | Chapter 1 | 1":
-
-There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
-
-The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
-
-At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
-
-We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
-
-Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
-
-Software & Engineering
-
-1Wepreviously⁠referred to this category as narrow tests.
-
-Wepreviously⁠referred to this category as narrow tests.
-
-2We previously referred to this category as wide tests.
-
-We previously referred to this category as wide tests.
-
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
-
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
-
-Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
-
-Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
-
-SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
-
-We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
-
-We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
-
-The issues primarily fell into four categories:
-
-Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
-
-Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
-
-Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
-
-Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
-
-Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
-
-Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
-
-An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
-
-An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
-
-Human-supervised agent review
-
-Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
-
-Human annotation campaign
-
-In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
-
-Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
-
-Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
-
-Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
-
-In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
-
-This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
-
-The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  | Chapter 1 | 1":
-
-There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
-
-The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
-
-At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
-
-We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
-
-Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
-
-Software & Engineering
-
-1Wepreviously⁠referred to this category as narrow tests.
-
-Wepreviously⁠referred to this category as narrow tests.
-
-2We previously referred to this category as wide tests.
-
-We previously referred to this category as wide tests.
-
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>推出 GPT-Live产品2026年7月8日</title>
-  <link>https://openai.com/index/introducing-gpt-live/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
-  <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
-
-这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
-
-从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
-
-我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
-
-早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
-
-级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
-
-像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
-
-响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
-
-GPT‑Live通过两项架构变化解决了这些限制。
-
-首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
-
-这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
-
-响应快速、自然且富有表现力，倾听也更为积极
-
-其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
-
-这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
-
-GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
-
-我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
-
-GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
-
-BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
-
-τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
-
-* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
-
-** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
-
-每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
-
-从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
-
-现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
-
-ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
-
-如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
-
-有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
-
-由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
-
-GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
-
-为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
-
-在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
-
-由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
-
-我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
-
-我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
-
-最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
-
-我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
-
-GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
-
-我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
-
-发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
-
-这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
-
-从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
-
-我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
-
-早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
-
-级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
-
-像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
-
-响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
-
-GPT‑Live通过两项架构变化解决了这些限制。
-
-首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
-
-这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
-
-响应快速、自然且富有表现力，倾听也更为积极
-
-其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
-
-这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
-
-GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
-
-我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
-
-GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
-
-BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
-
-τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
-
-* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
-
-** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
-
-每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
-
-从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
-
-现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
-
-ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
-
-如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
-
-有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
-
-由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
-
-GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
-
-为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
-
-在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
-
-由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
-
-我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
-
-我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
-
-最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
-
-我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
-
-GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
-
-我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
-
-发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.4</title>
-  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/</guid>
-  <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>开启两项设置后，我们在 ARC-AGI-3 基准测试中的得分增至三倍研究2026年7月29日</title>
+  <title>How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</title>
   <link>https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/</link>
   <guid isPermaLink="false">https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/</guid>
-  <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">开启两项设置后，我们在 ARC-AGI-3 基准测试中的得分增至三倍研究2026年7月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">开启两项设置后，我们在 ARC-AGI-3 基准测试中的得分增至三倍研究2026年7月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Accelerating scientific discovery with ChatGPT for Academic Researchers公司2026年7月29日</title>
+  <title>Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</title>
   <link>https://openai.com/index/chatgpt-for-academic-researchers/</link>
   <guid isPermaLink="false">https://openai.com/index/chatgpt-for-academic-researchers/</guid>
-  <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic Researchers公司2026年7月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic Researchers公司2026年7月29日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-Red：解锁稳健性自我优化能力安全2026年7月15日</title>
+  <title>Scientific computing in the age of agentic AI</title>
+  <link>https://openai.com/index/scientific-computing-agentic-ai/</link>
+  <guid isPermaLink="false">https://openai.com/index/scientific-computing-agentic-ai/</guid>
+  <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
+
+AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
+
+We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
+
+Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
+
+cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
+
+With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
+
+Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
+
+Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
+
+Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
+
+Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
+
+Long-term stewardship remains essential
+
+The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
+
+But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
+
+The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
+
+Toward more durable scientific software
+
+This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
+
+These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
+
+Software & Engineering
+
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
+
+AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
+
+We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
+
+Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
+
+cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
+
+With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
+
+Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
+
+Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
+
+Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
+
+Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
+
+Long-term stewardship remains essential
+
+The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
+
+But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
+
+The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
+
+Toward more durable scientific software
+
+This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
+
+These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
+
+Software & Engineering
+
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-Red: Unlocking Self-Improvement for RobustnessSafety</title>
   <link>https://openai.com/index/unlocking-self-improvement-gpt-red/</link>
   <guid isPermaLink="false">https://openai.com/index/unlocking-self-improvement-gpt-red/</guid>
-  <pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Training strong automated safety red-teamers to improve robustness.
 
@@ -637,120 +371,377 @@ PublicationAug 1, 2026
 PublicationJul 28, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/unlocking-self-improvement-gpt-red/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>GPT-5.6</title>
-  <link>https://openai.com/zh-Hans-CN/index/gpt-5-6/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/gpt-5-6/</guid>
-  <pubDate>Sat, 23 Mar 2024 00:00:00 +0000</pubDate>
+  <title>GPT-5.6: Frontier intelligence that scales with your ambition</title>
+  <link>https://openai.com/index/gpt-5-6/</link>
+  <guid isPermaLink="false">https://openai.com/index/gpt-5-6/</guid>
+  <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.6: Frontier intelligence that scales with your ambition</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/gpt-5-6/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Separating signal from noise in coding evaluations</title>
+  <link>https://openai.com/index/separating-signal-from-noise-coding-evaluations/</link>
+  <guid isPermaLink="false">https://openai.com/index/separating-signal-from-noise-coding-evaluations/</guid>
+  <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+
+Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+
+Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
+
+Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
+
+SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
+
+We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
+
+We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
+
+The issues primarily fell into four categories:
+
+Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
+
+Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
+
+Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
+
+Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
+
+Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
+
+Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
+
+An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
+
+An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
+
+Human-supervised agent review
+
+Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
+
+Human annotation campaign
+
+In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
+
+Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
+
+Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
+
+Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
+
+In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
+
+This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
+
+The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  | Chapter 1 | 1":
+
+There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
+
+The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
+
+At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
+
+We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
+
+Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
+
+Software & Engineering
+
+1Wepreviously⁠referred to this category as narrow tests.
+
+Wepreviously⁠referred to this category as narrow tests.
+
+2We previously referred to this category as wide tests.
+
+We previously referred to this category as wide tests.
+
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+
+Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false unde...</p><div style="font-size:16px;line-height:1.8;color:#333">Through a detailed audit, we find widespread task issues in SWE-Bench Pro and estimate that ~30% of the tasks are broken.
+
+Accurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’sPreparedness Framework⁠(opens in a new window). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.
+
+Werecently investigatedhow one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.
+
+SWE-Bench Pro⁠(opens in a new window)was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.
+
+We’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.
+
+We find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).
+
+The issues primarily fell into four categories:
+
+Overly strict tests1enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.
+
+Underspecified prompts2omit requirements that hidden tests enforce and that are not reasonably inferable.
+
+Low-coverage testsunder check the requested feature, so incomplete fixes can pass.
+
+Amisleading promptpoints models toward the wrong behavior or contradicts what tests require.
+
+Our findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.
+
+Our aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.
+
+An initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.
+
+An initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.
+
+Human-supervised agent review
+
+Each flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.
+
+Human annotation campaign
+
+In parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.
+
+Reviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.
+
+Human reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.
+
+Compared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.
+
+In several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.
+
+This task involves normalizing table-of-contents entries and rendering them back to Markdown viaTocEntry.to_markdown(). The task prompt specifies serialization down to character-level spacing, describing how exact spacing and pipes are enforced, and gives examples such as" | Chapter 1 | 1"and"** | Chapter 1 | 1":
+
+The hiddentest_to_markdownassertions instead require"  | Chapter 1 | 1"and"**  | Chapter 1 | 1":
+
+There are two leading spaces in the hidden tests, but the example given to the model only contains one leading space. If a model rightly follows the given prompt, that one-character difference would fail the hidden test cases and the task would be marked incorrect.
+
+The issues we have identified, coupled with similar cases inSWE-bench Verified, highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.
+
+At the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.
+
+We hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.
+
+Ultimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.
+
+Software & Engineering
+
+1Wepreviously⁠referred to this category as narrow tests.
+
+Wepreviously⁠referred to this category as narrow tests.
+
+2We previously referred to this category as wide tests.
+
+We previously referred to this category as wide tests.
+
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>Introducing GPT-Live</title>
+  <link>https://openai.com/index/introducing-gpt-live/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
+  <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
+
+2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
+
+我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
+
+GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
+
+GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
+
+这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
+
+从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
+
+我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
+
+早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
+
+级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
+
+像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
+
+响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
+
+GPT‑Live通过两项架构变化解决了这些限制。
+
+首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
+
+这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
+
+响应快速、自然且富有表现力，倾听也更为积极
+
+其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
+
+这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
+
+GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
+
+我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
+
+GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
+
+BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
+
+τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
+
+* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
+
+** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
+
+每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
+
+从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
+
+现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
+
+ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
+
+如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
+
+有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
+
+由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
+
+GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
+
+为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
+
+在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
+
+由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
+
+我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
+
+我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
+
+最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
+
+我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
+
+GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
+
+我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
+
+发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.4</title>
+  <link>https://openai.com/index/introducing-gpt-5-4/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
+  <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.5</title>
-  <link>https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/</guid>
-  <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Tue, 09 Jan 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>数学与理论计算机科学的十项进展刊发2026年8月1日</title>
-  <link>https://openai.com/index/ten-advances-in-mathematics/</link>
-  <guid isPermaLink="false">https://openai.com/index/ten-advances-in-mathematics/</guid>
-  <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">数学与理论计算机科学的十项进展刊发2026年8月1日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">数学与理论计算机科学的十项进展刊发2026年8月1日</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/ten-advances-in-mathematics/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>智能体 AI 时代的科学计算刊发2026年7月28日</title>
-  <link>https://openai.com/index/scientific-computing-agentic-ai/</link>
-  <guid isPermaLink="false">https://openai.com/index/scientific-computing-agentic-ai/</guid>
-  <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
-
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
-
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
-
-AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
-
-We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
-
-Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
-
-cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
-
-With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
-
-Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
-
-Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
-
-Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
-
-Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
-
-Long-term stewardship remains essential
-
-The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
-
-But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
-
-The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
-
-Toward more durable scientific software
-
-This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
-
-These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
-
-Software & Engineering
-
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
-
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
-
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
-
-AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
-
-We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
-
-Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
-
-cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
-
-With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
-
-Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
-
-Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
-
-Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
-
-Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
-
-Long-term stewardship remains essential
-
-The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
-
-But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
-
-The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
-
-Toward more durable scientific software
-
-This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
-
-These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
-
-Software & Engineering
-
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
