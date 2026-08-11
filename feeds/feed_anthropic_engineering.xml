@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/engineering</link>
 <description>Engineering blog from Anthropic - MCP, Claude Code, and more</description>
 <language>en</language>
-<lastBuildDate>Mon, 10 Aug 2026 19:01:47 +0000</lastBuildDate>
+<lastBuildDate>Tue, 11 Aug 2026 01:46:27 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/engineering" rel="self" type="application/rss+xml"/>
 <image>
@@ -10522,11 +10522,9 @@ Erik Schluntz optimized the SWE-bench agent and wrote this blog post. Simon Bigg
   <guid isPermaLink="false">https://www.anthropic.com/engineering/building-effective-agents</guid>
   <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
   <category>Engineering</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Over the past year, we&apos;ve worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren&apos;t using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Note: Much of the tooling landscape described in this post has changed since December 2024. For our current approach, seehow we built Claude Managed Agentsand theManaged Agents documentation.Over the past year, we&apos;ve worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren&apos;t using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
 
-In this post, we share what we’ve learned from working with our customers and building agents ourselves, and give practical advice for developers on building effective agents.
-
-&quot;Agent&quot; can be defined in several w...</p><div style="font-size:16px;line-height:1.8;color:#333">Over the past year, we've worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren't using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
+In this post, we shar...</p><div style="font-size:16px;line-height:1.8;color:#333">Note: Much of the tooling landscape described in this post has changed since December 2024. For our current approach, seehow we built Claude Managed Agentsand theManaged Agents documentation.Over the past year, we've worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren't using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
 
 In this post, we share what we’ve learned from working with our customers and building agents ourselves, and give practical advice for developers on building effective agents.
 
@@ -10729,11 +10727,9 @@ Test how the model uses your tools: Run many example inputs in ourworkbenchto se
 Poka-yokeyour tools. Change the arguments so that it is harder to make mistakes.
 
 While building our agent forSWE-bench, we actually spent more time optimizing our tools than the overall prompt. For example, we found that the model would make mistakes with tools using relative filepaths after the agent had moved out of the root directory. To fix this, we changed the tool to always require absolute filepaths—and we found that the model used this method flawlessly.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/engineering/building-effective-agents" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Over the past year, we&apos;ve worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren&apos;t using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Note: Much of the tooling landscape described in this post has changed since December 2024. For our current approach, seehow we built Claude Managed Agentsand theManaged Agents documentation.Over the past year, we&apos;ve worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren&apos;t using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
 
-In this post, we share what we’ve learned from working with our customers and building agents ourselves, and give practical advice for developers on building effective agents.
-
-&quot;Agent&quot; can be defined in several w...</p><div style="font-size:16px;line-height:1.8;color:#333">Over the past year, we've worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren't using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
+In this post, we shar...</p><div style="font-size:16px;line-height:1.8;color:#333">Note: Much of the tooling landscape described in this post has changed since December 2024. For our current approach, seehow we built Claude Managed Agentsand theManaged Agents documentation.Over the past year, we've worked with dozens of teams building large language model (LLM) agents across industries. Consistently, the most successful implementations weren't using complex frameworks or specialized libraries. Instead, they were building with simple, composable patterns.
 
 In this post, we share what we’ve learned from working with our customers and building agents ourselves, and give practical advice for developers on building effective agents.
 
