@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Sat, 15 Aug 2026 06:42:53 +0000</lastBuildDate>
+<lastBuildDate>Sat, 15 Aug 2026 12:41:54 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -28,8 +28,144 @@
   <guid isPermaLink="false">https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/</guid>
   <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">How enabling two settings tripled our scores on the ARC-AGI-3 benchmark</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">这段加速视频展示了 GPT‑5.6 Sol 尝试解决 ARC-AGI-3 基准测试中的谜题：左侧使用官方执行框架，右侧使用我们保留推理并启用压缩的 Responses API 执行框架。在这款游戏⁠（在新窗口中打开）的排行榜上，没有任何前沿模型能通过第一关之后的关卡。使用我们的执行框架后，GPT‑5.6 Sol 通关了全部六关。
+
+最初看到 GPT‑5.6 Sol 在ARC-AGI-3⁠（在新窗口中打开）基准测试中的低分时，我们十分困惑。
+
+GPT‑5.6 Sol 已经解决了数学界长期悬而未决的难题，例如圈双覆盖猜想⁠（在新窗口中打开），也通关了《宝可梦 火红》等游戏。但在由二维益智游戏组成的 ARC-AGI-3 基准测试中，GPT‑5.6 Sol 仅得 7.8%，GPT‑5.5 更是几乎无法游玩，得分只有 0.4%。
+
+二维益智游戏对我们的模型来说格外困难吗？还是另有原因？
+
+基准测试很少只衡量 AI 模型本身。它们还会衡量一些不太显眼的选择，包括 API 设置、执行框架设计和提示方式。在 ARC-AGI-3 上，我们发现，开启 ChatGPT 和 Codex 中使用的两项 API ...</p><div style="font-size:16px;line-height:1.8;color:#333">这段加速视频展示了 GPT‑5.6 Sol 尝试解决 ARC-AGI-3 基准测试中的谜题：左侧使用官方执行框架，右侧使用我们保留推理并启用压缩的 Responses API 执行框架。在这款游戏⁠（在新窗口中打开）的排行榜上，没有任何前沿模型能通过第一关之后的关卡。使用我们的执行框架后，GPT‑5.6 Sol 通关了全部六关。
+
+最初看到 GPT‑5.6 Sol 在ARC-AGI-3⁠（在新窗口中打开）基准测试中的低分时，我们十分困惑。
+
+GPT‑5.6 Sol 已经解决了数学界长期悬而未决的难题，例如圈双覆盖猜想⁠（在新窗口中打开），也通关了《宝可梦 火红》等游戏。但在由二维益智游戏组成的 ARC-AGI-3 基准测试中，GPT‑5.6 Sol 仅得 7.8%，GPT‑5.5 更是几乎无法游玩，得分只有 0.4%。
+
+二维益智游戏对我们的模型来说格外困难吗？还是另有原因？
+
+基准测试很少只衡量 AI 模型本身。它们还会衡量一些不太显眼的选择，包括 API 设置、执行框架设计和提示方式。在 ARC-AGI-3 上，我们发现，开启 ChatGPT 和 Codex 中使用的两项 API 设置——保留推理和压缩——可使公开任务集的得分增至三倍，同时将输出词元降至六分之一。
+
+使用官方执行框架时，GPT‑5.6 Sol 在 ARC-AGI-3 公开集上得分为 13.3%；保留推理并启用压缩后，得分达到 38.3%。分数衡量相对人类行动效率（RHAE⁠（在新窗口中打开））—该指标将模型表现与人类基准进行比较。根据官方游戏记录⁠（在新窗口中打开），我们估计人类测试者的平均得分为 48%。模型不会获知评分方式，在整个过程中也看不到自己的分数—每次操作只会返回当前画面及所在关卡的文本表示。
+
+ARC-AGI-3 是一项旨在衡量 AI 智能体学习和推理能力的基准测试。智能体需要探索陌生的二维游戏，在没有明确说明的情况下推断游戏机制。你可以前往arcprize.org/tasks⁠（在新窗口中打开）体验 25 款演示游戏。
+
+ARC-AGI-3 有意采用不含工具或特殊功能的通用执行框架。ARC 认为，简单的执行框架能更清楚地暴露模型的不足，也能让模型之间的比较更加公平。相比之下，商业开发者会针对每个模型的功能和特点优化执行框架。
+
+在游戏方面，GPT‑5.6 Sol 已通过仅使用视觉的执行框架通关《宝可梦 火红》（由GPT_Plays_Pokemon⁠（在新窗口中打开）直播），通过 Codex 的计算机操作功能通关《杀戮尖塔》（由EpochAI⁠（在新窗口中打开）直播），并完成《巴巴是你》的前几个关卡（由Piotr Migdał & Piotr Grabowski⁠（在新窗口中打开）分享）。ARC-AGI-3 究竟有何不同？
+
+Ethan Mollick展示了⁠（在新窗口中打开）Codex 中的 GPT‑5.6 Sol 如何完成《杀戮尖塔 2》的一项随机每日挑战；这款游戏发布于 GPT‑5.6 Sol 的知识截止日期之后。
+
+受到ARC 对 GPT‑5.5 缺陷的分析⁠（在新窗口中打开）启发，我们查看了 GPT‑5.6 Sol 的一些尝试。和 ARC 一样，我们也发现模型看起来并不聪明。它每次行动前都会思考很久，却迟迟无法取得进展。
+
+但在深入研究后，我们发现模型的困惑大多并非源于模型本身，而是执行框架中的设置。
+
+首先，我们注意到，每次游戏操作后，所有私有推理都会被丢弃。这意味着 GPT‑5.6 Sol 每次行动时都必须重新理解游戏，无法记住之前的思考。模型仍能看到过去的操作记录和简短附注，但看不到促成这些操作的计划、见解或思考。
+
+其次，我们发现执行框架采用了滚动截断窗口，随着历史记录增长，较早的操作会逐渐不可见。因此，GPT‑5.6 Sol 不仅无法记住过去的思考，也在逐渐忘记过去的操作。
+
+执行框架的这两项特性——丢弃推理和滚动截断——共同解释了 GPT‑5.6 Sol 为何难以持续学习。
+
+我们的模型经过训练，会先通过私有推理消息进行思考，再输出回复或调用工具。这些私有思考消息会作为对话历史的一部分保留下来。如果对话过长，我们会对其进行总结，然后继续。
+
+我们的模型正是以这种方式训练，也以同样的方式部署在 ChatGPT 和 Codex 中。为了更贴近我们的生产环境，我们使用Responses API⁠（在新窗口中打开）实现了 ARC-AGI-3 执行框架。我们的 API 可轻松管理上下文：对于 GPT‑5.6，只需传入上一次响应的 ID，即可在工具调用和对话轮次之间自动保留推理。
+
+保留推理后，我们观察到两项显著变化。首先，GPT‑5.6 Sol 每次行动前的思考时间更短，因为它不再需要每一轮都从头理解游戏。其次，能够记住过去的思考后，GPT‑5.6 Sol 更善于持续学习和采用连贯的策略。
+
+下一项改进是用压缩⁠（在新窗口中打开）取代滚动截断；压缩是 Responses API 中的另一项设置。
+
+ARC-AGI-3 执行框架通过滚动截断来应对上下文限制。当对话上下文超过 175,000 个字符时，最早的消息会被丢弃。
+
+滚动截断有两个缺点。首先，模型会丢失较早的观察和操作。其次，模型在大部分任务期间都要使用接近满载的上下文窗口，这可能会略微影响表现。
+
+在 ARC-AGI-3 上启用压缩后，GPT‑5.6 Sol 能在更长的运行过程中更好地保留从每款游戏中学到的内容，并以更少的输出词元取得更高的得分。
+
+为了直观展示保留推理和启用压缩的效果，下面的动画呈现了 GPT‑5.6 Sol 分别使用两种执行框架解决一系列 ARC-AGI-3 谜题时，其 175K 上下文窗口的变化。
+
+中间两列展示了两种执行框架以不同方式使用模型上下文窗口的情况。由于能更好地记住过去，GPT‑5.6 Sol 每次行动所需的思考更少，推进速度也快得多。注意：我们的实现采用 175,000 个词元而非字符作为上限，但两者最终非常接近，因为绝大多数文本都是操作网格，我们的分词器会按 1:1 的比例将其转换为词元。
+
+保留推理与压缩结合使用后，GPT‑5.6 Sol（Max）的得分约为原来的三倍，而输出词元仅为原来的六分之一。
+
+我们希望这些实验能够提醒大家：评测很少只衡量模型本身，也会衡量一系列不太显眼的选择，包括 API 设置、执行框架设计和提示方式。这并非我们第一次因公开基准测试中的低分而感到意外，随后才发现评测运行程序使用了会丢弃推理消息的通用执行框架。
+
+如果你是希望充分发挥性能的 API 开发者，我们建议采用与自家产品相同的设置：
+
+使用 Responses API，而非旧版 Chat Completions API
+
+如果你要比较模型，我们建议采用使用上述设置的评测，因为这些设置最贴近 ChatGPT 和 Codex 中的实际应用。
+
+我们感谢 ARC 多年来在 AGI 评测领域开展的创造性工作，也感谢其分析启发我们进一步深入研究。
+
+如果你想与前沿模型一较高下，可以前往arcprize.org/tasks⁠（在新窗口中打开）亲自挑战这些公开游戏。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">这段加速视频展示了 GPT‑5.6 Sol 尝试解决 ARC-AGI-3 基准测试中的谜题：左侧使用官方执行框架，右侧使用我们保留推理并启用压缩的 Responses API 执行框架。在这款游戏⁠（在新窗口中打开）的排行榜上，没有任何前沿模型能通过第一关之后的关卡。使用我们的执行框架后，GPT‑5.6 Sol 通关了全部六关。
+
+最初看到 GPT‑5.6 Sol 在ARC-AGI-3⁠（在新窗口中打开）基准测试中的低分时，我们十分困惑。
+
+GPT‑5.6 Sol 已经解决了数学界长期悬而未决的难题，例如圈双覆盖猜想⁠（在新窗口中打开），也通关了《宝可梦 火红》等游戏。但在由二维益智游戏组成的 ARC-AGI-3 基准测试中，GPT‑5.6 Sol 仅得 7.8%，GPT‑5.5 更是几乎无法游玩，得分只有 0.4%。
+
+二维益智游戏对我们的模型来说格外困难吗？还是另有原因？
+
+基准测试很少只衡量 AI 模型本身。它们还会衡量一些不太显眼的选择，包括 API 设置、执行框架设计和提示方式。在 ARC-AGI-3 上，我们发现，开启 ChatGPT 和 Codex 中使用的两项 API ...</p><div style="font-size:16px;line-height:1.8;color:#333">这段加速视频展示了 GPT‑5.6 Sol 尝试解决 ARC-AGI-3 基准测试中的谜题：左侧使用官方执行框架，右侧使用我们保留推理并启用压缩的 Responses API 执行框架。在这款游戏⁠（在新窗口中打开）的排行榜上，没有任何前沿模型能通过第一关之后的关卡。使用我们的执行框架后，GPT‑5.6 Sol 通关了全部六关。
+
+最初看到 GPT‑5.6 Sol 在ARC-AGI-3⁠（在新窗口中打开）基准测试中的低分时，我们十分困惑。
+
+GPT‑5.6 Sol 已经解决了数学界长期悬而未决的难题，例如圈双覆盖猜想⁠（在新窗口中打开），也通关了《宝可梦 火红》等游戏。但在由二维益智游戏组成的 ARC-AGI-3 基准测试中，GPT‑5.6 Sol 仅得 7.8%，GPT‑5.5 更是几乎无法游玩，得分只有 0.4%。
+
+二维益智游戏对我们的模型来说格外困难吗？还是另有原因？
+
+基准测试很少只衡量 AI 模型本身。它们还会衡量一些不太显眼的选择，包括 API 设置、执行框架设计和提示方式。在 ARC-AGI-3 上，我们发现，开启 ChatGPT 和 Codex 中使用的两项 API 设置——保留推理和压缩——可使公开任务集的得分增至三倍，同时将输出词元降至六分之一。
+
+使用官方执行框架时，GPT‑5.6 Sol 在 ARC-AGI-3 公开集上得分为 13.3%；保留推理并启用压缩后，得分达到 38.3%。分数衡量相对人类行动效率（RHAE⁠（在新窗口中打开））—该指标将模型表现与人类基准进行比较。根据官方游戏记录⁠（在新窗口中打开），我们估计人类测试者的平均得分为 48%。模型不会获知评分方式，在整个过程中也看不到自己的分数—每次操作只会返回当前画面及所在关卡的文本表示。
+
+ARC-AGI-3 是一项旨在衡量 AI 智能体学习和推理能力的基准测试。智能体需要探索陌生的二维游戏，在没有明确说明的情况下推断游戏机制。你可以前往arcprize.org/tasks⁠（在新窗口中打开）体验 25 款演示游戏。
+
+ARC-AGI-3 有意采用不含工具或特殊功能的通用执行框架。ARC 认为，简单的执行框架能更清楚地暴露模型的不足，也能让模型之间的比较更加公平。相比之下，商业开发者会针对每个模型的功能和特点优化执行框架。
+
+在游戏方面，GPT‑5.6 Sol 已通过仅使用视觉的执行框架通关《宝可梦 火红》（由GPT_Plays_Pokemon⁠（在新窗口中打开）直播），通过 Codex 的计算机操作功能通关《杀戮尖塔》（由EpochAI⁠（在新窗口中打开）直播），并完成《巴巴是你》的前几个关卡（由Piotr Migdał & Piotr Grabowski⁠（在新窗口中打开）分享）。ARC-AGI-3 究竟有何不同？
+
+Ethan Mollick展示了⁠（在新窗口中打开）Codex 中的 GPT‑5.6 Sol 如何完成《杀戮尖塔 2》的一项随机每日挑战；这款游戏发布于 GPT‑5.6 Sol 的知识截止日期之后。
+
+受到ARC 对 GPT‑5.5 缺陷的分析⁠（在新窗口中打开）启发，我们查看了 GPT‑5.6 Sol 的一些尝试。和 ARC 一样，我们也发现模型看起来并不聪明。它每次行动前都会思考很久，却迟迟无法取得进展。
+
+但在深入研究后，我们发现模型的困惑大多并非源于模型本身，而是执行框架中的设置。
+
+首先，我们注意到，每次游戏操作后，所有私有推理都会被丢弃。这意味着 GPT‑5.6 Sol 每次行动时都必须重新理解游戏，无法记住之前的思考。模型仍能看到过去的操作记录和简短附注，但看不到促成这些操作的计划、见解或思考。
+
+其次，我们发现执行框架采用了滚动截断窗口，随着历史记录增长，较早的操作会逐渐不可见。因此，GPT‑5.6 Sol 不仅无法记住过去的思考，也在逐渐忘记过去的操作。
+
+执行框架的这两项特性——丢弃推理和滚动截断——共同解释了 GPT‑5.6 Sol 为何难以持续学习。
+
+我们的模型经过训练，会先通过私有推理消息进行思考，再输出回复或调用工具。这些私有思考消息会作为对话历史的一部分保留下来。如果对话过长，我们会对其进行总结，然后继续。
+
+我们的模型正是以这种方式训练，也以同样的方式部署在 ChatGPT 和 Codex 中。为了更贴近我们的生产环境，我们使用Responses API⁠（在新窗口中打开）实现了 ARC-AGI-3 执行框架。我们的 API 可轻松管理上下文：对于 GPT‑5.6，只需传入上一次响应的 ID，即可在工具调用和对话轮次之间自动保留推理。
+
+保留推理后，我们观察到两项显著变化。首先，GPT‑5.6 Sol 每次行动前的思考时间更短，因为它不再需要每一轮都从头理解游戏。其次，能够记住过去的思考后，GPT‑5.6 Sol 更善于持续学习和采用连贯的策略。
+
+下一项改进是用压缩⁠（在新窗口中打开）取代滚动截断；压缩是 Responses API 中的另一项设置。
+
+ARC-AGI-3 执行框架通过滚动截断来应对上下文限制。当对话上下文超过 175,000 个字符时，最早的消息会被丢弃。
+
+滚动截断有两个缺点。首先，模型会丢失较早的观察和操作。其次，模型在大部分任务期间都要使用接近满载的上下文窗口，这可能会略微影响表现。
+
+在 ARC-AGI-3 上启用压缩后，GPT‑5.6 Sol 能在更长的运行过程中更好地保留从每款游戏中学到的内容，并以更少的输出词元取得更高的得分。
+
+为了直观展示保留推理和启用压缩的效果，下面的动画呈现了 GPT‑5.6 Sol 分别使用两种执行框架解决一系列 ARC-AGI-3 谜题时，其 175K 上下文窗口的变化。
+
+中间两列展示了两种执行框架以不同方式使用模型上下文窗口的情况。由于能更好地记住过去，GPT‑5.6 Sol 每次行动所需的思考更少，推进速度也快得多。注意：我们的实现采用 175,000 个词元而非字符作为上限，但两者最终非常接近，因为绝大多数文本都是操作网格，我们的分词器会按 1:1 的比例将其转换为词元。
+
+保留推理与压缩结合使用后，GPT‑5.6 Sol（Max）的得分约为原来的三倍，而输出词元仅为原来的六分之一。
+
+我们希望这些实验能够提醒大家：评测很少只衡量模型本身，也会衡量一系列不太显眼的选择，包括 API 设置、执行框架设计和提示方式。这并非我们第一次因公开基准测试中的低分而感到意外，随后才发现评测运行程序使用了会丢弃推理消息的通用执行框架。
+
+如果你是希望充分发挥性能的 API 开发者，我们建议采用与自家产品相同的设置：
+
+使用 Responses API，而非旧版 Chat Completions API
+
+如果你要比较模型，我们建议采用使用上述设置的评测，因为这些设置最贴近 ChatGPT 和 Codex 中的实际应用。
+
+我们感谢 ARC 多年来在 AGI 评测领域开展的创造性工作，也感谢其分析启发我们进一步深入研究。
+
+如果你想与前沿模型一较高下，可以前往arcprize.org/tasks⁠（在新窗口中打开）亲自挑战这些公开游戏。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</title>
@@ -37,132 +173,8 @@
   <guid isPermaLink="false">https://openai.com/index/chatgpt-for-academic-researchers/</guid>
   <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们面向 10 万名科学家、数学家和工程师免费提供前沿模型和工具。
-
-2026 年 8 月 10 日更新：新的申请人将加入候补名单。在此期间，我们将审核超过 13,000 份首批申请（代表最多 65,000 个研究人员名额），同时在符合条件的申请人中抽签选出首批 10,000 个名额。未入选本轮的申请人，在今年秋季重新开放申请后，仍有资格参与未来的遴选轮次。这有助于我们在扩展项目的同时，专注于支持第一批研究人员。
-
-我们认为，前沿 AI 的价值不应集中在少数公司和资源充足的实验室手中。科学进步有赖于研究人员提出正确的问题、检验新的构想，并在他人研究成果的基础上继续探索。我们的职责是为其提供强大的工具，并与其携手设计既能加快研究、又能助其掌握主导权的模型。
-
-我们推出“面向学术研究人员的 ChatGPT”计划，为指定学术机构的 10 万名研究人员免费提供前沿模型使用权限。从准备资助申请到检验假设，该计划将帮助科学、数学和工程领域的研究人员攻克前沿难题、加速发现并提升工作效率。
-
-今年夏天，我们将从 1 万名研究人员起步；普林斯顿高等研究院 (IAS) 和巴黎高等师范学院 (ENS) 等机...</p><div style="font-size:16px;line-height:1.8;color:#333">我们面向 10 万名科学家、数学家和工程师免费提供前沿模型和工具。
-
-2026 年 8 月 10 日更新：新的申请人将加入候补名单。在此期间，我们将审核超过 13,000 份首批申请（代表最多 65,000 个研究人员名额），同时在符合条件的申请人中抽签选出首批 10,000 个名额。未入选本轮的申请人，在今年秋季重新开放申请后，仍有资格参与未来的遴选轮次。这有助于我们在扩展项目的同时，专注于支持第一批研究人员。
-
-我们认为，前沿 AI 的价值不应集中在少数公司和资源充足的实验室手中。科学进步有赖于研究人员提出正确的问题、检验新的构想，并在他人研究成果的基础上继续探索。我们的职责是为其提供强大的工具，并与其携手设计既能加快研究、又能助其掌握主导权的模型。
-
-我们推出“面向学术研究人员的 ChatGPT”计划，为指定学术机构的 10 万名研究人员免费提供前沿模型使用权限。从准备资助申请到检验假设，该计划将帮助科学、数学和工程领域的研究人员攻克前沿难题、加速发现并提升工作效率。
-
-今年夏天，我们将从 1 万名研究人员起步；普林斯顿高等研究院 (IAS) 和巴黎高等师范学院 (ENS) 等机构现已获得访问权限。我们计划在 2027 年底前将覆盖范围扩大至 10 万名研究人员。参与者可使用我们的前沿模型，包括首发上线的GPT‑5.6⁠Sol Pro，并可邀请最多四名同机构合作者。工作空间可提供企业级隐私与安全保护，且默认不会使用其中的数据训练我们的模型。研究人员可运用工具和技能，支持从基因组分析、蛋白质建模到文献综述、资助申请撰写和成果发表等工作。
-
-该计划还包括培训、实操支持，以及向其他研究人员学习并与我们分享反馈的机会。
-
-对于已使用 ChatGPT Edu 的机构，通过该计划授予的免费访问权限将由机构的工作空间统一协调。详细了解ChatGPT Edu，以及 OpenAI 如何支持高等教育。
-
-“面向学术研究人员的 ChatGPT”计划是我们承诺的一部分。到 2027 年，我们将投入逾 2.5 亿美元，用于支持外部科学研究与发现。相关举措包括投入 5000 万美元支持研究机构的NextGenAI计划，以及与美国能源部Genesis Mission⁠建立合作，旨在将前沿 AI 推向国家实验室和大学的研究人员。这些举措共同体现了我们的信念：让更多研究人员获得探索自身构想所需的工具，从而加速科学进步。
-
-AI 正以超出许多人预期的速度，成长为能力更强的研究工具。每周约有 130 万人使用 ChatGPT 开展高等科学和数学工作，生成约 840 万条消息。
-
-这一转变在数学领域尤为明显。过去六个月中，AI 已从偶尔用于解决个别问题，逐渐成为数学研究的常规组成部分。如今，越来越多的论文已注明 ChatGPT 的贡献，这表明研究人员正迅速将这些工具应用于工作。
-
-* 月份数据不完整；全文索引目前截至 7 月 21 日。
-
-研究人员在科学工作的每个阶段几乎都会使用 ChatGPT 和 Codex。ChatGPT 可帮助研究人员审视想法、获取知识、生成假设并交流研究成果。Codex 支持研究执行和形式化分析，包括编写代码和分析结果。
-
-按科学工作流类别和产品划分的科研请求占比，2026 年 6 月 21 日至 7 月 20 日
-
-这些使用模式已体现在实际研究中。物理学家 Rogerio Jorge 及其团队正使用 AI 开发开源聚变研究软件，供产业界和国家实验室设计聚变能源装置。在理论计算机科学领域，研究人员 Barna Saha、Yinzhan Xu 和 Christopher Ye 使用 GPT‑5.5 Pro 完成了一项证明，确立计算机高效求解高维几何问题的新极限，随后由他们自行验证并完善结果。
-
-使用这些工具最为频繁的研究人员，也在开展更具挑战性的工作。在各自领域 AI 使用量位居前 20% 的研究人员，要求 AI 承担预估人工耗时四小时以上任务的频率，几乎是其同行的两倍：这类请求占其请求总量的近 7%，而同领域其他研究人员的比例为 3.5%。
-
-按预计所需人工工时及科学家 AI 使用强度划分的科学请求占比，2026 年 6 月 21 日至 7 月 20 日
-
-我们的策略不是判断哪些科学问题值得关注，也不是试图亲自解决所有问题。我们的目标是为研究界提供强大的工具，助力研究人员探索自己最熟悉的问题。
-
-参与者可在 ChatGPT、ChatGPT 工作和 Codex 中免费使用我们的前沿模型，包括首发上线的GPT‑5.6⁠模型系列。他们还将获得更广泛的深度研究功能、更高的使用上限和更大的上下文窗口。这些能力共同支持科学推理、智能体式执行，以及跨学科研究工作流。
-
-GPT‑5.6 Terra 兼顾能力与效率，适合日常研究；GPT‑5.6 Luna 能更快响应轻量级任务；GPT‑5.6 Sol 则用于攻克难度最高的科学和数学问题。在衡量研究级数学推理能力的 FrontierMath Tier 4 中，GPT‑5.6 Sol 得分为 83%，而 GPT‑5.5 为 72.5%。在评估复杂生物数据分析和科学推理能力的 GeneBench Pro 中，GPT‑5.6 Sol Pro 能解决 31.5% 的任务。
-
-研究人员可使用超过 75 项生命科学技能⁠（在新窗口中打开），涵盖遗传学、基因组学、测序、单细胞分析、蛋白质建模和药物发现。连接器可支持跨学科研究，以便研究人员访问科学文献、公共基因组与临床数据库、卫星影像、计算笔记本、数据平台和参考文献管理工具。
-
-ChatGPT 和 Codex 中可用技能、连接器和工具的典型示例。
-
-Codex 可编写和调试代码、分析数据集，以及构建可复现的工作流。ChatGPT 工作可支持周期较长的项目，例如寻找资助机会、准备资助申请、评阅文献、起草论文，以及制作成果交流材料。
-
-研究人员使用 AI 的起点各不相同。有些人可能首次使用这些工具，另一些人则可能正在开发其所属领域的高级应用。
-
-该计划将根据不同经验水平提供定制培训，涵盖入门、改进工作流和高级研究应用。参与者可向熟悉研究工作流的专家寻求支持，包括助其将这些工具融入实际工作。
-
-随着研究人员的不断探索，我们计划创造更多机会，让他们分享实用策略、相互学习，并展示跨学科应用。他们的反馈将帮助我们了解模型在哪些方面能够发挥效用、存在哪些不足之处，以及如何让模型为研究界创造更大价值。
-
-首期计划面向指定学术机构中符合条件的研究人员开放。符合条件的机构⁠（在新窗口中打开）必须是经认可、具有学位授予资格且研究活动水平较高的学院或大学。
-
-申请人需要验证其机构隶属关系，并提供当前研究及拟定科学用途的相关信息。获批的研究人员可邀请最多四名同机构合作者。每位合作者也必须验证其机构隶属关系，并且其账户将计入该计划的账户总数。
-
-申请现已开放。你可以在此⁠（在新窗口中打开）查看资格标准并提交申请。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">我们面向 10 万名科学家、数学家和工程师免费提供前沿模型和工具。
-
-2026 年 8 月 10 日更新：新的申请人将加入候补名单。在此期间，我们将审核超过 13,000 份首批申请（代表最多 65,000 个研究人员名额），同时在符合条件的申请人中抽签选出首批 10,000 个名额。未入选本轮的申请人，在今年秋季重新开放申请后，仍有资格参与未来的遴选轮次。这有助于我们在扩展项目的同时，专注于支持第一批研究人员。
-
-我们认为，前沿 AI 的价值不应集中在少数公司和资源充足的实验室手中。科学进步有赖于研究人员提出正确的问题、检验新的构想，并在他人研究成果的基础上继续探索。我们的职责是为其提供强大的工具，并与其携手设计既能加快研究、又能助其掌握主导权的模型。
-
-我们推出“面向学术研究人员的 ChatGPT”计划，为指定学术机构的 10 万名研究人员免费提供前沿模型使用权限。从准备资助申请到检验假设，该计划将帮助科学、数学和工程领域的研究人员攻克前沿难题、加速发现并提升工作效率。
-
-今年夏天，我们将从 1 万名研究人员起步；普林斯顿高等研究院 (IAS) 和巴黎高等师范学院 (ENS) 等机...</p><div style="font-size:16px;line-height:1.8;color:#333">我们面向 10 万名科学家、数学家和工程师免费提供前沿模型和工具。
-
-2026 年 8 月 10 日更新：新的申请人将加入候补名单。在此期间，我们将审核超过 13,000 份首批申请（代表最多 65,000 个研究人员名额），同时在符合条件的申请人中抽签选出首批 10,000 个名额。未入选本轮的申请人，在今年秋季重新开放申请后，仍有资格参与未来的遴选轮次。这有助于我们在扩展项目的同时，专注于支持第一批研究人员。
-
-我们认为，前沿 AI 的价值不应集中在少数公司和资源充足的实验室手中。科学进步有赖于研究人员提出正确的问题、检验新的构想，并在他人研究成果的基础上继续探索。我们的职责是为其提供强大的工具，并与其携手设计既能加快研究、又能助其掌握主导权的模型。
-
-我们推出“面向学术研究人员的 ChatGPT”计划，为指定学术机构的 10 万名研究人员免费提供前沿模型使用权限。从准备资助申请到检验假设，该计划将帮助科学、数学和工程领域的研究人员攻克前沿难题、加速发现并提升工作效率。
-
-今年夏天，我们将从 1 万名研究人员起步；普林斯顿高等研究院 (IAS) 和巴黎高等师范学院 (ENS) 等机构现已获得访问权限。我们计划在 2027 年底前将覆盖范围扩大至 10 万名研究人员。参与者可使用我们的前沿模型，包括首发上线的GPT‑5.6⁠Sol Pro，并可邀请最多四名同机构合作者。工作空间可提供企业级隐私与安全保护，且默认不会使用其中的数据训练我们的模型。研究人员可运用工具和技能，支持从基因组分析、蛋白质建模到文献综述、资助申请撰写和成果发表等工作。
-
-该计划还包括培训、实操支持，以及向其他研究人员学习并与我们分享反馈的机会。
-
-对于已使用 ChatGPT Edu 的机构，通过该计划授予的免费访问权限将由机构的工作空间统一协调。详细了解ChatGPT Edu，以及 OpenAI 如何支持高等教育。
-
-“面向学术研究人员的 ChatGPT”计划是我们承诺的一部分。到 2027 年，我们将投入逾 2.5 亿美元，用于支持外部科学研究与发现。相关举措包括投入 5000 万美元支持研究机构的NextGenAI计划，以及与美国能源部Genesis Mission⁠建立合作，旨在将前沿 AI 推向国家实验室和大学的研究人员。这些举措共同体现了我们的信念：让更多研究人员获得探索自身构想所需的工具，从而加速科学进步。
-
-AI 正以超出许多人预期的速度，成长为能力更强的研究工具。每周约有 130 万人使用 ChatGPT 开展高等科学和数学工作，生成约 840 万条消息。
-
-这一转变在数学领域尤为明显。过去六个月中，AI 已从偶尔用于解决个别问题，逐渐成为数学研究的常规组成部分。如今，越来越多的论文已注明 ChatGPT 的贡献，这表明研究人员正迅速将这些工具应用于工作。
-
-* 月份数据不完整；全文索引目前截至 7 月 21 日。
-
-研究人员在科学工作的每个阶段几乎都会使用 ChatGPT 和 Codex。ChatGPT 可帮助研究人员审视想法、获取知识、生成假设并交流研究成果。Codex 支持研究执行和形式化分析，包括编写代码和分析结果。
-
-按科学工作流类别和产品划分的科研请求占比，2026 年 6 月 21 日至 7 月 20 日
-
-这些使用模式已体现在实际研究中。物理学家 Rogerio Jorge 及其团队正使用 AI 开发开源聚变研究软件，供产业界和国家实验室设计聚变能源装置。在理论计算机科学领域，研究人员 Barna Saha、Yinzhan Xu 和 Christopher Ye 使用 GPT‑5.5 Pro 完成了一项证明，确立计算机高效求解高维几何问题的新极限，随后由他们自行验证并完善结果。
-
-使用这些工具最为频繁的研究人员，也在开展更具挑战性的工作。在各自领域 AI 使用量位居前 20% 的研究人员，要求 AI 承担预估人工耗时四小时以上任务的频率，几乎是其同行的两倍：这类请求占其请求总量的近 7%，而同领域其他研究人员的比例为 3.5%。
-
-按预计所需人工工时及科学家 AI 使用强度划分的科学请求占比，2026 年 6 月 21 日至 7 月 20 日
-
-我们的策略不是判断哪些科学问题值得关注，也不是试图亲自解决所有问题。我们的目标是为研究界提供强大的工具，助力研究人员探索自己最熟悉的问题。
-
-参与者可在 ChatGPT、ChatGPT 工作和 Codex 中免费使用我们的前沿模型，包括首发上线的GPT‑5.6⁠模型系列。他们还将获得更广泛的深度研究功能、更高的使用上限和更大的上下文窗口。这些能力共同支持科学推理、智能体式执行，以及跨学科研究工作流。
-
-GPT‑5.6 Terra 兼顾能力与效率，适合日常研究；GPT‑5.6 Luna 能更快响应轻量级任务；GPT‑5.6 Sol 则用于攻克难度最高的科学和数学问题。在衡量研究级数学推理能力的 FrontierMath Tier 4 中，GPT‑5.6 Sol 得分为 83%，而 GPT‑5.5 为 72.5%。在评估复杂生物数据分析和科学推理能力的 GeneBench Pro 中，GPT‑5.6 Sol Pro 能解决 31.5% 的任务。
-
-研究人员可使用超过 75 项生命科学技能⁠（在新窗口中打开），涵盖遗传学、基因组学、测序、单细胞分析、蛋白质建模和药物发现。连接器可支持跨学科研究，以便研究人员访问科学文献、公共基因组与临床数据库、卫星影像、计算笔记本、数据平台和参考文献管理工具。
-
-ChatGPT 和 Codex 中可用技能、连接器和工具的典型示例。
-
-Codex 可编写和调试代码、分析数据集，以及构建可复现的工作流。ChatGPT 工作可支持周期较长的项目，例如寻找资助机会、准备资助申请、评阅文献、起草论文，以及制作成果交流材料。
-
-研究人员使用 AI 的起点各不相同。有些人可能首次使用这些工具，另一些人则可能正在开发其所属领域的高级应用。
-
-该计划将根据不同经验水平提供定制培训，涵盖入门、改进工作流和高级研究应用。参与者可向熟悉研究工作流的专家寻求支持，包括助其将这些工具融入实际工作。
-
-随着研究人员的不断探索，我们计划创造更多机会，让他们分享实用策略、相互学习，并展示跨学科应用。他们的反馈将帮助我们了解模型在哪些方面能够发挥效用、存在哪些不足之处，以及如何让模型为研究界创造更大价值。
-
-首期计划面向指定学术机构中符合条件的研究人员开放。符合条件的机构⁠（在新窗口中打开）必须是经认可、具有学位授予资格且研究活动水平较高的学院或大学。
-
-申请人需要验证其机构隶属关系，并提供当前研究及拟定科学用途的相关信息。获批的研究人员可邀请最多四名同机构合作者。每位合作者也必须验证其机构隶属关系，并且其账户将计入该计划的账户总数。
-
-申请现已开放。你可以在此⁠（在新窗口中打开）查看资格标准并提交申请。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Accelerating scientific discovery with ChatGPT for Academic ResearchersCompany</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/chatgpt-for-academic-researchers/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Scientific computing in the age of agentic AI</title>
@@ -170,80 +182,88 @@ Codex 可编写和调试代码、分析数据集，以及构建可复现的工�
   <guid isPermaLink="false">https://openai.com/index/scientific-computing-agentic-ai/</guid>
   <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
 
-科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
 
-AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
 
-我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了...</p><div style="font-size:16px;line-height:1.8;color:#333">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
+AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
 
-科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
+We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
 
-AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
+Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
 
-我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了软件开发和维护；在某些情况下，它们帮助小型团队承担了原本需要更多时间或专业工程支持才能完成的工作。但他们也指出，为最终产出的工具明确长期责任和维护主体，仍是一项持续存在的挑战。
+cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
 
-贡献者一致认为，研究人员的角色正从具体实现转向验证和统筹：明确要构建什么、定义如何衡量正确性，并决定项目何时可以发布。在这一新兴模式下，研究人员仍掌控科学方向和质量标准，同时借助智能体的辅助提升工作速度。
+With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
 
-cyvcf2 是一个用于读写基因组变异文件的 Python 库。GPT‑5.5 将该库的旧版构建和打包系统替换为现代化的统一流程，使其更易于安装、测试和发布。
+Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
 
-借助编程智能体，快速推进相当容易；但就目前而言，要在科学道路上走得更远，仍需要专家的指导、理解、品位和用心。
+Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
 
-尽管各项目的范围差异很大，但它们都表明，编程智能体正在减轻工程人力和专业能力对科学计算的制约。如今，瓶颈转移到了验证 AI 智能体的输出，而这仍有赖于人类判断。
+Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
 
-各项案例研究表明，智能体能够有效处理具体且范围明确的请求，但无法可靠判断其工作是否具备科学有效性或达到预期。事实上，即使成果中存在明显错误，智能体也常常表现得很有信心。因此，人工审核者需要找到可靠的方法来验证结果。最有效的方法会使用外部参照或可衡量的验收目标，例如输出完全一致、与现有工具表现相当、统计行为适当，或基于模拟数据预先确定答案。
+Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
 
-另一个共同主题是，项目通常采用反馈驱动的迭代方式分阶段推进，而非采用单样本方法。贡献者将宽泛目标拆分为较小的改动，再利用中间基准和测试系统评估并完善智能体的工作。智能体通常能迅速完成初始实现，但解决边缘情况和细微的数值差异要花费更多时间。完成实现的“最后一公里”往往最为费力。
+Long-term stewardship remains essential
 
-总体而言，这些案例研究表明，智能体让研究人员可以减少花在实现上的时间，将更多精力用于指导科研工作。人类负责设定目标、将复杂项目拆分为可管理的部分，并判断结果是否具备科学有效性。智能体缓解了长期存在的工程制约，不仅拓展了研究人员可以构建的成果，也让他们得以专注于最重要的科学问题和决策。
+The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
 
-研究软件长期存在的维护缺口拖慢了迭代，也限制了可复现性和可靠性。针对“研究代码⁠（在新窗口中打开）”和组学工具⁠（在新窗口中打开）”的已发表研究发现，公开发布的软件经常无法在全新的计算环境中正确安装或按文档说明运行，迫使研究人员花费大量时间进行配置和调试。即使是常规改进，也能为研究人员节省时间并降低计算需求；以性能为导向的重构和重写则可以带来更大的提升。
+But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
 
-但实现成本降低后，也更容易出现大量相似的重写版本，造成用户分散，并分散维持任何单一工具可靠性所需的专家精力。因此，长期维护和明确归属至关重要。成熟的科学软件承载着未记录的惯例、兼容性要求和用户信任，这些都无法仅靠转换源代码来重现。
+The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
 
-这些案例研究展示了几条可行的前进路径。对 MHCflurry 和 cyvcf2 的改动已合并到各自原有的上游项目；由于原项目已被弃用，rustar-aligner 则转由新的社区负责维护。如果可以与现有维护者协调，应尽早开始。如果必须采用独立实现，则需要明确负责人，并制定可信的维护计划。否则，今天的现代化重写版本可能成为明天的弃用代码，而非可靠的科学基础设施。
+Toward more durable scientific software
 
-这份实地报告是回顾性和探索性的，但其中的案例研究揭示了科学软件开发方式正在发生的务实转变。Codex 等编程智能体可以显著降低维护、迁移、优化和全新实现的成本。它们的长期科学价值仍取决于人类做出的决定：构建什么、如何验证，以及由谁维护。更深层的变化并不只是研究人员能开发更多软件，而是他们可以将更多精力放在定义、验证和维护工具上。
+This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
 
-这些案例研究表明，智能体已经能够加快科学计算的迭代速度。随着编程智能体不断进步，研究人员可以减少维持分析流程运行的时间，将更多精力用于推动各自领域的发展。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
+These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
 
-科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
+Software & Engineering
 
-AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
 
-我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了...</p><div style="font-size:16px;line-height:1.8;color:#333">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
 
-科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
+Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
 
-AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
+AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
 
-我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了软件开发和维护；在某些情况下，它们帮助小型团队承担了原本需要更多时间或专业工程支持才能完成的工作。但他们也指出，为最终产出的工具明确长期责任和维护主体，仍是一项持续存在的挑战。
+We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
 
-贡献者一致认为，研究人员的角色正从具体实现转向验证和统筹：明确要构建什么、定义如何衡量正确性，并决定项目何时可以发布。在这一新兴模式下，研究人员仍掌控科学方向和质量标准，同时借助智能体的辅助提升工作速度。
+Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
 
-cyvcf2 是一个用于读写基因组变异文件的 Python 库。GPT‑5.5 将该库的旧版构建和打包系统替换为现代化的统一流程，使其更易于安装、测试和发布。
+cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
 
-借助编程智能体，快速推进相当容易；但就目前而言，要在科学道路上走得更远，仍需要专家的指导、理解、品位和用心。
+With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
 
-尽管各项目的范围差异很大，但它们都表明，编程智能体正在减轻工程人力和专业能力对科学计算的制约。如今，瓶颈转移到了验证 AI 智能体的输出，而这仍有赖于人类判断。
+Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
 
-各项案例研究表明，智能体能够有效处理具体且范围明确的请求，但无法可靠判断其工作是否具备科学有效性或达到预期。事实上，即使成果中存在明显错误，智能体也常常表现得很有信心。因此，人工审核者需要找到可靠的方法来验证结果。最有效的方法会使用外部参照或可衡量的验收目标，例如输出完全一致、与现有工具表现相当、统计行为适当，或基于模拟数据预先确定答案。
+Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
 
-另一个共同主题是，项目通常采用反馈驱动的迭代方式分阶段推进，而非采用单样本方法。贡献者将宽泛目标拆分为较小的改动，再利用中间基准和测试系统评估并完善智能体的工作。智能体通常能迅速完成初始实现，但解决边缘情况和细微的数值差异要花费更多时间。完成实现的“最后一公里”往往最为费力。
+Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
 
-总体而言，这些案例研究表明，智能体让研究人员可以减少花在实现上的时间，将更多精力用于指导科研工作。人类负责设定目标、将复杂项目拆分为可管理的部分，并判断结果是否具备科学有效性。智能体缓解了长期存在的工程制约，不仅拓展了研究人员可以构建的成果，也让他们得以专注于最重要的科学问题和决策。
+Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
 
-研究软件长期存在的维护缺口拖慢了迭代，也限制了可复现性和可靠性。针对“研究代码⁠（在新窗口中打开）”和组学工具⁠（在新窗口中打开）”的已发表研究发现，公开发布的软件经常无法在全新的计算环境中正确安装或按文档说明运行，迫使研究人员花费大量时间进行配置和调试。即使是常规改进，也能为研究人员节省时间并降低计算需求；以性能为导向的重构和重写则可以带来更大的提升。
+Long-term stewardship remains essential
 
-但实现成本降低后，也更容易出现大量相似的重写版本，造成用户分散，并分散维持任何单一工具可靠性所需的专家精力。因此，长期维护和明确归属至关重要。成熟的科学软件承载着未记录的惯例、兼容性要求和用户信任，这些都无法仅靠转换源代码来重现。
+The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
 
-这些案例研究展示了几条可行的前进路径。对 MHCflurry 和 cyvcf2 的改动已合并到各自原有的上游项目；由于原项目已被弃用，rustar-aligner 则转由新的社区负责维护。如果可以与现有维护者协调，应尽早开始。如果必须采用独立实现，则需要明确负责人，并制定可信的维护计划。否则，今天的现代化重写版本可能成为明天的弃用代码，而非可靠的科学基础设施。
+But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
 
-这份实地报告是回顾性和探索性的，但其中的案例研究揭示了科学软件开发方式正在发生的务实转变。Codex 等编程智能体可以显著降低维护、迁移、优化和全新实现的成本。它们的长期科学价值仍取决于人类做出的决定：构建什么、如何验证，以及由谁维护。更深层的变化并不只是研究人员能开发更多软件，而是他们可以将更多精力放在定义、验证和维护工具上。
+The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
 
-这些案例研究表明，智能体已经能够加快科学计算的迭代速度。随着编程智能体不断进步，研究人员可以减少维持分析流程运行的时间，将更多精力用于推动各自领域的发展。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Toward more durable scientific software
+
+This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
+
+These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
+
+Software & Engineering
+
+PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-Red: Unlocking Self-Improvement for RobustnessSafety</title>
@@ -650,582 +670,26 @@ PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px 
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-live/</guid>
   <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
-
-这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
-
-从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
-
-我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
-
-早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
-
-级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
-
-像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
-
-响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
-
-GPT‑Live通过两项架构变化解决了这些限制。
-
-首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
-
-这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
-
-响应快速、自然且富有表现力，倾听也更为积极
-
-其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
-
-这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
-
-GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
-
-我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
-
-GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
-
-BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
-
-τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
-
-* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
-
-** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
-
-每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
-
-从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
-
-现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
-
-ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
-
-如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
-
-有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
-
-由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
-
-GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
-
-为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
-
-在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
-
-由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
-
-我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
-
-我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
-
-最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
-
-我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
-
-GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
-
-我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
-
-发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后...</p><div style="font-size:16px;line-height:1.8;color:#333">新一代语音模型，实现更自然的人与 AI 交互，现已应用于 ChatGPT 语音
-
-2026 年 7 月 31 日更新：现在，通过 ChatGPT 语音及 OpenAI API 中的 GPT‑Live 生成的受支持音频，均已加入 SynthID 水印。我们的公开验证工具现已能够检测受支持音频文件中的 OpenAI 内容溯源信号。此外，我们还推出了用于验证的 API 访问权限，以便开发者和组织能够将内容溯源检查整合到各自的工作流中。这些更新建立在下文所述的安全策略之上，并进一步推进了我们在让 OpenAI 生成内容更易于被识别方面所做出的广泛努力。
-
-我们正在推出 GPT‑Live，这是新一代语音模型，让与 AI 交谈更像一场真实对话。
-
-GPT‑Live 基于全双工架构构建，这意味着它可以同时倾听和说话。在对话中，GPT‑Live 可以用“嗯嗯”或“是啊”这样的短语表示它正在专心听，进行快速来回交流，也可以在你需要时间思考时保持安静。由此带来的语音体验令人耳目一新，也更容易交谈。
-
-GPT‑Live 也是我们迄今最智能的语音模型。对于需要网页搜索、更深入推理或更复杂工作的提问，它会在幕后委派给我们最新的前沿模型，并在结果准备好后带回到对话中。在处理这些任务时，GPT‑Live 仍可以继续与你交谈，保持对话流畅。发布时，GPT‑Live 将在后台使用 GPT‑5.5。随着我们发布新的前沿模型，我们会持续更新 GPT‑Live 所使用的模型。
-
-这些进展带来了更智能、更自然易用的全新 ChatGPT 语音体验。我们相信，随着时间推移，这项研究还将让人们能够用语音完成越来越复杂、持续时间更长、也更具智能体特性的工作。
-
-从今天开始，我们将面向全球 ChatGPT 用户逐步推出两个版本的 GPT‑Live：GPT‑Live‑1和GPT‑Live‑1 mini。我们也计划很快将它们引入 API；开发者和企业可以通过此表单⁠注册，以便接收通知。
-
-我们的愿景是实现真正自然的人类与 AI 交互：在这样的世界里，与 AI 协作像与另一个人共事一样流畅、响应及时，而推理和复杂任务执行则在后台无缝完成。
-
-早期几代语音 AI 系统让我们更接近这一愿景，但也存在重要取舍。
-
-级联式语音系统依赖一系列模型依次运行，来处理每一轮对话。最初的 ChatGPT 语音将三个模型串联在一起：一个语音转文本模型用于转写你的语音，一个大语言模型用于生成回应，以及一个文本转语音模型用于将回应再转换成语音。这种方法让我们首次能够与前沿 AI 模型对话，但其复杂性也带来了代价：信息可能在模型之间流失，回应也缓慢而生硬。
-
-像ChatGPT 高级语音模式这样的轮次式语音模型在单个模型内处理并生成音频，降低了延迟，让对话更流畅 — 但它们仍通过离散的轮次运作。模型必须等用户停止说话后才能回应，导致来回交流显得僵硬。此外，由于轮次检测基于静默，即使短暂的停顿或背景噪声也可能被误认为一轮结束，从而导致模型在不自然的时机插话。
-
-响应速度与流畅度有所提升，但与模型的多轮对话互动仍显生硬
-
-GPT‑Live通过两项架构变化解决了这些限制。
-
-首先，我们基于全双工架构构建了 GPT‑Live，以支持连续交互。GPT‑Live 不再处理一连串彼此独立的消息，而是在生成输出的同时连续处理输入。因此，模型可以在每秒内多次做出交互决策：是说话、继续倾听、暂停、打断，还是调用工具。
-
-这让模型能够进行更自然的来回交流，更好地把握时间，甚至执行实时翻译。
-
-响应快速、自然且富有表现力，倾听也更为积极
-
-其次，我们将负责连续交互的 GPT‑Live 与更深入的工作解耦。当一个问题需要搜索、推理或更具智能体特性的能力时，GPT‑Live 可以将任务委派给 GPT‑5.5 等另一个模型。这使它即使在后台处理多个任务，也能保持对话继续进行。
-
-这项架构变化还使 GPT‑Live 能够持续使用最新的模型和智能体，将前沿智能与自然交互相结合。
-
-GPT-Live 提供快速、自然的响应，同时由 GPT-5.5 在后台处理搜索任务
-
-我们构建了新的人类评测，用于衡量愉悦度和对话流畅度。在这些一对一对比中，在匹配的 5–10 分钟对话里，GPT‑Live‑1 和 GPT‑Live‑1 mini 相比高级语音模式获得了明显更高的偏好；这些对话衡量整体偏好、轮流发言、打断、对话流以及每次交互的自然程度。
-
-GPQA：GPT‑Live‑1 在 GPQA 上显著优于高级语音模式；GPQA 测试的是生物、化学和物理领域的专家级科学推理能力。
-
-BrowseComp：GPT‑Live‑1 在 BrowseComp 上相比高级语音模式取得大幅提升；BrowseComp 测试的是智能体式网页搜索以及查找难以定位信息的能力。
-
-τ³-Voice Telecom（内部变体）**：GPT‑Live‑1 在 τ³-Voice Telecom 上优于高级语音模式；该测试评估语音智能体在真实、多轮电信支持任务中的表现。
-
-* GPT‑Live‑1 (instant) 和 GPT‑Live‑1 mini 在后台使用 GPT‑5.5 Instant 模型，而 GPT‑Live‑1 Medium 和 GPT‑Live‑1 High 使用 GPT‑5.5 Thinking 模型，并分别采用中和高推理强度。
-
-** 在本次评测中，我们使用了一个由我们最新推理模型提供支持的定制用户模型。
-
-每周有超过 1.5 亿人通过语音、听写等功能与 ChatGPT 交谈。他们用它免提获取日常帮助、练习语言、讲睡前故事，或只是在通勤时聊聊天。
-
-从今天起，当你点击语音按钮与 ChatGPT 交谈时，将获得由 GPT‑Live 驱动的升级体验：对话更自然、回答更智能、倾听更出色，并能提供可视化回应。
-
-现在，与 ChatGPT 交谈应当会更像真正的对话。你可以插入问题，可以停下来整理思路，也可以让 ChatGPT 说慢一点。它会自然地用“嗯嗯”或“明白了”等短语回应你，让你知道它正在跟上你的思路。我们还为 GPT‑Live 重新制作了 ChatGPT 中九种各具特色的声音。
-
-ChatGPT 语音现在可以调用我们最新的前沿模型，在你需要时给出更智能的回答。你还可以选择适合需求的推理级别：Instant（即时）用于快速回答，Medium（中）和 High（高）则适合希望 ChatGPT 花更多时间思考的场景。
-
-如果你需要一点时间思考，ChatGPT 语音现在会等待，而不会抢话打断。如果你让它保持安静并倾听，它就会照做。当有背景噪声时，比如经过的车辆或附近的谈话声，ChatGPT 也更能专注于你的声音，不容易被干扰。
-
-有些回答在你能看见时会更有用。在你交谈时，ChatGPT 现在可以针对天气、股票、体育等主题显示丰富的可视化卡片。语音也继续支持搜索、记忆、图片和文件上传。
-
-由此带来的 ChatGPT 语音体验，在日常生活中更自然、更强大，也更实用。
-
-GPT‑Live 的设计默认以安全为基础。它建立在我们最新模型的安全进展之上，同时在关键风险领域增加了专门的安全训练，并加入了专为语音设计的新保障措施。
-
-为了更好地反映人们在真实场景中使用语音的方式，我们首先扩展了安全测试，纳入新的音频原生评估。我们还借鉴高级语音模式的经验，创建了使用生成音频的合成评估，以便更集中地关注关键安全领域。这些领域包括自伤、精神病性症状和躁狂、对 AI 的情感依赖、暴力以及性内容。内部专家还针对语音特有的风险对模型进行了红队测试。
-
-在我们的测试中，GPT‑Live 在几乎所有评估领域的表现都与高级语音模式相当或更好。你可以在 GPT‑Live系统卡⁠（在新窗口中打开）中进一步了解我们的测试和保障措施。
-
-由于语音对话是实时展开的，我们还构建了能在模型说话时发挥作用的保障措施。当系统检测到可能不安全的输出时，它可以引导模型给出更安全的回应，呈现额外的安全提示或资源，或在风险较高的情况下结束语音对话。对于涉及自伤的对话，我们将 ChatGPT 的支持流程适配到了语音场景，包括提供经专家审核的危机热线支持。
-
-我们设计了额外保护来支持青少年用户，并将适龄行为直接训练进模型，以降低不当回答的风险。家长可以通过家长控制选择其青少年子女是否可使用 ChatGPT 语音；在出现潜在自伤或自杀意图迹象的高风险情形中，已关联的家长可能会收到通知。
-
-我们也在推出更长期的测量和上线后监测，重点关注情感依赖，以持续加深理解并完善保障措施。在我们此前关于情感使用与情绪健康研究的基础上，这将帮助我们识别新出现的模式，并改进系统在情绪敏感互动中的回应方式。
-
-最后，GPT‑Live 是为对话而设计的，并非用于语音冒充。它使用 ChatGPT 中一组预定义的声音，并配有保障措施，防止其模仿真实人物的声音。
-
-我们致力于支持安全与福祉，并将随着从真实使用中获得经验，持续强化这些保护。
-
-GPT‑Live 现正面向全球 ChatGPT 用户在 iOS、Android 和ChatGPT.com⁠（在新窗口中打开）上推出。GPT‑Live‑1 将成为 Go、Plus 和 Pro 用户使用 ChatGPT 语音时的默认驱动模型，GPT‑Live‑1 mini 将成为 Free 用户的默认模型。更多可用性详情可在我们的帮助中心⁠（在新窗口中打开）查看。
-
-我们已针对 ChatGPT 中一些最常用的语言优化了 GPT‑Live。对于某些语言，模型可能带有非母语口音，或在流利度上存在不足。我们正在积极改进各种语言的体验。
-
-发布初期，GPT‑Live 尚不支持在 ChatGPT 中将语音与视频或屏幕共享结合使用，但我们正在努力尽快推出这些功能。你仍然可以在可用这些功能的地方访问 ChatGPT 语音的旧版，包括 Standard 和高级语音模式。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>GPT-5.5</title>
-  <link>https://openai.com/index/introducing-gpt-5-5/</link>
-  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">This post introduced GPT-5.5.
-
-Learn about OpenAI’s latest model:
-
-我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水...</p><div style="font-size:16px;line-height:1.8;color:#333">This post introduced GPT-5.5.
-
-Learn about OpenAI’s latest model:
-
-我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
-
-即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
-
-Expert-SWE (Internal)
-
-FrontierMath Tier 1–3
-
-OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
-
-在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
-
-Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
-
-GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
-
-在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
-
-GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
-
-渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
-
-Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
-
-除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
-
-资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
-
-一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
-
-这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
-
-在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
-
-目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
-
-在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
-
-GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
-
-多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
-
-此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
-
-Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
-
-GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
-
-值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
-
-同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
-
-在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
-
-早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
-
-Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
-
-波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
-
-随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
-
-图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
-
-Prompt:# Algebraic geometry surface intersection
-
-Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
-
-Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
-
-Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
-
-Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
-
-## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
-
-App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
-
-Git repo, journal, plan (Markdown files)
-
-为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
-
-其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
-
-在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
-
-前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
-
-在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
-
-多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
-
-针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
-
-为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
-
-我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
-
-我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
-
-同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
-
-这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
-
-即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
-
-在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
-
-在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
-
-面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
-
-尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
-
-SWE-Bench Pro (Public) *
-
-Expert-SWE (Internal)
-
-*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
-
-Tau2-bench Telecom***（原始提示词）
-
-** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
-
-Graphwalks BFS 256k f1
-
-Graphwalks BFS 1mil f1
-
-Graphwalks parents 256k f1
-
-Graphwalks parents 1mil f1
-
-OpenAI MRCR v2 8-needle 4K-8K
-
-OpenAI MRCR v2 8-needle 8K-16K
-
-OpenAI MRCR v2 8-needle 16K-32K
-
-OpenAI MRCR v2 8-needle 32K-64K
-
-OpenAI MRCR v2 8-needle 64K-128K
-
-OpenAI MRCR v2 8-needle 128K-256K
-
-OpenAI MRCR v2 8-needle 256K-512K
-
-OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">This post introduced GPT-5.5.
-
-Learn about OpenAI’s latest model:
-
-我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水...</p><div style="font-size:16px;line-height:1.8;color:#333">This post introduced GPT-5.5.
-
-Learn about OpenAI’s latest model:
-
-我们正式发布 GPT‑5.5。作为我们迄今最智能、交互体验最直观的模型，它标志着人类迈向全新计算机办公模式的关键一步。
-
-GPT‑5.5 能够更快速地洞察用户意向，并独立承担更多实质性工作。无论是编写与调试代码、开展在线调研、分析复杂数据，还是撰写文档、制作表格，乃至跨软件操作，它都能游刃有余地衔接各个工具，直至任务圆满完成。以往你需要步步为营地引导 AI，而现在，你只需将一个繁杂的多阶段任务交给 GPT‑5.5。它具备极强的自主性，能够自行制定计划、调用工具、核查结果并在模糊的边界中寻找最优路径，始终保持高效推进。
-
-在智能体编程、计算机使用、知识型工作以及前沿科学研究等领域，GPT‑5.5 的提升尤为显著。这些领域往往要求模型具备跨语境推理及长周期的行动能力。令人惊叹的是，GPT‑5.5 在实现智能跃迁的同时，并未牺牲响应速度。通常情况下，模型体量越大速度越慢，但 GPT‑5.5 在真实应用环境中的单 Token 延迟与 GPT‑5.4 持平，智能水平却大幅领先。此外，在处理相同的 Codex 任务时，其消耗的 Token 显著减少，真正实现了更高能、更经济。
-
-伴随 GPT‑5.5 一同发布的，还有我们迄今为止最完善的安全防护方案。这套体系旨在打击滥用行为，同时确保合法、有益的工作流程不受干扰。在正式发布前，我们不仅通过了全套安全与准备框架评估，还联合内外红队专家，针对高级网络安全和生物技术领域进行了专项测试。此外，我们还从近 200 家值得信赖的合作伙伴处收集了大量真实应用场景的反馈，确保模型在复杂实战中的安全性与可靠性。
-
-即日起，GPT‑5.5 将陆续面向 ChatGPT 及 Codex 的 Plus、Pro、Business 和 Enterprise 用户开放。同时，GPT‑5.5 Pro 也将同步推送给 Pro、Business 和 Enterprise 的订阅用户。由于 API 部署涉及不同的防护策略，我们正与合作伙伴及客户紧密协作，确保在大规模服务下的安全性。GPT‑5.5 与 GPT‑5.5 Pro 的 API 服务将于近期正式上线。
-
-Expert-SWE (Internal)
-
-FrontierMath Tier 1–3
-
-OpenAI 正在致力于打造全球性的智能体 AI 基础设施，旨在让全球用户与企业都能真正通过 AI 交付工作成果。在过去的一年里，我们见证了 AI 对软件工程效率的巨大拉动；而随着 GPT‑5.5 接入 Codex 与 ChatGPT，这种变革正进一步延伸至科学研究及更广泛的计算机办公领域。
-
-在这些领域中，GPT‑5.5 的进化不仅体现在更深层次的智能，更在于其解决问题的高效性。它通常能以更少的 Token 消耗和更低的重试频率，交付更高质量的产出。在 Artificial Analysis 的 Coding Agent Index 中，GPT‑5.5 以竞品前沿编程模型一半的成本，实现了行业领先的智能表现。
-
-Artificial Analysis Intelligence Index⁠（在新窗口中打开）是由第三方机构测评的加权平均得分，涵盖了以下 10 项权威评估：AA-LCR、AA-Omniscience、CritPt、GDPval-AA、GPQA Diamond、Humanity’s Last Exam、IFBench、SciCode、Terminal-Bench Hard 以及 τ²-Bench Telecom。
-
-GPT‑5.5 是我们迄今最强大的智能体编程模型。在Terminal-Bench 2.0测试中，面对需要缜密规划、反复迭代及多工具协作的复杂命令行工作流，GPT‑5.5 取得了 82.7% 的顶尖准确率。在衡量解决真实 GitHub 议题能力的SWE-Bench Pro评估中，其得分达到 58.6%，相比以往模型，它能在单次尝试中端到端地解决更多任务。而在针对长周期编程任务（人类中位完成时间约为 20 小时）的内部前沿评估Expert-SWE中，GPT‑5.5 的表现同样超越了 GPT‑5.4。
-
-在上述三项评估中，GPT‑5.5 不仅全面刷新了 GPT‑5.4 的成绩，且 Token 使用量更少。
-
-GPT‑5.5 的编程能力优势在 Codex 中得到明显体现。从代码实现、重构到调试、测试及验证，它都能全方位接管工程任务。早期测试表明，GPT‑5.5 更加契合真实工程环境下的行为模式：它能精准把握大型系统的上下文，在面对含义模糊的报错时进行深入推理，并主动通过工具验证假设，确保修改后的代码能适配整个库的既有逻辑。
-
-渲染轨迹采用了 NASA/JPL Horizons 提供的猎户座 (Orion)、月球及太阳的矢量数据；为了提升可视化效果的可读性，我们对显示比例进行了相应缩放。
-
-Prompt:[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.
-
-除了基准测试表现优异，早期测试者还反映 GPT‑5.5 对系统架构的整体把握能力更强：它能洞察故障的底层逻辑，锁定精准的修复位置，并预判代码变更可能引发的连锁反应。
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-Every 创始人兼 CEODan Shipper将 GPT‑5.5 评价为：“这是我用过的第一个在概念理解上具有极高清晰度的编程模型。”
-
-在应用上线后，他曾花费数天时间调试一个线上故障，最后不得不抽调一名最顶尖的工程师重写了部分系统。为了测试 GPT‑5.5，他实际上采用了“倒流时间”的方法：面对当时那个受损的状态，模型是否能够像工程师最终决定的那样，给出相同类型的重写方案？GPT‑5.4 没能做到。GPT‑5.5 成功了。
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-“它真的让我感觉是在与更高阶的智能协同工作，甚至产生了一种由衷的敬畏感。”
-
-MagicPath 首席执行官Pietro Schirano也见证了类似的质变：GPT‑5.5 将一个包含数百项前端修改和重构的分支，成功合并到了一个同样发生巨变的主分支中。它仅用约 20 分钟便一次性完成了所有冲突解决与代码整合。
-
-资深工程师在对比测试后指出，GPT‑5.5 在推理能力和自主性上明显优于 GPT‑5.4 和 Claude Opus 4.7。它能提前发现潜在隐患，甚至在无需显式指令的情况下，预判测试与评审需求。在一次实测案例中，一位工程师要求其重构协作式 Markdown 编辑器的评论系统，结果它交出的 12 个 Diff 堆栈几乎已经可以直接发布。许多用户表示，相比 GPT‑5.4，他们对 GPT‑5.5 制定的方案更有信心，且极少需要对具体实现进行人工修正。
-
-一位提前试用该模型的 NVIDIA 工程师感叹道：“失去对 GPT‑5.5 的访问权限，感觉就像被截肢了一样。”
-
-这些让 GPT‑5.5 在编程领域大放异彩的优势，同样使其成为日常办公的强大助力。由于模型能更敏锐地捕捉用户意向，它在处理知识型工作时显得更加自然流畅：从搜集资料、提炼核心价值，到调用工具、核查产出，并最终将零散的素材转化为实用成果，整个链路一气呵成。
-
-在 Codex 环境下，GPT‑5.5 制作文档、表格及演示文稿的能力较 GPT‑5.4 有了显著提升。Alpha 测试者反馈，在运筹研究、电子表格建模以及将凌乱的业务需求转化为执行计划等任务中，它的表现远超以往模型。结合 Codex 的计算机使用 (computer use) 能力，GPT‑5.5 带来了前所未有的“人机协作感”：它能实时理解屏幕内容，精准进行点击、录入和界面导航，并熟练地在不同工具间跨越操作。
-
-目前，OpenAI 内部团队已率先将这些优势应用到真实的业务流中。如今，公司内超过 85% 的员工每周都会使用 Codex，涵盖软件工程、财务、传播、市场营销、数据科学和产品管理等多个职能领域。公关团队利用 Codex 中的 GPT‑5.5 分析了过去六个月的演讲请求数据，建立了一套评分与风险预警框架，并以此验证了一款自动化 Slack 智能体。该智能体能够自动处理低风险请求，而将高风险项转交人工审核。财务团队借助 Codex 处理了 24,771 份 K-1 税务报表，共计 71,637 页。通过这一脱敏处理的工作流，团队比去年提前两周完成了任务。市场拓展团队的一名员工实现了周报生成的自动化，每周节省了 5 到 10 小时。
-
-在 ChatGPT 中，GPT‑5.5 Thinking让攻克难题变得更为高效，通过更智能、更简洁的回答，协助用户理清复杂工作的头绪。它在编程、调研、信息综合分析以及处理文档密集型任务方面表现卓越，配合插件使用时效果尤为显著。
-
-GPT‑5.5 Pro的表现同样出色：早期测试者发现 ChatGPT 承接任务的难度上限和交付质量都有了跨越式提升，延迟表现的改善也使其在处理高强度任务时更具实用性。相比 GPT‑5.4 Pro，测试者认为 GPT‑5.5 Pro 的回答在全面性、结构化、准确度、相关性及实用价值上均有显著突破，尤其在商业、法律、教育和数据科学领域表现强劲。
-
-多项衡量实战能力的基准测试结果也印证了这一点：GDPval（衡量 44 种职业中具有经济价值的真实知识型工作）：GPT‑5.5 得分为 84.9%。OSWorld-Verified（衡量模型自主操作真实计算机环境的能力）：得分达到 78.7%。Tau2-bench Telecom（测试复杂客服工作流）：在无需提示词微调的情况下，准确率高达 98.0%。
-
-此外，GPT‑5.5 在结构化知识型工作方面同样表现不俗：在FinanceAgent测试中取得 60.0% 的成绩；在内部投资银行建模任务中达到 88.5%；而在OfficeQA Pro（要求模型结合文件、工具和上下文进行实操而非死记硬背）测试中，得分为 54.1%。
-
-Tau2-bench Telecom 测试是在未进行提示词微调（且以 GPT‑4.1 作为用户模型）的情况下运行的。与前代模型相比，GPT‑5.5 能够更精准地理解任务意向，且 Token 利用效率更高。
-
-GPT‑5.5 在科学和技术研究工作流中同样展现出显著优势。科研工作并非简单的问答，而是一个探索构思、搜集证据、验证假设、解读结果并决策下一步行动的完整循环。GPT‑5.5 在这一循环中的表现比以往任何模型都更加稳健持久。
-
-值得注意的是，在GeneBench⁠（在新窗口中打开）测试中，GPT‑5.5 较 GPT‑5.4 有了跨越式的提升。这是一项专注于遗传学和定量生物学多阶段科学数据分析的新型评估，要求模型在极少的人工干预下，对具有模糊性或存在误差的数据进行推理，处理如隐藏混杂因素或质控 (QC) 失败等现实障碍，并精准实现及解读现代统计学方法。考虑到该测试中的任务通常对应科学专家数天的项目量，模型的表现确实令人瞩目。
-
-同样，在围绕真实生物信息学及数据分析设计的 BixBench 测试中，GPT‑5.5 在所有已公布评分的模型中名列前茅。目前，该模型的科学能力已足以作为真正的“科学共同体”成员，切实加速生物医学研究的前沿进展。
-
-在另一个案例中，一个搭载自定义框架的 GPT‑5.5 内部版本协助发现了关于拉姆齐数 (Ramsey numbers) 的全新证明⁠（在新窗口中打开）。拉姆齐数是组合数学的核心研究对象之一；组合数学主要研究离散对象（如路径、网络、集合和模式）如何相互关联。简单来说，拉姆齐数探究的是：一个网络必须达到多大规模，才能保证某种秩序必然出现。该领域的成果非常罕见且技术难度极大。GPT‑5.5 发现了一个关于非对角拉姆齐数长期存在的渐近事实证明，随后该证明在 Lean 形式化证明语言中得到了验证。该成果是一个具体的范例，表明 GPT‑5.5 不仅仅能提供代码或解释，更能为研究领域贡献出令人惊喜且极具价值的数学论证。
-
-早期测试者在使用 ChatGPT 中的 GPT‑5.5 Pro 时，更多是将其视为研究伙伴而非单次应答机：它能通过多轮交互评议手稿、压力测试技术论证、提议分析方案，并结合代码、笔记和 PDF 上下文进行协作。这种转变的核心在于，GPT‑5.5 能够更有效地辅助研究人员完成从提出问题到设计实验，再到最终产出的全过程。
-
-Derya Unutmaz是杰克逊基因组医学实验室 (Jackson Laboratory for Genomic Medicine) 的免疫学教授兼研究员，他使用 GPT‑5.5 Pro 分析了一个包含 62 个样本、近 28,000 个基因的基因表达数据集。他生成了一份详尽的研究报告，不仅总结了实验发现，还提出了关键问题和见解。他表示，这类工作以往通常需要团队耗时数月才能完成。
-
-波兰波兹南亚当·密茨凯维奇大学 (Adam Mickiewicz University) 数学系助理教授Bartosz Naskręcki使用 Codex 中的 GPT‑5.5，仅凭一条提示词就在 11 分钟内构建了一个代数几何应用。该应用能够实现二次曲面交集的可视化，并能将生成的曲线转换为魏尔斯特拉斯模型 (Weierstrass model)。
-
-随后，他进一步扩展了该应用，加入了更稳定的奇点可视化功能，并提供了可供后续研究复用的精确系数。对他而言，更重大的转变在于 Codex 现在能够辅助实现自定义的数学可视化和计算机代数工作流，而这些在以前往往需要专门的工具。综合来看，这些案例证明了 GPT‑5.5 正在将专家的意向转化为切实可用的研究工具和分析成果。
-
-图片来源：Bartosz Naskręcki⁠（在新窗口中打开）
-
-Prompt:# Algebraic geometry surface intersection
-
-Make an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.
-
-Two tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve
-
-Rotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level
-
-Short Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas
-
-## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes
-
-App is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable
-
-Git repo, journal, plan (Markdown files)
-
-为了在维持 GPT‑5.4 延迟水平的前提下提供 GPT‑5.5 的强大性能，我们必须将推理视为一个完整的集成系统进行重新思考，而非单纯的局部优化。GPT‑5.5 适配了 NVIDIA GB200 及 GB300 NVL72 系统，从联合设计、模型训练到在线服务均基于此。Codex 与 GPT‑5.5 对实现性能目标起到了决定性作用。Codex 协助团队快速将构思转化为可测试的方案，通过勾勒技术路径和搭建实验环境，帮助我们精准锁定最具投资价值的优化点。GPT‑5.5 甚至亲自参与了系统底层栈的改进与实现。简而言之，模型亲自优化了运行它自身的底层基础设施。
-
-其中一项关键改进体现在负载均衡与分区启发式算法。在 GPT‑5.5 发布前，为了平衡计算核心的工作量并确保不同规模的请求能在同一 GPU 上运行，我们将加速器上的请求拆分为固定数量的区块。然而，静态区块分配并非面对各种流量形态的最优解。为了更充分地利用 GPU 性能，Codex 分析了数周的生产环境流量模式，并编写了定制的启发式算法，实现了任务的最优分区与平衡。这项工作产生了远超预期的影响，将 Token 生成速度提升了 20% 以上。
-
-在模型能够精准发现并修复漏洞的时代，构建防御韧性是一项需要全行业参与的系统性工程。我们需要通过民主化的模型准入和迭代部署，为下一个阶段的网络防御⁠构筑全生态的免疫力。
-
-前沿模型在网络安全领域的实力正日益增强。由于这些能力终将走向普及，我们坚信，最有效的应对之道是确保这些力量能优先用于加速网络防御，从而增强整个生态系统。
-
-在利用 AI 应对网络安全等全球性挑战的进程中，GPT‑5.5 迈出了虽小但至关重要的一步。继去年 12 月在 GPT‑5.2 中主动部署了必要的网络安全护栏⁠以遏制潜在滥用后，我们在 GPT‑5.5 中引入了更严苛的风险分类器。虽然在后续的持续微调过程中，部分用户初期可能会感到些许不便，但这对于保障系统安全至关重要。
-
-多年来，随着模型能力的递进式提升，我们始终在准备框架⁠（在新窗口中打开）中将网络安全列为重点领域。通过不断开发并校准缓解方案，我们确保了能够在负责任的前提下，发布具备实质性网络安全能力的前沿模型。
-
-针对这一级别的网络安全能力，我们部署了行业领先的防护措施。自去年在GPT‑5.2⁠（在新窗口中打开）中首次引入专项安全护栏以来，我们持续在后续部署中进行测试与完善。针对 GPT‑5.5，我们围绕高风险活动和敏感网络请求设计了更严密的管控机制，并增加了针对重复性滥用行为的保护。通过在模型安全、身份认证以及违规监控方面的投入，我们才得以实现如此广泛的模型准入。数月以来，我们一直与外部专家合作，不断打磨并强化这些防护措施的稳健性。在 GPT‑5.5 中，我们致力于确保开发者能轻松加固代码，同时对恶意攻击者最可能利用的危害性工作流施加了更强有力的管控。
-
-为了全面加速各层级的网络防御，我们正在扩大模型的使用权限。通过网络安全受信访问 (Trusted Access for Cyber)⁠计划，我们正率先在 Codex 中提供“网络安全放行版”模型。这意味着在发布之初，符合特定信任信号⁠（在新窗口中打开）的认证用户即可在更少限制的情况下，调用 GPT‑5.5 强大的网络安全能力。负责保护关键基础设施⁠的机构在满足严格安全要求的前提下，可申请使用 GPT‑5.4‑Cyber 等专项模型来加固其内部系统。这种模式不仅为广大认证防御者提供了更高效的专业工具，还减少了不必要的阻碍，确保核心防御能力得以真正普及。从事认证防御工作的用户可前往chatgpt.com/cyber⁠（在新窗口中打开）申请受信访问，以减少使用 GPT‑5.5 时的误报拦截。
-
-我们正与政府合作伙伴共同守护关乎民生的关键基础设施。我们正在共同探索如何利用尖端 AI 技术，支持相关部门开展防御工作 — 从保障重要纳税人数据的数字系统，到社区的电网和水源供应，确保这些民众赖以生存的系统安全无虞。
-
-我们根据准备框架⁠（在新窗口中打开），将 GPT‑5.5 的生物/化学及网络安全能力评定为“高” (high) 等级。尽管 GPT‑5.5 尚未达到“极高” (critical) 的网络安全能力水平，但评估显示，其防御实战能力较 GPT‑5.4 已有显著跨越。
-
-同时，GPT‑5.5 在发布前经过了完整的安全与治理流程，包括准备性评估、领域专项测试、针对高级生物与网络安全能力的定向评估，以及由外部专家参与的深度压力测试。更多技术细节可在 GPT‑5.5 系统卡中查阅。
-
-这些努力体现了我们构建“AI 韧性”的宏观思路。随着模型能力的进化，我们希望将强大的 AI 交到那些守护系统、机构和公众安全的人手中。受信访问、随能力动态扩展的防护体系、以及检测并响应严重滥用的实操能力 — 这才是行之有效的必经之路。
-
-即日起，GPT‑5.5 将全面登陆 ChatGPT、Codex 及 API 平台，并同步面向 Microsoft Foundry 的开发者开放。
-
-在 ChatGPT 中，Plus、Pro、Business 和 Enterprise 用户均可使用 GPT‑5.5 Thinking。专为应对极端复杂问题、追求极高准确率而设计的 GPT‑5.5 Pro，则面向 Pro、Business 及 Enterprise 用户开放。
-
-在 Codex 中，GPT‑5.5 已支持 Plus、Pro、Business、Enterprise、Edu 及 Go 套餐，并提供 400K 上下文窗口。此外，Codex 还推出了快速模式，能以 1.5 倍的生成速度响应请求（费用为标准模式的 2.5 倍）。
-
-面向 API 开发者，gpt-5.5 即将接入 Responses 及 Chat Completions API。其定价为每百万输入 Token 5 美元，每百万输出 Token 30 美元，并支持高达 1M 的上下文窗口。此外，Batch 和 Flex 的价格仅为标准 API 费率的一半，而 Priority（优先）处理的费率为标准费率的 2.5 倍。我们还将在 API 中推出 gpt-5.5-pro，以实现更高的准确性，定价为每百万输入 Token 30 美元，每百万输出 Token 180 美元。详情请查看定价页面情。
-
-尽管 GPT‑5.5 的定价高于 GPT‑5.4，但它在实现智能跃迁的同时，Token 利用效率也大幅提升。在 Codex 中，我们经过精心调优，确保 GPT‑5.5 在大多数场景下能以更少的 Token 交付优于 GPT‑5.4 的结果。此外，各订阅层级依然享有极具诚意的使用配额。
-
-SWE-Bench Pro (Public) *
-
-Expert-SWE (Internal)
-
-*实验室已在该评估项中发现存在“记忆化”(memorization) 的证据⁠（在新窗口中打开）
-
-Tau2-bench Telecom***（原始提示词）
-
-** MCP Atlas：Scale AI 在 2026 年 4 月最新更新后的结果。*** Tau2-bench telecom：GPT‑5.5 与 5.4 采用原始提示词（即未进行提示词调整）的测试结果。此处忽略了其他实验室在评估时采用提示词调整后所得出的结果。
-
-FrontierMath Tier 1–3
-
-Humanity's Last Exam（无工具）
-
-Humanity's Last Exam（含工具）
-
-**** 在系统卡原有的最难 CTF（夺旗挑战）基础上进行了扩展，并新增了一系列极具挑战性的项目。
-
-Graphwalks BFS 256k f1
-
-Graphwalks BFS 1mil f1
-
-Graphwalks parents 256k f1
-
-Graphwalks parents 1mil f1
-
-OpenAI MRCR v2 8-needle 4K-8K
-
-OpenAI MRCR v2 8-needle 8K-16K
-
-OpenAI MRCR v2 8-needle 16K-32K
-
-OpenAI MRCR v2 8-needle 32K-64K
-
-OpenAI MRCR v2 8-needle 64K-128K
-
-OpenAI MRCR v2 8-needle 128K-256K
-
-OpenAI MRCR v2 8-needle 256K-512K
-
-OpenAI MRCR v2 8-needle 512K-1M</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Introducing GPT-Live</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-live/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
+  <title>GPT-5.5</title>
+  <link>https://openai.com/index/introducing-gpt-5-5/</link>
+  <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
+  <pubDate>Tue, 07 May 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
