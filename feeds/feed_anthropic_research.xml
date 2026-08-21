@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Fri, 21 Aug 2026 01:19:49 +0000</lastBuildDate>
+<lastBuildDate>Fri, 21 Aug 2026 06:49:11 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -2881,7 +2881,7 @@ We're sharing a review of the evidence on worker retraining programs, coauthored
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Mon, 02 Dec 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -2975,10 +2975,111 @@ Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavi
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>Interpretability</title>
+  <link>https://www.anthropic.com/research/team/interpretability</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
+  <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Jul 6, 2026InterpretabilityA global workspace in language models
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Jul 6, 2026InterpretabilityA global workspace in language models
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>Societal Impacts</title>
   <link>https://www.anthropic.com/research/team/societal-impacts</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/societal-impacts</guid>
-  <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
+  <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
 
@@ -3075,7 +3176,7 @@ Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>Frontier Red Team</title>
   <link>https://www.anthropic.com/research/team/frontier-red-team</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
@@ -3144,7 +3245,7 @@ Apr 7, 2026Frontier Red TeamAssessing Claude Mythos Preview’s cybersecurity ca
   <title>Economic Research</title>
   <link>https://www.anthropic.com/research/team/economic-research</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/economic-research</guid>
-  <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
@@ -3224,107 +3325,6 @@ Mar 31, 2026Economic ResearchHow Australia Uses Claude: Findings from the Anthro
 Mar 24, 2026Economic ResearchAnthropic Economic Index report: Learning curves
 
 Mar 5, 2026Economic ResearchLabor market impacts of AI: A new measure and early evidence</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economic-research" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
-  <title>Interpretability</title>
-  <link>https://www.anthropic.com/research/team/interpretability</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
-
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-Jul 6, 2026InterpretabilityA global workspace in language models
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Safety through understanding
-
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
-
-Multidisciplinary approach
-
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
-
-Natural Language Autoencoders: Turning Claude’s thoughts into text
-
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
-
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
-
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
-
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
-
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
-
-Jul 6, 2026InterpretabilityA global workspace in language models
-
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
-
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 </channel>
 </rss>
