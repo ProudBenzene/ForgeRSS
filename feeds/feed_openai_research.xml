@@ -5,7 +5,7 @@
 <link>https://openai.com/news/research/?limit=100</link>
 <description>Latest research news and updates from OpenAI</description>
 <language>en</language>
-<lastBuildDate>Tue, 25 Aug 2026 01:19:28 +0000</lastBuildDate>
+<lastBuildDate>Tue, 25 Aug 2026 06:51:00 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://openai.com/news/research/?limit=100" rel="self" type="application/rss+xml"/>
 <image>
@@ -19,128 +19,120 @@
   <guid isPermaLink="false">https://openai.com/index/pacing-model-development-cyber-capabilities/</guid>
   <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Over the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: theOpenAI-Hugging Face incidentand, separately, preliminary evidence that one of our upcoming models, Astra, may meet theCritical cybersecurity capabilitythreshold under ourPreparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and containme...</p><div style="font-size:16px;line-height:1.8;color:#333">Over the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: theOpenAI-Hugging Face incidentand, separately, preliminary evidence that one of our upcoming models, Astra, may meet theCritical cybersecurity capabilitythreshold under ourPreparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and containment safeguards across all stages of the training process.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">过去几周的两项进展凸显出，能力日益增强的 AI 系统正带来不断上升的风险：一是OpenAI-Hugging Face 事件；二是初步证据表明，我们即将推出的模型之一 Astra 可能已达到网络安全关键能力门槛，即符合我们准备框架中的相关标准。这些进展，加上内部研究的快速推进，使我们更迫切地需要在训练流程的各个阶段加强监控、对齐和遏制保障措施。
 
-As models become more capable, the risks associated with developing and testing them internally also grow. Our standards for monitoring, alignment, and security must stay ahead of those risks. We wanted to take the time necessary to meet those standards, so we temporarily slowed the pace of scaling. This included a two-week pause in reinforcement learning (RL) training on our latest models intended for deployment while we further hardened and red-teamed our research environments and expanded the coverage of our monitoring systems. Our largest planned frontier RL run remains on hold while we conduct smaller-scale training and evaluations to assess model behavior, validate our safeguards, and establish more evidence of alignment before proceeding.
+随着模型能力增强，内部开发和测试模型所伴随的风险也在上升。我们的监控、对齐和安全标准必须领先于这些风险。为了留出达到这些标准所需的时间，我们暂时放慢了扩展步伐。其中包括暂停两周对拟部署的最新模型进行强化学习（RL）训练，以便进一步加固研究环境、开展红队测试，并扩大监控系统的覆盖范围。我们计划开展的最大规模前沿强化学习训练仍处于暂停状态。在继续推进之前，我们正通过较小规模的训练和评估来考察模型行为、验证保障措施，并积累更多对齐证据。
 
-Alignment—the work of making AI systems behave as intended and responsive to human oversight—has long been at the core of our research program. We now require stronger evidence of aligned behavior throughout all of training, building on research and evaluations already underway. Keeping increasingly capable systems aligned is a challenge the whole field will need to address. The signals we are seeing from upcoming model progress make clear that we need a broader approach—one that builds on and extends beyond the current Preparedness Framework.
+对齐，即让 AI 系统按预期行事并接受人类监督，长期以来一直是我们研究计划的核心。在现有研究和评估的基础上，我们现在要求在整个训练过程中提供更有力的行为对齐证据。如何让能力日益增强的系统保持对齐，是整个领域都需要解...</p><div style="font-size:16px;line-height:1.8;color:#333">过去几周的两项进展凸显出，能力日益增强的 AI 系统正带来不断上升的风险：一是OpenAI-Hugging Face 事件；二是初步证据表明，我们即将推出的模型之一 Astra 可能已达到网络安全关键能力门槛，即符合我们准备框架中的相关标准。这些进展，加上内部研究的快速推进，使我们更迫切地需要在训练流程的各个阶段加强监控、对齐和遏制保障措施。
 
-We think it is important to be transparent about how our approach is changing. Below, we describe the changes we have already made to our research processes and infrastructure, and the work still underway.
+随着模型能力增强，内部开发和测试模型所伴随的风险也在上升。我们的监控、对齐和安全标准必须领先于这些风险。为了留出达到这些标准所需的时间，我们暂时放慢了扩展步伐。其中包括暂停两周对拟部署的最新模型进行强化学习（RL）训练，以便进一步加固研究环境、开展红队测试，并扩大监控系统的覆盖范围。我们计划开展的最大规模前沿强化学习训练仍处于暂停状态。在继续推进之前，我们正通过较小规模的训练和评估来考察模型行为、验证保障措施，并积累更多对齐证据。
 
-Strengthening safeguards for more capable models
+对齐，即让 AI 系统按预期行事并接受人类监督，长期以来一直是我们研究计划的核心。在现有研究和评估的基础上，我们现在要求在整个训练过程中提供更有力的行为对齐证据。如何让能力日益增强的系统保持对齐，是整个领域都需要解决的挑战。即将推出的模型所展现的进展信号清楚表明，我们需要采用更全面的方法：既以现行准备框架为基础，又超越其范围。
 
-Our approach to developing more capable models rests on three reinforcing safeguards:
+我们认为，有必要公开说明我们的方法正在发生怎样的变化。下面，我们将介绍已对研究流程和基础设施做出的调整，以及仍在推进的工作。
 
-Monitoring, which detects and allows us to respond to concerning behavior.
+我们开发更强大模型的方法建立在三项相互强化的保障措施之上：
 
-Alignment, which reduces the likelihood of harmful or unauthorized actions.
+监控：发现令人担忧的行为，使我们能够及时应对。
 
-Security measures, which limit what AI systems can access or affect.
+对齐：降低有害或未经授权的行为发生的可能性。
 
-We expect models to soon drive most security work, including defending against other models. This will allow all three safeguards to scale with model capability, which we see as crucial.
+安全措施：限制 AI 系统能够访问或影响的对象。
 
-We apply these safeguards across research and deployment, adapting them to each model’s capabilities, operating environment, and level of risk.
+我们预计，模型很快将承担大部分安全工作，包括防御其他模型。这将使三项保障措施都能随模型能力同步扩展，我们认为这一点至关重要。
 
-Securing our research environments
+我们将这些保障措施贯穿研究与部署，并根据每个模型的能力、运行环境和风险水平进行调整。
 
-As frontier models gain stronger cybersecurity capabilities, we are raising the security standards for the environments in which we train and evaluate them. Meeting these standards has required substantial engineering work and has incurred great cost and delays to frontier research. Immediately following the OpenAI-Hugging Face incident*, we paused frontier model inference in research clusters for runs that could execute code or use tools that could access the internet. We restored a more limited and secure path for code execution fairly quickly, then worked through each workload individually to determine whether it could safely resume. Some research workloads resumed under these new controls, while others required additional changes.
+随着前沿模型具备更强的网络安全能力，我们正在提高其训练和评估环境的安全标准。达到这些标准需要大量工程投入，也给前沿研究带来了高昂成本和延误。OpenAI-Hugging Face 事件*发生后，我们立即暂停了研究集群中的部分前沿模型推理任务，涉及可能执行代码或使用可访问互联网工具的运行。我们很快恢复了一条权限更受限、更安全的代码执行路径，随后逐一审查各项工作负载，以确定能否安全恢复。部分研究工作负载在这些新控制措施下恢复，其他工作负载则需要进一步调整。
 
-Over the subsequent weeks, we have defined and started implementing stronger security requirements for frontier research workloads. For example:
+在随后几周里，我们制定并开始实施更严格的前沿研究工作负载安全要求。例如：
 
-Workload isolation:We now require stronger isolation (“sandboxes”) for workloads that execute model-generated or otherwise untrusted code. This also applies to software that could be compromised while processing model outputs.
+工作负载隔离：对于执行模型生成代码或其他不受信任代码的工作负载，我们现在要求采用更严格的隔离措施（“沙箱”）。这也适用于处理模型输出时可能遭到入侵的软件。
 
-Network isolation:We have implemented more controls to isolate higher-risk and untrusted workloads from the internet. We have designed these controls so that a single compromise of a workload or supporting service does not, by itself, allow for unauthorized access to the internet or other internal networks.
+网络隔离：我们实施了更多控制措施，将较高风险和不受信任的工作负载与互联网隔离。这些控制措施经过专门设计，确保单个工作负载或支持服务遭到入侵时，不会仅凭这一点就导致互联网或其他内部网络遭到未经授权的访问。
 
-Continuous security testing:We have reconfigured our environment to remove potentially vulnerable shared services, reduce standing privileges, and improve security and trust boundaries. We are also improving our ability to collect and monitor security logs. Finally, we are investing in automation using our models to test these boundaries continuously against simulated attacks.
+持续安全测试：我们重新配置了环境，以移除可能存在漏洞的共享服务、减少常驻权限，并改善安全边界和信任边界。我们也在提升安全日志的收集和监控能力。最后，我们正在投资于自动化，利用模型持续以模拟攻击测试这些边界。
 
-Together, these controls provide defense in depth and help protect our research environment against attacks. Today, we require the strictest level of security safeguards for workloads involving Astra or cyber models, since we have determined that Astra models may have a critical level of cyber capability. These safeguards also apply to all other cyber-related workloads.
+这些控制措施共同构成纵深防御，有助于保护我们的研究环境免受攻击。目前，涉及 Astra 或网络安全模型的工作负载必须采用最高级别的安全保障措施，因为我们已认定 Astra 模型可能具备关键级别的网络安全能力。这些保障措施也适用于所有其他网络安全相关工作负载。
 
-While some Astra training and evaluations meet those requirements, a significant number of workloads remain paused until they are fully migrated and enhanced to meet the new security bar. We are prioritizing safety and alignment workloads for migration to these new environments first.
+部分 Astra 训练和评估已符合这些要求，但大量工作负载仍处于暂停状态，直至完全迁移并强化到符合新的安全标准。我们正优先将安全和对齐工作负载迁移至这些新环境。
 
-Expanding chain-of-thought monitoring
+监控长期以来一直是模型开发流程的重要组成部分，包括监控内部编程智能体和长时间运行的会话。我们的监控工作尤其关注前沿模型的内部部署和前沿强化学习训练运行。我们认为这些工作负载风险最高，因为它们可能同时具备先进的模型能力，并能访问工具、敏感系统以及内部或外部网络。这些监控并未应用于所有使用工具的推理和训练运行。我们通过新的监控设置修订并扩展了现有方法。
 
-Monitoring has long been an important part of our model development process, includingmonitoring for internal coding agentsandlong-running sessions. Our monitoring efforts were especially focused on internal deployments of frontier models and frontier RL training runs, which we considered the highest-risk workloads because they can combine advanced model capabilities with access to tools, sensitive systems, and internal or external networks. They were not applied to all inference and training runs using tools. We have revised and expanded our approach with our new monitoring setup.
+新的监控设置采用多阶段机制：首先由激活分类器（检查模型内部活动的检测器）检查每个采样 Token，再将潜在问题逐级上报给日益复杂、需要更高算力的自动调查系统。这些系统会检查工具操作、可用的推理信息和完整活动序列，以发现未经授权的访问、数据窃取、破坏性行为以及规避保障措施的企图。我们的目标是在监控系统发现可疑活动后的 30 分钟内发出警报。如果监控系统发现可能违反关键安全边界的行为，就会生成最高优先级警报。在当前实施方案中，安全、安保和研究团队会收到传呼通知。如果这些团队无法在 30 分钟内确定该标记为误报，就应暂停相关活动。
 
-This new monitoring setup is multistage, starting with activation classifiers (detectors that inspect a model’s internal activity) that run at every sampled token and escalate potential concerns to increasingly sophisticated and high-compute automated investigators. Those systems examine tool actions, available reasoning, and the full sequence of activity for unauthorized access, data theft, destructive behavior, and attempts to defeat safeguards. We aim to issue an alert within 30 minutes after concerning activity is surfaced through our monitoring system. If the monitoring system identifies a likely violation of a critical security boundary, it generates a highest-priority alert. In our current implementation, the safety, security, and research teams are paged. If they cannot conclusively determine within 30 minutes that the flag is a false positive, those teams are expected to pause the activity.
+对于能力达到 Sol 或更高水平的模型，所有涉及工具的强化学习训练和评估都必须接受这类监控。8 月 7 日，我们认定 Astra 可能具备关键网络安全能力后，又对所有使用工具的 Astra 推理增加了监控要求，而不再仅限于强化学习训练和评估。
 
-This monitoring is required for all RL training and evaluations involving tools for models of Sol capability or higher. Once we determined that Astra may have critical cyber capabilities on August 7, we added an additional monitoring requirement for all inference of Astra with tools (not just RL training and evaluations).
+这些保障措施需要投入可观的算力。根据目前估算，监控开销约相当于被监控推理算力的 20%，但不同训练和评估工作负载的成本差异很大。我们将在后续博客文章中详细介绍这一系统。
 
-These safeguards require meaningful compute. Our current estimates put monitoring overhead at roughly 20% of the inference compute being monitored, though the cost varies substantially across training and evaluation workloads. We’ll share more details about this system in a forthcoming blog post.
+对齐研究是我们使命的核心。我们的使命是确保通用人工智能造福全人类。随着模型获得网络攻击能力等先进能力，并在更复杂的环境中运行，奖励操纵（在训练中设法获得高奖励，却并未真正实现预期结果）、欺骗或未经授权的访问等未对齐行为将带来越来越严重的风险。
 
-Advancing alignment research
+对于能力最强模型的强化学习训练，我们现在会在训练流程的更多阶段应用核心对齐技术。其中包括：改进奖励模型，以便更好地发现并抑制不同任务和环境中的不安全行为；训练模型，使其更诚实地说明自身的行为、能力和局限；减少利用奖励、评分器、工具或监督机制弱点的行为。对于模型与外部系统或资源交互时可能造成伤害的行为，我们也在扩大训练覆盖范围。
 
-Alignment research is central to our mission. Our mission is to ensure that artificial general intelligence benefits all of humanity. As models gain advanced capabilities, such as the ability to cyberattack, and operate in more complex environments, misaligned behaviors like reward hacking (finding ways to receive high rewards in training without actually achieving the intended outcome), deception, or unauthorized access will create increasingly serious risk.
+我们将继续大力投入对齐研究、扩大评估覆盖范围，并将研究所得用于指导训练和保障措施。我们计划近期分享更多对齐研究成果，包括对模型行为的新认识，以及发现的任何新型挑战。
 
-For RL runs on the most capable models, we are now applying our core alignment techniques across more stages of the training process. This includes improving reward models to better detect and discourage unsafe behavior across tasks and environments; training models to be more honest about their actions, capabilities, and limitations; and reducing behaviors that exploit weaknesses in rewards, graders, tools, or oversight. We are also increasing training coverage for behaviors that could cause harm when models interact with external systems or resources.
+我们将完善准备框架，把这些保障措施贯穿训练和部署，并更准确地反映未来模型的能力及其运行环境。要开发能够随这些能力同步扩展的方法，就必须持续投资于模型辅助安全、更有效的监控，并不断推进对齐研究。随着方法不断完善，我们计划邀请外部组织参与，并分享更多研究所得。
 
-We are continuing to invest aggressively in alignment research, increase evaluation coverage, and use what we learn to inform training and safeguards. We plan to share substantially more about our alignment research in the near future, including what we are learning about model behavior and any novel challenges we uncover.
+前沿模型的能力正在迅速提升。我们理解、对齐和保护这些模型的能力必须始终领先一步。
 
-We will evolve our Preparedness Framework to bring these safeguards together across training and deployment, and to better reflect the capabilities of future models and the environments in which they operate. Developing methods that can scale with those capabilities will require sustained investment in model-assisted security, more effective monitoring, and continued advances in alignment research. We intend to involve external organizations and share more of what we learn as our approach develops.
+*我们将在未来几周发布一份技术报告，介绍从中获得的经验。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">过去几周的两项进展凸显出，能力日益增强的 AI 系统正带来不断上升的风险：一是OpenAI-Hugging Face 事件；二是初步证据表明，我们即将推出的模型之一 Astra 可能已达到网络安全关键能力门槛，即符合我们准备框架中的相关标准。这些进展，加上内部研究的快速推进，使我们更迫切地需要在训练流程的各个阶段加强监控、对齐和遏制保障措施。
 
-The capabilities of frontier models are rapidly accelerating. Our ability to understand, align, and secure them must stay ahead.
+随着模型能力增强，内部开发和测试模型所伴随的风险也在上升。我们的监控、对齐和安全标准必须领先于这些风险。为了留出达到这些标准所需的时间，我们暂时放慢了扩展步伐。其中包括暂停两周对拟部署的最新模型进行强化学习（RL）训练，以便进一步加固研究环境、开展红队测试，并扩大监控系统的覆盖范围。我们计划开展的最大规模前沿强化学习训练仍处于暂停状态。在继续推进之前，我们正通过较小规模的训练和评估来考察模型行为、验证保障措施，并积累更多对齐证据。
 
-*We will publish a technical report of our learnings in the coming weeks.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Over the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: theOpenAI-Hugging Face incidentand, separately, preliminary evidence that one of our upcoming models, Astra, may meet theCritical cybersecurity capabilitythreshold under ourPreparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and containme...</p><div style="font-size:16px;line-height:1.8;color:#333">Over the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: theOpenAI-Hugging Face incidentand, separately, preliminary evidence that one of our upcoming models, Astra, may meet theCritical cybersecurity capabilitythreshold under ourPreparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and containment safeguards across all stages of the training process.
+对齐，即让 AI 系统按预期行事并接受人类监督，长期以来一直是我们研究计划的核心。在现有研究和评估的基础上，我们现在要求在整个训练过程中提供更有力的行为对齐证据。如何让能力日益增强的系统保持对齐，是整个领域都需要解...</p><div style="font-size:16px;line-height:1.8;color:#333">过去几周的两项进展凸显出，能力日益增强的 AI 系统正带来不断上升的风险：一是OpenAI-Hugging Face 事件；二是初步证据表明，我们即将推出的模型之一 Astra 可能已达到网络安全关键能力门槛，即符合我们准备框架中的相关标准。这些进展，加上内部研究的快速推进，使我们更迫切地需要在训练流程的各个阶段加强监控、对齐和遏制保障措施。
 
-As models become more capable, the risks associated with developing and testing them internally also grow. Our standards for monitoring, alignment, and security must stay ahead of those risks. We wanted to take the time necessary to meet those standards, so we temporarily slowed the pace of scaling. This included a two-week pause in reinforcement learning (RL) training on our latest models intended for deployment while we further hardened and red-teamed our research environments and expanded the coverage of our monitoring systems. Our largest planned frontier RL run remains on hold while we conduct smaller-scale training and evaluations to assess model behavior, validate our safeguards, and establish more evidence of alignment before proceeding.
+随着模型能力增强，内部开发和测试模型所伴随的风险也在上升。我们的监控、对齐和安全标准必须领先于这些风险。为了留出达到这些标准所需的时间，我们暂时放慢了扩展步伐。其中包括暂停两周对拟部署的最新模型进行强化学习（RL）训练，以便进一步加固研究环境、开展红队测试，并扩大监控系统的覆盖范围。我们计划开展的最大规模前沿强化学习训练仍处于暂停状态。在继续推进之前，我们正通过较小规模的训练和评估来考察模型行为、验证保障措施，并积累更多对齐证据。
 
-Alignment—the work of making AI systems behave as intended and responsive to human oversight—has long been at the core of our research program. We now require stronger evidence of aligned behavior throughout all of training, building on research and evaluations already underway. Keeping increasingly capable systems aligned is a challenge the whole field will need to address. The signals we are seeing from upcoming model progress make clear that we need a broader approach—one that builds on and extends beyond the current Preparedness Framework.
+对齐，即让 AI 系统按预期行事并接受人类监督，长期以来一直是我们研究计划的核心。在现有研究和评估的基础上，我们现在要求在整个训练过程中提供更有力的行为对齐证据。如何让能力日益增强的系统保持对齐，是整个领域都需要解决的挑战。即将推出的模型所展现的进展信号清楚表明，我们需要采用更全面的方法：既以现行准备框架为基础，又超越其范围。
 
-We think it is important to be transparent about how our approach is changing. Below, we describe the changes we have already made to our research processes and infrastructure, and the work still underway.
+我们认为，有必要公开说明我们的方法正在发生怎样的变化。下面，我们将介绍已对研究流程和基础设施做出的调整，以及仍在推进的工作。
 
-Strengthening safeguards for more capable models
+我们开发更强大模型的方法建立在三项相互强化的保障措施之上：
 
-Our approach to developing more capable models rests on three reinforcing safeguards:
+监控：发现令人担忧的行为，使我们能够及时应对。
 
-Monitoring, which detects and allows us to respond to concerning behavior.
+对齐：降低有害或未经授权的行为发生的可能性。
 
-Alignment, which reduces the likelihood of harmful or unauthorized actions.
+安全措施：限制 AI 系统能够访问或影响的对象。
 
-Security measures, which limit what AI systems can access or affect.
+我们预计，模型很快将承担大部分安全工作，包括防御其他模型。这将使三项保障措施都能随模型能力同步扩展，我们认为这一点至关重要。
 
-We expect models to soon drive most security work, including defending against other models. This will allow all three safeguards to scale with model capability, which we see as crucial.
+我们将这些保障措施贯穿研究与部署，并根据每个模型的能力、运行环境和风险水平进行调整。
 
-We apply these safeguards across research and deployment, adapting them to each model’s capabilities, operating environment, and level of risk.
+随着前沿模型具备更强的网络安全能力，我们正在提高其训练和评估环境的安全标准。达到这些标准需要大量工程投入，也给前沿研究带来了高昂成本和延误。OpenAI-Hugging Face 事件*发生后，我们立即暂停了研究集群中的部分前沿模型推理任务，涉及可能执行代码或使用可访问互联网工具的运行。我们很快恢复了一条权限更受限、更安全的代码执行路径，随后逐一审查各项工作负载，以确定能否安全恢复。部分研究工作负载在这些新控制措施下恢复，其他工作负载则需要进一步调整。
 
-Securing our research environments
+在随后几周里，我们制定并开始实施更严格的前沿研究工作负载安全要求。例如：
 
-As frontier models gain stronger cybersecurity capabilities, we are raising the security standards for the environments in which we train and evaluate them. Meeting these standards has required substantial engineering work and has incurred great cost and delays to frontier research. Immediately following the OpenAI-Hugging Face incident*, we paused frontier model inference in research clusters for runs that could execute code or use tools that could access the internet. We restored a more limited and secure path for code execution fairly quickly, then worked through each workload individually to determine whether it could safely resume. Some research workloads resumed under these new controls, while others required additional changes.
+工作负载隔离：对于执行模型生成代码或其他不受信任代码的工作负载，我们现在要求采用更严格的隔离措施（“沙箱”）。这也适用于处理模型输出时可能遭到入侵的软件。
 
-Over the subsequent weeks, we have defined and started implementing stronger security requirements for frontier research workloads. For example:
+网络隔离：我们实施了更多控制措施，将较高风险和不受信任的工作负载与互联网隔离。这些控制措施经过专门设计，确保单个工作负载或支持服务遭到入侵时，不会仅凭这一点就导致互联网或其他内部网络遭到未经授权的访问。
 
-Workload isolation:We now require stronger isolation (“sandboxes”) for workloads that execute model-generated or otherwise untrusted code. This also applies to software that could be compromised while processing model outputs.
+持续安全测试：我们重新配置了环境，以移除可能存在漏洞的共享服务、减少常驻权限，并改善安全边界和信任边界。我们也在提升安全日志的收集和监控能力。最后，我们正在投资于自动化，利用模型持续以模拟攻击测试这些边界。
 
-Network isolation:We have implemented more controls to isolate higher-risk and untrusted workloads from the internet. We have designed these controls so that a single compromise of a workload or supporting service does not, by itself, allow for unauthorized access to the internet or other internal networks.
+这些控制措施共同构成纵深防御，有助于保护我们的研究环境免受攻击。目前，涉及 Astra 或网络安全模型的工作负载必须采用最高级别的安全保障措施，因为我们已认定 Astra 模型可能具备关键级别的网络安全能力。这些保障措施也适用于所有其他网络安全相关工作负载。
 
-Continuous security testing:We have reconfigured our environment to remove potentially vulnerable shared services, reduce standing privileges, and improve security and trust boundaries. We are also improving our ability to collect and monitor security logs. Finally, we are investing in automation using our models to test these boundaries continuously against simulated attacks.
+部分 Astra 训练和评估已符合这些要求，但大量工作负载仍处于暂停状态，直至完全迁移并强化到符合新的安全标准。我们正优先将安全和对齐工作负载迁移至这些新环境。
 
-Together, these controls provide defense in depth and help protect our research environment against attacks. Today, we require the strictest level of security safeguards for workloads involving Astra or cyber models, since we have determined that Astra models may have a critical level of cyber capability. These safeguards also apply to all other cyber-related workloads.
+监控长期以来一直是模型开发流程的重要组成部分，包括监控内部编程智能体和长时间运行的会话。我们的监控工作尤其关注前沿模型的内部部署和前沿强化学习训练运行。我们认为这些工作负载风险最高，因为它们可能同时具备先进的模型能力，并能访问工具、敏感系统以及内部或外部网络。这些监控并未应用于所有使用工具的推理和训练运行。我们通过新的监控设置修订并扩展了现有方法。
 
-While some Astra training and evaluations meet those requirements, a significant number of workloads remain paused until they are fully migrated and enhanced to meet the new security bar. We are prioritizing safety and alignment workloads for migration to these new environments first.
+新的监控设置采用多阶段机制：首先由激活分类器（检查模型内部活动的检测器）检查每个采样 Token，再将潜在问题逐级上报给日益复杂、需要更高算力的自动调查系统。这些系统会检查工具操作、可用的推理信息和完整活动序列，以发现未经授权的访问、数据窃取、破坏性行为以及规避保障措施的企图。我们的目标是在监控系统发现可疑活动后的 30 分钟内发出警报。如果监控系统发现可能违反关键安全边界的行为，就会生成最高优先级警报。在当前实施方案中，安全、安保和研究团队会收到传呼通知。如果这些团队无法在 30 分钟内确定该标记为误报，就应暂停相关活动。
 
-Expanding chain-of-thought monitoring
+对于能力达到 Sol 或更高水平的模型，所有涉及工具的强化学习训练和评估都必须接受这类监控。8 月 7 日，我们认定 Astra 可能具备关键网络安全能力后，又对所有使用工具的 Astra 推理增加了监控要求，而不再仅限于强化学习训练和评估。
 
-Monitoring has long been an important part of our model development process, includingmonitoring for internal coding agentsandlong-running sessions. Our monitoring efforts were especially focused on internal deployments of frontier models and frontier RL training runs, which we considered the highest-risk workloads because they can combine advanced model capabilities with access to tools, sensitive systems, and internal or external networks. They were not applied to all inference and training runs using tools. We have revised and expanded our approach with our new monitoring setup.
+这些保障措施需要投入可观的算力。根据目前估算，监控开销约相当于被监控推理算力的 20%，但不同训练和评估工作负载的成本差异很大。我们将在后续博客文章中详细介绍这一系统。
 
-This new monitoring setup is multistage, starting with activation classifiers (detectors that inspect a model’s internal activity) that run at every sampled token and escalate potential concerns to increasingly sophisticated and high-compute automated investigators. Those systems examine tool actions, available reasoning, and the full sequence of activity for unauthorized access, data theft, destructive behavior, and attempts to defeat safeguards. We aim to issue an alert within 30 minutes after concerning activity is surfaced through our monitoring system. If the monitoring system identifies a likely violation of a critical security boundary, it generates a highest-priority alert. In our current implementation, the safety, security, and research teams are paged. If they cannot conclusively determine within 30 minutes that the flag is a false positive, those teams are expected to pause the activity.
+对齐研究是我们使命的核心。我们的使命是确保通用人工智能造福全人类。随着模型获得网络攻击能力等先进能力，并在更复杂的环境中运行，奖励操纵（在训练中设法获得高奖励，却并未真正实现预期结果）、欺骗或未经授权的访问等未对齐行为将带来越来越严重的风险。
 
-This monitoring is required for all RL training and evaluations involving tools for models of Sol capability or higher. Once we determined that Astra may have critical cyber capabilities on August 7, we added an additional monitoring requirement for all inference of Astra with tools (not just RL training and evaluations).
+对于能力最强模型的强化学习训练，我们现在会在训练流程的更多阶段应用核心对齐技术。其中包括：改进奖励模型，以便更好地发现并抑制不同任务和环境中的不安全行为；训练模型，使其更诚实地说明自身的行为、能力和局限；减少利用奖励、评分器、工具或监督机制弱点的行为。对于模型与外部系统或资源交互时可能造成伤害的行为，我们也在扩大训练覆盖范围。
 
-These safeguards require meaningful compute. Our current estimates put monitoring overhead at roughly 20% of the inference compute being monitored, though the cost varies substantially across training and evaluation workloads. We’ll share more details about this system in a forthcoming blog post.
+我们将继续大力投入对齐研究、扩大评估覆盖范围，并将研究所得用于指导训练和保障措施。我们计划近期分享更多对齐研究成果，包括对模型行为的新认识，以及发现的任何新型挑战。
 
-Advancing alignment research
+我们将完善准备框架，把这些保障措施贯穿训练和部署，并更准确地反映未来模型的能力及其运行环境。要开发能够随这些能力同步扩展的方法，就必须持续投资于模型辅助安全、更有效的监控，并不断推进对齐研究。随着方法不断完善，我们计划邀请外部组织参与，并分享更多研究所得。
 
-Alignment research is central to our mission. Our mission is to ensure that artificial general intelligence benefits all of humanity. As models gain advanced capabilities, such as the ability to cyberattack, and operate in more complex environments, misaligned behaviors like reward hacking (finding ways to receive high rewards in training without actually achieving the intended outcome), deception, or unauthorized access will create increasingly serious risk.
+前沿模型的能力正在迅速提升。我们理解、对齐和保护这些模型的能力必须始终领先一步。
 
-For RL runs on the most capable models, we are now applying our core alignment techniques across more stages of the training process. This includes improving reward models to better detect and discourage unsafe behavior across tasks and environments; training models to be more honest about their actions, capabilities, and limitations; and reducing behaviors that exploit weaknesses in rewards, graders, tools, or oversight. We are also increasing training coverage for behaviors that could cause harm when models interact with external systems or resources.
-
-We are continuing to invest aggressively in alignment research, increase evaluation coverage, and use what we learn to inform training and safeguards. We plan to share substantially more about our alignment research in the near future, including what we are learning about model behavior and any novel challenges we uncover.
-
-We will evolve our Preparedness Framework to bring these safeguards together across training and deployment, and to better reflect the capabilities of future models and the environments in which they operate. Developing methods that can scale with those capabilities will require sustained investment in model-assisted security, more effective monitoring, and continued advances in alignment research. We intend to involve external organizations and share more of what we learn as our approach develops.
-
-The capabilities of frontier models are rapidly accelerating. Our ability to understand, align, and secure them must stay ahead.
-
-*We will publish a technical report of our learnings in the coming weeks.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+*我们将在未来几周发布一份技术报告，介绍从中获得的经验。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Ten advances in mathematics and theoretical computer science</title>
@@ -175,88 +167,80 @@ The capabilities of frontier models are rapidly accelerating. Our ability to und
   <guid isPermaLink="false">https://openai.com/index/scientific-computing-agentic-ai/</guid>
   <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
 
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
 
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
+AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
 
-AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
+我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了...</p><div style="font-size:16px;line-height:1.8;color:#333">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
 
-We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
+科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
 
-Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
+AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
 
-cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
+我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了软件开发和维护；在某些情况下，它们帮助小型团队承担了原本需要更多时间或专业工程支持才能完成的工作。但他们也指出，为最终产出的工具明确长期责任和维护主体，仍是一项持续存在的挑战。
 
-With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
+贡献者一致认为，研究人员的角色正从具体实现转向验证和统筹：明确要构建什么、定义如何衡量正确性，并决定项目何时可以发布。在这一新兴模式下，研究人员仍掌控科学方向和质量标准，同时借助智能体的辅助提升工作速度。
 
-Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
+cyvcf2 是一个用于读写基因组变异文件的 Python 库。GPT‑5.5 将该库的旧版构建和打包系统替换为现代化的统一流程，使其更易于安装、测试和发布。
 
-Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
+借助编程智能体，快速推进相当容易；但就目前而言，要在科学道路上走得更远，仍需要专家的指导、理解、品位和用心。
 
-Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
+尽管各项目的范围差异很大，但它们都表明，编程智能体正在减轻工程人力和专业能力对科学计算的制约。如今，瓶颈转移到了验证 AI 智能体的输出，而这仍有赖于人类判断。
 
-Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
+各项案例研究表明，智能体能够有效处理具体且范围明确的请求，但无法可靠判断其工作是否具备科学有效性或达到预期。事实上，即使成果中存在明显错误，智能体也常常表现得很有信心。因此，人工审核者需要找到可靠的方法来验证结果。最有效的方法会使用外部参照或可衡量的验收目标，例如输出完全一致、与现有工具表现相当、统计行为适当，或基于模拟数据预先确定答案。
 
-Long-term stewardship remains essential
+另一个共同主题是，项目通常采用反馈驱动的迭代方式分阶段推进，而非采用单样本方法。贡献者将宽泛目标拆分为较小的改动，再利用中间基准和测试系统评估并完善智能体的工作。智能体通常能迅速完成初始实现，但解决边缘情况和细微的数值差异要花费更多时间。完成实现的“最后一公里”往往最为费力。
 
-The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
+总体而言，这些案例研究表明，智能体让研究人员可以减少花在实现上的时间，将更多精力用于指导科研工作。人类负责设定目标、将复杂项目拆分为可管理的部分，并判断结果是否具备科学有效性。智能体缓解了长期存在的工程制约，不仅拓展了研究人员可以构建的成果，也让他们得以专注于最重要的科学问题和决策。
 
-But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
+研究软件长期存在的维护缺口拖慢了迭代，也限制了可复现性和可靠性。针对“研究代码⁠（在新窗口中打开）”和组学工具⁠（在新窗口中打开）”的已发表研究发现，公开发布的软件经常无法在全新的计算环境中正确安装或按文档说明运行，迫使研究人员花费大量时间进行配置和调试。即使是常规改进，也能为研究人员节省时间并降低计算需求；以性能为导向的重构和重写则可以带来更大的提升。
 
-The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
+但实现成本降低后，也更容易出现大量相似的重写版本，造成用户分散，并分散维持任何单一工具可靠性所需的专家精力。因此，长期维护和明确归属至关重要。成熟的科学软件承载着未记录的惯例、兼容性要求和用户信任，这些都无法仅靠转换源代码来重现。
 
-Toward more durable scientific software
+这些案例研究展示了几条可行的前进路径。对 MHCflurry 和 cyvcf2 的改动已合并到各自原有的上游项目；由于原项目已被弃用，rustar-aligner 则转由新的社区负责维护。如果可以与现有维护者协调，应尽早开始。如果必须采用独立实现，则需要明确负责人，并制定可信的维护计划。否则，今天的现代化重写版本可能成为明天的弃用代码，而非可靠的科学基础设施。
 
-This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
+这份实地报告是回顾性和探索性的，但其中的案例研究揭示了科学软件开发方式正在发生的务实转变。Codex 等编程智能体可以显著降低维护、迁移、优化和全新实现的成本。它们的长期科学价值仍取决于人类做出的决定：构建什么、如何验证，以及由谁维护。更深层的变化并不只是研究人员能开发更多软件，而是他们可以将更多精力放在定义、验证和维护工具上。
 
-These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
+这些案例研究表明，智能体已经能够加快科学计算的迭代速度。随着编程智能体不断进步，研究人员可以减少维持分析流程运行的时间，将更多精力用于推动各自领域的发展。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
 
-Software & Engineering
+科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
 
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
 
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minima...</p><div style="font-size:16px;line-height:1.8;color:#333">A field report shows how scientists are using coding agents to modernize scientific software for genomics and other data-rich fields.
+我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了...</p><div style="font-size:16px;line-height:1.8;color:#333">一份实地报告展示科学家如何利用编程智能体，推动基因组学及其他数据密集型领域的科学软件现代化。
 
-Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.
+科学计算是现代学术界和产业界研究的核心支柱。然而，用于分析科学信息的软件一直难以跟上数据生成的迅猛速度。许多广泛使用的研究工具最初只是研究论文的配套代码，由工程经验有限的小型学术团队开发，几乎没有时间进行打包、测试、优化或长期支持。因此，科学基础设施往往依赖缓慢、脆弱且需要持续维护的工作流程。这些限制阻碍了科学发现的进程。
 
-AI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.
+AI 智能体正开始改变这一局面。通过降低工程工作成本并承担繁琐的实现任务，智能体可以帮助研究人员更快验证创意、推进以往不切实际的项目，并更轻松地长期维护软件。这样一来，科学软件将更加高效、维护也更加完善，让研究人员能投入更多时间探索发现。
 
-We’re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.
+我们在此分享一份探索性实地报告，介绍八个以生命科学为主、由智能体辅助的科学计算项目；其中五个仅使用 Codex，另三个结合使用 Codex 和 Claude Code。报告汇集了各项目团队撰写的案例研究，并总结出反复出现的主题。这些项目涵盖日常维护、针对性优化、大规模语言迁移以及面向 GPU 的原生重构。贡献者表示，智能体显著加快了软件开发和维护；在某些情况下，它们帮助小型团队承担了原本需要更多时间或专业工程支持才能完成的工作。但他们也指出，为最终产出的工具明确长期责任和维护主体，仍是一项持续存在的挑战。
 
-Contributors consistently describe a shift in the researchers’ role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance
+贡献者一致认为，研究人员的角色正从具体实现转向验证和统筹：明确要构建什么、定义如何衡量正确性，并决定项目何时可以发布。在这一新兴模式下，研究人员仍掌控科学方向和质量标准，同时借助智能体的辅助提升工作速度。
 
-cyvcf2 is a Python library for reading and writing genomic variant files. GPT‑5.5 replaced the library’s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.
+cyvcf2 是一个用于读写基因组变异文件的 Python 库。GPT‑5.5 将该库的旧版构建和打包系统替换为现代化的统一流程，使其更易于安装、测试和发布。
 
-With coding agents, it’s quite easy to go fast; for now, to go far in science, there’s still a need for expert guidance, understanding, taste, and care.
+借助编程智能体，快速推进相当容易；但就目前而言，要在科学道路上走得更远，仍需要专家的指导、理解、品位和用心。
 
-Though the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent’s output, which still depends on human judgement.
+尽管各项目的范围差异很大，但它们都表明，编程智能体正在减轻工程人力和专业能力对科学计算的制约。如今，瓶颈转移到了验证 AI 智能体的输出，而这仍有赖于人类判断。
 
-Across case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.
+各项案例研究表明，智能体能够有效处理具体且范围明确的请求，但无法可靠判断其工作是否具备科学有效性或达到预期。事实上，即使成果中存在明显错误，智能体也常常表现得很有信心。因此，人工审核者需要找到可靠的方法来验证结果。最有效的方法会使用外部参照或可衡量的验收目标，例如输出完全一致、与现有工具表现相当、统计行为适当，或基于模拟数据预先确定答案。
 
-Another recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents’ work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the “last mile” of an implementation often took the most work.
+另一个共同主题是，项目通常采用反馈驱动的迭代方式分阶段推进，而非采用单样本方法。贡献者将宽泛目标拆分为较小的改动，再利用中间基准和测试系统评估并完善智能体的工作。智能体通常能迅速完成初始实现，但解决边缘情况和细微的数值差异要花费更多时间。完成实现的“最后一公里”往往最为费力。
 
-Overall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.
+总体而言，这些案例研究表明，智能体让研究人员可以减少花在实现上的时间，将更多精力用于指导科研工作。人类负责设定目标、将复杂项目拆分为可管理的部分，并判断结果是否具备科学有效性。智能体缓解了长期存在的工程制约，不仅拓展了研究人员可以构建的成果，也让他们得以专注于最重要的科学问题和决策。
 
-Long-term stewardship remains essential
+研究软件长期存在的维护缺口拖慢了迭代，也限制了可复现性和可靠性。针对“研究代码⁠（在新窗口中打开）”和组学工具⁠（在新窗口中打开）”的已发表研究发现，公开发布的软件经常无法在全新的计算环境中正确安装或按文档说明运行，迫使研究人员花费大量时间进行配置和调试。即使是常规改进，也能为研究人员节省时间并降低计算需求；以性能为导向的重构和重写则可以带来更大的提升。
 
-The maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of “research code⁠(opens in a new window)” andomics tools⁠(opens in a new window)have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.
+但实现成本降低后，也更容易出现大量相似的重写版本，造成用户分散，并分散维持任何单一工具可靠性所需的专家精力。因此，长期维护和明确归属至关重要。成熟的科学软件承载着未记录的惯例、兼容性要求和用户信任，这些都无法仅靠转换源代码来重现。
 
-But lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.
+这些案例研究展示了几条可行的前进路径。对 MHCflurry 和 cyvcf2 的改动已合并到各自原有的上游项目；由于原项目已被弃用，rustar-aligner 则转由新的社区负责维护。如果可以与现有维护者协调，应尽早开始。如果必须采用独立实现，则需要明确负责人，并制定可信的维护计划。否则，今天的现代化重写版本可能成为明天的弃用代码，而非可靠的科学基础设施。
 
-The case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today’s modern rewrite can become tomorrow’s abandoned code rather than reliable scientific infrastructure.
+这份实地报告是回顾性和探索性的，但其中的案例研究揭示了科学软件开发方式正在发生的务实转变。Codex 等编程智能体可以显著降低维护、迁移、优化和全新实现的成本。它们的长期科学价值仍取决于人类做出的决定：构建什么、如何验证，以及由谁维护。更深层的变化并不只是研究人员能开发更多软件，而是他们可以将更多精力放在定义、验证和维护工具上。
 
-Toward more durable scientific software
-
-This field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.
-
-These case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.
-
-Software & Engineering
-
-PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+这些案例研究表明，智能体已经能够加快科学计算的迭代速度。随着编程智能体不断进步，研究人员可以减少维持分析流程运行的时间，将更多精力用于推动各自领域的发展。</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/scientific-computing-agentic-ai/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>GPT-Red: Unlocking Self-Improvement for RobustnessSafety</title>
@@ -657,7 +641,7 @@ PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>GPT-5.4</title>
   <link>https://openai.com/index/introducing-gpt-5-4/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-4/</guid>
-  <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+  <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.4</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-4/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
@@ -666,7 +650,7 @@ PublicationAug 1, 2026</div><hr style="margin:24px 0;border:none;border-top:1px 
   <title>GPT-5.5</title>
   <link>https://openai.com/index/introducing-gpt-5-5/</link>
   <guid isPermaLink="false">https://openai.com/index/introducing-gpt-5-5/</guid>
-  <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
   <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">GPT-5.5</p><div style="font-size:16px;line-height:1.8;color:#333"></div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://openai.com/index/introducing-gpt-5-5/" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
