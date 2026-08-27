@@ -5,7 +5,7 @@
 <link>https://www.anthropic.com/research</link>
 <description>Latest research publications from Anthropic</description>
 <language>en</language>
-<lastBuildDate>Thu, 27 Aug 2026 07:49:28 +0000</lastBuildDate>
+<lastBuildDate>Thu, 27 Aug 2026 21:55:29 +0000</lastBuildDate>
 <generator>ForgeRSS</generator>
 <atom:link href="https://www.anthropic.com/research" rel="self" type="application/rss+xml"/>
 <image>
@@ -541,6 +541,8 @@ Nothing above suggests that these failures are permanent—but nothing suggests 
 
 The conditions that allow multiagent interaction to go well will be discovered one way or another: either deliberately and early, or—and by default—in production, after agents’ interactions far outnumber ours. We would prefer the former.
 
+Corresponding author:Carolyn Zou
+
 Enabling independent research on how people use Claude
 
 Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy-preserving analysis tool. In this post, we share high-level results from those studies and what we learned running this pilot.
@@ -643,6 +645,8 @@ Our social systems are robust in ways that are easy to take for granted. Over ma
 Nothing above suggests that these failures are permanent—but nothing suggests they will fix themselves, either. Coordination doesn't naturally emerge from stronger intelligence nor alignment at the individual level. Thus, the work that must be done takes two forms: environments that exert the kinds of social pressure that evolution exerted on us, and social computing systems redesigned for actors that can self-replicate and self-improve. These are open problems in interaction and mechanism design, and our experiments here provide early evidence that new solutions are necessary.
 
 The conditions that allow multiagent interaction to go well will be discovered one way or another: either deliberately and early, or—and by default—in production, after agents’ interactions far outnumber ours. We would prefer the former.
+
+Corresponding author:Carolyn Zou
 
 Enabling independent research on how people use Claude
 
@@ -2954,105 +2958,89 @@ Patterns and problems in emerging multiagent systems
 Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/teaching-claude-why" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Interpretability</title>
-  <link>https://www.anthropic.com/research/team/interpretability</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
-  <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate>
+  <title>Economics</title>
+  <link>https://www.anthropic.com/research/team/economics</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/economics</guid>
+  <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Safety through understanding
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world an...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Safety through understanding
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+Anthropic Economic Index report: Learning curves
 
-Multidisciplinary approach
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
 
-Natural Language Autoencoders: Turning Claude’s thoughts into text
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
 
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+Aug 12, 2026EconomicsReviewing the evidence on worker retraining programs
 
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+Jul 14, 2026EconomicsHow Canada uses Claude: Findings from the Anthropic Economic Index
 
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+Jun 26, 2026EconomicsAnthropic Economic Index report: Cadences
 
-Jul 6, 2026InterpretabilityA global workspace in language models
+Jun 16, 2026EconomicsAgentic coding and persistent returns to expertise
 
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+May 27, 2026EconomicsCoding agents in the social sciences
 
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+Apr 22, 2026EconomicsAnnouncing the Anthropic Economic Index Survey
 
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+Apr 22, 2026EconomicsWhat 81,000 people told us about the economics of AI
 
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+Mar 31, 2026EconomicsHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
+Mar 24, 2026EconomicsAnthropic Economic Index report: Learning curves
 
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+Mar 5, 2026EconomicsLabor market impacts of AI: A new measure and early evidence</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world an...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
 
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
 
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
+Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
 
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+Anthropic Economic Index report: Learning curves
 
-Safety through understanding
+Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
 
-It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
 
-Safety through understanding
+In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
 
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
 
-Multidisciplinary approach
+Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
 
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+Aug 12, 2026EconomicsReviewing the evidence on worker retraining programs
 
-Natural Language Autoencoders: Turning Claude’s thoughts into text
+Jul 14, 2026EconomicsHow Canada uses Claude: Findings from the Anthropic Economic Index
 
-AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+Jun 26, 2026EconomicsAnthropic Economic Index report: Cadences
 
-All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+Jun 16, 2026EconomicsAgentic coding and persistent returns to expertise
 
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+May 27, 2026EconomicsCoding agents in the social sciences
 
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+Apr 22, 2026EconomicsAnnouncing the Anthropic Economic Index Survey
 
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+Apr 22, 2026EconomicsWhat 81,000 people told us about the economics of AI
 
-Jul 6, 2026InterpretabilityA global workspace in language models
+Mar 31, 2026EconomicsHow Australia Uses Claude: Findings from the Anthropic Economic Index
 
-May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+Mar 24, 2026EconomicsAnthropic Economic Index report: Learning curves
 
-Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
-
-Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
-
-Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
-
-Oct 29, 2025InterpretabilitySigns of introspection in large language models
-
-Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
-
-May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
-
-Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
-
-Mar 13, 2025AlignmentAuditing language models for hidden objectives
-
-Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+Mar 5, 2026EconomicsLabor market impacts of AI: A new measure and early evidence</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
   <title>Societal Impacts</title>
@@ -3152,10 +3140,111 @@ Apr 21, 2025Societal ImpactsValues in the wild: Discovering and analyzing values
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/societal-impacts" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
+  <title>Interpretability</title>
+  <link>https://www.anthropic.com/research/team/interpretability</link>
+  <guid isPermaLink="false">https://www.anthropic.com/research/team/interpretability</guid>
+  <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+  <category>Research</category>
+  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Jul 6, 2026InterpretabilityA global workspace in language models
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
+  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It&apos;s very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behav...</p><div style="font-size:16px;line-height:1.8;color:#333">The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
+
+Safety through understanding
+
+It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+
+Multidisciplinary approach
+
+Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+
+Natural Language Autoencoders: Turning Claude’s thoughts into text
+
+AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
+
+All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
+
+Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+
+Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+
+AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+
+Jul 6, 2026InterpretabilityA global workspace in language models
+
+May 7, 2026InterpretabilityNatural Language Autoencoders: Turning Claude’s thoughts into text
+
+Apr 2, 2026InterpretabilityEmotion concepts and their function in a large language model
+
+Mar 13, 2026InterpretabilityA “diff” tool for AI: Finding behavioral differences in new models
+
+Jan 19, 2026InterpretabilityThe assistant axis: situating and stabilizing the character of large language models
+
+Oct 29, 2025InterpretabilitySigns of introspection in large language models
+
+Aug 1, 2025InterpretabilityPersona vectors: Monitoring and controlling character traits in language models
+
+May 29, 2025InterpretabilityOpen-sourcing circuit tracing tools
+
+Mar 27, 2025InterpretabilityTracing the thoughts of a large language model
+
+Mar 13, 2025AlignmentAuditing language models for hidden objectives
+
+Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/interpretability" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
+</item>
+<item>
   <title>Alignment</title>
   <link>https://www.anthropic.com/research/team/alignment</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/alignment</guid>
-  <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
+  <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s important to develop sophisticated safeguards to ensure models remain helpful, honest, and harmless. The Alignment team works to understand the challenges ahead and create protocols to train, evaluate, and monitor highly-capable models safely.
 
@@ -3249,95 +3338,10 @@ Dec 19, 2025AlignmentIntroducing Bloom: an open source tool for automated behavi
 Join the Research team</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/alignment" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
 </item>
 <item>
-  <title>Economics</title>
-  <link>https://www.anthropic.com/research/team/economics</link>
-  <guid isPermaLink="false">https://www.anthropic.com/research/team/economics</guid>
-  <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
-  <category>Research</category>
-  <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world an...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-Aug 12, 2026EconomicsReviewing the evidence on worker retraining programs
-
-Jul 14, 2026EconomicsHow Canada uses Claude: Findings from the Anthropic Economic Index
-
-Jun 26, 2026EconomicsAnthropic Economic Index report: Cadences
-
-Jun 16, 2026EconomicsAgentic coding and persistent returns to expertise
-
-May 27, 2026EconomicsCoding agents in the social sciences
-
-Apr 22, 2026EconomicsAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026EconomicsWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026EconomicsHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026EconomicsAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026EconomicsLabor market impacts of AI: A new measure and early evidence</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></description>
-  <content:encoded><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI&apos;s real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI&apos;s economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world an...</p><div style="font-size:16px;line-height:1.8;color:#333">The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
-
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
-
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
-
-Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
-
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
-
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
-
-This report introduces new metrics of AI usage to provide a rich portrait of interactions with Claude in November 2025, just prior to the release of Opus 4.5.
-
-Analyzing 100,000 Claude conversations, this research finds AI reduces task time by 80% on average.
-
-Aug 12, 2026EconomicsReviewing the evidence on worker retraining programs
-
-Jul 14, 2026EconomicsHow Canada uses Claude: Findings from the Anthropic Economic Index
-
-Jun 26, 2026EconomicsAnthropic Economic Index report: Cadences
-
-Jun 16, 2026EconomicsAgentic coding and persistent returns to expertise
-
-May 27, 2026EconomicsCoding agents in the social sciences
-
-Apr 22, 2026EconomicsAnnouncing the Anthropic Economic Index Survey
-
-Apr 22, 2026EconomicsWhat 81,000 people told us about the economics of AI
-
-Mar 31, 2026EconomicsHow Australia Uses Claude: Findings from the Anthropic Economic Index
-
-Mar 24, 2026EconomicsAnthropic Economic Index report: Learning curves
-
-Mar 5, 2026EconomicsLabor market impacts of AI: A new measure and early evidence</div><hr style="margin:24px 0;border:none;border-top:1px solid #eee"/><p style="margin:12px 0 0"><a href="https://www.anthropic.com/research/team/economics" style="color:#1890ff;text-decoration:none;font-size:14px">View Original &rarr;</a></p>]]></content:encoded>
-</item>
-<item>
   <title>Frontier Red Team</title>
   <link>https://www.anthropic.com/research/team/frontier-red-team</link>
   <guid isPermaLink="false">https://www.anthropic.com/research/team/frontier-red-team</guid>
-  <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+  <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
   <category>Research</category>
   <description><![CDATA[<p style="color:#666;font-size:14px;margin-bottom:16px">The Frontier Red Team stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next. We provide evidence-based analysis about AI’s implications for cybersecurity, national security, and autonomous systems.
 
