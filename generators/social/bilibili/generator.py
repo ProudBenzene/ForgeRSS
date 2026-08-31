@@ -16,7 +16,7 @@ Example:
 import logging
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional
 from urllib.parse import urljoin
 
@@ -27,9 +27,55 @@ from generators.social.bilibili.scraper import (
     create_bilibili_browser,
     check_bilibili_ready,
     download_video,
+    verify_bilibili_login,
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _parse_bilibili_publish_time(
+    text: str, now: Optional[datetime] = None
+) -> datetime:
+    """Parse the compact publish time shown on Bilibili space video cards."""
+    local_tz = pytz.timezone("Asia/Shanghai")
+    now = now or datetime.now(local_tz)
+    if now.tzinfo is None:
+        now = local_tz.localize(now)
+    else:
+        now = now.astimezone(local_tz)
+
+    value = (text or "").strip()
+    try:
+        if re.fullmatch(r"\d{4}-\d{1,2}-\d{1,2}", value):
+            parsed = datetime.strptime(value, "%Y-%m-%d")
+            return local_tz.localize(parsed).astimezone(pytz.UTC)
+
+        if re.fullmatch(r"\d{1,2}-\d{1,2}", value):
+            month, day = (int(part) for part in value.split("-"))
+            parsed = local_tz.localize(datetime(now.year, month, day))
+            # A month/day later than today belongs to the previous year.
+            if parsed > now + timedelta(days=1):
+                parsed = local_tz.localize(datetime(now.year - 1, month, day))
+            return parsed.astimezone(pytz.UTC)
+
+        if value in ("刚刚", "刚才"):
+            return now.astimezone(pytz.UTC)
+        if value == "昨天":
+            return (now - timedelta(days=1)).astimezone(pytz.UTC)
+
+        relative_patterns = (
+            (r"(\d+)分钟前", "minutes"),
+            (r"(\d+)小时前", "hours"),
+            (r"(\d+)天前", "days"),
+        )
+        for pattern, unit in relative_patterns:
+            match = re.fullmatch(pattern, value)
+            if match:
+                return (now - timedelta(**{unit: int(match.group(1))})).astimezone(pytz.UTC)
+    except (TypeError, ValueError):
+        logger.warning("Could not parse Bilibili publish time: %r", value)
+
+    return now.astimezone(pytz.UTC)
 
 
 class BilibiliUPGenerator(BaseFeedGenerator):
@@ -81,6 +127,9 @@ class BilibiliUPGenerator(BaseFeedGenerator):
         articles = []
         
         try:
+            if not verify_bilibili_login(browser):
+                raise RuntimeError("Bilibili login is missing or expired")
+
             # Determine fetch count based on mode
             if self.HISTORY_MODE:
                 max_videos = self.MAX_VIDEOS_HISTORY  # History mode
@@ -258,15 +307,27 @@ class BilibiliUPGenerator(BaseFeedGenerator):
     def _get_up_name(self, browser) -> Optional[str]:
         """Get UP master name from page."""
         try:
-            selectors = ['css:#h-name', 'css:.h-name', 'css:.username']
+            selectors = [
+                'css:#h-name',
+                'css:.h-name',
+                'css:.username',
+                'css:.nickname',
+                'css:.user-name',
+            ]
             for selector in selectors:
                 name_elem = browser.ele(selector, timeout=2)
                 if name_elem:
                     text = name_elem.text.strip()
                     if text:
                         return text
-        except:
-            pass
+
+            # The current space page title is "<UP name>投稿视频-...".
+            page_title = (browser.title or '').strip()
+            match = re.match(r'(.+?)投稿视频(?:-|$)', page_title)
+            if match:
+                return match.group(1).strip()
+        except Exception as exc:
+            self.logger.debug("Failed to resolve UP master name: %s", exc)
         return None
     
     def _parse_video_item_browser(self, item, up_name: str, mid: str, browser=None) -> Optional[Article]:
@@ -403,9 +464,20 @@ class BilibiliUPGenerator(BaseFeedGenerator):
                 duration_text = duration_elem.text.strip()
                 if duration_text and ':' in duration_text:
                     duration = duration_text
+
+            # Current space cards expose views, danmaku and duration as three
+            # ordered stats rather than the legacy named classes above.
+            stats = item.eles('css:.bili-cover-card__stat', timeout=0.5) or []
+            stat_text = [' '.join((stat.text or '').split()) for stat in stats]
+            if len(stat_text) >= 3:
+                play_count = play_count or stat_text[0]
+                danmaku = danmaku or stat_text[1]
+                duration = duration or stat_text[2]
             
-            # Get publish time (use current time)
-            pub_date = datetime.now(pytz.UTC)
+            # Current cards expose a compact date such as MM-DD.
+            subtitle = item.ele('css:.bili-video-card__subtitle', timeout=0.5)
+            publish_text = subtitle.text.strip() if subtitle and subtitle.text else ''
+            pub_date = _parse_bilibili_publish_time(publish_text)
             
             # Build content
             content_parts = []
