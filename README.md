@@ -83,7 +83,7 @@
 | 巨潮资讯网 | 金融 | curl_cffi | `feed_cninfo_announcements.xml` | 6小时 | CI/本地 |
 | **知乎热榜** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_hot.xml` | **手动** | **仅本地** |
 | **知乎用户动态** | 社交媒体 | **DrissionPage + 登录** | `feed_zhihu_user.xml` | **手动** | **仅本地** |
-| **B 站 UP 主** | 社交媒体 | **DrissionPage + 登录** | `feed_bilibili_up.xml` | **手动** | **仅本地** |
+| **B 站 UP 主** | 社交媒体 | **DrissionPage + 登录** | `feed_bilibili_up_<MID>.xml` | **手动** | **仅本地** |
 | **小红书用户** | 社交媒体 | **DrissionPage + 登录** | `feed_xiaohongshu_user.xml` | **手动** | **仅本地** |
 | **知识星球话题** | 社交媒体 | **DrissionPage + 登录** | `feed_zsxq_topics.xml` | **手动** | **仅本地** |
 | **抖音用户** | 社交媒体 | **DrissionPage + 登录 + CDP + ffmpeg** | `feed_douyin_user.xml` | **手动** | **仅本地** |
@@ -327,8 +327,16 @@ python scripts/run_single.py zhihu_hot --max 50
 # 知乎用户动态
 ZHIHU_USER_ID=excited-vczh python scripts/run_single.py zhihu_user --max 20
 
-# B 站 UP 主视频（多个用逗号分隔）
-BILIBILI_UP_MID="546195,12345678" python scripts/run_single.py bilibili_up --max 20
+# B 站 UP 主视频（多个用逗号分隔；共用一次浏览器会话）
+BILIBILI_UP_MID="546195,12345678" \
+  BILIBILI_UP_DELAY_SECONDS=10 \
+  python scripts/run_single.py bilibili_up --max 20
+
+# 每个 MID 会生成独立 Feed 和缓存：
+# feeds/feed_bilibili_up_546195.xml
+# feeds/feed_bilibili_up_12345678.xml
+# 可在迁移期间让旧 feed_bilibili_up.xml 继续指向其中一个 MID：
+export BILIBILI_LEGACY_FEED_MID=546195
 
 # 小红书用户笔记（接受纯 user_id 或完整主页 URL，URL 形式更稳）
 XHS_USER_ID="664f367c00000000070064da" python scripts/run_single.py xiaohongshu_user --max 10
@@ -597,7 +605,9 @@ RUN_INTERVAL=21600  # 默认 6 小时
 
 # 社交媒体配置
 ZHIHU_USER_ID=excited-vczh                          # 知乎用户（逗号分隔多个）
-BILIBILI_UP_MID=546195                              # B 站 UP 主（逗号分隔多个）
+BILIBILI_UP_MID=546195                              # B 站 UP 主（逗号分隔多个；每个 MID 独立 Feed）
+BILIBILI_UP_DELAY_SECONDS=10                        # 不同 UP 页面之间的等待秒数（默认 5）
+BILIBILI_LEGACY_FEED_MID=546195                     # 可选：旧 feed_bilibili_up.xml 的兼容来源
 XHS_USER_ID=664f367c00000000070064da                # 小红书用户（也可以是完整 URL；逗号分隔多个）
 ZSXQ_GROUP_ID=88514182418182                        # 知识星球群组（也可以是完整 URL；逗号分隔多个）
 DOUYIN_SEC_UID=MS4wLjABAAAAxxxx                     # 抖音用户（也可以是完整 URL / 分享短链；逗号分隔多个）

@@ -16,7 +16,9 @@ Example:
 import logging
 import os
 import re
+import shutil
 from datetime import datetime, timedelta
+from pathlib import Path
 from typing import Optional
 from urllib.parse import urljoin
 
@@ -31,6 +33,30 @@ from generators.social.bilibili.scraper import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _positive_int_env(name: str, default: int) -> int:
+    """Read a strictly positive integer environment option."""
+    value = os.environ.get(name, str(default))
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be an integer, got {value!r}") from exc
+    if parsed <= 0:
+        raise ValueError(f"{name} must be greater than zero, got {parsed}")
+    return parsed
+
+
+def _nonnegative_float_env(name: str, default: float) -> float:
+    """Read a non-negative floating-point environment option."""
+    value = os.environ.get(name, str(default))
+    try:
+        parsed = float(value)
+    except ValueError as exc:
+        raise ValueError(f"{name} must be a number, got {value!r}") from exc
+    if parsed < 0:
+        raise ValueError(f"{name} must not be negative, got {parsed}")
+    return parsed
 
 
 def _parse_bilibili_publish_time(
@@ -88,33 +114,244 @@ class BilibiliUPGenerator(BaseFeedGenerator):
     FEED_LANGUAGE = "zh-CN"
     FEED_LOGO = "https://www.bilibili.com/favicon.ico"
     
-    # UP master ID list (from environment or code config)
-    UP_MIDS = os.environ.get("BILIBILI_UP_MID", "").split(",")
-    UP_MIDS = [mid.strip() for mid in UP_MIDS if mid.strip()]
-    
-    # Whether to download videos (default: false, RSS only)
-    DOWNLOAD_VIDEOS = os.environ.get("BILIBILI_DOWNLOAD_VIDEOS", "false").lower() == "true"
-    
-    # History mode (default: off, fetch latest only)
-    HISTORY_MODE = os.environ.get("BILIBILI_HISTORY_MODE", "false").lower() == "true"
-    
-    # Videos per UP master (default: 100 for history, 20 for daily)
-    MAX_VIDEOS_HISTORY = int(os.environ.get("BILIBILI_MAX_VIDEOS_HISTORY", "100"))
-    MAX_VIDEOS_DAILY = int(os.environ.get("BILIBILI_MAX_VIDEOS_DAILY", "20"))
-    
-    def __init__(self, history_mode: bool = None):
-        super().__init__()
-        
-        # Allow overriding history mode at instantiation
-        if history_mode is not None:
-            self.HISTORY_MODE = history_mode
-        
+    def __init__(
+        self,
+        history_mode: Optional[bool] = None,
+        mids: Optional[list[str]] = None,
+        base_dir: Optional[Path] = None,
+    ):
+        super().__init__(base_dir=base_dir)
+
+        configured_mids = (
+            mids
+            if mids is not None
+            else os.environ.get("BILIBILI_UP_MID", "").split(",")
+        )
+        self.UP_MIDS = self._normalize_mids(configured_mids)
+        self.DOWNLOAD_VIDEOS = (
+            os.environ.get("BILIBILI_DOWNLOAD_VIDEOS", "false").lower()
+            == "true"
+        )
+        configured_history_mode = (
+            os.environ.get("BILIBILI_HISTORY_MODE", "false").lower() == "true"
+        )
+        self.HISTORY_MODE = (
+            configured_history_mode if history_mode is None else history_mode
+        )
+        self.MAX_VIDEOS_HISTORY = _positive_int_env(
+            "BILIBILI_MAX_VIDEOS_HISTORY", 100
+        )
+        self.MAX_VIDEOS_DAILY = _positive_int_env(
+            "BILIBILI_MAX_VIDEOS_DAILY", 20
+        )
+        self.UP_DELAY_SECONDS = _nonnegative_float_env(
+            "BILIBILI_UP_DELAY_SECONDS", 5
+        )
+        self.LEGACY_FEED_MID = os.environ.get(
+            "BILIBILI_LEGACY_FEED_MID", ""
+        ).strip()
+
         if not self.UP_MIDS:
-            self.logger.warning("No UP master configured. Set BILIBILI_UP_MID environment variable.")
+            self.logger.warning(
+                "No UP master configured. Set BILIBILI_UP_MID environment variable."
+            )
             self.logger.warning("Example: BILIBILI_UP_MID='12345678,87654321'")
-    
+
+    @staticmethod
+    def _normalize_mids(mids: list[str]) -> list[str]:
+        """Validate and deduplicate Bilibili MIDs while preserving order."""
+        normalized = []
+        seen = set()
+        for raw_mid in mids:
+            mid = str(raw_mid).strip()
+            if not mid:
+                continue
+            if not mid.isdigit():
+                raise ValueError(f"Invalid Bilibili MID (digits only): {mid!r}")
+            if mid not in seen:
+                normalized.append(mid)
+                seen.add(mid)
+        return normalized
+
+    def _max_videos_for_run(self) -> int:
+        if self.HISTORY_MODE:
+            max_videos = self.MAX_VIDEOS_HISTORY
+            self.logger.info(
+                "History mode: fetching up to %s videos per UP", max_videos
+            )
+        else:
+            max_videos = self.MAX_VIDEOS_DAILY
+            self.logger.info(
+                "Daily mode: fetching latest %s videos per UP", max_videos
+            )
+
+        run_cap = getattr(self, "_run_max_articles", None)
+        if run_cap is not None and run_cap < max_videos:
+            self.logger.info(
+                "Run cap (--max %s) overrides per-UP limit %s",
+                run_cap,
+                max_videos,
+            )
+            max_videos = run_cap
+        return max_videos
+
+    def _store_mid_feed(
+        self,
+        mid: str,
+        up_name: str,
+        new_articles: list[Article],
+        full_refresh: bool,
+        max_articles: int,
+        use_db: bool,
+    ) -> Path:
+        """Persist one UP master in an isolated cache, DB namespace and XML."""
+        original_metadata = (
+            self.FEED_NAME,
+            self.FEED_TITLE,
+            self.FEED_URL,
+            self.FEED_DESCRIPTION,
+        )
+        self.FEED_NAME = f"bilibili_up_{mid}"
+        self.FEED_TITLE = f"{up_name} 的 Bilibili 投稿"
+        self.FEED_URL = f"https://space.bilibili.com/{mid}/video"
+        self.FEED_DESCRIPTION = f"Bilibili UP 主 {up_name} 的投稿视频更新"
+
+        try:
+            existing = [] if full_refresh else self.load_cache()
+            if not existing and not full_refresh and use_db:
+                existing = self.load_from_db(limit=max_articles)
+
+            merged = self.merge_articles(new_articles, existing)
+            final = merged[:max_articles]
+            self.save_cache(final)
+            if use_db:
+                self.save_to_db(final)
+            output = self.save_feed_streaming(final)
+            output.chmod(0o644)
+            return output
+        finally:
+            (
+                self.FEED_NAME,
+                self.FEED_TITLE,
+                self.FEED_URL,
+                self.FEED_DESCRIPTION,
+            ) = original_metadata
+
+    def _write_legacy_alias(self, mid: str, source: Path) -> Path:
+        """Keep the original single-feed URL working during migration."""
+        target = self.feeds_dir / "feed_bilibili_up.xml"
+        temporary = self.feeds_dir / ".feed_bilibili_up.xml.tmp"
+        shutil.copyfile(source, temporary)
+        os.replace(temporary, target)
+        target.chmod(0o644)
+        self.logger.info("Updated legacy feed alias for MID %s: %s", mid, target)
+        return target
+
+    def run(
+        self,
+        full_refresh: bool = False,
+        max_articles: int = 50,
+        use_db: bool = True,
+    ) -> bool:
+        """Update one isolated feed per MID using a shared browser session."""
+        if not self.UP_MIDS:
+            return False
+        if max_articles <= 0:
+            raise ValueError("max_articles must be greater than zero")
+
+        ready, message = check_bilibili_ready()
+        if not ready:
+            self.logger.error(message)
+            return False
+
+        browser = create_bilibili_browser(headless=False)
+        if not browser:
+            return False
+
+        self._run_max_articles = max_articles
+        outputs = {}
+        failures = []
+
+        try:
+            if not verify_bilibili_login(browser):
+                self.logger.error("Bilibili login is missing or expired")
+                return False
+
+            max_videos = self._max_videos_for_run()
+            for index, mid in enumerate(self.UP_MIDS):
+                try:
+                    self.logger.info("Fetching videos from UP master %s", mid)
+                    up_name, videos = self._fetch_up_videos(
+                        browser,
+                        mid,
+                        max_videos=max_videos,
+                        history_mode=self.HISTORY_MODE,
+                    )
+                    if not videos:
+                        raise RuntimeError(
+                            "No videos parsed; existing feed was preserved"
+                        )
+                    outputs[mid] = self._store_mid_feed(
+                        mid,
+                        up_name,
+                        videos,
+                        full_refresh=full_refresh,
+                        max_articles=max_articles,
+                        use_db=use_db,
+                    )
+                    self.logger.info(
+                        "Updated independent feed for %s (%s videos)",
+                        mid,
+                        len(videos),
+                    )
+                except Exception as exc:
+                    failures.append(mid)
+                    self.logger.error(
+                        "Failed to update independent feed for %s: %s",
+                        mid,
+                        exc,
+                        exc_info=True,
+                    )
+
+                if index < len(self.UP_MIDS) - 1 and self.UP_DELAY_SECONDS:
+                    self.logger.info(
+                        "Waiting %.1f seconds before the next UP master",
+                        self.UP_DELAY_SECONDS,
+                    )
+                    browser.wait(self.UP_DELAY_SECONDS)
+        finally:
+            browser.quit()
+
+        legacy_mid = self.LEGACY_FEED_MID
+        if not legacy_mid and len(self.UP_MIDS) == 1:
+            legacy_mid = self.UP_MIDS[0]
+        if legacy_mid:
+            source = outputs.get(legacy_mid)
+            if source:
+                self._write_legacy_alias(legacy_mid, source)
+            elif legacy_mid in self.UP_MIDS:
+                failures.append(legacy_mid)
+                self.logger.error(
+                    "Could not update legacy alias because MID %s failed",
+                    legacy_mid,
+                )
+            else:
+                failures.append(legacy_mid)
+                self.logger.error(
+                    "BILIBILI_LEGACY_FEED_MID=%s is not in BILIBILI_UP_MID",
+                    legacy_mid,
+                )
+
+        if failures:
+            self.logger.error(
+                "Bilibili batch finished with failures: %s",
+                ", ".join(dict.fromkeys(failures)),
+            )
+            return False
+        return len(outputs) == len(self.UP_MIDS)
+
     def fetch_articles(self) -> list[Article]:
-        """Fetch latest videos from configured UP masters using logged-in browser."""
+        """Fetch all configured UPs as an aggregate for API compatibility."""
         ready, msg = check_bilibili_ready()
         if not ready:
             self.logger.error(msg)
@@ -130,32 +367,28 @@ class BilibiliUPGenerator(BaseFeedGenerator):
             if not verify_bilibili_login(browser):
                 raise RuntimeError("Bilibili login is missing or expired")
 
-            # Determine fetch count based on mode
-            if self.HISTORY_MODE:
-                max_videos = self.MAX_VIDEOS_HISTORY  # History mode
-                self.logger.info(f"History mode: fetching up to {max_videos} videos per UP")
-            else:
-                max_videos = self.MAX_VIDEOS_DAILY  # Daily mode
-                self.logger.info(f"Daily mode: fetching latest {max_videos} videos per UP")
-
-            # Honor the run-level cap so --max N doesn't over-scrape / over-download.
-            run_cap = getattr(self, "_run_max_articles", None)
-            if run_cap is not None and run_cap < max_videos:
-                self.logger.info(
-                    f"Run cap (--max {run_cap}) overrides per-UP limit {max_videos}"
-                )
-                max_videos = run_cap
+            max_videos = self._max_videos_for_run()
             
-            for mid in self.UP_MIDS:
-                self.logger.info(f"Fetching videos from UP master {mid}")
-                videos = self._fetch_up_videos(
-                    browser, 
-                    mid, 
-                    max_videos=max_videos,
-                    history_mode=self.HISTORY_MODE
-                )
-                articles.extend(videos)
-                self.logger.info(f"Found {len(videos)} videos from UP master {mid}")
+            for index, mid in enumerate(self.UP_MIDS):
+                try:
+                    self.logger.info(f"Fetching videos from UP master {mid}")
+                    _up_name, videos = self._fetch_up_videos(
+                        browser,
+                        mid,
+                        max_videos=max_videos,
+                        history_mode=self.HISTORY_MODE,
+                    )
+                    articles.extend(videos)
+                    self.logger.info(
+                        f"Found {len(videos)} videos from UP master {mid}"
+                    )
+                except Exception as exc:
+                    self.logger.error(
+                        "Failed to fetch UP master %s: %s", mid, exc
+                    )
+
+                if index < len(self.UP_MIDS) - 1 and self.UP_DELAY_SECONDS:
+                    browser.wait(self.UP_DELAY_SECONDS)
         finally:
             browser.quit()
         
@@ -167,7 +400,7 @@ class BilibiliUPGenerator(BaseFeedGenerator):
         mid: str, 
         max_videos: int = 20,
         history_mode: bool = False
-    ) -> list[Article]:
+    ) -> tuple[str, list[Article]]:
         """
         Fetch videos from a single UP master using browser with login state.
         
@@ -180,6 +413,7 @@ class BilibiliUPGenerator(BaseFeedGenerator):
                 - True: History mode, fetch as many historical videos as possible
         """
         articles = []
+        up_name = f"UP{mid}"
         
         try:
             # Visit UP master space video page
@@ -188,7 +422,7 @@ class BilibiliUPGenerator(BaseFeedGenerator):
             browser.wait(5)  # Wait for page load
             
             # Get UP master name
-            up_name = self._get_up_name(browser) or f"UP{mid}"
+            up_name = self._get_up_name(browser) or up_name
             self.logger.info(f"UP master name: {up_name}")
             
             # Scroll to load more videos (smart scroll strategy)
@@ -271,7 +505,7 @@ class BilibiliUPGenerator(BaseFeedGenerator):
             
             if not video_items:
                 self.logger.warning(f"No videos found with any selector for UP master {mid}")
-                return []
+                return up_name, []
             
             # Parse videos
             parsed_count = 0
@@ -301,8 +535,9 @@ class BilibiliUPGenerator(BaseFeedGenerator):
         
         except Exception as e:
             self.logger.error(f"Error fetching videos from UP master {mid}: {e}")
+            raise
         
-        return articles
+        return up_name, articles
     
     def _get_up_name(self, browser) -> Optional[str]:
         """Get UP master name from page."""
@@ -555,13 +790,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--history", 
         action="store_true", 
+        default=None,
         help="History mode: fetch more historical videos (recommended for first run)"
     )
     args = parser.parse_args()
-    
-    # Temporarily set UP master
-    if args.mid:
-        os.environ["BILIBILI_UP_MID"] = args.mid
     
     if args.download:
         os.environ["BILIBILI_DOWNLOAD_VIDEOS"] = "true"
@@ -569,5 +801,6 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
     # Create generator (pass history_mode)
-    gen = BilibiliUPGenerator(history_mode=args.history)
+    mids = args.mid.split(",") if args.mid else None
+    gen = BilibiliUPGenerator(history_mode=args.history, mids=mids)
     gen.run(full_refresh=args.full, max_articles=args.max)
