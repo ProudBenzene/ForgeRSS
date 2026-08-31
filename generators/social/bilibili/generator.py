@@ -34,6 +34,11 @@ from generators.social.bilibili.scraper import (
 
 logger = logging.getLogger(__name__)
 
+_LEGACY_WATCH_VIDEO_LINK = re.compile(
+    r'\s*<p>\s*<a\b[^>]*>\s*Watch Video\s*</a>\s*</p>',
+    re.IGNORECASE,
+)
+
 
 def _positive_int_env(name: str, default: int) -> int:
     """Read a strictly positive integer environment option."""
@@ -113,6 +118,9 @@ class BilibiliUPGenerator(BaseFeedGenerator):
     FEED_DESCRIPTION = "Bilibili UP Master - Video Updates"
     FEED_LANGUAGE = "zh-CN"
     FEED_LOGO = "https://www.bilibili.com/favicon.ico"
+    # The cover is already the canonical video link, so the generic
+    # "View Original" footer would only duplicate the same destination.
+    INCLUDE_ORIGINAL_LINK = False
     
     def __init__(
         self,
@@ -195,6 +203,16 @@ class BilibiliUPGenerator(BaseFeedGenerator):
             max_videos = run_cap
         return max_videos
 
+    @staticmethod
+    def _clean_legacy_content(articles: list[Article]) -> list[Article]:
+        """Remove the superseded text link from cached Bilibili entries."""
+        for article in articles:
+            if article.content:
+                article.content = _LEGACY_WATCH_VIDEO_LINK.sub(
+                    "", article.content
+                ).strip()
+        return articles
+
     def _store_mid_feed(
         self,
         mid: str,
@@ -222,7 +240,7 @@ class BilibiliUPGenerator(BaseFeedGenerator):
                 existing = self.load_from_db(limit=max_articles)
 
             merged = self.merge_articles(new_articles, existing)
-            final = merged[:max_articles]
+            final = self._clean_legacy_content(merged[:max_articles])
             self.save_cache(final)
             if use_db:
                 self.save_to_db(final)
@@ -736,8 +754,6 @@ class BilibiliUPGenerator(BaseFeedGenerator):
             # Mark paid content
             if is_paid:
                 content_parts.append(f'<p><strong>⚠️ Paid Content</strong></p>')
-            
-            content_parts.append(f'<p><a href="{video_url}">Watch Video</a></p>')
             
             # Optional: download video (paid content may not be downloadable)
             if self.DOWNLOAD_VIDEOS and not is_paid:

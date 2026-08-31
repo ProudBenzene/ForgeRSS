@@ -39,7 +39,7 @@ class Article:
     author: str = ""
 
 
-def _build_item_xml(article: Article) -> str:
+def _build_item_xml(article: Article, include_original_link: bool = True) -> str:
     """
     Build RSS item XML string (pure string concatenation, no lxml required)
     """
@@ -52,13 +52,16 @@ def _build_item_xml(article: Article) -> str:
     if article.summary:
         content_html = f'<p style="color:#666;font-size:14px;margin-bottom:16px">{_escape_xml(article.summary)}</p>' + content_html
     
-    # Add original link
-    content_html += (
-        f'<hr style="margin:24px 0;border:none;border-top:1px solid #eee"/>'
-        f'<p style="margin:12px 0 0"><a href="{_escape_xml(article.url)}" '
-        f'style="color:#1890ff;text-decoration:none;font-size:14px">'
-        f'View Original &rarr;</a></p>'
-    )
+    # Most feeds benefit from an explicit original-article link. Generators
+    # whose content already has a canonical clickable element can disable it
+    # to avoid presenting the same destination multiple times.
+    if include_original_link:
+        content_html += (
+            f'<hr style="margin:24px 0;border:none;border-top:1px solid #eee"/>'
+            f'<p style="margin:12px 0 0"><a href="{_escape_xml(article.url)}" '
+            f'style="color:#1890ff;text-decoration:none;font-size:14px">'
+            f'View Original &rarr;</a></p>'
+        )
     
     # Build XML
     xml_parts = ['<item>\n']
@@ -88,7 +91,8 @@ def generate_rss_stream(
     articles: List[Article],
     language: str = "en",
     logo_url: Optional[str] = None,
-    batch_size: int = 100
+    batch_size: int = 100,
+    include_original_link: bool = True,
 ) -> Iterator[bytes]:
     """
     Stream-generate RSS feed.
@@ -147,7 +151,10 @@ def generate_rss_stream(
         
         for article in batch:
             try:
-                item_xml = _build_item_xml(article)
+                item_xml = _build_item_xml(
+                    article,
+                    include_original_link=include_original_link,
+                )
                 yield item_xml.encode('utf-8')
                 article_count += 1
             except Exception as e:
@@ -169,7 +176,8 @@ def save_rss_stream(
     articles: List[Article],
     language: str = "en",
     logo_url: Optional[str] = None,
-    batch_size: int = 100
+    batch_size: int = 100,
+    include_original_link: bool = True,
 ) -> int:
     """
     Save RSS feed to file using streaming generation.
@@ -191,7 +199,8 @@ def save_rss_stream(
             articles=articles,
             language=language,
             logo_url=logo_url,
-            batch_size=batch_size
+            batch_size=batch_size,
+            include_original_link=include_original_link,
         ):
             f.write(chunk)
             # Count articles (each item starts with <item>)

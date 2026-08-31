@@ -121,6 +121,7 @@ class BaseFeedGenerator(ABC):
     FEED_DESCRIPTION: str = ""
     FEED_LANGUAGE: str = "en"
     FEED_LOGO: Optional[str] = None
+    INCLUDE_ORIGINAL_LINK: bool = True
     
     # Fetch configuration
     REQUIRE_JS: bool = False  # Set True if site needs JS rendering
@@ -369,7 +370,8 @@ class BaseFeedGenerator(ABC):
             articles=stream_articles,
             language=self.FEED_LANGUAGE,
             logo_url=self.FEED_LOGO,
-            batch_size=100  # Process 100 articles at a time
+            batch_size=100,  # Process 100 articles at a time
+            include_original_link=self.INCLUDE_ORIGINAL_LINK,
         )
         
         self.logger.info(f"Saved feed to {output} ({article_count} articles)")

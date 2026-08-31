@@ -110,6 +110,48 @@ def test_history_mode_defaults_to_environment(tmp_path, monkeypatch):
     assert generator.HISTORY_MODE is True
 
 
+def test_feed_keeps_one_clickable_cover_without_duplicate_video_links(
+    tmp_path, monkeypatch
+):
+    monkeypatch.setenv("BILIBILI_UP_DELAY_SECONDS", "0")
+    monkeypatch.delenv("BILIBILI_LEGACY_FEED_MID", raising=False)
+    generator = BilibiliUPGenerator(mids=["111"], base_dir=tmp_path)
+    video_url = "https://www.bilibili.com/video/BV111"
+    cover_url = "https://i0.hdslb.com/bfs/archive/cover.jpg"
+    article = Article(
+        url=video_url,
+        title="[Test UP] Test video",
+        published_at=NOW.astimezone(pytz.UTC),
+        summary="Test video | Views: 100 | 01:23",
+        content=(
+            f'<div><a href="{video_url}"><img src="{cover_url}" /></a></div>'
+            '<p><strong>UP Master:</strong> Test UP</p>'
+            '<p><strong>Views:</strong> 100 | <strong>Duration:</strong> 01:23</p>'
+            f'<p><a href="{video_url}">Watch Video</a></p>'
+        ),
+        author="Test UP",
+        category="Video",
+    )
+
+    output = generator._store_mid_feed(
+        mid="111",
+        up_name="Test UP",
+        new_articles=[article],
+        full_refresh=True,
+        max_articles=10,
+        use_db=False,
+    )
+    item_content = ET.parse(output).findtext("./channel/item/description")
+
+    assert item_content.count(f'<a href="{video_url}"') == 1
+    assert item_content.count(f'<img src="{cover_url}"') == 1
+    assert "Watch Video" not in item_content
+    assert "View Original" not in item_content
+    assert "<video" not in item_content
+    assert "<iframe" not in item_content
+    assert "<enclosure" not in item_content
+
+
 def test_run_writes_one_feed_and_cache_per_mid(tmp_path, monkeypatch):
     monkeypatch.setenv("BILIBILI_UP_DELAY_SECONDS", "0")
     monkeypatch.setenv("BILIBILI_LEGACY_FEED_MID", "111")
